@@ -1,0 +1,16 @@
+# Compiled binaries
+/client_gen.go.bak
+
+# Go test artifacts
+*.test
+*.out
+coverage.txt
+
+# OS artifacts
+.DS_Store
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*.swo

@@ -1,0 +1,3 @@
+[submodule "unified-openapi"]
+	path = unified-openapi
+	url = https://github.com/flexera-public/unified-openapi.git
