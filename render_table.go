@@ -297,7 +297,7 @@ func writeUserOrgListTable(w io.Writer, list *IamUserOrgList) error {
 		_, _ = fmt.Fprintf(tw, "%d\t%s\t%s\n",
 			item.Id,
 			item.Name,
-			stringPointerValue(item.Ref),
+			stringValue(item.Ref),
 		)
 	}
 	return tw.Flush()
@@ -918,6 +918,13 @@ func stringPointerValue(value *string) string {
 		return "-"
 	}
 	return strings.TrimSpace(*value)
+}
+
+func stringValue(value string) string {
+	if strings.TrimSpace(value) == "" {
+		return "-"
+	}
+	return strings.TrimSpace(value)
 }
 
 func stringSlicePointerLen(value *[]string) int {

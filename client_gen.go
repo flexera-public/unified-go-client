@@ -66,6 +66,145 @@ const (
 	Bearer AuthTokenResponseBodyTokenType = "Bearer"
 )
 
+// Defines values for BillAnalysisAnomaliesReportRequestBodyDetectionMethod.
+const (
+	AiModel       BillAnalysisAnomaliesReportRequestBodyDetectionMethod = "ai_model"
+	BollingerBand BillAnalysisAnomaliesReportRequestBodyDetectionMethod = "bollinger_band"
+)
+
+// Defines values for BillAnalysisAnomaliesReportRequestBodyGranularity.
+const (
+	BillAnalysisAnomaliesReportRequestBodyGranularityDay   BillAnalysisAnomaliesReportRequestBodyGranularity = "day"
+	BillAnalysisAnomaliesReportRequestBodyGranularityMonth BillAnalysisAnomaliesReportRequestBodyGranularity = "month"
+)
+
+// Defines values for BillAnalysisAnomaliesReportRequestBodyMetric.
+const (
+	BillAnalysisAnomaliesReportRequestBodyMetricCostAmortizedBlendedAdj      BillAnalysisAnomaliesReportRequestBodyMetric = "cost_amortized_blended_adj"
+	BillAnalysisAnomaliesReportRequestBodyMetricCostAmortizedUnblendedAdj    BillAnalysisAnomaliesReportRequestBodyMetric = "cost_amortized_unblended_adj"
+	BillAnalysisAnomaliesReportRequestBodyMetricCostNonamortizedBlendedAdj   BillAnalysisAnomaliesReportRequestBodyMetric = "cost_nonamortized_blended_adj"
+	BillAnalysisAnomaliesReportRequestBodyMetricCostNonamortizedUnblendedAdj BillAnalysisAnomaliesReportRequestBodyMetric = "cost_nonamortized_unblended_adj"
+)
+
+// Defines values for BillAnalysisBudgetFilterRequestBodyType.
+const (
+	BillAnalysisBudgetFilterRequestBodyTypeAnd   BillAnalysisBudgetFilterRequestBodyType = "and"
+	BillAnalysisBudgetFilterRequestBodyTypeEqual BillAnalysisBudgetFilterRequestBodyType = "equal"
+	BillAnalysisBudgetFilterRequestBodyTypeNot   BillAnalysisBudgetFilterRequestBodyType = "not"
+	BillAnalysisBudgetFilterRequestBodyTypeOr    BillAnalysisBudgetFilterRequestBodyType = "or"
+)
+
+// Defines values for BillAnalysisBudgetFilterResponseType.
+const (
+	BillAnalysisBudgetFilterResponseTypeAnd   BillAnalysisBudgetFilterResponseType = "and"
+	BillAnalysisBudgetFilterResponseTypeEqual BillAnalysisBudgetFilterResponseType = "equal"
+	BillAnalysisBudgetFilterResponseTypeNot   BillAnalysisBudgetFilterResponseType = "not"
+	BillAnalysisBudgetFilterResponseTypeOr    BillAnalysisBudgetFilterResponseType = "or"
+)
+
+// Defines values for BillAnalysisBudgetFilterResponseBodyType.
+const (
+	BillAnalysisBudgetFilterResponseBodyTypeAnd   BillAnalysisBudgetFilterResponseBodyType = "and"
+	BillAnalysisBudgetFilterResponseBodyTypeEqual BillAnalysisBudgetFilterResponseBodyType = "equal"
+	BillAnalysisBudgetFilterResponseBodyTypeNot   BillAnalysisBudgetFilterResponseBodyType = "not"
+	BillAnalysisBudgetFilterResponseBodyTypeOr    BillAnalysisBudgetFilterResponseBodyType = "or"
+)
+
+// Defines values for BillAnalysisConditionRequestBodyType.
+const (
+	BillAnalysisConditionRequestBodyTypeAllocatedToBillingCenter BillAnalysisConditionRequestBodyType = "allocated_to_billing_center"
+	BillAnalysisConditionRequestBodyTypeAnd                      BillAnalysisConditionRequestBodyType = "and"
+	BillAnalysisConditionRequestBodyTypeDimensionContains        BillAnalysisConditionRequestBodyType = "dimension_contains"
+	BillAnalysisConditionRequestBodyTypeDimensionEquals          BillAnalysisConditionRequestBodyType = "dimension_equals"
+	BillAnalysisConditionRequestBodyTypeNot                      BillAnalysisConditionRequestBodyType = "not"
+	BillAnalysisConditionRequestBodyTypeOr                       BillAnalysisConditionRequestBodyType = "or"
+)
+
+// Defines values for BillAnalysisConditionResponseBodyType.
+const (
+	BillAnalysisConditionResponseBodyTypeAllocatedToBillingCenter BillAnalysisConditionResponseBodyType = "allocated_to_billing_center"
+	BillAnalysisConditionResponseBodyTypeAnd                      BillAnalysisConditionResponseBodyType = "and"
+	BillAnalysisConditionResponseBodyTypeDimensionContains        BillAnalysisConditionResponseBodyType = "dimension_contains"
+	BillAnalysisConditionResponseBodyTypeDimensionEquals          BillAnalysisConditionResponseBodyType = "dimension_equals"
+	BillAnalysisConditionResponseBodyTypeNot                      BillAnalysisConditionResponseBodyType = "not"
+	BillAnalysisConditionResponseBodyTypeOr                       BillAnalysisConditionResponseBodyType = "or"
+)
+
+// Defines values for BillAnalysisCostsAggregatedRequestBodyDataset.
+const (
+	BillAnalysisCostsAggregatedRequestBodyDatasetBilling    BillAnalysisCostsAggregatedRequestBodyDataset = "billing"
+	BillAnalysisCostsAggregatedRequestBodyDatasetEnterprise BillAnalysisCostsAggregatedRequestBodyDataset = "enterprise"
+)
+
+// Defines values for BillAnalysisCostsAggregatedRequestBodyGranularity.
+const (
+	BillAnalysisCostsAggregatedRequestBodyGranularityDay   BillAnalysisCostsAggregatedRequestBodyGranularity = "day"
+	BillAnalysisCostsAggregatedRequestBodyGranularityMonth BillAnalysisCostsAggregatedRequestBodyGranularity = "month"
+)
+
+// Defines values for BillAnalysisCostsAggregatedRequestBodyPeriodType.
+const (
+	BillAnalysisCostsAggregatedRequestBodyPeriodTypeBillingPeriod BillAnalysisCostsAggregatedRequestBodyPeriodType = "billing_period"
+	BillAnalysisCostsAggregatedRequestBodyPeriodTypeChargePeriod  BillAnalysisCostsAggregatedRequestBodyPeriodType = "charge_period"
+)
+
+// Defines values for BillAnalysisCostsSelectRequestBodyDataset.
+const (
+	BillAnalysisCostsSelectRequestBodyDatasetBilling    BillAnalysisCostsSelectRequestBodyDataset = "billing"
+	BillAnalysisCostsSelectRequestBodyDatasetEnterprise BillAnalysisCostsSelectRequestBodyDataset = "enterprise"
+)
+
+// Defines values for BillAnalysisCostsSelectRequestBodyGranularity.
+const (
+	BillAnalysisCostsSelectRequestBodyGranularityDay   BillAnalysisCostsSelectRequestBodyGranularity = "day"
+	BillAnalysisCostsSelectRequestBodyGranularityMonth BillAnalysisCostsSelectRequestBodyGranularity = "month"
+)
+
+// Defines values for BillAnalysisCostsSelectRequestBodyPeriodType.
+const (
+	BillAnalysisCostsSelectRequestBodyPeriodTypeBillingPeriod BillAnalysisCostsSelectRequestBodyPeriodType = "billing_period"
+	BillAnalysisCostsSelectRequestBodyPeriodTypeChargePeriod  BillAnalysisCostsSelectRequestBodyPeriodType = "charge_period"
+)
+
+// Defines values for BillAnalysisFilterV1RequestBodyType.
+const (
+	BillAnalysisFilterV1RequestBodyTypeAnd       BillAnalysisFilterV1RequestBodyType = "and"
+	BillAnalysisFilterV1RequestBodyTypeEqual     BillAnalysisFilterV1RequestBodyType = "equal"
+	BillAnalysisFilterV1RequestBodyTypeNot       BillAnalysisFilterV1RequestBodyType = "not"
+	BillAnalysisFilterV1RequestBodyTypeOr        BillAnalysisFilterV1RequestBodyType = "or"
+	BillAnalysisFilterV1RequestBodyTypeSubstring BillAnalysisFilterV1RequestBodyType = "substring"
+)
+
+// Defines values for BillAnalysisForecastsReportRequestBodyGranularity.
+const (
+	BillAnalysisForecastsReportRequestBodyGranularityDay   BillAnalysisForecastsReportRequestBodyGranularity = "day"
+	BillAnalysisForecastsReportRequestBodyGranularityMonth BillAnalysisForecastsReportRequestBodyGranularity = "month"
+)
+
+// Defines values for BillAnalysisForecastsReportRequestBodyMetric.
+const (
+	BillAnalysisForecastsReportRequestBodyMetricCostAmortizedBlendedAdj      BillAnalysisForecastsReportRequestBodyMetric = "cost_amortized_blended_adj"
+	BillAnalysisForecastsReportRequestBodyMetricCostAmortizedUnblendedAdj    BillAnalysisForecastsReportRequestBodyMetric = "cost_amortized_unblended_adj"
+	BillAnalysisForecastsReportRequestBodyMetricCostNonamortizedBlendedAdj   BillAnalysisForecastsReportRequestBodyMetric = "cost_nonamortized_blended_adj"
+	BillAnalysisForecastsReportRequestBodyMetricCostNonamortizedUnblendedAdj BillAnalysisForecastsReportRequestBodyMetric = "cost_nonamortized_unblended_adj"
+)
+
+// Defines values for BillAnalysisRuleBasedDimensionConditionRequestBodyType.
+const (
+	BillAnalysisRuleBasedDimensionConditionRequestBodyTypeAnd             BillAnalysisRuleBasedDimensionConditionRequestBodyType = "and"
+	BillAnalysisRuleBasedDimensionConditionRequestBodyTypeDimensionEquals BillAnalysisRuleBasedDimensionConditionRequestBodyType = "dimension_equals"
+	BillAnalysisRuleBasedDimensionConditionRequestBodyTypeNot             BillAnalysisRuleBasedDimensionConditionRequestBodyType = "not"
+	BillAnalysisRuleBasedDimensionConditionRequestBodyTypeOr              BillAnalysisRuleBasedDimensionConditionRequestBodyType = "or"
+)
+
+// Defines values for BillAnalysisRuleBasedDimensionConditionResponseBodyType.
+const (
+	BillAnalysisRuleBasedDimensionConditionResponseBodyTypeAnd             BillAnalysisRuleBasedDimensionConditionResponseBodyType = "and"
+	BillAnalysisRuleBasedDimensionConditionResponseBodyTypeDimensionEquals BillAnalysisRuleBasedDimensionConditionResponseBodyType = "dimension_equals"
+	BillAnalysisRuleBasedDimensionConditionResponseBodyTypeNot             BillAnalysisRuleBasedDimensionConditionResponseBodyType = "not"
+	BillAnalysisRuleBasedDimensionConditionResponseBodyTypeOr              BillAnalysisRuleBasedDimensionConditionResponseBodyType = "or"
+)
+
 // Defines values for BudgetBudgetKind.
 const (
 	FinopsBudget BudgetBudgetKind = "finops:budget"
@@ -73,10 +212,14 @@ const (
 
 // Defines values for BudgetBudgetMetric.
 const (
+	BudgetBudgetMetricBilledCost                   BudgetBudgetMetric = "BilledCost"
 	BudgetBudgetMetricCostAmortizedBlendedAdj      BudgetBudgetMetric = "cost_amortized_blended_adj"
 	BudgetBudgetMetricCostAmortizedUnblendedAdj    BudgetBudgetMetric = "cost_amortized_unblended_adj"
 	BudgetBudgetMetricCostNonamortizedBlendedAdj   BudgetBudgetMetric = "cost_nonamortized_blended_adj"
 	BudgetBudgetMetricCostNonamortizedUnblendedAdj BudgetBudgetMetric = "cost_nonamortized_unblended_adj"
+	BudgetBudgetMetricEffectiveCost                BudgetBudgetMetric = "EffectiveCost"
+	BudgetBudgetMetricModifiedBilledCost           BudgetBudgetMetric = "ModifiedBilledCost"
+	BudgetBudgetMetricModifiedEffectiveCost        BudgetBudgetMetric = "ModifiedEffectiveCost"
 )
 
 // Defines values for BudgetBudgetFilterType.
@@ -94,10 +237,14 @@ const (
 
 // Defines values for BudgetBudgetLinkMetric.
 const (
+	BudgetBudgetLinkMetricBilledCost                   BudgetBudgetLinkMetric = "BilledCost"
 	BudgetBudgetLinkMetricCostAmortizedBlendedAdj      BudgetBudgetLinkMetric = "cost_amortized_blended_adj"
 	BudgetBudgetLinkMetricCostAmortizedUnblendedAdj    BudgetBudgetLinkMetric = "cost_amortized_unblended_adj"
 	BudgetBudgetLinkMetricCostNonamortizedBlendedAdj   BudgetBudgetLinkMetric = "cost_nonamortized_blended_adj"
 	BudgetBudgetLinkMetricCostNonamortizedUnblendedAdj BudgetBudgetLinkMetric = "cost_nonamortized_unblended_adj"
+	BudgetBudgetLinkMetricEffectiveCost                BudgetBudgetLinkMetric = "EffectiveCost"
+	BudgetBudgetLinkMetricModifiedBilledCost           BudgetBudgetLinkMetric = "ModifiedBilledCost"
+	BudgetBudgetLinkMetricModifiedEffectiveCost        BudgetBudgetLinkMetric = "ModifiedEffectiveCost"
 )
 
 // Defines values for BudgetBudgetListKind.
@@ -122,10 +269,14 @@ const (
 
 // Defines values for BudgetCreateRequestBodyMetric.
 const (
+	BilledCost                   BudgetCreateRequestBodyMetric = "BilledCost"
 	CostAmortizedBlendedAdj      BudgetCreateRequestBodyMetric = "cost_amortized_blended_adj"
 	CostAmortizedUnblendedAdj    BudgetCreateRequestBodyMetric = "cost_amortized_unblended_adj"
 	CostNonamortizedBlendedAdj   BudgetCreateRequestBodyMetric = "cost_nonamortized_blended_adj"
 	CostNonamortizedUnblendedAdj BudgetCreateRequestBodyMetric = "cost_nonamortized_unblended_adj"
+	EffectiveCost                BudgetCreateRequestBodyMetric = "EffectiveCost"
+	ModifiedBilledCost           BudgetCreateRequestBodyMetric = "ModifiedBilledCost"
+	ModifiedEffectiveCost        BudgetCreateRequestBodyMetric = "ModifiedEffectiveCost"
 )
 
 // Defines values for BudgetFlexeraFinopsAnalyticsCloudVendorAccountKind.
@@ -472,10 +623,222 @@ const (
 	CredUpdateOrgRequestBody5GrantTypeRefreshToken      CredUpdateOrgRequestBody5GrantType = "refresh_token"
 )
 
+// Defines values for DivntAzureCostAndUsageModelAccountType.
+const (
+	CSP DivntAzureCostAndUsageModelAccountType = "CSP"
+	EA  DivntAzureCostAndUsageModelAccountType = "EA"
+	MCA DivntAzureCostAndUsageModelAccountType = "MCA"
+)
+
+// Defines values for DivntAzureCostAndUsageModelBillingScope.
+const (
+	DivntAzureCostAndUsageModelBillingScopeBillingAccount DivntAzureCostAndUsageModelBillingScope = "Billing Account"
+	DivntAzureCostAndUsageModelBillingScopeBillingProfile DivntAzureCostAndUsageModelBillingScope = "Billing Profile"
+	DivntAzureCostAndUsageModelBillingScopeCustomerTenant DivntAzureCostAndUsageModelBillingScope = "Customer Tenant"
+	DivntAzureCostAndUsageModelBillingScopeInvoice        DivntAzureCostAndUsageModelBillingScope = "Invoice"
+)
+
+// Defines values for DivntOnboardingCreateRequestOnboardingType.
+const (
+	DivntOnboardingCreateRequestOnboardingTypeAutoDiscovery DivntOnboardingCreateRequestOnboardingType = "AutoDiscovery"
+	DivntOnboardingCreateRequestOnboardingTypeIndividual    DivntOnboardingCreateRequestOnboardingType = "Individual"
+)
+
 // Defines values for DivntOnboardingCreateRequestProvider.
 const (
 	DivntOnboardingCreateRequestProviderAws   DivntOnboardingCreateRequestProvider = "aws"
 	DivntOnboardingCreateRequestProviderAzure DivntOnboardingCreateRequestProvider = "azure"
+)
+
+// Defines values for DivntOnboardingUpdateRequestOnboardingType.
+const (
+	DivntOnboardingUpdateRequestOnboardingTypeAutoDiscovery DivntOnboardingUpdateRequestOnboardingType = "AutoDiscovery"
+	DivntOnboardingUpdateRequestOnboardingTypeIndividual    DivntOnboardingUpdateRequestOnboardingType = "Individual"
+)
+
+// Defines values for FinopsBillingAdjustmentConditionType.
+const (
+	FinopsBillingAdjustmentConditionTypeAnd             FinopsBillingAdjustmentConditionType = "and"
+	FinopsBillingAdjustmentConditionTypeDimensionEquals FinopsBillingAdjustmentConditionType = "dimension_equals"
+	FinopsBillingAdjustmentConditionTypeNot             FinopsBillingAdjustmentConditionType = "not"
+	FinopsBillingAdjustmentConditionTypeOr              FinopsBillingAdjustmentConditionType = "or"
+)
+
+// Defines values for FinopsBillingAllocationPayloadType.
+const (
+	EqualSplit           FinopsBillingAllocationPayloadType = "equalSplit"
+	FixedPercentageSplit FinopsBillingAllocationPayloadType = "fixedPercentageSplit"
+)
+
+// Defines values for FinopsBillingFeeShareDistributed.
+const (
+	Actual   FinopsBillingFeeShareDistributed = "actual"
+	Estimate FinopsBillingFeeShareDistributed = "estimate"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingAdjustmentPlanKind.
+const (
+	FinopsBillingFlexeraFinopsBillingAdjustmentPlanKindFinopsBillingAdjustmentPlan FinopsBillingFlexeraFinopsBillingAdjustmentPlanKind = "finops:billing-adjustment-plan"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingAdjustmentPlanRuleKind.
+const (
+	FinopsBillingAdjustmentPlanRule FinopsBillingFlexeraFinopsBillingAdjustmentPlanRuleKind = "finops:billing-adjustment-plan-rule"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingAdjustmentRuleKind.
+const (
+	FinopsBillingAdjustmentRule FinopsBillingFlexeraFinopsBillingAdjustmentRuleKind = "finops:billing-adjustment-rule"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingEnterpriseRuleKind.
+const (
+	FinopsBillingEnterpriseRule FinopsBillingFlexeraFinopsBillingEnterpriseRuleKind = "finops:billing-enterprise-rule"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryKind.
+const (
+	FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryKindFinopsBillingSharedCostRule FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryKind = "finops:billing-shared-cost-rule"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryStatus.
+const (
+	FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryStatusActive FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryStatus = "active"
+)
+
+// Defines values for FinopsBillingFlexeraIamPrincipalKind.
+const (
+	FinopsBillingFlexeraIamPrincipalKindIamServiceAccount FinopsBillingFlexeraIamPrincipalKind = "iam:service-account"
+	FinopsBillingFlexeraIamPrincipalKindIamUser           FinopsBillingFlexeraIamPrincipalKind = "iam:user"
+)
+
+// Defines values for FinopsBillingHideCreditsSettingsCreditTypes.
+const (
+	BundledDiscount           FinopsBillingHideCreditsSettingsCreditTypes = "bundledDiscount"
+	CloudfrontSecurityBundles FinopsBillingHideCreditsSettingsCreditTypes = "cloudfrontSecurityBundles"
+	DistributorDiscount       FinopsBillingHideCreditsSettingsCreditTypes = "distributorDiscount"
+	EdpDiscount               FinopsBillingHideCreditsSettingsCreditTypes = "edpDiscount"
+	PrivateRateDiscount       FinopsBillingHideCreditsSettingsCreditTypes = "privateRateDiscount"
+	SppDiscount               FinopsBillingHideCreditsSettingsCreditTypes = "sppDiscount"
+	TaxRefunds                FinopsBillingHideCreditsSettingsCreditTypes = "taxRefunds"
+)
+
+// Defines values for FinopsBillingIndexAdjustmentRulesResultKind.
+const (
+	FinopsBillingAdjustmentRuleList FinopsBillingIndexAdjustmentRulesResultKind = "finops:billing-adjustment-rule-list"
+)
+
+// Defines values for FinopsBillingIndexEnterpriseRulesResultKind.
+const (
+	FinopsBillingEnterpriseRuleList FinopsBillingIndexEnterpriseRulesResultKind = "finops:billing-enterprise-rule-list"
+)
+
+// Defines values for FinopsBillingIndexPlansResultKind.
+const (
+	FinopsBillingAdjustmentPlanList FinopsBillingIndexPlansResultKind = "finops:billing-adjustment-plan-list"
+)
+
+// Defines values for FinopsBillingIndexRulesResultKind.
+const (
+	FinopsBillingAdjustmentPlanRuleList FinopsBillingIndexRulesResultKind = "finops:billing-adjustment-plan-rule-list"
+)
+
+// Defines values for FinopsBillingIndexSharedCostRulesResultKind.
+const (
+	FinopsBillingSharedCostRuleList FinopsBillingIndexSharedCostRulesResultKind = "finops:billing-shared-cost-rule-list"
+)
+
+// Defines values for FinopsBillingReplaceSettingsRequestBodyBaseCostsOn.
+const (
+	FinopsBillingReplaceSettingsRequestBodyBaseCostsOnListCost      FinopsBillingReplaceSettingsRequestBodyBaseCostsOn = "listCost"
+	FinopsBillingReplaceSettingsRequestBodyBaseCostsOnObservedCosts FinopsBillingReplaceSettingsRequestBodyBaseCostsOn = "observedCosts"
+)
+
+// Defines values for FinopsBillingReservationReallocationSettingsRevertReservation.
+const (
+	FinopsBillingReservationReallocationSettingsRevertReservationAllUsage     FinopsBillingReservationReallocationSettingsRevertReservation = "allUsage"
+	FinopsBillingReservationReallocationSettingsRevertReservationUnownedUsage FinopsBillingReservationReallocationSettingsRevertReservation = "unownedUsage"
+)
+
+// Defines values for FinopsBillingSavingsPlanReallocationSettingsRevertSavingsPlan.
+const (
+	FinopsBillingSavingsPlanReallocationSettingsRevertSavingsPlanAllUsage     FinopsBillingSavingsPlanReallocationSettingsRevertSavingsPlan = "allUsage"
+	FinopsBillingSavingsPlanReallocationSettingsRevertSavingsPlanUnownedUsage FinopsBillingSavingsPlanReallocationSettingsRevertSavingsPlan = "unownedUsage"
+)
+
+// Defines values for FinopsBillingShowCustomerStatusResultKind.
+const (
+	FinopsBillingAdjustmentCustomerStatus FinopsBillingShowCustomerStatusResultKind = "finops:billing-adjustment-customer-status"
+)
+
+// Defines values for FinopsBillingShowPlanResponseBodyKind.
+const (
+	FinopsBillingShowPlanResponseBodyKindFinopsBillingAdjustmentPlan FinopsBillingShowPlanResponseBodyKind = "finops:billing-adjustment-plan"
+)
+
+// Defines values for FinopsBillingShowSharedCostRuleResultKind.
+const (
+	FinopsBillingShowSharedCostRuleResultKindFinopsBillingSharedCostRule FinopsBillingShowSharedCostRuleResultKind = "finops:billing-shared-cost-rule"
+)
+
+// Defines values for FinopsBillingShowSharedCostRuleResultStatus.
+const (
+	FinopsBillingShowSharedCostRuleResultStatusActive FinopsBillingShowSharedCostRuleResultStatus = "active"
+)
+
+// Defines values for FinopsBillingSupportChargeSettingsApplyBy.
+const (
+	Customer   FinopsBillingSupportChargeSettingsApplyBy = "customer"
+	SubAccount FinopsBillingSupportChargeSettingsApplyBy = "subAccount"
+)
+
+// Defines values for FinopsBillingSupportChargeSettingsTier.
+const (
+	FinopsBillingSupportChargeSettingsTierBusiness          FinopsBillingSupportChargeSettingsTier = "business"
+	FinopsBillingSupportChargeSettingsTierBusinessPlus      FinopsBillingSupportChargeSettingsTier = "businessPlus"
+	FinopsBillingSupportChargeSettingsTierDeveloper         FinopsBillingSupportChargeSettingsTier = "developer"
+	FinopsBillingSupportChargeSettingsTierEnterprise        FinopsBillingSupportChargeSettingsTier = "enterprise"
+	FinopsBillingSupportChargeSettingsTierEnterpriseOnRamp  FinopsBillingSupportChargeSettingsTier = "enterpriseOnRamp"
+	FinopsBillingSupportChargeSettingsTierSuppressed        FinopsBillingSupportChargeSettingsTier = "suppressed"
+	FinopsBillingSupportChargeSettingsTierUnifiedOperations FinopsBillingSupportChargeSettingsTier = "unifiedOperations"
+)
+
+// Defines values for FinopsBillingUpchargeDiscountSettingsBaseOn.
+const (
+	FinopsBillingUpchargeDiscountSettingsBaseOnListCost      FinopsBillingUpchargeDiscountSettingsBaseOn = "listCost"
+	FinopsBillingUpchargeDiscountSettingsBaseOnObservedCosts FinopsBillingUpchargeDiscountSettingsBaseOn = "observedCosts"
+)
+
+// Defines values for FinopsBillingUpdateRequestBodyStatus.
+const (
+	FinopsBillingUpdateRequestBodyStatusActive FinopsBillingUpdateRequestBodyStatus = "active"
+)
+
+// Defines values for FinopsCustomizationsCreateRequestBodyDashboardScope.
+const (
+	FinopsCustomizationsCreateRequestBodyDashboardScopeOrg  FinopsCustomizationsCreateRequestBodyDashboardScope = "org"
+	FinopsCustomizationsCreateRequestBodyDashboardScopeUser FinopsCustomizationsCreateRequestBodyDashboardScope = "user"
+)
+
+// Defines values for FinopsCustomizationsCreateRequestBodyVisibility.
+const (
+	FinopsCustomizationsCreateRequestBodyVisibilityPrivate FinopsCustomizationsCreateRequestBodyVisibility = "private"
+	FinopsCustomizationsCreateRequestBodyVisibilityShared  FinopsCustomizationsCreateRequestBodyVisibility = "shared"
+)
+
+// Defines values for FinopsCustomizationsCreateRequestBody2Visibility.
+const (
+	FinopsCustomizationsCreateRequestBody2VisibilityPrivate FinopsCustomizationsCreateRequestBody2Visibility = "private"
+	FinopsCustomizationsCreateRequestBody2VisibilityShared  FinopsCustomizationsCreateRequestBody2Visibility = "shared"
+)
+
+// Defines values for FinopsCustomizationsFilterV1Type.
+const (
+	FinopsCustomizationsFilterV1TypeAnd       FinopsCustomizationsFilterV1Type = "and"
+	FinopsCustomizationsFilterV1TypeEqual     FinopsCustomizationsFilterV1Type = "equal"
+	FinopsCustomizationsFilterV1TypeNot       FinopsCustomizationsFilterV1Type = "not"
+	FinopsCustomizationsFilterV1TypeOr        FinopsCustomizationsFilterV1Type = "or"
+	FinopsCustomizationsFilterV1TypeSubstring FinopsCustomizationsFilterV1Type = "substring"
 )
 
 // Defines values for FinopsCustomizationsFlexeraCustomizationsPrincipalKind.
@@ -484,14 +847,100 @@ const (
 	FinopsCustomizationsFlexeraCustomizationsPrincipalKindIamUser           FinopsCustomizationsFlexeraCustomizationsPrincipalKind = "iam:user"
 )
 
+// Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionDashboardScope.
+const (
+	FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionDashboardScopeOrg  FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionDashboardScope = "org"
+	FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionDashboardScopeUser FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionDashboardScope = "user"
+)
+
+// Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionKind.
+const (
+	FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionKindFinopsReportSubscription FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionKind = "finops:report-subscription"
+)
+
+// Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionVisibility.
+const (
+	FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionVisibilityPrivate FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionVisibility = "private"
+	FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionVisibilityShared  FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionVisibility = "shared"
+)
+
 // Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsRuleBasedDimensionKind.
 const (
 	FinopsRuleBasedDimension FinopsCustomizationsFlexeraFinopsCustomizationsRuleBasedDimensionKind = "finops:rule-based-dimension"
 )
 
+// Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryKind.
+const (
+	FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryKindFinopsSavedFilter FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryKind = "finops:saved-filter"
+)
+
+// Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryVisibility.
+const (
+	FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryVisibilityPrivate FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryVisibility = "private"
+	FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryVisibilityShared  FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryVisibility = "shared"
+)
+
 // Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsTagDimensionKind.
 const (
 	FinopsTagDimension FinopsCustomizationsFlexeraFinopsCustomizationsTagDimensionKind = "finops:tag-dimension"
+)
+
+// Defines values for FinopsCustomizationsIndexSavedFiltersResultKind.
+const (
+	FinopsSavedFilterList FinopsCustomizationsIndexSavedFiltersResultKind = "finops:saved-filter-list"
+)
+
+// Defines values for FinopsCustomizationsPatchSavedFilterRequestVisibility.
+const (
+	FinopsCustomizationsPatchSavedFilterRequestVisibilityPrivate FinopsCustomizationsPatchSavedFilterRequestVisibility = "private"
+	FinopsCustomizationsPatchSavedFilterRequestVisibilityShared  FinopsCustomizationsPatchSavedFilterRequestVisibility = "shared"
+)
+
+// Defines values for FinopsCustomizationsReportSubscriptionListKind.
+const (
+	FinopsReportSubscriptionList FinopsCustomizationsReportSubscriptionListKind = "finops:report-subscription-list"
+)
+
+// Defines values for FinopsCustomizationsReportSubscriptionRecipientType.
+const (
+	FinopsCustomizationsReportSubscriptionRecipientTypeEmail FinopsCustomizationsReportSubscriptionRecipientType = "email"
+	FinopsCustomizationsReportSubscriptionRecipientTypeGroup FinopsCustomizationsReportSubscriptionRecipientType = "group"
+	FinopsCustomizationsReportSubscriptionRecipientTypeUser  FinopsCustomizationsReportSubscriptionRecipientType = "user"
+)
+
+// Defines values for FinopsCustomizationsReportSubscriptionResultDashboardScope.
+const (
+	FinopsCustomizationsReportSubscriptionResultDashboardScopeOrg  FinopsCustomizationsReportSubscriptionResultDashboardScope = "org"
+	FinopsCustomizationsReportSubscriptionResultDashboardScopeUser FinopsCustomizationsReportSubscriptionResultDashboardScope = "user"
+)
+
+// Defines values for FinopsCustomizationsReportSubscriptionResultKind.
+const (
+	FinopsCustomizationsReportSubscriptionResultKindFinopsReportSubscription FinopsCustomizationsReportSubscriptionResultKind = "finops:report-subscription"
+)
+
+// Defines values for FinopsCustomizationsReportSubscriptionResultVisibility.
+const (
+	FinopsCustomizationsReportSubscriptionResultVisibilityPrivate FinopsCustomizationsReportSubscriptionResultVisibility = "private"
+	FinopsCustomizationsReportSubscriptionResultVisibilityShared  FinopsCustomizationsReportSubscriptionResultVisibility = "shared"
+)
+
+// Defines values for FinopsCustomizationsReportSubscriptionScheduleDayOfWeek.
+const (
+	Friday    FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "friday"
+	Monday    FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "monday"
+	Saturday  FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "saturday"
+	Sunday    FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "sunday"
+	Thursday  FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "thursday"
+	Tuesday   FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "tuesday"
+	Wednesday FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "wednesday"
+)
+
+// Defines values for FinopsCustomizationsReportSubscriptionScheduleFrequency.
+const (
+	FinopsCustomizationsReportSubscriptionScheduleFrequencyDaily   FinopsCustomizationsReportSubscriptionScheduleFrequency = "daily"
+	FinopsCustomizationsReportSubscriptionScheduleFrequencyMonthly FinopsCustomizationsReportSubscriptionScheduleFrequency = "monthly"
+	FinopsCustomizationsReportSubscriptionScheduleFrequencyWeekly  FinopsCustomizationsReportSubscriptionScheduleFrequency = "weekly"
 )
 
 // Defines values for FinopsCustomizationsRuleBasedDimensionConditionType.
@@ -523,9 +972,37 @@ const (
 	FinopsRuleBasedDimensionRuleListLink FinopsCustomizationsRuleBasedDimensionRuleListLinkKind = "finops:rule-based-dimension-rule-list-link"
 )
 
+// Defines values for FinopsCustomizationsRuleBasedDimensionSummaryKind.
+const (
+	FinopsRuleBasedDimensionSummary FinopsCustomizationsRuleBasedDimensionSummaryKind = "finops:rule-based-dimension-summary"
+)
+
+// Defines values for FinopsCustomizationsSavedFilterHTTPBodyKind.
+const (
+	FinopsCustomizationsSavedFilterHTTPBodyKindFinopsSavedFilter FinopsCustomizationsSavedFilterHTTPBodyKind = "finops:saved-filter"
+)
+
+// Defines values for FinopsCustomizationsSavedFilterHTTPBodyVisibility.
+const (
+	FinopsCustomizationsSavedFilterHTTPBodyVisibilityPrivate FinopsCustomizationsSavedFilterHTTPBodyVisibility = "private"
+	FinopsCustomizationsSavedFilterHTTPBodyVisibilityShared  FinopsCustomizationsSavedFilterHTTPBodyVisibility = "shared"
+)
+
 // Defines values for FinopsCustomizationsTagDimensionListKind.
 const (
 	FinopsTagDimensionList FinopsCustomizationsTagDimensionListKind = "finops:tag-dimension-list"
+)
+
+// Defines values for FinopsCustomizationsUpdateRequestBodyVisibility.
+const (
+	FinopsCustomizationsUpdateRequestBodyVisibilityPrivate FinopsCustomizationsUpdateRequestBodyVisibility = "private"
+	FinopsCustomizationsUpdateRequestBodyVisibilityShared  FinopsCustomizationsUpdateRequestBodyVisibility = "shared"
+)
+
+// Defines values for FinopsCustomizationsUpdateRequestBody2Visibility.
+const (
+	FinopsCustomizationsUpdateRequestBody2VisibilityPrivate FinopsCustomizationsUpdateRequestBody2Visibility = "private"
+	FinopsCustomizationsUpdateRequestBody2VisibilityShared  FinopsCustomizationsUpdateRequestBody2Visibility = "shared"
 )
 
 // Defines values for FinopsOnboardingAWSBillConnectKind.
@@ -539,10 +1016,22 @@ const (
 	FinopsBillConnectAwsIamUser FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectKind = "finops:bill-connect-aws-iam-user"
 )
 
+// Defines values for FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectOnboardingOrigin.
+const (
+	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectOnboardingOriginFinops   FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectOnboardingOrigin = "finops"
+	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectOnboardingOriginPlatform FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectOnboardingOrigin = "platform"
+)
+
 // Defines values for FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectPartition.
 const (
 	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectPartitionAws   FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectPartition = "aws"
 	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectPartitionAwsCn FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectPartition = "aws-cn"
+)
+
+// Defines values for FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAzureEaManagementGenericBillConnectOnboardingOrigin.
+const (
+	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAzureEaManagementGenericBillConnectOnboardingOriginFinops   FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAzureEaManagementGenericBillConnectOnboardingOrigin = "finops"
+	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAzureEaManagementGenericBillConnectOnboardingOriginPlatform FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAzureEaManagementGenericBillConnectOnboardingOrigin = "platform"
 )
 
 // Defines values for FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiAzureMcaGenericBillConnectCloudInstance.
@@ -551,14 +1040,32 @@ const (
 	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiAzureMcaGenericBillConnectCloudInstanceAzureCloud      FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiAzureMcaGenericBillConnectCloudInstance = "AzureCloud"
 )
 
+// Defines values for FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiAzureMcaGenericBillConnectOnboardingOrigin.
+const (
+	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiAzureMcaGenericBillConnectOnboardingOriginFinops   FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiAzureMcaGenericBillConnectOnboardingOrigin = "finops"
+	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiAzureMcaGenericBillConnectOnboardingOriginPlatform FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiAzureMcaGenericBillConnectOnboardingOrigin = "platform"
+)
+
 // Defines values for FinopsOnboardingAzureCspBillConnectKind.
 const (
 	FinopsBillConnectCbiOiAzureCsp FinopsOnboardingAzureCspBillConnectKind = "finops:bill-connect-cbi-oi-azure-csp"
 )
 
+// Defines values for FinopsOnboardingAzureCspCredentialsOnboardingOrigin.
+const (
+	FinopsOnboardingAzureCspCredentialsOnboardingOriginFinops   FinopsOnboardingAzureCspCredentialsOnboardingOrigin = "finops"
+	FinopsOnboardingAzureCspCredentialsOnboardingOriginPlatform FinopsOnboardingAzureCspCredentialsOnboardingOrigin = "platform"
+)
+
 // Defines values for FinopsOnboardingAzureEAManagementBillConnectKind.
 const (
 	FinopsBillConnectCbiOiAzureEa FinopsOnboardingAzureEAManagementBillConnectKind = "finops:bill-connect-cbi-oi-azure-ea"
+)
+
+// Defines values for FinopsOnboardingAzureEAManagementCredentialsOnboardingOrigin.
+const (
+	FinopsOnboardingAzureEAManagementCredentialsOnboardingOriginFinops   FinopsOnboardingAzureEAManagementCredentialsOnboardingOrigin = "finops"
+	FinopsOnboardingAzureEAManagementCredentialsOnboardingOriginPlatform FinopsOnboardingAzureEAManagementCredentialsOnboardingOrigin = "platform"
 )
 
 // Defines values for FinopsOnboardingAzureMcaBillConnectCloudInstance.
@@ -570,6 +1077,12 @@ const (
 // Defines values for FinopsOnboardingAzureMcaBillConnectKind.
 const (
 	FinopsBillConnectCbiOiAzureMca FinopsOnboardingAzureMcaBillConnectKind = "finops:bill-connect-cbi-oi-azure-mca"
+)
+
+// Defines values for FinopsOnboardingAzureMcaCredentialsOnboardingOrigin.
+const (
+	FinopsOnboardingAzureMcaCredentialsOnboardingOriginFinops   FinopsOnboardingAzureMcaCredentialsOnboardingOrigin = "finops"
+	FinopsOnboardingAzureMcaCredentialsOnboardingOriginPlatform FinopsOnboardingAzureMcaCredentialsOnboardingOrigin = "platform"
 )
 
 // Defines values for FinopsOnboardingBillConnectCredentialValidationAWSKind.
@@ -612,6 +1125,17 @@ const (
 	FinopsGenericBillValidationList FinopsOnboardingBillConnectCredentialValidationListKind = "finops:generic-bill-validation-list"
 )
 
+// Defines values for FinopsOnboardingBillConnectCredentialValidationSnowflakeKind.
+const (
+	FinopsBillConnectPaasSnowflakeValidation FinopsOnboardingBillConnectCredentialValidationSnowflakeKind = "finops:bill-connect-paas-snowflake-validation"
+)
+
+// Defines values for FinopsOnboardingCBIAzureCspGenericBillConnectOnboardingOrigin.
+const (
+	Finops   FinopsOnboardingCBIAzureCspGenericBillConnectOnboardingOrigin = "finops"
+	Platform FinopsOnboardingCBIAzureCspGenericBillConnectOnboardingOrigin = "platform"
+)
+
 // Defines values for FinopsOnboardingCBIBillConnectKind.
 const (
 	FinopsBillConnectCbi FinopsOnboardingCBIBillConnectKind = "finops:bill-connect-cbi"
@@ -634,6 +1158,16 @@ const (
 	FinopsBillConnectPaasDatabricks FinopsOnboardingDatabricksBillConnectKind = "finops:bill-connect-paas-databricks"
 )
 
+// Defines values for FinopsOnboardingEnterpriseIndexResponseKind.
+const (
+	FinopsEnterpriseBillMonthIndex FinopsOnboardingEnterpriseIndexResponseKind = "finops:enterprise-bill-month-index"
+)
+
+// Defines values for FinopsOnboardingEnterpriseReprocessResponseKind.
+const (
+	FinopsEnterpriseBillMonthReprocess FinopsOnboardingEnterpriseReprocessResponseKind = "finops:enterprise-bill-month-reprocess"
+)
+
 // Defines values for FinopsOnboardingFlexeraFinopsOnboardingBillValidationKind.
 const (
 	FinopsOnboardingFlexeraFinopsOnboardingBillValidationKindFinopsAzureMcaCustomerValidation              FinopsOnboardingFlexeraFinopsOnboardingBillValidationKind = "finops:azure-mca-customer-validation"
@@ -647,6 +1181,7 @@ const (
 	FinopsOnboardingFlexeraFinopsOnboardingBillValidationKindFinopsBillConnectGcpValidation                FinopsOnboardingFlexeraFinopsOnboardingBillValidationKind = "finops:bill-connect-gcp-validation"
 	FinopsOnboardingFlexeraFinopsOnboardingBillValidationKindFinopsBillConnectInheritedValidation          FinopsOnboardingFlexeraFinopsOnboardingBillValidationKind = "finops:bill-connect-inherited-validation"
 	FinopsOnboardingFlexeraFinopsOnboardingBillValidationKindFinopsBillConnectPaasDatabricksValidation     FinopsOnboardingFlexeraFinopsOnboardingBillValidationKind = "finops:bill-connect-paas-databricks-validation"
+	FinopsOnboardingFlexeraFinopsOnboardingBillValidationKindFinopsBillConnectPaasSnowflakeValidation      FinopsOnboardingFlexeraFinopsOnboardingBillValidationKind = "finops:bill-connect-paas-snowflake-validation"
 )
 
 // Defines values for FinopsOnboardingFlexeraFinopsOnboardingGenericBillConnectItemKind.
@@ -660,6 +1195,7 @@ const (
 	FinopsOnboardingFlexeraFinopsOnboardingGenericBillConnectItemKindFinopsBillConnectCbiOiAzureMca      FinopsOnboardingFlexeraFinopsOnboardingGenericBillConnectItemKind = "finops:bill-connect-cbi-oi-azure-mca"
 	FinopsOnboardingFlexeraFinopsOnboardingGenericBillConnectItemKindFinopsBillConnectGcp                FinopsOnboardingFlexeraFinopsOnboardingGenericBillConnectItemKind = "finops:bill-connect-gcp"
 	FinopsOnboardingFlexeraFinopsOnboardingGenericBillConnectItemKindFinopsBillConnectPaasDatabricks     FinopsOnboardingFlexeraFinopsOnboardingGenericBillConnectItemKind = "finops:bill-connect-paas-databricks"
+	FinopsOnboardingFlexeraFinopsOnboardingGenericBillConnectItemKindFinopsBillConnectPaasSnowflake      FinopsOnboardingFlexeraFinopsOnboardingGenericBillConnectItemKind = "finops:bill-connect-paas-snowflake"
 )
 
 // Defines values for FinopsOnboardingGCPBillConnectKind.
@@ -677,15 +1213,35 @@ const (
 	FinopsGenericBillList FinopsOnboardingGenericBillConnectItemListKind = "finops:generic-bill-list"
 )
 
+// Defines values for FinopsOnboardingReprocessRequestBodyAction.
+const (
+	Reprocess FinopsOnboardingReprocessRequestBodyAction = "reprocess"
+)
+
 // Defines values for FinopsOnboardingScopeDetailsWithScopeTypeScopeType.
 const (
-	BillingAccount    FinopsOnboardingScopeDetailsWithScopeTypeScopeType = "Billing Account"
-	EnrollmentAccount FinopsOnboardingScopeDetailsWithScopeTypeScopeType = "Enrollment Account"
+	FinopsOnboardingScopeDetailsWithScopeTypeScopeTypeBillingAccount    FinopsOnboardingScopeDetailsWithScopeTypeScopeType = "Billing Account"
+	FinopsOnboardingScopeDetailsWithScopeTypeScopeTypeEnrollmentAccount FinopsOnboardingScopeDetailsWithScopeTypeScopeType = "Enrollment Account"
+)
+
+// Defines values for FinopsOnboardingSnowflakeBillConnectKind.
+const (
+	FinopsBillConnectPaasSnowflake FinopsOnboardingSnowflakeBillConnectKind = "finops:bill-connect-paas-snowflake"
 )
 
 // Defines values for IamAPIEventCollectionKind.
 const (
 	IamApiEventCollection IamAPIEventCollectionKind = "iam:api-event-collection"
+)
+
+// Defines values for IamAccessPolicyKind.
+const (
+	IamAccessPolicyKindIamAccessPolicy IamAccessPolicyKind = "iam:access-policy"
+)
+
+// Defines values for IamAccessPolicyListKind.
+const (
+	IamAccessPolicyListKindIamAccessPolicyList IamAccessPolicyListKind = "iam:access-policy-list"
 )
 
 // Defines values for IamAccessRuleListKind.
@@ -701,48 +1257,48 @@ const (
 	IamContractStatusRejected IamContractStatus = "rejected"
 )
 
-// Defines values for IamCreateRequestBody4GroupSyncPolicy.
+// Defines values for IamCreateRequestBody5GroupSyncPolicy.
 const (
-	IamCreateRequestBody4GroupSyncPolicyAPPEND IamCreateRequestBody4GroupSyncPolicy = "APPEND"
-	IamCreateRequestBody4GroupSyncPolicyNONE   IamCreateRequestBody4GroupSyncPolicy = "NONE"
-	IamCreateRequestBody4GroupSyncPolicySYNC   IamCreateRequestBody4GroupSyncPolicy = "SYNC"
+	IamCreateRequestBody5GroupSyncPolicyAPPEND IamCreateRequestBody5GroupSyncPolicy = "APPEND"
+	IamCreateRequestBody5GroupSyncPolicyNONE   IamCreateRequestBody5GroupSyncPolicy = "NONE"
+	IamCreateRequestBody5GroupSyncPolicySYNC   IamCreateRequestBody5GroupSyncPolicy = "SYNC"
 )
 
-// Defines values for IamCreateRequestBody4JitProvisioningEnabled.
+// Defines values for IamCreateRequestBody5JitProvisioningEnabled.
 const (
-	IamCreateRequestBody4JitProvisioningEnabledFalse IamCreateRequestBody4JitProvisioningEnabled = "false"
-	IamCreateRequestBody4JitProvisioningEnabledTrue  IamCreateRequestBody4JitProvisioningEnabled = "true"
+	IamCreateRequestBody5JitProvisioningEnabledFalse IamCreateRequestBody5JitProvisioningEnabled = "false"
+	IamCreateRequestBody5JitProvisioningEnabledTrue  IamCreateRequestBody5JitProvisioningEnabled = "true"
 )
 
-// Defines values for IamCreateRequestBody4RequestBinding.
+// Defines values for IamCreateRequestBody5RequestBinding.
 const (
-	IamCreateRequestBody4RequestBindingHTTPPOST     IamCreateRequestBody4RequestBinding = "HTTP-POST"
-	IamCreateRequestBody4RequestBindingHTTPREDIRECT IamCreateRequestBody4RequestBinding = "HTTP-REDIRECT"
+	IamCreateRequestBody5RequestBindingHTTPPOST     IamCreateRequestBody5RequestBinding = "HTTP-POST"
+	IamCreateRequestBody5RequestBindingHTTPREDIRECT IamCreateRequestBody5RequestBinding = "HTTP-REDIRECT"
 )
 
-// Defines values for IamCreateRequestBody4RequestSignatureAlgorithm.
+// Defines values for IamCreateRequestBody5RequestSignatureAlgorithm.
 const (
-	IamCreateRequestBody4RequestSignatureAlgorithmSHA1   IamCreateRequestBody4RequestSignatureAlgorithm = "SHA-1"
-	IamCreateRequestBody4RequestSignatureAlgorithmSHA256 IamCreateRequestBody4RequestSignatureAlgorithm = "SHA-256"
+	IamCreateRequestBody5RequestSignatureAlgorithmSHA1   IamCreateRequestBody5RequestSignatureAlgorithm = "SHA-1"
+	IamCreateRequestBody5RequestSignatureAlgorithmSHA256 IamCreateRequestBody5RequestSignatureAlgorithm = "SHA-256"
 )
 
-// Defines values for IamCreateRequestBody4ResponseSignatureAlgorithm.
+// Defines values for IamCreateRequestBody5ResponseSignatureAlgorithm.
 const (
-	IamCreateRequestBody4ResponseSignatureAlgorithmSHA1   IamCreateRequestBody4ResponseSignatureAlgorithm = "SHA-1"
-	IamCreateRequestBody4ResponseSignatureAlgorithmSHA256 IamCreateRequestBody4ResponseSignatureAlgorithm = "SHA-256"
+	IamCreateRequestBody5ResponseSignatureAlgorithmSHA1   IamCreateRequestBody5ResponseSignatureAlgorithm = "SHA-1"
+	IamCreateRequestBody5ResponseSignatureAlgorithmSHA256 IamCreateRequestBody5ResponseSignatureAlgorithm = "SHA-256"
 )
 
-// Defines values for IamCreateRequestBody4ResponseSignatureVerification.
+// Defines values for IamCreateRequestBody5ResponseSignatureVerification.
 const (
-	IamCreateRequestBody4ResponseSignatureVerificationAssertion           IamCreateRequestBody4ResponseSignatureVerification = "assertion"
-	IamCreateRequestBody4ResponseSignatureVerificationResponse            IamCreateRequestBody4ResponseSignatureVerification = "response"
-	IamCreateRequestBody4ResponseSignatureVerificationResponseOrAssertion IamCreateRequestBody4ResponseSignatureVerification = "response or assertion"
+	IamCreateRequestBody5ResponseSignatureVerificationAssertion           IamCreateRequestBody5ResponseSignatureVerification = "assertion"
+	IamCreateRequestBody5ResponseSignatureVerificationResponse            IamCreateRequestBody5ResponseSignatureVerification = "response"
+	IamCreateRequestBody5ResponseSignatureVerificationResponseOrAssertion IamCreateRequestBody5ResponseSignatureVerification = "response or assertion"
 )
 
-// Defines values for IamCreateRequestBody4SignAuthnRequests.
+// Defines values for IamCreateRequestBody5SignAuthnRequests.
 const (
-	IamCreateRequestBody4SignAuthnRequestsFalse IamCreateRequestBody4SignAuthnRequests = "false"
-	IamCreateRequestBody4SignAuthnRequestsTrue  IamCreateRequestBody4SignAuthnRequests = "true"
+	IamCreateRequestBody5SignAuthnRequestsFalse IamCreateRequestBody5SignAuthnRequests = "false"
+	IamCreateRequestBody5SignAuthnRequestsTrue  IamCreateRequestBody5SignAuthnRequests = "true"
 )
 
 // Defines values for IamCustomizationListKind.
@@ -927,6 +1483,11 @@ const (
 	IamFlexeraIamPrincipalKindIamUser           IamFlexeraIamPrincipalKind = "iam#user"
 )
 
+// Defines values for IamFlexeraIamProjectKind.
+const (
+	IamProject IamFlexeraIamProjectKind = "iam:project"
+)
+
 // Defines values for IamFlexeraIamProjectInvitationKind.
 const (
 	IamProjectInvitation IamFlexeraIamProjectInvitationKind = "iam#project-invitation"
@@ -954,7 +1515,7 @@ const (
 
 // Defines values for IamFlexeraIamServiceAccountKind.
 const (
-	IamServiceAccount IamFlexeraIamServiceAccountKind = "iam#service-account"
+	IamFlexeraIamServiceAccountKindIamServiceAccount IamFlexeraIamServiceAccountKind = "iam#service-account"
 )
 
 // Defines values for IamFlexeraIamServiceAccountClientKind.
@@ -984,6 +1545,11 @@ const (
 	IamFlexeraIamUserStatusInactive IamFlexeraIamUserStatus = "inactive"
 )
 
+// Defines values for IamFlexeraIamUserProjectKind.
+const (
+	IamUserProject IamFlexeraIamUserProjectKind = "iam:user-project"
+)
+
 // Defines values for IamFlexeraMspCustomerKind.
 const (
 	IamFlexeraMspCustomerKindMspCustomer IamFlexeraMspCustomerKind = "msp#customer"
@@ -1004,6 +1570,11 @@ const (
 // Defines values for IamFlexeraMspCustomerV2Kind.
 const (
 	IamFlexeraMspCustomerV2KindMspCustomer IamFlexeraMspCustomerV2Kind = "msp#customer"
+)
+
+// Defines values for IamGranularScopeKind.
+const (
+	IamGranularScopeKindIamGranularScope IamGranularScopeKind = "iam:granular-scope"
 )
 
 // Defines values for IamGroupListKind.
@@ -1097,6 +1668,11 @@ const (
 	IamUpdateRequestBody3SignAuthnRequestsTrue  IamUpdateRequestBody3SignAuthnRequests = "true"
 )
 
+// Defines values for IamUserAccessPoliciesResultKind.
+const (
+	IamUserAccessPolicies IamUserAccessPoliciesResultKind = "iam:user-access-policies"
+)
+
 // Defines values for IamUserGroupListKind.
 const (
 	IamUserGroupListKindIamUserGroupList IamUserGroupListKind = "iam:user-group-list"
@@ -1117,6 +1693,26 @@ const (
 	IamUserOrgListKindIamUserOrgList IamUserOrgListKind = "iam:user-org-list"
 )
 
+// Defines values for IamUserPrivilegeKind.
+const (
+	IamUserPrivilegeKindIamUserPrivilege IamUserPrivilegeKind = "iam:user-privilege"
+)
+
+// Defines values for IamUserPrivilegesReportKind.
+const (
+	IamUserPrivilegesReportKindIamUserPrivilegesReport IamUserPrivilegesReportKind = "iam:user-privileges-report"
+)
+
+// Defines values for IamUserProjectListKind.
+const (
+	IamUserProjectListKindIamUserProjectList IamUserProjectListKind = "iam:user-project-list"
+)
+
+// Defines values for IamUserRoleKind.
+const (
+	IamRole IamUserRoleKind = "iam:role"
+)
+
 // Defines values for IamUserSettingBlobKind.
 const (
 	IamUserSettingBlobKindIamUserSettingBlob IamUserSettingBlobKind = "iam#user-setting-blob"
@@ -1126,6 +1722,14 @@ const (
 const (
 	IamUserSettingBlobTypeGlobal IamUserSettingBlobType = "global"
 	IamUserSettingBlobTypeOrg    IamUserSettingBlobType = "org"
+)
+
+// Defines values for OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatus.
+const (
+	OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatusActive   OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatus = "active"
+	OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatusRealized OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatus = "realized"
+	OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatusRejected OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatus = "rejected"
+	OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatusSnoozed  OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatus = "snoozed"
 )
 
 // Defines values for PolicyActionStatusListKind.
@@ -1808,59 +2412,11 @@ const (
 	PolicyUpdateTemplateRequestBodySeverityMedium   PolicyUpdateTemplateRequestBodySeverity = "medium"
 )
 
-// Defines values for RiskEnumerateFiltersRequestProviders.
-const (
-	RiskEnumerateFiltersRequestProvidersAws    RiskEnumerateFiltersRequestProviders = "aws"
-	RiskEnumerateFiltersRequestProvidersAzure  RiskEnumerateFiltersRequestProviders = "azure"
-	RiskEnumerateFiltersRequestProvidersGc     RiskEnumerateFiltersRequestProviders = "gc"
-	RiskEnumerateFiltersRequestProvidersOnprem RiskEnumerateFiltersRequestProviders = "onprem"
-)
-
-// Defines values for RiskFailedAssetsFiltersProviders.
-const (
-	RiskFailedAssetsFiltersProvidersAws    RiskFailedAssetsFiltersProviders = "aws"
-	RiskFailedAssetsFiltersProvidersAzure  RiskFailedAssetsFiltersProviders = "azure"
-	RiskFailedAssetsFiltersProvidersGc     RiskFailedAssetsFiltersProviders = "gc"
-	RiskFailedAssetsFiltersProvidersOnprem RiskFailedAssetsFiltersProviders = "onprem"
-)
-
 // Defines values for RiskFailedAssetsFiltersType.
 const (
 	RiskFailedAssetsFiltersTypeAll       RiskFailedAssetsFiltersType = "all"
 	RiskFailedAssetsFiltersTypeContainer RiskFailedAssetsFiltersType = "container"
 	RiskFailedAssetsFiltersTypeVm        RiskFailedAssetsFiltersType = "vm"
-)
-
-// Defines values for RiskFindingsDistributionRequestProviders.
-const (
-	RiskFindingsDistributionRequestProvidersAws    RiskFindingsDistributionRequestProviders = "aws"
-	RiskFindingsDistributionRequestProvidersAzure  RiskFindingsDistributionRequestProviders = "azure"
-	RiskFindingsDistributionRequestProvidersGc     RiskFindingsDistributionRequestProviders = "gc"
-	RiskFindingsDistributionRequestProvidersOnprem RiskFindingsDistributionRequestProviders = "onprem"
-)
-
-// Defines values for RiskFindingsSummaryFiltersProviders.
-const (
-	RiskFindingsSummaryFiltersProvidersAws    RiskFindingsSummaryFiltersProviders = "aws"
-	RiskFindingsSummaryFiltersProvidersAzure  RiskFindingsSummaryFiltersProviders = "azure"
-	RiskFindingsSummaryFiltersProvidersGc     RiskFindingsSummaryFiltersProviders = "gc"
-	RiskFindingsSummaryFiltersProvidersOnprem RiskFindingsSummaryFiltersProviders = "onprem"
-)
-
-// Defines values for RiskFindingsTrendFiltersProviders.
-const (
-	RiskFindingsTrendFiltersProvidersAws    RiskFindingsTrendFiltersProviders = "aws"
-	RiskFindingsTrendFiltersProvidersAzure  RiskFindingsTrendFiltersProviders = "azure"
-	RiskFindingsTrendFiltersProvidersGc     RiskFindingsTrendFiltersProviders = "gc"
-	RiskFindingsTrendFiltersProvidersOnprem RiskFindingsTrendFiltersProviders = "onprem"
-)
-
-// Defines values for RiskListFindingsDistributionFiltersProviders.
-const (
-	RiskListFindingsDistributionFiltersProvidersAws    RiskListFindingsDistributionFiltersProviders = "aws"
-	RiskListFindingsDistributionFiltersProvidersAzure  RiskListFindingsDistributionFiltersProviders = "azure"
-	RiskListFindingsDistributionFiltersProvidersGc     RiskListFindingsDistributionFiltersProviders = "gc"
-	RiskListFindingsDistributionFiltersProvidersOnprem RiskListFindingsDistributionFiltersProviders = "onprem"
 )
 
 // Defines values for RiskMisconfigRulesFilterParamsFeatureType.
@@ -1890,14 +2446,6 @@ const (
 	InProgress   RiskOnboardingStatusValueStatus = "inProgress"
 	NotOnboarded RiskOnboardingStatusValueStatus = "notOnboarded"
 	Onboarded    RiskOnboardingStatusValueStatus = "onboarded"
-)
-
-// Defines values for RiskOpenCVECountFiltersProviders.
-const (
-	RiskOpenCVECountFiltersProvidersAws    RiskOpenCVECountFiltersProviders = "aws"
-	RiskOpenCVECountFiltersProvidersAzure  RiskOpenCVECountFiltersProviders = "azure"
-	RiskOpenCVECountFiltersProvidersGc     RiskOpenCVECountFiltersProviders = "gc"
-	RiskOpenCVECountFiltersProvidersOnprem RiskOpenCVECountFiltersProviders = "onprem"
 )
 
 // Defines values for SaasAllocationCreateRequestBodyMatchType.
@@ -2347,6 +2895,114 @@ const (
 	Snapshot VisFlexeraVisFiledataType = "snapshot"
 )
 
+// Defines values for BillingCenterServiceAllocationTableShowParamsApiVersion.
+const (
+	BillingCenterServiceAllocationTableShowParamsApiVersionN01 BillingCenterServiceAllocationTableShowParamsApiVersion = "0.1"
+	BillingCenterServiceAllocationTableShowParamsApiVersionN10 BillingCenterServiceAllocationTableShowParamsApiVersion = "1.0"
+)
+
+// Defines values for BillingCenterServiceAllocationTableUpsertParamsApiVersion.
+const (
+	BillingCenterServiceAllocationTableUpsertParamsApiVersionN01 BillingCenterServiceAllocationTableUpsertParamsApiVersion = "0.1"
+	BillingCenterServiceAllocationTableUpsertParamsApiVersionN10 BillingCenterServiceAllocationTableUpsertParamsApiVersion = "1.0"
+)
+
+// Defines values for BillingCenterServiceBillingCentersIndexParamsView.
+const (
+	BillingCenterServiceBillingCentersIndexParamsViewAllocationTable BillingCenterServiceBillingCentersIndexParamsView = "allocation_table"
+	BillingCenterServiceBillingCentersIndexParamsViewDefault         BillingCenterServiceBillingCentersIndexParamsView = "default"
+)
+
+// Defines values for BillingCenterServiceBillingCentersIndexParamsApiVersion.
+const (
+	BillingCenterServiceBillingCentersIndexParamsApiVersionN01 BillingCenterServiceBillingCentersIndexParamsApiVersion = "0.1"
+	BillingCenterServiceBillingCentersIndexParamsApiVersionN10 BillingCenterServiceBillingCentersIndexParamsApiVersion = "1.0"
+)
+
+// Defines values for BillingCenterServiceBillingCentersCreateParamsApiVersion.
+const (
+	BillingCenterServiceBillingCentersCreateParamsApiVersionN01 BillingCenterServiceBillingCentersCreateParamsApiVersion = "0.1"
+	BillingCenterServiceBillingCentersCreateParamsApiVersionN10 BillingCenterServiceBillingCentersCreateParamsApiVersion = "1.0"
+)
+
+// Defines values for BillingCenterServiceBillingCentersDeleteParamsApiVersion.
+const (
+	BillingCenterServiceBillingCentersDeleteParamsApiVersionN01 BillingCenterServiceBillingCentersDeleteParamsApiVersion = "0.1"
+	BillingCenterServiceBillingCentersDeleteParamsApiVersionN10 BillingCenterServiceBillingCentersDeleteParamsApiVersion = "1.0"
+)
+
+// Defines values for BillingCenterServiceBillingCentersShowParamsApiVersion.
+const (
+	BillingCenterServiceBillingCentersShowParamsApiVersionN01 BillingCenterServiceBillingCentersShowParamsApiVersion = "0.1"
+	BillingCenterServiceBillingCentersShowParamsApiVersionN10 BillingCenterServiceBillingCentersShowParamsApiVersion = "1.0"
+)
+
+// Defines values for BillingCenterServiceBillingCentersUpdateParamsApiVersion.
+const (
+	BillingCenterServiceBillingCentersUpdateParamsApiVersionN01 BillingCenterServiceBillingCentersUpdateParamsApiVersion = "0.1"
+	BillingCenterServiceBillingCentersUpdateParamsApiVersionN10 BillingCenterServiceBillingCentersUpdateParamsApiVersion = "1.0"
+)
+
+// Defines values for BillingCenterServiceBillingCenterAccessRulesGrantParamsApiVersion.
+const (
+	BillingCenterServiceBillingCenterAccessRulesGrantParamsApiVersionN01 BillingCenterServiceBillingCenterAccessRulesGrantParamsApiVersion = "0.1"
+	BillingCenterServiceBillingCenterAccessRulesGrantParamsApiVersionN10 BillingCenterServiceBillingCenterAccessRulesGrantParamsApiVersion = "1.0"
+)
+
+// Defines values for BillingCenterServiceBillingCenterAccessRulesReportParamsApiVersion.
+const (
+	BillingCenterServiceBillingCenterAccessRulesReportParamsApiVersionN01 BillingCenterServiceBillingCenterAccessRulesReportParamsApiVersion = "0.1"
+	BillingCenterServiceBillingCenterAccessRulesReportParamsApiVersionN10 BillingCenterServiceBillingCenterAccessRulesReportParamsApiVersion = "1.0"
+)
+
+// Defines values for BillingCenterServiceBillingCenterAccessRulesRevokeParamsApiVersion.
+const (
+	BillingCenterServiceBillingCenterAccessRulesRevokeParamsApiVersionN01 BillingCenterServiceBillingCenterAccessRulesRevokeParamsApiVersion = "0.1"
+	BillingCenterServiceBillingCenterAccessRulesRevokeParamsApiVersionN10 BillingCenterServiceBillingCenterAccessRulesRevokeParamsApiVersion = "1.0"
+)
+
+// Defines values for BillingCenterServiceBillingCentersShowAllocationTableParamsApiVersion.
+const (
+	BillingCenterServiceBillingCentersShowAllocationTableParamsApiVersionN01 BillingCenterServiceBillingCentersShowAllocationTableParamsApiVersion = "0.1"
+	BillingCenterServiceBillingCentersShowAllocationTableParamsApiVersionN10 BillingCenterServiceBillingCentersShowAllocationTableParamsApiVersion = "1.0"
+)
+
+// Defines values for BillingCenterServiceBillingCentersUpsertAllocationTableParamsApiVersion.
+const (
+	BillingCenterServiceBillingCentersUpsertAllocationTableParamsApiVersionN01 BillingCenterServiceBillingCentersUpsertAllocationTableParamsApiVersion = "0.1"
+	BillingCenterServiceBillingCentersUpsertAllocationTableParamsApiVersionN10 BillingCenterServiceBillingCentersUpsertAllocationTableParamsApiVersion = "1.0"
+)
+
+// Defines values for BillingCenterServiceAccessRulesGroupReportParamsApiVersion.
+const (
+	BillingCenterServiceAccessRulesGroupReportParamsApiVersionN01 BillingCenterServiceAccessRulesGroupReportParamsApiVersion = "0.1"
+	BillingCenterServiceAccessRulesGroupReportParamsApiVersionN10 BillingCenterServiceAccessRulesGroupReportParamsApiVersion = "1.0"
+)
+
+// Defines values for BillingCenterServiceAccessRulesUserReportParamsApiVersion.
+const (
+	BillingCenterServiceAccessRulesUserReportParamsApiVersionN01 BillingCenterServiceAccessRulesUserReportParamsApiVersion = "0.1"
+	BillingCenterServiceAccessRulesUserReportParamsApiVersionN10 BillingCenterServiceAccessRulesUserReportParamsApiVersion = "1.0"
+)
+
+// Defines values for BillingCenterServiceUserBillingCentersIndexParamsView.
+const (
+	BillingCenterServiceUserBillingCentersIndexParamsViewCompact BillingCenterServiceUserBillingCentersIndexParamsView = "compact"
+	BillingCenterServiceUserBillingCentersIndexParamsViewIndex   BillingCenterServiceUserBillingCentersIndexParamsView = "index"
+)
+
+// Defines values for BillingCenterServiceUserBillingCentersIndexParamsApiVersion.
+const (
+	BillingCenterServiceUserBillingCentersIndexParamsApiVersionN01 BillingCenterServiceUserBillingCentersIndexParamsApiVersion = "0.1"
+	BillingCenterServiceUserBillingCentersIndexParamsApiVersionN10 BillingCenterServiceUserBillingCentersIndexParamsApiVersion = "1.0"
+)
+
+// Defines values for BillingCenterServiceUserBillingCentersShowParamsApiVersion.
+const (
+	BillingCenterServiceUserBillingCentersShowParamsApiVersionN01 BillingCenterServiceUserBillingCentersShowParamsApiVersion = "0.1"
+	BillingCenterServiceUserBillingCentersShowParamsApiVersionN10 BillingCenterServiceUserBillingCentersShowParamsApiVersion = "1.0"
+)
+
 // Defines values for CredCredentialDeleteOrgParamsScheme.
 const (
 	CredCredentialDeleteOrgParamsSchemeApiKey CredCredentialDeleteOrgParamsScheme = "api-key"
@@ -2361,14 +3017,25 @@ const (
 
 // Defines values for CredCredentialDeleteProjectParamsScheme.
 const (
-	CredCredentialDeleteProjectParamsSchemeApiKey CredCredentialDeleteProjectParamsScheme = "api-key"
-	CredCredentialDeleteProjectParamsSchemeAws    CredCredentialDeleteProjectParamsScheme = "aws"
-	CredCredentialDeleteProjectParamsSchemeAwsSts CredCredentialDeleteProjectParamsScheme = "aws-sts"
-	CredCredentialDeleteProjectParamsSchemeBasic  CredCredentialDeleteProjectParamsScheme = "basic"
-	CredCredentialDeleteProjectParamsSchemeDigest CredCredentialDeleteProjectParamsScheme = "digest"
-	CredCredentialDeleteProjectParamsSchemeNtlm   CredCredentialDeleteProjectParamsScheme = "ntlm"
-	CredCredentialDeleteProjectParamsSchemeOauth2 CredCredentialDeleteProjectParamsScheme = "oauth2"
-	CredCredentialDeleteProjectParamsSchemeOracle CredCredentialDeleteProjectParamsScheme = "oracle"
+	ApiKey CredCredentialDeleteProjectParamsScheme = "api-key"
+	Aws    CredCredentialDeleteProjectParamsScheme = "aws"
+	AwsSts CredCredentialDeleteProjectParamsScheme = "aws-sts"
+	Basic  CredCredentialDeleteProjectParamsScheme = "basic"
+	Digest CredCredentialDeleteProjectParamsScheme = "digest"
+	Ntlm   CredCredentialDeleteProjectParamsScheme = "ntlm"
+	Oauth2 CredCredentialDeleteProjectParamsScheme = "oauth2"
+	Oracle CredCredentialDeleteProjectParamsScheme = "oracle"
+)
+
+// Defines values for FinopsCustomizationsSavedFiltersIndexParamsVisibility.
+const (
+	FinopsCustomizationsSavedFiltersIndexParamsVisibilityPrivate FinopsCustomizationsSavedFiltersIndexParamsVisibility = "private"
+	FinopsCustomizationsSavedFiltersIndexParamsVisibilityShared  FinopsCustomizationsSavedFiltersIndexParamsVisibility = "shared"
+)
+
+// Defines values for FinopsOnboardingProcessingHistoryDownloadParamsFormat.
+const (
+	Csv FinopsOnboardingProcessingHistoryDownloadParamsFormat = "csv"
 )
 
 // Defines values for IamUserInvitationIndexParamsStatus.
@@ -2389,6 +3056,24 @@ const (
 const (
 	IamUserInvitationShowParamsViewDefault IamUserInvitationShowParamsView = "default"
 	IamUserInvitationShowParamsViewTiny    IamUserInvitationShowParamsView = "tiny"
+)
+
+// Defines values for IamAccessPolicyIndexParamsView.
+const (
+	IamAccessPolicyIndexParamsViewDefault  IamAccessPolicyIndexParamsView = "default"
+	IamAccessPolicyIndexParamsViewExtended IamAccessPolicyIndexParamsView = "extended"
+)
+
+// Defines values for IamAccessPolicyGetUserAccessPoliciesParamsView.
+const (
+	IamAccessPolicyGetUserAccessPoliciesParamsViewDefault  IamAccessPolicyGetUserAccessPoliciesParamsView = "default"
+	IamAccessPolicyGetUserAccessPoliciesParamsViewExtended IamAccessPolicyGetUserAccessPoliciesParamsView = "extended"
+)
+
+// Defines values for IamAccessPolicyShowParamsView.
+const (
+	IamAccessPolicyShowParamsViewDefault  IamAccessPolicyShowParamsView = "default"
+	IamAccessPolicyShowParamsViewExtended IamAccessPolicyShowParamsView = "extended"
 )
 
 // Defines values for IamAccessRuleIndexParamsView.
@@ -2531,6 +3216,18 @@ const (
 	IamUserSettingBlobRetriveGetUrlParamsTypeOrg    IamUserSettingBlobRetriveGetUrlParamsType = "org"
 )
 
+// Defines values for IamUserMembershipsShowPrivilegesReportParamsView.
+const (
+	IamUserMembershipsShowPrivilegesReportParamsViewDefault  IamUserMembershipsShowPrivilegesReportParamsView = "default"
+	IamUserMembershipsShowPrivilegesReportParamsViewExtended IamUserMembershipsShowPrivilegesReportParamsView = "extended"
+)
+
+// Defines values for IamUserMembershipsIndexProjectsParamsView.
+const (
+	IamUserMembershipsIndexProjectsParamsViewDefault  IamUserMembershipsIndexProjectsParamsView = "default"
+	IamUserMembershipsIndexProjectsParamsViewExtended IamUserMembershipsIndexProjectsParamsView = "extended"
+)
+
 // Defines values for IamMSPCustomerShowParamsView.
 const (
 	IamMSPCustomerShowParamsViewDefault  IamMSPCustomerShowParamsView = "default"
@@ -2555,6 +3252,18 @@ const (
 	IamMSPCustomerV2ShowV2ParamsViewDefault  IamMSPCustomerV2ShowV2ParamsView = "default"
 	IamMSPCustomerV2ShowV2ParamsViewExtended IamMSPCustomerV2ShowV2ParamsView = "extended"
 	IamMSPCustomerV2ShowV2ParamsViewIndex    IamMSPCustomerV2ShowV2ParamsView = "index"
+)
+
+// Defines values for BillAnalysisCostsDimensionsParamsDataset.
+const (
+	BillAnalysisCostsDimensionsParamsDatasetBilling    BillAnalysisCostsDimensionsParamsDataset = "billing"
+	BillAnalysisCostsDimensionsParamsDatasetEnterprise BillAnalysisCostsDimensionsParamsDataset = "enterprise"
+)
+
+// Defines values for BillAnalysisCostsMetricsParamsDataset.
+const (
+	Billing    BillAnalysisCostsMetricsParamsDataset = "billing"
+	Enterprise BillAnalysisCostsMetricsParamsDataset = "enterprise"
 )
 
 // Defines values for PolicyCustomCatalogIndexParamsCatalogSource.
@@ -2658,6 +3367,20 @@ const (
 	PolicyUnmanagedAppliedPoliciesIndexParamsViewIndex   PolicyUnmanagedAppliedPoliciesIndexParamsView = "index"
 )
 
+// Defines values for OptimaRecommendationsRecommendationsIndexParamsView.
+const (
+	OptimaRecommendationsRecommendationsIndexParamsViewDefault  OptimaRecommendationsRecommendationsIndexParamsView = "default"
+	OptimaRecommendationsRecommendationsIndexParamsViewExtended OptimaRecommendationsRecommendationsIndexParamsView = "extended"
+)
+
+// Defines values for OptimaRecommendationsRecommendationsIndexParamsStatuses.
+const (
+	Active   OptimaRecommendationsRecommendationsIndexParamsStatuses = "active"
+	Realized OptimaRecommendationsRecommendationsIndexParamsStatuses = "realized"
+	Rejected OptimaRecommendationsRecommendationsIndexParamsStatuses = "rejected"
+	Snoozed  OptimaRecommendationsRecommendationsIndexParamsStatuses = "snoozed"
+)
+
 // Defines values for SaasManagedApplicationUserIndexParamsView.
 const (
 	SaasManagedApplicationUserIndexParamsViewDefault      SaasManagedApplicationUserIndexParamsView = "default"
@@ -2716,8 +3439,8 @@ const (
 
 // Defines values for SaasMetricQueryEventCountsByTypeParamsResolution.
 const (
-	SaasMetricQueryEventCountsByTypeParamsResolutionMonthly SaasMetricQueryEventCountsByTypeParamsResolution = "monthly"
-	SaasMetricQueryEventCountsByTypeParamsResolutionNone    SaasMetricQueryEventCountsByTypeParamsResolution = "none"
+	Monthly SaasMetricQueryEventCountsByTypeParamsResolution = "monthly"
+	None    SaasMetricQueryEventCountsByTypeParamsResolution = "none"
 )
 
 // Defines values for SaasMetricQueryTotalEventCountsParamsDaysSince.
@@ -2859,6 +3582,1197 @@ type AuthTokenResponseBody struct {
 // AuthTokenResponseBodyTokenType Refers to the access_token. Always "Bearer".
 type AuthTokenResponseBodyTokenType string
 
+// BillAnalysisAdjustmentDefinitionUpdateRequestBody defines model for BillAnalysis_AdjustmentDefinitionUpdateRequestBody.
+type BillAnalysisAdjustmentDefinitionUpdateRequestBody struct {
+	// DatedAdjustmentLists All of the dated adjustment lists for the org.
+	DatedAdjustmentLists []BillAnalysisDatedAdjustmentListRequestBody `json:"dated_adjustment_lists"`
+}
+
+// BillAnalysisAdjustmentRequestBody An adjustment that will be applied to any cost row for which one of the rules match.
+// The first rule to match will determine the cost & usage multipliers to use.
+// The base cost will be the raw cost of the row, or if any build_on_adjustments are specified, then those adjusted costs will be added in to form the base cost.
+// The final cost of this adjustment will be the (base_cost * cost_multiplier) + (usage_amount * usage_multiplier)
+type BillAnalysisAdjustmentRequestBody struct {
+	// BuildOnAdjustments If none specified, the base cost is simply the raw cost.
+	// Can also specify one or more of the adjustment names that were defined earlier in the adjustment list, and the base cost will be the net cost after those adjustments are applied.
+	BuildOnAdjustments *[]string `json:"build_on_adjustments,omitempty"`
+
+	// Name Name of the adjustment
+	Name string `json:"name"`
+
+	// Rules List of rules to determine the cost/usage multipliers to apply to a given cost row.
+	// The rules will be evaluated in order until one matches. If none matches, this adjustment is not applied.
+	// The list may contain up to 100 rules.
+	Rules *[]BillAnalysisRuleRequestBody `json:"rules,omitempty"`
+}
+
+// BillAnalysisAnomaliesReportRequestBody defines model for BillAnalysis_AnomaliesReportRequestBody.
+type BillAnalysisAnomaliesReportRequestBody struct {
+	// BillingCenterIds IDs of BillingCenters to get data for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
+	BillingCenterIds []string `json:"billingCenterIds"`
+
+	// DetectionMethod Specifies the detection method to use: either Bollinger Band or AI Model.
+	DetectionMethod *BillAnalysisAnomaliesReportRequestBodyDetectionMethod `json:"detectionMethod,omitempty"`
+
+	// Dimensions The list of supported dimensions by which to roll up the costs.
+	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// EndAt Latest timestamp (exclusive) of the costs.
+	// For month granularity: consists of a year and month in YYYY-MM format.
+	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
+	// Will be interpreted as UTC, which is used for period boundaries.
+	// No records will be returned on or after this timestamp.
+	EndAt string `json:"endAt"`
+
+	// Filter Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
+	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+	// Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	//
+	// Examples of each filter type:
+	//
+	// {"type":"equal", "dimension":"vendor", "value":"aws"}
+	//
+	//   {"type":"substring", "dimension":"tag_env", "substring":"dev"}
+	//
+	//   {"type":"and", "expressions":[
+	//     {"type":"equal", "dimension":"vendor", "value":"aws"},
+	//     {"type":"equal", "dimension":"tag_env", "value":"dev"}
+	//   ]}
+	//
+	//   {"type":"or", "expressions":[
+	//     {"type":"substring", "dimension":"tag_env", "substring":"dev"},
+	//     {"type":"substring", "dimension":"tag_env", "substring":"stage"}
+	//   ]}
+	//
+	//   {"type":"not", "expression": {
+	//     "type":"equal", "dimension":"vendor", "substring":"aws"
+	//   }}
+	Filter *BillAnalysisFilterV1RequestBody `json:"filter,omitempty"`
+
+	// Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
+	// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
+	Granularity *BillAnalysisAnomaliesReportRequestBodyGranularity `json:"granularity,omitempty"`
+
+	// Limit limit number of records to return.
+	Limit *int32 `json:"limit,omitempty"`
+
+	// Metric Metric to perform anomaly detection on. Currently only cost metrics supported.
+	Metric BillAnalysisAnomaliesReportRequestBodyMetric `json:"metric"`
+
+	// StandardDeviations number of standard deviations to use for bollinger band calculations
+	StandardDeviations float64 `json:"standardDeviations"`
+
+	// StartAt Earliest timestamp (inclusive) of the returned costs.
+	// For month granularity: consists of a year and month in YYYY-MM format.
+	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
+	// Will be interpreted as UTC, which is used for period boundaries.
+	StartAt string `json:"startAt"`
+
+	// WindowSize window size to use for bollinger bands
+	WindowSize int64 `json:"windowSize"`
+}
+
+// BillAnalysisAnomaliesReportRequestBodyDetectionMethod Specifies the detection method to use: either Bollinger Band or AI Model.
+type BillAnalysisAnomaliesReportRequestBodyDetectionMethod string
+
+// BillAnalysisAnomaliesReportRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
+// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
+type BillAnalysisAnomaliesReportRequestBodyGranularity string
+
+// BillAnalysisAnomaliesReportRequestBodyMetric Metric to perform anomaly detection on. Currently only cost metrics supported.
+type BillAnalysisAnomaliesReportRequestBodyMetric string
+
+// BillAnalysisBudgetFilterRequestBody A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+//
+// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
+// An empty filter expression implies all costs are included.
+//
+// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
+// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
+//
+// Examples of each filter type:
+// ```
+// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+//
+// {"type":"and", "expressions":[
+//
+//	{"type":"equal", "dimension":"vendor", "value":"AWS"},
+//	{"type":"equal", "dimension":"rbd_team", "value":"Blue"}
+//
+// ]}
+//
+// {"type":"or", "expressions":[
+//
+//	{"type":"equal", "dimension":"rbd_team", "value":"Blue"},
+//	{"type":"equal", "dimension":"rbd_team", "value":"Green"}
+//
+// ]}
+//
+//	{"type":"not", "expression": {
+//	  "type":"equal", "dimension":"vendor", "substring":"AWS"
+//	}}
+//
+// ```
+// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+type BillAnalysisBudgetFilterRequestBody struct {
+	// Dimension name of a dimension to examine. Required for the 'equal' filter type. Note the `billing_center_id` dimension is not supported at this time.
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+	//
+	// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
+	// An empty filter expression implies all costs are included.
+	//
+	// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
+	// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
+	//
+	// Examples of each filter type:
+	// ```
+	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+	//
+	// {"type":"and", "expressions":[
+	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
+	// ]}
+	//
+	// {"type":"or", "expressions":[
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Green"}
+	// ]}
+	//
+	// {"type":"not", "expression": {
+	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
+	// }}
+	// ```
+	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	Expression *BillAnalysisBudgetFilterRequestBody `json:"expression,omitempty"`
+
+	// Expressions the filter expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' filter types.
+	Expressions *[]BillAnalysisBudgetFilterRequestBody `json:"expressions,omitempty"`
+
+	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+	Type BillAnalysisBudgetFilterRequestBodyType `json:"type"`
+
+	// Value a value that the dimension must match. Required for the 'equal' filter type.
+	Value *string `json:"value,omitempty"`
+}
+
+// BillAnalysisBudgetFilterRequestBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type BillAnalysisBudgetFilterRequestBodyType string
+
+// BillAnalysisBudgetFilterResponse A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+//
+// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
+// An empty filter expression implies all costs are included.
+//
+// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
+// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
+//
+// Examples of each filter type:
+// ```
+// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+//
+// {"type":"and", "expressions":[
+//
+//	{"type":"equal", "dimension":"vendor", "value":"AWS"},
+//	{"type":"equal", "dimension":"rbd_team", "value":"Blue"}
+//
+// ]}
+//
+// {"type":"or", "expressions":[
+//
+//	{"type":"equal", "dimension":"rbd_team", "value":"Blue"},
+//	{"type":"equal", "dimension":"rbd_team", "value":"Green"}
+//
+// ]}
+//
+//	{"type":"not", "expression": {
+//	  "type":"equal", "dimension":"vendor", "substring":"AWS"
+//	}}
+//
+// ```
+// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+type BillAnalysisBudgetFilterResponse struct {
+	// Dimension name of a dimension to examine. Required for the 'equal' filter type. Note the `billing_center_id` dimension is not supported at this time.
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+	//
+	// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
+	// An empty filter expression implies all costs are included.
+	//
+	// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
+	// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
+	//
+	// Examples of each filter type:
+	// ```
+	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+	//
+	// {"type":"and", "expressions":[
+	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
+	// ]}
+	//
+	// {"type":"or", "expressions":[
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Green"}
+	// ]}
+	//
+	// {"type":"not", "expression": {
+	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
+	// }}
+	// ```
+	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	Expression *BillAnalysisBudgetFilterResponse `json:"expression,omitempty"`
+
+	// Expressions the filter expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' filter types.
+	Expressions *[]BillAnalysisBudgetFilterResponse `json:"expressions,omitempty"`
+
+	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+	Type BillAnalysisBudgetFilterResponseType `json:"type"`
+
+	// Value a value that the dimension must match. Required for the 'equal' filter type.
+	Value *string `json:"value,omitempty"`
+}
+
+// BillAnalysisBudgetFilterResponseType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type BillAnalysisBudgetFilterResponseType string
+
+// BillAnalysisBudgetFilterResponseBody A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+//
+// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
+// An empty filter expression implies all costs are included.
+//
+// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
+// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
+//
+// Examples of each filter type:
+// ```
+// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+//
+// {"type":"and", "expressions":[
+//
+//	{"type":"equal", "dimension":"vendor", "value":"AWS"},
+//	{"type":"equal", "dimension":"rbd_team", "value":"Blue"}
+//
+// ]}
+//
+// {"type":"or", "expressions":[
+//
+//	{"type":"equal", "dimension":"rbd_team", "value":"Blue"},
+//	{"type":"equal", "dimension":"rbd_team", "value":"Green"}
+//
+// ]}
+//
+//	{"type":"not", "expression": {
+//	  "type":"equal", "dimension":"vendor", "substring":"AWS"
+//	}}
+//
+// ```
+// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+type BillAnalysisBudgetFilterResponseBody struct {
+	// Dimension name of a dimension to examine. Required for the 'equal' filter type. Note the `billing_center_id` dimension is not supported at this time.
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+	//
+	// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
+	// An empty filter expression implies all costs are included.
+	//
+	// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
+	// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
+	//
+	// Examples of each filter type:
+	// ```
+	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+	//
+	// {"type":"and", "expressions":[
+	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
+	// ]}
+	//
+	// {"type":"or", "expressions":[
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Green"}
+	// ]}
+	//
+	// {"type":"not", "expression": {
+	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
+	// }}
+	// ```
+	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	Expression *BillAnalysisBudgetFilterResponseBody `json:"expression,omitempty"`
+
+	// Expressions the filter expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' filter types.
+	Expressions *[]BillAnalysisBudgetFilterResponseBody `json:"expressions,omitempty"`
+
+	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+	Type BillAnalysisBudgetFilterResponseBodyType `json:"type"`
+
+	// Value a value that the dimension must match. Required for the 'equal' filter type.
+	Value *string `json:"value,omitempty"`
+}
+
+// BillAnalysisBudgetFilterResponseBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type BillAnalysisBudgetFilterResponseBodyType string
+
+// BillAnalysisConditionRequestBody The criteria for the given multipliers to be applied to a cost row.
+// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+//
+// Some of the types are primitive conditions, and others like 'and', 'or', and 'not', are used to build complex expressions.
+//
+// Examples of each condition type:
+// ~~~~
+// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+// ~~~~
+// ~~~~
+// {"type":"allocated_to_billing_center", "billing_center_id":"1efg3457f129810cd12e1297a1de"}
+// ~~~~
+// ~~~~
+// {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+// ~~~~
+// ~~~~
+// {"type":"and", "expressions":[
+//
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+//	{"type":"dimension_equals", "dimension":"service", "value":"EC2"},
+//	{"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+//
+// ]}
+// ~~~~
+// ~~~~
+// {"type":"or", "expressions":[
+//
+//	{"type":"allocated_to_billing_center", "billing_center_id":"1abc3457f129810cd12e1297a0cb"},
+//	{"type":"allocated_to_billing_center", "billing_center_id":"29810cd12e1297a1de1efg3457f1"}
+//
+// ]}
+// ~~~~
+// ~~~~
+//
+//	{"type":"not", "expression": {
+//	  "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+//	}}
+//
+// ~~~~
+// ~~~~
+//
+//	{"type":"not", "expression": {
+//	  "type":"dimension_contains", "dimension":"vendor", "substring":"Azure"
+//	}}
+//
+// ~~~~
+// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+type BillAnalysisConditionRequestBody struct {
+	// BillingCenterId to check whether the cost was allocated to this Billing Center ID. Required for the 'allocated_to_billing_center' type.
+	BillingCenterId *string `json:"billing_center_id,omitempty"`
+
+	// Dimension The dimension to check the value of. Required for the 'dimension_equals' and 'dimension_contains' type.
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression The criteria for the given multipliers to be applied to a cost row.
+	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+	//
+	// Some of the types are primitive conditions, and others like 'and', 'or', and 'not', are used to build complex expressions.
+	//
+	// Examples of each condition type:
+	// ~~~~
+	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+	// ~~~~
+	// ~~~~
+	// {"type":"allocated_to_billing_center", "billing_center_id":"1efg3457f129810cd12e1297a1de"}
+	// ~~~~
+	// ~~~~
+	// {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+	// ~~~~
+	// ~~~~
+	// {"type":"and", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"},
+	//   {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"or", "expressions":[
+	//   {"type":"allocated_to_billing_center", "billing_center_id":"1abc3457f129810cd12e1297a0cb"},
+	//   {"type":"allocated_to_billing_center", "billing_center_id":"29810cd12e1297a1de1efg3457f1"}
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"not", "expression": {
+	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+	// }}
+	// ~~~~
+	// ~~~~
+	// {"type":"not", "expression": {
+	//   "type":"dimension_contains", "dimension":"vendor", "substring":"Azure"
+	// }}
+	// ~~~~
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+	Expression *BillAnalysisConditionRequestBody `json:"expression,omitempty"`
+
+	// Expressions the expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' types.
+	Expressions *[]BillAnalysisConditionRequestBody `json:"expressions,omitempty"`
+
+	// Substring The substring that the dimension must contain. Required for the 'dimension_contains' type.
+	Substring *string `json:"substring,omitempty"`
+
+	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+	Type BillAnalysisConditionRequestBodyType `json:"type"`
+
+	// Value The value that the dimension must match. Required for the 'dimension_equals' type.
+	Value *string `json:"value,omitempty"`
+}
+
+// BillAnalysisConditionRequestBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type BillAnalysisConditionRequestBodyType string
+
+// BillAnalysisConditionResponseBody The criteria for the given multipliers to be applied to a cost row.
+// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+//
+// Some of the types are primitive conditions, and others like 'and', 'or', and 'not', are used to build complex expressions.
+//
+// Examples of each condition type:
+// ~~~~
+// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+// ~~~~
+// ~~~~
+// {"type":"allocated_to_billing_center", "billing_center_id":"1efg3457f129810cd12e1297a1de"}
+// ~~~~
+// ~~~~
+// {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+// ~~~~
+// ~~~~
+// {"type":"and", "expressions":[
+//
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+//	{"type":"dimension_equals", "dimension":"service", "value":"EC2"},
+//	{"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+//
+// ]}
+// ~~~~
+// ~~~~
+// {"type":"or", "expressions":[
+//
+//	{"type":"allocated_to_billing_center", "billing_center_id":"1abc3457f129810cd12e1297a0cb"},
+//	{"type":"allocated_to_billing_center", "billing_center_id":"29810cd12e1297a1de1efg3457f1"}
+//
+// ]}
+// ~~~~
+// ~~~~
+//
+//	{"type":"not", "expression": {
+//	  "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+//	}}
+//
+// ~~~~
+// ~~~~
+//
+//	{"type":"not", "expression": {
+//	  "type":"dimension_contains", "dimension":"vendor", "substring":"Azure"
+//	}}
+//
+// ~~~~
+// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+type BillAnalysisConditionResponseBody struct {
+	// BillingCenterId to check whether the cost was allocated to this Billing Center ID. Required for the 'allocated_to_billing_center' type.
+	BillingCenterId *string `json:"billing_center_id,omitempty"`
+
+	// Dimension The dimension to check the value of. Required for the 'dimension_equals' and 'dimension_contains' type.
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression The criteria for the given multipliers to be applied to a cost row.
+	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+	//
+	// Some of the types are primitive conditions, and others like 'and', 'or', and 'not', are used to build complex expressions.
+	//
+	// Examples of each condition type:
+	// ~~~~
+	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+	// ~~~~
+	// ~~~~
+	// {"type":"allocated_to_billing_center", "billing_center_id":"1efg3457f129810cd12e1297a1de"}
+	// ~~~~
+	// ~~~~
+	// {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+	// ~~~~
+	// ~~~~
+	// {"type":"and", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"},
+	//   {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"or", "expressions":[
+	//   {"type":"allocated_to_billing_center", "billing_center_id":"1abc3457f129810cd12e1297a0cb"},
+	//   {"type":"allocated_to_billing_center", "billing_center_id":"29810cd12e1297a1de1efg3457f1"}
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"not", "expression": {
+	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+	// }}
+	// ~~~~
+	// ~~~~
+	// {"type":"not", "expression": {
+	//   "type":"dimension_contains", "dimension":"vendor", "substring":"Azure"
+	// }}
+	// ~~~~
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+	Expression *BillAnalysisConditionResponseBody `json:"expression,omitempty"`
+
+	// Expressions the expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' types.
+	Expressions *[]BillAnalysisConditionResponseBody `json:"expressions,omitempty"`
+
+	// Substring The substring that the dimension must contain. Required for the 'dimension_contains' type.
+	Substring *string `json:"substring,omitempty"`
+
+	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+	Type BillAnalysisConditionResponseBodyType `json:"type"`
+
+	// Value The value that the dimension must match. Required for the 'dimension_equals' type.
+	Value *string `json:"value,omitempty"`
+}
+
+// BillAnalysisConditionResponseBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type BillAnalysisConditionResponseBodyType string
+
+// BillAnalysisCostsAggregatedRequestBody defines model for BillAnalysis_CostsAggregatedRequestBody.
+type BillAnalysisCostsAggregatedRequestBody struct {
+	// BillingCenterIds IDs of BillingCenters to get cost data for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
+	BillingCenterIds []string `json:"billing_center_ids"`
+
+	// Dataset indicates which datasource to query from, if set to billing, it will query from billing data source.
+	Dataset *BillAnalysisCostsAggregatedRequestBodyDataset `json:"dataset,omitempty"`
+
+	// Dimensions The list of supported dimensions by which to roll up the costs.
+	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// EndAt Latest timestamp (exclusive) of the costs.
+	// For month granularity: consists of a year and month in YYYY-MM format.
+	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
+	// Will be interpreted as UTC, which is used for period boundaries.
+	// No records will be returned on or after this timestamp.
+	EndAt string `json:"end_at"`
+
+	// Filter Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
+	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+	// Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	//
+	// Examples of each filter type:
+	//
+	// {"type":"equal", "dimension":"vendor", "value":"aws"}
+	//
+	//   {"type":"substring", "dimension":"tag_env", "substring":"dev"}
+	//
+	//   {"type":"and", "expressions":[
+	//     {"type":"equal", "dimension":"vendor", "value":"aws"},
+	//     {"type":"equal", "dimension":"tag_env", "value":"dev"}
+	//   ]}
+	//
+	//   {"type":"or", "expressions":[
+	//     {"type":"substring", "dimension":"tag_env", "substring":"dev"},
+	//     {"type":"substring", "dimension":"tag_env", "substring":"stage"}
+	//   ]}
+	//
+	//   {"type":"not", "expression": {
+	//     "type":"equal", "dimension":"vendor", "substring":"aws"
+	//   }}
+	Filter *BillAnalysisFilterV1RequestBody `json:"filter,omitempty"`
+
+	// Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
+	// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
+	Granularity *BillAnalysisCostsAggregatedRequestBodyGranularity `json:"granularity,omitempty"`
+
+	// Limit Maximum number of records to return. If this limit does not allow all rows to be returned, rowsTruncated:true will be added to the response to indicate the result is incomplete.
+	Limit *int64 `json:"limit,omitempty"`
+
+	// Metrics Metrics to return.
+	// When metric 'usage_amount' is requested, dimension 'usage_unit' must be requested
+	// in the dimensions parameter.
+	Metrics []string `json:"metrics"`
+
+	// PeriodType Determines which date column to use for filtering.
+	//  - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
+	//  - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
+	//
+	// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
+	PeriodType *BillAnalysisCostsAggregatedRequestBodyPeriodType `json:"period_type,omitempty"`
+
+	// StartAt Earliest timestamp (inclusive) of the returned costs.
+	// For month granularity: consists of a year and month in YYYY-MM format.
+	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
+	// Will be interpreted as UTC, which is used for period boundaries.
+	StartAt string `json:"start_at"`
+
+	// Summarized Combines the query results from the day/month buckets into a single bucket.
+	Summarized *bool `json:"summarized,omitempty"`
+}
+
+// BillAnalysisCostsAggregatedRequestBodyDataset indicates which datasource to query from, if set to billing, it will query from billing data source.
+type BillAnalysisCostsAggregatedRequestBodyDataset string
+
+// BillAnalysisCostsAggregatedRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
+// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
+type BillAnalysisCostsAggregatedRequestBodyGranularity string
+
+// BillAnalysisCostsAggregatedRequestBodyPeriodType Determines which date column to use for filtering.
+//   - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
+//   - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
+//
+// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
+type BillAnalysisCostsAggregatedRequestBodyPeriodType string
+
+// BillAnalysisCostsSelectRequestBody defines model for BillAnalysis_CostsSelectRequestBody.
+type BillAnalysisCostsSelectRequestBody struct {
+	// BillingCenterIds IDs of BillingCenters to get cost data for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
+	BillingCenterIds []string `json:"billing_center_ids"`
+
+	// Dataset indicates which datasource to query from, if set to billing, it will query from billing data source.
+	Dataset *BillAnalysisCostsSelectRequestBodyDataset `json:"dataset,omitempty"`
+
+	// Dimensions The list of supported dimensions to return.
+	Dimensions []string `json:"dimensions"`
+
+	// EndAt Latest timestamp (exclusive) of the costs.
+	// For month granularity: consists of a year and month in YYYY-MM format.
+	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
+	// Will be interpreted be UTC, which is used for period boundaries.
+	// No records will be returned on or after this timestamp.
+	EndAt string `json:"end_at"`
+
+	// Filter Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
+	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+	// Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	//
+	// Examples of each filter type:
+	//
+	// {"type":"equal", "dimension":"vendor", "value":"aws"}
+	//
+	//   {"type":"substring", "dimension":"tag_env", "substring":"dev"}
+	//
+	//   {"type":"and", "expressions":[
+	//     {"type":"equal", "dimension":"vendor", "value":"aws"},
+	//     {"type":"equal", "dimension":"tag_env", "value":"dev"}
+	//   ]}
+	//
+	//   {"type":"or", "expressions":[
+	//     {"type":"substring", "dimension":"tag_env", "substring":"dev"},
+	//     {"type":"substring", "dimension":"tag_env", "substring":"stage"}
+	//   ]}
+	//
+	//   {"type":"not", "expression": {
+	//     "type":"equal", "dimension":"vendor", "substring":"aws"
+	//   }}
+	Filter *BillAnalysisFilterV1RequestBody `json:"filter,omitempty"`
+
+	// Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
+	// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
+	Granularity *BillAnalysisCostsSelectRequestBodyGranularity `json:"granularity,omitempty"`
+
+	// Limit limit number of records to return (max=100000).
+	Limit int64 `json:"limit"`
+
+	// Metrics Metrics to return.
+	// When metric 'usage_amount' is requested, dimension 'usage_unit' must be requested
+	// in the dimensions parameter.
+	Metrics []string `json:"metrics"`
+
+	// PeriodType Determines which date column to use for filtering.
+	//  - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
+	//  - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
+	//
+	// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
+	PeriodType *BillAnalysisCostsSelectRequestBodyPeriodType `json:"period_type,omitempty"`
+
+	// StartAt Earliest timestamp (inclusive) of the returned costs.
+	// For month granularity: consists of a year and month in YYYY-MM format.
+	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
+	// Will be interpreted as UTC, which is used for period boundaries.
+	StartAt string `json:"start_at"`
+}
+
+// BillAnalysisCostsSelectRequestBodyDataset indicates which datasource to query from, if set to billing, it will query from billing data source.
+type BillAnalysisCostsSelectRequestBodyDataset string
+
+// BillAnalysisCostsSelectRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
+// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
+type BillAnalysisCostsSelectRequestBodyGranularity string
+
+// BillAnalysisCostsSelectRequestBodyPeriodType Determines which date column to use for filtering.
+//   - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
+//   - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
+//
+// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
+type BillAnalysisCostsSelectRequestBodyPeriodType string
+
+// BillAnalysisCurrencySettingUpdateRequestBody defines model for BillAnalysis_CurrencySettingUpdateRequestBody.
+type BillAnalysisCurrencySettingUpdateRequestBody struct {
+	// Value Setting value
+	Value string `json:"value"`
+}
+
+// BillAnalysisDatedAdjustmentListRequestBody List of adjustments that would apply as of the given effective date.
+type BillAnalysisDatedAdjustmentListRequestBody struct {
+	// AdjustmentList List of adjustments that would apply as of the given effective date.
+	//  The list may contain up to 5 adjustments.
+	AdjustmentList []BillAnalysisAdjustmentRequestBody `json:"adjustment_list"`
+
+	// EffectiveAt Year-month (UTC) the list of adjustments will be effective.
+	EffectiveAt string `json:"effective_at"`
+}
+
+// BillAnalysisFilterV1RequestBody Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
+// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+// Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
+// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+//
+// Examples of each filter type:
+//
+// {"type":"equal", "dimension":"vendor", "value":"aws"}
+//
+//	{"type":"substring", "dimension":"tag_env", "substring":"dev"}
+//
+//	{"type":"and", "expressions":[
+//	  {"type":"equal", "dimension":"vendor", "value":"aws"},
+//	  {"type":"equal", "dimension":"tag_env", "value":"dev"}
+//	]}
+//
+//	{"type":"or", "expressions":[
+//	  {"type":"substring", "dimension":"tag_env", "substring":"dev"},
+//	  {"type":"substring", "dimension":"tag_env", "substring":"stage"}
+//	]}
+//
+//	{"type":"not", "expression": {
+//	  "type":"equal", "dimension":"vendor", "substring":"aws"
+//	}}
+type BillAnalysisFilterV1RequestBody struct {
+	// Dimension name of a dimension to examine. Required for the 'equal' and 'substring' filter types. Note the `billing_center_id` dimension is not supported at this time.
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
+	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+	// Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	//
+	// Examples of each filter type:
+	//
+	// {"type":"equal", "dimension":"vendor", "value":"aws"}
+	//
+	//   {"type":"substring", "dimension":"tag_env", "substring":"dev"}
+	//
+	//   {"type":"and", "expressions":[
+	//     {"type":"equal", "dimension":"vendor", "value":"aws"},
+	//     {"type":"equal", "dimension":"tag_env", "value":"dev"}
+	//   ]}
+	//
+	//   {"type":"or", "expressions":[
+	//     {"type":"substring", "dimension":"tag_env", "substring":"dev"},
+	//     {"type":"substring", "dimension":"tag_env", "substring":"stage"}
+	//   ]}
+	//
+	//   {"type":"not", "expression": {
+	//     "type":"equal", "dimension":"vendor", "substring":"aws"
+	//   }}
+	Expression *BillAnalysisFilterV1RequestBody `json:"expression,omitempty"`
+
+	// Expressions the filter expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' filter types.
+	Expressions *[]BillAnalysisFilterV1RequestBody `json:"expressions,omitempty"`
+
+	// Substring a substring that the dimension value must contain. Required for the 'substring' filter type.
+	Substring *string `json:"substring,omitempty"`
+
+	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+	Type BillAnalysisFilterV1RequestBodyType `json:"type"`
+
+	// Value a value that the dimension must match. Required for the 'equal' filter type.
+	Value *string `json:"value,omitempty"`
+}
+
+// BillAnalysisFilterV1RequestBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type BillAnalysisFilterV1RequestBodyType string
+
+// BillAnalysisForecastsReportRequestBody defines model for BillAnalysis_ForecastsReportRequestBody.
+type BillAnalysisForecastsReportRequestBody struct {
+	// BillingCenterIds IDs of BillingCenters to get data for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
+	BillingCenterIds []string `json:"billingCenterIds"`
+
+	// Dimensions The list of supported dimensions by which to roll up the costs.
+	Dimensions []string `json:"dimensions"`
+
+	// EndAt Latest timestamp (exclusive) of the costs.
+	// For month granularity: consists of a year and month in YYYY-MM format.
+	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
+	// Will be interpreted as UTC, which is used for period boundaries.
+	// No records will be returned on or after this timestamp.
+	EndAt string `json:"endAt"`
+
+	// Filter Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
+	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+	// Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	//
+	// Examples of each filter type:
+	//
+	// {"type":"equal", "dimension":"vendor", "value":"aws"}
+	//
+	//   {"type":"substring", "dimension":"tag_env", "substring":"dev"}
+	//
+	//   {"type":"and", "expressions":[
+	//     {"type":"equal", "dimension":"vendor", "value":"aws"},
+	//     {"type":"equal", "dimension":"tag_env", "value":"dev"}
+	//   ]}
+	//
+	//   {"type":"or", "expressions":[
+	//     {"type":"substring", "dimension":"tag_env", "substring":"dev"},
+	//     {"type":"substring", "dimension":"tag_env", "substring":"stage"}
+	//   ]}
+	//
+	//   {"type":"not", "expression": {
+	//     "type":"equal", "dimension":"vendor", "substring":"aws"
+	//   }}
+	Filter *BillAnalysisFilterV1RequestBody `json:"filter,omitempty"`
+
+	// Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
+	// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
+	Granularity BillAnalysisForecastsReportRequestBodyGranularity `json:"granularity"`
+
+	// LookbackPeriod Number of months to look back for historical data. We use this to get historical data from the cost aggregated API. For example, if the startAt is "2024-01" and the lookBackPeriod is 24 months, then we will fetch historical data from "2022-01" until "2023-12".
+	LookbackPeriod int64 `json:"lookbackPeriod"`
+
+	// Metric Metric to perform anomaly detection on. Currently only cost metrics supported.
+	Metric BillAnalysisForecastsReportRequestBodyMetric `json:"metric"`
+
+	// StartAt Earliest timestamp (inclusive) of the returned costs.
+	// For month granularity: consists of a year and month in YYYY-MM format.
+	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
+	// Will be interpreted as UTC, which is used for period boundaries.
+	StartAt string `json:"startAt"`
+}
+
+// BillAnalysisForecastsReportRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
+// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
+type BillAnalysisForecastsReportRequestBodyGranularity string
+
+// BillAnalysisForecastsReportRequestBodyMetric Metric to perform anomaly detection on. Currently only cost metrics supported.
+type BillAnalysisForecastsReportRequestBodyMetric string
+
+// BillAnalysisRuleBasedDimensionConditionRequestBody A condition may be null, which will match unconditionally.
+//
+// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
+// A simple condition is checking whether a dimension in the cost row equals a certain value:
+// ~~~~
+// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+// ~~~~
+// Others types like 'and', 'or', and 'not', are used to build complex expressions.
+//
+// For example:
+// ~~~~
+// {"type":"and", "expressions":[
+//
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+//	{"type":"dimension_equals", "dimension":"service", "value":"EC2"}
+//
+// ]}
+// ~~~~
+// ~~~~
+// {"type":"or", "expressions":[
+//
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
+//
+// ]}
+// ~~~~
+// ~~~~
+//
+//	{"type":"not", "expression": {
+//	  "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+//	}}
+//
+// ~~~~
+// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+type BillAnalysisRuleBasedDimensionConditionRequestBody struct {
+	// CaseInsensitive Specifies whether the condition should perform a case-insensitive match.
+	CaseInsensitive *bool `json:"caseInsensitive,omitempty"`
+
+	// Dimension The dimension to check the value of. Required for the 'dimension_equals' type.
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression A condition may be null, which will match unconditionally.
+	//
+	// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
+	// A simple condition is checking whether a dimension in the cost row equals a certain value:
+	// ~~~~
+	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+	// ~~~~
+	// Others types like 'and', 'or', and 'not', are used to build complex expressions.
+	//
+	// For example:
+	// ~~~~
+	// {"type":"and", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"}
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"or", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"not", "expression": {
+	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+	// }}
+	// ~~~~
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+	Expression *BillAnalysisRuleBasedDimensionConditionRequestBody `json:"expression,omitempty"`
+
+	// Expressions the expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' types.
+	Expressions *[]BillAnalysisRuleBasedDimensionConditionRequestBody `json:"expressions,omitempty"`
+
+	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+	Type BillAnalysisRuleBasedDimensionConditionRequestBodyType `json:"type"`
+
+	// Value The value that the dimension must match. Required for the 'dimension_equals' type.
+	Value *string `json:"value,omitempty"`
+}
+
+// BillAnalysisRuleBasedDimensionConditionRequestBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type BillAnalysisRuleBasedDimensionConditionRequestBodyType string
+
+// BillAnalysisRuleBasedDimensionConditionResponseBody A condition may be null, which will match unconditionally.
+//
+// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
+// A simple condition is checking whether a dimension in the cost row equals a certain value:
+// ~~~~
+// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+// ~~~~
+// Others types like 'and', 'or', and 'not', are used to build complex expressions.
+//
+// For example:
+// ~~~~
+// {"type":"and", "expressions":[
+//
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+//	{"type":"dimension_equals", "dimension":"service", "value":"EC2"}
+//
+// ]}
+// ~~~~
+// ~~~~
+// {"type":"or", "expressions":[
+//
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
+//
+// ]}
+// ~~~~
+// ~~~~
+//
+//	{"type":"not", "expression": {
+//	  "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+//	}}
+//
+// ~~~~
+// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+type BillAnalysisRuleBasedDimensionConditionResponseBody struct {
+	// CaseInsensitive Specifies whether the condition should perform a case-insensitive match.
+	CaseInsensitive *bool `json:"caseInsensitive,omitempty"`
+
+	// Dimension The dimension to check the value of. Required for the 'dimension_equals' type.
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression A condition may be null, which will match unconditionally.
+	//
+	// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
+	// A simple condition is checking whether a dimension in the cost row equals a certain value:
+	// ~~~~
+	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+	// ~~~~
+	// Others types like 'and', 'or', and 'not', are used to build complex expressions.
+	//
+	// For example:
+	// ~~~~
+	// {"type":"and", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"}
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"or", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"not", "expression": {
+	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+	// }}
+	// ~~~~
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+	Expression *BillAnalysisRuleBasedDimensionConditionResponseBody `json:"expression,omitempty"`
+
+	// Expressions the expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' types.
+	Expressions *[]BillAnalysisRuleBasedDimensionConditionResponseBody `json:"expressions,omitempty"`
+
+	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+	Type BillAnalysisRuleBasedDimensionConditionResponseBodyType `json:"type"`
+
+	// Value The value that the dimension must match. Required for the 'dimension_equals' type.
+	Value *string `json:"value,omitempty"`
+}
+
+// BillAnalysisRuleBasedDimensionConditionResponseBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type BillAnalysisRuleBasedDimensionConditionResponseBodyType string
+
+// BillAnalysisRuleRequestBody If the condition matches, the given cost_multiplier and usage_multiplier will be used.
+type BillAnalysisRuleRequestBody struct {
+	// Condition The criteria for the given multipliers to be applied to a cost row.
+	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+	//
+	// Some of the types are primitive conditions, and others like 'and', 'or', and 'not', are used to build complex expressions.
+	//
+	// Examples of each condition type:
+	// ~~~~
+	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+	// ~~~~
+	// ~~~~
+	// {"type":"allocated_to_billing_center", "billing_center_id":"1efg3457f129810cd12e1297a1de"}
+	// ~~~~
+	// ~~~~
+	// {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+	// ~~~~
+	// ~~~~
+	// {"type":"and", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"},
+	//   {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"or", "expressions":[
+	//   {"type":"allocated_to_billing_center", "billing_center_id":"1abc3457f129810cd12e1297a0cb"},
+	//   {"type":"allocated_to_billing_center", "billing_center_id":"29810cd12e1297a1de1efg3457f1"}
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"not", "expression": {
+	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+	// }}
+	// ~~~~
+	// ~~~~
+	// {"type":"not", "expression": {
+	//   "type":"dimension_contains", "dimension":"vendor", "substring":"Azure"
+	// }}
+	// ~~~~
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+	Condition *BillAnalysisConditionRequestBody `json:"condition,omitempty"`
+
+	// CostMultiplier will be multiplied by the base cost (may be the raw cost, or the net cost after certain other adjustments were applied).
+	CostMultiplier *float64 `json:"cost_multiplier,omitempty"`
+
+	// CostMultiplierByMetric Optional cost multipliers (supports only Amortized and Non-amortized List Price as of now) for specific metrics (overrides cost_multiplier).
+	CostMultiplierByMetric *map[string]float64 `json:"cost_multiplier_by_metric,omitempty"`
+	Label                  *string             `json:"label,omitempty"`
+
+	// UsageMultiplier will be multiplied by the `usage_amount` to yield a cost amount. Be careful that this is only applied to the intended rows, probably would need to include `usage_unit` in the conditions.
+	UsageMultiplier *float64 `json:"usage_multiplier,omitempty"`
+}
+
+// BillingCenterServiceAllocationRuleRequestBody AllocationRule maps a tag, cloud vendor account, or Azure resource group to a specific BillingCenter.
+// One and only one of "tag", "cloud_vendor_account_ids" or "resource_groups" must be specified.
+type BillingCenterServiceAllocationRuleRequestBody struct {
+	BillingCenter BillingCenterServiceBillingCenterRefRequestBody `json:"billing_center"`
+
+	// CloudVendorAccountIds CloudVendorAccountIDs (for example ["aws:<AwsAccountNumber>"])
+	CloudVendorAccountIds *[]string `json:"cloud_vendor_account_ids,omitempty"`
+
+	// ResourceGroups Collection of Allocation Rule Resource Groups
+	ResourceGroups *[]BillingCenterServiceAllocationRuleResourceGroupRequestBody `json:"resource_groups,omitempty"`
+
+	// Tag full tag
+	Tag *string `json:"tag,omitempty"`
+}
+
+// BillingCenterServiceAllocationRuleResourceGroupRequestBody An Azure Resource Group name, combined with a Cloud Vendor Account, that is associated with an
+// Allocation Rule.
+type BillingCenterServiceAllocationRuleResourceGroupRequestBody struct {
+	// CloudVendorAccountId The Cloud Vendor Account (i.e. Azure Subscription Identifier) with which the Resource Group is associated.
+	CloudVendorAccountId string `json:"cloud_vendor_account_id"`
+
+	// Name The Azure Resource Group Name
+	Name string `json:"name"`
+}
+
+// BillingCenterServiceAllocationTableUpsertRequestBody defines model for BillingCenterService_AllocationTableUpsertRequestBody.
+type BillingCenterServiceAllocationTableUpsertRequestBody struct {
+	// AllocationRules Ordered list of AllocationRules mapping tags/payerAccounts to BillingCenters
+	AllocationRules []BillingCenterServiceAllocationRuleRequestBody `json:"allocation_rules"`
+}
+
+// BillingCenterServiceBillingCenterAccessRulesGrantRequestBody defines model for BillingCenterService_BillingCenterAccessRulesGrantRequestBody.
+type BillingCenterServiceBillingCenterAccessRulesGrantRequestBody struct {
+	// ExpiresAt Expiry date of granted access rules
+	ExpiresAt *time.Time                                `json:"expires_at,omitempty"`
+	Role      BillingCenterServiceRoleRefRequestBody    `json:"role"`
+	Subject   BillingCenterServiceSubjectRefRequestBody `json:"subject"`
+}
+
+// BillingCenterServiceBillingCenterAccessRulesRevokeRequestBody defines model for BillingCenterService_BillingCenterAccessRulesRevokeRequestBody.
+type BillingCenterServiceBillingCenterAccessRulesRevokeRequestBody struct {
+	Role    BillingCenterServiceRoleRefRequestBody    `json:"role"`
+	Subject BillingCenterServiceSubjectRefRequestBody `json:"subject"`
+}
+
+// BillingCenterServiceBillingCenterRefRequestBody defines model for BillingCenterService_BillingCenterRefRequestBody.
+type BillingCenterServiceBillingCenterRefRequestBody struct {
+	// Href API reference of billing center
+	Href string `json:"href"`
+}
+
+// BillingCenterServiceBillingCentersCreateRequestBody defines model for BillingCenterService_BillingCentersCreateRequestBody.
+type BillingCenterServiceBillingCentersCreateRequestBody struct {
+	// Description Description of the BillingCenter
+	Description string `json:"description"`
+
+	// Name Name of the BillingCenter
+	Name string `json:"name"`
+
+	// ParentHref API reference of parent billing center
+	ParentHref *string `json:"parent_href,omitempty"`
+}
+
+// BillingCenterServiceBillingCentersUpdateRequestBody defines model for BillingCenterService_BillingCentersUpdateRequestBody.
+type BillingCenterServiceBillingCentersUpdateRequestBody struct {
+	// Description Description of the BillingCenter
+	Description string `json:"description"`
+
+	// Name Name of the BillingCenter
+	Name string `json:"name"`
+}
+
+// BillingCenterServiceBillingCentersUpsertAllocationTableRequestBody defines model for BillingCenterService_BillingCentersUpsertAllocationTableRequestBody.
+type BillingCenterServiceBillingCentersUpsertAllocationTableRequestBody struct {
+	// AllocationRules Ordered list of AllocationRules mapping tags/payerAccounts to BillingCenters
+	AllocationRules []BillingCenterServiceAllocationRuleRequestBody `json:"allocation_rules"`
+}
+
+// BillingCenterServiceRoleRefRequestBody defines model for BillingCenterService_RoleRefRequestBody.
+type BillingCenterServiceRoleRefRequestBody struct {
+	// Href API reference of role
+	Href string `json:"href"`
+}
+
+// BillingCenterServiceSubjectRefRequestBody defines model for BillingCenterService_SubjectRefRequestBody.
+type BillingCenterServiceSubjectRefRequestBody struct {
+	// Href The API reference for a subject, which can be a user, group or service account.
+	Href string `json:"href"`
+}
+
 // BudgetAccountDetailsAws AWS account details.
 type BudgetAccountDetailsAws struct {
 	// AccountId AWS Account ID
@@ -2895,10 +4809,10 @@ type BudgetBudget struct {
 	//
 	// Examples of each filter type:
 	// ```
-	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+	// {"type":"equal", "dimension":"ProviderName", "value":"AWS"}
 	//
 	// {"type":"and", "expressions":[
-	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
+	//   {"type":"equal", "dimension":"ProviderName", "value":"AWS"},
 	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
 	// ]}
 	//
@@ -2908,7 +4822,7 @@ type BudgetBudget struct {
 	// ]}
 	//
 	// {"type":"not", "expression": {
-	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
+	//   "type":"equal", "dimension":"ProviderName", "substring":"AWS"
 	// }}
 	// ```
 	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
@@ -2955,11 +4869,11 @@ type BudgetBudgetMetric string
 //
 // Examples of each filter type:
 // ```
-// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+// {"type":"equal", "dimension":"ProviderName", "value":"AWS"}
 //
 // {"type":"and", "expressions":[
 //
-//	{"type":"equal", "dimension":"vendor", "value":"AWS"},
+//	{"type":"equal", "dimension":"ProviderName", "value":"AWS"},
 //	{"type":"equal", "dimension":"rbd_team", "value":"Blue"}
 //
 // ]}
@@ -2972,7 +4886,7 @@ type BudgetBudgetMetric string
 // ]}
 //
 //	{"type":"not", "expression": {
-//	  "type":"equal", "dimension":"vendor", "substring":"AWS"
+//	  "type":"equal", "dimension":"ProviderName", "substring":"AWS"
 //	}}
 //
 // ```
@@ -2991,10 +4905,10 @@ type BudgetBudgetFilter struct {
 	//
 	// Examples of each filter type:
 	// ```
-	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+	// {"type":"equal", "dimension":"ProviderName", "value":"AWS"}
 	//
 	// {"type":"and", "expressions":[
-	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
+	//   {"type":"equal", "dimension":"ProviderName", "value":"AWS"},
 	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
 	// ]}
 	//
@@ -3004,7 +4918,7 @@ type BudgetBudgetFilter struct {
 	// ]}
 	//
 	// {"type":"not", "expression": {
-	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
+	//   "type":"equal", "dimension":"ProviderName", "substring":"AWS"
 	// }}
 	// ```
 	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
@@ -3044,10 +4958,10 @@ type BudgetBudgetLink struct {
 	//
 	// Examples of each filter type:
 	// ```
-	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+	// {"type":"equal", "dimension":"ProviderName", "value":"AWS"}
 	//
 	// {"type":"and", "expressions":[
-	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
+	//   {"type":"equal", "dimension":"ProviderName", "value":"AWS"},
 	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
 	// ]}
 	//
@@ -3057,7 +4971,7 @@ type BudgetBudgetLink struct {
 	// ]}
 	//
 	// {"type":"not", "expression": {
-	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
+	//   "type":"equal", "dimension":"ProviderName", "substring":"AWS"
 	// }}
 	// ```
 	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
@@ -3192,10 +5106,10 @@ type BudgetCreateRequestBody struct {
 	//
 	// Examples of each filter type:
 	// ```
-	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+	// {"type":"equal", "dimension":"ProviderName", "value":"AWS"}
 	//
 	// {"type":"and", "expressions":[
-	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
+	//   {"type":"equal", "dimension":"ProviderName", "value":"AWS"},
 	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
 	// ]}
 	//
@@ -3205,7 +5119,7 @@ type BudgetCreateRequestBody struct {
 	// ]}
 	//
 	// {"type":"not", "expression": {
-	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
+	//   "type":"equal", "dimension":"ProviderName", "substring":"AWS"
 	// }}
 	// ```
 	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
@@ -4872,13 +6786,65 @@ type CredUpdateOrgRequestBody6 struct {
 	UserOcid *string `json:"userOcid,omitempty"`
 }
 
-// DivntCostAndUsageModel defines model for Divnt_CostAndUsageModel.
-type DivntCostAndUsageModel struct {
-	BillingAccount *string `json:"BillingAccount"`
-	EffectiveFrom  *string `json:"EffectiveFrom"`
-	ReportPrefix   *string `json:"ReportPrefix"`
-	StoragePath    *string `json:"StoragePath"`
+// DivntAwsCostAndUsageModel defines model for Divnt_AwsCostAndUsageModel.
+type DivntAwsCostAndUsageModel struct {
+	BillingAccountId *string `json:"BillingAccountId"`
+	BillingS3Bucket  *string `json:"BillingS3Bucket"`
+	EffectiveFrom    *string `json:"EffectiveFrom"`
+	ReportPrefix     *string `json:"ReportPrefix"`
 }
+
+// DivntAzureCostAndUsageModel Azure Cost & Usage configuration.
+// AccountType is declared here alongside BillingScope and scope-specific fields.
+//
+// BillingScope rules (validated in OnboardingCreateRequest):
+//   - EA  (any scope)    : EnrollmentId (optional)
+//   - MCA Billing Account: no extra fields required
+//   - MCA Billing Profile: BillingProfileIds (required list)
+//   - MCA Invoice        : InvoiceSectionIds (required list)
+//   - CSP Billing Account: no extra fields required
+//   - CSP Billing Profile: BillingProfileIds (required list)
+//   - CSP Customer Tenant: CustomerTenantId (required)
+//
+// Always optional:
+//   - ActualExportUrl, AmortizedExportUrl, EffectiveFrom
+type DivntAzureCostAndUsageModel struct {
+	// AccountType Azure account type.
+	AccountType DivntAzureCostAndUsageModelAccountType `json:"AccountType"`
+
+	// ActualExportUrl Actual cost export URL.
+	ActualExportUrl *string `json:"ActualExportUrl"`
+
+	// AmortizedExportUrl Amortized cost export URL.
+	AmortizedExportUrl *string `json:"AmortizedExportUrl"`
+
+	// BillingAccountId Billing Account ID
+	BillingAccountId *string `json:"BillingAccountId"`
+
+	// BillingProfileIds Billing Profile IDs - required for MCA or CSP + Billing Profile scope.
+	BillingProfileIds *[]string `json:"BillingProfileIds"`
+
+	// BillingScope Billing scope. Required for MCA ('Billing Account', 'Billing Profile', 'Invoice') and CSP ('Billing Account', 'Billing Profile', 'Customer Tenant') account types.
+	BillingScope *DivntAzureCostAndUsageModelBillingScope `json:"BillingScope"`
+
+	// CustomerTenantId Customer Tenant ID - required for CSP + Customer Tenant scope.
+	CustomerTenantId *string `json:"CustomerTenantId"`
+
+	// EffectiveFrom Effective-from date.
+	EffectiveFrom *string `json:"EffectiveFrom"`
+
+	// EnrollmentId Enrollment ID - applicable for EA account type.
+	EnrollmentId *string `json:"EnrollmentId"`
+
+	// InvoiceSectionIds Invoice IDs - required for MCA + Invoice scope.
+	InvoiceSectionIds *[]string `json:"InvoiceSectionIds"`
+}
+
+// DivntAzureCostAndUsageModelAccountType Azure account type.
+type DivntAzureCostAndUsageModelAccountType string
+
+// DivntAzureCostAndUsageModelBillingScope Billing scope. Required for MCA ('Billing Account', 'Billing Profile', 'Invoice') and CSP ('Billing Account', 'Billing Profile', 'Customer Tenant') account types.
+type DivntAzureCostAndUsageModelBillingScope string
 
 // DivntErrorResponse defines model for Divnt_ErrorResponse.
 type DivntErrorResponse struct {
@@ -4908,8 +6874,10 @@ type DivntOnboardingCreateRequest struct {
 	ClientSecret *string `json:"ClientSecret"`
 
 	// ConnectorName Connector name.
-	ConnectorName string                  `json:"ConnectorName"`
-	CostAndUsage  *DivntCostAndUsageModel `json:"CostAndUsage,omitempty"`
+	ConnectorName string `json:"ConnectorName"`
+
+	// CostAndUsage Cost and Usage configuration
+	CostAndUsage *DivntOnboardingCreateRequest_CostAndUsage `json:"CostAndUsage"`
 
 	// ExcludeRegion Regions to exclude from onboarding.
 	ExcludeRegion *[]string `json:"ExcludeRegion"`
@@ -4926,6 +6894,12 @@ type DivntOnboardingCreateRequest struct {
 	// IncludeInventory Include inventory flag.
 	IncludeInventory string `json:"IncludeInventory"`
 
+	// OnboardingType Onboarding type.
+	OnboardingType *DivntOnboardingCreateRequestOnboardingType `json:"OnboardingType"`
+
+	// PartnerTenantId Partner Tenant ID (CSP only). If provided and TenantId is omitted, it is used as TenantId.
+	PartnerTenantId *string `json:"PartnerTenantId"`
+
 	// Provider Provider.
 	Provider DivntOnboardingCreateRequestProvider `json:"Provider"`
 
@@ -4935,24 +6909,46 @@ type DivntOnboardingCreateRequest struct {
 	// SubscriptionId Subscription ID.
 	SubscriptionId *string `json:"SubscriptionId"`
 
-	// TenantId Tenant ID.
+	// TenantId Azure Tenant ID. Required unless PartnerTenantId is provided.
 	TenantId *string `json:"TenantId"`
 
 	// TokenUrl Token URL.
 	TokenUrl *string `json:"TokenUrl"`
 }
 
+// DivntOnboardingCreateRequest_CostAndUsage Cost and Usage configuration
+type DivntOnboardingCreateRequest_CostAndUsage struct {
+	union json.RawMessage
+}
+
+// DivntOnboardingCreateRequestOnboardingType Onboarding type.
+type DivntOnboardingCreateRequestOnboardingType string
+
 // DivntOnboardingCreateRequestProvider Provider.
 type DivntOnboardingCreateRequestProvider string
 
-// DivntOnboardingUpdateRequest Schema for PUT requests with restricted fields for Updates.
+// DivntOnboardingUpdateRequest Schema for PUT requests. Accepts all fields; route applies CCO-aware filtering.
 type DivntOnboardingUpdateRequest struct {
+	// BillingAccountId Billing Account ID.
+	BillingAccountId *string `json:"BillingAccountId"`
+
+	// ClientId Client ID.
+	ClientId *string `json:"ClientId"`
+
+	// ClientSecret Client secret.
+	ClientSecret *string `json:"ClientSecret"`
+
 	// ConnectorName Connector name.
-	ConnectorName *string                 `json:"ConnectorName"`
-	CostAndUsage  *DivntCostAndUsageModel `json:"CostAndUsage,omitempty"`
+	ConnectorName *string `json:"ConnectorName"`
+
+	// CostAndUsage Cost and Usage configuration.
+	CostAndUsage *map[string]interface{} `json:"CostAndUsage"`
 
 	// ExcludeRegion Regions to exclude from onboarding.
 	ExcludeRegion *[]string `json:"ExcludeRegion"`
+
+	// ExternalId External ID.
+	ExternalId *string `json:"ExternalId"`
 
 	// IncludeBPC Include BPC flag.
 	IncludeBPC *string `json:"IncludeBPC"`
@@ -4963,15 +6959,2060 @@ type DivntOnboardingUpdateRequest struct {
 	// IncludeInventory Include inventory flag.
 	IncludeInventory *string `json:"IncludeInventory"`
 
-	// SubscriptionId Subscription ID for Azure provider only.
+	// OnboardingType Onboarding type.
+	OnboardingType *DivntOnboardingUpdateRequestOnboardingType `json:"OnboardingType"`
+
+	// PartnerTenantId Partner Tenant ID (CSP only).
+	PartnerTenantId *string `json:"PartnerTenantId"`
+
+	// RoleARN Role ARN.
+	RoleARN *string `json:"RoleARN"`
+
+	// SubscriptionId Subscription ID.
 	SubscriptionId *string `json:"SubscriptionId"`
 
-	// TenantId Tenant ID for Azure provider only.
+	// TenantId Azure Tenant ID.
 	TenantId *string `json:"TenantId"`
+
+	// TokenUrl Token URL.
+	TokenUrl *string `json:"TokenUrl"`
+}
+
+// DivntOnboardingUpdateRequestOnboardingType Onboarding type.
+type DivntOnboardingUpdateRequestOnboardingType string
+
+// FinopsBillingAdjustmentCondition An adjustment condition, used by adjustment rules and adjustment plan rules.
+//
+// A rule's condition may be omitted or null, which will match unconditionally.
+//
+// Otherwise the **"type"** field is required and controls which other fields are required.
+// The following types are supported in billing adjustment rules:
+//
+// Type **"dimension_equals"** evaluates whether the specified **"dimension"** contains exactly the specified **"value"**.
+//
+// ```
+// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
+// ```
+//
+// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
+// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
+// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
+// defined within your organization (names starting with **rbd\_**),
+// [Tag Dimensions](https://docs.flexera.com/flexera/EN/Administration/TagDimensions.htm)
+// defined within your organization (names starting with **tag\_**),
+// or a few dimensions Flexera populates for you.
+//
+// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+//
+// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
+// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
+//
+// ```
+// {"type":"and", "expressions":[{...}]}
+// ```
+// ```
+// {"type":"or", "expressions":[{...}]}
+// ```
+// ```
+// {"type":"not", "expression":{...}}
+// ```
+//
+// Together types **"and"**, **"or"**, and **"not"** enable complex combinations of other conditions.
+type FinopsBillingAdjustmentCondition struct {
+	// Dimension The dimension to check the value of. Required for the 'dimension_equals' type.
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression An adjustment condition, used by adjustment rules and adjustment plan rules.
+	//
+	// A rule's condition may be omitted or null, which will match unconditionally.
+	//
+	// Otherwise the **"type"** field is required and controls which other fields are required.
+	// The following types are supported in billing adjustment rules:
+	//
+	// Type **"dimension_equals"** evaluates whether the specified **"dimension"** contains exactly the specified **"value"**.
+	//
+	// ```
+	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
+	// ```
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
+	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
+	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
+	// defined within your organization (names starting with **rbd\_**),
+	// [Tag Dimensions](https://docs.flexera.com/flexera/EN/Administration/TagDimensions.htm)
+	// defined within your organization (names starting with **tag\_**),
+	// or a few dimensions Flexera populates for you.
+	//
+	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	//
+	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
+	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
+	//
+	// ```
+	// {"type":"and", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"or", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"not", "expression":{...}}
+	// ```
+	//
+	// Together types **"and"**, **"or"**, and **"not"** enable complex combinations of other conditions.
+	Expression *FinopsBillingAdjustmentCondition `json:"expression,omitempty"`
+
+	// Expressions the expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' types.
+	Expressions *[]FinopsBillingAdjustmentCondition `json:"expressions,omitempty"`
+
+	// Type Specifies the condition type, depending on which type is selected, other field(s) will be required.
+	Type FinopsBillingAdjustmentConditionType `json:"type"`
+
+	// Value The value that the dimension must match. Required for the 'dimension_equals' type.
+	Value *string `json:"value,omitempty"`
+}
+
+// FinopsBillingAdjustmentConditionType Specifies the condition type, depending on which type is selected, other field(s) will be required.
+type FinopsBillingAdjustmentConditionType string
+
+// FinopsBillingAllocation Defines the allocation strategy and the destinations that receive the reallocated costs.
+type FinopsBillingAllocation struct {
+	// Destinations The destinations that receive the reallocated costs.
+	Destinations []FinopsBillingAllocationDestination `json:"destinations"`
+
+	// Type The allocation strategy.
+	Type string `json:"type"`
+}
+
+// FinopsBillingAllocationDestination A destination that receives a portion of the reallocated costs.
+type FinopsBillingAllocationDestination struct {
+	// DimensionId Unique identifier of the destination dimension.
+	DimensionId string `json:"dimensionId"`
+
+	// DimensionName Human-readable display name of the destination dimension.
+	DimensionName *string `json:"dimensionName,omitempty"`
+
+	// Percentage The effective percentage of costs allocated to this destination. For equalSplit, this is computed by the server as 100/N (where N is the number of destinations). For fixedPercentageSplit, this is the client-supplied value. All percentages sum to 100.
+	Percentage float32 `json:"percentage"`
+
+	// Value The specific dimension value that receives costs.
+	Value string `json:"value"`
+}
+
+// FinopsBillingAllocationDestinationPayload A destination input used when creating or updating a shared cost rule.
+type FinopsBillingAllocationDestinationPayload struct {
+	// DimensionId Unique identifier of the destination dimension.
+	DimensionId string `json:"dimensionId"`
+
+	// Percentage The percentage of costs allocated to this destination. Required for fixedPercentageSplit (all percentages must sum to 100). Ignored for equalSplit (the server computes equal shares automatically).
+	Percentage *float32 `json:"percentage,omitempty"`
+
+	// Value The specific dimension value that receives costs.
+	Value string `json:"value"`
+}
+
+// FinopsBillingAllocationPayload Defines the allocation strategy and destination inputs for create/update operations.
+type FinopsBillingAllocationPayload struct {
+	// Destinations The destination inputs that receive the reallocated costs.
+	Destinations []FinopsBillingAllocationDestinationPayload `json:"destinations"`
+
+	// Type The allocation strategy.
+	Type FinopsBillingAllocationPayloadType `json:"type"`
+}
+
+// FinopsBillingAllocationPayloadType The allocation strategy.
+type FinopsBillingAllocationPayloadType string
+
+// FinopsBillingCreateAdjustmentPlanRule Defines a new adjustment plan rule.
+type FinopsBillingCreateAdjustmentPlanRule struct {
+	// AzureReservationReallocation Configure reallocation of AWS reserved instance or Azure reservation benefits across customer accounts.
+	AzureReservationReallocation *FinopsBillingReservationReallocationSettings `json:"azureReservationReallocation,omitempty"`
+
+	// AzureSavingsPlanReallocation Configure reallocation of AWS or Azure savings plan benefits across customer accounts.
+	AzureSavingsPlanReallocation *FinopsBillingSavingsPlanReallocationSettings `json:"azureSavingsPlanReallocation,omitempty"`
+
+	// CreditMemo Configure the creation of credit usage as a new line item.
+	CreditMemo *FinopsBillingCreditMemoSettings `json:"creditMemo,omitempty"`
+
+	// CustomUsageRate Configure an internally-defined unit price to rewrite select Billed Cost and Effective Cost line items.
+	//
+	// Conditions for customUsageRate rules often examine several of the following dimensions:
+	// - **ChargeCategory** or **PricingCategory** to differentiate between usage or discounted pricing
+	// - **ServiceName** or **ServiceCategory** to apply to a service or category
+	// - **SKUId** to differentiate by vendor's SKU
+	// - **CommitmentDiscountId** to apply to selected reservations
+	// - **ResourceId** or **ResourceType** to apply to a resource or set of resources
+	//
+	// Tiers allow setting multiple rates by cost bracket.
+	// The total cost captured by the rule's condition is broken up against the bounds of the tiers to calculate marginal usage within each tier.
+	// Each tier's rate is applied to its portion of the usage, and the total replaces the original cost.
+	//
+	// If multiple customUsageRate rules apply to the same usage record, the rules are evaluated in succession and may override preceding rules.
+	CustomUsageRate *FinopsBillingCustomUsageRateSettings `json:"customUsageRate,omitempty"`
+
+	// Enabled A rule that is not enabled will not run.
+	Enabled bool `json:"enabled"`
+
+	// EndAfter The last date this rule applies.
+	EndAfter *openapi_types.Date `json:"endAfter,omitempty"`
+
+	// FixedAmount Configure a fixed-value charge as a new line item.
+	FixedAmount *FinopsBillingFixedAmountSettings `json:"fixedAmount,omitempty"`
+
+	// GenerateTax Apply a tax charge as a new line item.
+	GenerateTax *FinopsBillingGenerateTaxSettings `json:"generateTax,omitempty"`
+
+	// HideCredits Configure how vendor credits are, or are not, applied.
+	HideCredits *FinopsBillingHideCreditsSettings `json:"hideCredits,omitempty"`
+
+	// MarkupMarkdown Configure the modification of existing costs by a percentage.
+	MarkupMarkdown *FinopsBillingMarkupMarkdownSettings `json:"markupMarkdown,omitempty"`
+
+	// Name Name of the rule.
+	Name string `json:"name"`
+
+	// RemoveAzureLicenseCosts Configure a removeAzureLicenseCosts rule.
+	RemoveAzureLicenseCosts *FinopsBillingRemoveAzureLicenseCostsSettings `json:"removeAzureLicenseCosts,omitempty"`
+
+	// RemoveTax Configure a removeAzureLicenseCosts rule.
+	RemoveTax *FinopsBillingRemoveAzureLicenseCostsSettings `json:"removeTax,omitempty"`
+
+	// ReservationReallocation Configure reallocation of AWS reserved instance or Azure reservation benefits across customer accounts.
+	ReservationReallocation *FinopsBillingReservationReallocationSettings `json:"reservationReallocation,omitempty"`
+
+	// SavingsPlanReallocation Configure reallocation of AWS or Azure savings plan benefits across customer accounts.
+	SavingsPlanReallocation *FinopsBillingSavingsPlanReallocationSettings `json:"savingsPlanReallocation,omitempty"`
+
+	// ShareCloudCostManagementFee Configure the distribution of Cloud Cost Management fees across customer accounts.
+	ShareCloudCostManagementFee *FinopsBillingShareCloudCostManagementFeeSettings `json:"shareCloudCostManagementFee,omitempty"`
+
+	// StartOn The first date this rule applies.
+	StartOn *openapi_types.Date `json:"startOn,omitempty"`
+
+	// SupportCharge Configure overridden AWS support tier billing calculations.
+	SupportCharge *FinopsBillingSupportChargeSettings `json:"supportCharge,omitempty"`
+
+	// Type type controls what an adjustment plan rule does. The matching field (if any) can be populated with type-specific configuration.
+	//
+	// Current types include:
+	// - azureReservationReallocation
+	// - azureSavingsPlanReallocation
+	// - creditMemo
+	// - customUsageRate
+	// - fixedAmount
+	// - generateTax
+	// - hideCredits
+	// - markupMarkdown
+	// - removeAzureLicenseCosts
+	// - removeTax
+	// - reservationReallocation
+	// - savingsPlanReallocation
+	// - shareCloudCostManagementFee
+	// - supportCharge
+	// - upchargeDiscount
+	// - uncompressPricingTiers
+	// - volumeDiscounts
+	//
+	// Additional rule types (and matching fields) may be added in the future.
+	Type string `json:"type"`
+
+	// UncompressPricingTiers Configure a removeAzureLicenseCosts rule.
+	UncompressPricingTiers *FinopsBillingRemoveAzureLicenseCostsSettings `json:"uncompressPricingTiers,omitempty"`
+
+	// UpchargeDiscount Configure the addition of a percentage-value charge as a new line item.
+	UpchargeDiscount *FinopsBillingUpchargeDiscountSettings `json:"upchargeDiscount,omitempty"`
+
+	// VolumeDiscounts Configure a removeAzureLicenseCosts rule.
+	VolumeDiscounts *FinopsBillingRemoveAzureLicenseCostsSettings `json:"volumeDiscounts,omitempty"`
+}
+
+// FinopsBillingCreateEnterpriseRuleRequestBody defines model for FinopsBilling_CreateEnterpriseRuleRequestBody.
+type FinopsBillingCreateEnterpriseRuleRequestBody struct {
+	// CreditMemo Configure the creation of credit usage as a new line item.
+	CreditMemo *FinopsBillingCreditMemoSettings `json:"creditMemo,omitempty"`
+
+	// CustomUsageRate Configure an internally-defined unit price to rewrite select Billed Cost and Effective Cost line items.
+	//
+	// Conditions for customUsageRate rules often examine several of the following dimensions:
+	// - **ChargeCategory** or **PricingCategory** to differentiate between usage or discounted pricing
+	// - **ServiceName** or **ServiceCategory** to apply to a service or category
+	// - **SKUId** to differentiate by vendor's SKU
+	// - **CommitmentDiscountId** to apply to selected reservations
+	// - **ResourceId** or **ResourceType** to apply to a resource or set of resources
+	//
+	// Tiers allow setting multiple rates by cost bracket.
+	// The total cost captured by the rule's condition is broken up against the bounds of the tiers to calculate marginal usage within each tier.
+	// Each tier's rate is applied to its portion of the usage, and the total replaces the original cost.
+	//
+	// If multiple customUsageRate rules apply to the same usage record, the rules are evaluated in succession and may override preceding rules.
+	CustomUsageRate *FinopsBillingCustomUsageRateSettings `json:"customUsageRate,omitempty"`
+
+	// Enabled A rule that is not enabled will not run.
+	Enabled bool `json:"enabled"`
+
+	// EndAfter The last date this rule applies.
+	EndAfter *openapi_types.Date `json:"endAfter,omitempty"`
+
+	// FixedAmount Configure a fixed-value charge as a new line item.
+	FixedAmount *FinopsBillingFixedAmountSettings `json:"fixedAmount,omitempty"`
+
+	// GenerateTax Apply a tax charge as a new line item.
+	GenerateTax *FinopsBillingGenerateTaxSettings `json:"generateTax,omitempty"`
+
+	// HideCredits Configure how vendor credits are, or are not, applied.
+	HideCredits *FinopsBillingHideCreditsSettings `json:"hideCredits,omitempty"`
+
+	// MarkupMarkdown Configure the modification of existing costs by a percentage.
+	MarkupMarkdown *FinopsBillingMarkupMarkdownSettings `json:"markupMarkdown,omitempty"`
+
+	// Name Name of the rule.
+	Name string `json:"name"`
+
+	// RemoveAzureLicenseCosts Configure a removeAzureLicenseCosts rule.
+	RemoveAzureLicenseCosts *FinopsBillingRemoveAzureLicenseCostsSettings `json:"removeAzureLicenseCosts,omitempty"`
+
+	// RemoveTax Configure a removeAzureLicenseCosts rule.
+	RemoveTax *FinopsBillingRemoveAzureLicenseCostsSettings `json:"removeTax,omitempty"`
+
+	// StartOn The first date this rule applies.
+	StartOn *openapi_types.Date `json:"startOn,omitempty"`
+
+	// SupportCharge Configure overridden AWS support tier billing calculations.
+	SupportCharge *FinopsBillingSupportChargeSettings `json:"supportCharge,omitempty"`
+
+	// Type type controls what an enterprise adjustment rule does. The matching field (if any) can be populated with type-specific configuration.
+	//
+	// Current types include:
+	// - creditMemo
+	// - customUsageRate
+	// - fixedAmount
+	// - generateTax
+	// - hideCredits
+	// - markupMarkdown
+	// - removeAzureLicenseCosts
+	// - removeTax
+	// - supportCharge
+	// - upchargeDiscount
+	//
+	// Additional rule types (and matching fields) may be added in the future.
+	Type string `json:"type"`
+
+	// UpchargeDiscount Configure the addition of a percentage-value charge as a new line item.
+	UpchargeDiscount *FinopsBillingUpchargeDiscountSettings `json:"upchargeDiscount,omitempty"`
+}
+
+// FinopsBillingCreatePlanRequestBody defines model for FinopsBilling_CreatePlanRequestBody.
+type FinopsBillingCreatePlanRequestBody struct {
+	// CustomerIds The child organization IDs included in this adjustment plan. Each organization can be included in only one plan. A plan with no customerIds will affect **no** customers.
+	CustomerIds *[]int `json:"customerIds,omitempty"`
+
+	// Description Description of the adjustment plan
+	Description *string `json:"description,omitempty"`
+
+	// Name Display name for the adjustment plan
+	Name string `json:"name"`
+
+	// Rules Optionally provide the rules this adjustment plan will start with
+	Rules *[]FinopsBillingCreateAdjustmentPlanRule `json:"rules,omitempty"`
+}
+
+// FinopsBillingCreatePlanResponseBody defines model for FinopsBilling_CreatePlanResponseBody.
+type FinopsBillingCreatePlanResponseBody struct {
+	// Id Unique identifier of the created adjustment plan
+	Id openapi_types.UUID `json:"id"`
+
+	// RuleIds Unique identifiers of created adjustment rules
+	RuleIds *[]string `json:"ruleIds,omitempty"`
+}
+
+// FinopsBillingCreatePreAdjustmentRequestBody defines model for FinopsBilling_CreatePreAdjustmentRequestBody.
+type FinopsBillingCreatePreAdjustmentRequestBody struct {
+	// CreditMemo Configure the creation of credit usage as a new line item.
+	CreditMemo *FinopsBillingCreditMemoSettings `json:"creditMemo,omitempty"`
+
+	// CustomUsageRate Configure an internally-defined unit price to rewrite select Billed Cost and Effective Cost line items.
+	//
+	// Conditions for customUsageRate rules often examine several of the following dimensions:
+	// - **ChargeCategory** or **PricingCategory** to differentiate between usage or discounted pricing
+	// - **ServiceName** or **ServiceCategory** to apply to a service or category
+	// - **SKUId** to differentiate by vendor's SKU
+	// - **CommitmentDiscountId** to apply to selected reservations
+	// - **ResourceId** or **ResourceType** to apply to a resource or set of resources
+	//
+	// Tiers allow setting multiple rates by cost bracket.
+	// The total cost captured by the rule's condition is broken up against the bounds of the tiers to calculate marginal usage within each tier.
+	// Each tier's rate is applied to its portion of the usage, and the total replaces the original cost.
+	//
+	// If multiple customUsageRate rules apply to the same usage record, the rules are evaluated in succession and may override preceding rules.
+	CustomUsageRate *FinopsBillingCustomUsageRateSettings `json:"customUsageRate,omitempty"`
+
+	// CustomerIds The IDs of child organizations affected by this adjustment rule. If no customerIds are specified, this will affect **all** customers.
+	CustomerIds *[]int `json:"customerIds,omitempty"`
+
+	// Enabled A rule that is not enabled will not run.
+	Enabled bool `json:"enabled"`
+
+	// EndAfter The last date this rule applies.
+	EndAfter *openapi_types.Date `json:"endAfter,omitempty"`
+
+	// FixedAmount Configure a fixed-value charge as a new line item.
+	FixedAmount *FinopsBillingFixedAmountSettings `json:"fixedAmount,omitempty"`
+
+	// MarkupMarkdown Configure the modification of existing costs by a percentage.
+	MarkupMarkdown *FinopsBillingMarkupMarkdownSettings `json:"markupMarkdown,omitempty"`
+
+	// Name Name of the rule.
+	Name string `json:"name"`
+
+	// RemoveTax Configure a removeAzureLicenseCosts rule.
+	RemoveTax *FinopsBillingRemoveAzureLicenseCostsSettings `json:"removeTax,omitempty"`
+
+	// StartOn The first date this rule applies.
+	StartOn *openapi_types.Date `json:"startOn,omitempty"`
+
+	// Type type controls what an adjustment rule does. The matching field (if any) can be populated with type-specific configuration.
+	//
+	// Current types include:
+	// - creditMemo
+	// - customUsageRate
+	// - fixedAmount
+	// - markupMarkdown
+	// - removeTax
+	// - upchargeDiscount
+	//
+	// Additional rule types (and matching fields) may be added in the future.
+	Type string `json:"type"`
+
+	// UpchargeDiscount Configure the addition of a percentage-value charge as a new line item.
+	UpchargeDiscount *FinopsBillingUpchargeDiscountSettings `json:"upchargeDiscount,omitempty"`
+}
+
+// FinopsBillingCreateRequestBody defines model for FinopsBilling_CreateRequestBody.
+type FinopsBillingCreateRequestBody struct {
+	// Allocation Defines the allocation strategy and destination inputs for create/update operations.
+	Allocation FinopsBillingAllocationPayload `json:"allocation"`
+
+	// EffectiveFrom The month (inclusive) from which the rule applies, formatted YYYY-MM. This is applicable on ChargePeriod only.
+	EffectiveFrom string `json:"effectiveFrom"`
+
+	// EffectiveTo The month (exclusive) before which the rule applies, formatted YYYY-MM. Must be > effectiveFrom. Omit this field for no end date; the rule applies indefinitely. This is applicable on ChargePeriod only.
+	EffectiveTo *string `json:"effectiveTo,omitempty"`
+
+	// Name Display name for the shared cost rule. Must be unique within the organization.
+	Name string `json:"name"`
+
+	// Source Dimensions that identify the costs to be reallocated. Multiple dimensions are combined using AND logic; only costs that satisfy every dimension are included. At least one dimension is required.
+	Source []FinopsBillingSourceDimensionPayload `json:"source"`
+}
+
+// FinopsBillingCreateRuleRequestBody defines model for FinopsBilling_CreateRuleRequestBody.
+type FinopsBillingCreateRuleRequestBody struct {
+	// AzureReservationReallocation Configure reallocation of AWS reserved instance or Azure reservation benefits across customer accounts.
+	AzureReservationReallocation *FinopsBillingReservationReallocationSettings `json:"azureReservationReallocation,omitempty"`
+
+	// AzureSavingsPlanReallocation Configure reallocation of AWS or Azure savings plan benefits across customer accounts.
+	AzureSavingsPlanReallocation *FinopsBillingSavingsPlanReallocationSettings `json:"azureSavingsPlanReallocation,omitempty"`
+
+	// CreditMemo Configure the creation of credit usage as a new line item.
+	CreditMemo *FinopsBillingCreditMemoSettings `json:"creditMemo,omitempty"`
+
+	// CustomUsageRate Configure an internally-defined unit price to rewrite select Billed Cost and Effective Cost line items.
+	//
+	// Conditions for customUsageRate rules often examine several of the following dimensions:
+	// - **ChargeCategory** or **PricingCategory** to differentiate between usage or discounted pricing
+	// - **ServiceName** or **ServiceCategory** to apply to a service or category
+	// - **SKUId** to differentiate by vendor's SKU
+	// - **CommitmentDiscountId** to apply to selected reservations
+	// - **ResourceId** or **ResourceType** to apply to a resource or set of resources
+	//
+	// Tiers allow setting multiple rates by cost bracket.
+	// The total cost captured by the rule's condition is broken up against the bounds of the tiers to calculate marginal usage within each tier.
+	// Each tier's rate is applied to its portion of the usage, and the total replaces the original cost.
+	//
+	// If multiple customUsageRate rules apply to the same usage record, the rules are evaluated in succession and may override preceding rules.
+	CustomUsageRate *FinopsBillingCustomUsageRateSettings `json:"customUsageRate,omitempty"`
+
+	// Enabled A rule that is not enabled will not run.
+	Enabled bool `json:"enabled"`
+
+	// EndAfter The last date this rule applies.
+	EndAfter *openapi_types.Date `json:"endAfter,omitempty"`
+
+	// FixedAmount Configure a fixed-value charge as a new line item.
+	FixedAmount *FinopsBillingFixedAmountSettings `json:"fixedAmount,omitempty"`
+
+	// GenerateTax Apply a tax charge as a new line item.
+	GenerateTax *FinopsBillingGenerateTaxSettings `json:"generateTax,omitempty"`
+
+	// HideCredits Configure how vendor credits are, or are not, applied.
+	HideCredits *FinopsBillingHideCreditsSettings `json:"hideCredits,omitempty"`
+
+	// MarkupMarkdown Configure the modification of existing costs by a percentage.
+	MarkupMarkdown *FinopsBillingMarkupMarkdownSettings `json:"markupMarkdown,omitempty"`
+
+	// Name Name of the rule.
+	Name string `json:"name"`
+
+	// RemoveAzureLicenseCosts Configure a removeAzureLicenseCosts rule.
+	RemoveAzureLicenseCosts *FinopsBillingRemoveAzureLicenseCostsSettings `json:"removeAzureLicenseCosts,omitempty"`
+
+	// RemoveTax Configure a removeAzureLicenseCosts rule.
+	RemoveTax *FinopsBillingRemoveAzureLicenseCostsSettings `json:"removeTax,omitempty"`
+
+	// ReservationReallocation Configure reallocation of AWS reserved instance or Azure reservation benefits across customer accounts.
+	ReservationReallocation *FinopsBillingReservationReallocationSettings `json:"reservationReallocation,omitempty"`
+
+	// SavingsPlanReallocation Configure reallocation of AWS or Azure savings plan benefits across customer accounts.
+	SavingsPlanReallocation *FinopsBillingSavingsPlanReallocationSettings `json:"savingsPlanReallocation,omitempty"`
+
+	// ShareCloudCostManagementFee Configure the distribution of Cloud Cost Management fees across customer accounts.
+	ShareCloudCostManagementFee *FinopsBillingShareCloudCostManagementFeeSettings `json:"shareCloudCostManagementFee,omitempty"`
+
+	// StartOn The first date this rule applies.
+	StartOn *openapi_types.Date `json:"startOn,omitempty"`
+
+	// SupportCharge Configure overridden AWS support tier billing calculations.
+	SupportCharge *FinopsBillingSupportChargeSettings `json:"supportCharge,omitempty"`
+
+	// Type type controls what an adjustment plan rule does. The matching field (if any) can be populated with type-specific configuration.
+	//
+	// Current types include:
+	// - azureReservationReallocation
+	// - azureSavingsPlanReallocation
+	// - creditMemo
+	// - customUsageRate
+	// - fixedAmount
+	// - generateTax
+	// - hideCredits
+	// - markupMarkdown
+	// - removeAzureLicenseCosts
+	// - removeTax
+	// - reservationReallocation
+	// - savingsPlanReallocation
+	// - shareCloudCostManagementFee
+	// - supportCharge
+	// - upchargeDiscount
+	// - uncompressPricingTiers
+	// - volumeDiscounts
+	//
+	// Additional rule types (and matching fields) may be added in the future.
+	Type string `json:"type"`
+
+	// UncompressPricingTiers Configure a removeAzureLicenseCosts rule.
+	UncompressPricingTiers *FinopsBillingRemoveAzureLicenseCostsSettings `json:"uncompressPricingTiers,omitempty"`
+
+	// UpchargeDiscount Configure the addition of a percentage-value charge as a new line item.
+	UpchargeDiscount *FinopsBillingUpchargeDiscountSettings `json:"upchargeDiscount,omitempty"`
+
+	// VolumeDiscounts Configure a removeAzureLicenseCosts rule.
+	VolumeDiscounts *FinopsBillingRemoveAzureLicenseCostsSettings `json:"volumeDiscounts,omitempty"`
+}
+
+// FinopsBillingCreateRuleResponseBody defines model for FinopsBilling_CreateRuleResponseBody.
+type FinopsBillingCreateRuleResponseBody struct {
+	// Id id identifies this rule
+	Id openapi_types.UUID `json:"id"`
+}
+
+// FinopsBillingCreditMemoSettings Configure the creation of credit usage as a new line item.
+type FinopsBillingCreditMemoSettings struct {
+	// Condition An adjustment condition, used by adjustment rules and adjustment plan rules.
+	//
+	// A rule's condition may be omitted or null, which will match unconditionally.
+	//
+	// Otherwise the **"type"** field is required and controls which other fields are required.
+	// The following types are supported in billing adjustment rules:
+	//
+	// Type **"dimension_equals"** evaluates whether the specified **"dimension"** contains exactly the specified **"value"**.
+	//
+	// ```
+	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
+	// ```
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
+	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
+	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
+	// defined within your organization (names starting with **rbd\_**),
+	// [Tag Dimensions](https://docs.flexera.com/flexera/EN/Administration/TagDimensions.htm)
+	// defined within your organization (names starting with **tag\_**),
+	// or a few dimensions Flexera populates for you.
+	//
+	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	//
+	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
+	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
+	//
+	// ```
+	// {"type":"and", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"or", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"not", "expression":{...}}
+	// ```
+	//
+	// Together types **"and"**, **"or"**, and **"not"** enable complex combinations of other conditions.
+	Condition *FinopsBillingAdjustmentCondition `json:"condition,omitempty"`
+
+	// Credit Credit is the decimal value to add to the bill. Negative numbers reduce the bill.
+	Credit *string `json:"credit,omitempty"`
+}
+
+// FinopsBillingCustomRateTier defines model for FinopsBilling_CustomRateTier.
+type FinopsBillingCustomRateTier struct {
+	// EndCost inclusive upper bound for this tier
+	EndCost string `json:"endCost"`
+
+	// Rate unit price applied by this tier
+	Rate string `json:"rate"`
+
+	// StartCost exclusive lower bound for this tier
+	StartCost string `json:"startCost"`
+}
+
+// FinopsBillingCustomUsageRateSettings Configure an internally-defined unit price to rewrite select Billed Cost and Effective Cost line items.
+//
+// Conditions for customUsageRate rules often examine several of the following dimensions:
+// - **ChargeCategory** or **PricingCategory** to differentiate between usage or discounted pricing
+// - **ServiceName** or **ServiceCategory** to apply to a service or category
+// - **SKUId** to differentiate by vendor's SKU
+// - **CommitmentDiscountId** to apply to selected reservations
+// - **ResourceId** or **ResourceType** to apply to a resource or set of resources
+//
+// Tiers allow setting multiple rates by cost bracket.
+// The total cost captured by the rule's condition is broken up against the bounds of the tiers to calculate marginal usage within each tier.
+// Each tier's rate is applied to its portion of the usage, and the total replaces the original cost.
+//
+// If multiple customUsageRate rules apply to the same usage record, the rules are evaluated in succession and may override preceding rules.
+type FinopsBillingCustomUsageRateSettings struct {
+	// Condition An adjustment condition, used by adjustment rules and adjustment plan rules.
+	//
+	// A rule's condition may be omitted or null, which will match unconditionally.
+	//
+	// Otherwise the **"type"** field is required and controls which other fields are required.
+	// The following types are supported in billing adjustment rules:
+	//
+	// Type **"dimension_equals"** evaluates whether the specified **"dimension"** contains exactly the specified **"value"**.
+	//
+	// ```
+	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
+	// ```
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
+	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
+	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
+	// defined within your organization (names starting with **rbd\_**),
+	// [Tag Dimensions](https://docs.flexera.com/flexera/EN/Administration/TagDimensions.htm)
+	// defined within your organization (names starting with **tag\_**),
+	// or a few dimensions Flexera populates for you.
+	//
+	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	//
+	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
+	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
+	//
+	// ```
+	// {"type":"and", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"or", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"not", "expression":{...}}
+	// ```
+	//
+	// Together types **"and"**, **"or"**, and **"not"** enable complex combinations of other conditions.
+	Condition *FinopsBillingAdjustmentCondition `json:"condition,omitempty"`
+
+	// Rate Rate replaces the decimal cost for each unit of usage matching the condition.
+	Rate *string `json:"rate,omitempty"`
+
+	// Tiers Define tiers. These must be continuous without gaps.
+	Tiers *[]FinopsBillingCustomRateTier `json:"tiers,omitempty"`
+}
+
+// FinopsBillingError invalid filter received
+type FinopsBillingError struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// FinopsBillingFeeShare Choose between no sharing, a flat, percentage, or distributed fee. No more than one of the attributes may be set.
+type FinopsBillingFeeShare struct {
+	// Distributed Share a distribution.
+	Distributed *FinopsBillingFeeShareDistributed `json:"distributed,omitempty"`
+
+	// FlatFee Share a flat fee.
+	FlatFee *string `json:"flatFee,omitempty"`
+
+	// Percentage Share a percentage.
+	Percentage *string `json:"percentage,omitempty"`
+}
+
+// FinopsBillingFeeShareDistributed Share a distribution.
+type FinopsBillingFeeShareDistributed string
+
+// FinopsBillingFixedAmountSettings Configure a fixed-value charge as a new line item.
+type FinopsBillingFixedAmountSettings struct {
+	// Condition An adjustment condition, used by adjustment rules and adjustment plan rules.
+	//
+	// A rule's condition may be omitted or null, which will match unconditionally.
+	//
+	// Otherwise the **"type"** field is required and controls which other fields are required.
+	// The following types are supported in billing adjustment rules:
+	//
+	// Type **"dimension_equals"** evaluates whether the specified **"dimension"** contains exactly the specified **"value"**.
+	//
+	// ```
+	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
+	// ```
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
+	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
+	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
+	// defined within your organization (names starting with **rbd\_**),
+	// [Tag Dimensions](https://docs.flexera.com/flexera/EN/Administration/TagDimensions.htm)
+	// defined within your organization (names starting with **tag\_**),
+	// or a few dimensions Flexera populates for you.
+	//
+	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	//
+	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
+	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
+	//
+	// ```
+	// {"type":"and", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"or", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"not", "expression":{...}}
+	// ```
+	//
+	// Together types **"and"**, **"or"**, and **"not"** enable complex combinations of other conditions.
+	Condition *FinopsBillingAdjustmentCondition `json:"condition,omitempty"`
+
+	// Cost Cost is the decimal value to add to the bill. Negative numbers reduce the bill.
+	Cost *string `json:"cost,omitempty"`
+}
+
+// FinopsBillingFlexeraFinopsBillingAdjustmentPlan An adjustment plan contains multiple adjustment rules that apply to multiple child organizations.
+type FinopsBillingFlexeraFinopsBillingAdjustmentPlan struct {
+	// CreatedAt timestamp when the plan was created
+	CreatedAt time.Time `json:"createdAt"`
+
+	// CreatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	CreatedBy FinopsBillingFlexeraIamPrincipal `json:"createdBy"`
+
+	// CustomerIds The child organization IDs included in this adjustment plan. Each organization can be included in only one plan. A plan with no customerIds will affect **no** customers.
+	CustomerIds *[]int `json:"customerIds,omitempty"`
+
+	// Description Description of the adjustment plan
+	Description *string `json:"description,omitempty"`
+
+	// Id ID of the billing plan
+	Id openapi_types.UUID `json:"id"`
+
+	// Kind The resource's type
+	Kind FinopsBillingFlexeraFinopsBillingAdjustmentPlanKind `json:"kind"`
+
+	// Name Display name for the adjustment plan
+	Name string `json:"name"`
+
+	// UpdatedAt timestamp when the plan was updated
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// UpdatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	UpdatedBy FinopsBillingFlexeraIamPrincipal `json:"updatedBy"`
+}
+
+// FinopsBillingFlexeraFinopsBillingAdjustmentPlanKind The resource's type
+type FinopsBillingFlexeraFinopsBillingAdjustmentPlanKind string
+
+// FinopsBillingFlexeraFinopsBillingAdjustmentPlanRule An adjustment plan rule.
+type FinopsBillingFlexeraFinopsBillingAdjustmentPlanRule struct {
+	// AzureReservationReallocation Configure reallocation of AWS reserved instance or Azure reservation benefits across customer accounts.
+	AzureReservationReallocation *FinopsBillingReservationReallocationSettings `json:"azureReservationReallocation,omitempty"`
+
+	// AzureSavingsPlanReallocation Configure reallocation of AWS or Azure savings plan benefits across customer accounts.
+	AzureSavingsPlanReallocation *FinopsBillingSavingsPlanReallocationSettings `json:"azureSavingsPlanReallocation,omitempty"`
+
+	// CreatedAt timestamp when the rule was created
+	CreatedAt time.Time `json:"createdAt"`
+
+	// CreatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	CreatedBy FinopsBillingFlexeraIamPrincipal `json:"createdBy"`
+
+	// CreditMemo Configure the creation of credit usage as a new line item.
+	CreditMemo *FinopsBillingCreditMemoSettings `json:"creditMemo,omitempty"`
+
+	// CustomUsageRate Configure an internally-defined unit price to rewrite select Billed Cost and Effective Cost line items.
+	//
+	// Conditions for customUsageRate rules often examine several of the following dimensions:
+	// - **ChargeCategory** or **PricingCategory** to differentiate between usage or discounted pricing
+	// - **ServiceName** or **ServiceCategory** to apply to a service or category
+	// - **SKUId** to differentiate by vendor's SKU
+	// - **CommitmentDiscountId** to apply to selected reservations
+	// - **ResourceId** or **ResourceType** to apply to a resource or set of resources
+	//
+	// Tiers allow setting multiple rates by cost bracket.
+	// The total cost captured by the rule's condition is broken up against the bounds of the tiers to calculate marginal usage within each tier.
+	// Each tier's rate is applied to its portion of the usage, and the total replaces the original cost.
+	//
+	// If multiple customUsageRate rules apply to the same usage record, the rules are evaluated in succession and may override preceding rules.
+	CustomUsageRate *FinopsBillingCustomUsageRateSettings `json:"customUsageRate,omitempty"`
+
+	// Enabled A rule that is not enabled will not run.
+	Enabled bool `json:"enabled"`
+
+	// EndAfter The last date this rule applies.
+	EndAfter *openapi_types.Date `json:"endAfter,omitempty"`
+
+	// FixedAmount Configure a fixed-value charge as a new line item.
+	FixedAmount *FinopsBillingFixedAmountSettings `json:"fixedAmount,omitempty"`
+
+	// GenerateTax Apply a tax charge as a new line item.
+	GenerateTax *FinopsBillingGenerateTaxSettings `json:"generateTax,omitempty"`
+
+	// HideCredits Configure how vendor credits are, or are not, applied.
+	HideCredits *FinopsBillingHideCreditsSettings `json:"hideCredits,omitempty"`
+
+	// Id id identifies this rule
+	Id openapi_types.UUID `json:"id"`
+
+	// Kind The resource's type
+	Kind FinopsBillingFlexeraFinopsBillingAdjustmentPlanRuleKind `json:"kind"`
+
+	// MarkupMarkdown Configure the modification of existing costs by a percentage.
+	MarkupMarkdown *FinopsBillingMarkupMarkdownSettings `json:"markupMarkdown,omitempty"`
+
+	// Name Name of the rule.
+	Name string `json:"name"`
+
+	// PlanId Unique identifier for the plan this rule is part of.
+	PlanId openapi_types.UUID `json:"planId"`
+
+	// RemoveAzureLicenseCosts Configure a removeAzureLicenseCosts rule.
+	RemoveAzureLicenseCosts *FinopsBillingRemoveAzureLicenseCostsSettings `json:"removeAzureLicenseCosts,omitempty"`
+
+	// RemoveTax Configure a removeAzureLicenseCosts rule.
+	RemoveTax *FinopsBillingRemoveAzureLicenseCostsSettings `json:"removeTax,omitempty"`
+
+	// ReservationReallocation Configure reallocation of AWS reserved instance or Azure reservation benefits across customer accounts.
+	ReservationReallocation *FinopsBillingReservationReallocationSettings `json:"reservationReallocation,omitempty"`
+
+	// SavingsPlanReallocation Configure reallocation of AWS or Azure savings plan benefits across customer accounts.
+	SavingsPlanReallocation *FinopsBillingSavingsPlanReallocationSettings `json:"savingsPlanReallocation,omitempty"`
+
+	// ShareCloudCostManagementFee Configure the distribution of Cloud Cost Management fees across customer accounts.
+	ShareCloudCostManagementFee *FinopsBillingShareCloudCostManagementFeeSettings `json:"shareCloudCostManagementFee,omitempty"`
+
+	// StartOn The first date this rule applies.
+	StartOn *openapi_types.Date `json:"startOn,omitempty"`
+
+	// SupportCharge Configure overridden AWS support tier billing calculations.
+	SupportCharge *FinopsBillingSupportChargeSettings `json:"supportCharge,omitempty"`
+
+	// Type type controls what an adjustment plan rule does. The matching field (if any) can be populated with type-specific configuration.
+	//
+	// Current types include:
+	// - azureReservationReallocation
+	// - azureSavingsPlanReallocation
+	// - creditMemo
+	// - customUsageRate
+	// - fixedAmount
+	// - generateTax
+	// - hideCredits
+	// - markupMarkdown
+	// - removeAzureLicenseCosts
+	// - removeTax
+	// - reservationReallocation
+	// - savingsPlanReallocation
+	// - shareCloudCostManagementFee
+	// - supportCharge
+	// - upchargeDiscount
+	// - uncompressPricingTiers
+	// - volumeDiscounts
+	//
+	// Additional rule types (and matching fields) may be added in the future.
+	Type string `json:"type"`
+
+	// UncompressPricingTiers Configure a removeAzureLicenseCosts rule.
+	UncompressPricingTiers *FinopsBillingRemoveAzureLicenseCostsSettings `json:"uncompressPricingTiers,omitempty"`
+
+	// UpchargeDiscount Configure the addition of a percentage-value charge as a new line item.
+	UpchargeDiscount *FinopsBillingUpchargeDiscountSettings `json:"upchargeDiscount,omitempty"`
+
+	// UpdatedAt timestamp when the rule was updated
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// UpdatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	UpdatedBy FinopsBillingFlexeraIamPrincipal `json:"updatedBy"`
+
+	// VolumeDiscounts Configure a removeAzureLicenseCosts rule.
+	VolumeDiscounts *FinopsBillingRemoveAzureLicenseCostsSettings `json:"volumeDiscounts,omitempty"`
+}
+
+// FinopsBillingFlexeraFinopsBillingAdjustmentPlanRuleKind The resource's type
+type FinopsBillingFlexeraFinopsBillingAdjustmentPlanRuleKind string
+
+// FinopsBillingFlexeraFinopsBillingAdjustmentRule Configuration for an adjustment rule
+type FinopsBillingFlexeraFinopsBillingAdjustmentRule struct {
+	// CreatedAt timestamp when the rule was created
+	CreatedAt time.Time `json:"createdAt"`
+
+	// CreatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	CreatedBy FinopsBillingFlexeraIamPrincipal `json:"createdBy"`
+
+	// CreditMemo Configure the creation of credit usage as a new line item.
+	CreditMemo *FinopsBillingCreditMemoSettings `json:"creditMemo,omitempty"`
+
+	// CustomUsageRate Configure an internally-defined unit price to rewrite select Billed Cost and Effective Cost line items.
+	//
+	// Conditions for customUsageRate rules often examine several of the following dimensions:
+	// - **ChargeCategory** or **PricingCategory** to differentiate between usage or discounted pricing
+	// - **ServiceName** or **ServiceCategory** to apply to a service or category
+	// - **SKUId** to differentiate by vendor's SKU
+	// - **CommitmentDiscountId** to apply to selected reservations
+	// - **ResourceId** or **ResourceType** to apply to a resource or set of resources
+	//
+	// Tiers allow setting multiple rates by cost bracket.
+	// The total cost captured by the rule's condition is broken up against the bounds of the tiers to calculate marginal usage within each tier.
+	// Each tier's rate is applied to its portion of the usage, and the total replaces the original cost.
+	//
+	// If multiple customUsageRate rules apply to the same usage record, the rules are evaluated in succession and may override preceding rules.
+	CustomUsageRate *FinopsBillingCustomUsageRateSettings `json:"customUsageRate,omitempty"`
+
+	// CustomerIds The IDs of child organizations affected by this adjustment rule. If no customerIds are specified, this will affect **all** customers.
+	CustomerIds *[]int `json:"customerIds,omitempty"`
+
+	// Enabled A rule that is not enabled will not run.
+	Enabled bool `json:"enabled"`
+
+	// EndAfter The last date this rule applies.
+	EndAfter *openapi_types.Date `json:"endAfter,omitempty"`
+
+	// FixedAmount Configure a fixed-value charge as a new line item.
+	FixedAmount *FinopsBillingFixedAmountSettings `json:"fixedAmount,omitempty"`
+
+	// Id id identifies this rule
+	Id openapi_types.UUID `json:"id"`
+
+	// Kind The resource's type
+	Kind FinopsBillingFlexeraFinopsBillingAdjustmentRuleKind `json:"kind"`
+
+	// MarkupMarkdown Configure the modification of existing costs by a percentage.
+	MarkupMarkdown *FinopsBillingMarkupMarkdownSettings `json:"markupMarkdown,omitempty"`
+
+	// Name Name of the adjustment rule displayed.
+	Name string `json:"name"`
+
+	// RemoveTax Configure a removeAzureLicenseCosts rule.
+	RemoveTax *FinopsBillingRemoveAzureLicenseCostsSettings `json:"removeTax,omitempty"`
+
+	// StartOn The first date this rule applies.
+	StartOn *openapi_types.Date `json:"startOn,omitempty"`
+
+	// Type type controls what an adjustment rule does. The matching field (if any) can be populated with type-specific configuration.
+	//
+	// Current types include:
+	// - creditMemo
+	// - customUsageRate
+	// - fixedAmount
+	// - markupMarkdown
+	// - removeTax
+	// - upchargeDiscount
+	//
+	// Additional rule types (and matching fields) may be added in the future.
+	Type string `json:"type"`
+
+	// UpchargeDiscount Configure the addition of a percentage-value charge as a new line item.
+	UpchargeDiscount *FinopsBillingUpchargeDiscountSettings `json:"upchargeDiscount,omitempty"`
+
+	// UpdatedAt timestamp when the rule was updated
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// UpdatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	UpdatedBy FinopsBillingFlexeraIamPrincipal `json:"updatedBy"`
+}
+
+// FinopsBillingFlexeraFinopsBillingAdjustmentRuleKind The resource's type
+type FinopsBillingFlexeraFinopsBillingAdjustmentRuleKind string
+
+// FinopsBillingFlexeraFinopsBillingEnterpriseRule Configuration for an enterprise adjustment rule
+type FinopsBillingFlexeraFinopsBillingEnterpriseRule struct {
+	// CreatedAt timestamp when the rule was created
+	CreatedAt time.Time `json:"createdAt"`
+
+	// CreatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	CreatedBy FinopsBillingFlexeraIamPrincipal `json:"createdBy"`
+
+	// CreditMemo Configure the creation of credit usage as a new line item.
+	CreditMemo *FinopsBillingCreditMemoSettings `json:"creditMemo,omitempty"`
+
+	// CustomUsageRate Configure an internally-defined unit price to rewrite select Billed Cost and Effective Cost line items.
+	//
+	// Conditions for customUsageRate rules often examine several of the following dimensions:
+	// - **ChargeCategory** or **PricingCategory** to differentiate between usage or discounted pricing
+	// - **ServiceName** or **ServiceCategory** to apply to a service or category
+	// - **SKUId** to differentiate by vendor's SKU
+	// - **CommitmentDiscountId** to apply to selected reservations
+	// - **ResourceId** or **ResourceType** to apply to a resource or set of resources
+	//
+	// Tiers allow setting multiple rates by cost bracket.
+	// The total cost captured by the rule's condition is broken up against the bounds of the tiers to calculate marginal usage within each tier.
+	// Each tier's rate is applied to its portion of the usage, and the total replaces the original cost.
+	//
+	// If multiple customUsageRate rules apply to the same usage record, the rules are evaluated in succession and may override preceding rules.
+	CustomUsageRate *FinopsBillingCustomUsageRateSettings `json:"customUsageRate,omitempty"`
+
+	// Enabled A rule that is not enabled will not run.
+	Enabled bool `json:"enabled"`
+
+	// EndAfter The last date this rule applies.
+	EndAfter *openapi_types.Date `json:"endAfter,omitempty"`
+
+	// FixedAmount Configure a fixed-value charge as a new line item.
+	FixedAmount *FinopsBillingFixedAmountSettings `json:"fixedAmount,omitempty"`
+
+	// GenerateTax Apply a tax charge as a new line item.
+	GenerateTax *FinopsBillingGenerateTaxSettings `json:"generateTax,omitempty"`
+
+	// HideCredits Configure how vendor credits are, or are not, applied.
+	HideCredits *FinopsBillingHideCreditsSettings `json:"hideCredits,omitempty"`
+
+	// Id id identifies this rule
+	Id openapi_types.UUID `json:"id"`
+
+	// Kind The resource's type
+	Kind FinopsBillingFlexeraFinopsBillingEnterpriseRuleKind `json:"kind"`
+
+	// MarkupMarkdown Configure the modification of existing costs by a percentage.
+	MarkupMarkdown *FinopsBillingMarkupMarkdownSettings `json:"markupMarkdown,omitempty"`
+
+	// Name Name of the enterprise adjustment rule displayed.
+	Name string `json:"name"`
+
+	// RemoveAzureLicenseCosts Configure a removeAzureLicenseCosts rule.
+	RemoveAzureLicenseCosts *FinopsBillingRemoveAzureLicenseCostsSettings `json:"removeAzureLicenseCosts,omitempty"`
+
+	// RemoveTax Configure a removeAzureLicenseCosts rule.
+	RemoveTax *FinopsBillingRemoveAzureLicenseCostsSettings `json:"removeTax,omitempty"`
+
+	// StartOn The first date this rule applies.
+	StartOn *openapi_types.Date `json:"startOn,omitempty"`
+
+	// SupportCharge Configure overridden AWS support tier billing calculations.
+	SupportCharge *FinopsBillingSupportChargeSettings `json:"supportCharge,omitempty"`
+
+	// Type type controls what an enterprise adjustment rule does. The matching field (if any) can be populated with type-specific configuration.
+	//
+	// Current types include:
+	// - creditMemo
+	// - customUsageRate
+	// - fixedAmount
+	// - generateTax
+	// - hideCredits
+	// - markupMarkdown
+	// - removeAzureLicenseCosts
+	// - removeTax
+	// - supportCharge
+	// - upchargeDiscount
+	//
+	// Additional rule types (and matching fields) may be added in the future.
+	Type string `json:"type"`
+
+	// UpchargeDiscount Configure the addition of a percentage-value charge as a new line item.
+	UpchargeDiscount *FinopsBillingUpchargeDiscountSettings `json:"upchargeDiscount,omitempty"`
+
+	// UpdatedAt timestamp when the rule was updated
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// UpdatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	UpdatedBy FinopsBillingFlexeraIamPrincipal `json:"updatedBy"`
+}
+
+// FinopsBillingFlexeraFinopsBillingEnterpriseRuleKind The resource's type
+type FinopsBillingFlexeraFinopsBillingEnterpriseRuleKind string
+
+// FinopsBillingFlexeraFinopsBillingSharedCostRuleSummary A summary of a shared cost rule suitable for listing pages.
+type FinopsBillingFlexeraFinopsBillingSharedCostRuleSummary struct {
+	// Allocation Defines the allocation strategy and the destinations that receive the reallocated costs.
+	Allocation FinopsBillingAllocation `json:"allocation"`
+
+	// CreatedAt timestamp when the shared cost rule was created
+	CreatedAt time.Time `json:"createdAt"`
+
+	// CreatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	CreatedBy FinopsBillingFlexeraIamPrincipal `json:"createdBy"`
+
+	// EffectiveFrom The month (inclusive) from which the rule applies, formatted YYYY-MM. This is applicable on ChargePeriod only.
+	EffectiveFrom string `json:"effectiveFrom"`
+
+	// EffectiveTo The month (exclusive) before which the rule applies, formatted YYYY-MM. Omit this field for no end date; the rule applies indefinitely. This is applicable on ChargePeriod only.
+	EffectiveTo *string `json:"effectiveTo,omitempty"`
+
+	// Id Unique identifier of the shared cost rule.
+	Id string `json:"id"`
+
+	// Kind The resource's type
+	Kind FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryKind `json:"kind"`
+
+	// Name Display name for the shared cost rule.
+	Name string `json:"name"`
+
+	// Priority Execution priority of this rule relative to other rules in the organization.
+	Priority int `json:"priority"`
+
+	// Status Current lifecycle status of the rule.
+	Status FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryStatus `json:"status"`
+
+	// UpdatedAt timestamp when the shared cost rule was updated
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// UpdatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	UpdatedBy FinopsBillingFlexeraIamPrincipal `json:"updatedBy"`
+}
+
+// FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryKind The resource's type
+type FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryKind string
+
+// FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryStatus Current lifecycle status of the rule.
+type FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryStatus string
+
+// FinopsBillingFlexeraIamPrincipal A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+type FinopsBillingFlexeraIamPrincipal struct {
+	// Id The principal's unique identifier (ID)
+	Id int `json:"id"`
+
+	// Kind The resource's type
+	Kind FinopsBillingFlexeraIamPrincipalKind `json:"kind"`
+
+	// Ref A string used to refer to an instance of a resource
+	Ref string `json:"ref"`
+}
+
+// FinopsBillingFlexeraIamPrincipalKind The resource's type
+type FinopsBillingFlexeraIamPrincipalKind string
+
+// FinopsBillingGenerateTaxSettings Apply a tax charge as a new line item.
+type FinopsBillingGenerateTaxSettings struct {
+	// Condition An adjustment condition, used by adjustment rules and adjustment plan rules.
+	//
+	// A rule's condition may be omitted or null, which will match unconditionally.
+	//
+	// Otherwise the **"type"** field is required and controls which other fields are required.
+	// The following types are supported in billing adjustment rules:
+	//
+	// Type **"dimension_equals"** evaluates whether the specified **"dimension"** contains exactly the specified **"value"**.
+	//
+	// ```
+	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
+	// ```
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
+	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
+	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
+	// defined within your organization (names starting with **rbd\_**),
+	// [Tag Dimensions](https://docs.flexera.com/flexera/EN/Administration/TagDimensions.htm)
+	// defined within your organization (names starting with **tag\_**),
+	// or a few dimensions Flexera populates for you.
+	//
+	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	//
+	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
+	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
+	//
+	// ```
+	// {"type":"and", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"or", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"not", "expression":{...}}
+	// ```
+	//
+	// Together types **"and"**, **"or"**, and **"not"** enable complex combinations of other conditions.
+	Condition *FinopsBillingAdjustmentCondition `json:"condition,omitempty"`
+
+	// Rate Rate is the percentage of the total billed cost to add to the bill as tax.
+	Rate *string `json:"rate,omitempty"`
+}
+
+// FinopsBillingHideCreditsSettings Configure how vendor credits are, or are not, applied.
+type FinopsBillingHideCreditsSettings struct {
+	// CreditTypes CreditTypes lists the credits that will be hidden.
+	CreditTypes *[]FinopsBillingHideCreditsSettingsCreditTypes `json:"creditTypes,omitempty"`
+}
+
+// FinopsBillingHideCreditsSettingsCreditTypes defines model for FinopsBillingHideCreditsSettings.CreditTypes.
+type FinopsBillingHideCreditsSettingsCreditTypes string
+
+// FinopsBillingIndexAdjustmentRulesResult defines model for FinopsBilling_IndexAdjustmentRulesResult.
+type FinopsBillingIndexAdjustmentRulesResult struct {
+	// Kind The resource's type
+	Kind FinopsBillingIndexAdjustmentRulesResultKind `json:"kind"`
+
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	NextPage *string `json:"nextPage,omitempty"`
+
+	// Values The requested adjustment rule values.
+	Values *[]FinopsBillingFlexeraFinopsBillingAdjustmentRule `json:"values,omitempty"`
+}
+
+// FinopsBillingIndexAdjustmentRulesResultKind The resource's type
+type FinopsBillingIndexAdjustmentRulesResultKind string
+
+// FinopsBillingIndexEnterpriseRulesResult defines model for FinopsBilling_IndexEnterpriseRulesResult.
+type FinopsBillingIndexEnterpriseRulesResult struct {
+	// Kind The resource's type
+	Kind FinopsBillingIndexEnterpriseRulesResultKind `json:"kind"`
+
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	NextPage *string `json:"nextPage,omitempty"`
+
+	// Values The requested enterprise adjustment rule values.
+	Values *[]FinopsBillingFlexeraFinopsBillingEnterpriseRule `json:"values,omitempty"`
+}
+
+// FinopsBillingIndexEnterpriseRulesResultKind The resource's type
+type FinopsBillingIndexEnterpriseRulesResultKind string
+
+// FinopsBillingIndexPlansResult defines model for FinopsBilling_IndexPlansResult.
+type FinopsBillingIndexPlansResult struct {
+	// Kind The resource's type
+	Kind FinopsBillingIndexPlansResultKind `json:"kind"`
+
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	NextPage *string `json:"nextPage,omitempty"`
+
+	// Values The requested adjustment plan values.
+	Values *[]FinopsBillingFlexeraFinopsBillingAdjustmentPlan `json:"values,omitempty"`
+}
+
+// FinopsBillingIndexPlansResultKind The resource's type
+type FinopsBillingIndexPlansResultKind string
+
+// FinopsBillingIndexRulesResult defines model for FinopsBilling_IndexRulesResult.
+type FinopsBillingIndexRulesResult struct {
+	// Kind The resource's type
+	Kind FinopsBillingIndexRulesResultKind `json:"kind"`
+
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	NextPage *string `json:"nextPage,omitempty"`
+
+	// Values The requested adjustment plan rules.
+	Values *[]FinopsBillingFlexeraFinopsBillingAdjustmentPlanRule `json:"values,omitempty"`
+}
+
+// FinopsBillingIndexRulesResultKind The resource's type
+type FinopsBillingIndexRulesResultKind string
+
+// FinopsBillingIndexSharedCostRulesResult defines model for FinopsBilling_IndexSharedCostRulesResult.
+type FinopsBillingIndexSharedCostRulesResult struct {
+	// Kind The resource's type
+	Kind FinopsBillingIndexSharedCostRulesResultKind `json:"kind"`
+
+	// Values The shared cost rules.
+	Values []FinopsBillingFlexeraFinopsBillingSharedCostRuleSummary `json:"values"`
+}
+
+// FinopsBillingIndexSharedCostRulesResultKind The resource's type
+type FinopsBillingIndexSharedCostRulesResultKind string
+
+// FinopsBillingMarkupMarkdownSettings Configure the modification of existing costs by a percentage.
+type FinopsBillingMarkupMarkdownSettings struct {
+	// Condition An adjustment condition, used by adjustment rules and adjustment plan rules.
+	//
+	// A rule's condition may be omitted or null, which will match unconditionally.
+	//
+	// Otherwise the **"type"** field is required and controls which other fields are required.
+	// The following types are supported in billing adjustment rules:
+	//
+	// Type **"dimension_equals"** evaluates whether the specified **"dimension"** contains exactly the specified **"value"**.
+	//
+	// ```
+	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
+	// ```
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
+	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
+	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
+	// defined within your organization (names starting with **rbd\_**),
+	// [Tag Dimensions](https://docs.flexera.com/flexera/EN/Administration/TagDimensions.htm)
+	// defined within your organization (names starting with **tag\_**),
+	// or a few dimensions Flexera populates for you.
+	//
+	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	//
+	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
+	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
+	//
+	// ```
+	// {"type":"and", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"or", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"not", "expression":{...}}
+	// ```
+	//
+	// Together types **"and"**, **"or"**, and **"not"** enable complex combinations of other conditions.
+	Condition *FinopsBillingAdjustmentCondition `json:"condition,omitempty"`
+
+	// Markup Markup is the percentage added into the existing value. Negative numbers subtract.
+	Markup *string `json:"markup,omitempty"`
+}
+
+// FinopsBillingOrderEntry Maps a shared cost rule to its new priority position.
+type FinopsBillingOrderEntry struct {
+	// Priority New priority for this rule. Lower numbers execute first.
+	Priority int `json:"priority"`
+
+	// RuleId Unique identifier of the shared cost rule.
+	RuleId string `json:"ruleId"`
+}
+
+// FinopsBillingRemoveAzureLicenseCostsSettings Configure a removeAzureLicenseCosts rule.
+type FinopsBillingRemoveAzureLicenseCostsSettings struct {
+	// Condition An adjustment condition, used by adjustment rules and adjustment plan rules.
+	//
+	// A rule's condition may be omitted or null, which will match unconditionally.
+	//
+	// Otherwise the **"type"** field is required and controls which other fields are required.
+	// The following types are supported in billing adjustment rules:
+	//
+	// Type **"dimension_equals"** evaluates whether the specified **"dimension"** contains exactly the specified **"value"**.
+	//
+	// ```
+	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
+	// ```
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
+	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
+	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
+	// defined within your organization (names starting with **rbd\_**),
+	// [Tag Dimensions](https://docs.flexera.com/flexera/EN/Administration/TagDimensions.htm)
+	// defined within your organization (names starting with **tag\_**),
+	// or a few dimensions Flexera populates for you.
+	//
+	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	//
+	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
+	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
+	//
+	// ```
+	// {"type":"and", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"or", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"not", "expression":{...}}
+	// ```
+	//
+	// Together types **"and"**, **"or"**, and **"not"** enable complex combinations of other conditions.
+	Condition *FinopsBillingAdjustmentCondition `json:"condition,omitempty"`
+}
+
+// FinopsBillingReorderRequestBody defines model for FinopsBilling_ReorderRequestBody.
+type FinopsBillingReorderRequestBody struct {
+	// Rules List of rules whose priority is changing, with their new priorities.
+	Rules []FinopsBillingOrderEntry `json:"rules"`
+}
+
+// FinopsBillingReplaceAdjustmentPlanRuleInPlan Replaces an adjustment plan rule as part of replacing a plan.
+type FinopsBillingReplaceAdjustmentPlanRuleInPlan struct {
+	// AzureReservationReallocation Configure reallocation of AWS reserved instance or Azure reservation benefits across customer accounts.
+	AzureReservationReallocation *FinopsBillingReservationReallocationSettings `json:"azureReservationReallocation,omitempty"`
+
+	// AzureSavingsPlanReallocation Configure reallocation of AWS or Azure savings plan benefits across customer accounts.
+	AzureSavingsPlanReallocation *FinopsBillingSavingsPlanReallocationSettings `json:"azureSavingsPlanReallocation,omitempty"`
+
+	// CreditMemo Configure the creation of credit usage as a new line item.
+	CreditMemo *FinopsBillingCreditMemoSettings `json:"creditMemo,omitempty"`
+
+	// CustomUsageRate Configure an internally-defined unit price to rewrite select Billed Cost and Effective Cost line items.
+	//
+	// Conditions for customUsageRate rules often examine several of the following dimensions:
+	// - **ChargeCategory** or **PricingCategory** to differentiate between usage or discounted pricing
+	// - **ServiceName** or **ServiceCategory** to apply to a service or category
+	// - **SKUId** to differentiate by vendor's SKU
+	// - **CommitmentDiscountId** to apply to selected reservations
+	// - **ResourceId** or **ResourceType** to apply to a resource or set of resources
+	//
+	// Tiers allow setting multiple rates by cost bracket.
+	// The total cost captured by the rule's condition is broken up against the bounds of the tiers to calculate marginal usage within each tier.
+	// Each tier's rate is applied to its portion of the usage, and the total replaces the original cost.
+	//
+	// If multiple customUsageRate rules apply to the same usage record, the rules are evaluated in succession and may override preceding rules.
+	CustomUsageRate *FinopsBillingCustomUsageRateSettings `json:"customUsageRate,omitempty"`
+
+	// Enabled A rule that is not enabled will not run.
+	Enabled bool `json:"enabled"`
+
+	// EndAfter The last date this rule applies.
+	EndAfter *openapi_types.Date `json:"endAfter,omitempty"`
+
+	// FixedAmount Configure a fixed-value charge as a new line item.
+	FixedAmount *FinopsBillingFixedAmountSettings `json:"fixedAmount,omitempty"`
+
+	// GenerateTax Apply a tax charge as a new line item.
+	GenerateTax *FinopsBillingGenerateTaxSettings `json:"generateTax,omitempty"`
+
+	// HideCredits Configure how vendor credits are, or are not, applied.
+	HideCredits *FinopsBillingHideCreditsSettings `json:"hideCredits,omitempty"`
+
+	// Id id identifies this rule
+	Id openapi_types.UUID `json:"id"`
+
+	// MarkupMarkdown Configure the modification of existing costs by a percentage.
+	MarkupMarkdown *FinopsBillingMarkupMarkdownSettings `json:"markupMarkdown,omitempty"`
+
+	// Name Name of the rule.
+	Name string `json:"name"`
+
+	// RemoveAzureLicenseCosts Configure a removeAzureLicenseCosts rule.
+	RemoveAzureLicenseCosts *FinopsBillingRemoveAzureLicenseCostsSettings `json:"removeAzureLicenseCosts,omitempty"`
+
+	// RemoveTax Configure a removeAzureLicenseCosts rule.
+	RemoveTax *FinopsBillingRemoveAzureLicenseCostsSettings `json:"removeTax,omitempty"`
+
+	// ReservationReallocation Configure reallocation of AWS reserved instance or Azure reservation benefits across customer accounts.
+	ReservationReallocation *FinopsBillingReservationReallocationSettings `json:"reservationReallocation,omitempty"`
+
+	// SavingsPlanReallocation Configure reallocation of AWS or Azure savings plan benefits across customer accounts.
+	SavingsPlanReallocation *FinopsBillingSavingsPlanReallocationSettings `json:"savingsPlanReallocation,omitempty"`
+
+	// ShareCloudCostManagementFee Configure the distribution of Cloud Cost Management fees across customer accounts.
+	ShareCloudCostManagementFee *FinopsBillingShareCloudCostManagementFeeSettings `json:"shareCloudCostManagementFee,omitempty"`
+
+	// StartOn The first date this rule applies.
+	StartOn *openapi_types.Date `json:"startOn,omitempty"`
+
+	// SupportCharge Configure overridden AWS support tier billing calculations.
+	SupportCharge *FinopsBillingSupportChargeSettings `json:"supportCharge,omitempty"`
+
+	// Type type controls what an adjustment plan rule does. The matching field (if any) can be populated with type-specific configuration.
+	//
+	// Current types include:
+	// - azureReservationReallocation
+	// - azureSavingsPlanReallocation
+	// - creditMemo
+	// - customUsageRate
+	// - fixedAmount
+	// - generateTax
+	// - hideCredits
+	// - markupMarkdown
+	// - removeAzureLicenseCosts
+	// - removeTax
+	// - reservationReallocation
+	// - savingsPlanReallocation
+	// - shareCloudCostManagementFee
+	// - supportCharge
+	// - upchargeDiscount
+	// - uncompressPricingTiers
+	// - volumeDiscounts
+	//
+	// Additional rule types (and matching fields) may be added in the future.
+	Type string `json:"type"`
+
+	// UncompressPricingTiers Configure a removeAzureLicenseCosts rule.
+	UncompressPricingTiers *FinopsBillingRemoveAzureLicenseCostsSettings `json:"uncompressPricingTiers,omitempty"`
+
+	// UpchargeDiscount Configure the addition of a percentage-value charge as a new line item.
+	UpchargeDiscount *FinopsBillingUpchargeDiscountSettings `json:"upchargeDiscount,omitempty"`
+
+	// VolumeDiscounts Configure a removeAzureLicenseCosts rule.
+	VolumeDiscounts *FinopsBillingRemoveAzureLicenseCostsSettings `json:"volumeDiscounts,omitempty"`
+}
+
+// FinopsBillingReplaceEnterpriseRuleInRuleset Replaces an enterprise adjustment rule as part of replacing all enterprise adjustment rules.
+type FinopsBillingReplaceEnterpriseRuleInRuleset struct {
+	// CreditMemo Configure the creation of credit usage as a new line item.
+	CreditMemo *FinopsBillingCreditMemoSettings `json:"creditMemo,omitempty"`
+
+	// CustomUsageRate Configure an internally-defined unit price to rewrite select Billed Cost and Effective Cost line items.
+	//
+	// Conditions for customUsageRate rules often examine several of the following dimensions:
+	// - **ChargeCategory** or **PricingCategory** to differentiate between usage or discounted pricing
+	// - **ServiceName** or **ServiceCategory** to apply to a service or category
+	// - **SKUId** to differentiate by vendor's SKU
+	// - **CommitmentDiscountId** to apply to selected reservations
+	// - **ResourceId** or **ResourceType** to apply to a resource or set of resources
+	//
+	// Tiers allow setting multiple rates by cost bracket.
+	// The total cost captured by the rule's condition is broken up against the bounds of the tiers to calculate marginal usage within each tier.
+	// Each tier's rate is applied to its portion of the usage, and the total replaces the original cost.
+	//
+	// If multiple customUsageRate rules apply to the same usage record, the rules are evaluated in succession and may override preceding rules.
+	CustomUsageRate *FinopsBillingCustomUsageRateSettings `json:"customUsageRate,omitempty"`
+
+	// Enabled A rule that is not enabled will not run.
+	Enabled bool `json:"enabled"`
+
+	// EndAfter The last date this rule applies.
+	EndAfter *openapi_types.Date `json:"endAfter,omitempty"`
+
+	// FixedAmount Configure a fixed-value charge as a new line item.
+	FixedAmount *FinopsBillingFixedAmountSettings `json:"fixedAmount,omitempty"`
+
+	// GenerateTax Apply a tax charge as a new line item.
+	GenerateTax *FinopsBillingGenerateTaxSettings `json:"generateTax,omitempty"`
+
+	// HideCredits Configure how vendor credits are, or are not, applied.
+	HideCredits *FinopsBillingHideCreditsSettings `json:"hideCredits,omitempty"`
+
+	// Id id identifies this rule
+	Id openapi_types.UUID `json:"id"`
+
+	// MarkupMarkdown Configure the modification of existing costs by a percentage.
+	MarkupMarkdown *FinopsBillingMarkupMarkdownSettings `json:"markupMarkdown,omitempty"`
+
+	// Name Name of the rule.
+	Name string `json:"name"`
+
+	// RemoveAzureLicenseCosts Configure a removeAzureLicenseCosts rule.
+	RemoveAzureLicenseCosts *FinopsBillingRemoveAzureLicenseCostsSettings `json:"removeAzureLicenseCosts,omitempty"`
+
+	// RemoveTax Configure a removeAzureLicenseCosts rule.
+	RemoveTax *FinopsBillingRemoveAzureLicenseCostsSettings `json:"removeTax,omitempty"`
+
+	// StartOn The first date this rule applies.
+	StartOn *openapi_types.Date `json:"startOn,omitempty"`
+
+	// SupportCharge Configure overridden AWS support tier billing calculations.
+	SupportCharge *FinopsBillingSupportChargeSettings `json:"supportCharge,omitempty"`
+
+	// Type type controls what an enterprise adjustment rule does. The matching field (if any) can be populated with type-specific configuration.
+	//
+	// Current types include:
+	// - creditMemo
+	// - customUsageRate
+	// - fixedAmount
+	// - generateTax
+	// - hideCredits
+	// - markupMarkdown
+	// - removeAzureLicenseCosts
+	// - removeTax
+	// - supportCharge
+	// - upchargeDiscount
+	//
+	// Additional rule types (and matching fields) may be added in the future.
+	Type string `json:"type"`
+
+	// UpchargeDiscount Configure the addition of a percentage-value charge as a new line item.
+	UpchargeDiscount *FinopsBillingUpchargeDiscountSettings `json:"upchargeDiscount,omitempty"`
+}
+
+// FinopsBillingReplaceEnterpriseRulesetRequestBody defines model for FinopsBilling_ReplaceEnterpriseRulesetRequestBody.
+type FinopsBillingReplaceEnterpriseRulesetRequestBody struct {
+	// Rules Lists the enterprise adjustment rules in the order they are applied.
+	Rules []FinopsBillingReplaceEnterpriseRuleInRuleset `json:"rules"`
+}
+
+// FinopsBillingReplacePlanRequestBody defines model for FinopsBilling_ReplacePlanRequestBody.
+type FinopsBillingReplacePlanRequestBody struct {
+	// CustomerIds The child organization IDs included in this adjustment plan. Each organization can be included in only one plan. A plan with no customerIds will affect **no** customers.
+	CustomerIds *[]int `json:"customerIds,omitempty"`
+
+	// Description Description of the adjustment plan
+	Description *string `json:"description,omitempty"`
+
+	// Name Display name for the adjustment plan
+	Name string `json:"name"`
+
+	// Rules Lists the rules applied by this plan.
+	Rules *[]FinopsBillingReplaceAdjustmentPlanRuleInPlan `json:"rules,omitempty"`
+}
+
+// FinopsBillingReplaceSettingsRequestBody defines model for FinopsBilling_ReplaceSettingsRequestBody.
+type FinopsBillingReplaceSettingsRequestBody struct {
+	// BaseCostsOn The base cost value used for adjustments. Note that using 'listCost' may reduce the utility of some adjustment rules.
+	BaseCostsOn *FinopsBillingReplaceSettingsRequestBodyBaseCostsOn `json:"baseCostsOn,omitempty"`
+}
+
+// FinopsBillingReplaceSettingsRequestBodyBaseCostsOn The base cost value used for adjustments. Note that using 'listCost' may reduce the utility of some adjustment rules.
+type FinopsBillingReplaceSettingsRequestBodyBaseCostsOn string
+
+// FinopsBillingReservationReallocationSettings Configure reallocation of AWS reserved instance or Azure reservation benefits across customer accounts.
+type FinopsBillingReservationReallocationSettings struct {
+	// Condition An adjustment condition, used by adjustment rules and adjustment plan rules.
+	//
+	// A rule's condition may be omitted or null, which will match unconditionally.
+	//
+	// Otherwise the **"type"** field is required and controls which other fields are required.
+	// The following types are supported in billing adjustment rules:
+	//
+	// Type **"dimension_equals"** evaluates whether the specified **"dimension"** contains exactly the specified **"value"**.
+	//
+	// ```
+	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
+	// ```
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
+	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
+	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
+	// defined within your organization (names starting with **rbd\_**),
+	// [Tag Dimensions](https://docs.flexera.com/flexera/EN/Administration/TagDimensions.htm)
+	// defined within your organization (names starting with **tag\_**),
+	// or a few dimensions Flexera populates for you.
+	//
+	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	//
+	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
+	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
+	//
+	// ```
+	// {"type":"and", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"or", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"not", "expression":{...}}
+	// ```
+	//
+	// Together types **"and"**, **"or"**, and **"not"** enable complex combinations of other conditions.
+	Condition *FinopsBillingAdjustmentCondition `json:"condition,omitempty"`
+
+	// RevertReservation RevertReservation specifies which reservation savings should be reverted to original rates.
+	RevertReservation FinopsBillingReservationReallocationSettingsRevertReservation `json:"revertReservation"`
+}
+
+// FinopsBillingReservationReallocationSettingsRevertReservation RevertReservation specifies which reservation savings should be reverted to original rates.
+type FinopsBillingReservationReallocationSettingsRevertReservation string
+
+// FinopsBillingSavingsPlanReallocationSettings Configure reallocation of AWS or Azure savings plan benefits across customer accounts.
+type FinopsBillingSavingsPlanReallocationSettings struct {
+	// Condition An adjustment condition, used by adjustment rules and adjustment plan rules.
+	//
+	// A rule's condition may be omitted or null, which will match unconditionally.
+	//
+	// Otherwise the **"type"** field is required and controls which other fields are required.
+	// The following types are supported in billing adjustment rules:
+	//
+	// Type **"dimension_equals"** evaluates whether the specified **"dimension"** contains exactly the specified **"value"**.
+	//
+	// ```
+	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
+	// ```
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
+	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
+	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
+	// defined within your organization (names starting with **rbd\_**),
+	// [Tag Dimensions](https://docs.flexera.com/flexera/EN/Administration/TagDimensions.htm)
+	// defined within your organization (names starting with **tag\_**),
+	// or a few dimensions Flexera populates for you.
+	//
+	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	//
+	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
+	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
+	//
+	// ```
+	// {"type":"and", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"or", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"not", "expression":{...}}
+	// ```
+	//
+	// Together types **"and"**, **"or"**, and **"not"** enable complex combinations of other conditions.
+	Condition *FinopsBillingAdjustmentCondition `json:"condition,omitempty"`
+
+	// RevertSavingsPlan RevertSavingsPlan specifies which savings plan savings should be reverted to original rates.
+	RevertSavingsPlan FinopsBillingSavingsPlanReallocationSettingsRevertSavingsPlan `json:"revertSavingsPlan"`
+}
+
+// FinopsBillingSavingsPlanReallocationSettingsRevertSavingsPlan RevertSavingsPlan specifies which savings plan savings should be reverted to original rates.
+type FinopsBillingSavingsPlanReallocationSettingsRevertSavingsPlan string
+
+// FinopsBillingShareCloudCostManagementFeeSettings Configure the distribution of Cloud Cost Management fees across customer accounts.
+type FinopsBillingShareCloudCostManagementFeeSettings struct {
+	// ReservedInstance Choose between no sharing, a flat, percentage, or distributed fee. No more than one of the attributes may be set.
+	ReservedInstance *FinopsBillingFeeShare `json:"reservedInstance,omitempty"`
+
+	// SavingsPlan Choose between no sharing, a flat, percentage, or distributed fee. No more than one of the attributes may be set.
+	SavingsPlan *FinopsBillingFeeShare `json:"savingsPlan,omitempty"`
+}
+
+// FinopsBillingShowCustomerStatusResult defines model for FinopsBilling_ShowCustomerStatusResult.
+type FinopsBillingShowCustomerStatusResult struct {
+	// Kind The resource's type
+	Kind FinopsBillingShowCustomerStatusResultKind `json:"kind"`
+
+	// WithPlans The IDs of child organizations that are assigned to at least one active billing adjustment plan.
+	WithPlans []int `json:"withPlans"`
+}
+
+// FinopsBillingShowCustomerStatusResultKind The resource's type
+type FinopsBillingShowCustomerStatusResultKind string
+
+// FinopsBillingShowPlanResponseBody defines model for FinopsBilling_ShowPlanResponseBody.
+type FinopsBillingShowPlanResponseBody struct {
+	// CreatedAt timestamp when the plan was created
+	CreatedAt time.Time `json:"createdAt"`
+
+	// CreatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	CreatedBy FinopsBillingFlexeraIamPrincipal `json:"createdBy"`
+
+	// CustomerIds The child organization IDs included in this adjustment plan. Each organization can be included in only one plan. A plan with no customerIds will affect **no** customers.
+	CustomerIds *[]int `json:"customerIds,omitempty"`
+
+	// Description Description of the adjustment plan
+	Description *string `json:"description,omitempty"`
+
+	// Id ID of the billing plan
+	Id openapi_types.UUID `json:"id"`
+
+	// Kind The resource's type
+	Kind FinopsBillingShowPlanResponseBodyKind `json:"kind"`
+
+	// Name Display name for the adjustment plan
+	Name string `json:"name"`
+
+	// Rules Lists the rules applied by this adjustment plan.
+	Rules *[]FinopsBillingFlexeraFinopsBillingAdjustmentPlanRule `json:"rules,omitempty"`
+
+	// UpdatedAt timestamp when the plan was updated
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// UpdatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	UpdatedBy FinopsBillingFlexeraIamPrincipal `json:"updatedBy"`
+}
+
+// FinopsBillingShowPlanResponseBodyKind The resource's type
+type FinopsBillingShowPlanResponseBodyKind string
+
+// FinopsBillingShowSettingsResponseBody defines model for FinopsBilling_ShowSettingsResponseBody.
+type FinopsBillingShowSettingsResponseBody struct {
+	// BaseCostsOn The base cost value used for adjustments. Note that using 'listCost' may reduce the utility of some adjustment rules.
+	BaseCostsOn string `json:"baseCostsOn"`
+}
+
+// FinopsBillingShowSharedCostRuleResult defines model for FinopsBilling_ShowSharedCostRuleResult.
+type FinopsBillingShowSharedCostRuleResult struct {
+	// Allocation Defines the allocation strategy and the destinations that receive the reallocated costs.
+	Allocation FinopsBillingAllocation `json:"allocation"`
+
+	// CreatedAt timestamp when the shared cost rule was created
+	CreatedAt time.Time `json:"createdAt"`
+
+	// CreatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	CreatedBy FinopsBillingFlexeraIamPrincipal `json:"createdBy"`
+
+	// EffectiveFrom The month (inclusive) from which the rule applies, formatted YYYY-MM. This is applicable on ChargePeriod only.
+	EffectiveFrom string `json:"effectiveFrom"`
+
+	// EffectiveTo The month (exclusive) before which the rule applies, formatted YYYY-MM. Omit this field for no end date; the rule applies indefinitely. This is applicable on ChargePeriod only.
+	EffectiveTo *string `json:"effectiveTo,omitempty"`
+
+	// Id Unique identifier of the shared cost rule.
+	Id string `json:"id"`
+
+	// Kind The resource's type
+	Kind FinopsBillingShowSharedCostRuleResultKind `json:"kind"`
+
+	// Name Display name for the shared cost rule.
+	Name string `json:"name"`
+
+	// Priority Execution priority of this rule relative to other rules in the organization. Lower numbers execute first.
+	Priority int `json:"priority"`
+
+	// Source Dimensions that identify the costs to be reallocated. Multiple dimensions are combined using AND logic; only costs that satisfy every dimension are included.
+	Source []FinopsBillingSourceDimension `json:"source"`
+
+	// Status Current lifecycle status of the rule.
+	Status FinopsBillingShowSharedCostRuleResultStatus `json:"status"`
+
+	// UpdatedAt timestamp when the shared cost rule was updated
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// UpdatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	UpdatedBy FinopsBillingFlexeraIamPrincipal `json:"updatedBy"`
+}
+
+// FinopsBillingShowSharedCostRuleResultKind The resource's type
+type FinopsBillingShowSharedCostRuleResultKind string
+
+// FinopsBillingShowSharedCostRuleResultStatus Current lifecycle status of the rule.
+type FinopsBillingShowSharedCostRuleResultStatus string
+
+// FinopsBillingSourceDimension A dimension that identifies a subset of costs to reallocate. Exactly one condition field must be present, matching the dimension type: valueListCondition for dimension-based dimensions (focusDimension, customDimension).
+type FinopsBillingSourceDimension struct {
+	// DimensionId Unique identifier of the dimension (dimension ID).
+	DimensionId string `json:"dimensionId"`
+
+	// DimensionName Human-readable display name of the dimension.
+	DimensionName *string `json:"dimensionName,omitempty"`
+
+	// ValueListCondition A condition that matches costs whose dimension value is one of the specified values. Used with focusDimension and customDimension dimension types.
+	ValueListCondition FinopsBillingValueListCondition `json:"valueListCondition"`
+}
+
+// FinopsBillingSourceDimensionPayload A source dimension input used when creating or updating a shared cost rule. Supply exactly one condition field: valueListCondition for dimension.
+type FinopsBillingSourceDimensionPayload struct {
+	// DimensionId Unique identifier of the dimension (dimension ID).
+	DimensionId string `json:"dimensionId"`
+
+	// ValueListCondition A condition that matches costs whose dimension value is one of the specified values. Used with focusDimension and customDimension dimension types.
+	ValueListCondition FinopsBillingValueListCondition `json:"valueListCondition"`
+}
+
+// FinopsBillingSupportChargeSettings Configure overridden AWS support tier billing calculations.
+type FinopsBillingSupportChargeSettings struct {
+	// ApplyBy Apply charges for each customer or for each subAccount.
+	ApplyBy FinopsBillingSupportChargeSettingsApplyBy `json:"applyBy"`
+
+	// ApplyMinimum Select whether to always charge at least the minimum value for the tier.
+	ApplyMinimum *bool `json:"applyMinimum,omitempty"`
+
+	// Condition An adjustment condition, used by adjustment rules and adjustment plan rules.
+	//
+	// A rule's condition may be omitted or null, which will match unconditionally.
+	//
+	// Otherwise the **"type"** field is required and controls which other fields are required.
+	// The following types are supported in billing adjustment rules:
+	//
+	// Type **"dimension_equals"** evaluates whether the specified **"dimension"** contains exactly the specified **"value"**.
+	//
+	// ```
+	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
+	// ```
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
+	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
+	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
+	// defined within your organization (names starting with **rbd\_**),
+	// [Tag Dimensions](https://docs.flexera.com/flexera/EN/Administration/TagDimensions.htm)
+	// defined within your organization (names starting with **tag\_**),
+	// or a few dimensions Flexera populates for you.
+	//
+	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	//
+	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
+	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
+	//
+	// ```
+	// {"type":"and", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"or", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"not", "expression":{...}}
+	// ```
+	//
+	// Together types **"and"**, **"or"**, and **"not"** enable complex combinations of other conditions.
+	Condition *FinopsBillingAdjustmentCondition `json:"condition,omitempty"`
+
+	// Tier Select an AWS support tier to emulate its charges, or suppressed to avoid them.
+	//
+	// Values **enterprise**, **businessPlus**, and **unifiedOperations** use rates that were updated or added for December 2025.
+	//
+	// Values **developer**, **business**, and **enterpriseOnRamp** use rates from before December 2025. They remain for legacy compatibility.
+	Tier FinopsBillingSupportChargeSettingsTier `json:"tier"`
+}
+
+// FinopsBillingSupportChargeSettingsApplyBy Apply charges for each customer or for each subAccount.
+type FinopsBillingSupportChargeSettingsApplyBy string
+
+// FinopsBillingSupportChargeSettingsTier Select an AWS support tier to emulate its charges, or suppressed to avoid them.
+//
+// Values **enterprise**, **businessPlus**, and **unifiedOperations** use rates that were updated or added for December 2025.
+//
+// Values **developer**, **business**, and **enterpriseOnRamp** use rates from before December 2025. They remain for legacy compatibility.
+type FinopsBillingSupportChargeSettingsTier string
+
+// FinopsBillingUpchargeDiscountSettings Configure the addition of a percentage-value charge as a new line item.
+type FinopsBillingUpchargeDiscountSettings struct {
+	// Amount Amount is the percentage of the existing value added as a new entry. Negative numbers reduce the bill.
+	Amount *string `json:"amount,omitempty"`
+
+	// BaseOn BaseOn allows you to select whether the new line item's Billed Cost and Effective Cost reflect observed costs or the List Cost.
+	BaseOn *FinopsBillingUpchargeDiscountSettingsBaseOn `json:"baseOn,omitempty"`
+
+	// Condition An adjustment condition, used by adjustment rules and adjustment plan rules.
+	//
+	// A rule's condition may be omitted or null, which will match unconditionally.
+	//
+	// Otherwise the **"type"** field is required and controls which other fields are required.
+	// The following types are supported in billing adjustment rules:
+	//
+	// Type **"dimension_equals"** evaluates whether the specified **"dimension"** contains exactly the specified **"value"**.
+	//
+	// ```
+	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
+	// ```
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
+	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
+	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
+	// defined within your organization (names starting with **rbd\_**),
+	// [Tag Dimensions](https://docs.flexera.com/flexera/EN/Administration/TagDimensions.htm)
+	// defined within your organization (names starting with **tag\_**),
+	// or a few dimensions Flexera populates for you.
+	//
+	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	//
+	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
+	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
+	//
+	// ```
+	// {"type":"and", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"or", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"not", "expression":{...}}
+	// ```
+	//
+	// Together types **"and"**, **"or"**, and **"not"** enable complex combinations of other conditions.
+	Condition *FinopsBillingAdjustmentCondition `json:"condition,omitempty"`
+
+	// MaxAmountToCharge Limit the maximum charge for a single tier.
+	MaxAmountToCharge *string `json:"maxAmountToCharge,omitempty"`
+
+	// MinAmountToCharge Ensure a minimum charge for a single tier.
+	MinAmountToCharge *string `json:"minAmountToCharge,omitempty"`
+
+	// Tiers Define tiers. These must be continuous without gaps.
+	Tiers *[]FinopsBillingUpchargeTier `json:"tiers,omitempty"`
+}
+
+// FinopsBillingUpchargeDiscountSettingsBaseOn BaseOn allows you to select whether the new line item's Billed Cost and Effective Cost reflect observed costs or the List Cost.
+type FinopsBillingUpchargeDiscountSettingsBaseOn string
+
+// FinopsBillingUpchargeTier defines model for FinopsBilling_UpchargeTier.
+type FinopsBillingUpchargeTier struct {
+	// Amount upcharge percentage applied by this tier
+	Amount string `json:"amount"`
+
+	// EndCost inclusive upper bound for this tier
+	EndCost string `json:"endCost"`
+
+	// StartCost exclusive lower bound for this tier
+	StartCost string `json:"startCost"`
+}
+
+// FinopsBillingUpdateRequestBody defines model for FinopsBilling_UpdateRequestBody.
+type FinopsBillingUpdateRequestBody struct {
+	// Allocation Defines the allocation strategy and destination inputs for create/update operations.
+	Allocation *FinopsBillingAllocationPayload `json:"allocation,omitempty"`
+
+	// EffectiveFrom Updated month (inclusive) from which the rule applies, formatted YYYY-MM. This is applicable on ChargePeriod only.
+	EffectiveFrom *string `json:"effectiveFrom,omitempty"`
+
+	// EffectiveTo Updated month (exclusive) before which the rule applies, formatted YYYY-MM. Must be > effectiveFrom. Omit this field for no end date; the rule applies indefinitely. This is applicable on ChargePeriod only.
+	EffectiveTo *string `json:"effectiveTo,omitempty"`
+
+	// Name Updated display name for the shared cost rule.
+	Name *string `json:"name,omitempty"`
+
+	// Source Updated dimensions that identify the costs to be reallocated. Multiple dimensions are combined using AND logic; only costs that satisfy every dimension are included.
+	Source *[]FinopsBillingSourceDimensionPayload `json:"source,omitempty"`
+
+	// Status Updated lifecycle status.
+	Status *FinopsBillingUpdateRequestBodyStatus `json:"status,omitempty"`
+}
+
+// FinopsBillingUpdateRequestBodyStatus Updated lifecycle status.
+type FinopsBillingUpdateRequestBodyStatus string
+
+// FinopsBillingValueListCondition A condition that matches costs whose dimension value is one of the specified values. Used with focusDimension and customDimension dimension types.
+type FinopsBillingValueListCondition struct {
+	// Values The dimension values to include.
+	Values []string `json:"values"`
 }
 
 // FinopsCustomizationsCreateRequestBody defines model for FinopsCustomizations_CreateRequestBody.
 type FinopsCustomizationsCreateRequestBody struct {
+	// DashboardId Identifier of the dashboard to render and send.
+	DashboardId string `json:"dashboardId"`
+
+	// DashboardScope Which dashboard store resolves the target dashboard.
+	DashboardScope FinopsCustomizationsCreateRequestBodyDashboardScope `json:"dashboardScope"`
+
+	// Enabled Whether the schedule is active.
+	Enabled *bool `json:"enabled,omitempty"`
+
+	// Name Human-readable name for the subscription
+	Name string `json:"name"`
+
+	// Recipients Delivery targets (at least one).
+	Recipients []FinopsCustomizationsReportSubscriptionRecipient `json:"recipients"`
+
+	// Schedule When a scheduled report fires.
+	Schedule FinopsCustomizationsReportSubscriptionSchedule `json:"schedule"`
+
+	// Visibility Visibility scope.
+	Visibility *FinopsCustomizationsCreateRequestBodyVisibility `json:"visibility,omitempty"`
+}
+
+// FinopsCustomizationsCreateRequestBodyDashboardScope Which dashboard store resolves the target dashboard.
+type FinopsCustomizationsCreateRequestBodyDashboardScope string
+
+// FinopsCustomizationsCreateRequestBodyVisibility Visibility scope.
+type FinopsCustomizationsCreateRequestBodyVisibility string
+
+// FinopsCustomizationsCreateRequestBody2 defines model for FinopsCustomizations_CreateRequestBody2.
+type FinopsCustomizationsCreateRequestBody2 struct {
+	// Description Optional description
+	Description *string `json:"description,omitempty"`
+
+	// Dimensions Optional list of dimensions for GROUP BY (max 10).
+	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// Filter A single filter node: a leaf test (equal, substring) or a boolean combinator (and, or, not).
+	Filter *FinopsCustomizationsFilterV1 `json:"filter,omitempty"`
+
+	// Name Human-readable name for the filter
+	Name string `json:"name"`
+
+	// Visibility Filter visibility scope
+	Visibility FinopsCustomizationsCreateRequestBody2Visibility `json:"visibility"`
+}
+
+// FinopsCustomizationsCreateRequestBody2Visibility Filter visibility scope
+type FinopsCustomizationsCreateRequestBody2Visibility string
+
+// FinopsCustomizationsCreateRequestBody3 defines model for FinopsCustomizations_CreateRequestBody3.
+type FinopsCustomizationsCreateRequestBody3 struct {
 	// Name Name of the tag dimension to be displayed in the UI.
 	Name string `json:"name"`
 
@@ -4979,7 +9020,7 @@ type FinopsCustomizationsCreateRequestBody struct {
 	Tags []FinopsCustomizationsTagDimensionTag `json:"tags"`
 }
 
-// FinopsCustomizationsError defines model for FinopsCustomizations_Error.
+// FinopsCustomizationsError invalid skiptoken received
 type FinopsCustomizationsError struct {
 	// Fault Is the error a server-side fault?
 	Fault bool `json:"fault"`
@@ -5000,6 +9041,30 @@ type FinopsCustomizationsError struct {
 	Timeout bool `json:"timeout"`
 }
 
+// FinopsCustomizationsFilterV1 A single filter node: a leaf test (equal, substring) or a boolean combinator (and, or, not).
+type FinopsCustomizationsFilterV1 struct {
+	// Dimension Column/dimension name; used by leaf nodes (equal, substring)
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression A single filter node: a leaf test (equal, substring) or a boolean combinator (and, or, not).
+	Expression *FinopsCustomizationsFilterV1 `json:"expression,omitempty"`
+
+	// Expressions Child expressions; used by and/or nodes
+	Expressions *[]FinopsCustomizationsFilterV1 `json:"expressions,omitempty"`
+
+	// Substring Substring match value; used by substring nodes
+	Substring *string `json:"substring,omitempty"`
+
+	// Type Filter node type
+	Type *FinopsCustomizationsFilterV1Type `json:"type,omitempty"`
+
+	// Value Exact match value; used by equal nodes
+	Value *string `json:"value,omitempty"`
+}
+
+// FinopsCustomizationsFilterV1Type Filter node type
+type FinopsCustomizationsFilterV1Type string
+
 // FinopsCustomizationsFlexeraCustomizationsPrincipal A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
 type FinopsCustomizationsFlexeraCustomizationsPrincipal struct {
 	// Id The principal's unique identifier (ID)
@@ -5014,6 +9079,66 @@ type FinopsCustomizationsFlexeraCustomizationsPrincipal struct {
 
 // FinopsCustomizationsFlexeraCustomizationsPrincipalKind The resource's type
 type FinopsCustomizationsFlexeraCustomizationsPrincipalKind string
+
+// FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscription A scheduled email report of a dashboard.
+type FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscription struct {
+	// CreatedAt ISO-8601 creation timestamp
+	CreatedAt time.Time `json:"createdAt"`
+
+	// DashboardId Identifier of the dashboard to render and send.
+	DashboardId string `json:"dashboardId"`
+
+	// DashboardScope Which dashboard store resolves the target dashboard.
+	DashboardScope FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionDashboardScope `json:"dashboardScope"`
+
+	// Enabled Whether the schedule is active.
+	Enabled bool `json:"enabled"`
+
+	// Id UUID v4 identifier of the report subscription
+	Id openapi_types.UUID `json:"id"`
+
+	// Kind The resource's type
+	Kind FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionKind `json:"kind"`
+
+	// LastError Error from the last failed attempt; a success does not clear it.
+	LastError *string `json:"lastError,omitempty"`
+
+	// LastFailureAt ISO-8601 timestamp of the last failed send attempt.
+	LastFailureAt *time.Time `json:"lastFailureAt,omitempty"`
+
+	// LastSuccessAt ISO-8601 timestamp of the last successful send.
+	LastSuccessAt *time.Time `json:"lastSuccessAt,omitempty"`
+
+	// Name Human-readable name for the subscription
+	Name string `json:"name"`
+
+	// OrgId The unique identifier for the organization
+	OrgId int `json:"orgId"`
+
+	// OwnerUserId User ID of the subscription owner
+	OwnerUserId int `json:"ownerUserId"`
+
+	// Recipients Delivery targets (at least one).
+	Recipients []FinopsCustomizationsReportSubscriptionRecipient `json:"recipients"`
+
+	// Schedule When a scheduled report fires.
+	Schedule FinopsCustomizationsReportSubscriptionSchedule `json:"schedule"`
+
+	// UpdatedAt ISO-8601 last-update timestamp
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// Visibility Visibility scope: `private` = only visible to the owner; `shared` = visible to other users in the org.
+	Visibility FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionVisibility `json:"visibility"`
+}
+
+// FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionDashboardScope Which dashboard store resolves the target dashboard.
+type FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionDashboardScope string
+
+// FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionKind The resource's type
+type FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionKind string
+
+// FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionVisibility Visibility scope: `private` = only visible to the owner; `shared` = visible to other users in the org.
+type FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionVisibility string
 
 // FinopsCustomizationsFlexeraFinopsCustomizationsRuleBasedDimension A rule-based dimension that will be populated by the given rules.
 type FinopsCustomizationsFlexeraFinopsCustomizationsRuleBasedDimension struct {
@@ -5045,6 +9170,72 @@ type FinopsCustomizationsFlexeraFinopsCustomizationsRuleBasedDimension struct {
 // FinopsCustomizationsFlexeraFinopsCustomizationsRuleBasedDimensionKind The resource's type
 type FinopsCustomizationsFlexeraFinopsCustomizationsRuleBasedDimensionKind string
 
+// FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterError An error describing a favorite saved filter ID that could not be resolved or accessed.
+type FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterError struct {
+	// Code HTTP status code associated with the unresolved favorite saved filter.
+	Code int64 `json:"code"`
+
+	// Id UUID v4 identifier of the favorite saved filter.
+	Id openapi_types.UUID `json:"id"`
+
+	// Message Contextual message describing why the favorite saved filter could not be resolved.
+	Message string `json:"message"`
+}
+
+// FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummary Saved filter summary used in list responses (filter field omitted)
+type FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummary struct {
+	// CreatedAt ISO-8601 creation timestamp
+	CreatedAt time.Time `json:"createdAt"`
+
+	// Description Optional description
+	Description *string `json:"description,omitempty"`
+
+	// Dimensions Optional list of dimensions for GROUP BY (max 10)
+	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// DowngradedAt Read-only, nullable timestamp of the most recent administrator downgrade from shared to private.
+	DowngradedAt *time.Time `json:"downgradedAt,omitempty"`
+
+	// DowngradedByUserId Read-only, nullable user ID of the administrator who most recently downgraded the saved filter from shared to private.
+	DowngradedByUserId *int `json:"downgradedByUserId,omitempty"`
+
+	// FilterExpressionCount Number of filter expressions (leaf predicates) used by the filter
+	FilterExpressionCount int `json:"filterExpressionCount"`
+
+	// GroupByExpressionCount Number of GROUP BY expressions (dimensions)
+	GroupByExpressionCount int `json:"groupByExpressionCount"`
+
+	// Id UUID v4 identifier
+	Id openapi_types.UUID `json:"id"`
+
+	// IsFavorite Indicates if the filter is marked as favorite
+	IsFavorite *bool `json:"isFavorite,omitempty"`
+
+	// Kind The resource's type
+	Kind FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryKind `json:"kind"`
+
+	// Name Human-readable name
+	Name string `json:"name"`
+
+	// OrgId The unique identifier for the organization
+	OrgId int `json:"orgId"`
+
+	// OwnerUserId User ID of the filter owner
+	OwnerUserId int `json:"ownerUserId"`
+
+	// UpdatedAt ISO-8601 last-update timestamp
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// Visibility Filter visibility
+	Visibility FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryVisibility `json:"visibility"`
+}
+
+// FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryKind The resource's type
+type FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryKind string
+
+// FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryVisibility Filter visibility
+type FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryVisibility string
+
 // FinopsCustomizationsFlexeraFinopsCustomizationsTagDimension Configuration for a tag dimension
 type FinopsCustomizationsFlexeraFinopsCustomizationsTagDimension struct {
 	// CreatedAt the time when this tag dimension configuration was created
@@ -5068,6 +9259,174 @@ type FinopsCustomizationsFlexeraFinopsCustomizationsTagDimension struct {
 
 // FinopsCustomizationsFlexeraFinopsCustomizationsTagDimensionKind The resource's type
 type FinopsCustomizationsFlexeraFinopsCustomizationsTagDimensionKind string
+
+// FinopsCustomizationsIndexSavedFiltersResult defines model for FinopsCustomizations_IndexSavedFiltersResult.
+type FinopsCustomizationsIndexSavedFiltersResult struct {
+	// Count Number of items in the current page.
+	Count  *int                                            `json:"count,omitempty"`
+	Errors *FinopsCustomizationsSavedFilterErrorCollection `json:"errors,omitempty"`
+
+	// Kind The resource's type
+	Kind FinopsCustomizationsIndexSavedFiltersResultKind `json:"kind"`
+
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	NextPage *string `json:"nextPage,omitempty"`
+
+	// PrevPage URL to the previous page of data. The first page of data will not return a prevPage value.
+	PrevPage *string `json:"prevPage,omitempty"`
+
+	// Total Total number of items matching the current filter.
+	Total  *int                                             `json:"total,omitempty"`
+	Values FinopsCustomizationsSavedFilterSummaryCollection `json:"values"`
+}
+
+// FinopsCustomizationsIndexSavedFiltersResultKind The resource's type
+type FinopsCustomizationsIndexSavedFiltersResultKind string
+
+// FinopsCustomizationsPatchSavedFilterRequest defines model for FinopsCustomizations_PatchSavedFilterRequest.
+type FinopsCustomizationsPatchSavedFilterRequest struct {
+	// Description Updated description. Use null to clear the description.
+	Description *string `json:"description,omitempty"`
+
+	// Dimensions Updated list of dimensions for GROUP BY. Use null to clear dimensions.
+	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// Filter A single filter node: a leaf test (equal, substring) or a boolean combinator (and, or, not).
+	Filter *FinopsCustomizationsFilterV1 `json:"filter,omitempty"`
+
+	// Name Updated name.
+	Name *string `json:"name,omitempty"`
+
+	// Visibility Updated filter visibility scope.
+	Visibility *FinopsCustomizationsPatchSavedFilterRequestVisibility `json:"visibility,omitempty"`
+}
+
+// FinopsCustomizationsPatchSavedFilterRequestVisibility Updated filter visibility scope.
+type FinopsCustomizationsPatchSavedFilterRequestVisibility string
+
+// FinopsCustomizationsReportSubscriptionCollection defines model for FinopsCustomizations_ReportSubscriptionCollection.
+type FinopsCustomizationsReportSubscriptionCollection = []FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscription
+
+// FinopsCustomizationsReportSubscriptionList defines model for FinopsCustomizations_ReportSubscriptionList.
+type FinopsCustomizationsReportSubscriptionList struct {
+	// Count Number of items in the current page.
+	Count *int `json:"count,omitempty"`
+
+	// Kind The resource's type
+	Kind FinopsCustomizationsReportSubscriptionListKind `json:"kind"`
+
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	NextPage *string `json:"nextPage,omitempty"`
+
+	// PrevPage URL to the previous page of data. The first page of data will not return a prevPage value.
+	PrevPage *string `json:"prevPage,omitempty"`
+
+	// Total Total number of items matching the current filter.
+	Total  *int                                             `json:"total,omitempty"`
+	Values FinopsCustomizationsReportSubscriptionCollection `json:"values"`
+}
+
+// FinopsCustomizationsReportSubscriptionListKind The resource's type
+type FinopsCustomizationsReportSubscriptionListKind string
+
+// FinopsCustomizationsReportSubscriptionRecipient A delivery target for a scheduled report.
+type FinopsCustomizationsReportSubscriptionRecipient struct {
+	// Email Email address (for type email, or the resolved address of a user).
+	Email *string `json:"email,omitempty"`
+
+	// Id FlexeraOne user/group id (for type user/group).
+	Id *string `json:"id,omitempty"`
+
+	// Type Addressing style.
+	Type FinopsCustomizationsReportSubscriptionRecipientType `json:"type"`
+}
+
+// FinopsCustomizationsReportSubscriptionRecipientType Addressing style.
+type FinopsCustomizationsReportSubscriptionRecipientType string
+
+// FinopsCustomizationsReportSubscriptionResult defines model for FinopsCustomizations_ReportSubscriptionResult.
+type FinopsCustomizationsReportSubscriptionResult struct {
+	// CreatedAt ISO-8601 creation timestamp
+	CreatedAt time.Time `json:"createdAt"`
+
+	// DashboardId Identifier of the dashboard to render and send.
+	DashboardId string `json:"dashboardId"`
+
+	// DashboardScope Which dashboard store resolves the target dashboard.
+	DashboardScope FinopsCustomizationsReportSubscriptionResultDashboardScope `json:"dashboardScope"`
+
+	// Enabled Whether the schedule is active.
+	Enabled bool `json:"enabled"`
+
+	// Id UUID v4 identifier of the report subscription
+	Id openapi_types.UUID `json:"id"`
+
+	// Kind The resource's type
+	Kind FinopsCustomizationsReportSubscriptionResultKind `json:"kind"`
+
+	// LastError Error from the last failed attempt; a success does not clear it.
+	LastError *string `json:"lastError,omitempty"`
+
+	// LastFailureAt ISO-8601 timestamp of the last failed send attempt.
+	LastFailureAt *time.Time `json:"lastFailureAt,omitempty"`
+
+	// LastSuccessAt ISO-8601 timestamp of the last successful send.
+	LastSuccessAt *time.Time `json:"lastSuccessAt,omitempty"`
+
+	// Name Human-readable name for the subscription
+	Name string `json:"name"`
+
+	// OrgId The unique identifier for the organization
+	OrgId int `json:"orgId"`
+
+	// OwnerUserId User ID of the subscription owner
+	OwnerUserId int `json:"ownerUserId"`
+
+	// Recipients Delivery targets (at least one).
+	Recipients []FinopsCustomizationsReportSubscriptionRecipient `json:"recipients"`
+
+	// Schedule When a scheduled report fires.
+	Schedule FinopsCustomizationsReportSubscriptionSchedule `json:"schedule"`
+
+	// UpdatedAt ISO-8601 last-update timestamp
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// Visibility Visibility scope: `private` = only visible to the owner; `shared` = visible to other users in the org.
+	Visibility FinopsCustomizationsReportSubscriptionResultVisibility `json:"visibility"`
+}
+
+// FinopsCustomizationsReportSubscriptionResultDashboardScope Which dashboard store resolves the target dashboard.
+type FinopsCustomizationsReportSubscriptionResultDashboardScope string
+
+// FinopsCustomizationsReportSubscriptionResultKind The resource's type
+type FinopsCustomizationsReportSubscriptionResultKind string
+
+// FinopsCustomizationsReportSubscriptionResultVisibility Visibility scope: `private` = only visible to the owner; `shared` = visible to other users in the org.
+type FinopsCustomizationsReportSubscriptionResultVisibility string
+
+// FinopsCustomizationsReportSubscriptionSchedule When a scheduled report fires.
+type FinopsCustomizationsReportSubscriptionSchedule struct {
+	// DayOfMonth Day of month 1-31 (required for monthly); days beyond a month's length clamp to its last day.
+	DayOfMonth *int `json:"dayOfMonth,omitempty"`
+
+	// DayOfWeek Day of week (required for weekly).
+	DayOfWeek *FinopsCustomizationsReportSubscriptionScheduleDayOfWeek `json:"dayOfWeek,omitempty"`
+
+	// Frequency How often the report fires.
+	Frequency FinopsCustomizationsReportSubscriptionScheduleFrequency `json:"frequency"`
+
+	// TimeOfDay 24-hour local wall-clock time, zero-padded "HH:mm".
+	TimeOfDay string `json:"timeOfDay"`
+
+	// Timezone IANA tz database id; timeOfDay is interpreted in this zone.
+	Timezone string `json:"timezone"`
+}
+
+// FinopsCustomizationsReportSubscriptionScheduleDayOfWeek Day of week (required for weekly).
+type FinopsCustomizationsReportSubscriptionScheduleDayOfWeek string
+
+// FinopsCustomizationsReportSubscriptionScheduleFrequency How often the report fires.
+type FinopsCustomizationsReportSubscriptionScheduleFrequency string
 
 // FinopsCustomizationsRuleBasedDimensionCollection defines model for FinopsCustomizations_RuleBasedDimensionCollection.
 type FinopsCustomizationsRuleBasedDimensionCollection = []FinopsCustomizationsFlexeraFinopsCustomizationsRuleBasedDimension
@@ -5260,7 +9619,7 @@ type FinopsCustomizationsRuleBasedDimensionRuleList struct {
 	// Kind The resource's type
 	Kind FinopsCustomizationsRuleBasedDimensionRuleListKind `json:"kind"`
 
-	// Rules Rules for how the dimension will be populated. A list normally supports up to 500 rules. A simple mapping-style list may support up to 40,000 rules. Across all rule-based dimensions, a single effective month may have a maximum of 400,000 applicable rules in total.
+	// Rules Rules for how the dimension will be populated. A rules list normally supports up to 500 rules. A simple mapping-style list may support up to 40,000 raw rules if it optimizes into no more than 500 rule groups. After mapping optimization, plain rules in one list may contain up to 1,000 condition expression elements. Across all rule-based dimensions, a single effective month may have up to 400,000 applicable raw rules in total, and up to 2,000 optimized rule groups after mapping optimization.
 	Rules []FinopsCustomizationsRuleBasedDimensionRule `json:"rules"`
 
 	// UpdatedAt timestamp from when the dated-rules were updated
@@ -5333,6 +9692,21 @@ type FinopsCustomizationsRuleBasedDimensionRulePayload struct {
 	Value FinopsCustomizationsRuleBasedDimensionValueExpression `json:"value"`
 }
 
+// FinopsCustomizationsRuleBasedDimensionSummary defines model for FinopsCustomizations_RuleBasedDimensionSummary.
+type FinopsCustomizationsRuleBasedDimensionSummary struct {
+	// Kind The resource's type
+	Kind FinopsCustomizationsRuleBasedDimensionSummaryKind `json:"kind"`
+
+	// RuleListLinks Links to available rule lists identified by effectiveAt.
+	RuleListLinks []FinopsCustomizationsRuleBasedDimensionRuleListLink `json:"ruleListLinks"`
+
+	// Values All distinct values used across the rules, each with either a static text value or a dimension ID.
+	Values []FinopsCustomizationsRuleBasedDimensionValueExpression `json:"values"`
+}
+
+// FinopsCustomizationsRuleBasedDimensionSummaryKind The resource's type
+type FinopsCustomizationsRuleBasedDimensionSummaryKind string
+
 // FinopsCustomizationsRuleBasedDimensionValueExpression the value to populate dimension with if condition is met
 type FinopsCustomizationsRuleBasedDimensionValueExpression struct {
 	// Dimension the dynamic dimension value to populate the rule-based dimension if the condition is met
@@ -5344,9 +9718,66 @@ type FinopsCustomizationsRuleBasedDimensionValueExpression struct {
 
 // FinopsCustomizationsRulesListReplaceRequestBody defines model for FinopsCustomizations_RulesListReplaceRequestBody.
 type FinopsCustomizationsRulesListReplaceRequestBody struct {
-	// Rules Rules for how the dimension will be populated. A list normally supports up to 500 rules. A simple mapping-style list may support up to 40,000 rules. Across all rule-based dimensions, a single effective month may have a maximum of 400,000 applicable rules in total.
+	// Rules Rules for how the dimension will be populated. A rules list normally supports up to 500 rules. A simple mapping-style list may support up to 40,000 raw rules if it optimizes into no more than 500 rule groups. After mapping optimization, plain rules in one list may contain up to 1,000 condition expression elements. Across all rule-based dimensions, a single effective month may have up to 400,000 applicable raw rules in total, and up to 2,000 optimized rule groups after mapping optimization.
 	Rules []FinopsCustomizationsRuleBasedDimensionRulePayload `json:"rules"`
 }
+
+// FinopsCustomizationsSavedFilterErrorCollection defines model for FinopsCustomizations_SavedFilterErrorCollection.
+type FinopsCustomizationsSavedFilterErrorCollection = []FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterError
+
+// FinopsCustomizationsSavedFilterHTTPBody defines model for FinopsCustomizations_SavedFilterHTTPBody.
+type FinopsCustomizationsSavedFilterHTTPBody struct {
+	// CreatedAt ISO-8601 creation timestamp
+	CreatedAt time.Time `json:"createdAt"`
+
+	// Description Optional description
+	Description *string `json:"description,omitempty"`
+
+	// Dimensions Optional list of dimensions for GROUP BY (max 10)
+	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// DowngradedAt Read-only, nullable timestamp of the most recent administrator downgrade from shared to private.
+	DowngradedAt *time.Time `json:"downgradedAt,omitempty"`
+
+	// DowngradedByUserId Read-only, nullable user ID of the administrator who most recently downgraded the saved filter from shared to private.
+	DowngradedByUserId *int `json:"downgradedByUserId,omitempty"`
+
+	// Filter FOCUS 1.0 filter configuration
+	Filter map[string]interface{} `json:"filter"`
+
+	// Id UUID v4 identifier of the saved filter
+	Id openapi_types.UUID `json:"id"`
+
+	// Kind The resource's type
+	Kind FinopsCustomizationsSavedFilterHTTPBodyKind `json:"kind"`
+
+	// Name Human-readable name for the filter
+	Name string `json:"name"`
+
+	// OrgId The unique identifier for the organization
+	OrgId int `json:"orgId"`
+
+	// OwnerUserId User ID of the filter owner
+	OwnerUserId int `json:"ownerUserId"`
+
+	// UpdatedAt ISO-8601 last-update timestamp
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// Visibility Visibility scope: `private` = only visible to the owner; `shared` = visible to other users in the org.
+	Visibility FinopsCustomizationsSavedFilterHTTPBodyVisibility `json:"visibility"`
+}
+
+// FinopsCustomizationsSavedFilterHTTPBodyKind The resource's type
+type FinopsCustomizationsSavedFilterHTTPBodyKind string
+
+// FinopsCustomizationsSavedFilterHTTPBodyVisibility Visibility scope: `private` = only visible to the owner; `shared` = visible to other users in the org.
+type FinopsCustomizationsSavedFilterHTTPBodyVisibility string
+
+// FinopsCustomizationsSavedFilterSummaryCollection defines model for FinopsCustomizations_SavedFilterSummaryCollection.
+type FinopsCustomizationsSavedFilterSummaryCollection = []FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummary
+
+// FinopsCustomizationsSavedFiltersshowResponseBody defines model for FinopsCustomizations_SavedFiltersshowResponseBody.
+type FinopsCustomizationsSavedFiltersshowResponseBody = FinopsCustomizationsSavedFilterHTTPBody
 
 // FinopsCustomizationsTagDimensionCollection defines model for FinopsCustomizations_TagDimensionCollection.
 type FinopsCustomizationsTagDimensionCollection = []FinopsCustomizationsFlexeraFinopsCustomizationsTagDimension
@@ -5366,6 +9797,48 @@ type FinopsCustomizationsTagDimensionTag struct {
 	// Key Key (the part of the tag before the "=" character).
 	Key string `json:"key"`
 }
+
+// FinopsCustomizationsUpdateRequestBody defines model for FinopsCustomizations_UpdateRequestBody.
+type FinopsCustomizationsUpdateRequestBody struct {
+	// Enabled Updated active state.
+	Enabled *bool `json:"enabled,omitempty"`
+
+	// Name Updated name.
+	Name *string `json:"name,omitempty"`
+
+	// Recipients Updated delivery targets (must remain non-empty if provided).
+	Recipients *[]FinopsCustomizationsReportSubscriptionRecipient `json:"recipients,omitempty"`
+
+	// Schedule When a scheduled report fires.
+	Schedule *FinopsCustomizationsReportSubscriptionSchedule `json:"schedule,omitempty"`
+
+	// Visibility Updated visibility scope.
+	Visibility *FinopsCustomizationsUpdateRequestBodyVisibility `json:"visibility,omitempty"`
+}
+
+// FinopsCustomizationsUpdateRequestBodyVisibility Updated visibility scope.
+type FinopsCustomizationsUpdateRequestBodyVisibility string
+
+// FinopsCustomizationsUpdateRequestBody2 defines model for FinopsCustomizations_UpdateRequestBody2.
+type FinopsCustomizationsUpdateRequestBody2 struct {
+	// Description Description
+	Description string `json:"description"`
+
+	// Dimensions Optional list of dimensions for GROUP BY (max 10).
+	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// Filter A single filter node: a leaf test (equal, substring) or a boolean combinator (and, or, not).
+	Filter *FinopsCustomizationsFilterV1 `json:"filter,omitempty"`
+
+	// Name Human-readable name for the filter
+	Name string `json:"name"`
+
+	// Visibility Filter visibility scope
+	Visibility FinopsCustomizationsUpdateRequestBody2Visibility `json:"visibility"`
+}
+
+// FinopsCustomizationsUpdateRequestBody2Visibility Filter visibility scope
+type FinopsCustomizationsUpdateRequestBody2Visibility string
 
 // FinopsOnboardingAWSBillConnect defines model for FinopsOnboarding_AWSBillConnect.
 type FinopsOnboardingAWSBillConnect struct {
@@ -5411,12 +9884,18 @@ type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnect 
 	// Kind The resource's type
 	Kind FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectKind `json:"kind"`
 
+	// OnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+	OnboardingOrigin *FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectOnboardingOrigin `json:"onboardingOrigin,omitempty"`
+
 	// Partition Indicates the partition in which the resource is located. A partition is a group of AWS Regions.
 	Partition *FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectPartition `json:"partition,omitempty"`
 }
 
 // FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectKind The resource's type
 type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectKind string
+
+// FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectOnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectOnboardingOrigin string
 
 // FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectPartition Indicates the partition in which the resource is located. A partition is a group of AWS Regions.
 type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectPartition string
@@ -5470,6 +9949,9 @@ type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAzureEaManagementGener
 	// for more details on how to create an export for both Actual and Amortized cost and enable file partitioning.
 	ExportDetails *FinopsOnboardingExportDetails `json:"exportDetails,omitempty"`
 
+	// OnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+	OnboardingOrigin *FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAzureEaManagementGenericBillConnectOnboardingOrigin `json:"onboardingOrigin,omitempty"`
+
 	// ScopeDetails Scope Details allows users to specify the scope of the configured exports.
 	// Currently, billing account scope and enrollment account scope are supported. If no enrollmentAccountId is provided,
 	// billing account scope is assumed to be the default, and scoping at Enrollment account will only work with exports.
@@ -5485,6 +9967,9 @@ type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAzureEaManagementGener
 	// TenantId tenant id in an Azure EA
 	TenantId string `json:"tenantId"`
 }
+
+// FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAzureEaManagementGenericBillConnectOnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAzureEaManagementGenericBillConnectOnboardingOrigin string
 
 // FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAzureMcaEnterpriseGenericBillConnect AzureMCAEnterpriseGenericBillConnect contains the fields unique to Azure MCA Enterprise in a bill connect
 type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAzureMcaEnterpriseGenericBillConnect struct {
@@ -5535,6 +10020,9 @@ type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiAzureMcaGenericBill
 	// for more details on how to create an export for both Actual and Amortized cost and enable file partitioning.
 	ExportDetails *FinopsOnboardingExportDetails `json:"exportDetails,omitempty"`
 
+	// OnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+	OnboardingOrigin *FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiAzureMcaGenericBillConnectOnboardingOrigin `json:"onboardingOrigin,omitempty"`
+
 	// ScopeDetails Scope Details allow users to specify the scope of the configured bill connect for MCA AzureCloud.
 	// The scope can be either a billing account, billing profile, or invoice section.
 	// If no scope details are provided, billing account scope is assumed to be the default.
@@ -5553,6 +10041,9 @@ type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiAzureMcaGenericBill
 
 // FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiAzureMcaGenericBillConnectCloudInstance Cloud Instance indicates whether this Azure Cloud instance is located in a specific geographically isolated region or if it is global.
 type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiAzureMcaGenericBillConnectCloudInstance string
+
+// FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiAzureMcaGenericBillConnectOnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiAzureMcaGenericBillConnectOnboardingOrigin string
 
 // FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiGenericBillConnect CBIGenericBillConnect contains the fields unique to common bill ingest in a bill connect
 type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiGenericBillConnect struct {
@@ -5606,6 +10097,21 @@ type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingGcpGenericBillConnect 
 
 	// ProjectId Project ID for GCP billing access
 	ProjectId string `json:"projectId"`
+}
+
+// FinopsOnboardingApplicationVndFlexeraFinopsOnboardingSnowflakeGenericBillConnect SnowflakeGenericBillConnect contains the fields unique to Snowflake in a bill connect
+type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingSnowflakeGenericBillConnect struct {
+	// AccountId Snowflake account identifier in the format of organization and account name
+	AccountId *string `json:"accountId,omitempty"`
+
+	// Role Snowflake role granted to the service user for querying required views (case-sensitive)
+	Role *string `json:"role,omitempty"`
+
+	// User Snowflake service user used to query usage and cost data (case-sensitive)
+	User *string `json:"user,omitempty"`
+
+	// Warehouse Snowflake warehouse name used for executing cost and usage queries (case-sensitive)
+	Warehouse *string `json:"warehouse,omitempty"`
 }
 
 // FinopsOnboardingAzureCspBillConnect defines model for FinopsOnboarding_AzureCspBillConnect.
@@ -5662,6 +10168,9 @@ type FinopsOnboardingAzureCspCredentials struct {
 	// for more details on how to create an export for both Actual and Amortized cost and enable file partitioning.
 	ExportDetails *FinopsOnboardingAzureCspExportDetails `json:"exportDetails,omitempty"`
 
+	// OnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+	OnboardingOrigin *FinopsOnboardingAzureCspCredentialsOnboardingOrigin `json:"onboardingOrigin,omitempty"`
+
 	// Proxy Proxy term used for partner integration routing
 	Proxy *string `json:"proxy,omitempty"`
 
@@ -5681,6 +10190,9 @@ type FinopsOnboardingAzureCspCredentials struct {
 	// TenantId Tenant ID in Azure CSP. This refers to the tenant/directory the app registration/SPN belongs to.
 	TenantId *string `json:"tenantId,omitempty"`
 }
+
+// FinopsOnboardingAzureCspCredentialsOnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+type FinopsOnboardingAzureCspCredentialsOnboardingOrigin string
 
 // FinopsOnboardingAzureCspExportDetails Connecting bill with exports is Recommended.
 //
@@ -5788,6 +10300,9 @@ type FinopsOnboardingAzureEAManagementCredentials struct {
 	// for more details on how to create an export for both Actual and Amortized cost and enable file partitioning.
 	ExportDetails *FinopsOnboardingExportDetails `json:"exportDetails,omitempty"`
 
+	// OnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+	OnboardingOrigin *FinopsOnboardingAzureEAManagementCredentialsOnboardingOrigin `json:"onboardingOrigin,omitempty"`
+
 	// ScopeDetails Scope Details allows users to specify the scope of the configured exports.
 	// Currently, billing account scope and enrollment account scope are supported. If no enrollmentAccountId is provided,
 	// billing account scope is assumed to be the default, and scoping at Enrollment account will only work with exports.
@@ -5803,6 +10318,9 @@ type FinopsOnboardingAzureEAManagementCredentials struct {
 	// TenantId The Tenant ID to which the Billing Account belongs to
 	TenantId *string `json:"tenantId,omitempty"`
 }
+
+// FinopsOnboardingAzureEAManagementCredentialsOnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+type FinopsOnboardingAzureEAManagementCredentialsOnboardingOrigin string
 
 // FinopsOnboardingAzureMcaBillConnect defines model for FinopsOnboarding_AzureMcaBillConnect.
 type FinopsOnboardingAzureMcaBillConnect struct {
@@ -5870,6 +10388,9 @@ type FinopsOnboardingAzureMcaCredentials struct {
 	// for more details on how to create an export for both Actual and Amortized cost and enable file partitioning.
 	ExportDetails *FinopsOnboardingExportDetails `json:"exportDetails,omitempty"`
 
+	// OnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+	OnboardingOrigin *FinopsOnboardingAzureMcaCredentialsOnboardingOrigin `json:"onboardingOrigin,omitempty"`
+
 	// ScopeDetails Scope Details allow users to specify the scope of the configured bill connect for MCA AzureCloud.
 	// The scope can be either a billing account, billing profile, or invoice section.
 	// If no scope details are provided, billing account scope is assumed to be the default.
@@ -5885,6 +10406,9 @@ type FinopsOnboardingAzureMcaCredentials struct {
 	// TenantId Tenant ID in Azure MCA. This refers to the tenant/directory the app registration/SPN belongs to.
 	TenantId *string `json:"tenantId,omitempty"`
 }
+
+// FinopsOnboardingAzureMcaCredentialsOnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+type FinopsOnboardingAzureMcaCredentialsOnboardingOrigin string
 
 // FinopsOnboardingAzureMcaInvoiceSectionDetails Invoice Section Details allow users to specify both the billing profile ID and invoice section ID for which the billing data is being gathered.
 type FinopsOnboardingAzureMcaInvoiceSectionDetails struct {
@@ -6066,6 +10590,24 @@ type FinopsOnboardingBillConnectCredentialValidationList struct {
 // FinopsOnboardingBillConnectCredentialValidationListKind The resource's type
 type FinopsOnboardingBillConnectCredentialValidationListKind string
 
+// FinopsOnboardingBillConnectCredentialValidationSnowflake defines model for FinopsOnboarding_BillConnectCredentialValidationSnowflake.
+type FinopsOnboardingBillConnectCredentialValidationSnowflake struct {
+	// BillId ID of the bill connect
+	BillId string `json:"billId"`
+
+	// Error Error details of a bill connect upon validation
+	Error *string `json:"error,omitempty"`
+
+	// Kind The resource's type
+	Kind FinopsOnboardingBillConnectCredentialValidationSnowflakeKind `json:"kind"`
+
+	// Valid Boolean representing the validity of the credential
+	Valid bool `json:"valid"`
+}
+
+// FinopsOnboardingBillConnectCredentialValidationSnowflakeKind The resource's type
+type FinopsOnboardingBillConnectCredentialValidationSnowflakeKind string
+
 // FinopsOnboardingCBIAzureCspGenericBillConnect CBIAzureCspGenericBillConnect contains the fields unique to Azure CSP in a bill connect.
 type FinopsOnboardingCBIAzureCspGenericBillConnect struct {
 	// BillingAccountId The Billing Account ID in an Azure CSP.
@@ -6097,6 +10639,9 @@ type FinopsOnboardingCBIAzureCspGenericBillConnect struct {
 	// for more details on how to create an export for both Actual and Amortized cost and enable file partitioning.
 	ExportDetails *FinopsOnboardingAzureCspExportDetails `json:"exportDetails,omitempty"`
 
+	// OnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+	OnboardingOrigin *FinopsOnboardingCBIAzureCspGenericBillConnectOnboardingOrigin `json:"onboardingOrigin,omitempty"`
+
 	// ScopeDetails Scope Details allow users to specify the scope of the configured exports.
 	// The scope can be either a billing account, billing profile, customer tenant, or subscription.
 	// If no scope details are provided, billing account scope is assumed to be the default.
@@ -6113,6 +10658,9 @@ type FinopsOnboardingCBIAzureCspGenericBillConnect struct {
 	// TenantId The Tenant/Directory ID for the Azure CSP Enterprise SPN
 	TenantId string `json:"tenantId"`
 }
+
+// FinopsOnboardingCBIAzureCspGenericBillConnectOnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+type FinopsOnboardingCBIAzureCspGenericBillConnectOnboardingOrigin string
 
 // FinopsOnboardingCBIBillConnect defines model for FinopsOnboarding_CBIBillConnect.
 type FinopsOnboardingCBIBillConnect struct {
@@ -6388,6 +10936,24 @@ type FinopsOnboardingCreateRequestBody4 struct {
 	GcsExportUri *string `json:"gcsExportUri,omitempty"`
 }
 
+// FinopsOnboardingCreateRequestBody5 defines model for FinopsOnboarding_CreateRequestBody5.
+type FinopsOnboardingCreateRequestBody5 struct {
+	// AccountId Snowflake account identifier in the format of organization and account name (e.g., ORGNAME-ACCOUNTNAME)
+	AccountId string `json:"accountId"`
+
+	// PatToken Snowflake Programmatic Access Token (PAT) used for authentication
+	PatToken string `json:"patToken"`
+
+	// Role Snowflake role granted to the service user for querying required views (case-sensitive)
+	Role string `json:"role"`
+
+	// User Snowflake service user used to query usage and cost data (case-sensitive)
+	User string `json:"user"`
+
+	// Warehouse Snowflake warehouse name used for executing cost and usage queries (case-sensitive)
+	Warehouse string `json:"warehouse"`
+}
+
 // FinopsOnboardingCustomerDetails Customer Details allow users to specify the customer tenant ID for which the billing data is being gathered. Billing profile ID can optionally be provided when the customer tenant lookup requires billing profile context.
 type FinopsOnboardingCustomerDetails struct {
 	// BillingProfileId The Azure CSP Billing Profile ID associated with the customer tenant. This is optional and is used when the customer tenant lookup requires billing profile context.
@@ -6422,6 +10988,75 @@ type FinopsOnboardingDatabricksBillConnectKind string
 type FinopsOnboardingEnrollmentAccountDetails struct {
 	// EnrollmentAccountId Id of an Enrollment Account
 	EnrollmentAccountId string `json:"enrollmentAccountId"`
+}
+
+// FinopsOnboardingEnterpriseIndexResponse defines model for FinopsOnboarding_EnterpriseIndexResponse.
+type FinopsOnboardingEnterpriseIndexResponse struct {
+	// Count The total number of records matching the specified criteria.
+	Count int `json:"count"`
+
+	// DownloadUrl URL to download the complete result set in CSV format.
+	DownloadUrl string `json:"downloadUrl"`
+
+	// Kind The resource's type
+	Kind FinopsOnboardingEnterpriseIndexResponseKind `json:"kind"`
+
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	NextPage *string `json:"nextPage,omitempty"`
+
+	// PrevPage URL to the previous page of data. The first page of data will not return a prevPage value.
+	PrevPage *string `json:"prevPage,omitempty"`
+
+	// UpdatedAt Timestamp when this snapshot was generated.
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// Values Collection of bill month records, matching the specified criteria.
+	Values []FinopsOnboardingFlexeraFinopsOnboardingEnterpriseBillMonthItem `json:"values"`
+}
+
+// FinopsOnboardingEnterpriseIndexResponseKind The resource's type
+type FinopsOnboardingEnterpriseIndexResponseKind string
+
+// FinopsOnboardingEnterpriseReprocessItem Individual bill month item to reprocess
+type FinopsOnboardingEnterpriseReprocessItem struct {
+	// BillConnectId Unique identifier for the bill connect
+	BillConnectId string `json:"billConnectId"`
+
+	// BillMonth Bill month in YYYYMM format
+	BillMonth string `json:"billMonth"`
+}
+
+// FinopsOnboardingEnterpriseReprocessResponse defines model for FinopsOnboarding_EnterpriseReprocessResponse.
+type FinopsOnboardingEnterpriseReprocessResponse struct {
+	// Action Action that was performed. Known values: reprocess.
+	Action string `json:"action"`
+
+	// Items Results for each bill month item
+	Items []FinopsOnboardingEnterpriseReprocessResultItem `json:"items"`
+
+	// Kind The resource's type
+	Kind FinopsOnboardingEnterpriseReprocessResponseKind `json:"kind"`
+
+	// Status Overall status of the reprocess request. Known values: rejected, accepted.
+	Status string `json:"status"`
+}
+
+// FinopsOnboardingEnterpriseReprocessResponseKind The resource's type
+type FinopsOnboardingEnterpriseReprocessResponseKind string
+
+// FinopsOnboardingEnterpriseReprocessResultItem Result of reprocessing a single bill month item
+type FinopsOnboardingEnterpriseReprocessResultItem struct {
+	// BillConnectId Unique identifier for the bill connect
+	BillConnectId string `json:"billConnectId"`
+
+	// BillMonth Bill month in YYYYMM format
+	BillMonth string `json:"billMonth"`
+
+	// Result Result of the reprocess request for this bill month. Known values: successful, failed.
+	Result string `json:"result"`
+
+	// State Current state of the bill month after the action. Known values: processing, processed.
+	State string `json:"state"`
 }
 
 // FinopsOnboardingError defines model for FinopsOnboarding_Error.
@@ -6495,6 +11130,27 @@ type FinopsOnboardingFlexeraFinopsOnboardingBillValidation struct {
 // FinopsOnboardingFlexeraFinopsOnboardingBillValidationKind The resource's type
 type FinopsOnboardingFlexeraFinopsOnboardingBillValidationKind string
 
+// FinopsOnboardingFlexeraFinopsOnboardingEnterpriseBillMonthItem Enterprise bill month information with processing status
+type FinopsOnboardingFlexeraFinopsOnboardingEnterpriseBillMonthItem struct {
+	// BillConnectId Unique identifier for the bill connect
+	BillConnectId string `json:"billConnectId"`
+
+	// BillMonth Enterprise bill month is YYYYMM format
+	BillMonth string `json:"billMonth"`
+
+	// LastProcessEndAt Timestamp when last process ended.
+	LastProcessEndAt *time.Time `json:"lastProcessEndAt,omitempty"`
+
+	// LastProcessStartAt Timestamp when last process started.
+	LastProcessStartAt *time.Time `json:"lastProcessStartAt,omitempty"`
+
+	// LastProcessedAt Timestamp when bill was last reprocessed.
+	LastProcessedAt *time.Time `json:"lastProcessedAt,omitempty"`
+
+	// Status Processing status of this bill month. Known values: processing, processed.
+	Status string `json:"status"`
+}
+
 // FinopsOnboardingFlexeraFinopsOnboardingGenericBillConnectItem defines model for FinopsOnboarding_FlexeraFinopsOnboardingGenericBillConnectItem.
 type FinopsOnboardingFlexeraFinopsOnboardingGenericBillConnectItem struct {
 	// Aws AWSGenericBillConnect contains the fields unique to AWS in a bill connect
@@ -6532,6 +11188,9 @@ type FinopsOnboardingFlexeraFinopsOnboardingGenericBillConnectItem struct {
 
 	// Kind The resource's type
 	Kind FinopsOnboardingFlexeraFinopsOnboardingGenericBillConnectItemKind `json:"kind"`
+
+	// Snowflake SnowflakeGenericBillConnect contains the fields unique to Snowflake in a bill connect
+	Snowflake *FinopsOnboardingApplicationVndFlexeraFinopsOnboardingSnowflakeGenericBillConnect `json:"snowflake,omitempty"`
 
 	// UpdatedAt updatedAt is the time when the bill connect was last updated.
 	UpdatedAt time.Time `json:"updatedAt"`
@@ -6595,6 +11254,18 @@ type FinopsOnboardingGenericBillConnectItemList struct {
 // FinopsOnboardingGenericBillConnectItemListKind The resource's type
 type FinopsOnboardingGenericBillConnectItemListKind string
 
+// FinopsOnboardingReprocessRequestBody defines model for FinopsOnboarding_ReprocessRequestBody.
+type FinopsOnboardingReprocessRequestBody struct {
+	// Action Action to perform on the bill months
+	Action FinopsOnboardingReprocessRequestBodyAction `json:"action"`
+
+	// Items List of bill months to reprocess
+	Items []FinopsOnboardingEnterpriseReprocessItem `json:"items"`
+}
+
+// FinopsOnboardingReprocessRequestBodyAction Action to perform on the bill months
+type FinopsOnboardingReprocessRequestBodyAction string
+
 // FinopsOnboardingScopeDetails Scope Details allows users to specify the scope of the configured exports.
 // Currently, billing account scope and enrollment account scope are supported. If no enrollmentAccountId is provided,
 // billing account scope is assumed to be the default, and scoping at Enrollment account will only work with exports.
@@ -6620,6 +11291,27 @@ type FinopsOnboardingScopeDetailsWithScopeType struct {
 
 // FinopsOnboardingScopeDetailsWithScopeTypeScopeType Specifies the Scope of an Azure EA bill connect
 type FinopsOnboardingScopeDetailsWithScopeTypeScopeType string
+
+// FinopsOnboardingSnowflakeBillConnect defines model for FinopsOnboarding_SnowflakeBillConnect.
+type FinopsOnboardingSnowflakeBillConnect struct {
+	// CreatedAt createdAt is the time when the bill connect was created.
+	CreatedAt time.Time `json:"createdAt"`
+
+	// Id ID of the bill connect
+	Id string `json:"id"`
+
+	// Kind The resource's type
+	Kind FinopsOnboardingSnowflakeBillConnectKind `json:"kind"`
+
+	// Snowflake SnowflakeGenericBillConnect contains the fields unique to Snowflake in a bill connect
+	Snowflake FinopsOnboardingApplicationVndFlexeraFinopsOnboardingSnowflakeGenericBillConnect `json:"snowflake"`
+
+	// UpdatedAt updatedAt is the time when the bill connect was last updated.
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// FinopsOnboardingSnowflakeBillConnectKind The resource's type
+type FinopsOnboardingSnowflakeBillConnectKind string
 
 // FinopsOnboardingSubscriptionDetails Subscription Details are used for tier-2 CSP customers where the Billing Account ID is not available. Subscription ID and exportDetails are required for subscription scope type.
 type FinopsOnboardingSubscriptionDetails struct {
@@ -6829,6 +11521,21 @@ type FinopsOnboardingUpdateRequestBody5 struct {
 	GcsExportUri *string `json:"gcsExportUri,omitempty"`
 }
 
+// FinopsOnboardingUpdateRequestBody6 defines model for FinopsOnboarding_UpdateRequestBody6.
+type FinopsOnboardingUpdateRequestBody6 struct {
+	// PatToken Snowflake Programmatic Access Token (PAT) used for authentication
+	PatToken string `json:"patToken"`
+
+	// Role Snowflake role granted to the service user for querying required views (case-sensitive)
+	Role *string `json:"role,omitempty"`
+
+	// User Snowflake service user used to query usage and cost data (case-sensitive)
+	User *string `json:"user,omitempty"`
+
+	// Warehouse Snowflake warehouse name used for executing cost and usage queries (case-sensitive)
+	Warehouse *string `json:"warehouse,omitempty"`
+}
+
 // FinopsOnboardingWorkspaceValidationDetail WorkspaceValidationDetail contains validation result for a single workspace
 type FinopsOnboardingWorkspaceValidationDetail struct {
 	// Error Error message if validation failed
@@ -6924,6 +11631,87 @@ type IamAPIEventCollection struct {
 
 // IamAPIEventCollectionKind The resource's type
 type IamAPIEventCollectionKind string
+
+// IamAccessPolicy defines model for Iam_AccessPolicy.
+type IamAccessPolicy struct {
+	// CreatedAt Created at timestamp
+	CreatedAt *string `json:"createdAt,omitempty"`
+
+	// CreatedBy User ID who created the policy
+	CreatedBy *int `json:"createdBy,omitempty"`
+
+	// CustomerOrgIds Customer Organization IDs associated with this policy
+	CustomerOrgIds *[]int `json:"customerOrgIds,omitempty"`
+
+	// Description Description of the policy
+	Description *string `json:"description,omitempty"`
+
+	// GroupIds Group IDs associated with this policy (for Create/Update input)
+	GroupIds *[]int `json:"groupIds,omitempty"`
+
+	// Groups Groups with ID and name (for Show/Index output)
+	Groups   *[]IamPolicyGroup              `json:"groups,omitempty"`
+	IamRoles *IamAccessPolicyRoleCollection `json:"iamRoles,omitempty"`
+
+	// Id Unique identifier for the access policy
+	Id *string `json:"id,omitempty"`
+
+	// Kind The resource's type
+	Kind *IamAccessPolicyKind `json:"kind,omitempty"`
+
+	// Name Name of the access policy
+	Name *string `json:"name,omitempty"`
+
+	// NumberOfIAMRoles Number of IAM roles in the policy
+	NumberOfIAMRoles *int `json:"numberOfIAMRoles,omitempty"`
+
+	// OrgId Organization ID
+	OrgId *int `json:"orgId,omitempty"`
+
+	// UpdatedAt Updated at timestamp
+	UpdatedAt *string `json:"updatedAt,omitempty"`
+}
+
+// IamAccessPolicyKind The resource's type
+type IamAccessPolicyKind string
+
+// IamAccessPolicyCollection defines model for Iam_AccessPolicyCollection.
+type IamAccessPolicyCollection = []IamAccessPolicy
+
+// IamAccessPolicyList defines model for Iam_AccessPolicyList.
+type IamAccessPolicyList struct {
+	// Kind The resource's type
+	Kind   IamAccessPolicyListKind   `json:"kind"`
+	Values IamAccessPolicyCollection `json:"values"`
+}
+
+// IamAccessPolicyListKind The resource's type
+type IamAccessPolicyListKind string
+
+// IamAccessPolicyRole defines model for Iam_AccessPolicyRole.
+type IamAccessPolicyRole struct {
+	// CreatedAt Created at timestamp
+	CreatedAt *string `json:"createdAt,omitempty"`
+
+	// CreatedBy User ID who created the role
+	CreatedBy *int `json:"createdBy,omitempty"`
+
+	// Description Role description
+	Description *string `json:"description,omitempty"`
+
+	// Id IAM Role ID
+	Id *string `json:"id,omitempty"`
+
+	// Name Role name
+	Name              *string                                `json:"name,omitempty"`
+	ScopedPermissions *IamGranularScopedPermissionCollection `json:"scopedPermissions,omitempty"`
+
+	// UpdatedAt Updated at timestamp
+	UpdatedAt *string `json:"updatedAt,omitempty"`
+}
+
+// IamAccessPolicyRoleCollection defines model for Iam_AccessPolicyRoleCollection.
+type IamAccessPolicyRoleCollection = []IamAccessPolicyRole
 
 // IamAccessRuleCollection defines model for Iam_AccessRuleCollection.
 type IamAccessRuleCollection = []IamFlexeraIamAccessRule
@@ -7069,24 +11857,33 @@ type IamContractRole struct {
 
 // IamCreateRequestBody defines model for Iam_CreateRequestBody.
 type IamCreateRequestBody struct {
-	// AllowedCapabilities List of capabilities and their allowed roles
-	AllowedCapabilities []IamContractCapabilityPayload `json:"allowed_capabilities"`
+	// CustomerOrgIds Customer Organization IDs
+	CustomerOrgIds *[]int `json:"customerOrgIds,omitempty"`
 
-	// Description Detailed description or notes about the contract
+	// Description Description of the access policy
 	Description *string `json:"description,omitempty"`
 
-	// TargetOrgId Org ID receiving the contract
-	TargetOrgId int `json:"target_org_id"`
+	// GroupIds Group IDs
+	GroupIds *[]int `json:"groupIds,omitempty"`
 
-	// Title Short title to describe the contract
-	Title string `json:"title"`
+	// IamRoles Flexible IAM roles
+	IamRoles *[]IamFlexibleIamRole `json:"iamRoles,omitempty"`
+
+	// Name Name of the access policy
+	Name string `json:"name"`
 }
 
 // IamCreateRequestBody10 defines model for Iam_CreateRequestBody10.
 type IamCreateRequestBody10 struct {
+	// UserIds The user IDs
+	UserIds []int `json:"userIds"`
+}
+
+// IamCreateRequestBody11 defines model for Iam_CreateRequestBody11.
+type IamCreateRequestBody11 struct {
 	// Capabilities Capabilities describes the functionality the customer will be
 	// able to access. Capabilities granted to a customer must be a subset of capabilities the MSP has access to.
-	Capabilities []IamRoleScope `json:"capabilities"`
+	Capabilities []IamOrgCapability `json:"capabilities"`
 
 	// Description Optional text describing the customer
 	Description *string `json:"description,omitempty"`
@@ -7101,8 +11898,8 @@ type IamCreateRequestBody10 struct {
 	Owners []IamOwnerUser `json:"owners"`
 }
 
-// IamCreateRequestBody11 defines model for Iam_CreateRequestBody11.
-type IamCreateRequestBody11 struct {
+// IamCreateRequestBody12 defines model for Iam_CreateRequestBody12.
+type IamCreateRequestBody12 struct {
 	// Email Email address of the user
 	Email string `json:"email"`
 
@@ -7115,12 +11912,27 @@ type IamCreateRequestBody11 struct {
 
 // IamCreateRequestBody2 defines model for Iam_CreateRequestBody2.
 type IamCreateRequestBody2 struct {
-	// Tags List of tags
-	Tags []IamMSPTagParameters `json:"tags"`
+	// AllowedCapabilities List of capabilities and their allowed roles
+	AllowedCapabilities []IamContractCapabilityPayload `json:"allowed_capabilities"`
+
+	// Description Detailed description or notes about the contract
+	Description *string `json:"description,omitempty"`
+
+	// TargetOrgId Org ID receiving the contract
+	TargetOrgId int `json:"target_org_id"`
+
+	// Title Short title to describe the contract
+	Title string `json:"title"`
 }
 
 // IamCreateRequestBody3 defines model for Iam_CreateRequestBody3.
 type IamCreateRequestBody3 struct {
+	// Tags List of tags
+	Tags []IamMSPTagParameters `json:"tags"`
+}
+
+// IamCreateRequestBody4 defines model for Iam_CreateRequestBody4.
+type IamCreateRequestBody4 struct {
 	// GroupIds Array of the groupIDs to affiliate the user
 	GroupIds *[]int `json:"groupIds,omitempty"`
 
@@ -7146,8 +11958,8 @@ type IamCreateRequestBody3 struct {
 	SkipEmailNotification *bool `json:"skipEmailNotification,omitempty"`
 }
 
-// IamCreateRequestBody4 defines model for Iam_CreateRequestBody4.
-type IamCreateRequestBody4 struct {
+// IamCreateRequestBody5 defines model for Iam_CreateRequestBody5.
+type IamCreateRequestBody5 struct {
 	// CertificatePublicKey The PEM or DER encoded public key certificate of the Identity Provider
 	// used to	verify SAML message and assertion signatures.
 	CertificatePublicKey string `json:"certificatePublicKey"`
@@ -7160,13 +11972,13 @@ type IamCreateRequestBody4 struct {
 	// * NONE   - Group memberships are not modified. (default)
 	// * APPEND - Only adds the user to the specified groups, if any. Only valid if JIT Provisioning is enabled.
 	// * SYNC   - Performs a full sync. If groups are provided by the identity provider, that group list is the source of truth; the user is added to all groups on the list that exist in Flexera IAM, and removed from any groups that are not on the list. Only valid if JIT Provisioning is enabled.
-	GroupSyncPolicy *IamCreateRequestBody4GroupSyncPolicy `json:"groupSyncPolicy,omitempty"`
+	GroupSyncPolicy *IamCreateRequestBody5GroupSyncPolicy `json:"groupSyncPolicy,omitempty"`
 
 	// IssuerUri This value is usually the SAML Metadata EntityID of the IdP
 	IssuerUri string `json:"issuerUri"`
 
 	// JitProvisioningEnabled If enabled, performs JIT actions when a user logs in
-	JitProvisioningEnabled *IamCreateRequestBody4JitProvisioningEnabled `json:"jitProvisioningEnabled,omitempty"`
+	JitProvisioningEnabled *IamCreateRequestBody5JitProvisioningEnabled `json:"jitProvisioningEnabled,omitempty"`
 
 	// LogoutRedirectUrl The URL to redirect the user to upon logout,
 	// 	for example, the organization's Identity Provider page. By default, upon logout, the user
@@ -7178,62 +11990,62 @@ type IamCreateRequestBody4 struct {
 
 	// RequestBinding The SAML Authentication Request Protocol binding used to send SAML
 	// 	AuthnRequest messages to the IdP.
-	RequestBinding IamCreateRequestBody4RequestBinding `json:"requestBinding"`
+	RequestBinding IamCreateRequestBody5RequestBinding `json:"requestBinding"`
 
 	// RequestSignatureAlgorithm Specifies the signature algorithm used to sign SAML AuthnRequest
 	// 	messages sent to the IdP.
-	RequestSignatureAlgorithm IamCreateRequestBody4RequestSignatureAlgorithm `json:"requestSignatureAlgorithm"`
+	RequestSignatureAlgorithm IamCreateRequestBody5RequestSignatureAlgorithm `json:"requestSignatureAlgorithm"`
 
 	// ResponseSignatureAlgorithm Specifies the minimum signature algorithm when validating SAML
 	// 	assertions issued by the IdP.
-	ResponseSignatureAlgorithm IamCreateRequestBody4ResponseSignatureAlgorithm `json:"responseSignatureAlgorithm"`
+	ResponseSignatureAlgorithm IamCreateRequestBody5ResponseSignatureAlgorithm `json:"responseSignatureAlgorithm"`
 
 	// ResponseSignatureVerification The protocol to use when authenticating users from this identity
 	// 		provider
-	ResponseSignatureVerification IamCreateRequestBody4ResponseSignatureVerification `json:"responseSignatureVerification"`
+	ResponseSignatureVerification IamCreateRequestBody5ResponseSignatureVerification `json:"responseSignatureVerification"`
 
 	// SignAuthnRequests Specifies whether to sign SAML 2 AuthnRequest messages.
-	SignAuthnRequests IamCreateRequestBody4SignAuthnRequests `json:"signAuthnRequests"`
+	SignAuthnRequests IamCreateRequestBody5SignAuthnRequests `json:"signAuthnRequests"`
 
 	// SsoUrl The binding-specific IdP Authentication Request Protocol endpoint that receives SAML
 	// 	AuthnRequest messages.
 	SsoUrl string `json:"ssoUrl"`
 }
 
-// IamCreateRequestBody4GroupSyncPolicy Action to take during JIT flow, for groups configured for the identity provider, if JIT provisioning is enabled.
+// IamCreateRequestBody5GroupSyncPolicy Action to take during JIT flow, for groups configured for the identity provider, if JIT provisioning is enabled.
 // * NONE   - Group memberships are not modified. (default)
 // * APPEND - Only adds the user to the specified groups, if any. Only valid if JIT Provisioning is enabled.
 // * SYNC   - Performs a full sync. If groups are provided by the identity provider, that group list is the source of truth; the user is added to all groups on the list that exist in Flexera IAM, and removed from any groups that are not on the list. Only valid if JIT Provisioning is enabled.
-type IamCreateRequestBody4GroupSyncPolicy string
+type IamCreateRequestBody5GroupSyncPolicy string
 
-// IamCreateRequestBody4JitProvisioningEnabled If enabled, performs JIT actions when a user logs in
-type IamCreateRequestBody4JitProvisioningEnabled string
+// IamCreateRequestBody5JitProvisioningEnabled If enabled, performs JIT actions when a user logs in
+type IamCreateRequestBody5JitProvisioningEnabled string
 
-// IamCreateRequestBody4RequestBinding The SAML Authentication Request Protocol binding used to send SAML
+// IamCreateRequestBody5RequestBinding The SAML Authentication Request Protocol binding used to send SAML
 //
 //	AuthnRequest messages to the IdP.
-type IamCreateRequestBody4RequestBinding string
+type IamCreateRequestBody5RequestBinding string
 
-// IamCreateRequestBody4RequestSignatureAlgorithm Specifies the signature algorithm used to sign SAML AuthnRequest
+// IamCreateRequestBody5RequestSignatureAlgorithm Specifies the signature algorithm used to sign SAML AuthnRequest
 //
 //	messages sent to the IdP.
-type IamCreateRequestBody4RequestSignatureAlgorithm string
+type IamCreateRequestBody5RequestSignatureAlgorithm string
 
-// IamCreateRequestBody4ResponseSignatureAlgorithm Specifies the minimum signature algorithm when validating SAML
+// IamCreateRequestBody5ResponseSignatureAlgorithm Specifies the minimum signature algorithm when validating SAML
 //
 //	assertions issued by the IdP.
-type IamCreateRequestBody4ResponseSignatureAlgorithm string
+type IamCreateRequestBody5ResponseSignatureAlgorithm string
 
-// IamCreateRequestBody4ResponseSignatureVerification The protocol to use when authenticating users from this identity
+// IamCreateRequestBody5ResponseSignatureVerification The protocol to use when authenticating users from this identity
 //
 //	provider
-type IamCreateRequestBody4ResponseSignatureVerification string
+type IamCreateRequestBody5ResponseSignatureVerification string
 
-// IamCreateRequestBody4SignAuthnRequests Specifies whether to sign SAML 2 AuthnRequest messages.
-type IamCreateRequestBody4SignAuthnRequests string
+// IamCreateRequestBody5SignAuthnRequests Specifies whether to sign SAML 2 AuthnRequest messages.
+type IamCreateRequestBody5SignAuthnRequests string
 
-// IamCreateRequestBody5 defines model for Iam_CreateRequestBody5.
-type IamCreateRequestBody5 struct {
+// IamCreateRequestBody6 defines model for Iam_CreateRequestBody6.
+type IamCreateRequestBody6 struct {
 	// DisplayName The display name of the group.
 	DisplayName string `json:"displayName"`
 
@@ -7244,8 +12056,8 @@ type IamCreateRequestBody5 struct {
 	Schemas []string `json:"schemas"`
 }
 
-// IamCreateRequestBody6 defines model for Iam_CreateRequestBody6.
-type IamCreateRequestBody6 struct {
+// IamCreateRequestBody7 defines model for Iam_CreateRequestBody7.
+type IamCreateRequestBody7 struct {
 	// Active The user's active status.
 	Active *bool `json:"active,omitempty"`
 
@@ -7263,8 +12075,8 @@ type IamCreateRequestBody6 struct {
 	UserName string `json:"userName"`
 }
 
-// IamCreateRequestBody7 defines model for Iam_CreateRequestBody7.
-type IamCreateRequestBody7 struct {
+// IamCreateRequestBody8 defines model for Iam_CreateRequestBody8.
+type IamCreateRequestBody8 struct {
 	// Description Optional text describing the service account
 	Description *string `json:"description,omitempty"`
 
@@ -7272,8 +12084,8 @@ type IamCreateRequestBody7 struct {
 	Name string `json:"name"`
 }
 
-// IamCreateRequestBody8 defines model for Iam_CreateRequestBody8.
-type IamCreateRequestBody8 struct {
+// IamCreateRequestBody9 defines model for Iam_CreateRequestBody9.
+type IamCreateRequestBody9 struct {
 	// Description Description of the group
 	Description *string `json:"description,omitempty"`
 
@@ -7281,15 +12093,9 @@ type IamCreateRequestBody8 struct {
 	Name string `json:"name"`
 }
 
-// IamCreateRequestBody9 defines model for Iam_CreateRequestBody9.
-type IamCreateRequestBody9 struct {
-	// UserIds The user IDs
-	UserIds []int `json:"userIds"`
-}
-
 // IamCreateResponseBody defines model for Iam_CreateResponseBody.
 type IamCreateResponseBody struct {
-	// Id ID of the identity provider
+	// Id Unique identifier for the access policy
 	Id string `json:"id"`
 }
 
@@ -8000,11 +12806,17 @@ type IamFlexeraIamOrgGroup struct {
 	// Name Name of the group
 	Name string `json:"name"`
 
+	// OrgId The ID of the Organization
+	OrgId *int `json:"orgId,omitempty"`
+
 	// Ref A reference to the group
 	Ref string `json:"ref"`
 
 	// UpdatedAt Timestamp of last update in UTC
 	UpdatedAt *time.Time `json:"updatedAt,omitempty"`
+
+	// UserCount Total number of users assigned to this group. Only populated in extended view.
+	UserCount *int `json:"userCount,omitempty"`
 }
 
 // IamFlexeraIamOrgGroupKind The resource's type
@@ -8045,6 +12857,33 @@ type IamFlexeraIamPrincipal struct {
 
 // IamFlexeraIamPrincipalKind The resource's type
 type IamFlexeraIamPrincipalKind string
+
+// IamFlexeraIamProject A project is contained inside an Organization, and allows for separation of privilege within an Organization.
+type IamFlexeraIamProject struct {
+	// AccountUrl Legacy account URL
+	AccountUrl *string `json:"accountUrl,omitempty"`
+
+	// CreatedAt Creation Timestamp
+	CreatedAt time.Time `json:"createdAt"`
+
+	// Id Unique identifier for the project
+	Id int `json:"id"`
+
+	// Kind The resource's type
+	Kind IamFlexeraIamProjectKind `json:"kind"`
+
+	// Name Friendly name for the project
+	Name string `json:"name"`
+
+	// Ref A reference to the project
+	Ref string `json:"ref"`
+
+	// UpdatedAt Timestamp of last update
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// IamFlexeraIamProjectKind The resource's type
+type IamFlexeraIamProjectKind string
 
 // IamFlexeraIamProjectInvitation defines model for Iam_FlexeraIamProjectInvitation.
 type IamFlexeraIamProjectInvitation struct {
@@ -8238,6 +13077,9 @@ type IamFlexeraIamServiceAccountKind string
 // IamFlexeraIamServiceAccountClient A service account client is the credential used by an application to authenticate before
 // making a request to a Flexera API.
 type IamFlexeraIamServiceAccountClient struct {
+	// AuthTag Authentication tag produced when encrypting encryptedSecret.
+	AuthTag *string `json:"authTag,omitempty"`
+
 	// ClientId Identifier for the client
 	ClientId string `json:"clientId"`
 
@@ -8249,6 +13091,15 @@ type IamFlexeraIamServiceAccountClient struct {
 
 	// CreatedBy ID of the user that created the service account client
 	CreatedBy int `json:"createdBy"`
+
+	// EncryptedSecret Client secret encrypted using the recipientPublicKey provided in the Create request.
+	EncryptedSecret *string `json:"encryptedSecret,omitempty"`
+
+	// EphemeralPublicKey Ephemeral public key generated by Flexera that may be used (with iv and authTag) to decrypt encryptedSecret.
+	EphemeralPublicKey *string `json:"ephemeralPublicKey,omitempty"`
+
+	// Iv Initialization vector used when encrypting encryptedSecret.
+	Iv *string `json:"iv,omitempty"`
 
 	// Kind The resource's type
 	Kind IamFlexeraIamServiceAccountClientKind `json:"kind"`
@@ -8352,6 +13203,36 @@ type IamFlexeraIamUserKind string
 // IamFlexeraIamUserStatus Indicates the affiliation status of thr user with the org
 type IamFlexeraIamUserStatus string
 
+// IamFlexeraIamUserProject A project that a user belongs to.
+type IamFlexeraIamUserProject struct {
+	// AccountUrl Legacy account URL
+	AccountUrl *string `json:"accountUrl,omitempty"`
+
+	// CreatedAt Timestamp of creation
+	CreatedAt time.Time `json:"createdAt"`
+
+	// Id Project ID
+	Id int `json:"id"`
+
+	// Kind The resource's type
+	Kind IamFlexeraIamUserProjectKind `json:"kind"`
+
+	// Name Project name
+	Name string `json:"name"`
+
+	// Org A simplified organization containing only basic information for user org lists.
+	Org *IamUserOrg `json:"org,omitempty"`
+
+	// Ref A reference to the project
+	Ref string `json:"ref"`
+
+	// UpdatedAt Timestamp of last update
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// IamFlexeraIamUserProjectKind The resource's type
+type IamFlexeraIamUserProjectKind string
+
 // IamFlexeraMspCapability defines model for Iam_FlexeraMspCapability.
 type IamFlexeraMspCapability struct {
 	// Name Name of the Capability
@@ -8360,11 +13241,27 @@ type IamFlexeraMspCapability struct {
 
 // IamFlexeraMspCapabilityV2 An MSP organization capability with v2 enhancements including usage tracking
 type IamFlexeraMspCapabilityV2 struct {
+	// ExpiresAt Optional expiration timestamp in UTC for the organization's entitlement to this capability
+	ExpiresAt *time.Time `json:"expiresAt,omitempty"`
+
+	// HasCustomExpiry When true, expiresAt is set to the custom expiration timestamp for this entitlement.
+	HasCustomExpiry *bool `json:"hasCustomExpiry,omitempty"`
+
 	// InUseByCustomers When true, this capability cannot be removed because it is in use by one or more child organizations
 	InUseByCustomers bool `json:"inUseByCustomers"`
 
 	// Name The name of the capability
 	Name string `json:"name"`
+
+	// OnboardingStatus The status of the initial setup of the capability's functionality.
+	// The possible statuses are pending, completed, updating, offboarded and failed.
+	//
+	// * When the initial capability setup is in progress, status is set to pending.
+	// * When the initial capability setup finished unsuccessfully, status is set to failed.
+	// * When the initial capability setup finished successfully, status is set to completed.
+	// * When the capability setup is being updated, status is set to updating.
+	// * When the capability has been offboarded, status is set to offboarded.
+	OnboardingStatus *string `json:"onboardingStatus,omitempty"`
 }
 
 // IamFlexeraMspCustomer A customer that uses Flexera services through a managed service provider (MSP).
@@ -8588,6 +13485,58 @@ type IamFlexeraScimUser struct {
 	UserName string `json:"userName"`
 }
 
+// IamFlexibleGranularScope defines model for Iam_FlexibleGranularScope.
+type IamFlexibleGranularScope struct {
+	// Description Description of the scope
+	Description *string `json:"description,omitempty"`
+
+	// Id ID of existing granular scope
+	Id *string `json:"id,omitempty"`
+
+	// Name Name of the granular scope
+	Name *string `json:"name,omitempty"`
+
+	// SelectedScope Represents the selected scope with stable node IDs. nodePaths is optional and populated by the server in responses.
+	SelectedScope *IamSelectedScope `json:"selectedScope,omitempty"`
+}
+
+// IamFlexibleGranularScopedPermission defines model for Iam_FlexibleGranularScopedPermission.
+type IamFlexibleGranularScopedPermission struct {
+	// Description Description for new granular scoped permission
+	Description   *string                   `json:"description,omitempty"`
+	GranularScope *IamFlexibleGranularScope `json:"granularScope,omitempty"`
+
+	// Id ID of existing granular scoped permission
+	Id *string `json:"id,omitempty"`
+
+	// Name Name for new granular scoped permission
+	Name *string `json:"name,omitempty"`
+
+	// PermissionCategory Permission category
+	PermissionCategory *string `json:"permissionCategory,omitempty"`
+
+	// Permissions Permissions
+	Permissions *[]string `json:"permissions,omitempty"`
+
+	// RoleNames Role names
+	RoleNames *[]string `json:"roleNames,omitempty"`
+}
+
+// IamFlexibleIamRole defines model for Iam_FlexibleIamRole.
+type IamFlexibleIamRole struct {
+	// Description Description for new IAM role
+	Description *string `json:"description,omitempty"`
+
+	// Id ID of existing IAM role
+	Id *string `json:"id,omitempty"`
+
+	// Name Name for new IAM role
+	Name *string `json:"name,omitempty"`
+
+	// ScopedPermissions Flexible granular scoped permissions
+	ScopedPermissions *[]IamFlexibleGranularScopedPermission `json:"scopedPermissions,omitempty"`
+}
+
 // IamGenerateRequestBody defines model for Iam_GenerateRequestBody.
 type IamGenerateRequestBody struct {
 	// ValidityYears Years that key will be valid
@@ -8641,12 +13590,76 @@ type IamGrantRequestBody struct {
 	} `json:"subject"`
 }
 
+// IamGranularScope defines model for Iam_GranularScope.
+type IamGranularScope struct {
+	// CreatedAt Created at timestamp
+	CreatedAt *string `json:"createdAt,omitempty"`
+
+	// CreatedBy User ID who created the scope
+	CreatedBy *int `json:"createdBy,omitempty"`
+
+	// Description Scope description
+	Description *string `json:"description,omitempty"`
+
+	// Id Scope ID
+	Id *string `json:"id,omitempty"`
+
+	// Kind The resource's type
+	Kind *IamGranularScopeKind `json:"kind,omitempty"`
+
+	// Name Scope name
+	Name *string `json:"name,omitempty"`
+
+	// SelectedScope Represents the selected scope with stable node IDs. nodePaths is optional and populated by the server in responses.
+	SelectedScope IamSelectedScope `json:"selectedScope"`
+
+	// UpdatedAt Updated at timestamp
+	UpdatedAt *string `json:"updatedAt,omitempty"`
+}
+
+// IamGranularScopeKind The resource's type
+type IamGranularScopeKind string
+
+// IamGranularScopedPermission defines model for Iam_GranularScopedPermission.
+type IamGranularScopedPermission struct {
+	// CreatedAt Created at timestamp
+	CreatedAt *string `json:"createdAt,omitempty"`
+
+	// CreatedBy User ID who created the permission
+	CreatedBy *int `json:"createdBy,omitempty"`
+
+	// Description Permission description
+	Description   *string           `json:"description,omitempty"`
+	GranularScope *IamGranularScope `json:"granularScope,omitempty"`
+
+	// Id Permission ID
+	Id *string `json:"id,omitempty"`
+
+	// Name Permission name
+	Name *string `json:"name,omitempty"`
+
+	// PermissionCategory Permission category
+	PermissionCategory *string `json:"permissionCategory,omitempty"`
+
+	// Permissions Permissions
+	Permissions *[]string `json:"permissions,omitempty"`
+
+	// RoleNames Role names
+	RoleNames *[]string `json:"roleNames,omitempty"`
+
+	// UpdatedAt Updated at timestamp
+	UpdatedAt *string `json:"updatedAt,omitempty"`
+}
+
+// IamGranularScopedPermissionCollection defines model for Iam_GranularScopedPermissionCollection.
+type IamGranularScopedPermissionCollection = []IamGranularScopedPermission
+
 // IamGroupList defines model for Iam_GroupList.
 type IamGroupList struct {
 	// Kind The resource's type
 	Kind *IamGroupListKind `json:"kind,omitempty"`
 
-	// Values The list of a groups.
+	// Values The list of groups.
 	Values []IamFlexeraIamOrgGroup `json:"values"`
 }
 
@@ -8743,7 +13756,7 @@ type IamMSPCustomerError struct {
 type IamMSPCustomerRequestParameters struct {
 	// Capabilities Capabilities describes the functionality the customer will be
 	// able to access. Capabilities granted to a customer must be a subset of capabilities the MSP has access to.
-	Capabilities []IamRoleScope `json:"capabilities"`
+	Capabilities []IamOrgCapability `json:"capabilities"`
 
 	// CorrelationId Client-provided unique identifier for tracking this customer creation request
 	CorrelationId string `json:"correlationId"`
@@ -8786,6 +13799,18 @@ type IamMetaConfig struct {
 
 	// ResourceType The name of the resource type of the resource.
 	ResourceType string `json:"resourceType"`
+}
+
+// IamOrgCapability defines model for Iam_OrgCapability.
+type IamOrgCapability struct {
+	// ExpiresAt Optional expiration timestamp in UTC for the organization's entitlement to this capability. If set, the entitlement expires at this time.
+	ExpiresAt *time.Time `json:"expiresAt,omitempty"`
+
+	// HasCustomExpiry When true, expiresAt is set to the custom expiration timestamp for this entitlement.
+	HasCustomExpiry *bool `json:"hasCustomExpiry,omitempty"`
+
+	// Name Name of the Capability
+	Name *string `json:"name,omitempty"`
 }
 
 // IamOrgLoginPolicy defines model for Iam_OrgLoginPolicy.
@@ -8858,11 +13883,23 @@ type IamPatchConfig struct {
 	Supported bool `json:"supported"`
 }
 
+// IamPolicyGroup defines model for Iam_PolicyGroup.
+type IamPolicyGroup struct {
+	// Id Group ID
+	Id int `json:"id"`
+
+	// Name Group name
+	Name string `json:"name"`
+}
+
 // IamPrincipalRef A reference to the principal (user or service account)
 type IamPrincipalRef struct {
 	// Ref A reference to the principal
 	Ref string `json:"ref"`
 }
+
+// IamProjectCollection defines model for Iam_ProjectCollection.
+type IamProjectCollection = []IamFlexeraIamProject
 
 // IamProjectInvitationParameters defines model for Iam_ProjectInvitationParameters.
 type IamProjectInvitationParameters struct {
@@ -9153,6 +14190,24 @@ type IamSchemaExtension struct {
 	Schema string `json:"schema"`
 }
 
+// IamScopePrivilege A privilege granted to a user through one or more roles at a specific scope.
+type IamScopePrivilege struct {
+	// RoleIds The IDs of roles that grant this privilege at this scope
+	RoleIds []int `json:"roleIds"`
+
+	// Scope The scope ref (org or project) where this privilege is granted
+	Scope string `json:"scope"`
+}
+
+// IamSelectedScope Represents the selected scope with stable node IDs. nodePaths is optional and populated by the server in responses.
+type IamSelectedScope struct {
+	// NodeIds Array of stable, ID-based hierarchy references
+	NodeIds []string `json:"nodeIds"`
+
+	// NodePaths Array of human-readable node paths corresponding to nodeIds (read-only, returned by server)
+	NodePaths *[]string `json:"nodePaths,omitempty"`
+}
+
 // IamServiceAccountClientCollection defines model for Iam_ServiceAccountClientCollection.
 type IamServiceAccountClientCollection = []IamFlexeraIamServiceAccountClient
 
@@ -9313,7 +14368,7 @@ type IamUpdateRequestBody6 struct {
 type IamUpdateRequestBody7 struct {
 	// Capabilities Capabilities describes the functionality the customer will be
 	// able to access. Capabilities granted to a customer must be a subset of capabilities the MSP has access to.
-	Capabilities *[]IamRoleScope `json:"capabilities,omitempty"`
+	Capabilities *[]IamOrgCapability `json:"capabilities,omitempty"`
 
 	// Description Optional text describing the customer
 	Description *string `json:"description,omitempty"`
@@ -9327,6 +14382,26 @@ type IamUpdateRequestBody7 struct {
 	// Owners List of users that will have owner access.
 	Owners *[]IamOwnerUser `json:"owners,omitempty"`
 }
+
+// IamUserAccessPoliciesResult defines model for Iam_UserAccessPoliciesResult.
+type IamUserAccessPoliciesResult struct {
+	AccessPolicies IamAccessPolicyCollection `json:"accessPolicies"`
+
+	// GroupIds List of group IDs the user belongs to
+	GroupIds *[]int `json:"groupIds,omitempty"`
+
+	// Kind The resource's type
+	Kind IamUserAccessPoliciesResultKind `json:"kind"`
+
+	// OrgId Organization ID
+	OrgId int `json:"orgId"`
+
+	// UserId User ID
+	UserId int `json:"userId"`
+}
+
+// IamUserAccessPoliciesResultKind The resource's type
+type IamUserAccessPoliciesResultKind string
 
 // IamUserGroupList defines model for Iam_UserGroupList.
 type IamUserGroupList struct {
@@ -9366,8 +14441,8 @@ type IamUserOrg struct {
 	// Name Organization name
 	Name string `json:"name"`
 
-	// Ref URI reference to the organization
-	Ref *string `json:"ref,omitempty"`
+	// Ref A reference to the organization
+	Ref string `json:"ref"`
 }
 
 // IamUserOrgKind The resource's type
@@ -9376,7 +14451,7 @@ type IamUserOrgKind string
 // IamUserOrgList defines model for Iam_UserOrgList.
 type IamUserOrgList struct {
 	// Kind The resource's type
-	Kind *IamUserOrgListKind `json:"kind,omitempty"`
+	Kind IamUserOrgListKind `json:"kind"`
 
 	// Values The list of user's organizations.
 	Values []IamUserOrg `json:"values"`
@@ -9384,6 +14459,63 @@ type IamUserOrgList struct {
 
 // IamUserOrgListKind The resource's type
 type IamUserOrgListKind string
+
+// IamUserPrivilege A privilege that has been granted to a user through one or more roles across multiple scopes.
+type IamUserPrivilege struct {
+	// Kind The resource's type
+	Kind IamUserPrivilegeKind `json:"kind"`
+
+	// PrivilegeId The identifier of the privilege
+	PrivilegeId string `json:"privilegeId"`
+
+	// ScopePrivileges The privilege granted at specific scopes with the roles that grant it
+	ScopePrivileges []IamScopePrivilege `json:"scopePrivileges"`
+}
+
+// IamUserPrivilegeKind The resource's type
+type IamUserPrivilegeKind string
+
+// IamUserPrivilegesReport defines model for Iam_UserPrivilegesReport.
+type IamUserPrivilegesReport struct {
+	// Kind The resource's type
+	Kind IamUserPrivilegesReportKind `json:"kind"`
+
+	// Privileges The list of privileges granted to the user across the queried scopes
+	Privileges []IamUserPrivilege `json:"privileges"`
+
+	// Roles The roles that grant the privileges in this report
+	Roles *[]IamUserRole `json:"roles,omitempty"`
+}
+
+// IamUserPrivilegesReportKind The resource's type
+type IamUserPrivilegesReportKind string
+
+// IamUserProjectList defines model for Iam_UserProjectList.
+type IamUserProjectList struct {
+	// Kind The resource's type
+	Kind IamUserProjectListKind `json:"kind"`
+
+	// Values The list of user's projects.
+	Values []IamFlexeraIamUserProject `json:"values"`
+}
+
+// IamUserProjectListKind The resource's type
+type IamUserProjectListKind string
+
+// IamUserRole A role that has been granted to the user and grants one or more privileges.
+type IamUserRole struct {
+	// Id The identifier of the role
+	Id int `json:"id"`
+
+	// Kind The resource's type
+	Kind IamUserRoleKind `json:"kind"`
+
+	// Name The name of the role
+	Name string `json:"name"`
+}
+
+// IamUserRoleKind The resource's type
+type IamUserRoleKind string
 
 // IamUserSettingBlob defines model for Iam_UserSettingBlob.
 type IamUserSettingBlob struct {
@@ -9409,6 +14541,24 @@ type IamUserSettingBlobKind string
 
 // IamUserSettingBlobType The scope/context of the setting, either 'org' or 'global'.
 type IamUserSettingBlobType string
+
+// OptimaRecommendationsRecommendationsUpdateStatusRequestBody defines model for OptimaRecommendations_RecommendationsUpdateStatusRequestBody.
+type OptimaRecommendationsRecommendationsUpdateStatusRequestBody struct {
+	// Id Recommendation unique ID
+	Id string `json:"id"`
+
+	// SnoozedTargetDate Target date to move recommendation from snoozed to active again
+	SnoozedTargetDate *string `json:"snoozedTargetDate,omitempty"`
+
+	// Status New status of recommendation
+	Status OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatus `json:"status"`
+
+	// StatusReason Reason of new status of recommendation
+	StatusReason *string `json:"statusReason,omitempty"`
+}
+
+// OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatus New status of recommendation
+type OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatus string
 
 // PolicyActionStatusCollection defines model for Policy_ActionStatusCollection.
 type PolicyActionStatusCollection = []PolicyFlexeraPolicyActionStatus
@@ -11899,7 +17049,7 @@ type PolicyUpsertTagRequestBody struct {
 // RiskAssetStatisticsRequest defines model for Risk_AssetStatisticsRequest.
 type RiskAssetStatisticsRequest struct {
 	// Metrics Metrics to compute. Omit or pass empty list to fetch all.
-	Metrics *[]string                 `json:"metrics,omitempty"`
+	Metrics *[]string                 `json:"metrics"`
 	Scope   *RiskAssetStatisticsScope `json:"scope,omitempty"`
 }
 
@@ -11908,6 +17058,21 @@ type RiskAssetStatisticsScope struct {
 	Manufacturer *[]string `json:"manufacturer,omitempty"`
 	Product      *[]string `json:"product,omitempty"`
 	Version      *[]string `json:"version,omitempty"`
+}
+
+// RiskBpcRuleListRequest defines model for Risk_BpcRuleListRequest.
+type RiskBpcRuleListRequest struct {
+	// ComplianceStandard Standard code, e.g. CIS_CONTROLS_8
+	ComplianceStandard *string `json:"complianceStandard"`
+
+	// ControlId Control ID, e.g. CIS_CTRL_8__7_1
+	ControlId *string `json:"controlId"`
+
+	// Date YYYY-MM-DD. If omitted, uses the latest available run
+	Date *string `json:"date"`
+
+	// FeatureType Type of rules to fetch
+	FeatureType *string `json:"featureType,omitempty"`
 }
 
 // RiskCISBenchmarkItem Single CIS Benchmark item in formatted response.
@@ -11972,43 +17137,43 @@ type RiskCISCategoryItem struct {
 // RiskCVEDetailsItem CVE details item model.
 type RiskCVEDetailsItem struct {
 	// AttackVector Attack vector
-	AttackVector string `json:"attackVector"`
+	AttackVector *string `json:"attackVector"`
 
 	// CveTitle CVE ID
 	CveTitle string `json:"cveTitle"`
 
 	// CvssScore CVSS score
-	CvssScore float32 `json:"cvssScore"`
+	CvssScore *float32 `json:"cvssScore"`
 
 	// CvssVersion CVSS version
-	CvssVersion string `json:"cvssVersion"`
+	CvssVersion *string `json:"cvssVersion"`
 
 	// MalwareName Malware name
-	MalwareName string `json:"malwareName"`
+	MalwareName *string `json:"malwareName"`
 
 	// NvdSeverity NVD severity
-	NvdSeverity string `json:"nvdSeverity"`
+	NvdSeverity *string `json:"nvdSeverity"`
 
 	// PublishDate CVE publish date
-	PublishDate string `json:"publishDate"`
+	PublishDate *string `json:"publishDate"`
 
 	// SecuniaAdvisoryCriticality Secunia advisor criticality
-	SecuniaAdvisoryCriticality string `json:"secuniaAdvisoryCriticality"`
+	SecuniaAdvisoryCriticality *string `json:"secuniaAdvisoryCriticality"`
 
 	// SecuniaAdvisoryId Secunia advisory ID
-	SecuniaAdvisoryId string `json:"secuniaAdvisoryId"`
+	SecuniaAdvisoryId *string `json:"secuniaAdvisoryId"`
 
 	// SecuniaAdvisoryTitle Secunia advisory title
-	SecuniaAdvisoryTitle string `json:"secuniaAdvisoryTitle"`
+	SecuniaAdvisoryTitle *string `json:"secuniaAdvisoryTitle"`
 
 	// SolutionStatus Solution status
-	SolutionStatus string `json:"solutionStatus"`
+	SolutionStatus *string `json:"solutionStatus"`
 
 	// ThreatExploitRisk Threat exploit risk
-	ThreatExploitRisk string `json:"threatExploitRisk"`
+	ThreatExploitRisk *string `json:"threatExploitRisk"`
 
 	// ThreatScore Threat score
-	ThreatScore float32 `json:"threatScore"`
+	ThreatScore *float32 `json:"threatScore"`
 }
 
 // RiskCVEDetailsResponse Response model for CVE Details API.
@@ -12023,7 +17188,7 @@ type RiskCVEDetailsResponse struct {
 // RiskCatalogFilterRequest defines model for Risk_CatalogFilterRequest.
 type RiskCatalogFilterRequest struct {
 	// Dimensions Dimensions to fetch. Omit or pass empty list to fetch all.
-	Dimensions *[]string               `json:"dimensions,omitempty"`
+	Dimensions *[]string               `json:"dimensions"`
 	Scope      *RiskCatalogFilterScope `json:"scope,omitempty"`
 }
 
@@ -12048,10 +17213,10 @@ type RiskComplianceExportRequest struct {
 	Accounts []string `json:"accounts"`
 
 	// Category List of control categories to filter by
-	Category *[]string `json:"category,omitempty"`
+	Category *[]string `json:"category"`
 
 	// ComplianceStandard Compliance standard name (e.g., 'NIST_800-82_rev2'). If not provided, summary export will be generated.
-	ComplianceStandard *string `json:"complianceStandard,omitempty"`
+	ComplianceStandard *string `json:"complianceStandard"`
 
 	// Format Export format - 'json' or 'xlsx'
 	Format string `json:"format"`
@@ -12060,7 +17225,7 @@ type RiskComplianceExportRequest struct {
 	Imc bool `json:"imc"`
 
 	// Level CIS level filter. Allowed values: 1 or 2
-	Level *int `json:"level,omitempty"`
+	Level *int `json:"level"`
 
 	// Providers List of cloud providers. Allowed values: 'aws', 'azure', 'all'
 	Providers []string `json:"providers"`
@@ -12161,6 +17326,9 @@ type RiskComplianceStandardItem struct {
 	// Percentage Percentage of controls passed
 	Percentage float32 `json:"percentage"`
 
+	// ProviderName Data source: 'cloud' for cloud-provider frameworks, 'on-prem' for on-premises frameworks.
+	ProviderName string `json:"providerName"`
+
 	// Timestamp Unix timestamp
 	Timestamp string `json:"timestamp"`
 
@@ -12195,10 +17363,16 @@ type RiskComplianceStandardResponse struct {
 	Kind *string `json:"kind,omitempty"`
 }
 
+// RiskConformitySummaryRequest defines model for Risk_ConformitySummaryRequest.
+type RiskConformitySummaryRequest struct {
+	// Frameworks Compliance frameworks to summarise (case-insensitive). Examples: DORA, NYDFS, FFIEC.
+	Frameworks []string `json:"frameworks"`
+}
+
 // RiskControlItem Single control item for compliance standards.
 type RiskControlItem struct {
 	// Category Control category (only for CIS standard)
-	Category *string `json:"category,omitempty"`
+	Category *string `json:"category"`
 
 	// ComplianceStandard Compliance standard identifier
 	ComplianceStandard string `json:"complianceStandard"`
@@ -12213,13 +17387,13 @@ type RiskControlItem struct {
 	ControlImplemented string `json:"controlImplemented"`
 
 	// Level CIS level (only for CIS standard)
-	Level *int `json:"level,omitempty"`
+	Level *int `json:"level"`
 
 	// NonCompliantResources Number of non-compliant resources
 	NonCompliantResources int `json:"nonCompliantResources"`
 
 	// Scoring Scoring type (only for CIS standard)
-	Scoring *string `json:"scoring,omitempty"`
+	Scoring *string `json:"scoring"`
 }
 
 // RiskControlsData Controls data for compliance standards.
@@ -12228,13 +17402,13 @@ type RiskControlsData struct {
 	Controls *[]RiskControlItem `json:"controls,omitempty"`
 
 	// ControlsPassed Number of controls passed
-	ControlsPassed *int `json:"controlsPassed,omitempty"`
+	ControlsPassed *int `json:"controlsPassed"`
 
 	// InCompliance Compliance percentage (floored)
-	InCompliance *int `json:"inCompliance,omitempty"`
+	InCompliance *int `json:"inCompliance"`
 
 	// TotalControls Total number of controls
-	TotalControls *int `json:"totalControls,omitempty"`
+	TotalControls *int `json:"totalControls"`
 }
 
 // RiskEnumerateFiltersRequest defines model for Risk_EnumerateFiltersRequest.
@@ -12247,10 +17421,10 @@ type RiskEnumerateFiltersRequest struct {
 	Condition *RiskEnumerationCondition `json:"condition,omitempty"`
 
 	// Date Single date YYYY-MM-DD
-	Date *string `json:"date,omitempty"`
+	Date *string `json:"date"`
 
 	// Providers List of providers. Use ['all'] for all providers. Supports: aws, azure, gc, onprem
-	Providers *[]RiskEnumerateFiltersRequestProviders `json:"providers,omitempty"`
+	Providers *[]string `json:"providers,omitempty"`
 
 	// Regions List of AWS regions. Use ['all'] for all regions
 	Regions *[]string `json:"regions,omitempty"`
@@ -12259,11 +17433,8 @@ type RiskEnumerateFiltersRequest struct {
 	Route string `json:"route"`
 
 	// Services List of services or 'all' (optional)
-	Services *[]string `json:"services,omitempty"`
+	Services *[]string `json:"services"`
 }
-
-// RiskEnumerateFiltersRequestProviders defines model for RiskEnumerateFiltersRequest.Providers.
-type RiskEnumerateFiltersRequestProviders string
 
 // RiskEnumerateFiltersResponse defines model for Risk_EnumerateFiltersResponse.
 type RiskEnumerateFiltersResponse struct {
@@ -12274,10 +17445,10 @@ type RiskEnumerateFiltersResponse struct {
 // RiskEnumerationCondition defines model for Risk_EnumerationCondition.
 type RiskEnumerationCondition struct {
 	// CveId CVE identifier (e.g. CVE-2023-12345)
-	CveId *string `json:"cveId,omitempty"`
+	CveId *string `json:"cveId"`
 
 	// Type Context type: 'vm' or 'container'
-	Type *string `json:"type,omitempty"`
+	Type *string `json:"type"`
 }
 
 // RiskErrorResponse defines model for Risk_ErrorResponse.
@@ -12305,25 +17476,25 @@ type RiskFailedAssetFilterParam struct {
 	Accounts []string `json:"accounts"`
 
 	// Args Rule arguments string (comma-separated or JSON array string)
-	Args *string `json:"args,omitempty"`
+	Args *string `json:"args"`
 
 	// PageSize Number of items per page
-	PageSize *int `json:"pageSize,omitempty"`
+	PageSize *int `json:"pageSize"`
 
 	// Providers List of cloud providers or ['all']
-	Providers *[]string `json:"providers,omitempty"`
+	Providers *[]string `json:"providers"`
 
 	// Regions List of cloud regions or ['all']
-	Regions *[]string `json:"regions,omitempty"`
+	Regions *[]string `json:"regions"`
 
 	// RuleName Security rule name to filter assets by
 	RuleName string `json:"ruleName"`
 
 	// ShowSuppressed Whether to include suppressed assets: 'true', 'false', or omit for all
-	ShowSuppressed *string `json:"showSuppressed,omitempty"`
+	ShowSuppressed *string `json:"showSuppressed"`
 
 	// SkipToken Cursor-based pagination token for next page
-	SkipToken *string `json:"skipToken,omitempty"`
+	SkipToken *string `json:"skipToken"`
 }
 
 // RiskFailedAssetItem Single failed asset item.
@@ -12380,10 +17551,25 @@ type RiskFailedAssetListResponse struct {
 	Kind *string `json:"kind,omitempty"`
 
 	// NextPage URL for fetching next page with skipToken
-	NextPage *string `json:"nextPage,omitempty"`
+	NextPage *string `json:"nextPage"`
 
 	// Values List of failed assets
 	Values []RiskFailedAssetItem `json:"values"`
+}
+
+// RiskFailedAssetRequest defines model for Risk_FailedAssetRequest.
+type RiskFailedAssetRequest struct {
+	// PageSize Number of items to fetch
+	PageSize *int `json:"pageSize,omitempty"`
+
+	// RuleName Rule name to filter failed assets
+	RuleName string `json:"ruleName"`
+
+	// ShowSuppressed 'true', 'false', or omit for all
+	ShowSuppressed *string `json:"showSuppressed"`
+
+	// SkipToken Cursor for pagination
+	SkipToken *string `json:"skipToken"`
 }
 
 // RiskFailedAssetsExportFilters Request filters for Failed Assets Export API (simplified).
@@ -12404,44 +17590,41 @@ type RiskFailedAssetsFilters struct {
 	CveId string `json:"cveId"`
 
 	// Date Date filter in YYYY-MM-DD format
-	Date *string `json:"date,omitempty"`
+	Date *string `json:"date"`
 
 	// Filter Advanced filter expression
-	Filter *string `json:"filter,omitempty"`
+	Filter *string `json:"filter"`
 
 	// Limit Number of results per page (max: 1000)
-	Limit *int `json:"limit,omitempty"`
+	Limit *int `json:"limit"`
 
 	// Offset Number of results to skip (for pagination)
-	Offset *int `json:"offset,omitempty"`
+	Offset *int `json:"offset"`
 
 	// OrderBy Sort order (field asc/desc)
-	OrderBy *string `json:"orderBy,omitempty"`
+	OrderBy *string `json:"orderBy"`
 
 	// Providers List of providers. Use ['all'] for all providers. Supports: aws, azure, gc, onprem
-	Providers *[]RiskFailedAssetsFiltersProviders `json:"providers,omitempty"`
+	Providers *[]string `json:"providers,omitempty"`
 
 	// Regions List of AWS regions. Use ['all'] for all regions
 	Regions *[]string `json:"regions,omitempty"`
 
 	// Services List of services or 'all' (optional)
-	Services *[]string `json:"services,omitempty"`
+	Services *[]string `json:"services"`
 
 	// SoftwareManufacturer Software manufacturer name
-	SoftwareManufacturer *string `json:"softwareManufacturer,omitempty"`
+	SoftwareManufacturer *string `json:"softwareManufacturer"`
 
 	// SoftwareProduct Software product name
-	SoftwareProduct *string `json:"softwareProduct,omitempty"`
+	SoftwareProduct *string `json:"softwareProduct"`
 
 	// SoftwareVersion Software version
-	SoftwareVersion *string `json:"softwareVersion,omitempty"`
+	SoftwareVersion *string `json:"softwareVersion"`
 
 	// Type Asset type - Virtual Machine, Container Image, or All types
 	Type RiskFailedAssetsFiltersType `json:"type"`
 }
-
-// RiskFailedAssetsFiltersProviders defines model for RiskFailedAssetsFilters.Providers.
-type RiskFailedAssetsFiltersProviders string
 
 // RiskFailedAssetsFiltersType Asset type - Virtual Machine, Container Image, or All types
 type RiskFailedAssetsFiltersType string
@@ -12452,35 +17635,32 @@ type RiskFindingsDistributionRequest struct {
 	Accounts *[]string `json:"accounts,omitempty"`
 
 	// Date Specific date in YYYY-MM-DD format
-	Date *string `json:"date,omitempty"`
+	Date *string `json:"date"`
 
 	// Filter Filter expression like 'manufacturerName co "Microsoft"'
-	Filter *string `json:"filter,omitempty"`
+	Filter *string `json:"filter"`
 
 	// GroupBy Field to group findings by
 	GroupBy string `json:"groupBy"`
 
 	// Limit Maximum number of results to return
-	Limit *int `json:"limit,omitempty"`
+	Limit *int `json:"limit"`
 
 	// Offset Number of results to skip for pagination
-	Offset *int `json:"offset,omitempty"`
+	Offset *int `json:"offset"`
 
 	// OrderBy Order expression like 'manufacturerName asc'
-	OrderBy *string `json:"orderBy,omitempty"`
+	OrderBy *string `json:"orderBy"`
 
 	// Providers List of providers. Use ['all'] for all providers. Supports: aws, azure, gc, onprem
-	Providers *[]RiskFindingsDistributionRequestProviders `json:"providers,omitempty"`
+	Providers *[]string `json:"providers,omitempty"`
 
 	// Regions List of AWS regions. Use ['all'] for all regions
 	Regions *[]string `json:"regions,omitempty"`
 
 	// Services List of services or 'all' (optional)
-	Services *[]string `json:"services,omitempty"`
+	Services *[]string `json:"services"`
 }
-
-// RiskFindingsDistributionRequestProviders defines model for RiskFindingsDistributionRequest.Providers.
-type RiskFindingsDistributionRequestProviders string
 
 // RiskFindingsSummaryFilters Request body filters for vulnerability findings summary.
 //
@@ -12500,20 +17680,17 @@ type RiskFindingsSummaryFilters struct {
 	Accounts *[]string `json:"accounts,omitempty"`
 
 	// Date Date in YYYY-MM-DD format (optional)
-	Date *string `json:"date,omitempty"`
+	Date *string `json:"date"`
 
 	// Providers List of providers. Use ['all'] for all providers. Supports: aws, azure, gc, onprem
-	Providers *[]RiskFindingsSummaryFiltersProviders `json:"providers,omitempty"`
+	Providers *[]string `json:"providers,omitempty"`
 
 	// Regions List of AWS regions. Use ['all'] for all regions
 	Regions *[]string `json:"regions,omitempty"`
 
 	// Services Must be ['all'] or omitted. Specific service filtering not supported for Total Findings.
-	Services *[]string `json:"services,omitempty"`
+	Services *[]string `json:"services"`
 }
-
-// RiskFindingsSummaryFiltersProviders defines model for RiskFindingsSummaryFilters.Providers.
-type RiskFindingsSummaryFiltersProviders string
 
 // RiskFindingsSummaryResponse Response model for findings summary endpoint.
 type RiskFindingsSummaryResponse struct {
@@ -12536,17 +17713,14 @@ type RiskFindingsTrendFilters struct {
 	Days int `json:"days"`
 
 	// Providers List of providers. Use ['all'] for all providers. Supports: aws, azure, gc, onprem
-	Providers *[]RiskFindingsTrendFiltersProviders `json:"providers,omitempty"`
+	Providers *[]string `json:"providers,omitempty"`
 
 	// Regions List of AWS regions. Use ['all'] for all regions
 	Regions *[]string `json:"regions,omitempty"`
 
 	// Services List of services or 'all' (optional)
-	Services *[]string `json:"services,omitempty"`
+	Services *[]string `json:"services"`
 }
-
-// RiskFindingsTrendFiltersProviders defines model for RiskFindingsTrendFilters.Providers.
-type RiskFindingsTrendFiltersProviders string
 
 // RiskHTTPValidationError defines model for Risk_HTTPValidationError.
 type RiskHTTPValidationError struct {
@@ -12564,7 +17738,7 @@ type RiskLifecycleForecastHorizon struct {
 
 // RiskLifecycleForecastInterval defines model for Risk_LifecycleForecastInterval.
 type RiskLifecycleForecastInterval struct {
-	// Size Number of months/years per bucket (1–24 for months, 1–10 for years).
+	// Size Number of months/years per bucket (1–36 for months, 1–3 for years).
 	Size int `json:"size"`
 
 	// Type Interval unit: 'month' or 'year'.
@@ -12576,7 +17750,7 @@ type RiskLifecycleForecastRequest struct {
 	Horizon RiskLifecycleForecastHorizon `json:"horizon"`
 
 	// IncludeStatuses Status buckets to include. Valid values: supported, endOfSupport, endOfLife, obsolete. Omit or pass empty list to include all.
-	IncludeStatuses *[]string                     `json:"includeStatuses,omitempty"`
+	IncludeStatuses *[]string                     `json:"includeStatuses"`
 	Interval        RiskLifecycleForecastInterval `json:"interval"`
 	Scope           *RiskLifecycleForecastScope   `json:"scope,omitempty"`
 }
@@ -12616,32 +17790,29 @@ type RiskListFindingsDistributionFilters struct {
 	Accounts *[]string `json:"accounts,omitempty"`
 
 	// Date Single date in YYYY-MM-DD format
-	Date *string `json:"date,omitempty"`
+	Date *string `json:"date"`
 
 	// Filter Filter expression supporting 'co' (contains) and 'in' operators. Examples: "cveTitle co 'cve-id'", "softwareManufacturer in ['manufacturer1', 'manufacturer2']"
-	Filter *string `json:"filter,omitempty"`
+	Filter *string `json:"filter"`
 
 	// Limit Maximum number of results to return (default: 100, max: 1000)
-	Limit *int `json:"limit,omitempty"`
+	Limit *int `json:"limit"`
 
 	// Offset Number of results to skip (for pagination)
-	Offset *int `json:"offset,omitempty"`
+	Offset *int `json:"offset"`
 
 	// OrderBy Order by field and direction (e.g., 'softwareManufacturer asc', 'findings desc')
-	OrderBy *string `json:"orderBy,omitempty"`
+	OrderBy *string `json:"orderBy"`
 
 	// Providers List of providers. Use ['all'] for all providers. Supports: aws, azure, gc, onprem
-	Providers *[]RiskListFindingsDistributionFiltersProviders `json:"providers,omitempty"`
+	Providers *[]string `json:"providers,omitempty"`
 
 	// Regions List of AWS regions. Use ['all'] for all regions
 	Regions *[]string `json:"regions,omitempty"`
 
 	// Services List of services or 'all' (optional)
-	Services *[]string `json:"services,omitempty"`
+	Services *[]string `json:"services"`
 }
-
-// RiskListFindingsDistributionFiltersProviders defines model for RiskListFindingsDistributionFilters.Providers.
-type RiskListFindingsDistributionFiltersProviders string
 
 // RiskMisconfigOverviewFilterParams Filter parameters for misconfiguration overview requests.
 type RiskMisconfigOverviewFilterParams struct {
@@ -12694,6 +17865,12 @@ type RiskMisconfigOverviewItem struct {
 	Total int `json:"total"`
 }
 
+// RiskMisconfigOverviewRequest defines model for Risk_MisconfigOverviewRequest.
+type RiskMisconfigOverviewRequest struct {
+	// Providers List of providers to filter. Use ['onprem'] for on-prem findings.
+	Providers *[]string `json:"providers,omitempty"`
+}
+
 // RiskMisconfigOverviewResponse Response model for misconfiguration overview.
 type RiskMisconfigOverviewResponse struct {
 	// Kind Resource kind identifier
@@ -12706,10 +17883,10 @@ type RiskMisconfigOverviewResponse struct {
 // RiskMisconfigRuleItem Single misconfiguration rule item.
 type RiskMisconfigRuleItem struct {
 	// Args Rule arguments as JSON string
-	Args *string `json:"args,omitempty"`
+	Args *string `json:"args"`
 
 	// AutoRemediationStatus Auto-remediation status
-	AutoRemediationStatus *bool `json:"autoRemediationStatus,omitempty"`
+	AutoRemediationStatus *bool `json:"autoRemediationStatus"`
 
 	// ComplianceStandardNames List of compliance standard names
 	ComplianceStandardNames []string `json:"complianceStandardNames"`
@@ -12766,19 +17943,19 @@ type RiskMisconfigRulesFilterParams struct {
 	Accounts []string `json:"accounts"`
 
 	// ComplianceStandard Required when featureType is 'compliance'
-	ComplianceStandard *string `json:"complianceStandard,omitempty"`
+	ComplianceStandard *string `json:"complianceStandard"`
 
 	// ControlId Required when featureType is 'compliance'
-	ControlId *string `json:"controlId,omitempty"`
+	ControlId *string `json:"controlId"`
 
 	// Date Required when featureType is 'compliance'. Format: YYYY-MM-DD
-	Date *string `json:"date,omitempty"`
+	Date *string `json:"date"`
 
 	// EventId Required when featureType is 'event'
-	EventId *string `json:"eventId,omitempty"`
+	EventId *string `json:"eventId"`
 
 	// EventTime Required when featureType is 'event'. Format: YYYY-MM-DD HH:MM:SS
-	EventTime *string `json:"eventTime,omitempty"`
+	EventTime *string `json:"eventTime"`
 
 	// FeatureType Feature type to filter by. Possible values: risk, compliance, event, policy
 	FeatureType RiskMisconfigRulesFilterParamsFeatureType `json:"featureType"`
@@ -12835,7 +18012,7 @@ type RiskNotificationCreateRequest struct {
 	UserId string `json:"userId"`
 
 	// UserName User name (optional)
-	UserName *string `json:"userName,omitempty"`
+	UserName *string `json:"userName"`
 }
 
 // RiskNotificationCreateRequestIntervalDays Interval in days (must be 1, 7, 14, or 30)
@@ -12861,23 +18038,23 @@ type RiskNotificationResponseItem struct {
 
 // RiskOkPaginatedResponseAny defines model for Risk_OkPaginatedResponse_Any_.
 type RiskOkPaginatedResponseAny struct {
-	Count      *int           `json:"count,omitempty"`
-	Kind       *string        `json:"kind,omitempty"`
-	PageNumber *int           `json:"pageNumber,omitempty"`
-	TotalPages *int           `json:"totalPages,omitempty"`
-	Values     *[]interface{} `json:"values,omitempty"`
+	Count      *int           `json:"count"`
+	Kind       *string        `json:"kind"`
+	PageNumber *int           `json:"pageNumber"`
+	TotalPages *int           `json:"totalPages"`
+	Values     *[]interface{} `json:"values"`
 }
 
 // RiskOnboardingErrorResponse Error response model for onboarding API.
 type RiskOnboardingErrorResponse struct {
 	// Details Additional error details (fallback added if omitted)
-	Details *string `json:"details,omitempty"`
+	Details *string `json:"details"`
 
 	// Error Error message
 	Error string `json:"error"`
 
 	// OrgId Organization ID if available (numeric string)
-	OrgId *string `json:"org_id,omitempty"`
+	OrgId *string `json:"org_id"`
 }
 
 // RiskOnboardingStatusResponse defines model for Risk_OnboardingStatusResponse.
@@ -12910,23 +18087,64 @@ type RiskOpenCVECountFilters struct {
 	Accounts *[]string `json:"accounts,omitempty"`
 
 	// Date Date in YYYY-MM-DD format
-	Date *string `json:"date,omitempty"`
+	Date *string `json:"date"`
 
 	// GroupBy Field to group by (manufacturerName, productName, softwareName, costCenter, businessUnit, location)
 	GroupBy string `json:"groupBy"`
 
 	// Providers List of providers. Use ['all'] for all providers. Supports: aws, azure, gc, onprem
-	Providers *[]RiskOpenCVECountFiltersProviders `json:"providers,omitempty"`
+	Providers *[]string `json:"providers,omitempty"`
 
 	// Regions List of AWS regions. Use ['all'] for all regions
 	Regions *[]string `json:"regions,omitempty"`
 
 	// Services List of services or 'all' (optional)
-	Services *[]string `json:"services,omitempty"`
+	Services *[]string `json:"services"`
 }
 
-// RiskOpenCVECountFiltersProviders defines model for RiskOpenCVECountFilters.Providers.
-type RiskOpenCVECountFiltersProviders string
+// RiskRCOSuppressItem Item to be suppressed - can be either a rule or a failed asset.
+//
+// Unlike the cloud misconfiguration suppress, the caller does NOT supply
+// an account ID. The server synthesises one as “{orgId}_ON_PREM“ for
+// rule-based suppression, and decodes the acc_id from the riskId for
+// failed-asset suppression.
+type RiskRCOSuppressItem struct {
+	// Args Arguments for the rule (required when suppressing a rule)
+	Args *string `json:"args"`
+
+	// RiskId Risk ID (required when suppressing a failed asset)
+	RiskId *string `json:"riskId"`
+
+	// RuleId Rule ID (required when suppressing a rule)
+	RuleId *string `json:"ruleId"`
+
+	// Suppressed Whether to suppress (true) or unsuppress (false)
+	Suppressed bool `json:"suppressed"`
+}
+
+// RiskRCOSuppressRequest Request payload for suppressing rules or failed assets (on-prem / regulatory compliance).
+type RiskRCOSuppressRequest struct {
+	// Items List of items to suppress
+	Items []RiskRCOSuppressItem `json:"items"`
+
+	// UserName Name of the user performing the suppress action
+	UserName *string `json:"userName"`
+}
+
+// RiskRCOSuppressResponse Response model for regulatory-compliance suppress API.
+type RiskRCOSuppressResponse struct {
+	// Kind Response kind identifier
+	Kind *string `json:"kind,omitempty"`
+
+	// Values List of suppress operation results
+	Values []RiskRCOSuppressValueItem `json:"values"`
+}
+
+// RiskRCOSuppressValueItem Individual suppress response value item.
+type RiskRCOSuppressValueItem struct {
+	// Updated Whether the item was updated
+	Updated string `json:"updated"`
+}
 
 // RiskRemediationStepBox Remediation step box item containing code or text.
 type RiskRemediationStepBox struct {
@@ -12979,16 +18197,16 @@ type RiskRiskDetailsValue struct {
 	EasyRemediation bool `json:"easyRemediation"`
 
 	// FirstDiscovered Date when risk was first discovered
-	FirstDiscovered *string `json:"firstDiscovered,omitempty"`
+	FirstDiscovered *string `json:"firstDiscovered"`
 
 	// LastScanned Last scan date
-	LastScanned *string `json:"lastScanned,omitempty"`
+	LastScanned *string `json:"lastScanned"`
 
 	// Location Cloud region or location
-	Location *string `json:"location,omitempty"`
+	Location *string `json:"location"`
 
 	// RiskScore Risk score
-	RiskScore *float32 `json:"riskScore,omitempty"`
+	RiskScore *float32 `json:"riskScore"`
 
 	// RuleDescription Full description of the rule
 	RuleDescription string `json:"ruleDescription"`
@@ -13012,7 +18230,7 @@ type RiskRiskDetailsValue struct {
 	Status string `json:"status"`
 
 	// User User associated with the risk
-	User *string `json:"user,omitempty"`
+	User *string `json:"user"`
 }
 
 // RiskSeverityBreakdown Individual severity breakdown in response.
@@ -13042,16 +18260,19 @@ type RiskStandardControlDetailsRequest struct {
 	Accounts []string `json:"accounts"`
 
 	// Category List of control categories to filter by
-	Category *[]string `json:"category,omitempty"`
+	Category *[]string `json:"category"`
 
 	// Etime End time for data in YYYY-MM-DD format
-	Etime *string `json:"etime,omitempty"`
+	Etime *string `json:"etime"`
 
 	// Imc IMC filter flag
-	Imc *bool `json:"imc,omitempty"`
+	Imc *bool `json:"imc"`
 
 	// Level CIS level filter. Allowed values: 1 or 2
-	Level *int `json:"level,omitempty"`
+	Level *int `json:"level"`
+
+	// ProviderType Provider type. Use 'on-prem' to query on-premises compliance data. Omit or set to 'cloud' for cloud provider data.
+	ProviderType *string `json:"providerType"`
 
 	// Providers List of cloud providers. Allowed values: 'aws', 'azure', 'all'
 	Providers []string `json:"providers"`
@@ -13078,13 +18299,13 @@ type RiskSuppressItem struct {
 	Accid string `json:"accid"`
 
 	// Args Arguments for the rule (required when suppressing a rule)
-	Args *string `json:"args,omitempty"`
+	Args *string `json:"args"`
 
 	// RiskId Risk ID (required when suppressing a failed asset)
-	RiskId *string `json:"riskId,omitempty"`
+	RiskId *string `json:"riskId"`
 
 	// RuleId Rule ID (required when suppressing a rule)
-	RuleId *string `json:"ruleId,omitempty"`
+	RuleId *string `json:"ruleId"`
 
 	// Suppressed Whether to suppress (true) or unsuppress (false)
 	Suppressed bool `json:"suppressed"`
@@ -13096,7 +18317,7 @@ type RiskSuppressRequest struct {
 	Items []RiskSuppressItem `json:"items"`
 
 	// UserName Name of the user performing the suppress action
-	UserName *string `json:"userName,omitempty"`
+	UserName *string `json:"userName"`
 }
 
 // RiskSuppressResponse Response model for suppress API.
@@ -13168,6 +18389,33 @@ type RiskValidationErrorLoc1 = int
 // RiskValidationError_Loc_Item defines model for Risk_ValidationError.loc.Item.
 type RiskValidationError_Loc_Item struct {
 	union json.RawMessage
+}
+
+// RiskYearWiseAssetListPagination defines model for Risk_YearWiseAssetListPagination.
+type RiskYearWiseAssetListPagination struct {
+	Limit  *int `json:"limit,omitempty"`
+	Offset *int `json:"offset,omitempty"`
+}
+
+// RiskYearWiseAssetListRequest defines model for Risk_YearWiseAssetListRequest.
+type RiskYearWiseAssetListRequest struct {
+	// Fields Fields to include in the response.
+	Fields *[]string `json:"fields"`
+
+	// Filter Filter expression like 'manufacturer co "Microsoft"'
+	Filter *string `json:"filter"`
+
+	// OrderBy Order expression like 'manufacturer asc'
+	OrderBy    *string                          `json:"orderBy"`
+	Pagination *RiskYearWiseAssetListPagination `json:"pagination,omitempty"`
+	Scope      *RiskYearWiseAssetListScope      `json:"scope,omitempty"`
+}
+
+// RiskYearWiseAssetListScope defines model for Risk_YearWiseAssetListScope.
+type RiskYearWiseAssetListScope struct {
+	Manufacturer *[]string `json:"manufacturer,omitempty"`
+	Product      *[]string `json:"product,omitempty"`
+	Version      *[]string `json:"version,omitempty"`
 }
 
 // SaasActivityCountByRangeCollection defines model for Saas_ActivityCountByRangeCollection.
@@ -15545,6 +20793,172 @@ type VisQueryData struct {
 	Status string `json:"status"`
 }
 
+// BillingCenterServiceAllocationTableShowParams defines parameters for BillingCenterServiceAllocationTableShow.
+type BillingCenterServiceAllocationTableShowParams struct {
+	// ApiVersion API Version, must be specified using this header
+	ApiVersion BillingCenterServiceAllocationTableShowParamsApiVersion `json:"Api-Version"`
+}
+
+// BillingCenterServiceAllocationTableShowParamsApiVersion defines parameters for BillingCenterServiceAllocationTableShow.
+type BillingCenterServiceAllocationTableShowParamsApiVersion string
+
+// BillingCenterServiceAllocationTableUpsertParams defines parameters for BillingCenterServiceAllocationTableUpsert.
+type BillingCenterServiceAllocationTableUpsertParams struct {
+	// SequenceNumber The version sequence number
+	SequenceNumber *int `form:"sequence_number,omitempty" json:"sequence_number,omitempty"`
+
+	// ApiVersion API Version, must be specified using this header
+	ApiVersion BillingCenterServiceAllocationTableUpsertParamsApiVersion `json:"Api-Version"`
+}
+
+// BillingCenterServiceAllocationTableUpsertParamsApiVersion defines parameters for BillingCenterServiceAllocationTableUpsert.
+type BillingCenterServiceAllocationTableUpsertParamsApiVersion string
+
+// BillingCenterServiceBillingCentersIndexParams defines parameters for BillingCenterServiceBillingCentersIndex.
+type BillingCenterServiceBillingCentersIndexParams struct {
+	// View Optional view selection
+	View *BillingCenterServiceBillingCentersIndexParamsView `form:"view,omitempty" json:"view,omitempty"`
+
+	// ApiVersion API Version, must be specified using this header
+	ApiVersion BillingCenterServiceBillingCentersIndexParamsApiVersion `json:"Api-Version"`
+}
+
+// BillingCenterServiceBillingCentersIndexParamsView defines parameters for BillingCenterServiceBillingCentersIndex.
+type BillingCenterServiceBillingCentersIndexParamsView string
+
+// BillingCenterServiceBillingCentersIndexParamsApiVersion defines parameters for BillingCenterServiceBillingCentersIndex.
+type BillingCenterServiceBillingCentersIndexParamsApiVersion string
+
+// BillingCenterServiceBillingCentersCreateParams defines parameters for BillingCenterServiceBillingCentersCreate.
+type BillingCenterServiceBillingCentersCreateParams struct {
+	// ApiVersion API Version, must be specified using this header
+	ApiVersion BillingCenterServiceBillingCentersCreateParamsApiVersion `json:"Api-Version"`
+}
+
+// BillingCenterServiceBillingCentersCreateParamsApiVersion defines parameters for BillingCenterServiceBillingCentersCreate.
+type BillingCenterServiceBillingCentersCreateParamsApiVersion string
+
+// BillingCenterServiceBillingCentersDeleteParams defines parameters for BillingCenterServiceBillingCentersDelete.
+type BillingCenterServiceBillingCentersDeleteParams struct {
+	// ApiVersion API Version, must be specified using this header
+	ApiVersion BillingCenterServiceBillingCentersDeleteParamsApiVersion `json:"Api-Version"`
+}
+
+// BillingCenterServiceBillingCentersDeleteParamsApiVersion defines parameters for BillingCenterServiceBillingCentersDelete.
+type BillingCenterServiceBillingCentersDeleteParamsApiVersion string
+
+// BillingCenterServiceBillingCentersShowParams defines parameters for BillingCenterServiceBillingCentersShow.
+type BillingCenterServiceBillingCentersShowParams struct {
+	// ApiVersion API Version, must be specified using this header
+	ApiVersion BillingCenterServiceBillingCentersShowParamsApiVersion `json:"Api-Version"`
+}
+
+// BillingCenterServiceBillingCentersShowParamsApiVersion defines parameters for BillingCenterServiceBillingCentersShow.
+type BillingCenterServiceBillingCentersShowParamsApiVersion string
+
+// BillingCenterServiceBillingCentersUpdateParams defines parameters for BillingCenterServiceBillingCentersUpdate.
+type BillingCenterServiceBillingCentersUpdateParams struct {
+	// ApiVersion API Version, must be specified using this header
+	ApiVersion BillingCenterServiceBillingCentersUpdateParamsApiVersion `json:"Api-Version"`
+}
+
+// BillingCenterServiceBillingCentersUpdateParamsApiVersion defines parameters for BillingCenterServiceBillingCentersUpdate.
+type BillingCenterServiceBillingCentersUpdateParamsApiVersion string
+
+// BillingCenterServiceBillingCenterAccessRulesGrantParams defines parameters for BillingCenterServiceBillingCenterAccessRulesGrant.
+type BillingCenterServiceBillingCenterAccessRulesGrantParams struct {
+	// ApiVersion API Version, must be specified using this header
+	ApiVersion BillingCenterServiceBillingCenterAccessRulesGrantParamsApiVersion `json:"Api-Version"`
+}
+
+// BillingCenterServiceBillingCenterAccessRulesGrantParamsApiVersion defines parameters for BillingCenterServiceBillingCenterAccessRulesGrant.
+type BillingCenterServiceBillingCenterAccessRulesGrantParamsApiVersion string
+
+// BillingCenterServiceBillingCenterAccessRulesReportParams defines parameters for BillingCenterServiceBillingCenterAccessRulesReport.
+type BillingCenterServiceBillingCenterAccessRulesReportParams struct {
+	// ApiVersion API Version, must be specified using this header
+	ApiVersion BillingCenterServiceBillingCenterAccessRulesReportParamsApiVersion `json:"Api-Version"`
+}
+
+// BillingCenterServiceBillingCenterAccessRulesReportParamsApiVersion defines parameters for BillingCenterServiceBillingCenterAccessRulesReport.
+type BillingCenterServiceBillingCenterAccessRulesReportParamsApiVersion string
+
+// BillingCenterServiceBillingCenterAccessRulesRevokeParams defines parameters for BillingCenterServiceBillingCenterAccessRulesRevoke.
+type BillingCenterServiceBillingCenterAccessRulesRevokeParams struct {
+	// ApiVersion API Version, must be specified using this header
+	ApiVersion BillingCenterServiceBillingCenterAccessRulesRevokeParamsApiVersion `json:"Api-Version"`
+}
+
+// BillingCenterServiceBillingCenterAccessRulesRevokeParamsApiVersion defines parameters for BillingCenterServiceBillingCenterAccessRulesRevoke.
+type BillingCenterServiceBillingCenterAccessRulesRevokeParamsApiVersion string
+
+// BillingCenterServiceBillingCentersShowAllocationTableParams defines parameters for BillingCenterServiceBillingCentersShowAllocationTable.
+type BillingCenterServiceBillingCentersShowAllocationTableParams struct {
+	// ApiVersion API Version, must be specified using this header
+	ApiVersion BillingCenterServiceBillingCentersShowAllocationTableParamsApiVersion `json:"Api-Version"`
+}
+
+// BillingCenterServiceBillingCentersShowAllocationTableParamsApiVersion defines parameters for BillingCenterServiceBillingCentersShowAllocationTable.
+type BillingCenterServiceBillingCentersShowAllocationTableParamsApiVersion string
+
+// BillingCenterServiceBillingCentersUpsertAllocationTableParams defines parameters for BillingCenterServiceBillingCentersUpsertAllocationTable.
+type BillingCenterServiceBillingCentersUpsertAllocationTableParams struct {
+	// SequenceNumber The version sequence number
+	SequenceNumber *int `form:"sequence_number,omitempty" json:"sequence_number,omitempty"`
+
+	// ApiVersion API Version, must be specified using this header
+	ApiVersion BillingCenterServiceBillingCentersUpsertAllocationTableParamsApiVersion `json:"Api-Version"`
+}
+
+// BillingCenterServiceBillingCentersUpsertAllocationTableParamsApiVersion defines parameters for BillingCenterServiceBillingCentersUpsertAllocationTable.
+type BillingCenterServiceBillingCentersUpsertAllocationTableParamsApiVersion string
+
+// BillingCenterServiceAccessRulesGroupReportParams defines parameters for BillingCenterServiceAccessRulesGroupReport.
+type BillingCenterServiceAccessRulesGroupReportParams struct {
+	// ApiVersion API Version, must be specified using this header
+	ApiVersion BillingCenterServiceAccessRulesGroupReportParamsApiVersion `json:"Api-Version"`
+}
+
+// BillingCenterServiceAccessRulesGroupReportParamsApiVersion defines parameters for BillingCenterServiceAccessRulesGroupReport.
+type BillingCenterServiceAccessRulesGroupReportParamsApiVersion string
+
+// BillingCenterServiceAccessRulesUserReportParams defines parameters for BillingCenterServiceAccessRulesUserReport.
+type BillingCenterServiceAccessRulesUserReportParams struct {
+	// ApiVersion API Version, must be specified using this header
+	ApiVersion BillingCenterServiceAccessRulesUserReportParamsApiVersion `json:"Api-Version"`
+}
+
+// BillingCenterServiceAccessRulesUserReportParamsApiVersion defines parameters for BillingCenterServiceAccessRulesUserReport.
+type BillingCenterServiceAccessRulesUserReportParamsApiVersion string
+
+// BillingCenterServiceUserBillingCentersIndexParams defines parameters for BillingCenterServiceUserBillingCentersIndex.
+type BillingCenterServiceUserBillingCentersIndexParams struct {
+	// View Returns only the id and the name of the billing centers if set to "compact"
+	View *BillingCenterServiceUserBillingCentersIndexParamsView `form:"view,omitempty" json:"view,omitempty"`
+
+	// HighestAccessibleBCsOnly Returns the highest level of billing centers accessible to the user when true
+	// 					and all levels of billing centers accessible to the user when false.
+	HighestAccessibleBCsOnly *bool `form:"highestAccessibleBCsOnly,omitempty" json:"highestAccessibleBCsOnly,omitempty"`
+
+	// ApiVersion API Version, must be specified using this header
+	ApiVersion BillingCenterServiceUserBillingCentersIndexParamsApiVersion `json:"Api-Version"`
+}
+
+// BillingCenterServiceUserBillingCentersIndexParamsView defines parameters for BillingCenterServiceUserBillingCentersIndex.
+type BillingCenterServiceUserBillingCentersIndexParamsView string
+
+// BillingCenterServiceUserBillingCentersIndexParamsApiVersion defines parameters for BillingCenterServiceUserBillingCentersIndex.
+type BillingCenterServiceUserBillingCentersIndexParamsApiVersion string
+
+// BillingCenterServiceUserBillingCentersShowParams defines parameters for BillingCenterServiceUserBillingCentersShow.
+type BillingCenterServiceUserBillingCentersShowParams struct {
+	// ApiVersion API Version, must be specified using this header
+	ApiVersion BillingCenterServiceUserBillingCentersShowParamsApiVersion `json:"Api-Version"`
+}
+
+// BillingCenterServiceUserBillingCentersShowParamsApiVersion defines parameters for BillingCenterServiceUserBillingCentersShow.
+type BillingCenterServiceUserBillingCentersShowParamsApiVersion string
+
 // CredCredentialIndexOrgParams defines parameters for CredCredentialIndexOrg.
 type CredCredentialIndexOrgParams struct {
 	// Filter Optional filter for Credentials.
@@ -15634,7 +21048,7 @@ type DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetParams struct {
 	// | enrollmentStatus| in        | allowed: ONBOARDED, OFFBOARDED, FAILED, IN-PROGRESS|
 	// | onboardingType  | in        | Filter by type: 'Auto Discovery', 'Individual', 'Linked' |
 	// | billingAccountId| eq, co    | Exact / contains match on billing acct ID |
-	// | products        | in        | Allowed values: 'di', 'bpc', 'cco'        |
+	// | products        | in        | Allowed values: 'di', 'bpc', 'cco', 'oe', 'ai'  |
 	//
 	// ### Formatting Rules
 	//
@@ -15658,6 +21072,8 @@ type DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetParams struct {
 	// - `billingAccountId eq '123456789012'`
 	// - `billingAccountId co '1234'`
 	// - `products in ['di','bpc']`
+	// - `products in ['oe']`
+	// - `products in ['ai']`
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 }
 
@@ -15695,6 +21111,374 @@ type BudgetBudgetReportParams struct {
 	// Dimensions The list of supported dimensions by which to report budget spend.
 	Dimensions *[]string `form:"dimensions,omitempty" json:"dimensions,omitempty"`
 }
+
+// FinopsBillingBillingIndexPlansParams defines parameters for FinopsBillingBillingIndexPlans.
+type FinopsBillingBillingIndexPlansParams struct {
+	// Filter Optional filter for returning plans matching specific criteria.
+	//
+	// Filter parameters may be combined with 'and' and 'or' logical operators.
+	//
+	// Each parameter may compare one of the following attributes to a given value or null.
+	//
+	// ### Plan Filter Attributes
+	// - id, the unique identifier of a plan
+	// - name, the name of the plan
+	// - ruleIds, the list of unique identifiers of included rules
+	// - customerIds, the list of unique identifiers of child organizations
+	//
+	// ### Plan Filter Comparisons
+	// - eq, attribute matches the value, e.g. planId eq 'c6671c74-513a-4127-b8df-81adfb65bf7f'
+	// - in, attribute is one of the values, e.g. scheduled in ['before', 'after']
+	// - co, attribute contains the value, e.g. name co 'tier'; customerIds co 1234
+	// - lt (le), attribute is less than (or equal to) the value, e.g. endAfter le '2025-12-31'
+	// - gt (ge), attribute is greater than (or equal to) the value, e.g. startOn ge '2024-01-01'
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// Limit Return no more than limit values per page
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
+	// Partial responses will include a "nextPage" attribute in their response body, which contains the URL of the next page including the appropriate skipToken.
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
+}
+
+// FinopsBillingBillingDeletePlanParams defines parameters for FinopsBillingBillingDeletePlan.
+type FinopsBillingBillingDeletePlanParams struct {
+	// IfMatch Only modify the resource if this tag is still current.
+	//
+	// Provide the ETag from a prior interaction with the service to avoid losing someone else's update.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsBillingBillingReplacePlanParams defines parameters for FinopsBillingBillingReplacePlan.
+type FinopsBillingBillingReplacePlanParams struct {
+	// IfMatch Only modify the resource if this tag is still current.
+	//
+	// Provide the ETag from a prior interaction with the service to avoid losing someone else's update.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsBillingBillingIndexRulesParams defines parameters for FinopsBillingBillingIndexRules.
+type FinopsBillingBillingIndexRulesParams struct {
+	// Filter Optional filter for returning rules matching specific criteria.
+	//
+	// Filter parameters may be combined with 'and' and 'or' logical operators.
+	//
+	// Each parameter may compare one of the following attributes to a given value or null.
+	//
+	// ### Rule Filter Attributes
+	// - id, the unique identifier of a rule
+	// - name, the type of the rule
+	// - type, the type of the rule
+	// - enabled, whether the rule is enabled
+	// - startOn, the first date the rule applies
+	// - endAfter, the last date the rule applies
+	//
+	// ### Rule Filter Comparisons
+	// - eq, attribute matches the value, e.g. id eq 'ae85f96e-6b9e-4d68-a741-d1ea7ca1fb28'
+	// - in, attribute is one of the values, e.g. type in ['markupMarkdown', 'upchargeDiscount']
+	// - co, attribute contains the value, e.g. name co 'tier'
+	// - lt (le), attribute is less than (or equal to) the value, e.g. endAfter le '2025-12-31'
+	// - gt (ge), attribute is greater than (or equal to) the value, e.g. startOn ge '2024-01-01'
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// Limit Return no more than limit values per page
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
+	// Partial responses will include a "nextPage" attribute in their response body, which contains the URL of the next page including the appropriate skipToken.
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
+}
+
+// FinopsBillingBillingDeleteRuleParams defines parameters for FinopsBillingBillingDeleteRule.
+type FinopsBillingBillingDeleteRuleParams struct {
+	// IfMatch Only modify the resource if this tag is still current.
+	//
+	// Provide the ETag from a prior interaction with the service to avoid losing someone else's update.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsBillingBillingReplaceRuleParams defines parameters for FinopsBillingBillingReplaceRule.
+type FinopsBillingBillingReplaceRuleParams struct {
+	// IfMatch Only modify the resource if this tag is still current.
+	//
+	// Provide the ETag from a prior interaction with the service to avoid losing someone else's update.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsBillingBillingIndexPostAdjustmentsParams defines parameters for FinopsBillingBillingIndexPostAdjustments.
+type FinopsBillingBillingIndexPostAdjustmentsParams struct {
+	// Filter Optional filter for returning adjustments matching specific criteria.
+	//
+	// Filter parameters may be combined with 'and' and 'or' logical operators.
+	//
+	// Each parameter may compare one of the following attributes to a given value or null.
+	//
+	// ### Adjustment Filter Attributes
+	// - id, the unique identifier of an adjustment
+	// - name, the name of the adjustment
+	// - type, the type of the adjustment
+	// - customerIds, the list of unique identifiers of child organizations
+	// - enabled, whether the adjustment is enabled
+	// - startOn, the first date the rule applies
+	// - endAfter, the last date the rule applies
+	//
+	// ### Adjustment Filter Comparisons
+	// - eq, attribute matches the value, e.g. id eq '9dc18085-1510-4e8f-bec3-b683eed7843b'
+	// - in, attribute is one of the values, e.g. type in ['markupMarkdown', 'upchargeDiscount']
+	// - co, attribute contains the value, e.g. name co 'tier'; customerIds co 1234
+	// - lt (le), attribute is less than (or equal to) the value, e.g. endAfter le '2025-12-31'
+	// - gt (ge), attribute is greater than (or equal to) the value, e.g. startOn ge '2024-01-01'
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// Limit Return no more than limit values per page
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
+	// Partial responses will include a "nextPage" attribute in their response body, which contains the URL of the next page including the appropriate skipToken.
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
+}
+
+// FinopsBillingBillingDeletePostAdjustmentParams defines parameters for FinopsBillingBillingDeletePostAdjustment.
+type FinopsBillingBillingDeletePostAdjustmentParams struct {
+	// IfMatch Only modify the resource if this tag is still current.
+	//
+	// Provide the ETag from a prior interaction with the service to avoid losing someone else's update.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsBillingBillingReplacePostAdjustmentParams defines parameters for FinopsBillingBillingReplacePostAdjustment.
+type FinopsBillingBillingReplacePostAdjustmentParams struct {
+	// IfMatch Only modify the resource if this tag is still current.
+	//
+	// Provide the ETag from a prior interaction with the service to avoid losing someone else's update.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsBillingBillingIndexPreAdjustmentsParams defines parameters for FinopsBillingBillingIndexPreAdjustments.
+type FinopsBillingBillingIndexPreAdjustmentsParams struct {
+	// Filter Optional filter for returning adjustments matching specific criteria.
+	//
+	// Filter parameters may be combined with 'and' and 'or' logical operators.
+	//
+	// Each parameter may compare one of the following attributes to a given value or null.
+	//
+	// ### Adjustment Filter Attributes
+	// - id, the unique identifier of an adjustment
+	// - name, the name of the adjustment
+	// - type, the type of the adjustment
+	// - customerIds, the list of unique identifiers of child organizations
+	// - enabled, whether the adjustment is enabled
+	// - startOn, the first date the rule applies
+	// - endAfter, the last date the rule applies
+	//
+	// ### Adjustment Filter Comparisons
+	// - eq, attribute matches the value, e.g. id eq '9dc18085-1510-4e8f-bec3-b683eed7843b'
+	// - in, attribute is one of the values, e.g. type in ['markupMarkdown', 'upchargeDiscount']
+	// - co, attribute contains the value, e.g. name co 'tier'; customerIds co 1234
+	// - lt (le), attribute is less than (or equal to) the value, e.g. endAfter le '2025-12-31'
+	// - gt (ge), attribute is greater than (or equal to) the value, e.g. startOn ge '2024-01-01'
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// Limit Return no more than limit values per page
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
+	// Partial responses will include a "nextPage" attribute in their response body, which contains the URL of the next page including the appropriate skipToken.
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
+}
+
+// FinopsBillingBillingDeletePreAdjustmentParams defines parameters for FinopsBillingBillingDeletePreAdjustment.
+type FinopsBillingBillingDeletePreAdjustmentParams struct {
+	// IfMatch Only modify the resource if this tag is still current.
+	//
+	// Provide the ETag from a prior interaction with the service to avoid losing someone else's update.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsBillingBillingReplacePreAdjustmentParams defines parameters for FinopsBillingBillingReplacePreAdjustment.
+type FinopsBillingBillingReplacePreAdjustmentParams struct {
+	// IfMatch Only modify the resource if this tag is still current.
+	//
+	// Provide the ETag from a prior interaction with the service to avoid losing someone else's update.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsBillingBillingIndexEnterpriseRulesParams defines parameters for FinopsBillingBillingIndexEnterpriseRules.
+type FinopsBillingBillingIndexEnterpriseRulesParams struct {
+	// Filter Optional filter for returning enterprise adjustment rules matching specific criteria.
+	//
+	// Filter parameters may be combined with 'and' and 'or' logical operators.
+	//
+	// Each parameter may compare one of the following attributes to a given value or null.
+	//
+	// ### Enterprise Rule Filter Attributes
+	// - id, the unique identifier of a rule
+	// - name, the name of the rule
+	// - type, the type of the rule
+	// - enabled, whether the rule is enabled
+	// - startOn, the first date the rule applies
+	// - endAfter, the last date the rule applies
+	//
+	// ### Enterprise Rule Filter Comparisons
+	// - eq, attribute matches the value, e.g. id eq 'd5f2f3eb-5f91-4f10-89de-40eaf3cf4a6f'
+	// - in, attribute is one of the values, e.g. type in ['markupMarkdown', 'supportCharge']
+	// - co, attribute contains the value, e.g. name co 'tier'
+	// - lt (le), attribute is less than (or equal to) the value, e.g. endAfter le '2025-12-31'
+	// - gt (ge), attribute is greater than (or equal to) the value, e.g. startOn ge '2024-01-01'
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// Limit Return no more than limit values per page
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
+	// Partial responses will include a "nextPage" attribute in their response body, which contains the URL of the next page including the appropriate skipToken.
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
+}
+
+// FinopsBillingBillingReplaceEnterpriseRulesetParams defines parameters for FinopsBillingBillingReplaceEnterpriseRuleset.
+type FinopsBillingBillingReplaceEnterpriseRulesetParams struct {
+	// IfMatch Only modify the resource if this tag is still current.
+	//
+	// Provide the ETag from a prior interaction with the service to avoid losing someone else's update.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsBillingBillingDeleteEnterpriseRuleParams defines parameters for FinopsBillingBillingDeleteEnterpriseRule.
+type FinopsBillingBillingDeleteEnterpriseRuleParams struct {
+	// IfMatch Only modify the resource if this tag is still current.
+	//
+	// Provide the ETag from a prior interaction with the service to avoid losing someone else's update.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsBillingBillingReplaceEnterpriseRuleParams defines parameters for FinopsBillingBillingReplaceEnterpriseRule.
+type FinopsBillingBillingReplaceEnterpriseRuleParams struct {
+	// IfMatch Only modify the resource if this tag is still current.
+	//
+	// Provide the ETag from a prior interaction with the service to avoid losing someone else's update.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsBillingSettingsReplaceSettingsParams defines parameters for FinopsBillingSettingsReplaceSettings.
+type FinopsBillingSettingsReplaceSettingsParams struct {
+	// IfMatch Only modify the resource if this tag is still current.
+	//
+	// Provide the ETag from a prior interaction with the service to avoid losing someone else's update.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsBillingSharedCostRulesReorderParams defines parameters for FinopsBillingSharedCostRulesReorder.
+type FinopsBillingSharedCostRulesReorderParams struct {
+	// IfMatch Only modify the collection if this tag is still current. Provide the ETag from a prior GET request for the collection (GET /shared-cost-rules) to ensure the collection state hasn't changed since you viewed it.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsBillingSharedCostRulesDeleteParams defines parameters for FinopsBillingSharedCostRulesDelete.
+type FinopsBillingSharedCostRulesDeleteParams struct {
+	// IfMatch Only modify the resource if this tag is still current. Provide the ETag from a prior GET request for this specific resource (GET /shared-cost-rules/{id}) to avoid losing someone else's update.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsBillingSharedCostRulesUpdateParams defines parameters for FinopsBillingSharedCostRulesUpdate.
+type FinopsBillingSharedCostRulesUpdateParams struct {
+	// IfMatch Only modify the resource if this tag is still current. Provide the ETag from a prior GET request for this specific resource (GET /shared-cost-rules/{id}) to avoid losing someone else's update.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsCustomizationsReportSubscriptionsIndexParams defines parameters for FinopsCustomizationsReportSubscriptionsIndex.
+type FinopsCustomizationsReportSubscriptionsIndexParams struct {
+	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
+	// Partial responses will include a "nextPage" attribute in their response body, which contains the URL of the next page including the appropriate skipToken.
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
+
+	// Limit Page size (default 50, max 200)
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// DashboardId Optional filter: only subscriptions targeting this dashboard.
+	DashboardId *string `form:"dashboardId,omitempty" json:"dashboardId,omitempty"`
+}
+
+// FinopsCustomizationsReportSubscriptionsDeleteParams defines parameters for FinopsCustomizationsReportSubscriptionsDelete.
+type FinopsCustomizationsReportSubscriptionsDeleteParams struct {
+	// IfMatch Only modify the report subscription if this tag is still current.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsCustomizationsReportSubscriptionsUpdateParams defines parameters for FinopsCustomizationsReportSubscriptionsUpdate.
+type FinopsCustomizationsReportSubscriptionsUpdateParams struct {
+	// IfMatch Only modify the report subscription if this tag is still current.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsCustomizationsSavedFiltersIndexParams defines parameters for FinopsCustomizationsSavedFiltersIndex.
+type FinopsCustomizationsSavedFiltersIndexParams struct {
+	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
+	// Partial responses will include a "nextPage" attribute in their response body, which contains the URL of the next page including the appropriate skipToken.
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
+
+	// Limit Page size (default 10, max 200)
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// OrderBy Optional orderBy query allows to specify an expression for determining what values are used to order the entities.
+	// 			Multiple expressions can be specified using comma separated values.
+	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
+
+	// Visibility Optional visibility filter for results.
+	Visibility *FinopsCustomizationsSavedFiltersIndexParamsVisibility `form:"visibility,omitempty" json:"visibility,omitempty"`
+
+	// FavoriteIds Comma-separated saved filter IDs marked as favorites, max 50.
+	FavoriteIds *string `form:"favoriteIds,omitempty" json:"favoriteIds,omitempty"`
+}
+
+// FinopsCustomizationsSavedFiltersIndexParamsVisibility defines parameters for FinopsCustomizationsSavedFiltersIndex.
+type FinopsCustomizationsSavedFiltersIndexParamsVisibility string
+
+// FinopsCustomizationsSavedFiltersShowParams defines parameters for FinopsCustomizationsSavedFiltersShow.
+type FinopsCustomizationsSavedFiltersShowParams struct {
+	// IfNoneMatch Only return the saved filter if its ETag differs from this value; otherwise respond 304 Not Modified.
+	IfNoneMatch *string `json:"If-None-Match,omitempty"`
+}
+
+// FinopsCustomizationsSavedFiltersPatchParams defines parameters for FinopsCustomizationsSavedFiltersPatch.
+type FinopsCustomizationsSavedFiltersPatchParams struct {
+	// IfMatch Only modify the saved filter if this tag is still current.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsCustomizationsSavedFiltersUpdateParams defines parameters for FinopsCustomizationsSavedFiltersUpdate.
+type FinopsCustomizationsSavedFiltersUpdateParams struct {
+	// IfMatch Only modify the saved filter if this tag is still current.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsOnboardingProcessingHistoryIndexParams defines parameters for FinopsOnboardingProcessingHistoryIndex.
+type FinopsOnboardingProcessingHistoryIndexParams struct {
+	// Limit Maximum number of records to return
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// OrderBy Format: field [asc|desc][,field [asc|desc]...]. Direction is separated by one or more spaces.
+	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
+
+	// Filter Supports operators: eq, ne, gt, ge, lt, le, co, sw, ew, in, nin, and, or and parentheses for grouping.
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
+	// Partial responses will include a "nextPage" attribute in their response body, which contains the URL of the next page including the appropriate skipToken.
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
+}
+
+// FinopsOnboardingProcessingHistoryDownloadParams defines parameters for FinopsOnboardingProcessingHistoryDownload.
+type FinopsOnboardingProcessingHistoryDownloadParams struct {
+	// DownloadToken Download token for enterprise bill months.
+	DownloadToken string `form:"downloadToken" json:"downloadToken"`
+
+	// Format Download format (default: csv)
+	Format *FinopsOnboardingProcessingHistoryDownloadParamsFormat `form:"format,omitempty" json:"format,omitempty"`
+}
+
+// FinopsOnboardingProcessingHistoryDownloadParamsFormat defines parameters for FinopsOnboardingProcessingHistoryDownload.
+type FinopsOnboardingProcessingHistoryDownloadParamsFormat string
 
 // GraphqlGraphqlQueryParams defines parameters for GraphqlGraphqlQuery.
 type GraphqlGraphqlQueryParams struct {
@@ -15761,6 +21545,36 @@ type IamUserInvitationShowParams struct {
 
 // IamUserInvitationShowParamsView defines parameters for IamUserInvitationShow.
 type IamUserInvitationShowParamsView string
+
+// IamAccessPolicyIndexParams defines parameters for IamAccessPolicyIndex.
+type IamAccessPolicyIndexParams struct {
+	// View View used to render access policy
+	View *IamAccessPolicyIndexParamsView `form:"view,omitempty" json:"view,omitempty"`
+
+	// Filter Filter used to narrow down access policies
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+}
+
+// IamAccessPolicyIndexParamsView defines parameters for IamAccessPolicyIndex.
+type IamAccessPolicyIndexParamsView string
+
+// IamAccessPolicyGetUserAccessPoliciesParams defines parameters for IamAccessPolicyGetUserAccessPolicies.
+type IamAccessPolicyGetUserAccessPoliciesParams struct {
+	// View View used to render access policies
+	View *IamAccessPolicyGetUserAccessPoliciesParamsView `form:"view,omitempty" json:"view,omitempty"`
+}
+
+// IamAccessPolicyGetUserAccessPoliciesParamsView defines parameters for IamAccessPolicyGetUserAccessPolicies.
+type IamAccessPolicyGetUserAccessPoliciesParamsView string
+
+// IamAccessPolicyShowParams defines parameters for IamAccessPolicyShow.
+type IamAccessPolicyShowParams struct {
+	// View View used to render access policy
+	View *IamAccessPolicyShowParamsView `form:"view,omitempty" json:"view,omitempty"`
+}
+
+// IamAccessPolicyShowParamsView defines parameters for IamAccessPolicyShow.
+type IamAccessPolicyShowParamsView string
 
 // IamAccessRuleIndexParams defines parameters for IamAccessRuleIndex.
 type IamAccessRuleIndexParams struct {
@@ -16141,6 +21955,12 @@ type IamServiceAccountShowParams struct {
 // IamServiceAccountShowParamsView defines parameters for IamServiceAccountShow.
 type IamServiceAccountShowParamsView string
 
+// IamServiceAccountClientCreateParams defines parameters for IamServiceAccountClientCreate.
+type IamServiceAccountClientCreateParams struct {
+	// XRecipientPublicKey Optional recipient public key. When provided, the Create response omits clientSecret and instead includes encryptedSecret, iv, authTag, and ephemeralPublicKey so the client secret can be delivered encrypted.
+	XRecipientPublicKey *string `json:"X-Recipient-Public-Key,omitempty"`
+}
+
 // IamUserIndexParams defines parameters for IamUserIndex.
 type IamUserIndexParams struct {
 	// Filter A filter to narrow the number of users to return. Supported
@@ -16244,6 +22064,30 @@ type IamUserSettingBlobRetriveGetUrlParams struct {
 
 // IamUserSettingBlobRetriveGetUrlParamsType defines parameters for IamUserSettingBlobRetriveGetUrl.
 type IamUserSettingBlobRetriveGetUrlParamsType string
+
+// IamUserMembershipsShowPrivilegesReportParams defines parameters for IamUserMembershipsShowPrivilegesReport.
+type IamUserMembershipsShowPrivilegesReportParams struct {
+	// ScopeRefs Array of scope refs (org or project) to filter privileges. At least one scope ref must be provided.
+	ScopeRefs []string `form:"scopeRefs" json:"scopeRefs"`
+
+	// Prefix Optional prefix to filter privilege IDs. Examples: 'cm:', 'ss:', 'platform:roles:', 'governance:'
+	Prefix *string `form:"prefix,omitempty" json:"prefix,omitempty"`
+
+	// View View used to render privilege report details
+	View *IamUserMembershipsShowPrivilegesReportParamsView `form:"view,omitempty" json:"view,omitempty"`
+}
+
+// IamUserMembershipsShowPrivilegesReportParamsView defines parameters for IamUserMembershipsShowPrivilegesReport.
+type IamUserMembershipsShowPrivilegesReportParamsView string
+
+// IamUserMembershipsIndexProjectsParams defines parameters for IamUserMembershipsIndexProjects.
+type IamUserMembershipsIndexProjectsParams struct {
+	// View View used to render user projects
+	View *IamUserMembershipsIndexProjectsParamsView `form:"view,omitempty" json:"view,omitempty"`
+}
+
+// IamUserMembershipsIndexProjectsParamsView defines parameters for IamUserMembershipsIndexProjects.
+type IamUserMembershipsIndexProjectsParamsView string
 
 // IamMSPCustomerIndexParams defines parameters for IamMSPCustomerIndex.
 type IamMSPCustomerIndexParams struct {
@@ -16386,6 +22230,24 @@ type IamMSPCustomerV2ShowV2Params struct {
 
 // IamMSPCustomerV2ShowV2ParamsView defines parameters for IamMSPCustomerV2ShowV2.
 type IamMSPCustomerV2ShowV2ParamsView string
+
+// BillAnalysisCostsDimensionsParams defines parameters for BillAnalysisCostsDimensions.
+type BillAnalysisCostsDimensionsParams struct {
+	// Dataset indicates which datasource to query from, if set to billing, it will query from billing data source.
+	Dataset *BillAnalysisCostsDimensionsParamsDataset `form:"dataset,omitempty" json:"dataset,omitempty"`
+}
+
+// BillAnalysisCostsDimensionsParamsDataset defines parameters for BillAnalysisCostsDimensions.
+type BillAnalysisCostsDimensionsParamsDataset string
+
+// BillAnalysisCostsMetricsParams defines parameters for BillAnalysisCostsMetrics.
+type BillAnalysisCostsMetricsParams struct {
+	// Dataset indicates which datasource to query from, if set to billing, it will query from billing data source.
+	Dataset *BillAnalysisCostsMetricsParamsDataset `form:"dataset,omitempty" json:"dataset,omitempty"`
+}
+
+// BillAnalysisCostsMetricsParamsDataset defines parameters for BillAnalysisCostsMetrics.
+type BillAnalysisCostsMetricsParamsDataset string
 
 // PolicyCustomCatalogIndexParams defines parameters for PolicyCustomCatalogIndex.
 type PolicyCustomCatalogIndexParams struct {
@@ -17147,6 +23009,24 @@ type RiskGetRiskDetailsRecommendationV1OrgsOrgIdMisconfigurationRiskRiskIdDetail
 	Provider *string `form:"provider,omitempty" json:"provider,omitempty"`
 }
 
+// OptimaRecommendationsRecommendationsIndexParams defines parameters for OptimaRecommendationsRecommendationsIndex.
+type OptimaRecommendationsRecommendationsIndexParams struct {
+	// BillingCenterIDs IDs of BillingCenters to get recommendations for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
+	BillingCenterIDs *[]string `form:"billingCenterIDs,omitempty" json:"billingCenterIDs,omitempty"`
+
+	// View An optional parameter that controls the level of detail returned about policy violation data. Depending on it the data is returned in the `details` or `detailsExtended` field
+	View *OptimaRecommendationsRecommendationsIndexParamsView `form:"view,omitempty" json:"view,omitempty"`
+
+	// Statuses Recommendation statuses to get
+	Statuses *[]OptimaRecommendationsRecommendationsIndexParamsStatuses `form:"statuses,omitempty" json:"statuses,omitempty"`
+}
+
+// OptimaRecommendationsRecommendationsIndexParamsView defines parameters for OptimaRecommendationsRecommendationsIndex.
+type OptimaRecommendationsRecommendationsIndexParamsView string
+
+// OptimaRecommendationsRecommendationsIndexParamsStatuses defines parameters for OptimaRecommendationsRecommendationsIndex.
+type OptimaRecommendationsRecommendationsIndexParamsStatuses string
+
 // RiskListCompliancesRiskV1OrgsOrgIdCompliancesGetParams defines parameters for RiskListCompliancesRiskV1OrgsOrgIdCompliancesGet.
 type RiskListCompliancesRiskV1OrgsOrgIdCompliancesGetParams struct {
 	// PaginationKey Token of the page to return.
@@ -17160,6 +23040,12 @@ type RiskListCompliancesRiskV1OrgsOrgIdCompliancesGetParams struct {
 type RiskGetRiskDetailsRiskV1OrgsOrgIdMisconfigurationRiskRiskIdDetailsGetParams struct {
 	// Provider Cloud provider e.g. aws, azure
 	Provider *string `form:"provider,omitempty" json:"provider,omitempty"`
+}
+
+// RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostParams defines parameters for RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPost.
+type RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostParams struct {
+	// SkipToken Cursor for pagination (query param overrides body)
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
 }
 
 // RiskGetCveDetailsRiskV1OrgsOrgIdVulnerabilityCveGetParams defines parameters for RiskGetCveDetailsRiskV1OrgsOrgIdVulnerabilityCveGet.
@@ -17633,8 +23519,8 @@ type IamSCIMUserIndexParams struct {
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 }
 
-// VisExportIndexParams defines parameters for VisExportIndex.
-type VisExportIndexParams struct {
+// VisExportParams defines parameters for VisExport.
+type VisExportParams struct {
 	// Filter Optional filter for returning requests matching specific criteria.
 	//
 	// The following filters are supported:
@@ -17697,6 +23583,24 @@ type RiskGetCveDetailsVulnerabilityCveOrgIdGetParams struct {
 	// CveId CVE ID in format CVE-YYYY-NNNN
 	CveId string `form:"cveId" json:"cveId"`
 }
+
+// BillingCenterServiceAllocationTableUpsertJSONRequestBody defines body for BillingCenterServiceAllocationTableUpsert for application/json ContentType.
+type BillingCenterServiceAllocationTableUpsertJSONRequestBody = BillingCenterServiceAllocationTableUpsertRequestBody
+
+// BillingCenterServiceBillingCentersCreateJSONRequestBody defines body for BillingCenterServiceBillingCentersCreate for application/json ContentType.
+type BillingCenterServiceBillingCentersCreateJSONRequestBody = BillingCenterServiceBillingCentersCreateRequestBody
+
+// BillingCenterServiceBillingCentersUpdateJSONRequestBody defines body for BillingCenterServiceBillingCentersUpdate for application/json ContentType.
+type BillingCenterServiceBillingCentersUpdateJSONRequestBody = BillingCenterServiceBillingCentersUpdateRequestBody
+
+// BillingCenterServiceBillingCenterAccessRulesGrantJSONRequestBody defines body for BillingCenterServiceBillingCenterAccessRulesGrant for application/json ContentType.
+type BillingCenterServiceBillingCenterAccessRulesGrantJSONRequestBody = BillingCenterServiceBillingCenterAccessRulesGrantRequestBody
+
+// BillingCenterServiceBillingCenterAccessRulesRevokeJSONRequestBody defines body for BillingCenterServiceBillingCenterAccessRulesRevoke for application/json ContentType.
+type BillingCenterServiceBillingCenterAccessRulesRevokeJSONRequestBody = BillingCenterServiceBillingCenterAccessRulesRevokeRequestBody
+
+// BillingCenterServiceBillingCentersUpsertAllocationTableJSONRequestBody defines body for BillingCenterServiceBillingCentersUpsertAllocationTable for application/json ContentType.
+type BillingCenterServiceBillingCentersUpsertAllocationTableJSONRequestBody = BillingCenterServiceBillingCentersUpsertAllocationTableRequestBody
 
 // CredAPIKeyCredentialUpdateOrgJSONRequestBody defines body for CredAPIKeyCredentialUpdateOrg for application/json ContentType.
 type CredAPIKeyCredentialUpdateOrgJSONRequestBody = CredUpdateOrgRequestBody
@@ -17806,6 +23710,57 @@ type BudgetBudgetCreateJSONRequestBody = BudgetCreateRequestBody
 // BudgetBudgetUpdateJSONRequestBody defines body for BudgetBudgetUpdate for application/json ContentType.
 type BudgetBudgetUpdateJSONRequestBody = BudgetCreateRequestBody
 
+// FinopsBillingBillingCreatePlanJSONRequestBody defines body for FinopsBillingBillingCreatePlan for application/json ContentType.
+type FinopsBillingBillingCreatePlanJSONRequestBody = FinopsBillingCreatePlanRequestBody
+
+// FinopsBillingBillingReplacePlanJSONRequestBody defines body for FinopsBillingBillingReplacePlan for application/json ContentType.
+type FinopsBillingBillingReplacePlanJSONRequestBody = FinopsBillingReplacePlanRequestBody
+
+// FinopsBillingBillingCreateRuleJSONRequestBody defines body for FinopsBillingBillingCreateRule for application/json ContentType.
+type FinopsBillingBillingCreateRuleJSONRequestBody = FinopsBillingCreateRuleRequestBody
+
+// FinopsBillingBillingReplaceRuleJSONRequestBody defines body for FinopsBillingBillingReplaceRule for application/json ContentType.
+type FinopsBillingBillingReplaceRuleJSONRequestBody = FinopsBillingCreateRuleRequestBody
+
+// FinopsBillingBillingCreatePostAdjustmentJSONRequestBody defines body for FinopsBillingBillingCreatePostAdjustment for application/json ContentType.
+type FinopsBillingBillingCreatePostAdjustmentJSONRequestBody = FinopsBillingCreatePreAdjustmentRequestBody
+
+// FinopsBillingBillingReplacePostAdjustmentJSONRequestBody defines body for FinopsBillingBillingReplacePostAdjustment for application/json ContentType.
+type FinopsBillingBillingReplacePostAdjustmentJSONRequestBody = FinopsBillingCreatePreAdjustmentRequestBody
+
+// FinopsBillingBillingCreatePreAdjustmentJSONRequestBody defines body for FinopsBillingBillingCreatePreAdjustment for application/json ContentType.
+type FinopsBillingBillingCreatePreAdjustmentJSONRequestBody = FinopsBillingCreatePreAdjustmentRequestBody
+
+// FinopsBillingBillingReplacePreAdjustmentJSONRequestBody defines body for FinopsBillingBillingReplacePreAdjustment for application/json ContentType.
+type FinopsBillingBillingReplacePreAdjustmentJSONRequestBody = FinopsBillingCreatePreAdjustmentRequestBody
+
+// FinopsBillingBillingCreateEnterpriseRuleJSONRequestBody defines body for FinopsBillingBillingCreateEnterpriseRule for application/json ContentType.
+type FinopsBillingBillingCreateEnterpriseRuleJSONRequestBody = FinopsBillingCreateEnterpriseRuleRequestBody
+
+// FinopsBillingBillingReplaceEnterpriseRulesetJSONRequestBody defines body for FinopsBillingBillingReplaceEnterpriseRuleset for application/json ContentType.
+type FinopsBillingBillingReplaceEnterpriseRulesetJSONRequestBody = FinopsBillingReplaceEnterpriseRulesetRequestBody
+
+// FinopsBillingBillingReplaceEnterpriseRuleJSONRequestBody defines body for FinopsBillingBillingReplaceEnterpriseRule for application/json ContentType.
+type FinopsBillingBillingReplaceEnterpriseRuleJSONRequestBody = FinopsBillingCreateEnterpriseRuleRequestBody
+
+// FinopsBillingSettingsReplaceSettingsJSONRequestBody defines body for FinopsBillingSettingsReplaceSettings for application/json ContentType.
+type FinopsBillingSettingsReplaceSettingsJSONRequestBody = FinopsBillingReplaceSettingsRequestBody
+
+// FinopsBillingSharedCostRulesCreateJSONRequestBody defines body for FinopsBillingSharedCostRulesCreate for application/json ContentType.
+type FinopsBillingSharedCostRulesCreateJSONRequestBody = FinopsBillingCreateRequestBody
+
+// FinopsBillingSharedCostRulesReorderJSONRequestBody defines body for FinopsBillingSharedCostRulesReorder for application/json ContentType.
+type FinopsBillingSharedCostRulesReorderJSONRequestBody = FinopsBillingReorderRequestBody
+
+// FinopsBillingSharedCostRulesUpdateJSONRequestBody defines body for FinopsBillingSharedCostRulesUpdate for application/json ContentType.
+type FinopsBillingSharedCostRulesUpdateJSONRequestBody = FinopsBillingUpdateRequestBody
+
+// FinopsCustomizationsReportSubscriptionsCreateJSONRequestBody defines body for FinopsCustomizationsReportSubscriptionsCreate for application/json ContentType.
+type FinopsCustomizationsReportSubscriptionsCreateJSONRequestBody = FinopsCustomizationsCreateRequestBody
+
+// FinopsCustomizationsReportSubscriptionsUpdateJSONRequestBody defines body for FinopsCustomizationsReportSubscriptionsUpdate for application/json ContentType.
+type FinopsCustomizationsReportSubscriptionsUpdateJSONRequestBody = FinopsCustomizationsUpdateRequestBody
+
 // FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionUpdateJSONRequestBody defines body for FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionUpdate for application/json ContentType.
 type FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionUpdateJSONRequestBody = FinopsCustomizationsRuleBasedDimensionCreateRequestBody
 
@@ -17815,11 +23770,20 @@ type FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionCreateJSONRequestBo
 // FinopsCustomizationsRuleBasedDimensionRulesListReplaceJSONRequestBody defines body for FinopsCustomizationsRuleBasedDimensionRulesListReplace for application/json ContentType.
 type FinopsCustomizationsRuleBasedDimensionRulesListReplaceJSONRequestBody = FinopsCustomizationsRulesListReplaceRequestBody
 
+// FinopsCustomizationsSavedFiltersCreateJSONRequestBody defines body for FinopsCustomizationsSavedFiltersCreate for application/json ContentType.
+type FinopsCustomizationsSavedFiltersCreateJSONRequestBody = FinopsCustomizationsCreateRequestBody2
+
+// FinopsCustomizationsSavedFiltersPatchJSONRequestBody defines body for FinopsCustomizationsSavedFiltersPatch for application/json ContentType.
+type FinopsCustomizationsSavedFiltersPatchJSONRequestBody = FinopsCustomizationsPatchSavedFilterRequest
+
+// FinopsCustomizationsSavedFiltersUpdateJSONRequestBody defines body for FinopsCustomizationsSavedFiltersUpdate for application/json ContentType.
+type FinopsCustomizationsSavedFiltersUpdateJSONRequestBody = FinopsCustomizationsUpdateRequestBody2
+
 // FinopsCustomizationsTagDimensionCreateJSONRequestBody defines body for FinopsCustomizationsTagDimensionCreate for application/json ContentType.
-type FinopsCustomizationsTagDimensionCreateJSONRequestBody = FinopsCustomizationsCreateRequestBody
+type FinopsCustomizationsTagDimensionCreateJSONRequestBody = FinopsCustomizationsCreateRequestBody3
 
 // FinopsCustomizationsTagDimensionUpdateJSONRequestBody defines body for FinopsCustomizationsTagDimensionUpdate for application/json ContentType.
-type FinopsCustomizationsTagDimensionUpdateJSONRequestBody = FinopsCustomizationsCreateRequestBody
+type FinopsCustomizationsTagDimensionUpdateJSONRequestBody = FinopsCustomizationsCreateRequestBody3
 
 // FinopsOnboardingBillConnectAWSCreateIAMRoleJSONRequestBody defines body for FinopsOnboardingBillConnectAWSCreateIAMRole for application/json ContentType.
 type FinopsOnboardingBillConnectAWSCreateIAMRoleJSONRequestBody = FinopsOnboardingCreateIAMRoleRequestBody
@@ -17869,8 +23833,23 @@ type FinopsOnboardingBillConnectGCPCreateJSONRequestBody = FinopsOnboardingCreat
 // FinopsOnboardingBillConnectGCPUpdateJSONRequestBody defines body for FinopsOnboardingBillConnectGCPUpdate for application/json ContentType.
 type FinopsOnboardingBillConnectGCPUpdateJSONRequestBody = FinopsOnboardingUpdateRequestBody5
 
+// FinopsOnboardingBillConnectSnowflakeCreateJSONRequestBody defines body for FinopsOnboardingBillConnectSnowflakeCreate for application/json ContentType.
+type FinopsOnboardingBillConnectSnowflakeCreateJSONRequestBody = FinopsOnboardingCreateRequestBody5
+
+// FinopsOnboardingBillConnectSnowflakeUpdateJSONRequestBody defines body for FinopsOnboardingBillConnectSnowflakeUpdate for application/json ContentType.
+type FinopsOnboardingBillConnectSnowflakeUpdateJSONRequestBody = FinopsOnboardingUpdateRequestBody6
+
+// FinopsOnboardingProcessingHistoryReprocessJSONRequestBody defines body for FinopsOnboardingProcessingHistoryReprocess for application/json ContentType.
+type FinopsOnboardingProcessingHistoryReprocessJSONRequestBody = FinopsOnboardingReprocessRequestBody
+
 // GraphqlGraphqlTableSchemaJSONRequestBody defines body for GraphqlGraphqlTableSchema for application/json ContentType.
 type GraphqlGraphqlTableSchemaJSONRequestBody = GraphqlTableSchemaRequestBody
+
+// IamAccessPolicyCreateJSONRequestBody defines body for IamAccessPolicyCreate for application/json ContentType.
+type IamAccessPolicyCreateJSONRequestBody = IamCreateRequestBody
+
+// IamAccessPolicyUpdateJSONRequestBody defines body for IamAccessPolicyUpdate for application/json ContentType.
+type IamAccessPolicyUpdateJSONRequestBody = IamCreateRequestBody
 
 // IamAccessRuleGrantJSONRequestBody defines body for IamAccessRuleGrant for application/json ContentType.
 type IamAccessRuleGrantJSONRequestBody = IamGrantRequestBody
@@ -17879,7 +23858,7 @@ type IamAccessRuleGrantJSONRequestBody = IamGrantRequestBody
 type IamAccessRuleRevokeJSONRequestBody = IamRevokeRequestBody
 
 // IamContractsCreateJSONRequestBody defines body for IamContractsCreate for application/json ContentType.
-type IamContractsCreateJSONRequestBody = IamCreateRequestBody
+type IamContractsCreateJSONRequestBody = IamCreateRequestBody2
 
 // IamContractsUpdateJSONRequestBody defines body for IamContractsUpdate for application/json ContentType.
 type IamContractsUpdateJSONRequestBody = IamUpdateRequestBody
@@ -17891,19 +23870,19 @@ type IamContractsActivationJSONRequestBody = IamActivationRequestBody
 type IamCustomizationUpdateJSONRequestBody = IamUpdateRequestBody6
 
 // IamGroupCreateJSONRequestBody defines body for IamGroupCreate for application/json ContentType.
-type IamGroupCreateJSONRequestBody = IamCreateRequestBody8
+type IamGroupCreateJSONRequestBody = IamCreateRequestBody9
 
 // IamGroupMembershipCreateJSONRequestBody defines body for IamGroupMembershipCreate for application/json ContentType.
-type IamGroupMembershipCreateJSONRequestBody = IamCreateRequestBody9
+type IamGroupMembershipCreateJSONRequestBody = IamCreateRequestBody10
 
 // IamGroupMembershipReplaceJSONRequestBody defines body for IamGroupMembershipReplace for application/json ContentType.
-type IamGroupMembershipReplaceJSONRequestBody = IamCreateRequestBody9
+type IamGroupMembershipReplaceJSONRequestBody = IamCreateRequestBody10
 
 // IamGroupUpdateJSONRequestBody defines body for IamGroupUpdate for application/json ContentType.
 type IamGroupUpdateJSONRequestBody = IamUpdateRequestBody5
 
 // IamSAML2IdentityProviderCreateJSONRequestBody defines body for IamSAML2IdentityProviderCreate for application/json ContentType.
-type IamSAML2IdentityProviderCreateJSONRequestBody = IamCreateRequestBody4
+type IamSAML2IdentityProviderCreateJSONRequestBody = IamCreateRequestBody5
 
 // IamSAML2DomainRegisterJSONRequestBody defines body for IamSAML2DomainRegister for application/json ContentType.
 type IamSAML2DomainRegisterJSONRequestBody = IamRegisterRequestBody
@@ -17915,7 +23894,7 @@ type IamSAML2IdentityProviderSigningKeyGenerateJSONRequestBody = IamGenerateRequ
 type IamSAML2IdentityProviderUpdateJSONRequestBody = IamUpdateRequestBody3
 
 // IamOrganizationInvitationCreateJSONRequestBody defines body for IamOrganizationInvitationCreate for application/json ContentType.
-type IamOrganizationInvitationCreateJSONRequestBody = IamCreateRequestBody3
+type IamOrganizationInvitationCreateJSONRequestBody = IamCreateRequestBody4
 
 // IamIPAccessControlReplaceRulesJSONRequestBody defines body for IamIPAccessControlReplaceRules for application/json ContentType.
 type IamIPAccessControlReplaceRulesJSONRequestBody = IamReplaceRulesRequestBody
@@ -17924,28 +23903,28 @@ type IamIPAccessControlReplaceRulesJSONRequestBody = IamReplaceRulesRequestBody
 type IamOrgLoginPolicyUpdateJSONRequestBody = IamUpdateRequestBody2
 
 // IamServiceAccountCreateJSONRequestBody defines body for IamServiceAccountCreate for application/json ContentType.
-type IamServiceAccountCreateJSONRequestBody = IamCreateRequestBody7
+type IamServiceAccountCreateJSONRequestBody = IamCreateRequestBody8
 
 // IamServiceAccountUpdateJSONRequestBody defines body for IamServiceAccountUpdate for application/json ContentType.
 type IamServiceAccountUpdateJSONRequestBody = IamUpdateRequestBody5
 
 // IamUserCreateJSONRequestBody defines body for IamUserCreate for application/json ContentType.
-type IamUserCreateJSONRequestBody = IamCreateRequestBody11
+type IamUserCreateJSONRequestBody = IamCreateRequestBody12
 
 // IamUserSettingBlobRetrivePutUrlJSONRequestBody defines body for IamUserSettingBlobRetrivePutUrl for application/json ContentType.
 type IamUserSettingBlobRetrivePutUrlJSONRequestBody = IamRetrivePutURLRequestBody
 
 // IamMSPCustomerCreateJSONRequestBody defines body for IamMSPCustomerCreate for application/json ContentType.
-type IamMSPCustomerCreateJSONRequestBody = IamCreateRequestBody10
+type IamMSPCustomerCreateJSONRequestBody = IamCreateRequestBody11
 
 // IamMSPCustomerUpdateJSONRequestBody defines body for IamMSPCustomerUpdate for application/json ContentType.
 type IamMSPCustomerUpdateJSONRequestBody = IamUpdateRequestBody7
 
 // IamMSPCustomerTagCreateJSONRequestBody defines body for IamMSPCustomerTagCreate for application/json ContentType.
-type IamMSPCustomerTagCreateJSONRequestBody = IamCreateRequestBody2
+type IamMSPCustomerTagCreateJSONRequestBody = IamCreateRequestBody3
 
 // IamMSPCustomerV2CreateV2JSONRequestBody defines body for IamMSPCustomerV2CreateV2 for application/json ContentType.
-type IamMSPCustomerV2CreateV2JSONRequestBody = IamCreateRequestBody10
+type IamMSPCustomerV2CreateV2JSONRequestBody = IamCreateRequestBody11
 
 // IamMSPCustomerV2BulkCreateV2JSONRequestBody defines body for IamMSPCustomerV2BulkCreateV2 for application/json ContentType.
 type IamMSPCustomerV2BulkCreateV2JSONRequestBody = IamBulkCreateV2RequestBody
@@ -17958,6 +23937,24 @@ type IamMSPCustomerV2UpdateV2JSONRequestBody = IamUpdateRequestBody7
 
 // AuthTokenTokenFormdataRequestBody defines body for AuthTokenToken for application/x-www-form-urlencoded ContentType.
 type AuthTokenTokenFormdataRequestBody = AuthTokenRequestBody
+
+// BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody defines body for BillAnalysisAdjustmentDefinitionUpdate for application/json ContentType.
+type BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody = BillAnalysisAdjustmentDefinitionUpdateRequestBody
+
+// BillAnalysisAnomaliesReportJSONRequestBody defines body for BillAnalysisAnomaliesReport for application/json ContentType.
+type BillAnalysisAnomaliesReportJSONRequestBody = BillAnalysisAnomaliesReportRequestBody
+
+// BillAnalysisCostsAggregatedJSONRequestBody defines body for BillAnalysisCostsAggregated for application/json ContentType.
+type BillAnalysisCostsAggregatedJSONRequestBody = BillAnalysisCostsAggregatedRequestBody
+
+// BillAnalysisCostsSelectJSONRequestBody defines body for BillAnalysisCostsSelect for application/json ContentType.
+type BillAnalysisCostsSelectJSONRequestBody = BillAnalysisCostsSelectRequestBody
+
+// BillAnalysisForecastsReportJSONRequestBody defines body for BillAnalysisForecastsReport for application/json ContentType.
+type BillAnalysisForecastsReportJSONRequestBody = BillAnalysisForecastsReportRequestBody
+
+// BillAnalysisCurrencySettingUpdateJSONRequestBody defines body for BillAnalysisCurrencySettingUpdate for application/json ContentType.
+type BillAnalysisCurrencySettingUpdateJSONRequestBody = BillAnalysisCurrencySettingUpdateRequestBody
 
 // PolicyCustomCatalogUpsertTagJSONRequestBody defines body for PolicyCustomCatalogUpsertTag for application/json ContentType.
 type PolicyCustomCatalogUpsertTagJSONRequestBody = PolicyUpsertTagRequestBody
@@ -18019,6 +24016,9 @@ type RiskGetMisconfigOverviewRecommendationV1OrgsOrgIdMisconfigurationOverviewPo
 // RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostJSONRequestBody defines body for RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPost for application/json ContentType.
 type RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostJSONRequestBody = RiskSuppressRequest
 
+// OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody defines body for OptimaRecommendationsRecommendationsUpdateStatus for application/json ContentType.
+type OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody = OptimaRecommendationsRecommendationsUpdateStatusRequestBody
+
 // RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostJSONRequestBody defines body for RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPost for application/json ContentType.
 type RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostJSONRequestBody = RiskCISBenchmarkRequest
 
@@ -18061,11 +24061,29 @@ type RiskGetAssetStatisticsRiskV1OrgsOrgIdRegulatoryComplianceAssetStatisticsPos
 // RiskGetCatalogFilterRiskV1OrgsOrgIdRegulatoryComplianceCatalogFilterPostJSONRequestBody defines body for RiskGetCatalogFilterRiskV1OrgsOrgIdRegulatoryComplianceCatalogFilterPost for application/json ContentType.
 type RiskGetCatalogFilterRiskV1OrgsOrgIdRegulatoryComplianceCatalogFilterPostJSONRequestBody = RiskCatalogFilterRequest
 
+// RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostJSONRequestBody defines body for RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPost for application/json ContentType.
+type RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostJSONRequestBody = RiskConformitySummaryRequest
+
+// RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostJSONRequestBody defines body for RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPost for application/json ContentType.
+type RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostJSONRequestBody = RiskFailedAssetRequest
+
 // RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostJSONRequestBody defines body for RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPost for application/json ContentType.
 type RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostJSONRequestBody = RiskLifecycleForecastRequest
 
 // RiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPostJSONRequestBody defines body for RiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPost for application/json ContentType.
 type RiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPostJSONRequestBody = RiskLifecycleTrendRequest
+
+// RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostJSONRequestBody defines body for RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPost for application/json ContentType.
+type RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostJSONRequestBody = RiskBpcRuleListRequest
+
+// RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostJSONRequestBody defines body for RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPost for application/json ContentType.
+type RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostJSONRequestBody = RiskMisconfigOverviewRequest
+
+// RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostJSONRequestBody defines body for RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPost for application/json ContentType.
+type RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostJSONRequestBody = RiskRCOSuppressRequest
+
+// RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostJSONRequestBody defines body for RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPost for application/json ContentType.
+type RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostJSONRequestBody = RiskYearWiseAssetListRequest
 
 // RiskEnumerateFilterValuesRiskV1OrgsOrgIdVulnerabilityEnumeratePostJSONRequestBody defines body for RiskEnumerateFilterValuesRiskV1OrgsOrgIdVulnerabilityEnumeratePost for application/json ContentType.
 type RiskEnumerateFilterValuesRiskV1OrgsOrgIdVulnerabilityEnumeratePostJSONRequestBody = RiskEnumerateFiltersRequest
@@ -18161,7 +24179,7 @@ type SaasUsageGroupCreateCostJSONRequestBody = SaasRequestSaaSUsageCost
 type SaasUsageGroupUpdateCostJSONRequestBody = SaasUpdateCostRequestBody
 
 // IamSCIMGroupCreateJSONRequestBody defines body for IamSCIMGroupCreate for application/json ContentType.
-type IamSCIMGroupCreateJSONRequestBody = IamCreateRequestBody5
+type IamSCIMGroupCreateJSONRequestBody = IamCreateRequestBody6
 
 // IamSCIMGroupUpdateJSONRequestBody defines body for IamSCIMGroupUpdate for application/json ContentType.
 type IamSCIMGroupUpdateJSONRequestBody = IamUpdateRequestBody4
@@ -18170,7 +24188,7 @@ type IamSCIMGroupUpdateJSONRequestBody = IamUpdateRequestBody4
 type IamSCIMGroupReplaceJSONRequestBody = IamReplaceRequestBody
 
 // IamSCIMUserCreateJSONRequestBody defines body for IamSCIMUserCreate for application/json ContentType.
-type IamSCIMUserCreateJSONRequestBody = IamCreateRequestBody6
+type IamSCIMUserCreateJSONRequestBody = IamCreateRequestBody7
 
 // IamSCIMUserUpdateJSONRequestBody defines body for IamSCIMUserUpdate for application/json ContentType.
 type IamSCIMUserUpdateJSONRequestBody = IamUpdateRequestBody4
@@ -18207,6 +24225,68 @@ type RiskGetOpenCveCountsVulnerabilityOpenCveOrgIdPostJSONRequestBody = RiskOpen
 
 // RiskGetFindingsSummaryVulnerabilityTotalFindingsOrgIdPostJSONRequestBody defines body for RiskGetFindingsSummaryVulnerabilityTotalFindingsOrgIdPost for application/json ContentType.
 type RiskGetFindingsSummaryVulnerabilityTotalFindingsOrgIdPostJSONRequestBody = RiskFindingsSummaryFilters
+
+// AsDivntAwsCostAndUsageModel returns the union data inside the DivntOnboardingCreateRequest_CostAndUsage as a DivntAwsCostAndUsageModel
+func (t DivntOnboardingCreateRequest_CostAndUsage) AsDivntAwsCostAndUsageModel() (DivntAwsCostAndUsageModel, error) {
+	var body DivntAwsCostAndUsageModel
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDivntAwsCostAndUsageModel overwrites any union data inside the DivntOnboardingCreateRequest_CostAndUsage as the provided DivntAwsCostAndUsageModel
+func (t *DivntOnboardingCreateRequest_CostAndUsage) FromDivntAwsCostAndUsageModel(v DivntAwsCostAndUsageModel) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDivntAwsCostAndUsageModel performs a merge with any union data inside the DivntOnboardingCreateRequest_CostAndUsage, using the provided DivntAwsCostAndUsageModel
+func (t *DivntOnboardingCreateRequest_CostAndUsage) MergeDivntAwsCostAndUsageModel(v DivntAwsCostAndUsageModel) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDivntAzureCostAndUsageModel returns the union data inside the DivntOnboardingCreateRequest_CostAndUsage as a DivntAzureCostAndUsageModel
+func (t DivntOnboardingCreateRequest_CostAndUsage) AsDivntAzureCostAndUsageModel() (DivntAzureCostAndUsageModel, error) {
+	var body DivntAzureCostAndUsageModel
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDivntAzureCostAndUsageModel overwrites any union data inside the DivntOnboardingCreateRequest_CostAndUsage as the provided DivntAzureCostAndUsageModel
+func (t *DivntOnboardingCreateRequest_CostAndUsage) FromDivntAzureCostAndUsageModel(v DivntAzureCostAndUsageModel) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDivntAzureCostAndUsageModel performs a merge with any union data inside the DivntOnboardingCreateRequest_CostAndUsage, using the provided DivntAzureCostAndUsageModel
+func (t *DivntOnboardingCreateRequest_CostAndUsage) MergeDivntAzureCostAndUsageModel(v DivntAzureCostAndUsageModel) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DivntOnboardingCreateRequest_CostAndUsage) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DivntOnboardingCreateRequest_CostAndUsage) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
 
 // AsRiskValidationErrorLoc0 returns the union data inside the RiskValidationError_Loc_Item as a RiskValidationErrorLoc0
 func (t RiskValidationError_Loc_Item) AsRiskValidationErrorLoc0() (RiskValidationErrorLoc0, error) {
@@ -18343,6 +24423,66 @@ func WithRequestEditorFn(fn RequestEditorFn) ClientOption {
 
 // The interface specification for the client above.
 type ClientInterface interface {
+	// BillingCenterServiceAllocationTableShow request
+	BillingCenterServiceAllocationTableShow(ctx context.Context, orgId int, params *BillingCenterServiceAllocationTableShowParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillingCenterServiceAllocationTableUpsertWithBody request with any body
+	BillingCenterServiceAllocationTableUpsertWithBody(ctx context.Context, orgId int, params *BillingCenterServiceAllocationTableUpsertParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillingCenterServiceAllocationTableUpsert(ctx context.Context, orgId int, params *BillingCenterServiceAllocationTableUpsertParams, body BillingCenterServiceAllocationTableUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillingCenterServiceBillingCentersIndex request
+	BillingCenterServiceBillingCentersIndex(ctx context.Context, orgId int, params *BillingCenterServiceBillingCentersIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillingCenterServiceBillingCentersCreateWithBody request with any body
+	BillingCenterServiceBillingCentersCreateWithBody(ctx context.Context, orgId int, params *BillingCenterServiceBillingCentersCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillingCenterServiceBillingCentersCreate(ctx context.Context, orgId int, params *BillingCenterServiceBillingCentersCreateParams, body BillingCenterServiceBillingCentersCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillingCenterServiceBillingCentersDelete request
+	BillingCenterServiceBillingCentersDelete(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillingCenterServiceBillingCentersShow request
+	BillingCenterServiceBillingCentersShow(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersShowParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillingCenterServiceBillingCentersUpdateWithBody request with any body
+	BillingCenterServiceBillingCentersUpdateWithBody(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillingCenterServiceBillingCentersUpdate(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpdateParams, body BillingCenterServiceBillingCentersUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillingCenterServiceBillingCenterAccessRulesGrantWithBody request with any body
+	BillingCenterServiceBillingCenterAccessRulesGrantWithBody(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesGrantParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillingCenterServiceBillingCenterAccessRulesGrant(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesGrantParams, body BillingCenterServiceBillingCenterAccessRulesGrantJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillingCenterServiceBillingCenterAccessRulesReport request
+	BillingCenterServiceBillingCenterAccessRulesReport(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesReportParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillingCenterServiceBillingCenterAccessRulesRevokeWithBody request with any body
+	BillingCenterServiceBillingCenterAccessRulesRevokeWithBody(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesRevokeParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillingCenterServiceBillingCenterAccessRulesRevoke(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesRevokeParams, body BillingCenterServiceBillingCenterAccessRulesRevokeJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillingCenterServiceBillingCentersShowAllocationTable request
+	BillingCenterServiceBillingCentersShowAllocationTable(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersShowAllocationTableParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillingCenterServiceBillingCentersUpsertAllocationTableWithBody request with any body
+	BillingCenterServiceBillingCentersUpsertAllocationTableWithBody(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpsertAllocationTableParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillingCenterServiceBillingCentersUpsertAllocationTable(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpsertAllocationTableParams, body BillingCenterServiceBillingCentersUpsertAllocationTableJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillingCenterServiceAccessRulesGroupReport request
+	BillingCenterServiceAccessRulesGroupReport(ctx context.Context, orgId int, group int, params *BillingCenterServiceAccessRulesGroupReportParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillingCenterServiceAccessRulesUserReport request
+	BillingCenterServiceAccessRulesUserReport(ctx context.Context, orgId int, user int, params *BillingCenterServiceAccessRulesUserReportParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillingCenterServiceUserBillingCentersIndex request
+	BillingCenterServiceUserBillingCentersIndex(ctx context.Context, user int, orgId int, params *BillingCenterServiceUserBillingCentersIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillingCenterServiceUserBillingCentersShow request
+	BillingCenterServiceUserBillingCentersShow(ctx context.Context, user int, orgId int, billingCenter string, params *BillingCenterServiceUserBillingCentersShowParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// CredCredentialIndexOrg request
 	CredCredentialIndexOrg(ctx context.Context, orgId int64, params *CredCredentialIndexOrgParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -18613,6 +24753,148 @@ type ClientInterface interface {
 	// BudgetCloudVendorAccountIndex request
 	BudgetCloudVendorAccountIndex(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// FinopsBillingBillingShowCustomerStatus request
+	FinopsBillingBillingShowCustomerStatus(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingIndexPlans request
+	FinopsBillingBillingIndexPlans(ctx context.Context, orgId int, params *FinopsBillingBillingIndexPlansParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingCreatePlanWithBody request with any body
+	FinopsBillingBillingCreatePlanWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingBillingCreatePlan(ctx context.Context, orgId int, body FinopsBillingBillingCreatePlanJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingDeletePlan request
+	FinopsBillingBillingDeletePlan(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeletePlanParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingShowPlan request
+	FinopsBillingBillingShowPlan(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingReplacePlanWithBody request with any body
+	FinopsBillingBillingReplacePlanWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePlanParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingBillingReplacePlan(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePlanParams, body FinopsBillingBillingReplacePlanJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingIndexRules request
+	FinopsBillingBillingIndexRules(ctx context.Context, orgId int, planId openapi_types.UUID, params *FinopsBillingBillingIndexRulesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingCreateRuleWithBody request with any body
+	FinopsBillingBillingCreateRuleWithBody(ctx context.Context, orgId int, planId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingBillingCreateRule(ctx context.Context, orgId int, planId openapi_types.UUID, body FinopsBillingBillingCreateRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingDeleteRule request
+	FinopsBillingBillingDeleteRule(ctx context.Context, orgId int, planId openapi_types.UUID, id openapi_types.UUID, params *FinopsBillingBillingDeleteRuleParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingReplaceRuleWithBody request with any body
+	FinopsBillingBillingReplaceRuleWithBody(ctx context.Context, orgId int, planId openapi_types.UUID, id openapi_types.UUID, params *FinopsBillingBillingReplaceRuleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingBillingReplaceRule(ctx context.Context, orgId int, planId openapi_types.UUID, id openapi_types.UUID, params *FinopsBillingBillingReplaceRuleParams, body FinopsBillingBillingReplaceRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingIndexPostAdjustments request
+	FinopsBillingBillingIndexPostAdjustments(ctx context.Context, orgId int, params *FinopsBillingBillingIndexPostAdjustmentsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingCreatePostAdjustmentWithBody request with any body
+	FinopsBillingBillingCreatePostAdjustmentWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingBillingCreatePostAdjustment(ctx context.Context, orgId int, body FinopsBillingBillingCreatePostAdjustmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingDeletePostAdjustment request
+	FinopsBillingBillingDeletePostAdjustment(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeletePostAdjustmentParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingReplacePostAdjustmentWithBody request with any body
+	FinopsBillingBillingReplacePostAdjustmentWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePostAdjustmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingBillingReplacePostAdjustment(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePostAdjustmentParams, body FinopsBillingBillingReplacePostAdjustmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingIndexPreAdjustments request
+	FinopsBillingBillingIndexPreAdjustments(ctx context.Context, orgId int, params *FinopsBillingBillingIndexPreAdjustmentsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingCreatePreAdjustmentWithBody request with any body
+	FinopsBillingBillingCreatePreAdjustmentWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingBillingCreatePreAdjustment(ctx context.Context, orgId int, body FinopsBillingBillingCreatePreAdjustmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingDeletePreAdjustment request
+	FinopsBillingBillingDeletePreAdjustment(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeletePreAdjustmentParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingReplacePreAdjustmentWithBody request with any body
+	FinopsBillingBillingReplacePreAdjustmentWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePreAdjustmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingBillingReplacePreAdjustment(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePreAdjustmentParams, body FinopsBillingBillingReplacePreAdjustmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingIndexEnterpriseRules request
+	FinopsBillingBillingIndexEnterpriseRules(ctx context.Context, orgId int, params *FinopsBillingBillingIndexEnterpriseRulesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingCreateEnterpriseRuleWithBody request with any body
+	FinopsBillingBillingCreateEnterpriseRuleWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingBillingCreateEnterpriseRule(ctx context.Context, orgId int, body FinopsBillingBillingCreateEnterpriseRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingReplaceEnterpriseRulesetWithBody request with any body
+	FinopsBillingBillingReplaceEnterpriseRulesetWithBody(ctx context.Context, orgId int, params *FinopsBillingBillingReplaceEnterpriseRulesetParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingBillingReplaceEnterpriseRuleset(ctx context.Context, orgId int, params *FinopsBillingBillingReplaceEnterpriseRulesetParams, body FinopsBillingBillingReplaceEnterpriseRulesetJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingDeleteEnterpriseRule request
+	FinopsBillingBillingDeleteEnterpriseRule(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeleteEnterpriseRuleParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingReplaceEnterpriseRuleWithBody request with any body
+	FinopsBillingBillingReplaceEnterpriseRuleWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplaceEnterpriseRuleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingBillingReplaceEnterpriseRule(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplaceEnterpriseRuleParams, body FinopsBillingBillingReplaceEnterpriseRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingSettingsShowSettings request
+	FinopsBillingSettingsShowSettings(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingSettingsReplaceSettingsWithBody request with any body
+	FinopsBillingSettingsReplaceSettingsWithBody(ctx context.Context, orgId int, params *FinopsBillingSettingsReplaceSettingsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingSettingsReplaceSettings(ctx context.Context, orgId int, params *FinopsBillingSettingsReplaceSettingsParams, body FinopsBillingSettingsReplaceSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingSharedCostRulesIndex request
+	FinopsBillingSharedCostRulesIndex(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingSharedCostRulesCreateWithBody request with any body
+	FinopsBillingSharedCostRulesCreateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingSharedCostRulesCreate(ctx context.Context, orgId int, body FinopsBillingSharedCostRulesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingSharedCostRulesReorderWithBody request with any body
+	FinopsBillingSharedCostRulesReorderWithBody(ctx context.Context, orgId int, params *FinopsBillingSharedCostRulesReorderParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingSharedCostRulesReorder(ctx context.Context, orgId int, params *FinopsBillingSharedCostRulesReorderParams, body FinopsBillingSharedCostRulesReorderJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingSharedCostRulesDelete request
+	FinopsBillingSharedCostRulesDelete(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingSharedCostRulesShow request
+	FinopsBillingSharedCostRulesShow(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingSharedCostRulesUpdateWithBody request with any body
+	FinopsBillingSharedCostRulesUpdateWithBody(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingSharedCostRulesUpdate(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, body FinopsBillingSharedCostRulesUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsCustomizationsReportSubscriptionsIndex request
+	FinopsCustomizationsReportSubscriptionsIndex(ctx context.Context, orgId int, params *FinopsCustomizationsReportSubscriptionsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsCustomizationsReportSubscriptionsCreateWithBody request with any body
+	FinopsCustomizationsReportSubscriptionsCreateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsCustomizationsReportSubscriptionsCreate(ctx context.Context, orgId int, body FinopsCustomizationsReportSubscriptionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsCustomizationsReportSubscriptionsDelete request
+	FinopsCustomizationsReportSubscriptionsDelete(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsCustomizationsReportSubscriptionsShow request
+	FinopsCustomizationsReportSubscriptionsShow(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsCustomizationsReportSubscriptionsUpdateWithBody request with any body
+	FinopsCustomizationsReportSubscriptionsUpdateWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsCustomizationsReportSubscriptionsUpdate(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsUpdateParams, body FinopsCustomizationsReportSubscriptionsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// FinopsCustomizationsRuleBasedDimensionIndex request
 	FinopsCustomizationsRuleBasedDimensionIndex(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -18642,6 +24924,33 @@ type ClientInterface interface {
 	FinopsCustomizationsRuleBasedDimensionRulesListReplaceWithBody(ctx context.Context, orgId int, id string, effectiveAt string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	FinopsCustomizationsRuleBasedDimensionRulesListReplace(ctx context.Context, orgId int, id string, effectiveAt string, body FinopsCustomizationsRuleBasedDimensionRulesListReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShow request
+	FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShow(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsCustomizationsSavedFiltersIndex request
+	FinopsCustomizationsSavedFiltersIndex(ctx context.Context, orgId int, params *FinopsCustomizationsSavedFiltersIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsCustomizationsSavedFiltersCreateWithBody request with any body
+	FinopsCustomizationsSavedFiltersCreateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsCustomizationsSavedFiltersCreate(ctx context.Context, orgId int, body FinopsCustomizationsSavedFiltersCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsCustomizationsSavedFiltersDelete request
+	FinopsCustomizationsSavedFiltersDelete(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsCustomizationsSavedFiltersShow request
+	FinopsCustomizationsSavedFiltersShow(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersShowParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsCustomizationsSavedFiltersPatchWithBody request with any body
+	FinopsCustomizationsSavedFiltersPatchWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersPatchParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsCustomizationsSavedFiltersPatch(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersPatchParams, body FinopsCustomizationsSavedFiltersPatchJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsCustomizationsSavedFiltersUpdateWithBody request with any body
+	FinopsCustomizationsSavedFiltersUpdateWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsCustomizationsSavedFiltersUpdate(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersUpdateParams, body FinopsCustomizationsSavedFiltersUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// FinopsCustomizationsTagDimensionIndex request
 	FinopsCustomizationsTagDimensionIndex(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -18808,8 +25117,38 @@ type ClientInterface interface {
 	// FinopsOnboardingBillConnectGCPValidate request
 	FinopsOnboardingBillConnectGCPValidate(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// FinopsOnboardingBillConnectSnowflakeCreateWithBody request with any body
+	FinopsOnboardingBillConnectSnowflakeCreateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsOnboardingBillConnectSnowflakeCreate(ctx context.Context, orgId int, body FinopsOnboardingBillConnectSnowflakeCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsOnboardingBillConnectSnowflakeDelete request
+	FinopsOnboardingBillConnectSnowflakeDelete(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsOnboardingBillConnectSnowflakeShow request
+	FinopsOnboardingBillConnectSnowflakeShow(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsOnboardingBillConnectSnowflakeUpdateWithBody request with any body
+	FinopsOnboardingBillConnectSnowflakeUpdateWithBody(ctx context.Context, orgId int, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsOnboardingBillConnectSnowflakeUpdate(ctx context.Context, orgId int, id string, body FinopsOnboardingBillConnectSnowflakeUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsOnboardingBillConnectSnowflakeValidate request
+	FinopsOnboardingBillConnectSnowflakeValidate(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// FinopsOnboardingBillConnectValidate request
 	FinopsOnboardingBillConnectValidate(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsOnboardingProcessingHistoryIndex request
+	FinopsOnboardingProcessingHistoryIndex(ctx context.Context, orgId int, params *FinopsOnboardingProcessingHistoryIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsOnboardingProcessingHistoryReprocessWithBody request with any body
+	FinopsOnboardingProcessingHistoryReprocessWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsOnboardingProcessingHistoryReprocess(ctx context.Context, orgId int, body FinopsOnboardingProcessingHistoryReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsOnboardingProcessingHistoryDownload request
+	FinopsOnboardingProcessingHistoryDownload(ctx context.Context, orgId int, params *FinopsOnboardingProcessingHistoryDownloadParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GraphqlGraphqlQuery request
 	GraphqlGraphqlQuery(ctx context.Context, orgId int64, params *GraphqlGraphqlQueryParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -18839,6 +25178,28 @@ type ClientInterface interface {
 
 	// IamOrganizationShow request
 	IamOrganizationShow(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// IamAccessPolicyIndex request
+	IamAccessPolicyIndex(ctx context.Context, orgId int, params *IamAccessPolicyIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// IamAccessPolicyCreateWithBody request with any body
+	IamAccessPolicyCreateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	IamAccessPolicyCreate(ctx context.Context, orgId int, body IamAccessPolicyCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// IamAccessPolicyGetUserAccessPolicies request
+	IamAccessPolicyGetUserAccessPolicies(ctx context.Context, orgId int, userId int, params *IamAccessPolicyGetUserAccessPoliciesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// IamAccessPolicyDelete request
+	IamAccessPolicyDelete(ctx context.Context, orgId int, accessPolicyId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// IamAccessPolicyShow request
+	IamAccessPolicyShow(ctx context.Context, orgId int, accessPolicyId string, params *IamAccessPolicyShowParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// IamAccessPolicyUpdateWithBody request with any body
+	IamAccessPolicyUpdateWithBody(ctx context.Context, orgId int, accessPolicyId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	IamAccessPolicyUpdate(ctx context.Context, orgId int, accessPolicyId string, body IamAccessPolicyUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// IamAccessRuleIndex request
 	IamAccessRuleIndex(ctx context.Context, orgId int, params *IamAccessRuleIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -19030,6 +25391,9 @@ type ClientInterface interface {
 	// IamOrganizationShowMsp request
 	IamOrganizationShowMsp(ctx context.Context, orgId int, targetOrgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// IamProjectIndex request
+	IamProjectIndex(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// IamRoleIndex request
 	IamRoleIndex(ctx context.Context, orgId int, params *IamRoleIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -19059,7 +25423,7 @@ type ClientInterface interface {
 	IamServiceAccountClientIndex(ctx context.Context, orgId int, serviceAccountId int, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// IamServiceAccountClientCreate request
-	IamServiceAccountClientCreate(ctx context.Context, orgId int, serviceAccountId int, reqEditors ...RequestEditorFn) (*http.Response, error)
+	IamServiceAccountClientCreate(ctx context.Context, orgId int, serviceAccountId int, params *IamServiceAccountClientCreateParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// IamServiceAccountClientDelete request
 	IamServiceAccountClientDelete(ctx context.Context, orgId int, serviceAccountId int, clientId string, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -19104,8 +25468,14 @@ type ClientInterface interface {
 
 	IamUserSettingBlobRetrivePutUrl(ctx context.Context, body IamUserSettingBlobRetrivePutUrlJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// IamUserOrgsIndex request
-	IamUserOrgsIndex(ctx context.Context, id int, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// IamUserMembershipsIndex request
+	IamUserMembershipsIndex(ctx context.Context, id int, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// IamUserMembershipsShowPrivilegesReport request
+	IamUserMembershipsShowPrivilegesReport(ctx context.Context, id int, params *IamUserMembershipsShowPrivilegesReportParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// IamUserMembershipsIndexProjects request
+	IamUserMembershipsIndexProjects(ctx context.Context, id int, params *IamUserMembershipsIndexProjectsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// IamMSPCustomerIndex request
 	IamMSPCustomerIndex(ctx context.Context, orgId int, params *IamMSPCustomerIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -19176,6 +25546,48 @@ type ClientInterface interface {
 	AuthTokenTokenWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	AuthTokenTokenWithFormdataBody(ctx context.Context, body AuthTokenTokenFormdataRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisAdjustmentDefinitionShow request
+	BillAnalysisAdjustmentDefinitionShow(ctx context.Context, org int, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisAdjustmentDefinitionUpdateWithBody request with any body
+	BillAnalysisAdjustmentDefinitionUpdateWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisAdjustmentDefinitionUpdate(ctx context.Context, org int, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisAnomaliesReportWithBody request with any body
+	BillAnalysisAnomaliesReportWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisAnomaliesReport(ctx context.Context, org int, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCostsAggregatedWithBody request with any body
+	BillAnalysisCostsAggregatedWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisCostsAggregated(ctx context.Context, org int, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCostsDimensions request
+	BillAnalysisCostsDimensions(ctx context.Context, org int, params *BillAnalysisCostsDimensionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCostsMetrics request
+	BillAnalysisCostsMetrics(ctx context.Context, org int, params *BillAnalysisCostsMetricsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCostsSelectWithBody request with any body
+	BillAnalysisCostsSelectWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisCostsSelect(ctx context.Context, org int, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisForecastsReportWithBody request with any body
+	BillAnalysisForecastsReportWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisForecastsReport(ctx context.Context, org int, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCurrencySettingShow request
+	BillAnalysisCurrencySettingShow(ctx context.Context, org int, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCurrencySettingUpdateWithBody request with any body
+	BillAnalysisCurrencySettingUpdateWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisCurrencySettingUpdate(ctx context.Context, org int, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// PolicyCustomCatalogIndex request
 	PolicyCustomCatalogIndex(ctx context.Context, orgId int64, params *PolicyCustomCatalogIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -19391,6 +25803,14 @@ type ClientInterface interface {
 
 	RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPost(ctx context.Context, orgId string, body RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// OptimaRecommendationsRecommendationsIndex request
+	OptimaRecommendationsRecommendationsIndex(ctx context.Context, orgID int, params *OptimaRecommendationsRecommendationsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// OptimaRecommendationsRecommendationsUpdateStatusWithBody request with any body
+	OptimaRecommendationsRecommendationsUpdateStatusWithBody(ctx context.Context, orgID int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	OptimaRecommendationsRecommendationsUpdateStatus(ctx context.Context, orgID int, body OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostWithBody request with any body
 	RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -19470,6 +25890,16 @@ type ClientInterface interface {
 
 	RiskGetCatalogFilterRiskV1OrgsOrgIdRegulatoryComplianceCatalogFilterPost(ctx context.Context, orgId string, body RiskGetCatalogFilterRiskV1OrgsOrgIdRegulatoryComplianceCatalogFilterPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostWithBody request with any body
+	RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPost(ctx context.Context, orgId string, body RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostWithBody request with any body
+	RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostWithBody(ctx context.Context, orgId string, params *RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPost(ctx context.Context, orgId string, params *RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostParams, body RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostWithBody request with any body
 	RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -19479,6 +25909,26 @@ type ClientInterface interface {
 	RiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	RiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPost(ctx context.Context, orgId string, body RiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostWithBody request with any body
+	RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPost(ctx context.Context, orgId string, body RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostWithBody request with any body
+	RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPost(ctx context.Context, orgId string, body RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostWithBody request with any body
+	RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPost(ctx context.Context, orgId string, body RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostWithBody request with any body
+	RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPost(ctx context.Context, orgId string, body RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// RiskGetCveDetailsRiskV1OrgsOrgIdVulnerabilityCveGet request
 	RiskGetCveDetailsRiskV1OrgsOrgIdVulnerabilityCveGet(ctx context.Context, orgId string, params *RiskGetCveDetailsRiskV1OrgsOrgIdVulnerabilityCveGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -19861,11 +26311,11 @@ type ClientInterface interface {
 
 	VisDeviceDelete(ctx context.Context, orgId int, body VisDeviceDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VisExportIndex request
-	VisExportIndex(ctx context.Context, orgId int, params *VisExportIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// VisExport request
+	VisExport(ctx context.Context, orgId int, params *VisExportParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VisExportDownload request
-	VisExportDownload(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// VisExport2 request
+	VisExport2(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// VisQueryCreateWithBody request with any body
 	VisQueryCreateWithBody(ctx context.Context, orgId int, params *VisQueryCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -19918,6 +26368,270 @@ type ClientInterface interface {
 	RiskGetFindingsSummaryVulnerabilityTotalFindingsOrgIdPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	RiskGetFindingsSummaryVulnerabilityTotalFindingsOrgIdPost(ctx context.Context, orgId string, body RiskGetFindingsSummaryVulnerabilityTotalFindingsOrgIdPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+}
+
+func (c *Client) BillingCenterServiceAllocationTableShow(ctx context.Context, orgId int, params *BillingCenterServiceAllocationTableShowParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceAllocationTableShowRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceAllocationTableUpsertWithBody(ctx context.Context, orgId int, params *BillingCenterServiceAllocationTableUpsertParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceAllocationTableUpsertRequestWithBody(c.Server, orgId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceAllocationTableUpsert(ctx context.Context, orgId int, params *BillingCenterServiceAllocationTableUpsertParams, body BillingCenterServiceAllocationTableUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceAllocationTableUpsertRequest(c.Server, orgId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceBillingCentersIndex(ctx context.Context, orgId int, params *BillingCenterServiceBillingCentersIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceBillingCentersIndexRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceBillingCentersCreateWithBody(ctx context.Context, orgId int, params *BillingCenterServiceBillingCentersCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceBillingCentersCreateRequestWithBody(c.Server, orgId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceBillingCentersCreate(ctx context.Context, orgId int, params *BillingCenterServiceBillingCentersCreateParams, body BillingCenterServiceBillingCentersCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceBillingCentersCreateRequest(c.Server, orgId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceBillingCentersDelete(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceBillingCentersDeleteRequest(c.Server, orgId, billingCenter, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceBillingCentersShow(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersShowParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceBillingCentersShowRequest(c.Server, orgId, billingCenter, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceBillingCentersUpdateWithBody(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceBillingCentersUpdateRequestWithBody(c.Server, orgId, billingCenter, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceBillingCentersUpdate(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpdateParams, body BillingCenterServiceBillingCentersUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceBillingCentersUpdateRequest(c.Server, orgId, billingCenter, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceBillingCenterAccessRulesGrantWithBody(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesGrantParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceBillingCenterAccessRulesGrantRequestWithBody(c.Server, orgId, billingCenter, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceBillingCenterAccessRulesGrant(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesGrantParams, body BillingCenterServiceBillingCenterAccessRulesGrantJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceBillingCenterAccessRulesGrantRequest(c.Server, orgId, billingCenter, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceBillingCenterAccessRulesReport(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesReportParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceBillingCenterAccessRulesReportRequest(c.Server, orgId, billingCenter, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceBillingCenterAccessRulesRevokeWithBody(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesRevokeParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceBillingCenterAccessRulesRevokeRequestWithBody(c.Server, orgId, billingCenter, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceBillingCenterAccessRulesRevoke(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesRevokeParams, body BillingCenterServiceBillingCenterAccessRulesRevokeJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceBillingCenterAccessRulesRevokeRequest(c.Server, orgId, billingCenter, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceBillingCentersShowAllocationTable(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersShowAllocationTableParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceBillingCentersShowAllocationTableRequest(c.Server, orgId, billingCenter, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceBillingCentersUpsertAllocationTableWithBody(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpsertAllocationTableParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceBillingCentersUpsertAllocationTableRequestWithBody(c.Server, orgId, billingCenter, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceBillingCentersUpsertAllocationTable(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpsertAllocationTableParams, body BillingCenterServiceBillingCentersUpsertAllocationTableJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceBillingCentersUpsertAllocationTableRequest(c.Server, orgId, billingCenter, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceAccessRulesGroupReport(ctx context.Context, orgId int, group int, params *BillingCenterServiceAccessRulesGroupReportParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceAccessRulesGroupReportRequest(c.Server, orgId, group, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceAccessRulesUserReport(ctx context.Context, orgId int, user int, params *BillingCenterServiceAccessRulesUserReportParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceAccessRulesUserReportRequest(c.Server, orgId, user, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceUserBillingCentersIndex(ctx context.Context, user int, orgId int, params *BillingCenterServiceUserBillingCentersIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceUserBillingCentersIndexRequest(c.Server, user, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillingCenterServiceUserBillingCentersShow(ctx context.Context, user int, orgId int, billingCenter string, params *BillingCenterServiceUserBillingCentersShowParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillingCenterServiceUserBillingCentersShowRequest(c.Server, user, orgId, billingCenter, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
 }
 
 func (c *Client) CredCredentialIndexOrg(ctx context.Context, orgId int64, params *CredCredentialIndexOrgParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -21144,6 +27858,642 @@ func (c *Client) BudgetCloudVendorAccountIndex(ctx context.Context, orgId int, r
 	return c.Client.Do(req)
 }
 
+func (c *Client) FinopsBillingBillingShowCustomerStatus(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingShowCustomerStatusRequest(c.Server, orgId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingIndexPlans(ctx context.Context, orgId int, params *FinopsBillingBillingIndexPlansParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingIndexPlansRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingCreatePlanWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingCreatePlanRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingCreatePlan(ctx context.Context, orgId int, body FinopsBillingBillingCreatePlanJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingCreatePlanRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingDeletePlan(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeletePlanParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingDeletePlanRequest(c.Server, orgId, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingShowPlan(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingShowPlanRequest(c.Server, orgId, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingReplacePlanWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePlanParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingReplacePlanRequestWithBody(c.Server, orgId, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingReplacePlan(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePlanParams, body FinopsBillingBillingReplacePlanJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingReplacePlanRequest(c.Server, orgId, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingIndexRules(ctx context.Context, orgId int, planId openapi_types.UUID, params *FinopsBillingBillingIndexRulesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingIndexRulesRequest(c.Server, orgId, planId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingCreateRuleWithBody(ctx context.Context, orgId int, planId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingCreateRuleRequestWithBody(c.Server, orgId, planId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingCreateRule(ctx context.Context, orgId int, planId openapi_types.UUID, body FinopsBillingBillingCreateRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingCreateRuleRequest(c.Server, orgId, planId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingDeleteRule(ctx context.Context, orgId int, planId openapi_types.UUID, id openapi_types.UUID, params *FinopsBillingBillingDeleteRuleParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingDeleteRuleRequest(c.Server, orgId, planId, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingReplaceRuleWithBody(ctx context.Context, orgId int, planId openapi_types.UUID, id openapi_types.UUID, params *FinopsBillingBillingReplaceRuleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingReplaceRuleRequestWithBody(c.Server, orgId, planId, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingReplaceRule(ctx context.Context, orgId int, planId openapi_types.UUID, id openapi_types.UUID, params *FinopsBillingBillingReplaceRuleParams, body FinopsBillingBillingReplaceRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingReplaceRuleRequest(c.Server, orgId, planId, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingIndexPostAdjustments(ctx context.Context, orgId int, params *FinopsBillingBillingIndexPostAdjustmentsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingIndexPostAdjustmentsRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingCreatePostAdjustmentWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingCreatePostAdjustmentRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingCreatePostAdjustment(ctx context.Context, orgId int, body FinopsBillingBillingCreatePostAdjustmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingCreatePostAdjustmentRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingDeletePostAdjustment(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeletePostAdjustmentParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingDeletePostAdjustmentRequest(c.Server, orgId, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingReplacePostAdjustmentWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePostAdjustmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingReplacePostAdjustmentRequestWithBody(c.Server, orgId, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingReplacePostAdjustment(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePostAdjustmentParams, body FinopsBillingBillingReplacePostAdjustmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingReplacePostAdjustmentRequest(c.Server, orgId, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingIndexPreAdjustments(ctx context.Context, orgId int, params *FinopsBillingBillingIndexPreAdjustmentsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingIndexPreAdjustmentsRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingCreatePreAdjustmentWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingCreatePreAdjustmentRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingCreatePreAdjustment(ctx context.Context, orgId int, body FinopsBillingBillingCreatePreAdjustmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingCreatePreAdjustmentRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingDeletePreAdjustment(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeletePreAdjustmentParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingDeletePreAdjustmentRequest(c.Server, orgId, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingReplacePreAdjustmentWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePreAdjustmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingReplacePreAdjustmentRequestWithBody(c.Server, orgId, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingReplacePreAdjustment(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePreAdjustmentParams, body FinopsBillingBillingReplacePreAdjustmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingReplacePreAdjustmentRequest(c.Server, orgId, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingIndexEnterpriseRules(ctx context.Context, orgId int, params *FinopsBillingBillingIndexEnterpriseRulesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingIndexEnterpriseRulesRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingCreateEnterpriseRuleWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingCreateEnterpriseRuleRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingCreateEnterpriseRule(ctx context.Context, orgId int, body FinopsBillingBillingCreateEnterpriseRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingCreateEnterpriseRuleRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingReplaceEnterpriseRulesetWithBody(ctx context.Context, orgId int, params *FinopsBillingBillingReplaceEnterpriseRulesetParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingReplaceEnterpriseRulesetRequestWithBody(c.Server, orgId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingReplaceEnterpriseRuleset(ctx context.Context, orgId int, params *FinopsBillingBillingReplaceEnterpriseRulesetParams, body FinopsBillingBillingReplaceEnterpriseRulesetJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingReplaceEnterpriseRulesetRequest(c.Server, orgId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingDeleteEnterpriseRule(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeleteEnterpriseRuleParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingDeleteEnterpriseRuleRequest(c.Server, orgId, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingReplaceEnterpriseRuleWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplaceEnterpriseRuleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingReplaceEnterpriseRuleRequestWithBody(c.Server, orgId, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingReplaceEnterpriseRule(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplaceEnterpriseRuleParams, body FinopsBillingBillingReplaceEnterpriseRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingReplaceEnterpriseRuleRequest(c.Server, orgId, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingSettingsShowSettings(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingSettingsShowSettingsRequest(c.Server, orgId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingSettingsReplaceSettingsWithBody(ctx context.Context, orgId int, params *FinopsBillingSettingsReplaceSettingsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingSettingsReplaceSettingsRequestWithBody(c.Server, orgId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingSettingsReplaceSettings(ctx context.Context, orgId int, params *FinopsBillingSettingsReplaceSettingsParams, body FinopsBillingSettingsReplaceSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingSettingsReplaceSettingsRequest(c.Server, orgId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingSharedCostRulesIndex(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingSharedCostRulesIndexRequest(c.Server, orgId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingSharedCostRulesCreateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingSharedCostRulesCreateRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingSharedCostRulesCreate(ctx context.Context, orgId int, body FinopsBillingSharedCostRulesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingSharedCostRulesCreateRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingSharedCostRulesReorderWithBody(ctx context.Context, orgId int, params *FinopsBillingSharedCostRulesReorderParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingSharedCostRulesReorderRequestWithBody(c.Server, orgId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingSharedCostRulesReorder(ctx context.Context, orgId int, params *FinopsBillingSharedCostRulesReorderParams, body FinopsBillingSharedCostRulesReorderJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingSharedCostRulesReorderRequest(c.Server, orgId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingSharedCostRulesDelete(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingSharedCostRulesDeleteRequest(c.Server, orgId, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingSharedCostRulesShow(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingSharedCostRulesShowRequest(c.Server, orgId, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingSharedCostRulesUpdateWithBody(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingSharedCostRulesUpdateRequestWithBody(c.Server, orgId, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingSharedCostRulesUpdate(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, body FinopsBillingSharedCostRulesUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingSharedCostRulesUpdateRequest(c.Server, orgId, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsReportSubscriptionsIndex(ctx context.Context, orgId int, params *FinopsCustomizationsReportSubscriptionsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsReportSubscriptionsIndexRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsReportSubscriptionsCreateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsReportSubscriptionsCreateRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsReportSubscriptionsCreate(ctx context.Context, orgId int, body FinopsCustomizationsReportSubscriptionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsReportSubscriptionsCreateRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsReportSubscriptionsDelete(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsReportSubscriptionsDeleteRequest(c.Server, orgId, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsReportSubscriptionsShow(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsReportSubscriptionsShowRequest(c.Server, orgId, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsReportSubscriptionsUpdateWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsReportSubscriptionsUpdateRequestWithBody(c.Server, orgId, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsReportSubscriptionsUpdate(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsUpdateParams, body FinopsCustomizationsReportSubscriptionsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsReportSubscriptionsUpdateRequest(c.Server, orgId, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) FinopsCustomizationsRuleBasedDimensionIndex(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewFinopsCustomizationsRuleBasedDimensionIndexRequest(c.Server, orgId)
 	if err != nil {
@@ -21266,6 +28616,126 @@ func (c *Client) FinopsCustomizationsRuleBasedDimensionRulesListReplaceWithBody(
 
 func (c *Client) FinopsCustomizationsRuleBasedDimensionRulesListReplace(ctx context.Context, orgId int, id string, effectiveAt string, body FinopsCustomizationsRuleBasedDimensionRulesListReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewFinopsCustomizationsRuleBasedDimensionRulesListReplaceRequest(c.Server, orgId, id, effectiveAt, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShow(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowRequest(c.Server, orgId, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsSavedFiltersIndex(ctx context.Context, orgId int, params *FinopsCustomizationsSavedFiltersIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsSavedFiltersIndexRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsSavedFiltersCreateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsSavedFiltersCreateRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsSavedFiltersCreate(ctx context.Context, orgId int, body FinopsCustomizationsSavedFiltersCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsSavedFiltersCreateRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsSavedFiltersDelete(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsSavedFiltersDeleteRequest(c.Server, orgId, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsSavedFiltersShow(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersShowParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsSavedFiltersShowRequest(c.Server, orgId, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsSavedFiltersPatchWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersPatchParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsSavedFiltersPatchRequestWithBody(c.Server, orgId, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsSavedFiltersPatch(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersPatchParams, body FinopsCustomizationsSavedFiltersPatchJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsSavedFiltersPatchRequest(c.Server, orgId, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsSavedFiltersUpdateWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsSavedFiltersUpdateRequestWithBody(c.Server, orgId, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsSavedFiltersUpdate(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersUpdateParams, body FinopsCustomizationsSavedFiltersUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsSavedFiltersUpdateRequest(c.Server, orgId, id, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -22008,8 +29478,140 @@ func (c *Client) FinopsOnboardingBillConnectGCPValidate(ctx context.Context, org
 	return c.Client.Do(req)
 }
 
+func (c *Client) FinopsOnboardingBillConnectSnowflakeCreateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsOnboardingBillConnectSnowflakeCreateRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsOnboardingBillConnectSnowflakeCreate(ctx context.Context, orgId int, body FinopsOnboardingBillConnectSnowflakeCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsOnboardingBillConnectSnowflakeCreateRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsOnboardingBillConnectSnowflakeDelete(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsOnboardingBillConnectSnowflakeDeleteRequest(c.Server, orgId, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsOnboardingBillConnectSnowflakeShow(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsOnboardingBillConnectSnowflakeShowRequest(c.Server, orgId, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsOnboardingBillConnectSnowflakeUpdateWithBody(ctx context.Context, orgId int, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsOnboardingBillConnectSnowflakeUpdateRequestWithBody(c.Server, orgId, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsOnboardingBillConnectSnowflakeUpdate(ctx context.Context, orgId int, id string, body FinopsOnboardingBillConnectSnowflakeUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsOnboardingBillConnectSnowflakeUpdateRequest(c.Server, orgId, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsOnboardingBillConnectSnowflakeValidate(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsOnboardingBillConnectSnowflakeValidateRequest(c.Server, orgId, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) FinopsOnboardingBillConnectValidate(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewFinopsOnboardingBillConnectValidateRequest(c.Server, orgId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsOnboardingProcessingHistoryIndex(ctx context.Context, orgId int, params *FinopsOnboardingProcessingHistoryIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsOnboardingProcessingHistoryIndexRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsOnboardingProcessingHistoryReprocessWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsOnboardingProcessingHistoryReprocessRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsOnboardingProcessingHistoryReprocess(ctx context.Context, orgId int, body FinopsOnboardingProcessingHistoryReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsOnboardingProcessingHistoryReprocessRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsOnboardingProcessingHistoryDownload(ctx context.Context, orgId int, params *FinopsOnboardingProcessingHistoryDownloadParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsOnboardingProcessingHistoryDownloadRequest(c.Server, orgId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -22130,6 +29732,102 @@ func (c *Client) IamUserInvitationDeclineInvitation(ctx context.Context, id stri
 
 func (c *Client) IamOrganizationShow(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewIamOrganizationShowRequest(c.Server, orgId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) IamAccessPolicyIndex(ctx context.Context, orgId int, params *IamAccessPolicyIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamAccessPolicyIndexRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) IamAccessPolicyCreateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamAccessPolicyCreateRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) IamAccessPolicyCreate(ctx context.Context, orgId int, body IamAccessPolicyCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamAccessPolicyCreateRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) IamAccessPolicyGetUserAccessPolicies(ctx context.Context, orgId int, userId int, params *IamAccessPolicyGetUserAccessPoliciesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamAccessPolicyGetUserAccessPoliciesRequest(c.Server, orgId, userId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) IamAccessPolicyDelete(ctx context.Context, orgId int, accessPolicyId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamAccessPolicyDeleteRequest(c.Server, orgId, accessPolicyId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) IamAccessPolicyShow(ctx context.Context, orgId int, accessPolicyId string, params *IamAccessPolicyShowParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamAccessPolicyShowRequest(c.Server, orgId, accessPolicyId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) IamAccessPolicyUpdateWithBody(ctx context.Context, orgId int, accessPolicyId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamAccessPolicyUpdateRequestWithBody(c.Server, orgId, accessPolicyId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) IamAccessPolicyUpdate(ctx context.Context, orgId int, accessPolicyId string, body IamAccessPolicyUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamAccessPolicyUpdateRequest(c.Server, orgId, accessPolicyId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -22968,6 +30666,18 @@ func (c *Client) IamOrganizationShowMsp(ctx context.Context, orgId int, targetOr
 	return c.Client.Do(req)
 }
 
+func (c *Client) IamProjectIndex(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamProjectIndexRequest(c.Server, orgId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) IamRoleIndex(ctx context.Context, orgId int, params *IamRoleIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewIamRoleIndexRequest(c.Server, orgId, params)
 	if err != nil {
@@ -23088,8 +30798,8 @@ func (c *Client) IamServiceAccountClientIndex(ctx context.Context, orgId int, se
 	return c.Client.Do(req)
 }
 
-func (c *Client) IamServiceAccountClientCreate(ctx context.Context, orgId int, serviceAccountId int, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewIamServiceAccountClientCreateRequest(c.Server, orgId, serviceAccountId)
+func (c *Client) IamServiceAccountClientCreate(ctx context.Context, orgId int, serviceAccountId int, params *IamServiceAccountClientCreateParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamServiceAccountClientCreateRequest(c.Server, orgId, serviceAccountId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -23280,8 +30990,32 @@ func (c *Client) IamUserSettingBlobRetrivePutUrl(ctx context.Context, body IamUs
 	return c.Client.Do(req)
 }
 
-func (c *Client) IamUserOrgsIndex(ctx context.Context, id int, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewIamUserOrgsIndexRequest(c.Server, id)
+func (c *Client) IamUserMembershipsIndex(ctx context.Context, id int, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamUserMembershipsIndexRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) IamUserMembershipsShowPrivilegesReport(ctx context.Context, id int, params *IamUserMembershipsShowPrivilegesReportParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamUserMembershipsShowPrivilegesReportRequest(c.Server, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) IamUserMembershipsIndexProjects(ctx context.Context, id int, params *IamUserMembershipsIndexProjectsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamUserMembershipsIndexProjectsRequest(c.Server, id, params)
 	if err != nil {
 		return nil, err
 	}
@@ -23594,6 +31328,198 @@ func (c *Client) AuthTokenTokenWithBody(ctx context.Context, contentType string,
 
 func (c *Client) AuthTokenTokenWithFormdataBody(ctx context.Context, body AuthTokenTokenFormdataRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewAuthTokenTokenRequestWithFormdataBody(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisAdjustmentDefinitionShow(ctx context.Context, org int, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAdjustmentDefinitionShowRequest(c.Server, org)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisAdjustmentDefinitionUpdateWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisAdjustmentDefinitionUpdate(ctx context.Context, org int, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAdjustmentDefinitionUpdateRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisAnomaliesReportWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAnomaliesReportRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisAnomaliesReport(ctx context.Context, org int, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAnomaliesReportRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCostsAggregatedWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsAggregatedRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCostsAggregated(ctx context.Context, org int, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsAggregatedRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCostsDimensions(ctx context.Context, org int, params *BillAnalysisCostsDimensionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsDimensionsRequest(c.Server, org, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCostsMetrics(ctx context.Context, org int, params *BillAnalysisCostsMetricsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsMetricsRequest(c.Server, org, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCostsSelectWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsSelectRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCostsSelect(ctx context.Context, org int, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsSelectRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisForecastsReportWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisForecastsReportRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisForecastsReport(ctx context.Context, org int, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisForecastsReportRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCurrencySettingShow(ctx context.Context, org int, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCurrencySettingShowRequest(c.Server, org)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCurrencySettingUpdateWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCurrencySettingUpdateRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCurrencySettingUpdate(ctx context.Context, org int, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCurrencySettingUpdateRequest(c.Server, org, body)
 	if err != nil {
 		return nil, err
 	}
@@ -24540,6 +32466,42 @@ func (c *Client) RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfiguratio
 	return c.Client.Do(req)
 }
 
+func (c *Client) OptimaRecommendationsRecommendationsIndex(ctx context.Context, orgID int, params *OptimaRecommendationsRecommendationsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewOptimaRecommendationsRecommendationsIndexRequest(c.Server, orgID, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) OptimaRecommendationsRecommendationsUpdateStatusWithBody(ctx context.Context, orgID int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewOptimaRecommendationsRecommendationsUpdateStatusRequestWithBody(c.Server, orgID, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) OptimaRecommendationsRecommendationsUpdateStatus(ctx context.Context, orgID int, body OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewOptimaRecommendationsRecommendationsUpdateStatusRequest(c.Server, orgID, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewRiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
@@ -24912,6 +32874,54 @@ func (c *Client) RiskGetCatalogFilterRiskV1OrgsOrgIdRegulatoryComplianceCatalogF
 	return c.Client.Do(req)
 }
 
+func (c *Client) RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPost(ctx context.Context, orgId string, body RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostWithBody(ctx context.Context, orgId string, params *RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostRequestWithBody(c.Server, orgId, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPost(ctx context.Context, orgId string, params *RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostParams, body RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostRequest(c.Server, orgId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewRiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
@@ -24950,6 +32960,102 @@ func (c *Client) RiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecyc
 
 func (c *Client) RiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPost(ctx context.Context, orgId string, body RiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewRiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPostRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPost(ctx context.Context, orgId string, body RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPost(ctx context.Context, orgId string, body RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPost(ctx context.Context, orgId string, body RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPost(ctx context.Context, orgId string, body RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -26640,8 +34746,8 @@ func (c *Client) VisDeviceDelete(ctx context.Context, orgId int, body VisDeviceD
 	return c.Client.Do(req)
 }
 
-func (c *Client) VisExportIndex(ctx context.Context, orgId int, params *VisExportIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVisExportIndexRequest(c.Server, orgId, params)
+func (c *Client) VisExport(ctx context.Context, orgId int, params *VisExportParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVisExportRequest(c.Server, orgId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -26652,8 +34758,8 @@ func (c *Client) VisExportIndex(ctx context.Context, orgId int, params *VisExpor
 	return c.Client.Do(req)
 }
 
-func (c *Client) VisExportDownload(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVisExportDownloadRequest(c.Server, orgId, id)
+func (c *Client) VisExport2(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVisExport2Request(c.Server, orgId, id)
 	if err != nil {
 		return nil, err
 	}
@@ -26902,6 +35008,1031 @@ func (c *Client) RiskGetFindingsSummaryVulnerabilityTotalFindingsOrgIdPost(ctx c
 		return nil, err
 	}
 	return c.Client.Do(req)
+}
+
+// NewBillingCenterServiceAllocationTableShowRequest generates requests for BillingCenterServiceAllocationTableShow
+func NewBillingCenterServiceAllocationTableShowRequest(server string, orgId int, params *BillingCenterServiceAllocationTableShowParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/analytics/orgs/%s/allocation_table", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Api-Version", runtime.ParamLocationHeader, params.ApiVersion)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("Api-Version", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewBillingCenterServiceAllocationTableUpsertRequest calls the generic BillingCenterServiceAllocationTableUpsert builder with application/json body
+func NewBillingCenterServiceAllocationTableUpsertRequest(server string, orgId int, params *BillingCenterServiceAllocationTableUpsertParams, body BillingCenterServiceAllocationTableUpsertJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillingCenterServiceAllocationTableUpsertRequestWithBody(server, orgId, params, "application/json", bodyReader)
+}
+
+// NewBillingCenterServiceAllocationTableUpsertRequestWithBody generates requests for BillingCenterServiceAllocationTableUpsert with any type of body
+func NewBillingCenterServiceAllocationTableUpsertRequestWithBody(server string, orgId int, params *BillingCenterServiceAllocationTableUpsertParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/analytics/orgs/%s/allocation_table", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.SequenceNumber != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "sequence_number", runtime.ParamLocationQuery, *params.SequenceNumber); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Api-Version", runtime.ParamLocationHeader, params.ApiVersion)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("Api-Version", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewBillingCenterServiceBillingCentersIndexRequest generates requests for BillingCenterServiceBillingCentersIndex
+func NewBillingCenterServiceBillingCentersIndexRequest(server string, orgId int, params *BillingCenterServiceBillingCentersIndexParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/analytics/orgs/%s/billing_centers", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.View != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "view", runtime.ParamLocationQuery, *params.View); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Api-Version", runtime.ParamLocationHeader, params.ApiVersion)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("Api-Version", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewBillingCenterServiceBillingCentersCreateRequest calls the generic BillingCenterServiceBillingCentersCreate builder with application/json body
+func NewBillingCenterServiceBillingCentersCreateRequest(server string, orgId int, params *BillingCenterServiceBillingCentersCreateParams, body BillingCenterServiceBillingCentersCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillingCenterServiceBillingCentersCreateRequestWithBody(server, orgId, params, "application/json", bodyReader)
+}
+
+// NewBillingCenterServiceBillingCentersCreateRequestWithBody generates requests for BillingCenterServiceBillingCentersCreate with any type of body
+func NewBillingCenterServiceBillingCentersCreateRequestWithBody(server string, orgId int, params *BillingCenterServiceBillingCentersCreateParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/analytics/orgs/%s/billing_centers", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Api-Version", runtime.ParamLocationHeader, params.ApiVersion)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("Api-Version", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewBillingCenterServiceBillingCentersDeleteRequest generates requests for BillingCenterServiceBillingCentersDelete
+func NewBillingCenterServiceBillingCentersDeleteRequest(server string, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersDeleteParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "billing_center", runtime.ParamLocationPath, billingCenter)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/analytics/orgs/%s/billing_centers/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Api-Version", runtime.ParamLocationHeader, params.ApiVersion)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("Api-Version", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewBillingCenterServiceBillingCentersShowRequest generates requests for BillingCenterServiceBillingCentersShow
+func NewBillingCenterServiceBillingCentersShowRequest(server string, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersShowParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "billing_center", runtime.ParamLocationPath, billingCenter)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/analytics/orgs/%s/billing_centers/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Api-Version", runtime.ParamLocationHeader, params.ApiVersion)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("Api-Version", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewBillingCenterServiceBillingCentersUpdateRequest calls the generic BillingCenterServiceBillingCentersUpdate builder with application/json body
+func NewBillingCenterServiceBillingCentersUpdateRequest(server string, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpdateParams, body BillingCenterServiceBillingCentersUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillingCenterServiceBillingCentersUpdateRequestWithBody(server, orgId, billingCenter, params, "application/json", bodyReader)
+}
+
+// NewBillingCenterServiceBillingCentersUpdateRequestWithBody generates requests for BillingCenterServiceBillingCentersUpdate with any type of body
+func NewBillingCenterServiceBillingCentersUpdateRequestWithBody(server string, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpdateParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "billing_center", runtime.ParamLocationPath, billingCenter)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/analytics/orgs/%s/billing_centers/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Api-Version", runtime.ParamLocationHeader, params.ApiVersion)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("Api-Version", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewBillingCenterServiceBillingCenterAccessRulesGrantRequest calls the generic BillingCenterServiceBillingCenterAccessRulesGrant builder with application/json body
+func NewBillingCenterServiceBillingCenterAccessRulesGrantRequest(server string, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesGrantParams, body BillingCenterServiceBillingCenterAccessRulesGrantJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillingCenterServiceBillingCenterAccessRulesGrantRequestWithBody(server, orgId, billingCenter, params, "application/json", bodyReader)
+}
+
+// NewBillingCenterServiceBillingCenterAccessRulesGrantRequestWithBody generates requests for BillingCenterServiceBillingCenterAccessRulesGrant with any type of body
+func NewBillingCenterServiceBillingCenterAccessRulesGrantRequestWithBody(server string, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesGrantParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "billing_center", runtime.ParamLocationPath, billingCenter)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/analytics/orgs/%s/billing_centers/%s/access_rules/grant", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Api-Version", runtime.ParamLocationHeader, params.ApiVersion)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("Api-Version", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewBillingCenterServiceBillingCenterAccessRulesReportRequest generates requests for BillingCenterServiceBillingCenterAccessRulesReport
+func NewBillingCenterServiceBillingCenterAccessRulesReportRequest(server string, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesReportParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "billing_center", runtime.ParamLocationPath, billingCenter)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/analytics/orgs/%s/billing_centers/%s/access_rules/report", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Api-Version", runtime.ParamLocationHeader, params.ApiVersion)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("Api-Version", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewBillingCenterServiceBillingCenterAccessRulesRevokeRequest calls the generic BillingCenterServiceBillingCenterAccessRulesRevoke builder with application/json body
+func NewBillingCenterServiceBillingCenterAccessRulesRevokeRequest(server string, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesRevokeParams, body BillingCenterServiceBillingCenterAccessRulesRevokeJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillingCenterServiceBillingCenterAccessRulesRevokeRequestWithBody(server, orgId, billingCenter, params, "application/json", bodyReader)
+}
+
+// NewBillingCenterServiceBillingCenterAccessRulesRevokeRequestWithBody generates requests for BillingCenterServiceBillingCenterAccessRulesRevoke with any type of body
+func NewBillingCenterServiceBillingCenterAccessRulesRevokeRequestWithBody(server string, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesRevokeParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "billing_center", runtime.ParamLocationPath, billingCenter)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/analytics/orgs/%s/billing_centers/%s/access_rules/revoke", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Api-Version", runtime.ParamLocationHeader, params.ApiVersion)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("Api-Version", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewBillingCenterServiceBillingCentersShowAllocationTableRequest generates requests for BillingCenterServiceBillingCentersShowAllocationTable
+func NewBillingCenterServiceBillingCentersShowAllocationTableRequest(server string, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersShowAllocationTableParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "billing_center", runtime.ParamLocationPath, billingCenter)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/analytics/orgs/%s/billing_centers/%s/allocation_table", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Api-Version", runtime.ParamLocationHeader, params.ApiVersion)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("Api-Version", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewBillingCenterServiceBillingCentersUpsertAllocationTableRequest calls the generic BillingCenterServiceBillingCentersUpsertAllocationTable builder with application/json body
+func NewBillingCenterServiceBillingCentersUpsertAllocationTableRequest(server string, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpsertAllocationTableParams, body BillingCenterServiceBillingCentersUpsertAllocationTableJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillingCenterServiceBillingCentersUpsertAllocationTableRequestWithBody(server, orgId, billingCenter, params, "application/json", bodyReader)
+}
+
+// NewBillingCenterServiceBillingCentersUpsertAllocationTableRequestWithBody generates requests for BillingCenterServiceBillingCentersUpsertAllocationTable with any type of body
+func NewBillingCenterServiceBillingCentersUpsertAllocationTableRequestWithBody(server string, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpsertAllocationTableParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "billing_center", runtime.ParamLocationPath, billingCenter)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/analytics/orgs/%s/billing_centers/%s/allocation_table", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.SequenceNumber != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "sequence_number", runtime.ParamLocationQuery, *params.SequenceNumber); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Api-Version", runtime.ParamLocationHeader, params.ApiVersion)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("Api-Version", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewBillingCenterServiceAccessRulesGroupReportRequest generates requests for BillingCenterServiceAccessRulesGroupReport
+func NewBillingCenterServiceAccessRulesGroupReportRequest(server string, orgId int, group int, params *BillingCenterServiceAccessRulesGroupReportParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "group", runtime.ParamLocationPath, group)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/analytics/orgs/%s/groups/%s/access_rules/report", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Api-Version", runtime.ParamLocationHeader, params.ApiVersion)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("Api-Version", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewBillingCenterServiceAccessRulesUserReportRequest generates requests for BillingCenterServiceAccessRulesUserReport
+func NewBillingCenterServiceAccessRulesUserReportRequest(server string, orgId int, user int, params *BillingCenterServiceAccessRulesUserReportParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "user", runtime.ParamLocationPath, user)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/analytics/orgs/%s/users/%s/access_rules/report", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Api-Version", runtime.ParamLocationHeader, params.ApiVersion)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("Api-Version", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewBillingCenterServiceUserBillingCentersIndexRequest generates requests for BillingCenterServiceUserBillingCentersIndex
+func NewBillingCenterServiceUserBillingCentersIndexRequest(server string, user int, orgId int, params *BillingCenterServiceUserBillingCentersIndexParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "user", runtime.ParamLocationPath, user)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/analytics/users/%s/orgs/%s/billing_centers", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.View != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "view", runtime.ParamLocationQuery, *params.View); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.HighestAccessibleBCsOnly != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "highestAccessibleBCsOnly", runtime.ParamLocationQuery, *params.HighestAccessibleBCsOnly); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Api-Version", runtime.ParamLocationHeader, params.ApiVersion)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("Api-Version", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewBillingCenterServiceUserBillingCentersShowRequest generates requests for BillingCenterServiceUserBillingCentersShow
+func NewBillingCenterServiceUserBillingCentersShowRequest(server string, user int, orgId int, billingCenter string, params *BillingCenterServiceUserBillingCentersShowParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "user", runtime.ParamLocationPath, user)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "billing_center", runtime.ParamLocationPath, billingCenter)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/analytics/users/%s/orgs/%s/billing_centers/%s", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Api-Version", runtime.ParamLocationHeader, params.ApiVersion)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("Api-Version", headerParam0)
+
+	}
+
+	return req, nil
 }
 
 // NewCredCredentialIndexOrgRequest generates requests for CredCredentialIndexOrg
@@ -30305,6 +39436,2177 @@ func NewBudgetCloudVendorAccountIndexRequest(server string, orgId int) (*http.Re
 	return req, nil
 }
 
+// NewFinopsBillingBillingShowCustomerStatusRequest generates requests for FinopsBillingBillingShowCustomerStatus
+func NewFinopsBillingBillingShowCustomerStatusRequest(server string, orgId int) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/customer-status", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingIndexPlansRequest generates requests for FinopsBillingBillingIndexPlans
+func NewFinopsBillingBillingIndexPlansRequest(server string, orgId int, params *FinopsBillingBillingIndexPlansParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/plans", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "skipToken", runtime.ParamLocationQuery, *params.SkipToken); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingCreatePlanRequest calls the generic FinopsBillingBillingCreatePlan builder with application/json body
+func NewFinopsBillingBillingCreatePlanRequest(server string, orgId int, body FinopsBillingBillingCreatePlanJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingBillingCreatePlanRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewFinopsBillingBillingCreatePlanRequestWithBody generates requests for FinopsBillingBillingCreatePlan with any type of body
+func NewFinopsBillingBillingCreatePlanRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/plans", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingDeletePlanRequest generates requests for FinopsBillingBillingDeletePlan
+func NewFinopsBillingBillingDeletePlanRequest(server string, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeletePlanParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/plans/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingShowPlanRequest generates requests for FinopsBillingBillingShowPlan
+func NewFinopsBillingBillingShowPlanRequest(server string, orgId int, id openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/plans/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingReplacePlanRequest calls the generic FinopsBillingBillingReplacePlan builder with application/json body
+func NewFinopsBillingBillingReplacePlanRequest(server string, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePlanParams, body FinopsBillingBillingReplacePlanJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingBillingReplacePlanRequestWithBody(server, orgId, id, params, "application/json", bodyReader)
+}
+
+// NewFinopsBillingBillingReplacePlanRequestWithBody generates requests for FinopsBillingBillingReplacePlan with any type of body
+func NewFinopsBillingBillingReplacePlanRequestWithBody(server string, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePlanParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/plans/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingIndexRulesRequest generates requests for FinopsBillingBillingIndexRules
+func NewFinopsBillingBillingIndexRulesRequest(server string, orgId int, planId openapi_types.UUID, params *FinopsBillingBillingIndexRulesParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "planId", runtime.ParamLocationPath, planId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/plans/%s/rules", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "skipToken", runtime.ParamLocationQuery, *params.SkipToken); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingCreateRuleRequest calls the generic FinopsBillingBillingCreateRule builder with application/json body
+func NewFinopsBillingBillingCreateRuleRequest(server string, orgId int, planId openapi_types.UUID, body FinopsBillingBillingCreateRuleJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingBillingCreateRuleRequestWithBody(server, orgId, planId, "application/json", bodyReader)
+}
+
+// NewFinopsBillingBillingCreateRuleRequestWithBody generates requests for FinopsBillingBillingCreateRule with any type of body
+func NewFinopsBillingBillingCreateRuleRequestWithBody(server string, orgId int, planId openapi_types.UUID, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "planId", runtime.ParamLocationPath, planId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/plans/%s/rules", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingDeleteRuleRequest generates requests for FinopsBillingBillingDeleteRule
+func NewFinopsBillingBillingDeleteRuleRequest(server string, orgId int, planId openapi_types.UUID, id openapi_types.UUID, params *FinopsBillingBillingDeleteRuleParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "planId", runtime.ParamLocationPath, planId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/plans/%s/rules/%s", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingReplaceRuleRequest calls the generic FinopsBillingBillingReplaceRule builder with application/json body
+func NewFinopsBillingBillingReplaceRuleRequest(server string, orgId int, planId openapi_types.UUID, id openapi_types.UUID, params *FinopsBillingBillingReplaceRuleParams, body FinopsBillingBillingReplaceRuleJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingBillingReplaceRuleRequestWithBody(server, orgId, planId, id, params, "application/json", bodyReader)
+}
+
+// NewFinopsBillingBillingReplaceRuleRequestWithBody generates requests for FinopsBillingBillingReplaceRule with any type of body
+func NewFinopsBillingBillingReplaceRuleRequestWithBody(server string, orgId int, planId openapi_types.UUID, id openapi_types.UUID, params *FinopsBillingBillingReplaceRuleParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "planId", runtime.ParamLocationPath, planId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/plans/%s/rules/%s", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingIndexPostAdjustmentsRequest generates requests for FinopsBillingBillingIndexPostAdjustments
+func NewFinopsBillingBillingIndexPostAdjustmentsRequest(server string, orgId int, params *FinopsBillingBillingIndexPostAdjustmentsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/post-plan-rules", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "skipToken", runtime.ParamLocationQuery, *params.SkipToken); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingCreatePostAdjustmentRequest calls the generic FinopsBillingBillingCreatePostAdjustment builder with application/json body
+func NewFinopsBillingBillingCreatePostAdjustmentRequest(server string, orgId int, body FinopsBillingBillingCreatePostAdjustmentJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingBillingCreatePostAdjustmentRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewFinopsBillingBillingCreatePostAdjustmentRequestWithBody generates requests for FinopsBillingBillingCreatePostAdjustment with any type of body
+func NewFinopsBillingBillingCreatePostAdjustmentRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/post-plan-rules", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingDeletePostAdjustmentRequest generates requests for FinopsBillingBillingDeletePostAdjustment
+func NewFinopsBillingBillingDeletePostAdjustmentRequest(server string, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeletePostAdjustmentParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/post-plan-rules/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingReplacePostAdjustmentRequest calls the generic FinopsBillingBillingReplacePostAdjustment builder with application/json body
+func NewFinopsBillingBillingReplacePostAdjustmentRequest(server string, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePostAdjustmentParams, body FinopsBillingBillingReplacePostAdjustmentJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingBillingReplacePostAdjustmentRequestWithBody(server, orgId, id, params, "application/json", bodyReader)
+}
+
+// NewFinopsBillingBillingReplacePostAdjustmentRequestWithBody generates requests for FinopsBillingBillingReplacePostAdjustment with any type of body
+func NewFinopsBillingBillingReplacePostAdjustmentRequestWithBody(server string, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePostAdjustmentParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/post-plan-rules/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingIndexPreAdjustmentsRequest generates requests for FinopsBillingBillingIndexPreAdjustments
+func NewFinopsBillingBillingIndexPreAdjustmentsRequest(server string, orgId int, params *FinopsBillingBillingIndexPreAdjustmentsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/pre-plan-rules", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "skipToken", runtime.ParamLocationQuery, *params.SkipToken); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingCreatePreAdjustmentRequest calls the generic FinopsBillingBillingCreatePreAdjustment builder with application/json body
+func NewFinopsBillingBillingCreatePreAdjustmentRequest(server string, orgId int, body FinopsBillingBillingCreatePreAdjustmentJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingBillingCreatePreAdjustmentRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewFinopsBillingBillingCreatePreAdjustmentRequestWithBody generates requests for FinopsBillingBillingCreatePreAdjustment with any type of body
+func NewFinopsBillingBillingCreatePreAdjustmentRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/pre-plan-rules", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingDeletePreAdjustmentRequest generates requests for FinopsBillingBillingDeletePreAdjustment
+func NewFinopsBillingBillingDeletePreAdjustmentRequest(server string, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeletePreAdjustmentParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/pre-plan-rules/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingReplacePreAdjustmentRequest calls the generic FinopsBillingBillingReplacePreAdjustment builder with application/json body
+func NewFinopsBillingBillingReplacePreAdjustmentRequest(server string, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePreAdjustmentParams, body FinopsBillingBillingReplacePreAdjustmentJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingBillingReplacePreAdjustmentRequestWithBody(server, orgId, id, params, "application/json", bodyReader)
+}
+
+// NewFinopsBillingBillingReplacePreAdjustmentRequestWithBody generates requests for FinopsBillingBillingReplacePreAdjustment with any type of body
+func NewFinopsBillingBillingReplacePreAdjustmentRequestWithBody(server string, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePreAdjustmentParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/pre-plan-rules/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingIndexEnterpriseRulesRequest generates requests for FinopsBillingBillingIndexEnterpriseRules
+func NewFinopsBillingBillingIndexEnterpriseRulesRequest(server string, orgId int, params *FinopsBillingBillingIndexEnterpriseRulesParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/rules", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "skipToken", runtime.ParamLocationQuery, *params.SkipToken); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingCreateEnterpriseRuleRequest calls the generic FinopsBillingBillingCreateEnterpriseRule builder with application/json body
+func NewFinopsBillingBillingCreateEnterpriseRuleRequest(server string, orgId int, body FinopsBillingBillingCreateEnterpriseRuleJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingBillingCreateEnterpriseRuleRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewFinopsBillingBillingCreateEnterpriseRuleRequestWithBody generates requests for FinopsBillingBillingCreateEnterpriseRule with any type of body
+func NewFinopsBillingBillingCreateEnterpriseRuleRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/rules", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingReplaceEnterpriseRulesetRequest calls the generic FinopsBillingBillingReplaceEnterpriseRuleset builder with application/json body
+func NewFinopsBillingBillingReplaceEnterpriseRulesetRequest(server string, orgId int, params *FinopsBillingBillingReplaceEnterpriseRulesetParams, body FinopsBillingBillingReplaceEnterpriseRulesetJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingBillingReplaceEnterpriseRulesetRequestWithBody(server, orgId, params, "application/json", bodyReader)
+}
+
+// NewFinopsBillingBillingReplaceEnterpriseRulesetRequestWithBody generates requests for FinopsBillingBillingReplaceEnterpriseRuleset with any type of body
+func NewFinopsBillingBillingReplaceEnterpriseRulesetRequestWithBody(server string, orgId int, params *FinopsBillingBillingReplaceEnterpriseRulesetParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/rules", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingDeleteEnterpriseRuleRequest generates requests for FinopsBillingBillingDeleteEnterpriseRule
+func NewFinopsBillingBillingDeleteEnterpriseRuleRequest(server string, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeleteEnterpriseRuleParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/rules/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingReplaceEnterpriseRuleRequest calls the generic FinopsBillingBillingReplaceEnterpriseRule builder with application/json body
+func NewFinopsBillingBillingReplaceEnterpriseRuleRequest(server string, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplaceEnterpriseRuleParams, body FinopsBillingBillingReplaceEnterpriseRuleJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingBillingReplaceEnterpriseRuleRequestWithBody(server, orgId, id, params, "application/json", bodyReader)
+}
+
+// NewFinopsBillingBillingReplaceEnterpriseRuleRequestWithBody generates requests for FinopsBillingBillingReplaceEnterpriseRule with any type of body
+func NewFinopsBillingBillingReplaceEnterpriseRuleRequestWithBody(server string, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplaceEnterpriseRuleParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/rules/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingSettingsShowSettingsRequest generates requests for FinopsBillingSettingsShowSettings
+func NewFinopsBillingSettingsShowSettingsRequest(server string, orgId int) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/settings", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingSettingsReplaceSettingsRequest calls the generic FinopsBillingSettingsReplaceSettings builder with application/json body
+func NewFinopsBillingSettingsReplaceSettingsRequest(server string, orgId int, params *FinopsBillingSettingsReplaceSettingsParams, body FinopsBillingSettingsReplaceSettingsJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingSettingsReplaceSettingsRequestWithBody(server, orgId, params, "application/json", bodyReader)
+}
+
+// NewFinopsBillingSettingsReplaceSettingsRequestWithBody generates requests for FinopsBillingSettingsReplaceSettings with any type of body
+func NewFinopsBillingSettingsReplaceSettingsRequestWithBody(server string, orgId int, params *FinopsBillingSettingsReplaceSettingsParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/adjustment/settings", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingSharedCostRulesIndexRequest generates requests for FinopsBillingSharedCostRulesIndex
+func NewFinopsBillingSharedCostRulesIndexRequest(server string, orgId int) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/shared-cost-rules", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingSharedCostRulesCreateRequest calls the generic FinopsBillingSharedCostRulesCreate builder with application/json body
+func NewFinopsBillingSharedCostRulesCreateRequest(server string, orgId int, body FinopsBillingSharedCostRulesCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingSharedCostRulesCreateRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewFinopsBillingSharedCostRulesCreateRequestWithBody generates requests for FinopsBillingSharedCostRulesCreate with any type of body
+func NewFinopsBillingSharedCostRulesCreateRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/shared-cost-rules", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsBillingSharedCostRulesReorderRequest calls the generic FinopsBillingSharedCostRulesReorder builder with application/json body
+func NewFinopsBillingSharedCostRulesReorderRequest(server string, orgId int, params *FinopsBillingSharedCostRulesReorderParams, body FinopsBillingSharedCostRulesReorderJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingSharedCostRulesReorderRequestWithBody(server, orgId, params, "application/json", bodyReader)
+}
+
+// NewFinopsBillingSharedCostRulesReorderRequestWithBody generates requests for FinopsBillingSharedCostRulesReorder with any type of body
+func NewFinopsBillingSharedCostRulesReorderRequestWithBody(server string, orgId int, params *FinopsBillingSharedCostRulesReorderParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/shared-cost-rules/operations/reorder", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingSharedCostRulesDeleteRequest generates requests for FinopsBillingSharedCostRulesDelete
+func NewFinopsBillingSharedCostRulesDeleteRequest(server string, orgId int, id string, params *FinopsBillingSharedCostRulesDeleteParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/shared-cost-rules/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingSharedCostRulesShowRequest generates requests for FinopsBillingSharedCostRulesShow
+func NewFinopsBillingSharedCostRulesShowRequest(server string, orgId int, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/shared-cost-rules/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingSharedCostRulesUpdateRequest calls the generic FinopsBillingSharedCostRulesUpdate builder with application/json body
+func NewFinopsBillingSharedCostRulesUpdateRequest(server string, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, body FinopsBillingSharedCostRulesUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingSharedCostRulesUpdateRequestWithBody(server, orgId, id, params, "application/json", bodyReader)
+}
+
+// NewFinopsBillingSharedCostRulesUpdateRequestWithBody generates requests for FinopsBillingSharedCostRulesUpdate with any type of body
+func NewFinopsBillingSharedCostRulesUpdateRequestWithBody(server string, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/shared-cost-rules/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsCustomizationsReportSubscriptionsIndexRequest generates requests for FinopsCustomizationsReportSubscriptionsIndex
+func NewFinopsCustomizationsReportSubscriptionsIndexRequest(server string, orgId int, params *FinopsCustomizationsReportSubscriptionsIndexParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-customizations/v1/orgs/%s/report-subscriptions", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "skipToken", runtime.ParamLocationQuery, *params.SkipToken); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.DashboardId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "dashboardId", runtime.ParamLocationQuery, *params.DashboardId); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsCustomizationsReportSubscriptionsCreateRequest calls the generic FinopsCustomizationsReportSubscriptionsCreate builder with application/json body
+func NewFinopsCustomizationsReportSubscriptionsCreateRequest(server string, orgId int, body FinopsCustomizationsReportSubscriptionsCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsCustomizationsReportSubscriptionsCreateRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewFinopsCustomizationsReportSubscriptionsCreateRequestWithBody generates requests for FinopsCustomizationsReportSubscriptionsCreate with any type of body
+func NewFinopsCustomizationsReportSubscriptionsCreateRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-customizations/v1/orgs/%s/report-subscriptions", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsCustomizationsReportSubscriptionsDeleteRequest generates requests for FinopsCustomizationsReportSubscriptionsDelete
+func NewFinopsCustomizationsReportSubscriptionsDeleteRequest(server string, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsDeleteParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-customizations/v1/orgs/%s/report-subscriptions/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsCustomizationsReportSubscriptionsShowRequest generates requests for FinopsCustomizationsReportSubscriptionsShow
+func NewFinopsCustomizationsReportSubscriptionsShowRequest(server string, orgId int, id openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-customizations/v1/orgs/%s/report-subscriptions/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsCustomizationsReportSubscriptionsUpdateRequest calls the generic FinopsCustomizationsReportSubscriptionsUpdate builder with application/json body
+func NewFinopsCustomizationsReportSubscriptionsUpdateRequest(server string, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsUpdateParams, body FinopsCustomizationsReportSubscriptionsUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsCustomizationsReportSubscriptionsUpdateRequestWithBody(server, orgId, id, params, "application/json", bodyReader)
+}
+
+// NewFinopsCustomizationsReportSubscriptionsUpdateRequestWithBody generates requests for FinopsCustomizationsReportSubscriptionsUpdate with any type of body
+func NewFinopsCustomizationsReportSubscriptionsUpdateRequestWithBody(server string, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsUpdateParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-customizations/v1/orgs/%s/report-subscriptions/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
 // NewFinopsCustomizationsRuleBasedDimensionIndexRequest generates requests for FinopsCustomizationsRuleBasedDimensionIndex
 func NewFinopsCustomizationsRuleBasedDimensionIndexRequest(server string, orgId int) (*http.Request, error) {
 	var err error
@@ -30682,6 +41984,449 @@ func NewFinopsCustomizationsRuleBasedDimensionRulesListReplaceRequestWithBody(se
 	}
 
 	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowRequest generates requests for FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShow
+func NewFinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowRequest(server string, orgId int, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-customizations/v1/orgs/%s/rule-based-dimensions/%s/summary", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsCustomizationsSavedFiltersIndexRequest generates requests for FinopsCustomizationsSavedFiltersIndex
+func NewFinopsCustomizationsSavedFiltersIndexRequest(server string, orgId int, params *FinopsCustomizationsSavedFiltersIndexParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-customizations/v1/orgs/%s/saved-filters", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "skipToken", runtime.ParamLocationQuery, *params.SkipToken); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.OrderBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "orderBy", runtime.ParamLocationQuery, *params.OrderBy); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Visibility != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "visibility", runtime.ParamLocationQuery, *params.Visibility); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.FavoriteIds != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "favoriteIds", runtime.ParamLocationQuery, *params.FavoriteIds); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsCustomizationsSavedFiltersCreateRequest calls the generic FinopsCustomizationsSavedFiltersCreate builder with application/json body
+func NewFinopsCustomizationsSavedFiltersCreateRequest(server string, orgId int, body FinopsCustomizationsSavedFiltersCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsCustomizationsSavedFiltersCreateRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewFinopsCustomizationsSavedFiltersCreateRequestWithBody generates requests for FinopsCustomizationsSavedFiltersCreate with any type of body
+func NewFinopsCustomizationsSavedFiltersCreateRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-customizations/v1/orgs/%s/saved-filters", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsCustomizationsSavedFiltersDeleteRequest generates requests for FinopsCustomizationsSavedFiltersDelete
+func NewFinopsCustomizationsSavedFiltersDeleteRequest(server string, orgId int, id openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-customizations/v1/orgs/%s/saved-filters/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsCustomizationsSavedFiltersShowRequest generates requests for FinopsCustomizationsSavedFiltersShow
+func NewFinopsCustomizationsSavedFiltersShowRequest(server string, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersShowParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-customizations/v1/orgs/%s/saved-filters/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		if params.IfNoneMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-None-Match", runtime.ParamLocationHeader, *params.IfNoneMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-None-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsCustomizationsSavedFiltersPatchRequest calls the generic FinopsCustomizationsSavedFiltersPatch builder with application/json body
+func NewFinopsCustomizationsSavedFiltersPatchRequest(server string, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersPatchParams, body FinopsCustomizationsSavedFiltersPatchJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsCustomizationsSavedFiltersPatchRequestWithBody(server, orgId, id, params, "application/json", bodyReader)
+}
+
+// NewFinopsCustomizationsSavedFiltersPatchRequestWithBody generates requests for FinopsCustomizationsSavedFiltersPatch with any type of body
+func NewFinopsCustomizationsSavedFiltersPatchRequestWithBody(server string, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersPatchParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-customizations/v1/orgs/%s/saved-filters/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsCustomizationsSavedFiltersUpdateRequest calls the generic FinopsCustomizationsSavedFiltersUpdate builder with application/json body
+func NewFinopsCustomizationsSavedFiltersUpdateRequest(server string, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersUpdateParams, body FinopsCustomizationsSavedFiltersUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsCustomizationsSavedFiltersUpdateRequestWithBody(server, orgId, id, params, "application/json", bodyReader)
+}
+
+// NewFinopsCustomizationsSavedFiltersUpdateRequestWithBody generates requests for FinopsCustomizationsSavedFiltersUpdate with any type of body
+func NewFinopsCustomizationsSavedFiltersUpdateRequestWithBody(server string, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersUpdateParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-customizations/v1/orgs/%s/saved-filters/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
 
 	return req, nil
 }
@@ -32606,6 +44351,230 @@ func NewFinopsOnboardingBillConnectGCPValidateRequest(server string, orgId int, 
 	return req, nil
 }
 
+// NewFinopsOnboardingBillConnectSnowflakeCreateRequest calls the generic FinopsOnboardingBillConnectSnowflakeCreate builder with application/json body
+func NewFinopsOnboardingBillConnectSnowflakeCreateRequest(server string, orgId int, body FinopsOnboardingBillConnectSnowflakeCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsOnboardingBillConnectSnowflakeCreateRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewFinopsOnboardingBillConnectSnowflakeCreateRequestWithBody generates requests for FinopsOnboardingBillConnectSnowflakeCreate with any type of body
+func NewFinopsOnboardingBillConnectSnowflakeCreateRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-onboarding/v1/orgs/%s/bill-connects/snowflake", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsOnboardingBillConnectSnowflakeDeleteRequest generates requests for FinopsOnboardingBillConnectSnowflakeDelete
+func NewFinopsOnboardingBillConnectSnowflakeDeleteRequest(server string, orgId int, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-onboarding/v1/orgs/%s/bill-connects/snowflake/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsOnboardingBillConnectSnowflakeShowRequest generates requests for FinopsOnboardingBillConnectSnowflakeShow
+func NewFinopsOnboardingBillConnectSnowflakeShowRequest(server string, orgId int, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-onboarding/v1/orgs/%s/bill-connects/snowflake/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsOnboardingBillConnectSnowflakeUpdateRequest calls the generic FinopsOnboardingBillConnectSnowflakeUpdate builder with application/json body
+func NewFinopsOnboardingBillConnectSnowflakeUpdateRequest(server string, orgId int, id string, body FinopsOnboardingBillConnectSnowflakeUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsOnboardingBillConnectSnowflakeUpdateRequestWithBody(server, orgId, id, "application/json", bodyReader)
+}
+
+// NewFinopsOnboardingBillConnectSnowflakeUpdateRequestWithBody generates requests for FinopsOnboardingBillConnectSnowflakeUpdate with any type of body
+func NewFinopsOnboardingBillConnectSnowflakeUpdateRequestWithBody(server string, orgId int, id string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-onboarding/v1/orgs/%s/bill-connects/snowflake/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsOnboardingBillConnectSnowflakeValidateRequest generates requests for FinopsOnboardingBillConnectSnowflakeValidate
+func NewFinopsOnboardingBillConnectSnowflakeValidateRequest(server string, orgId int, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-onboarding/v1/orgs/%s/bill-connects/snowflake/%s/validation", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewFinopsOnboardingBillConnectValidateRequest generates requests for FinopsOnboardingBillConnectValidate
 func NewFinopsOnboardingBillConnectValidateRequest(server string, orgId int) (*http.Request, error) {
 	var err error
@@ -32630,6 +44599,225 @@ func NewFinopsOnboardingBillConnectValidateRequest(server string, orgId int) (*h
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsOnboardingProcessingHistoryIndexRequest generates requests for FinopsOnboardingProcessingHistoryIndex
+func NewFinopsOnboardingProcessingHistoryIndexRequest(server string, orgId int, params *FinopsOnboardingProcessingHistoryIndexParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-onboarding/v1/orgs/%s/processing/bill-months", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.OrderBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "orderBy", runtime.ParamLocationQuery, *params.OrderBy); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "skipToken", runtime.ParamLocationQuery, *params.SkipToken); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsOnboardingProcessingHistoryReprocessRequest calls the generic FinopsOnboardingProcessingHistoryReprocess builder with application/json body
+func NewFinopsOnboardingProcessingHistoryReprocessRequest(server string, orgId int, body FinopsOnboardingProcessingHistoryReprocessJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsOnboardingProcessingHistoryReprocessRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewFinopsOnboardingProcessingHistoryReprocessRequestWithBody generates requests for FinopsOnboardingProcessingHistoryReprocess with any type of body
+func NewFinopsOnboardingProcessingHistoryReprocessRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-onboarding/v1/orgs/%s/processing/bill-months", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsOnboardingProcessingHistoryDownloadRequest generates requests for FinopsOnboardingProcessingHistoryDownload
+func NewFinopsOnboardingProcessingHistoryDownloadRequest(server string, orgId int, params *FinopsOnboardingProcessingHistoryDownloadParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-onboarding/v1/orgs/%s/processing/bill-months/download", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "downloadToken", runtime.ParamLocationQuery, params.DownloadToken); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
+				}
+			}
+		}
+
+		if params.Format != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "format", runtime.ParamLocationQuery, *params.Format); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
 	}
 
 	req, err := http.NewRequest("GET", queryURL.String(), nil)
@@ -33134,6 +45322,346 @@ func NewIamOrganizationShowRequest(server string, orgId int) (*http.Request, err
 	if err != nil {
 		return nil, err
 	}
+
+	return req, nil
+}
+
+// NewIamAccessPolicyIndexRequest generates requests for IamAccessPolicyIndex
+func NewIamAccessPolicyIndexRequest(server string, orgId int, params *IamAccessPolicyIndexParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/iam/v1/orgs/%s/access-policies", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.View != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "view", runtime.ParamLocationQuery, *params.View); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewIamAccessPolicyCreateRequest calls the generic IamAccessPolicyCreate builder with application/json body
+func NewIamAccessPolicyCreateRequest(server string, orgId int, body IamAccessPolicyCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewIamAccessPolicyCreateRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewIamAccessPolicyCreateRequestWithBody generates requests for IamAccessPolicyCreate with any type of body
+func NewIamAccessPolicyCreateRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/iam/v1/orgs/%s/access-policies", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewIamAccessPolicyGetUserAccessPoliciesRequest generates requests for IamAccessPolicyGetUserAccessPolicies
+func NewIamAccessPolicyGetUserAccessPoliciesRequest(server string, orgId int, userId int, params *IamAccessPolicyGetUserAccessPoliciesParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "userId", runtime.ParamLocationPath, userId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/iam/v1/orgs/%s/access-policies/users/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.View != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "view", runtime.ParamLocationQuery, *params.View); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewIamAccessPolicyDeleteRequest generates requests for IamAccessPolicyDelete
+func NewIamAccessPolicyDeleteRequest(server string, orgId int, accessPolicyId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "accessPolicyId", runtime.ParamLocationPath, accessPolicyId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/iam/v1/orgs/%s/access-policies/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewIamAccessPolicyShowRequest generates requests for IamAccessPolicyShow
+func NewIamAccessPolicyShowRequest(server string, orgId int, accessPolicyId string, params *IamAccessPolicyShowParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "accessPolicyId", runtime.ParamLocationPath, accessPolicyId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/iam/v1/orgs/%s/access-policies/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.View != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "view", runtime.ParamLocationQuery, *params.View); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewIamAccessPolicyUpdateRequest calls the generic IamAccessPolicyUpdate builder with application/json body
+func NewIamAccessPolicyUpdateRequest(server string, orgId int, accessPolicyId string, body IamAccessPolicyUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewIamAccessPolicyUpdateRequestWithBody(server, orgId, accessPolicyId, "application/json", bodyReader)
+}
+
+// NewIamAccessPolicyUpdateRequestWithBody generates requests for IamAccessPolicyUpdate with any type of body
+func NewIamAccessPolicyUpdateRequestWithBody(server string, orgId int, accessPolicyId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "accessPolicyId", runtime.ParamLocationPath, accessPolicyId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/iam/v1/orgs/%s/access-policies/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -35976,6 +48504,40 @@ func NewIamOrganizationShowMspRequest(server string, orgId int, targetOrgId int)
 	return req, nil
 }
 
+// NewIamProjectIndexRequest generates requests for IamProjectIndex
+func NewIamProjectIndexRequest(server string, orgId int) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/iam/v1/orgs/%s/projects", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewIamRoleIndexRequest generates requests for IamRoleIndex
 func NewIamRoleIndexRequest(server string, orgId int, params *IamRoleIndexParams) (*http.Request, error) {
 	var err error
@@ -36398,7 +48960,7 @@ func NewIamServiceAccountClientIndexRequest(server string, orgId int, serviceAcc
 }
 
 // NewIamServiceAccountClientCreateRequest generates requests for IamServiceAccountClientCreate
-func NewIamServiceAccountClientCreateRequest(server string, orgId int, serviceAccountId int) (*http.Request, error) {
+func NewIamServiceAccountClientCreateRequest(server string, orgId int, serviceAccountId int, params *IamServiceAccountClientCreateParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -36433,6 +48995,21 @@ func NewIamServiceAccountClientCreateRequest(server string, orgId int, serviceAc
 	req, err := http.NewRequest("POST", queryURL.String(), nil)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+
+		if params.XRecipientPublicKey != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "X-Recipient-Public-Key", runtime.ParamLocationHeader, *params.XRecipientPublicKey)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("X-Recipient-Public-Key", headerParam0)
+		}
+
 	}
 
 	return req, nil
@@ -37157,8 +49734,8 @@ func NewIamUserSettingBlobRetrivePutUrlRequestWithBody(server string, contentTyp
 	return req, nil
 }
 
-// NewIamUserOrgsIndexRequest generates requests for IamUserOrgsIndex
-func NewIamUserOrgsIndexRequest(server string, id int) (*http.Request, error) {
+// NewIamUserMembershipsIndexRequest generates requests for IamUserMembershipsIndex
+func NewIamUserMembershipsIndexRequest(server string, id int) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -37181,6 +49758,146 @@ func NewIamUserOrgsIndexRequest(server string, id int) (*http.Request, error) {
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewIamUserMembershipsShowPrivilegesReportRequest generates requests for IamUserMembershipsShowPrivilegesReport
+func NewIamUserMembershipsShowPrivilegesReportRequest(server string, id int, params *IamUserMembershipsShowPrivilegesReportParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/iam/v1/users/%s/privileges-report", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "scopeRefs", runtime.ParamLocationQuery, params.ScopeRefs); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
+				}
+			}
+		}
+
+		if params.Prefix != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "prefix", runtime.ParamLocationQuery, *params.Prefix); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.View != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "view", runtime.ParamLocationQuery, *params.View); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewIamUserMembershipsIndexProjectsRequest generates requests for IamUserMembershipsIndexProjects
+func NewIamUserMembershipsIndexProjectsRequest(server string, id int, params *IamUserMembershipsIndexProjectsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/iam/v1/users/%s/projects", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.View != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "view", runtime.ParamLocationQuery, *params.View); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
 	}
 
 	req, err := http.NewRequest("GET", queryURL.String(), nil)
@@ -38152,6 +50869,468 @@ func NewAuthTokenTokenRequestWithBody(server string, contentType string, body io
 	}
 
 	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisAdjustmentDefinitionShowRequest generates requests for BillAnalysisAdjustmentDefinitionShow
+func NewBillAnalysisAdjustmentDefinitionShowRequest(server string, org int) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/orgs/%s/adjustments/", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisAdjustmentDefinitionUpdateRequest calls the generic BillAnalysisAdjustmentDefinitionUpdate builder with application/json body
+func NewBillAnalysisAdjustmentDefinitionUpdateRequest(server string, org int, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody generates requests for BillAnalysisAdjustmentDefinitionUpdate with any type of body
+func NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody(server string, org int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/orgs/%s/adjustments/", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisAnomaliesReportRequest calls the generic BillAnalysisAnomaliesReport builder with application/json body
+func NewBillAnalysisAnomaliesReportRequest(server string, org int, body BillAnalysisAnomaliesReportJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisAnomaliesReportRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisAnomaliesReportRequestWithBody generates requests for BillAnalysisAnomaliesReport with any type of body
+func NewBillAnalysisAnomaliesReportRequestWithBody(server string, org int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/orgs/%s/anomalies/report", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisCostsAggregatedRequest calls the generic BillAnalysisCostsAggregated builder with application/json body
+func NewBillAnalysisCostsAggregatedRequest(server string, org int, body BillAnalysisCostsAggregatedJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisCostsAggregatedRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisCostsAggregatedRequestWithBody generates requests for BillAnalysisCostsAggregated with any type of body
+func NewBillAnalysisCostsAggregatedRequestWithBody(server string, org int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/orgs/%s/costs/aggregated", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisCostsDimensionsRequest generates requests for BillAnalysisCostsDimensions
+func NewBillAnalysisCostsDimensionsRequest(server string, org int, params *BillAnalysisCostsDimensionsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/orgs/%s/costs/dimensions", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Dataset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "dataset", runtime.ParamLocationQuery, *params.Dataset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCostsMetricsRequest generates requests for BillAnalysisCostsMetrics
+func NewBillAnalysisCostsMetricsRequest(server string, org int, params *BillAnalysisCostsMetricsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/orgs/%s/costs/metrics", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Dataset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "dataset", runtime.ParamLocationQuery, *params.Dataset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCostsSelectRequest calls the generic BillAnalysisCostsSelect builder with application/json body
+func NewBillAnalysisCostsSelectRequest(server string, org int, body BillAnalysisCostsSelectJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisCostsSelectRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisCostsSelectRequestWithBody generates requests for BillAnalysisCostsSelect with any type of body
+func NewBillAnalysisCostsSelectRequestWithBody(server string, org int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/orgs/%s/costs/select", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisForecastsReportRequest calls the generic BillAnalysisForecastsReport builder with application/json body
+func NewBillAnalysisForecastsReportRequest(server string, org int, body BillAnalysisForecastsReportJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisForecastsReportRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisForecastsReportRequestWithBody generates requests for BillAnalysisForecastsReport with any type of body
+func NewBillAnalysisForecastsReportRequestWithBody(server string, org int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/orgs/%s/forecasts/report", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisCurrencySettingShowRequest generates requests for BillAnalysisCurrencySettingShow
+func NewBillAnalysisCurrencySettingShowRequest(server string, org int) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/orgs/%s/settings/currency_code", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCurrencySettingUpdateRequest calls the generic BillAnalysisCurrencySettingUpdate builder with application/json body
+func NewBillAnalysisCurrencySettingUpdateRequest(server string, org int, body BillAnalysisCurrencySettingUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisCurrencySettingUpdateRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisCurrencySettingUpdateRequestWithBody generates requests for BillAnalysisCurrencySettingUpdate with any type of body
+func NewBillAnalysisCurrencySettingUpdateRequestWithBody(server string, org int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/orgs/%s/settings/currency_code", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
@@ -42108,6 +55287,141 @@ func NewRiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSupp
 	return req, nil
 }
 
+// NewOptimaRecommendationsRecommendationsIndexRequest generates requests for OptimaRecommendationsRecommendationsIndex
+func NewOptimaRecommendationsRecommendationsIndexRequest(server string, orgID int, params *OptimaRecommendationsRecommendationsIndexParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgID", runtime.ParamLocationPath, orgID)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/recommendations/orgs/%s/recommendations", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.BillingCenterIDs != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "billingCenterIDs", runtime.ParamLocationQuery, *params.BillingCenterIDs); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.View != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "view", runtime.ParamLocationQuery, *params.View); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Statuses != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "statuses", runtime.ParamLocationQuery, *params.Statuses); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewOptimaRecommendationsRecommendationsUpdateStatusRequest calls the generic OptimaRecommendationsRecommendationsUpdateStatus builder with application/json body
+func NewOptimaRecommendationsRecommendationsUpdateStatusRequest(server string, orgID int, body OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewOptimaRecommendationsRecommendationsUpdateStatusRequestWithBody(server, orgID, "application/json", bodyReader)
+}
+
+// NewOptimaRecommendationsRecommendationsUpdateStatusRequestWithBody generates requests for OptimaRecommendationsRecommendationsUpdateStatus with any type of body
+func NewOptimaRecommendationsRecommendationsUpdateStatusRequestWithBody(server string, orgID int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgID", runtime.ParamLocationPath, orgID)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/recommendations/orgs/%s/recommendations/updatestatus", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewRiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostRequest calls the generic RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPost builder with application/json body
 func NewRiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostRequest(server string, orgId string, body RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -42952,6 +56266,122 @@ func NewRiskGetCatalogFilterRiskV1OrgsOrgIdRegulatoryComplianceCatalogFilterPost
 	return req, nil
 }
 
+// NewRiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostRequest calls the generic RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPost builder with application/json body
+func NewRiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostRequest(server string, orgId string, body RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewRiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewRiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostRequestWithBody generates requests for RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPost with any type of body
+func NewRiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostRequestWithBody(server string, orgId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/risk/v1/orgs/%s/regulatory-compliance/conformity-summary", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewRiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostRequest calls the generic RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPost builder with application/json body
+func NewRiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostRequest(server string, orgId string, params *RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostParams, body RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewRiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostRequestWithBody(server, orgId, params, "application/json", bodyReader)
+}
+
+// NewRiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostRequestWithBody generates requests for RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPost with any type of body
+func NewRiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostRequestWithBody(server string, orgId string, params *RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/risk/v1/orgs/%s/regulatory-compliance/failed-asset", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "skipToken", runtime.ParamLocationQuery, *params.SkipToken); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewRiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostRequest calls the generic RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPost builder with application/json body
 func NewRiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostRequest(server string, orgId string, body RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -43027,6 +56457,194 @@ func NewRiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPo
 	}
 
 	operationPath := fmt.Sprintf("/risk/v1/orgs/%s/regulatory-compliance/lifecycle-trend", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewRiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostRequest calls the generic RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPost builder with application/json body
+func NewRiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostRequest(server string, orgId string, body RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewRiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewRiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostRequestWithBody generates requests for RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPost with any type of body
+func NewRiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostRequestWithBody(server string, orgId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/risk/v1/orgs/%s/regulatory-compliance/list", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewRiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostRequest calls the generic RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPost builder with application/json body
+func NewRiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostRequest(server string, orgId string, body RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewRiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewRiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostRequestWithBody generates requests for RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPost with any type of body
+func NewRiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostRequestWithBody(server string, orgId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/risk/v1/orgs/%s/regulatory-compliance/misconfiguration/overview", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewRiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostRequest calls the generic RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPost builder with application/json body
+func NewRiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostRequest(server string, orgId string, body RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewRiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewRiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostRequestWithBody generates requests for RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPost with any type of body
+func NewRiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostRequestWithBody(server string, orgId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/risk/v1/orgs/%s/regulatory-compliance/rule/suppress", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewRiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostRequest calls the generic RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPost builder with application/json body
+func NewRiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostRequest(server string, orgId string, body RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewRiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewRiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostRequestWithBody generates requests for RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPost with any type of body
+func NewRiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostRequestWithBody(server string, orgId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/risk/v1/orgs/%s/regulatory-compliance/year-wise-asset-list", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -48906,8 +62524,8 @@ func NewVisDeviceDeleteRequestWithBody(server string, orgId int, contentType str
 	return req, nil
 }
 
-// NewVisExportIndexRequest generates requests for VisExportIndex
-func NewVisExportIndexRequest(server string, orgId int, params *VisExportIndexParams) (*http.Request, error) {
+// NewVisExportRequest generates requests for VisExport
+func NewVisExportRequest(server string, orgId int, params *VisExportParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -48978,8 +62596,8 @@ func NewVisExportIndexRequest(server string, orgId int, params *VisExportIndexPa
 	return req, nil
 }
 
-// NewVisExportDownloadRequest generates requests for VisExportDownload
-func NewVisExportDownloadRequest(server string, orgId int, id string) (*http.Request, error) {
+// NewVisExport2Request generates requests for VisExport2
+func NewVisExport2Request(server string, orgId int, id string) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -49682,6 +63300,66 @@ func WithBaseURL(baseURL string) ClientOption {
 
 // ClientWithResponsesInterface is the interface specification for the client with responses above.
 type ClientWithResponsesInterface interface {
+	// BillingCenterServiceAllocationTableShowWithResponse request
+	BillingCenterServiceAllocationTableShowWithResponse(ctx context.Context, orgId int, params *BillingCenterServiceAllocationTableShowParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceAllocationTableShowResponse, error)
+
+	// BillingCenterServiceAllocationTableUpsertWithBodyWithResponse request with any body
+	BillingCenterServiceAllocationTableUpsertWithBodyWithResponse(ctx context.Context, orgId int, params *BillingCenterServiceAllocationTableUpsertParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillingCenterServiceAllocationTableUpsertResponse, error)
+
+	BillingCenterServiceAllocationTableUpsertWithResponse(ctx context.Context, orgId int, params *BillingCenterServiceAllocationTableUpsertParams, body BillingCenterServiceAllocationTableUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*BillingCenterServiceAllocationTableUpsertResponse, error)
+
+	// BillingCenterServiceBillingCentersIndexWithResponse request
+	BillingCenterServiceBillingCentersIndexWithResponse(ctx context.Context, orgId int, params *BillingCenterServiceBillingCentersIndexParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersIndexResponse, error)
+
+	// BillingCenterServiceBillingCentersCreateWithBodyWithResponse request with any body
+	BillingCenterServiceBillingCentersCreateWithBodyWithResponse(ctx context.Context, orgId int, params *BillingCenterServiceBillingCentersCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersCreateResponse, error)
+
+	BillingCenterServiceBillingCentersCreateWithResponse(ctx context.Context, orgId int, params *BillingCenterServiceBillingCentersCreateParams, body BillingCenterServiceBillingCentersCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersCreateResponse, error)
+
+	// BillingCenterServiceBillingCentersDeleteWithResponse request
+	BillingCenterServiceBillingCentersDeleteWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersDeleteParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersDeleteResponse, error)
+
+	// BillingCenterServiceBillingCentersShowWithResponse request
+	BillingCenterServiceBillingCentersShowWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersShowParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersShowResponse, error)
+
+	// BillingCenterServiceBillingCentersUpdateWithBodyWithResponse request with any body
+	BillingCenterServiceBillingCentersUpdateWithBodyWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersUpdateResponse, error)
+
+	BillingCenterServiceBillingCentersUpdateWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpdateParams, body BillingCenterServiceBillingCentersUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersUpdateResponse, error)
+
+	// BillingCenterServiceBillingCenterAccessRulesGrantWithBodyWithResponse request with any body
+	BillingCenterServiceBillingCenterAccessRulesGrantWithBodyWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesGrantParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCenterAccessRulesGrantResponse, error)
+
+	BillingCenterServiceBillingCenterAccessRulesGrantWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesGrantParams, body BillingCenterServiceBillingCenterAccessRulesGrantJSONRequestBody, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCenterAccessRulesGrantResponse, error)
+
+	// BillingCenterServiceBillingCenterAccessRulesReportWithResponse request
+	BillingCenterServiceBillingCenterAccessRulesReportWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesReportParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCenterAccessRulesReportResponse, error)
+
+	// BillingCenterServiceBillingCenterAccessRulesRevokeWithBodyWithResponse request with any body
+	BillingCenterServiceBillingCenterAccessRulesRevokeWithBodyWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesRevokeParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCenterAccessRulesRevokeResponse, error)
+
+	BillingCenterServiceBillingCenterAccessRulesRevokeWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesRevokeParams, body BillingCenterServiceBillingCenterAccessRulesRevokeJSONRequestBody, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCenterAccessRulesRevokeResponse, error)
+
+	// BillingCenterServiceBillingCentersShowAllocationTableWithResponse request
+	BillingCenterServiceBillingCentersShowAllocationTableWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersShowAllocationTableParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersShowAllocationTableResponse, error)
+
+	// BillingCenterServiceBillingCentersUpsertAllocationTableWithBodyWithResponse request with any body
+	BillingCenterServiceBillingCentersUpsertAllocationTableWithBodyWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpsertAllocationTableParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersUpsertAllocationTableResponse, error)
+
+	BillingCenterServiceBillingCentersUpsertAllocationTableWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpsertAllocationTableParams, body BillingCenterServiceBillingCentersUpsertAllocationTableJSONRequestBody, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersUpsertAllocationTableResponse, error)
+
+	// BillingCenterServiceAccessRulesGroupReportWithResponse request
+	BillingCenterServiceAccessRulesGroupReportWithResponse(ctx context.Context, orgId int, group int, params *BillingCenterServiceAccessRulesGroupReportParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceAccessRulesGroupReportResponse, error)
+
+	// BillingCenterServiceAccessRulesUserReportWithResponse request
+	BillingCenterServiceAccessRulesUserReportWithResponse(ctx context.Context, orgId int, user int, params *BillingCenterServiceAccessRulesUserReportParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceAccessRulesUserReportResponse, error)
+
+	// BillingCenterServiceUserBillingCentersIndexWithResponse request
+	BillingCenterServiceUserBillingCentersIndexWithResponse(ctx context.Context, user int, orgId int, params *BillingCenterServiceUserBillingCentersIndexParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceUserBillingCentersIndexResponse, error)
+
+	// BillingCenterServiceUserBillingCentersShowWithResponse request
+	BillingCenterServiceUserBillingCentersShowWithResponse(ctx context.Context, user int, orgId int, billingCenter string, params *BillingCenterServiceUserBillingCentersShowParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceUserBillingCentersShowResponse, error)
+
 	// CredCredentialIndexOrgWithResponse request
 	CredCredentialIndexOrgWithResponse(ctx context.Context, orgId int64, params *CredCredentialIndexOrgParams, reqEditors ...RequestEditorFn) (*CredCredentialIndexOrgResponse, error)
 
@@ -49952,6 +63630,148 @@ type ClientWithResponsesInterface interface {
 	// BudgetCloudVendorAccountIndexWithResponse request
 	BudgetCloudVendorAccountIndexWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*BudgetCloudVendorAccountIndexResponse, error)
 
+	// FinopsBillingBillingShowCustomerStatusWithResponse request
+	FinopsBillingBillingShowCustomerStatusWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsBillingBillingShowCustomerStatusResponse, error)
+
+	// FinopsBillingBillingIndexPlansWithResponse request
+	FinopsBillingBillingIndexPlansWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingIndexPlansParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingIndexPlansResponse, error)
+
+	// FinopsBillingBillingCreatePlanWithBodyWithResponse request with any body
+	FinopsBillingBillingCreatePlanWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreatePlanResponse, error)
+
+	FinopsBillingBillingCreatePlanWithResponse(ctx context.Context, orgId int, body FinopsBillingBillingCreatePlanJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreatePlanResponse, error)
+
+	// FinopsBillingBillingDeletePlanWithResponse request
+	FinopsBillingBillingDeletePlanWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeletePlanParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingDeletePlanResponse, error)
+
+	// FinopsBillingBillingShowPlanWithResponse request
+	FinopsBillingBillingShowPlanWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*FinopsBillingBillingShowPlanResponse, error)
+
+	// FinopsBillingBillingReplacePlanWithBodyWithResponse request with any body
+	FinopsBillingBillingReplacePlanWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePlanParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplacePlanResponse, error)
+
+	FinopsBillingBillingReplacePlanWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePlanParams, body FinopsBillingBillingReplacePlanJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplacePlanResponse, error)
+
+	// FinopsBillingBillingIndexRulesWithResponse request
+	FinopsBillingBillingIndexRulesWithResponse(ctx context.Context, orgId int, planId openapi_types.UUID, params *FinopsBillingBillingIndexRulesParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingIndexRulesResponse, error)
+
+	// FinopsBillingBillingCreateRuleWithBodyWithResponse request with any body
+	FinopsBillingBillingCreateRuleWithBodyWithResponse(ctx context.Context, orgId int, planId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreateRuleResponse, error)
+
+	FinopsBillingBillingCreateRuleWithResponse(ctx context.Context, orgId int, planId openapi_types.UUID, body FinopsBillingBillingCreateRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreateRuleResponse, error)
+
+	// FinopsBillingBillingDeleteRuleWithResponse request
+	FinopsBillingBillingDeleteRuleWithResponse(ctx context.Context, orgId int, planId openapi_types.UUID, id openapi_types.UUID, params *FinopsBillingBillingDeleteRuleParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingDeleteRuleResponse, error)
+
+	// FinopsBillingBillingReplaceRuleWithBodyWithResponse request with any body
+	FinopsBillingBillingReplaceRuleWithBodyWithResponse(ctx context.Context, orgId int, planId openapi_types.UUID, id openapi_types.UUID, params *FinopsBillingBillingReplaceRuleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplaceRuleResponse, error)
+
+	FinopsBillingBillingReplaceRuleWithResponse(ctx context.Context, orgId int, planId openapi_types.UUID, id openapi_types.UUID, params *FinopsBillingBillingReplaceRuleParams, body FinopsBillingBillingReplaceRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplaceRuleResponse, error)
+
+	// FinopsBillingBillingIndexPostAdjustmentsWithResponse request
+	FinopsBillingBillingIndexPostAdjustmentsWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingIndexPostAdjustmentsParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingIndexPostAdjustmentsResponse, error)
+
+	// FinopsBillingBillingCreatePostAdjustmentWithBodyWithResponse request with any body
+	FinopsBillingBillingCreatePostAdjustmentWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreatePostAdjustmentResponse, error)
+
+	FinopsBillingBillingCreatePostAdjustmentWithResponse(ctx context.Context, orgId int, body FinopsBillingBillingCreatePostAdjustmentJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreatePostAdjustmentResponse, error)
+
+	// FinopsBillingBillingDeletePostAdjustmentWithResponse request
+	FinopsBillingBillingDeletePostAdjustmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeletePostAdjustmentParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingDeletePostAdjustmentResponse, error)
+
+	// FinopsBillingBillingReplacePostAdjustmentWithBodyWithResponse request with any body
+	FinopsBillingBillingReplacePostAdjustmentWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePostAdjustmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplacePostAdjustmentResponse, error)
+
+	FinopsBillingBillingReplacePostAdjustmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePostAdjustmentParams, body FinopsBillingBillingReplacePostAdjustmentJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplacePostAdjustmentResponse, error)
+
+	// FinopsBillingBillingIndexPreAdjustmentsWithResponse request
+	FinopsBillingBillingIndexPreAdjustmentsWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingIndexPreAdjustmentsParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingIndexPreAdjustmentsResponse, error)
+
+	// FinopsBillingBillingCreatePreAdjustmentWithBodyWithResponse request with any body
+	FinopsBillingBillingCreatePreAdjustmentWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreatePreAdjustmentResponse, error)
+
+	FinopsBillingBillingCreatePreAdjustmentWithResponse(ctx context.Context, orgId int, body FinopsBillingBillingCreatePreAdjustmentJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreatePreAdjustmentResponse, error)
+
+	// FinopsBillingBillingDeletePreAdjustmentWithResponse request
+	FinopsBillingBillingDeletePreAdjustmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeletePreAdjustmentParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingDeletePreAdjustmentResponse, error)
+
+	// FinopsBillingBillingReplacePreAdjustmentWithBodyWithResponse request with any body
+	FinopsBillingBillingReplacePreAdjustmentWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePreAdjustmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplacePreAdjustmentResponse, error)
+
+	FinopsBillingBillingReplacePreAdjustmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePreAdjustmentParams, body FinopsBillingBillingReplacePreAdjustmentJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplacePreAdjustmentResponse, error)
+
+	// FinopsBillingBillingIndexEnterpriseRulesWithResponse request
+	FinopsBillingBillingIndexEnterpriseRulesWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingIndexEnterpriseRulesParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingIndexEnterpriseRulesResponse, error)
+
+	// FinopsBillingBillingCreateEnterpriseRuleWithBodyWithResponse request with any body
+	FinopsBillingBillingCreateEnterpriseRuleWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreateEnterpriseRuleResponse, error)
+
+	FinopsBillingBillingCreateEnterpriseRuleWithResponse(ctx context.Context, orgId int, body FinopsBillingBillingCreateEnterpriseRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreateEnterpriseRuleResponse, error)
+
+	// FinopsBillingBillingReplaceEnterpriseRulesetWithBodyWithResponse request with any body
+	FinopsBillingBillingReplaceEnterpriseRulesetWithBodyWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingReplaceEnterpriseRulesetParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplaceEnterpriseRulesetResponse, error)
+
+	FinopsBillingBillingReplaceEnterpriseRulesetWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingReplaceEnterpriseRulesetParams, body FinopsBillingBillingReplaceEnterpriseRulesetJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplaceEnterpriseRulesetResponse, error)
+
+	// FinopsBillingBillingDeleteEnterpriseRuleWithResponse request
+	FinopsBillingBillingDeleteEnterpriseRuleWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeleteEnterpriseRuleParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingDeleteEnterpriseRuleResponse, error)
+
+	// FinopsBillingBillingReplaceEnterpriseRuleWithBodyWithResponse request with any body
+	FinopsBillingBillingReplaceEnterpriseRuleWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplaceEnterpriseRuleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplaceEnterpriseRuleResponse, error)
+
+	FinopsBillingBillingReplaceEnterpriseRuleWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplaceEnterpriseRuleParams, body FinopsBillingBillingReplaceEnterpriseRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplaceEnterpriseRuleResponse, error)
+
+	// FinopsBillingSettingsShowSettingsWithResponse request
+	FinopsBillingSettingsShowSettingsWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsBillingSettingsShowSettingsResponse, error)
+
+	// FinopsBillingSettingsReplaceSettingsWithBodyWithResponse request with any body
+	FinopsBillingSettingsReplaceSettingsWithBodyWithResponse(ctx context.Context, orgId int, params *FinopsBillingSettingsReplaceSettingsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingSettingsReplaceSettingsResponse, error)
+
+	FinopsBillingSettingsReplaceSettingsWithResponse(ctx context.Context, orgId int, params *FinopsBillingSettingsReplaceSettingsParams, body FinopsBillingSettingsReplaceSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingSettingsReplaceSettingsResponse, error)
+
+	// FinopsBillingSharedCostRulesIndexWithResponse request
+	FinopsBillingSharedCostRulesIndexWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesIndexResponse, error)
+
+	// FinopsBillingSharedCostRulesCreateWithBodyWithResponse request with any body
+	FinopsBillingSharedCostRulesCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesCreateResponse, error)
+
+	FinopsBillingSharedCostRulesCreateWithResponse(ctx context.Context, orgId int, body FinopsBillingSharedCostRulesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesCreateResponse, error)
+
+	// FinopsBillingSharedCostRulesReorderWithBodyWithResponse request with any body
+	FinopsBillingSharedCostRulesReorderWithBodyWithResponse(ctx context.Context, orgId int, params *FinopsBillingSharedCostRulesReorderParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesReorderResponse, error)
+
+	FinopsBillingSharedCostRulesReorderWithResponse(ctx context.Context, orgId int, params *FinopsBillingSharedCostRulesReorderParams, body FinopsBillingSharedCostRulesReorderJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesReorderResponse, error)
+
+	// FinopsBillingSharedCostRulesDeleteWithResponse request
+	FinopsBillingSharedCostRulesDeleteWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesDeleteParams, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesDeleteResponse, error)
+
+	// FinopsBillingSharedCostRulesShowWithResponse request
+	FinopsBillingSharedCostRulesShowWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesShowResponse, error)
+
+	// FinopsBillingSharedCostRulesUpdateWithBodyWithResponse request with any body
+	FinopsBillingSharedCostRulesUpdateWithBodyWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesUpdateResponse, error)
+
+	FinopsBillingSharedCostRulesUpdateWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, body FinopsBillingSharedCostRulesUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesUpdateResponse, error)
+
+	// FinopsCustomizationsReportSubscriptionsIndexWithResponse request
+	FinopsCustomizationsReportSubscriptionsIndexWithResponse(ctx context.Context, orgId int, params *FinopsCustomizationsReportSubscriptionsIndexParams, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsIndexResponse, error)
+
+	// FinopsCustomizationsReportSubscriptionsCreateWithBodyWithResponse request with any body
+	FinopsCustomizationsReportSubscriptionsCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsCreateResponse, error)
+
+	FinopsCustomizationsReportSubscriptionsCreateWithResponse(ctx context.Context, orgId int, body FinopsCustomizationsReportSubscriptionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsCreateResponse, error)
+
+	// FinopsCustomizationsReportSubscriptionsDeleteWithResponse request
+	FinopsCustomizationsReportSubscriptionsDeleteWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsDeleteParams, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsDeleteResponse, error)
+
+	// FinopsCustomizationsReportSubscriptionsShowWithResponse request
+	FinopsCustomizationsReportSubscriptionsShowWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsShowResponse, error)
+
+	// FinopsCustomizationsReportSubscriptionsUpdateWithBodyWithResponse request with any body
+	FinopsCustomizationsReportSubscriptionsUpdateWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsUpdateResponse, error)
+
+	FinopsCustomizationsReportSubscriptionsUpdateWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsUpdateParams, body FinopsCustomizationsReportSubscriptionsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsUpdateResponse, error)
+
 	// FinopsCustomizationsRuleBasedDimensionIndexWithResponse request
 	FinopsCustomizationsRuleBasedDimensionIndexWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsCustomizationsRuleBasedDimensionIndexResponse, error)
 
@@ -49981,6 +63801,33 @@ type ClientWithResponsesInterface interface {
 	FinopsCustomizationsRuleBasedDimensionRulesListReplaceWithBodyWithResponse(ctx context.Context, orgId int, id string, effectiveAt string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsCustomizationsRuleBasedDimensionRulesListReplaceResponse, error)
 
 	FinopsCustomizationsRuleBasedDimensionRulesListReplaceWithResponse(ctx context.Context, orgId int, id string, effectiveAt string, body FinopsCustomizationsRuleBasedDimensionRulesListReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsCustomizationsRuleBasedDimensionRulesListReplaceResponse, error)
+
+	// FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowWithResponse request
+	FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowResponse, error)
+
+	// FinopsCustomizationsSavedFiltersIndexWithResponse request
+	FinopsCustomizationsSavedFiltersIndexWithResponse(ctx context.Context, orgId int, params *FinopsCustomizationsSavedFiltersIndexParams, reqEditors ...RequestEditorFn) (*FinopsCustomizationsSavedFiltersIndexResponse, error)
+
+	// FinopsCustomizationsSavedFiltersCreateWithBodyWithResponse request with any body
+	FinopsCustomizationsSavedFiltersCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsCustomizationsSavedFiltersCreateResponse, error)
+
+	FinopsCustomizationsSavedFiltersCreateWithResponse(ctx context.Context, orgId int, body FinopsCustomizationsSavedFiltersCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsCustomizationsSavedFiltersCreateResponse, error)
+
+	// FinopsCustomizationsSavedFiltersDeleteWithResponse request
+	FinopsCustomizationsSavedFiltersDeleteWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*FinopsCustomizationsSavedFiltersDeleteResponse, error)
+
+	// FinopsCustomizationsSavedFiltersShowWithResponse request
+	FinopsCustomizationsSavedFiltersShowWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersShowParams, reqEditors ...RequestEditorFn) (*FinopsCustomizationsSavedFiltersShowResponse, error)
+
+	// FinopsCustomizationsSavedFiltersPatchWithBodyWithResponse request with any body
+	FinopsCustomizationsSavedFiltersPatchWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersPatchParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsCustomizationsSavedFiltersPatchResponse, error)
+
+	FinopsCustomizationsSavedFiltersPatchWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersPatchParams, body FinopsCustomizationsSavedFiltersPatchJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsCustomizationsSavedFiltersPatchResponse, error)
+
+	// FinopsCustomizationsSavedFiltersUpdateWithBodyWithResponse request with any body
+	FinopsCustomizationsSavedFiltersUpdateWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsCustomizationsSavedFiltersUpdateResponse, error)
+
+	FinopsCustomizationsSavedFiltersUpdateWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersUpdateParams, body FinopsCustomizationsSavedFiltersUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsCustomizationsSavedFiltersUpdateResponse, error)
 
 	// FinopsCustomizationsTagDimensionIndexWithResponse request
 	FinopsCustomizationsTagDimensionIndexWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsCustomizationsTagDimensionIndexResponse, error)
@@ -50147,8 +63994,38 @@ type ClientWithResponsesInterface interface {
 	// FinopsOnboardingBillConnectGCPValidateWithResponse request
 	FinopsOnboardingBillConnectGCPValidateWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectGCPValidateResponse, error)
 
+	// FinopsOnboardingBillConnectSnowflakeCreateWithBodyWithResponse request with any body
+	FinopsOnboardingBillConnectSnowflakeCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectSnowflakeCreateResponse, error)
+
+	FinopsOnboardingBillConnectSnowflakeCreateWithResponse(ctx context.Context, orgId int, body FinopsOnboardingBillConnectSnowflakeCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectSnowflakeCreateResponse, error)
+
+	// FinopsOnboardingBillConnectSnowflakeDeleteWithResponse request
+	FinopsOnboardingBillConnectSnowflakeDeleteWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectSnowflakeDeleteResponse, error)
+
+	// FinopsOnboardingBillConnectSnowflakeShowWithResponse request
+	FinopsOnboardingBillConnectSnowflakeShowWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectSnowflakeShowResponse, error)
+
+	// FinopsOnboardingBillConnectSnowflakeUpdateWithBodyWithResponse request with any body
+	FinopsOnboardingBillConnectSnowflakeUpdateWithBodyWithResponse(ctx context.Context, orgId int, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectSnowflakeUpdateResponse, error)
+
+	FinopsOnboardingBillConnectSnowflakeUpdateWithResponse(ctx context.Context, orgId int, id string, body FinopsOnboardingBillConnectSnowflakeUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectSnowflakeUpdateResponse, error)
+
+	// FinopsOnboardingBillConnectSnowflakeValidateWithResponse request
+	FinopsOnboardingBillConnectSnowflakeValidateWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectSnowflakeValidateResponse, error)
+
 	// FinopsOnboardingBillConnectValidateWithResponse request
 	FinopsOnboardingBillConnectValidateWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectValidateResponse, error)
+
+	// FinopsOnboardingProcessingHistoryIndexWithResponse request
+	FinopsOnboardingProcessingHistoryIndexWithResponse(ctx context.Context, orgId int, params *FinopsOnboardingProcessingHistoryIndexParams, reqEditors ...RequestEditorFn) (*FinopsOnboardingProcessingHistoryIndexResponse, error)
+
+	// FinopsOnboardingProcessingHistoryReprocessWithBodyWithResponse request with any body
+	FinopsOnboardingProcessingHistoryReprocessWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsOnboardingProcessingHistoryReprocessResponse, error)
+
+	FinopsOnboardingProcessingHistoryReprocessWithResponse(ctx context.Context, orgId int, body FinopsOnboardingProcessingHistoryReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsOnboardingProcessingHistoryReprocessResponse, error)
+
+	// FinopsOnboardingProcessingHistoryDownloadWithResponse request
+	FinopsOnboardingProcessingHistoryDownloadWithResponse(ctx context.Context, orgId int, params *FinopsOnboardingProcessingHistoryDownloadParams, reqEditors ...RequestEditorFn) (*FinopsOnboardingProcessingHistoryDownloadResponse, error)
 
 	// GraphqlGraphqlQueryWithResponse request
 	GraphqlGraphqlQueryWithResponse(ctx context.Context, orgId int64, params *GraphqlGraphqlQueryParams, reqEditors ...RequestEditorFn) (*GraphqlGraphqlQueryResponse, error)
@@ -50178,6 +64055,28 @@ type ClientWithResponsesInterface interface {
 
 	// IamOrganizationShowWithResponse request
 	IamOrganizationShowWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*IamOrganizationShowResponse, error)
+
+	// IamAccessPolicyIndexWithResponse request
+	IamAccessPolicyIndexWithResponse(ctx context.Context, orgId int, params *IamAccessPolicyIndexParams, reqEditors ...RequestEditorFn) (*IamAccessPolicyIndexResponse, error)
+
+	// IamAccessPolicyCreateWithBodyWithResponse request with any body
+	IamAccessPolicyCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*IamAccessPolicyCreateResponse, error)
+
+	IamAccessPolicyCreateWithResponse(ctx context.Context, orgId int, body IamAccessPolicyCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*IamAccessPolicyCreateResponse, error)
+
+	// IamAccessPolicyGetUserAccessPoliciesWithResponse request
+	IamAccessPolicyGetUserAccessPoliciesWithResponse(ctx context.Context, orgId int, userId int, params *IamAccessPolicyGetUserAccessPoliciesParams, reqEditors ...RequestEditorFn) (*IamAccessPolicyGetUserAccessPoliciesResponse, error)
+
+	// IamAccessPolicyDeleteWithResponse request
+	IamAccessPolicyDeleteWithResponse(ctx context.Context, orgId int, accessPolicyId string, reqEditors ...RequestEditorFn) (*IamAccessPolicyDeleteResponse, error)
+
+	// IamAccessPolicyShowWithResponse request
+	IamAccessPolicyShowWithResponse(ctx context.Context, orgId int, accessPolicyId string, params *IamAccessPolicyShowParams, reqEditors ...RequestEditorFn) (*IamAccessPolicyShowResponse, error)
+
+	// IamAccessPolicyUpdateWithBodyWithResponse request with any body
+	IamAccessPolicyUpdateWithBodyWithResponse(ctx context.Context, orgId int, accessPolicyId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*IamAccessPolicyUpdateResponse, error)
+
+	IamAccessPolicyUpdateWithResponse(ctx context.Context, orgId int, accessPolicyId string, body IamAccessPolicyUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*IamAccessPolicyUpdateResponse, error)
 
 	// IamAccessRuleIndexWithResponse request
 	IamAccessRuleIndexWithResponse(ctx context.Context, orgId int, params *IamAccessRuleIndexParams, reqEditors ...RequestEditorFn) (*IamAccessRuleIndexResponse, error)
@@ -50369,6 +64268,9 @@ type ClientWithResponsesInterface interface {
 	// IamOrganizationShowMspWithResponse request
 	IamOrganizationShowMspWithResponse(ctx context.Context, orgId int, targetOrgId int, reqEditors ...RequestEditorFn) (*IamOrganizationShowMspResponse, error)
 
+	// IamProjectIndexWithResponse request
+	IamProjectIndexWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*IamProjectIndexResponse, error)
+
 	// IamRoleIndexWithResponse request
 	IamRoleIndexWithResponse(ctx context.Context, orgId int, params *IamRoleIndexParams, reqEditors ...RequestEditorFn) (*IamRoleIndexResponse, error)
 
@@ -50398,7 +64300,7 @@ type ClientWithResponsesInterface interface {
 	IamServiceAccountClientIndexWithResponse(ctx context.Context, orgId int, serviceAccountId int, reqEditors ...RequestEditorFn) (*IamServiceAccountClientIndexResponse, error)
 
 	// IamServiceAccountClientCreateWithResponse request
-	IamServiceAccountClientCreateWithResponse(ctx context.Context, orgId int, serviceAccountId int, reqEditors ...RequestEditorFn) (*IamServiceAccountClientCreateResponse, error)
+	IamServiceAccountClientCreateWithResponse(ctx context.Context, orgId int, serviceAccountId int, params *IamServiceAccountClientCreateParams, reqEditors ...RequestEditorFn) (*IamServiceAccountClientCreateResponse, error)
 
 	// IamServiceAccountClientDeleteWithResponse request
 	IamServiceAccountClientDeleteWithResponse(ctx context.Context, orgId int, serviceAccountId int, clientId string, reqEditors ...RequestEditorFn) (*IamServiceAccountClientDeleteResponse, error)
@@ -50443,8 +64345,14 @@ type ClientWithResponsesInterface interface {
 
 	IamUserSettingBlobRetrivePutUrlWithResponse(ctx context.Context, body IamUserSettingBlobRetrivePutUrlJSONRequestBody, reqEditors ...RequestEditorFn) (*IamUserSettingBlobRetrivePutUrlResponse, error)
 
-	// IamUserOrgsIndexWithResponse request
-	IamUserOrgsIndexWithResponse(ctx context.Context, id int, reqEditors ...RequestEditorFn) (*IamUserOrgsIndexResponse, error)
+	// IamUserMembershipsIndexWithResponse request
+	IamUserMembershipsIndexWithResponse(ctx context.Context, id int, reqEditors ...RequestEditorFn) (*IamUserMembershipsIndexResponse, error)
+
+	// IamUserMembershipsShowPrivilegesReportWithResponse request
+	IamUserMembershipsShowPrivilegesReportWithResponse(ctx context.Context, id int, params *IamUserMembershipsShowPrivilegesReportParams, reqEditors ...RequestEditorFn) (*IamUserMembershipsShowPrivilegesReportResponse, error)
+
+	// IamUserMembershipsIndexProjectsWithResponse request
+	IamUserMembershipsIndexProjectsWithResponse(ctx context.Context, id int, params *IamUserMembershipsIndexProjectsParams, reqEditors ...RequestEditorFn) (*IamUserMembershipsIndexProjectsResponse, error)
 
 	// IamMSPCustomerIndexWithResponse request
 	IamMSPCustomerIndexWithResponse(ctx context.Context, orgId int, params *IamMSPCustomerIndexParams, reqEditors ...RequestEditorFn) (*IamMSPCustomerIndexResponse, error)
@@ -50515,6 +64423,48 @@ type ClientWithResponsesInterface interface {
 	AuthTokenTokenWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AuthTokenTokenResponse, error)
 
 	AuthTokenTokenWithFormdataBodyWithResponse(ctx context.Context, body AuthTokenTokenFormdataRequestBody, reqEditors ...RequestEditorFn) (*AuthTokenTokenResponse, error)
+
+	// BillAnalysisAdjustmentDefinitionShowWithResponse request
+	BillAnalysisAdjustmentDefinitionShowWithResponse(ctx context.Context, org int, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionShowResponse, error)
+
+	// BillAnalysisAdjustmentDefinitionUpdateWithBodyWithResponse request with any body
+	BillAnalysisAdjustmentDefinitionUpdateWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error)
+
+	BillAnalysisAdjustmentDefinitionUpdateWithResponse(ctx context.Context, org int, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error)
+
+	// BillAnalysisAnomaliesReportWithBodyWithResponse request with any body
+	BillAnalysisAnomaliesReportWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error)
+
+	BillAnalysisAnomaliesReportWithResponse(ctx context.Context, org int, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error)
+
+	// BillAnalysisCostsAggregatedWithBodyWithResponse request with any body
+	BillAnalysisCostsAggregatedWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error)
+
+	BillAnalysisCostsAggregatedWithResponse(ctx context.Context, org int, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error)
+
+	// BillAnalysisCostsDimensionsWithResponse request
+	BillAnalysisCostsDimensionsWithResponse(ctx context.Context, org int, params *BillAnalysisCostsDimensionsParams, reqEditors ...RequestEditorFn) (*BillAnalysisCostsDimensionsResponse, error)
+
+	// BillAnalysisCostsMetricsWithResponse request
+	BillAnalysisCostsMetricsWithResponse(ctx context.Context, org int, params *BillAnalysisCostsMetricsParams, reqEditors ...RequestEditorFn) (*BillAnalysisCostsMetricsResponse, error)
+
+	// BillAnalysisCostsSelectWithBodyWithResponse request with any body
+	BillAnalysisCostsSelectWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error)
+
+	BillAnalysisCostsSelectWithResponse(ctx context.Context, org int, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error)
+
+	// BillAnalysisForecastsReportWithBodyWithResponse request with any body
+	BillAnalysisForecastsReportWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error)
+
+	BillAnalysisForecastsReportWithResponse(ctx context.Context, org int, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error)
+
+	// BillAnalysisCurrencySettingShowWithResponse request
+	BillAnalysisCurrencySettingShowWithResponse(ctx context.Context, org int, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingShowResponse, error)
+
+	// BillAnalysisCurrencySettingUpdateWithBodyWithResponse request with any body
+	BillAnalysisCurrencySettingUpdateWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error)
+
+	BillAnalysisCurrencySettingUpdateWithResponse(ctx context.Context, org int, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error)
 
 	// PolicyCustomCatalogIndexWithResponse request
 	PolicyCustomCatalogIndexWithResponse(ctx context.Context, orgId int64, params *PolicyCustomCatalogIndexParams, reqEditors ...RequestEditorFn) (*PolicyCustomCatalogIndexResponse, error)
@@ -50730,6 +64680,14 @@ type ClientWithResponsesInterface interface {
 
 	RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostWithResponse(ctx context.Context, orgId string, body RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostResponse, error)
 
+	// OptimaRecommendationsRecommendationsIndexWithResponse request
+	OptimaRecommendationsRecommendationsIndexWithResponse(ctx context.Context, orgID int, params *OptimaRecommendationsRecommendationsIndexParams, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsIndexResponse, error)
+
+	// OptimaRecommendationsRecommendationsUpdateStatusWithBodyWithResponse request with any body
+	OptimaRecommendationsRecommendationsUpdateStatusWithBodyWithResponse(ctx context.Context, orgID int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsUpdateStatusResponse, error)
+
+	OptimaRecommendationsRecommendationsUpdateStatusWithResponse(ctx context.Context, orgID int, body OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsUpdateStatusResponse, error)
+
 	// RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostWithBodyWithResponse request with any body
 	RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostResponse, error)
 
@@ -50809,6 +64767,16 @@ type ClientWithResponsesInterface interface {
 
 	RiskGetCatalogFilterRiskV1OrgsOrgIdRegulatoryComplianceCatalogFilterPostWithResponse(ctx context.Context, orgId string, body RiskGetCatalogFilterRiskV1OrgsOrgIdRegulatoryComplianceCatalogFilterPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskGetCatalogFilterRiskV1OrgsOrgIdRegulatoryComplianceCatalogFilterPostResponse, error)
 
+	// RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostWithBodyWithResponse request with any body
+	RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostResponse, error)
+
+	RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostWithResponse(ctx context.Context, orgId string, body RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostResponse, error)
+
+	// RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostWithBodyWithResponse request with any body
+	RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostWithBodyWithResponse(ctx context.Context, orgId string, params *RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostResponse, error)
+
+	RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostWithResponse(ctx context.Context, orgId string, params *RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostParams, body RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostResponse, error)
+
 	// RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostWithBodyWithResponse request with any body
 	RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostResponse, error)
 
@@ -50818,6 +64786,26 @@ type ClientWithResponsesInterface interface {
 	RiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPostResponse, error)
 
 	RiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPostWithResponse(ctx context.Context, orgId string, body RiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPostResponse, error)
+
+	// RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostWithBodyWithResponse request with any body
+	RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostResponse, error)
+
+	RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostWithResponse(ctx context.Context, orgId string, body RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostResponse, error)
+
+	// RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostWithBodyWithResponse request with any body
+	RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostResponse, error)
+
+	RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostWithResponse(ctx context.Context, orgId string, body RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostResponse, error)
+
+	// RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostWithBodyWithResponse request with any body
+	RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostResponse, error)
+
+	RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostWithResponse(ctx context.Context, orgId string, body RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostResponse, error)
+
+	// RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostWithBodyWithResponse request with any body
+	RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostResponse, error)
+
+	RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostWithResponse(ctx context.Context, orgId string, body RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostResponse, error)
 
 	// RiskGetCveDetailsRiskV1OrgsOrgIdVulnerabilityCveGetWithResponse request
 	RiskGetCveDetailsRiskV1OrgsOrgIdVulnerabilityCveGetWithResponse(ctx context.Context, orgId string, params *RiskGetCveDetailsRiskV1OrgsOrgIdVulnerabilityCveGetParams, reqEditors ...RequestEditorFn) (*RiskGetCveDetailsRiskV1OrgsOrgIdVulnerabilityCveGetResponse, error)
@@ -51200,11 +65188,11 @@ type ClientWithResponsesInterface interface {
 
 	VisDeviceDeleteWithResponse(ctx context.Context, orgId int, body VisDeviceDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*VisDeviceDeleteResponse, error)
 
-	// VisExportIndexWithResponse request
-	VisExportIndexWithResponse(ctx context.Context, orgId int, params *VisExportIndexParams, reqEditors ...RequestEditorFn) (*VisExportIndexResponse, error)
+	// VisExportWithResponse request
+	VisExportWithResponse(ctx context.Context, orgId int, params *VisExportParams, reqEditors ...RequestEditorFn) (*VisExportResponse, error)
 
-	// VisExportDownloadWithResponse request
-	VisExportDownloadWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*VisExportDownloadResponse, error)
+	// VisExport2WithResponse request
+	VisExport2WithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*VisExport2Response, error)
 
 	// VisQueryCreateWithBodyWithResponse request with any body
 	VisQueryCreateWithBodyWithResponse(ctx context.Context, orgId int, params *VisQueryCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VisQueryCreateResponse, error)
@@ -51257,6 +65245,342 @@ type ClientWithResponsesInterface interface {
 	RiskGetFindingsSummaryVulnerabilityTotalFindingsOrgIdPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetFindingsSummaryVulnerabilityTotalFindingsOrgIdPostResponse, error)
 
 	RiskGetFindingsSummaryVulnerabilityTotalFindingsOrgIdPostWithResponse(ctx context.Context, orgId string, body RiskGetFindingsSummaryVulnerabilityTotalFindingsOrgIdPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskGetFindingsSummaryVulnerabilityTotalFindingsOrgIdPostResponse, error)
+}
+
+type BillingCenterServiceAllocationTableShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillingCenterServiceAllocationTableShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillingCenterServiceAllocationTableShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillingCenterServiceAllocationTableUpsertResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillingCenterServiceAllocationTableUpsertResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillingCenterServiceAllocationTableUpsertResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillingCenterServiceBillingCentersIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillingCenterServiceBillingCentersIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillingCenterServiceBillingCentersIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillingCenterServiceBillingCentersCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillingCenterServiceBillingCentersCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillingCenterServiceBillingCentersCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillingCenterServiceBillingCentersDeleteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillingCenterServiceBillingCentersDeleteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillingCenterServiceBillingCentersDeleteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillingCenterServiceBillingCentersShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillingCenterServiceBillingCentersShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillingCenterServiceBillingCentersShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillingCenterServiceBillingCentersUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillingCenterServiceBillingCentersUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillingCenterServiceBillingCentersUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillingCenterServiceBillingCenterAccessRulesGrantResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillingCenterServiceBillingCenterAccessRulesGrantResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillingCenterServiceBillingCenterAccessRulesGrantResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillingCenterServiceBillingCenterAccessRulesReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillingCenterServiceBillingCenterAccessRulesReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillingCenterServiceBillingCenterAccessRulesReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillingCenterServiceBillingCenterAccessRulesRevokeResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillingCenterServiceBillingCenterAccessRulesRevokeResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillingCenterServiceBillingCenterAccessRulesRevokeResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillingCenterServiceBillingCentersShowAllocationTableResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillingCenterServiceBillingCentersShowAllocationTableResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillingCenterServiceBillingCentersShowAllocationTableResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillingCenterServiceBillingCentersUpsertAllocationTableResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillingCenterServiceBillingCentersUpsertAllocationTableResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillingCenterServiceBillingCentersUpsertAllocationTableResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillingCenterServiceAccessRulesGroupReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillingCenterServiceAccessRulesGroupReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillingCenterServiceAccessRulesGroupReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillingCenterServiceAccessRulesUserReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillingCenterServiceAccessRulesUserReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillingCenterServiceAccessRulesUserReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillingCenterServiceUserBillingCentersIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillingCenterServiceUserBillingCentersIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillingCenterServiceUserBillingCentersIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillingCenterServiceUserBillingCentersShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillingCenterServiceUserBillingCentersShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillingCenterServiceUserBillingCentersShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
 }
 
 type CredCredentialIndexOrgResponse struct {
@@ -52724,6 +67048,783 @@ func (r BudgetCloudVendorAccountIndexResponse) StatusCode() int {
 	return 0
 }
 
+type FinopsBillingBillingShowCustomerStatusResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingShowCustomerStatusResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingShowCustomerStatusResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingShowCustomerStatusResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingIndexPlansResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingIndexPlansResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingIndexPlansResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingIndexPlansResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingCreatePlanResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingCreatePlanResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingCreatePlanResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingCreatePlanResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingDeletePlanResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingDeletePlanResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingDeletePlanResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingShowPlanResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingShowPlanResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingShowPlanResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingShowPlanResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingReplacePlanResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingReplacePlanResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingReplacePlanResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingIndexRulesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingIndexRulesResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingIndexRulesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingIndexRulesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingCreateRuleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingCreateRuleResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingCreateRuleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingCreateRuleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingDeleteRuleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingDeleteRuleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingDeleteRuleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingReplaceRuleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingReplaceRuleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingReplaceRuleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingIndexPostAdjustmentsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingIndexAdjustmentRulesResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingIndexPostAdjustmentsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingIndexPostAdjustmentsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingCreatePostAdjustmentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingCreateRuleResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingCreatePostAdjustmentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingCreatePostAdjustmentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingDeletePostAdjustmentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingDeletePostAdjustmentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingDeletePostAdjustmentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingReplacePostAdjustmentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingReplacePostAdjustmentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingReplacePostAdjustmentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingIndexPreAdjustmentsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingIndexAdjustmentRulesResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingIndexPreAdjustmentsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingIndexPreAdjustmentsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingCreatePreAdjustmentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingCreateRuleResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingCreatePreAdjustmentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingCreatePreAdjustmentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingDeletePreAdjustmentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingDeletePreAdjustmentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingDeletePreAdjustmentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingReplacePreAdjustmentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingReplacePreAdjustmentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingReplacePreAdjustmentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingIndexEnterpriseRulesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingIndexEnterpriseRulesResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingIndexEnterpriseRulesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingIndexEnterpriseRulesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingCreateEnterpriseRuleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingCreateRuleResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingCreateEnterpriseRuleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingCreateEnterpriseRuleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingReplaceEnterpriseRulesetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingReplaceEnterpriseRulesetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingReplaceEnterpriseRulesetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingDeleteEnterpriseRuleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingDeleteEnterpriseRuleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingDeleteEnterpriseRuleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingReplaceEnterpriseRuleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingReplaceEnterpriseRuleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingReplaceEnterpriseRuleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingSettingsShowSettingsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingShowSettingsResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingSettingsShowSettingsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingSettingsShowSettingsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingSettingsReplaceSettingsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingSettingsReplaceSettingsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingSettingsReplaceSettingsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingSharedCostRulesIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingIndexSharedCostRulesResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingSharedCostRulesIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingSharedCostRulesIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingSharedCostRulesCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *FinopsBillingShowSharedCostRuleResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingSharedCostRulesCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingSharedCostRulesCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingSharedCostRulesReorderResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingSharedCostRulesReorderResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingSharedCostRulesReorderResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingSharedCostRulesDeleteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingSharedCostRulesDeleteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingSharedCostRulesDeleteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingSharedCostRulesShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingShowSharedCostRuleResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingSharedCostRulesShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingSharedCostRulesShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingSharedCostRulesUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingShowSharedCostRuleResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingSharedCostRulesUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingSharedCostRulesUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsCustomizationsReportSubscriptionsIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsCustomizationsReportSubscriptionList
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsCustomizationsReportSubscriptionsIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsCustomizationsReportSubscriptionsIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsCustomizationsReportSubscriptionsCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *FinopsCustomizationsReportSubscriptionResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsCustomizationsReportSubscriptionsCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsCustomizationsReportSubscriptionsCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsCustomizationsReportSubscriptionsDeleteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsCustomizationsReportSubscriptionsDeleteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsCustomizationsReportSubscriptionsDeleteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsCustomizationsReportSubscriptionsShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsCustomizationsReportSubscriptionResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsCustomizationsReportSubscriptionsShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsCustomizationsReportSubscriptionsShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsCustomizationsReportSubscriptionsUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsCustomizationsReportSubscriptionResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsCustomizationsReportSubscriptionsUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsCustomizationsReportSubscriptionsUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type FinopsCustomizationsRuleBasedDimensionIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -52889,6 +67990,159 @@ func (r FinopsCustomizationsRuleBasedDimensionRulesListReplaceResponse) Status()
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r FinopsCustomizationsRuleBasedDimensionRulesListReplaceResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsCustomizationsRuleBasedDimensionSummary
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsCustomizationsSavedFiltersIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsCustomizationsIndexSavedFiltersResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsCustomizationsSavedFiltersIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsCustomizationsSavedFiltersIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsCustomizationsSavedFiltersCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *FinopsCustomizationsSavedFilterHTTPBody
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsCustomizationsSavedFiltersCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsCustomizationsSavedFiltersCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsCustomizationsSavedFiltersDeleteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsCustomizationsSavedFiltersDeleteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsCustomizationsSavedFiltersDeleteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsCustomizationsSavedFiltersShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsCustomizationsSavedFiltersshowResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsCustomizationsSavedFiltersShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsCustomizationsSavedFiltersShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsCustomizationsSavedFiltersPatchResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsCustomizationsSavedFilterHTTPBody
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsCustomizationsSavedFiltersPatchResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsCustomizationsSavedFiltersPatchResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsCustomizationsSavedFiltersUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsCustomizationsSavedFilterHTTPBody
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsCustomizationsSavedFiltersUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsCustomizationsSavedFiltersUpdateResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -53825,6 +69079,114 @@ func (r FinopsOnboardingBillConnectGCPValidateResponse) StatusCode() int {
 	return 0
 }
 
+type FinopsOnboardingBillConnectSnowflakeCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *FinopsOnboardingSnowflakeBillConnect
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsOnboardingBillConnectSnowflakeCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsOnboardingBillConnectSnowflakeCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsOnboardingBillConnectSnowflakeDeleteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsOnboardingBillConnectSnowflakeDeleteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsOnboardingBillConnectSnowflakeDeleteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsOnboardingBillConnectSnowflakeShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsOnboardingSnowflakeBillConnect
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsOnboardingBillConnectSnowflakeShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsOnboardingBillConnectSnowflakeShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsOnboardingBillConnectSnowflakeUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsOnboardingBillConnectSnowflakeUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsOnboardingBillConnectSnowflakeUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsOnboardingBillConnectSnowflakeValidateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsOnboardingBillConnectCredentialValidationSnowflake
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsOnboardingBillConnectSnowflakeValidateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsOnboardingBillConnectSnowflakeValidateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type FinopsOnboardingBillConnectValidateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -53841,6 +69203,71 @@ func (r FinopsOnboardingBillConnectValidateResponse) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r FinopsOnboardingBillConnectValidateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsOnboardingProcessingHistoryIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsOnboardingEnterpriseIndexResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsOnboardingProcessingHistoryIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsOnboardingProcessingHistoryIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsOnboardingProcessingHistoryReprocessResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsOnboardingEnterpriseReprocessResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsOnboardingProcessingHistoryReprocessResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsOnboardingProcessingHistoryReprocessResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsOnboardingProcessingHistoryDownloadResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsOnboardingProcessingHistoryDownloadResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsOnboardingProcessingHistoryDownloadResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -54037,6 +69464,136 @@ func (r IamOrganizationShowResponse) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r IamOrganizationShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type IamAccessPolicyIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *IamAccessPolicyList
+}
+
+// Status returns HTTPResponse.Status
+func (r IamAccessPolicyIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r IamAccessPolicyIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type IamAccessPolicyCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *IamCreateResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r IamAccessPolicyCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r IamAccessPolicyCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type IamAccessPolicyGetUserAccessPoliciesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *IamUserAccessPoliciesResult
+}
+
+// Status returns HTTPResponse.Status
+func (r IamAccessPolicyGetUserAccessPoliciesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r IamAccessPolicyGetUserAccessPoliciesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type IamAccessPolicyDeleteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r IamAccessPolicyDeleteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r IamAccessPolicyDeleteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type IamAccessPolicyShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *IamAccessPolicy
+}
+
+// Status returns HTTPResponse.Status
+func (r IamAccessPolicyShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r IamAccessPolicyShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type IamAccessPolicyUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r IamAccessPolicyUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r IamAccessPolicyUpdateResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -55170,6 +70727,28 @@ func (r IamOrganizationShowMspResponse) StatusCode() int {
 	return 0
 }
 
+type IamProjectIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *IamProjectCollection
+}
+
+// Status returns HTTPResponse.Status
+func (r IamProjectIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r IamProjectIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type IamRoleIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -55648,14 +71227,14 @@ func (r IamUserSettingBlobRetrivePutUrlResponse) StatusCode() int {
 	return 0
 }
 
-type IamUserOrgsIndexResponse struct {
+type IamUserMembershipsIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *IamUserOrgList
 }
 
 // Status returns HTTPResponse.Status
-func (r IamUserOrgsIndexResponse) Status() string {
+func (r IamUserMembershipsIndexResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -55663,7 +71242,51 @@ func (r IamUserOrgsIndexResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r IamUserOrgsIndexResponse) StatusCode() int {
+func (r IamUserMembershipsIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type IamUserMembershipsShowPrivilegesReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *IamUserPrivilegesReport
+}
+
+// Status returns HTTPResponse.Status
+func (r IamUserMembershipsShowPrivilegesReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r IamUserMembershipsShowPrivilegesReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type IamUserMembershipsIndexProjectsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *IamUserProjectList
+}
+
+// Status returns HTTPResponse.Status
+func (r IamUserMembershipsIndexProjectsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r IamUserMembershipsIndexProjectsResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -56056,6 +71679,216 @@ func (r AuthTokenTokenResponse) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r AuthTokenTokenResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisAdjustmentDefinitionShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisAdjustmentDefinitionShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisAdjustmentDefinitionShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisAdjustmentDefinitionUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisAdjustmentDefinitionUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisAdjustmentDefinitionUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisAnomaliesReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisAnomaliesReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisAnomaliesReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCostsAggregatedResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCostsAggregatedResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCostsAggregatedResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCostsDimensionsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCostsDimensionsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCostsDimensionsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCostsMetricsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCostsMetricsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCostsMetricsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCostsSelectResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCostsSelectResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCostsSelectResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisForecastsReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisForecastsReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisForecastsReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCurrencySettingShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCurrencySettingShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCurrencySettingShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCurrencySettingUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCurrencySettingUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCurrencySettingUpdateResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -57366,6 +73199,48 @@ func (r RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSupp
 	return 0
 }
 
+type OptimaRecommendationsRecommendationsIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r OptimaRecommendationsRecommendationsIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r OptimaRecommendationsRecommendationsIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type OptimaRecommendationsRecommendationsUpdateStatusResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r OptimaRecommendationsRecommendationsUpdateStatusResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r OptimaRecommendationsRecommendationsUpdateStatusResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -57859,6 +73734,64 @@ func (r RiskGetCatalogFilterRiskV1OrgsOrgIdRegulatoryComplianceCatalogFilterPost
 	return 0
 }
 
+type RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+	JSON400      *RiskErrorResponse
+	JSON401      *RiskErrorResponse
+	JSON403      *RiskErrorResponse
+	JSON422      *RiskHTTPValidationError
+	JSON429      *RiskErrorResponse
+	JSON500      *RiskErrorResponse
+	JSON502      *RiskErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+	JSON400      *RiskErrorResponse
+	JSON401      *RiskErrorResponse
+	JSON403      *RiskErrorResponse
+	JSON422      *RiskHTTPValidationError
+	JSON429      *RiskErrorResponse
+	JSON500      *RiskErrorResponse
+	JSON502      *RiskErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -57911,6 +73844,122 @@ func (r RiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPo
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r RiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+	JSON400      *RiskErrorResponse
+	JSON401      *RiskErrorResponse
+	JSON403      *RiskErrorResponse
+	JSON422      *RiskHTTPValidationError
+	JSON429      *RiskErrorResponse
+	JSON500      *RiskErrorResponse
+	JSON502      *RiskErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+	JSON400      *RiskErrorResponse
+	JSON401      *RiskErrorResponse
+	JSON403      *RiskErrorResponse
+	JSON422      *RiskHTTPValidationError
+	JSON429      *RiskErrorResponse
+	JSON500      *RiskErrorResponse
+	JSON502      *RiskErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *RiskRCOSuppressResponse
+	JSON400      *RiskErrorResponse
+	JSON401      *RiskErrorResponse
+	JSON403      *RiskErrorResponse
+	JSON422      *RiskHTTPValidationError
+	JSON429      *RiskErrorResponse
+	JSON500      *RiskErrorResponse
+	JSON502      *RiskErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+	JSON400      *RiskErrorResponse
+	JSON401      *RiskErrorResponse
+	JSON403      *RiskErrorResponse
+	JSON422      *RiskHTTPValidationError
+	JSON429      *RiskErrorResponse
+	JSON500      *RiskErrorResponse
+	JSON502      *RiskErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -60319,14 +76368,14 @@ func (r VisDeviceDeleteResponse) StatusCode() int {
 	return 0
 }
 
-type VisExportIndexResponse struct {
+type VisExportResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *VisExportFileList
 }
 
 // Status returns HTTPResponse.Status
-func (r VisExportIndexResponse) Status() string {
+func (r VisExportResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -60334,20 +76383,20 @@ func (r VisExportIndexResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r VisExportIndexResponse) StatusCode() int {
+func (r VisExportResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type VisExportDownloadResponse struct {
+type VisExport2Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
 }
 
 // Status returns HTTPResponse.Status
-func (r VisExportDownloadResponse) Status() string {
+func (r VisExport2Response) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -60355,7 +76404,7 @@ func (r VisExportDownloadResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r VisExportDownloadResponse) StatusCode() int {
+func (r VisExport2Response) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -60686,6 +76735,198 @@ func (r RiskGetFindingsSummaryVulnerabilityTotalFindingsOrgIdPostResponse) Statu
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
+}
+
+// BillingCenterServiceAllocationTableShowWithResponse request returning *BillingCenterServiceAllocationTableShowResponse
+func (c *ClientWithResponses) BillingCenterServiceAllocationTableShowWithResponse(ctx context.Context, orgId int, params *BillingCenterServiceAllocationTableShowParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceAllocationTableShowResponse, error) {
+	rsp, err := c.BillingCenterServiceAllocationTableShow(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceAllocationTableShowResponse(rsp)
+}
+
+// BillingCenterServiceAllocationTableUpsertWithBodyWithResponse request with arbitrary body returning *BillingCenterServiceAllocationTableUpsertResponse
+func (c *ClientWithResponses) BillingCenterServiceAllocationTableUpsertWithBodyWithResponse(ctx context.Context, orgId int, params *BillingCenterServiceAllocationTableUpsertParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillingCenterServiceAllocationTableUpsertResponse, error) {
+	rsp, err := c.BillingCenterServiceAllocationTableUpsertWithBody(ctx, orgId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceAllocationTableUpsertResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillingCenterServiceAllocationTableUpsertWithResponse(ctx context.Context, orgId int, params *BillingCenterServiceAllocationTableUpsertParams, body BillingCenterServiceAllocationTableUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*BillingCenterServiceAllocationTableUpsertResponse, error) {
+	rsp, err := c.BillingCenterServiceAllocationTableUpsert(ctx, orgId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceAllocationTableUpsertResponse(rsp)
+}
+
+// BillingCenterServiceBillingCentersIndexWithResponse request returning *BillingCenterServiceBillingCentersIndexResponse
+func (c *ClientWithResponses) BillingCenterServiceBillingCentersIndexWithResponse(ctx context.Context, orgId int, params *BillingCenterServiceBillingCentersIndexParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersIndexResponse, error) {
+	rsp, err := c.BillingCenterServiceBillingCentersIndex(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceBillingCentersIndexResponse(rsp)
+}
+
+// BillingCenterServiceBillingCentersCreateWithBodyWithResponse request with arbitrary body returning *BillingCenterServiceBillingCentersCreateResponse
+func (c *ClientWithResponses) BillingCenterServiceBillingCentersCreateWithBodyWithResponse(ctx context.Context, orgId int, params *BillingCenterServiceBillingCentersCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersCreateResponse, error) {
+	rsp, err := c.BillingCenterServiceBillingCentersCreateWithBody(ctx, orgId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceBillingCentersCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillingCenterServiceBillingCentersCreateWithResponse(ctx context.Context, orgId int, params *BillingCenterServiceBillingCentersCreateParams, body BillingCenterServiceBillingCentersCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersCreateResponse, error) {
+	rsp, err := c.BillingCenterServiceBillingCentersCreate(ctx, orgId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceBillingCentersCreateResponse(rsp)
+}
+
+// BillingCenterServiceBillingCentersDeleteWithResponse request returning *BillingCenterServiceBillingCentersDeleteResponse
+func (c *ClientWithResponses) BillingCenterServiceBillingCentersDeleteWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersDeleteParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersDeleteResponse, error) {
+	rsp, err := c.BillingCenterServiceBillingCentersDelete(ctx, orgId, billingCenter, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceBillingCentersDeleteResponse(rsp)
+}
+
+// BillingCenterServiceBillingCentersShowWithResponse request returning *BillingCenterServiceBillingCentersShowResponse
+func (c *ClientWithResponses) BillingCenterServiceBillingCentersShowWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersShowParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersShowResponse, error) {
+	rsp, err := c.BillingCenterServiceBillingCentersShow(ctx, orgId, billingCenter, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceBillingCentersShowResponse(rsp)
+}
+
+// BillingCenterServiceBillingCentersUpdateWithBodyWithResponse request with arbitrary body returning *BillingCenterServiceBillingCentersUpdateResponse
+func (c *ClientWithResponses) BillingCenterServiceBillingCentersUpdateWithBodyWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersUpdateResponse, error) {
+	rsp, err := c.BillingCenterServiceBillingCentersUpdateWithBody(ctx, orgId, billingCenter, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceBillingCentersUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillingCenterServiceBillingCentersUpdateWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpdateParams, body BillingCenterServiceBillingCentersUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersUpdateResponse, error) {
+	rsp, err := c.BillingCenterServiceBillingCentersUpdate(ctx, orgId, billingCenter, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceBillingCentersUpdateResponse(rsp)
+}
+
+// BillingCenterServiceBillingCenterAccessRulesGrantWithBodyWithResponse request with arbitrary body returning *BillingCenterServiceBillingCenterAccessRulesGrantResponse
+func (c *ClientWithResponses) BillingCenterServiceBillingCenterAccessRulesGrantWithBodyWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesGrantParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCenterAccessRulesGrantResponse, error) {
+	rsp, err := c.BillingCenterServiceBillingCenterAccessRulesGrantWithBody(ctx, orgId, billingCenter, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceBillingCenterAccessRulesGrantResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillingCenterServiceBillingCenterAccessRulesGrantWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesGrantParams, body BillingCenterServiceBillingCenterAccessRulesGrantJSONRequestBody, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCenterAccessRulesGrantResponse, error) {
+	rsp, err := c.BillingCenterServiceBillingCenterAccessRulesGrant(ctx, orgId, billingCenter, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceBillingCenterAccessRulesGrantResponse(rsp)
+}
+
+// BillingCenterServiceBillingCenterAccessRulesReportWithResponse request returning *BillingCenterServiceBillingCenterAccessRulesReportResponse
+func (c *ClientWithResponses) BillingCenterServiceBillingCenterAccessRulesReportWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesReportParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCenterAccessRulesReportResponse, error) {
+	rsp, err := c.BillingCenterServiceBillingCenterAccessRulesReport(ctx, orgId, billingCenter, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceBillingCenterAccessRulesReportResponse(rsp)
+}
+
+// BillingCenterServiceBillingCenterAccessRulesRevokeWithBodyWithResponse request with arbitrary body returning *BillingCenterServiceBillingCenterAccessRulesRevokeResponse
+func (c *ClientWithResponses) BillingCenterServiceBillingCenterAccessRulesRevokeWithBodyWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesRevokeParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCenterAccessRulesRevokeResponse, error) {
+	rsp, err := c.BillingCenterServiceBillingCenterAccessRulesRevokeWithBody(ctx, orgId, billingCenter, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceBillingCenterAccessRulesRevokeResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillingCenterServiceBillingCenterAccessRulesRevokeWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCenterAccessRulesRevokeParams, body BillingCenterServiceBillingCenterAccessRulesRevokeJSONRequestBody, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCenterAccessRulesRevokeResponse, error) {
+	rsp, err := c.BillingCenterServiceBillingCenterAccessRulesRevoke(ctx, orgId, billingCenter, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceBillingCenterAccessRulesRevokeResponse(rsp)
+}
+
+// BillingCenterServiceBillingCentersShowAllocationTableWithResponse request returning *BillingCenterServiceBillingCentersShowAllocationTableResponse
+func (c *ClientWithResponses) BillingCenterServiceBillingCentersShowAllocationTableWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersShowAllocationTableParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersShowAllocationTableResponse, error) {
+	rsp, err := c.BillingCenterServiceBillingCentersShowAllocationTable(ctx, orgId, billingCenter, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceBillingCentersShowAllocationTableResponse(rsp)
+}
+
+// BillingCenterServiceBillingCentersUpsertAllocationTableWithBodyWithResponse request with arbitrary body returning *BillingCenterServiceBillingCentersUpsertAllocationTableResponse
+func (c *ClientWithResponses) BillingCenterServiceBillingCentersUpsertAllocationTableWithBodyWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpsertAllocationTableParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersUpsertAllocationTableResponse, error) {
+	rsp, err := c.BillingCenterServiceBillingCentersUpsertAllocationTableWithBody(ctx, orgId, billingCenter, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceBillingCentersUpsertAllocationTableResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillingCenterServiceBillingCentersUpsertAllocationTableWithResponse(ctx context.Context, orgId int, billingCenter string, params *BillingCenterServiceBillingCentersUpsertAllocationTableParams, body BillingCenterServiceBillingCentersUpsertAllocationTableJSONRequestBody, reqEditors ...RequestEditorFn) (*BillingCenterServiceBillingCentersUpsertAllocationTableResponse, error) {
+	rsp, err := c.BillingCenterServiceBillingCentersUpsertAllocationTable(ctx, orgId, billingCenter, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceBillingCentersUpsertAllocationTableResponse(rsp)
+}
+
+// BillingCenterServiceAccessRulesGroupReportWithResponse request returning *BillingCenterServiceAccessRulesGroupReportResponse
+func (c *ClientWithResponses) BillingCenterServiceAccessRulesGroupReportWithResponse(ctx context.Context, orgId int, group int, params *BillingCenterServiceAccessRulesGroupReportParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceAccessRulesGroupReportResponse, error) {
+	rsp, err := c.BillingCenterServiceAccessRulesGroupReport(ctx, orgId, group, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceAccessRulesGroupReportResponse(rsp)
+}
+
+// BillingCenterServiceAccessRulesUserReportWithResponse request returning *BillingCenterServiceAccessRulesUserReportResponse
+func (c *ClientWithResponses) BillingCenterServiceAccessRulesUserReportWithResponse(ctx context.Context, orgId int, user int, params *BillingCenterServiceAccessRulesUserReportParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceAccessRulesUserReportResponse, error) {
+	rsp, err := c.BillingCenterServiceAccessRulesUserReport(ctx, orgId, user, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceAccessRulesUserReportResponse(rsp)
+}
+
+// BillingCenterServiceUserBillingCentersIndexWithResponse request returning *BillingCenterServiceUserBillingCentersIndexResponse
+func (c *ClientWithResponses) BillingCenterServiceUserBillingCentersIndexWithResponse(ctx context.Context, user int, orgId int, params *BillingCenterServiceUserBillingCentersIndexParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceUserBillingCentersIndexResponse, error) {
+	rsp, err := c.BillingCenterServiceUserBillingCentersIndex(ctx, user, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceUserBillingCentersIndexResponse(rsp)
+}
+
+// BillingCenterServiceUserBillingCentersShowWithResponse request returning *BillingCenterServiceUserBillingCentersShowResponse
+func (c *ClientWithResponses) BillingCenterServiceUserBillingCentersShowWithResponse(ctx context.Context, user int, orgId int, billingCenter string, params *BillingCenterServiceUserBillingCentersShowParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceUserBillingCentersShowResponse, error) {
+	rsp, err := c.BillingCenterServiceUserBillingCentersShow(ctx, user, orgId, billingCenter, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillingCenterServiceUserBillingCentersShowResponse(rsp)
 }
 
 // CredCredentialIndexOrgWithResponse request returning *CredCredentialIndexOrgResponse
@@ -61570,6 +77811,466 @@ func (c *ClientWithResponses) BudgetCloudVendorAccountIndexWithResponse(ctx cont
 	return ParseBudgetCloudVendorAccountIndexResponse(rsp)
 }
 
+// FinopsBillingBillingShowCustomerStatusWithResponse request returning *FinopsBillingBillingShowCustomerStatusResponse
+func (c *ClientWithResponses) FinopsBillingBillingShowCustomerStatusWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsBillingBillingShowCustomerStatusResponse, error) {
+	rsp, err := c.FinopsBillingBillingShowCustomerStatus(ctx, orgId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingShowCustomerStatusResponse(rsp)
+}
+
+// FinopsBillingBillingIndexPlansWithResponse request returning *FinopsBillingBillingIndexPlansResponse
+func (c *ClientWithResponses) FinopsBillingBillingIndexPlansWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingIndexPlansParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingIndexPlansResponse, error) {
+	rsp, err := c.FinopsBillingBillingIndexPlans(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingIndexPlansResponse(rsp)
+}
+
+// FinopsBillingBillingCreatePlanWithBodyWithResponse request with arbitrary body returning *FinopsBillingBillingCreatePlanResponse
+func (c *ClientWithResponses) FinopsBillingBillingCreatePlanWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreatePlanResponse, error) {
+	rsp, err := c.FinopsBillingBillingCreatePlanWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingCreatePlanResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingBillingCreatePlanWithResponse(ctx context.Context, orgId int, body FinopsBillingBillingCreatePlanJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreatePlanResponse, error) {
+	rsp, err := c.FinopsBillingBillingCreatePlan(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingCreatePlanResponse(rsp)
+}
+
+// FinopsBillingBillingDeletePlanWithResponse request returning *FinopsBillingBillingDeletePlanResponse
+func (c *ClientWithResponses) FinopsBillingBillingDeletePlanWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeletePlanParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingDeletePlanResponse, error) {
+	rsp, err := c.FinopsBillingBillingDeletePlan(ctx, orgId, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingDeletePlanResponse(rsp)
+}
+
+// FinopsBillingBillingShowPlanWithResponse request returning *FinopsBillingBillingShowPlanResponse
+func (c *ClientWithResponses) FinopsBillingBillingShowPlanWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*FinopsBillingBillingShowPlanResponse, error) {
+	rsp, err := c.FinopsBillingBillingShowPlan(ctx, orgId, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingShowPlanResponse(rsp)
+}
+
+// FinopsBillingBillingReplacePlanWithBodyWithResponse request with arbitrary body returning *FinopsBillingBillingReplacePlanResponse
+func (c *ClientWithResponses) FinopsBillingBillingReplacePlanWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePlanParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplacePlanResponse, error) {
+	rsp, err := c.FinopsBillingBillingReplacePlanWithBody(ctx, orgId, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingReplacePlanResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingBillingReplacePlanWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePlanParams, body FinopsBillingBillingReplacePlanJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplacePlanResponse, error) {
+	rsp, err := c.FinopsBillingBillingReplacePlan(ctx, orgId, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingReplacePlanResponse(rsp)
+}
+
+// FinopsBillingBillingIndexRulesWithResponse request returning *FinopsBillingBillingIndexRulesResponse
+func (c *ClientWithResponses) FinopsBillingBillingIndexRulesWithResponse(ctx context.Context, orgId int, planId openapi_types.UUID, params *FinopsBillingBillingIndexRulesParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingIndexRulesResponse, error) {
+	rsp, err := c.FinopsBillingBillingIndexRules(ctx, orgId, planId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingIndexRulesResponse(rsp)
+}
+
+// FinopsBillingBillingCreateRuleWithBodyWithResponse request with arbitrary body returning *FinopsBillingBillingCreateRuleResponse
+func (c *ClientWithResponses) FinopsBillingBillingCreateRuleWithBodyWithResponse(ctx context.Context, orgId int, planId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreateRuleResponse, error) {
+	rsp, err := c.FinopsBillingBillingCreateRuleWithBody(ctx, orgId, planId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingCreateRuleResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingBillingCreateRuleWithResponse(ctx context.Context, orgId int, planId openapi_types.UUID, body FinopsBillingBillingCreateRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreateRuleResponse, error) {
+	rsp, err := c.FinopsBillingBillingCreateRule(ctx, orgId, planId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingCreateRuleResponse(rsp)
+}
+
+// FinopsBillingBillingDeleteRuleWithResponse request returning *FinopsBillingBillingDeleteRuleResponse
+func (c *ClientWithResponses) FinopsBillingBillingDeleteRuleWithResponse(ctx context.Context, orgId int, planId openapi_types.UUID, id openapi_types.UUID, params *FinopsBillingBillingDeleteRuleParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingDeleteRuleResponse, error) {
+	rsp, err := c.FinopsBillingBillingDeleteRule(ctx, orgId, planId, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingDeleteRuleResponse(rsp)
+}
+
+// FinopsBillingBillingReplaceRuleWithBodyWithResponse request with arbitrary body returning *FinopsBillingBillingReplaceRuleResponse
+func (c *ClientWithResponses) FinopsBillingBillingReplaceRuleWithBodyWithResponse(ctx context.Context, orgId int, planId openapi_types.UUID, id openapi_types.UUID, params *FinopsBillingBillingReplaceRuleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplaceRuleResponse, error) {
+	rsp, err := c.FinopsBillingBillingReplaceRuleWithBody(ctx, orgId, planId, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingReplaceRuleResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingBillingReplaceRuleWithResponse(ctx context.Context, orgId int, planId openapi_types.UUID, id openapi_types.UUID, params *FinopsBillingBillingReplaceRuleParams, body FinopsBillingBillingReplaceRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplaceRuleResponse, error) {
+	rsp, err := c.FinopsBillingBillingReplaceRule(ctx, orgId, planId, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingReplaceRuleResponse(rsp)
+}
+
+// FinopsBillingBillingIndexPostAdjustmentsWithResponse request returning *FinopsBillingBillingIndexPostAdjustmentsResponse
+func (c *ClientWithResponses) FinopsBillingBillingIndexPostAdjustmentsWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingIndexPostAdjustmentsParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingIndexPostAdjustmentsResponse, error) {
+	rsp, err := c.FinopsBillingBillingIndexPostAdjustments(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingIndexPostAdjustmentsResponse(rsp)
+}
+
+// FinopsBillingBillingCreatePostAdjustmentWithBodyWithResponse request with arbitrary body returning *FinopsBillingBillingCreatePostAdjustmentResponse
+func (c *ClientWithResponses) FinopsBillingBillingCreatePostAdjustmentWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreatePostAdjustmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingCreatePostAdjustmentWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingCreatePostAdjustmentResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingBillingCreatePostAdjustmentWithResponse(ctx context.Context, orgId int, body FinopsBillingBillingCreatePostAdjustmentJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreatePostAdjustmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingCreatePostAdjustment(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingCreatePostAdjustmentResponse(rsp)
+}
+
+// FinopsBillingBillingDeletePostAdjustmentWithResponse request returning *FinopsBillingBillingDeletePostAdjustmentResponse
+func (c *ClientWithResponses) FinopsBillingBillingDeletePostAdjustmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeletePostAdjustmentParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingDeletePostAdjustmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingDeletePostAdjustment(ctx, orgId, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingDeletePostAdjustmentResponse(rsp)
+}
+
+// FinopsBillingBillingReplacePostAdjustmentWithBodyWithResponse request with arbitrary body returning *FinopsBillingBillingReplacePostAdjustmentResponse
+func (c *ClientWithResponses) FinopsBillingBillingReplacePostAdjustmentWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePostAdjustmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplacePostAdjustmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingReplacePostAdjustmentWithBody(ctx, orgId, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingReplacePostAdjustmentResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingBillingReplacePostAdjustmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePostAdjustmentParams, body FinopsBillingBillingReplacePostAdjustmentJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplacePostAdjustmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingReplacePostAdjustment(ctx, orgId, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingReplacePostAdjustmentResponse(rsp)
+}
+
+// FinopsBillingBillingIndexPreAdjustmentsWithResponse request returning *FinopsBillingBillingIndexPreAdjustmentsResponse
+func (c *ClientWithResponses) FinopsBillingBillingIndexPreAdjustmentsWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingIndexPreAdjustmentsParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingIndexPreAdjustmentsResponse, error) {
+	rsp, err := c.FinopsBillingBillingIndexPreAdjustments(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingIndexPreAdjustmentsResponse(rsp)
+}
+
+// FinopsBillingBillingCreatePreAdjustmentWithBodyWithResponse request with arbitrary body returning *FinopsBillingBillingCreatePreAdjustmentResponse
+func (c *ClientWithResponses) FinopsBillingBillingCreatePreAdjustmentWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreatePreAdjustmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingCreatePreAdjustmentWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingCreatePreAdjustmentResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingBillingCreatePreAdjustmentWithResponse(ctx context.Context, orgId int, body FinopsBillingBillingCreatePreAdjustmentJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreatePreAdjustmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingCreatePreAdjustment(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingCreatePreAdjustmentResponse(rsp)
+}
+
+// FinopsBillingBillingDeletePreAdjustmentWithResponse request returning *FinopsBillingBillingDeletePreAdjustmentResponse
+func (c *ClientWithResponses) FinopsBillingBillingDeletePreAdjustmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeletePreAdjustmentParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingDeletePreAdjustmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingDeletePreAdjustment(ctx, orgId, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingDeletePreAdjustmentResponse(rsp)
+}
+
+// FinopsBillingBillingReplacePreAdjustmentWithBodyWithResponse request with arbitrary body returning *FinopsBillingBillingReplacePreAdjustmentResponse
+func (c *ClientWithResponses) FinopsBillingBillingReplacePreAdjustmentWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePreAdjustmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplacePreAdjustmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingReplacePreAdjustmentWithBody(ctx, orgId, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingReplacePreAdjustmentResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingBillingReplacePreAdjustmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplacePreAdjustmentParams, body FinopsBillingBillingReplacePreAdjustmentJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplacePreAdjustmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingReplacePreAdjustment(ctx, orgId, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingReplacePreAdjustmentResponse(rsp)
+}
+
+// FinopsBillingBillingIndexEnterpriseRulesWithResponse request returning *FinopsBillingBillingIndexEnterpriseRulesResponse
+func (c *ClientWithResponses) FinopsBillingBillingIndexEnterpriseRulesWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingIndexEnterpriseRulesParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingIndexEnterpriseRulesResponse, error) {
+	rsp, err := c.FinopsBillingBillingIndexEnterpriseRules(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingIndexEnterpriseRulesResponse(rsp)
+}
+
+// FinopsBillingBillingCreateEnterpriseRuleWithBodyWithResponse request with arbitrary body returning *FinopsBillingBillingCreateEnterpriseRuleResponse
+func (c *ClientWithResponses) FinopsBillingBillingCreateEnterpriseRuleWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreateEnterpriseRuleResponse, error) {
+	rsp, err := c.FinopsBillingBillingCreateEnterpriseRuleWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingCreateEnterpriseRuleResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingBillingCreateEnterpriseRuleWithResponse(ctx context.Context, orgId int, body FinopsBillingBillingCreateEnterpriseRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreateEnterpriseRuleResponse, error) {
+	rsp, err := c.FinopsBillingBillingCreateEnterpriseRule(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingCreateEnterpriseRuleResponse(rsp)
+}
+
+// FinopsBillingBillingReplaceEnterpriseRulesetWithBodyWithResponse request with arbitrary body returning *FinopsBillingBillingReplaceEnterpriseRulesetResponse
+func (c *ClientWithResponses) FinopsBillingBillingReplaceEnterpriseRulesetWithBodyWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingReplaceEnterpriseRulesetParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplaceEnterpriseRulesetResponse, error) {
+	rsp, err := c.FinopsBillingBillingReplaceEnterpriseRulesetWithBody(ctx, orgId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingReplaceEnterpriseRulesetResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingBillingReplaceEnterpriseRulesetWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingReplaceEnterpriseRulesetParams, body FinopsBillingBillingReplaceEnterpriseRulesetJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplaceEnterpriseRulesetResponse, error) {
+	rsp, err := c.FinopsBillingBillingReplaceEnterpriseRuleset(ctx, orgId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingReplaceEnterpriseRulesetResponse(rsp)
+}
+
+// FinopsBillingBillingDeleteEnterpriseRuleWithResponse request returning *FinopsBillingBillingDeleteEnterpriseRuleResponse
+func (c *ClientWithResponses) FinopsBillingBillingDeleteEnterpriseRuleWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingDeleteEnterpriseRuleParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingDeleteEnterpriseRuleResponse, error) {
+	rsp, err := c.FinopsBillingBillingDeleteEnterpriseRule(ctx, orgId, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingDeleteEnterpriseRuleResponse(rsp)
+}
+
+// FinopsBillingBillingReplaceEnterpriseRuleWithBodyWithResponse request with arbitrary body returning *FinopsBillingBillingReplaceEnterpriseRuleResponse
+func (c *ClientWithResponses) FinopsBillingBillingReplaceEnterpriseRuleWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplaceEnterpriseRuleParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplaceEnterpriseRuleResponse, error) {
+	rsp, err := c.FinopsBillingBillingReplaceEnterpriseRuleWithBody(ctx, orgId, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingReplaceEnterpriseRuleResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingBillingReplaceEnterpriseRuleWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingReplaceEnterpriseRuleParams, body FinopsBillingBillingReplaceEnterpriseRuleJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingReplaceEnterpriseRuleResponse, error) {
+	rsp, err := c.FinopsBillingBillingReplaceEnterpriseRule(ctx, orgId, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingReplaceEnterpriseRuleResponse(rsp)
+}
+
+// FinopsBillingSettingsShowSettingsWithResponse request returning *FinopsBillingSettingsShowSettingsResponse
+func (c *ClientWithResponses) FinopsBillingSettingsShowSettingsWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsBillingSettingsShowSettingsResponse, error) {
+	rsp, err := c.FinopsBillingSettingsShowSettings(ctx, orgId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingSettingsShowSettingsResponse(rsp)
+}
+
+// FinopsBillingSettingsReplaceSettingsWithBodyWithResponse request with arbitrary body returning *FinopsBillingSettingsReplaceSettingsResponse
+func (c *ClientWithResponses) FinopsBillingSettingsReplaceSettingsWithBodyWithResponse(ctx context.Context, orgId int, params *FinopsBillingSettingsReplaceSettingsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingSettingsReplaceSettingsResponse, error) {
+	rsp, err := c.FinopsBillingSettingsReplaceSettingsWithBody(ctx, orgId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingSettingsReplaceSettingsResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingSettingsReplaceSettingsWithResponse(ctx context.Context, orgId int, params *FinopsBillingSettingsReplaceSettingsParams, body FinopsBillingSettingsReplaceSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingSettingsReplaceSettingsResponse, error) {
+	rsp, err := c.FinopsBillingSettingsReplaceSettings(ctx, orgId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingSettingsReplaceSettingsResponse(rsp)
+}
+
+// FinopsBillingSharedCostRulesIndexWithResponse request returning *FinopsBillingSharedCostRulesIndexResponse
+func (c *ClientWithResponses) FinopsBillingSharedCostRulesIndexWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesIndexResponse, error) {
+	rsp, err := c.FinopsBillingSharedCostRulesIndex(ctx, orgId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingSharedCostRulesIndexResponse(rsp)
+}
+
+// FinopsBillingSharedCostRulesCreateWithBodyWithResponse request with arbitrary body returning *FinopsBillingSharedCostRulesCreateResponse
+func (c *ClientWithResponses) FinopsBillingSharedCostRulesCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesCreateResponse, error) {
+	rsp, err := c.FinopsBillingSharedCostRulesCreateWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingSharedCostRulesCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingSharedCostRulesCreateWithResponse(ctx context.Context, orgId int, body FinopsBillingSharedCostRulesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesCreateResponse, error) {
+	rsp, err := c.FinopsBillingSharedCostRulesCreate(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingSharedCostRulesCreateResponse(rsp)
+}
+
+// FinopsBillingSharedCostRulesReorderWithBodyWithResponse request with arbitrary body returning *FinopsBillingSharedCostRulesReorderResponse
+func (c *ClientWithResponses) FinopsBillingSharedCostRulesReorderWithBodyWithResponse(ctx context.Context, orgId int, params *FinopsBillingSharedCostRulesReorderParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesReorderResponse, error) {
+	rsp, err := c.FinopsBillingSharedCostRulesReorderWithBody(ctx, orgId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingSharedCostRulesReorderResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingSharedCostRulesReorderWithResponse(ctx context.Context, orgId int, params *FinopsBillingSharedCostRulesReorderParams, body FinopsBillingSharedCostRulesReorderJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesReorderResponse, error) {
+	rsp, err := c.FinopsBillingSharedCostRulesReorder(ctx, orgId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingSharedCostRulesReorderResponse(rsp)
+}
+
+// FinopsBillingSharedCostRulesDeleteWithResponse request returning *FinopsBillingSharedCostRulesDeleteResponse
+func (c *ClientWithResponses) FinopsBillingSharedCostRulesDeleteWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesDeleteParams, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesDeleteResponse, error) {
+	rsp, err := c.FinopsBillingSharedCostRulesDelete(ctx, orgId, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingSharedCostRulesDeleteResponse(rsp)
+}
+
+// FinopsBillingSharedCostRulesShowWithResponse request returning *FinopsBillingSharedCostRulesShowResponse
+func (c *ClientWithResponses) FinopsBillingSharedCostRulesShowWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesShowResponse, error) {
+	rsp, err := c.FinopsBillingSharedCostRulesShow(ctx, orgId, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingSharedCostRulesShowResponse(rsp)
+}
+
+// FinopsBillingSharedCostRulesUpdateWithBodyWithResponse request with arbitrary body returning *FinopsBillingSharedCostRulesUpdateResponse
+func (c *ClientWithResponses) FinopsBillingSharedCostRulesUpdateWithBodyWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesUpdateResponse, error) {
+	rsp, err := c.FinopsBillingSharedCostRulesUpdateWithBody(ctx, orgId, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingSharedCostRulesUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingSharedCostRulesUpdateWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, body FinopsBillingSharedCostRulesUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesUpdateResponse, error) {
+	rsp, err := c.FinopsBillingSharedCostRulesUpdate(ctx, orgId, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingSharedCostRulesUpdateResponse(rsp)
+}
+
+// FinopsCustomizationsReportSubscriptionsIndexWithResponse request returning *FinopsCustomizationsReportSubscriptionsIndexResponse
+func (c *ClientWithResponses) FinopsCustomizationsReportSubscriptionsIndexWithResponse(ctx context.Context, orgId int, params *FinopsCustomizationsReportSubscriptionsIndexParams, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsIndexResponse, error) {
+	rsp, err := c.FinopsCustomizationsReportSubscriptionsIndex(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsReportSubscriptionsIndexResponse(rsp)
+}
+
+// FinopsCustomizationsReportSubscriptionsCreateWithBodyWithResponse request with arbitrary body returning *FinopsCustomizationsReportSubscriptionsCreateResponse
+func (c *ClientWithResponses) FinopsCustomizationsReportSubscriptionsCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsCreateResponse, error) {
+	rsp, err := c.FinopsCustomizationsReportSubscriptionsCreateWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsReportSubscriptionsCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsCustomizationsReportSubscriptionsCreateWithResponse(ctx context.Context, orgId int, body FinopsCustomizationsReportSubscriptionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsCreateResponse, error) {
+	rsp, err := c.FinopsCustomizationsReportSubscriptionsCreate(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsReportSubscriptionsCreateResponse(rsp)
+}
+
+// FinopsCustomizationsReportSubscriptionsDeleteWithResponse request returning *FinopsCustomizationsReportSubscriptionsDeleteResponse
+func (c *ClientWithResponses) FinopsCustomizationsReportSubscriptionsDeleteWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsDeleteParams, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsDeleteResponse, error) {
+	rsp, err := c.FinopsCustomizationsReportSubscriptionsDelete(ctx, orgId, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsReportSubscriptionsDeleteResponse(rsp)
+}
+
+// FinopsCustomizationsReportSubscriptionsShowWithResponse request returning *FinopsCustomizationsReportSubscriptionsShowResponse
+func (c *ClientWithResponses) FinopsCustomizationsReportSubscriptionsShowWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsShowResponse, error) {
+	rsp, err := c.FinopsCustomizationsReportSubscriptionsShow(ctx, orgId, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsReportSubscriptionsShowResponse(rsp)
+}
+
+// FinopsCustomizationsReportSubscriptionsUpdateWithBodyWithResponse request with arbitrary body returning *FinopsCustomizationsReportSubscriptionsUpdateResponse
+func (c *ClientWithResponses) FinopsCustomizationsReportSubscriptionsUpdateWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsUpdateResponse, error) {
+	rsp, err := c.FinopsCustomizationsReportSubscriptionsUpdateWithBody(ctx, orgId, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsReportSubscriptionsUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsCustomizationsReportSubscriptionsUpdateWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsUpdateParams, body FinopsCustomizationsReportSubscriptionsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsUpdateResponse, error) {
+	rsp, err := c.FinopsCustomizationsReportSubscriptionsUpdate(ctx, orgId, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsReportSubscriptionsUpdateResponse(rsp)
+}
+
 // FinopsCustomizationsRuleBasedDimensionIndexWithResponse request returning *FinopsCustomizationsRuleBasedDimensionIndexResponse
 func (c *ClientWithResponses) FinopsCustomizationsRuleBasedDimensionIndexWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsCustomizationsRuleBasedDimensionIndexResponse, error) {
 	rsp, err := c.FinopsCustomizationsRuleBasedDimensionIndex(ctx, orgId, reqEditors...)
@@ -61664,6 +78365,93 @@ func (c *ClientWithResponses) FinopsCustomizationsRuleBasedDimensionRulesListRep
 		return nil, err
 	}
 	return ParseFinopsCustomizationsRuleBasedDimensionRulesListReplaceResponse(rsp)
+}
+
+// FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowWithResponse request returning *FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowResponse
+func (c *ClientWithResponses) FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowResponse, error) {
+	rsp, err := c.FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShow(ctx, orgId, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowResponse(rsp)
+}
+
+// FinopsCustomizationsSavedFiltersIndexWithResponse request returning *FinopsCustomizationsSavedFiltersIndexResponse
+func (c *ClientWithResponses) FinopsCustomizationsSavedFiltersIndexWithResponse(ctx context.Context, orgId int, params *FinopsCustomizationsSavedFiltersIndexParams, reqEditors ...RequestEditorFn) (*FinopsCustomizationsSavedFiltersIndexResponse, error) {
+	rsp, err := c.FinopsCustomizationsSavedFiltersIndex(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsSavedFiltersIndexResponse(rsp)
+}
+
+// FinopsCustomizationsSavedFiltersCreateWithBodyWithResponse request with arbitrary body returning *FinopsCustomizationsSavedFiltersCreateResponse
+func (c *ClientWithResponses) FinopsCustomizationsSavedFiltersCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsCustomizationsSavedFiltersCreateResponse, error) {
+	rsp, err := c.FinopsCustomizationsSavedFiltersCreateWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsSavedFiltersCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsCustomizationsSavedFiltersCreateWithResponse(ctx context.Context, orgId int, body FinopsCustomizationsSavedFiltersCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsCustomizationsSavedFiltersCreateResponse, error) {
+	rsp, err := c.FinopsCustomizationsSavedFiltersCreate(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsSavedFiltersCreateResponse(rsp)
+}
+
+// FinopsCustomizationsSavedFiltersDeleteWithResponse request returning *FinopsCustomizationsSavedFiltersDeleteResponse
+func (c *ClientWithResponses) FinopsCustomizationsSavedFiltersDeleteWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*FinopsCustomizationsSavedFiltersDeleteResponse, error) {
+	rsp, err := c.FinopsCustomizationsSavedFiltersDelete(ctx, orgId, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsSavedFiltersDeleteResponse(rsp)
+}
+
+// FinopsCustomizationsSavedFiltersShowWithResponse request returning *FinopsCustomizationsSavedFiltersShowResponse
+func (c *ClientWithResponses) FinopsCustomizationsSavedFiltersShowWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersShowParams, reqEditors ...RequestEditorFn) (*FinopsCustomizationsSavedFiltersShowResponse, error) {
+	rsp, err := c.FinopsCustomizationsSavedFiltersShow(ctx, orgId, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsSavedFiltersShowResponse(rsp)
+}
+
+// FinopsCustomizationsSavedFiltersPatchWithBodyWithResponse request with arbitrary body returning *FinopsCustomizationsSavedFiltersPatchResponse
+func (c *ClientWithResponses) FinopsCustomizationsSavedFiltersPatchWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersPatchParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsCustomizationsSavedFiltersPatchResponse, error) {
+	rsp, err := c.FinopsCustomizationsSavedFiltersPatchWithBody(ctx, orgId, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsSavedFiltersPatchResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsCustomizationsSavedFiltersPatchWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersPatchParams, body FinopsCustomizationsSavedFiltersPatchJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsCustomizationsSavedFiltersPatchResponse, error) {
+	rsp, err := c.FinopsCustomizationsSavedFiltersPatch(ctx, orgId, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsSavedFiltersPatchResponse(rsp)
+}
+
+// FinopsCustomizationsSavedFiltersUpdateWithBodyWithResponse request with arbitrary body returning *FinopsCustomizationsSavedFiltersUpdateResponse
+func (c *ClientWithResponses) FinopsCustomizationsSavedFiltersUpdateWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsCustomizationsSavedFiltersUpdateResponse, error) {
+	rsp, err := c.FinopsCustomizationsSavedFiltersUpdateWithBody(ctx, orgId, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsSavedFiltersUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsCustomizationsSavedFiltersUpdateWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsSavedFiltersUpdateParams, body FinopsCustomizationsSavedFiltersUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsCustomizationsSavedFiltersUpdateResponse, error) {
+	rsp, err := c.FinopsCustomizationsSavedFiltersUpdate(ctx, orgId, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsSavedFiltersUpdateResponse(rsp)
 }
 
 // FinopsCustomizationsTagDimensionIndexWithResponse request returning *FinopsCustomizationsTagDimensionIndexResponse
@@ -62197,6 +78985,67 @@ func (c *ClientWithResponses) FinopsOnboardingBillConnectGCPValidateWithResponse
 	return ParseFinopsOnboardingBillConnectGCPValidateResponse(rsp)
 }
 
+// FinopsOnboardingBillConnectSnowflakeCreateWithBodyWithResponse request with arbitrary body returning *FinopsOnboardingBillConnectSnowflakeCreateResponse
+func (c *ClientWithResponses) FinopsOnboardingBillConnectSnowflakeCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectSnowflakeCreateResponse, error) {
+	rsp, err := c.FinopsOnboardingBillConnectSnowflakeCreateWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsOnboardingBillConnectSnowflakeCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsOnboardingBillConnectSnowflakeCreateWithResponse(ctx context.Context, orgId int, body FinopsOnboardingBillConnectSnowflakeCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectSnowflakeCreateResponse, error) {
+	rsp, err := c.FinopsOnboardingBillConnectSnowflakeCreate(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsOnboardingBillConnectSnowflakeCreateResponse(rsp)
+}
+
+// FinopsOnboardingBillConnectSnowflakeDeleteWithResponse request returning *FinopsOnboardingBillConnectSnowflakeDeleteResponse
+func (c *ClientWithResponses) FinopsOnboardingBillConnectSnowflakeDeleteWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectSnowflakeDeleteResponse, error) {
+	rsp, err := c.FinopsOnboardingBillConnectSnowflakeDelete(ctx, orgId, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsOnboardingBillConnectSnowflakeDeleteResponse(rsp)
+}
+
+// FinopsOnboardingBillConnectSnowflakeShowWithResponse request returning *FinopsOnboardingBillConnectSnowflakeShowResponse
+func (c *ClientWithResponses) FinopsOnboardingBillConnectSnowflakeShowWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectSnowflakeShowResponse, error) {
+	rsp, err := c.FinopsOnboardingBillConnectSnowflakeShow(ctx, orgId, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsOnboardingBillConnectSnowflakeShowResponse(rsp)
+}
+
+// FinopsOnboardingBillConnectSnowflakeUpdateWithBodyWithResponse request with arbitrary body returning *FinopsOnboardingBillConnectSnowflakeUpdateResponse
+func (c *ClientWithResponses) FinopsOnboardingBillConnectSnowflakeUpdateWithBodyWithResponse(ctx context.Context, orgId int, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectSnowflakeUpdateResponse, error) {
+	rsp, err := c.FinopsOnboardingBillConnectSnowflakeUpdateWithBody(ctx, orgId, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsOnboardingBillConnectSnowflakeUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsOnboardingBillConnectSnowflakeUpdateWithResponse(ctx context.Context, orgId int, id string, body FinopsOnboardingBillConnectSnowflakeUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectSnowflakeUpdateResponse, error) {
+	rsp, err := c.FinopsOnboardingBillConnectSnowflakeUpdate(ctx, orgId, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsOnboardingBillConnectSnowflakeUpdateResponse(rsp)
+}
+
+// FinopsOnboardingBillConnectSnowflakeValidateWithResponse request returning *FinopsOnboardingBillConnectSnowflakeValidateResponse
+func (c *ClientWithResponses) FinopsOnboardingBillConnectSnowflakeValidateWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectSnowflakeValidateResponse, error) {
+	rsp, err := c.FinopsOnboardingBillConnectSnowflakeValidate(ctx, orgId, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsOnboardingBillConnectSnowflakeValidateResponse(rsp)
+}
+
 // FinopsOnboardingBillConnectValidateWithResponse request returning *FinopsOnboardingBillConnectValidateResponse
 func (c *ClientWithResponses) FinopsOnboardingBillConnectValidateWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectValidateResponse, error) {
 	rsp, err := c.FinopsOnboardingBillConnectValidate(ctx, orgId, reqEditors...)
@@ -62204,6 +79053,41 @@ func (c *ClientWithResponses) FinopsOnboardingBillConnectValidateWithResponse(ct
 		return nil, err
 	}
 	return ParseFinopsOnboardingBillConnectValidateResponse(rsp)
+}
+
+// FinopsOnboardingProcessingHistoryIndexWithResponse request returning *FinopsOnboardingProcessingHistoryIndexResponse
+func (c *ClientWithResponses) FinopsOnboardingProcessingHistoryIndexWithResponse(ctx context.Context, orgId int, params *FinopsOnboardingProcessingHistoryIndexParams, reqEditors ...RequestEditorFn) (*FinopsOnboardingProcessingHistoryIndexResponse, error) {
+	rsp, err := c.FinopsOnboardingProcessingHistoryIndex(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsOnboardingProcessingHistoryIndexResponse(rsp)
+}
+
+// FinopsOnboardingProcessingHistoryReprocessWithBodyWithResponse request with arbitrary body returning *FinopsOnboardingProcessingHistoryReprocessResponse
+func (c *ClientWithResponses) FinopsOnboardingProcessingHistoryReprocessWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsOnboardingProcessingHistoryReprocessResponse, error) {
+	rsp, err := c.FinopsOnboardingProcessingHistoryReprocessWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsOnboardingProcessingHistoryReprocessResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsOnboardingProcessingHistoryReprocessWithResponse(ctx context.Context, orgId int, body FinopsOnboardingProcessingHistoryReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsOnboardingProcessingHistoryReprocessResponse, error) {
+	rsp, err := c.FinopsOnboardingProcessingHistoryReprocess(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsOnboardingProcessingHistoryReprocessResponse(rsp)
+}
+
+// FinopsOnboardingProcessingHistoryDownloadWithResponse request returning *FinopsOnboardingProcessingHistoryDownloadResponse
+func (c *ClientWithResponses) FinopsOnboardingProcessingHistoryDownloadWithResponse(ctx context.Context, orgId int, params *FinopsOnboardingProcessingHistoryDownloadParams, reqEditors ...RequestEditorFn) (*FinopsOnboardingProcessingHistoryDownloadResponse, error) {
+	rsp, err := c.FinopsOnboardingProcessingHistoryDownload(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsOnboardingProcessingHistoryDownloadResponse(rsp)
 }
 
 // GraphqlGraphqlQueryWithResponse request returning *GraphqlGraphqlQueryResponse
@@ -62293,6 +79177,76 @@ func (c *ClientWithResponses) IamOrganizationShowWithResponse(ctx context.Contex
 		return nil, err
 	}
 	return ParseIamOrganizationShowResponse(rsp)
+}
+
+// IamAccessPolicyIndexWithResponse request returning *IamAccessPolicyIndexResponse
+func (c *ClientWithResponses) IamAccessPolicyIndexWithResponse(ctx context.Context, orgId int, params *IamAccessPolicyIndexParams, reqEditors ...RequestEditorFn) (*IamAccessPolicyIndexResponse, error) {
+	rsp, err := c.IamAccessPolicyIndex(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamAccessPolicyIndexResponse(rsp)
+}
+
+// IamAccessPolicyCreateWithBodyWithResponse request with arbitrary body returning *IamAccessPolicyCreateResponse
+func (c *ClientWithResponses) IamAccessPolicyCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*IamAccessPolicyCreateResponse, error) {
+	rsp, err := c.IamAccessPolicyCreateWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamAccessPolicyCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) IamAccessPolicyCreateWithResponse(ctx context.Context, orgId int, body IamAccessPolicyCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*IamAccessPolicyCreateResponse, error) {
+	rsp, err := c.IamAccessPolicyCreate(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamAccessPolicyCreateResponse(rsp)
+}
+
+// IamAccessPolicyGetUserAccessPoliciesWithResponse request returning *IamAccessPolicyGetUserAccessPoliciesResponse
+func (c *ClientWithResponses) IamAccessPolicyGetUserAccessPoliciesWithResponse(ctx context.Context, orgId int, userId int, params *IamAccessPolicyGetUserAccessPoliciesParams, reqEditors ...RequestEditorFn) (*IamAccessPolicyGetUserAccessPoliciesResponse, error) {
+	rsp, err := c.IamAccessPolicyGetUserAccessPolicies(ctx, orgId, userId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamAccessPolicyGetUserAccessPoliciesResponse(rsp)
+}
+
+// IamAccessPolicyDeleteWithResponse request returning *IamAccessPolicyDeleteResponse
+func (c *ClientWithResponses) IamAccessPolicyDeleteWithResponse(ctx context.Context, orgId int, accessPolicyId string, reqEditors ...RequestEditorFn) (*IamAccessPolicyDeleteResponse, error) {
+	rsp, err := c.IamAccessPolicyDelete(ctx, orgId, accessPolicyId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamAccessPolicyDeleteResponse(rsp)
+}
+
+// IamAccessPolicyShowWithResponse request returning *IamAccessPolicyShowResponse
+func (c *ClientWithResponses) IamAccessPolicyShowWithResponse(ctx context.Context, orgId int, accessPolicyId string, params *IamAccessPolicyShowParams, reqEditors ...RequestEditorFn) (*IamAccessPolicyShowResponse, error) {
+	rsp, err := c.IamAccessPolicyShow(ctx, orgId, accessPolicyId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamAccessPolicyShowResponse(rsp)
+}
+
+// IamAccessPolicyUpdateWithBodyWithResponse request with arbitrary body returning *IamAccessPolicyUpdateResponse
+func (c *ClientWithResponses) IamAccessPolicyUpdateWithBodyWithResponse(ctx context.Context, orgId int, accessPolicyId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*IamAccessPolicyUpdateResponse, error) {
+	rsp, err := c.IamAccessPolicyUpdateWithBody(ctx, orgId, accessPolicyId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamAccessPolicyUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) IamAccessPolicyUpdateWithResponse(ctx context.Context, orgId int, accessPolicyId string, body IamAccessPolicyUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*IamAccessPolicyUpdateResponse, error) {
+	rsp, err := c.IamAccessPolicyUpdate(ctx, orgId, accessPolicyId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamAccessPolicyUpdateResponse(rsp)
 }
 
 // IamAccessRuleIndexWithResponse request returning *IamAccessRuleIndexResponse
@@ -62899,6 +79853,15 @@ func (c *ClientWithResponses) IamOrganizationShowMspWithResponse(ctx context.Con
 	return ParseIamOrganizationShowMspResponse(rsp)
 }
 
+// IamProjectIndexWithResponse request returning *IamProjectIndexResponse
+func (c *ClientWithResponses) IamProjectIndexWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*IamProjectIndexResponse, error) {
+	rsp, err := c.IamProjectIndex(ctx, orgId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamProjectIndexResponse(rsp)
+}
+
 // IamRoleIndexWithResponse request returning *IamRoleIndexResponse
 func (c *ClientWithResponses) IamRoleIndexWithResponse(ctx context.Context, orgId int, params *IamRoleIndexParams, reqEditors ...RequestEditorFn) (*IamRoleIndexResponse, error) {
 	rsp, err := c.IamRoleIndex(ctx, orgId, params, reqEditors...)
@@ -62988,8 +79951,8 @@ func (c *ClientWithResponses) IamServiceAccountClientIndexWithResponse(ctx conte
 }
 
 // IamServiceAccountClientCreateWithResponse request returning *IamServiceAccountClientCreateResponse
-func (c *ClientWithResponses) IamServiceAccountClientCreateWithResponse(ctx context.Context, orgId int, serviceAccountId int, reqEditors ...RequestEditorFn) (*IamServiceAccountClientCreateResponse, error) {
-	rsp, err := c.IamServiceAccountClientCreate(ctx, orgId, serviceAccountId, reqEditors...)
+func (c *ClientWithResponses) IamServiceAccountClientCreateWithResponse(ctx context.Context, orgId int, serviceAccountId int, params *IamServiceAccountClientCreateParams, reqEditors ...RequestEditorFn) (*IamServiceAccountClientCreateResponse, error) {
+	rsp, err := c.IamServiceAccountClientCreate(ctx, orgId, serviceAccountId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -63129,13 +80092,31 @@ func (c *ClientWithResponses) IamUserSettingBlobRetrivePutUrlWithResponse(ctx co
 	return ParseIamUserSettingBlobRetrivePutUrlResponse(rsp)
 }
 
-// IamUserOrgsIndexWithResponse request returning *IamUserOrgsIndexResponse
-func (c *ClientWithResponses) IamUserOrgsIndexWithResponse(ctx context.Context, id int, reqEditors ...RequestEditorFn) (*IamUserOrgsIndexResponse, error) {
-	rsp, err := c.IamUserOrgsIndex(ctx, id, reqEditors...)
+// IamUserMembershipsIndexWithResponse request returning *IamUserMembershipsIndexResponse
+func (c *ClientWithResponses) IamUserMembershipsIndexWithResponse(ctx context.Context, id int, reqEditors ...RequestEditorFn) (*IamUserMembershipsIndexResponse, error) {
+	rsp, err := c.IamUserMembershipsIndex(ctx, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseIamUserOrgsIndexResponse(rsp)
+	return ParseIamUserMembershipsIndexResponse(rsp)
+}
+
+// IamUserMembershipsShowPrivilegesReportWithResponse request returning *IamUserMembershipsShowPrivilegesReportResponse
+func (c *ClientWithResponses) IamUserMembershipsShowPrivilegesReportWithResponse(ctx context.Context, id int, params *IamUserMembershipsShowPrivilegesReportParams, reqEditors ...RequestEditorFn) (*IamUserMembershipsShowPrivilegesReportResponse, error) {
+	rsp, err := c.IamUserMembershipsShowPrivilegesReport(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamUserMembershipsShowPrivilegesReportResponse(rsp)
+}
+
+// IamUserMembershipsIndexProjectsWithResponse request returning *IamUserMembershipsIndexProjectsResponse
+func (c *ClientWithResponses) IamUserMembershipsIndexProjectsWithResponse(ctx context.Context, id int, params *IamUserMembershipsIndexProjectsParams, reqEditors ...RequestEditorFn) (*IamUserMembershipsIndexProjectsResponse, error) {
+	rsp, err := c.IamUserMembershipsIndexProjects(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamUserMembershipsIndexProjectsResponse(rsp)
 }
 
 // IamMSPCustomerIndexWithResponse request returning *IamMSPCustomerIndexResponse
@@ -63362,6 +80343,144 @@ func (c *ClientWithResponses) AuthTokenTokenWithFormdataBodyWithResponse(ctx con
 		return nil, err
 	}
 	return ParseAuthTokenTokenResponse(rsp)
+}
+
+// BillAnalysisAdjustmentDefinitionShowWithResponse request returning *BillAnalysisAdjustmentDefinitionShowResponse
+func (c *ClientWithResponses) BillAnalysisAdjustmentDefinitionShowWithResponse(ctx context.Context, org int, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionShowResponse, error) {
+	rsp, err := c.BillAnalysisAdjustmentDefinitionShow(ctx, org, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisAdjustmentDefinitionShowResponse(rsp)
+}
+
+// BillAnalysisAdjustmentDefinitionUpdateWithBodyWithResponse request with arbitrary body returning *BillAnalysisAdjustmentDefinitionUpdateResponse
+func (c *ClientWithResponses) BillAnalysisAdjustmentDefinitionUpdateWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error) {
+	rsp, err := c.BillAnalysisAdjustmentDefinitionUpdateWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisAdjustmentDefinitionUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisAdjustmentDefinitionUpdateWithResponse(ctx context.Context, org int, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error) {
+	rsp, err := c.BillAnalysisAdjustmentDefinitionUpdate(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisAdjustmentDefinitionUpdateResponse(rsp)
+}
+
+// BillAnalysisAnomaliesReportWithBodyWithResponse request with arbitrary body returning *BillAnalysisAnomaliesReportResponse
+func (c *ClientWithResponses) BillAnalysisAnomaliesReportWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error) {
+	rsp, err := c.BillAnalysisAnomaliesReportWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisAnomaliesReportResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisAnomaliesReportWithResponse(ctx context.Context, org int, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error) {
+	rsp, err := c.BillAnalysisAnomaliesReport(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisAnomaliesReportResponse(rsp)
+}
+
+// BillAnalysisCostsAggregatedWithBodyWithResponse request with arbitrary body returning *BillAnalysisCostsAggregatedResponse
+func (c *ClientWithResponses) BillAnalysisCostsAggregatedWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error) {
+	rsp, err := c.BillAnalysisCostsAggregatedWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCostsAggregatedResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisCostsAggregatedWithResponse(ctx context.Context, org int, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error) {
+	rsp, err := c.BillAnalysisCostsAggregated(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCostsAggregatedResponse(rsp)
+}
+
+// BillAnalysisCostsDimensionsWithResponse request returning *BillAnalysisCostsDimensionsResponse
+func (c *ClientWithResponses) BillAnalysisCostsDimensionsWithResponse(ctx context.Context, org int, params *BillAnalysisCostsDimensionsParams, reqEditors ...RequestEditorFn) (*BillAnalysisCostsDimensionsResponse, error) {
+	rsp, err := c.BillAnalysisCostsDimensions(ctx, org, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCostsDimensionsResponse(rsp)
+}
+
+// BillAnalysisCostsMetricsWithResponse request returning *BillAnalysisCostsMetricsResponse
+func (c *ClientWithResponses) BillAnalysisCostsMetricsWithResponse(ctx context.Context, org int, params *BillAnalysisCostsMetricsParams, reqEditors ...RequestEditorFn) (*BillAnalysisCostsMetricsResponse, error) {
+	rsp, err := c.BillAnalysisCostsMetrics(ctx, org, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCostsMetricsResponse(rsp)
+}
+
+// BillAnalysisCostsSelectWithBodyWithResponse request with arbitrary body returning *BillAnalysisCostsSelectResponse
+func (c *ClientWithResponses) BillAnalysisCostsSelectWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error) {
+	rsp, err := c.BillAnalysisCostsSelectWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCostsSelectResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisCostsSelectWithResponse(ctx context.Context, org int, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error) {
+	rsp, err := c.BillAnalysisCostsSelect(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCostsSelectResponse(rsp)
+}
+
+// BillAnalysisForecastsReportWithBodyWithResponse request with arbitrary body returning *BillAnalysisForecastsReportResponse
+func (c *ClientWithResponses) BillAnalysisForecastsReportWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error) {
+	rsp, err := c.BillAnalysisForecastsReportWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisForecastsReportResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisForecastsReportWithResponse(ctx context.Context, org int, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error) {
+	rsp, err := c.BillAnalysisForecastsReport(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisForecastsReportResponse(rsp)
+}
+
+// BillAnalysisCurrencySettingShowWithResponse request returning *BillAnalysisCurrencySettingShowResponse
+func (c *ClientWithResponses) BillAnalysisCurrencySettingShowWithResponse(ctx context.Context, org int, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingShowResponse, error) {
+	rsp, err := c.BillAnalysisCurrencySettingShow(ctx, org, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCurrencySettingShowResponse(rsp)
+}
+
+// BillAnalysisCurrencySettingUpdateWithBodyWithResponse request with arbitrary body returning *BillAnalysisCurrencySettingUpdateResponse
+func (c *ClientWithResponses) BillAnalysisCurrencySettingUpdateWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error) {
+	rsp, err := c.BillAnalysisCurrencySettingUpdateWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCurrencySettingUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisCurrencySettingUpdateWithResponse(ctx context.Context, org int, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error) {
+	rsp, err := c.BillAnalysisCurrencySettingUpdate(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCurrencySettingUpdateResponse(rsp)
 }
 
 // PolicyCustomCatalogIndexWithResponse request returning *PolicyCustomCatalogIndexResponse
@@ -64046,6 +81165,32 @@ func (c *ClientWithResponses) RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMi
 	return ParseRiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostResponse(rsp)
 }
 
+// OptimaRecommendationsRecommendationsIndexWithResponse request returning *OptimaRecommendationsRecommendationsIndexResponse
+func (c *ClientWithResponses) OptimaRecommendationsRecommendationsIndexWithResponse(ctx context.Context, orgID int, params *OptimaRecommendationsRecommendationsIndexParams, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsIndexResponse, error) {
+	rsp, err := c.OptimaRecommendationsRecommendationsIndex(ctx, orgID, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseOptimaRecommendationsRecommendationsIndexResponse(rsp)
+}
+
+// OptimaRecommendationsRecommendationsUpdateStatusWithBodyWithResponse request with arbitrary body returning *OptimaRecommendationsRecommendationsUpdateStatusResponse
+func (c *ClientWithResponses) OptimaRecommendationsRecommendationsUpdateStatusWithBodyWithResponse(ctx context.Context, orgID int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsUpdateStatusResponse, error) {
+	rsp, err := c.OptimaRecommendationsRecommendationsUpdateStatusWithBody(ctx, orgID, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseOptimaRecommendationsRecommendationsUpdateStatusResponse(rsp)
+}
+
+func (c *ClientWithResponses) OptimaRecommendationsRecommendationsUpdateStatusWithResponse(ctx context.Context, orgID int, body OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsUpdateStatusResponse, error) {
+	rsp, err := c.OptimaRecommendationsRecommendationsUpdateStatus(ctx, orgID, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseOptimaRecommendationsRecommendationsUpdateStatusResponse(rsp)
+}
+
 // RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostWithBodyWithResponse request with arbitrary body returning *RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostResponse
 func (c *ClientWithResponses) RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostResponse, error) {
 	rsp, err := c.RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostWithBody(ctx, orgId, contentType, body, reqEditors...)
@@ -64311,6 +81456,40 @@ func (c *ClientWithResponses) RiskGetCatalogFilterRiskV1OrgsOrgIdRegulatoryCompl
 	return ParseRiskGetCatalogFilterRiskV1OrgsOrgIdRegulatoryComplianceCatalogFilterPostResponse(rsp)
 }
 
+// RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostWithBodyWithResponse request with arbitrary body returning *RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostResponse
+func (c *ClientWithResponses) RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostResponse, error) {
+	rsp, err := c.RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostResponse(rsp)
+}
+
+func (c *ClientWithResponses) RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostWithResponse(ctx context.Context, orgId string, body RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostResponse, error) {
+	rsp, err := c.RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPost(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostResponse(rsp)
+}
+
+// RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostWithBodyWithResponse request with arbitrary body returning *RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostResponse
+func (c *ClientWithResponses) RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostWithBodyWithResponse(ctx context.Context, orgId string, params *RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostResponse, error) {
+	rsp, err := c.RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostWithBody(ctx, orgId, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostResponse(rsp)
+}
+
+func (c *ClientWithResponses) RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostWithResponse(ctx context.Context, orgId string, params *RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostParams, body RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostResponse, error) {
+	rsp, err := c.RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPost(ctx, orgId, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostResponse(rsp)
+}
+
 // RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostWithBodyWithResponse request with arbitrary body returning *RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostResponse
 func (c *ClientWithResponses) RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostResponse, error) {
 	rsp, err := c.RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostWithBody(ctx, orgId, contentType, body, reqEditors...)
@@ -64343,6 +81522,74 @@ func (c *ClientWithResponses) RiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComp
 		return nil, err
 	}
 	return ParseRiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPostResponse(rsp)
+}
+
+// RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostWithBodyWithResponse request with arbitrary body returning *RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostResponse
+func (c *ClientWithResponses) RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostResponse, error) {
+	rsp, err := c.RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostResponse(rsp)
+}
+
+func (c *ClientWithResponses) RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostWithResponse(ctx context.Context, orgId string, body RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostResponse, error) {
+	rsp, err := c.RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPost(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostResponse(rsp)
+}
+
+// RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostWithBodyWithResponse request with arbitrary body returning *RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostResponse
+func (c *ClientWithResponses) RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostResponse, error) {
+	rsp, err := c.RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostResponse(rsp)
+}
+
+func (c *ClientWithResponses) RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostWithResponse(ctx context.Context, orgId string, body RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostResponse, error) {
+	rsp, err := c.RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPost(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostResponse(rsp)
+}
+
+// RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostWithBodyWithResponse request with arbitrary body returning *RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostResponse
+func (c *ClientWithResponses) RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostResponse, error) {
+	rsp, err := c.RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostResponse(rsp)
+}
+
+func (c *ClientWithResponses) RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostWithResponse(ctx context.Context, orgId string, body RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostResponse, error) {
+	rsp, err := c.RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPost(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostResponse(rsp)
+}
+
+// RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostWithBodyWithResponse request with arbitrary body returning *RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostResponse
+func (c *ClientWithResponses) RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostResponse, error) {
+	rsp, err := c.RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostResponse(rsp)
+}
+
+func (c *ClientWithResponses) RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostWithResponse(ctx context.Context, orgId string, body RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostResponse, error) {
+	rsp, err := c.RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPost(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostResponse(rsp)
 }
 
 // RiskGetCveDetailsRiskV1OrgsOrgIdVulnerabilityCveGetWithResponse request returning *RiskGetCveDetailsRiskV1OrgsOrgIdVulnerabilityCveGetResponse
@@ -65566,22 +82813,22 @@ func (c *ClientWithResponses) VisDeviceDeleteWithResponse(ctx context.Context, o
 	return ParseVisDeviceDeleteResponse(rsp)
 }
 
-// VisExportIndexWithResponse request returning *VisExportIndexResponse
-func (c *ClientWithResponses) VisExportIndexWithResponse(ctx context.Context, orgId int, params *VisExportIndexParams, reqEditors ...RequestEditorFn) (*VisExportIndexResponse, error) {
-	rsp, err := c.VisExportIndex(ctx, orgId, params, reqEditors...)
+// VisExportWithResponse request returning *VisExportResponse
+func (c *ClientWithResponses) VisExportWithResponse(ctx context.Context, orgId int, params *VisExportParams, reqEditors ...RequestEditorFn) (*VisExportResponse, error) {
+	rsp, err := c.VisExport(ctx, orgId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVisExportIndexResponse(rsp)
+	return ParseVisExportResponse(rsp)
 }
 
-// VisExportDownloadWithResponse request returning *VisExportDownloadResponse
-func (c *ClientWithResponses) VisExportDownloadWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*VisExportDownloadResponse, error) {
-	rsp, err := c.VisExportDownload(ctx, orgId, id, reqEditors...)
+// VisExport2WithResponse request returning *VisExport2Response
+func (c *ClientWithResponses) VisExport2WithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*VisExport2Response, error) {
+	rsp, err := c.VisExport2(ctx, orgId, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVisExportDownloadResponse(rsp)
+	return ParseVisExport2Response(rsp)
 }
 
 // VisQueryCreateWithBodyWithResponse request with arbitrary body returning *VisQueryCreateResponse
@@ -65754,6 +83001,262 @@ func (c *ClientWithResponses) RiskGetFindingsSummaryVulnerabilityTotalFindingsOr
 		return nil, err
 	}
 	return ParseRiskGetFindingsSummaryVulnerabilityTotalFindingsOrgIdPostResponse(rsp)
+}
+
+// ParseBillingCenterServiceAllocationTableShowResponse parses an HTTP response from a BillingCenterServiceAllocationTableShowWithResponse call
+func ParseBillingCenterServiceAllocationTableShowResponse(rsp *http.Response) (*BillingCenterServiceAllocationTableShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillingCenterServiceAllocationTableShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillingCenterServiceAllocationTableUpsertResponse parses an HTTP response from a BillingCenterServiceAllocationTableUpsertWithResponse call
+func ParseBillingCenterServiceAllocationTableUpsertResponse(rsp *http.Response) (*BillingCenterServiceAllocationTableUpsertResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillingCenterServiceAllocationTableUpsertResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillingCenterServiceBillingCentersIndexResponse parses an HTTP response from a BillingCenterServiceBillingCentersIndexWithResponse call
+func ParseBillingCenterServiceBillingCentersIndexResponse(rsp *http.Response) (*BillingCenterServiceBillingCentersIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillingCenterServiceBillingCentersIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillingCenterServiceBillingCentersCreateResponse parses an HTTP response from a BillingCenterServiceBillingCentersCreateWithResponse call
+func ParseBillingCenterServiceBillingCentersCreateResponse(rsp *http.Response) (*BillingCenterServiceBillingCentersCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillingCenterServiceBillingCentersCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillingCenterServiceBillingCentersDeleteResponse parses an HTTP response from a BillingCenterServiceBillingCentersDeleteWithResponse call
+func ParseBillingCenterServiceBillingCentersDeleteResponse(rsp *http.Response) (*BillingCenterServiceBillingCentersDeleteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillingCenterServiceBillingCentersDeleteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillingCenterServiceBillingCentersShowResponse parses an HTTP response from a BillingCenterServiceBillingCentersShowWithResponse call
+func ParseBillingCenterServiceBillingCentersShowResponse(rsp *http.Response) (*BillingCenterServiceBillingCentersShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillingCenterServiceBillingCentersShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillingCenterServiceBillingCentersUpdateResponse parses an HTTP response from a BillingCenterServiceBillingCentersUpdateWithResponse call
+func ParseBillingCenterServiceBillingCentersUpdateResponse(rsp *http.Response) (*BillingCenterServiceBillingCentersUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillingCenterServiceBillingCentersUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillingCenterServiceBillingCenterAccessRulesGrantResponse parses an HTTP response from a BillingCenterServiceBillingCenterAccessRulesGrantWithResponse call
+func ParseBillingCenterServiceBillingCenterAccessRulesGrantResponse(rsp *http.Response) (*BillingCenterServiceBillingCenterAccessRulesGrantResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillingCenterServiceBillingCenterAccessRulesGrantResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillingCenterServiceBillingCenterAccessRulesReportResponse parses an HTTP response from a BillingCenterServiceBillingCenterAccessRulesReportWithResponse call
+func ParseBillingCenterServiceBillingCenterAccessRulesReportResponse(rsp *http.Response) (*BillingCenterServiceBillingCenterAccessRulesReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillingCenterServiceBillingCenterAccessRulesReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillingCenterServiceBillingCenterAccessRulesRevokeResponse parses an HTTP response from a BillingCenterServiceBillingCenterAccessRulesRevokeWithResponse call
+func ParseBillingCenterServiceBillingCenterAccessRulesRevokeResponse(rsp *http.Response) (*BillingCenterServiceBillingCenterAccessRulesRevokeResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillingCenterServiceBillingCenterAccessRulesRevokeResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillingCenterServiceBillingCentersShowAllocationTableResponse parses an HTTP response from a BillingCenterServiceBillingCentersShowAllocationTableWithResponse call
+func ParseBillingCenterServiceBillingCentersShowAllocationTableResponse(rsp *http.Response) (*BillingCenterServiceBillingCentersShowAllocationTableResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillingCenterServiceBillingCentersShowAllocationTableResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillingCenterServiceBillingCentersUpsertAllocationTableResponse parses an HTTP response from a BillingCenterServiceBillingCentersUpsertAllocationTableWithResponse call
+func ParseBillingCenterServiceBillingCentersUpsertAllocationTableResponse(rsp *http.Response) (*BillingCenterServiceBillingCentersUpsertAllocationTableResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillingCenterServiceBillingCentersUpsertAllocationTableResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillingCenterServiceAccessRulesGroupReportResponse parses an HTTP response from a BillingCenterServiceAccessRulesGroupReportWithResponse call
+func ParseBillingCenterServiceAccessRulesGroupReportResponse(rsp *http.Response) (*BillingCenterServiceAccessRulesGroupReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillingCenterServiceAccessRulesGroupReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillingCenterServiceAccessRulesUserReportResponse parses an HTTP response from a BillingCenterServiceAccessRulesUserReportWithResponse call
+func ParseBillingCenterServiceAccessRulesUserReportResponse(rsp *http.Response) (*BillingCenterServiceAccessRulesUserReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillingCenterServiceAccessRulesUserReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillingCenterServiceUserBillingCentersIndexResponse parses an HTTP response from a BillingCenterServiceUserBillingCentersIndexWithResponse call
+func ParseBillingCenterServiceUserBillingCentersIndexResponse(rsp *http.Response) (*BillingCenterServiceUserBillingCentersIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillingCenterServiceUserBillingCentersIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillingCenterServiceUserBillingCentersShowResponse parses an HTTP response from a BillingCenterServiceUserBillingCentersShowWithResponse call
+func ParseBillingCenterServiceUserBillingCentersShowResponse(rsp *http.Response) (*BillingCenterServiceUserBillingCentersShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillingCenterServiceUserBillingCentersShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
 }
 
 // ParseCredCredentialIndexOrgResponse parses an HTTP response from a CredCredentialIndexOrgWithResponse call
@@ -67455,6 +84958,792 @@ func ParseBudgetCloudVendorAccountIndexResponse(rsp *http.Response) (*BudgetClou
 	return response, nil
 }
 
+// ParseFinopsBillingBillingShowCustomerStatusResponse parses an HTTP response from a FinopsBillingBillingShowCustomerStatusWithResponse call
+func ParseFinopsBillingBillingShowCustomerStatusResponse(rsp *http.Response) (*FinopsBillingBillingShowCustomerStatusResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingShowCustomerStatusResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingShowCustomerStatusResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingIndexPlansResponse parses an HTTP response from a FinopsBillingBillingIndexPlansWithResponse call
+func ParseFinopsBillingBillingIndexPlansResponse(rsp *http.Response) (*FinopsBillingBillingIndexPlansResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingIndexPlansResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingIndexPlansResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingCreatePlanResponse parses an HTTP response from a FinopsBillingBillingCreatePlanWithResponse call
+func ParseFinopsBillingBillingCreatePlanResponse(rsp *http.Response) (*FinopsBillingBillingCreatePlanResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingCreatePlanResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingCreatePlanResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingDeletePlanResponse parses an HTTP response from a FinopsBillingBillingDeletePlanWithResponse call
+func ParseFinopsBillingBillingDeletePlanResponse(rsp *http.Response) (*FinopsBillingBillingDeletePlanResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingDeletePlanResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingShowPlanResponse parses an HTTP response from a FinopsBillingBillingShowPlanWithResponse call
+func ParseFinopsBillingBillingShowPlanResponse(rsp *http.Response) (*FinopsBillingBillingShowPlanResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingShowPlanResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingShowPlanResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingReplacePlanResponse parses an HTTP response from a FinopsBillingBillingReplacePlanWithResponse call
+func ParseFinopsBillingBillingReplacePlanResponse(rsp *http.Response) (*FinopsBillingBillingReplacePlanResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingReplacePlanResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingIndexRulesResponse parses an HTTP response from a FinopsBillingBillingIndexRulesWithResponse call
+func ParseFinopsBillingBillingIndexRulesResponse(rsp *http.Response) (*FinopsBillingBillingIndexRulesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingIndexRulesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingIndexRulesResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingCreateRuleResponse parses an HTTP response from a FinopsBillingBillingCreateRuleWithResponse call
+func ParseFinopsBillingBillingCreateRuleResponse(rsp *http.Response) (*FinopsBillingBillingCreateRuleResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingCreateRuleResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingCreateRuleResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingDeleteRuleResponse parses an HTTP response from a FinopsBillingBillingDeleteRuleWithResponse call
+func ParseFinopsBillingBillingDeleteRuleResponse(rsp *http.Response) (*FinopsBillingBillingDeleteRuleResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingDeleteRuleResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingReplaceRuleResponse parses an HTTP response from a FinopsBillingBillingReplaceRuleWithResponse call
+func ParseFinopsBillingBillingReplaceRuleResponse(rsp *http.Response) (*FinopsBillingBillingReplaceRuleResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingReplaceRuleResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingIndexPostAdjustmentsResponse parses an HTTP response from a FinopsBillingBillingIndexPostAdjustmentsWithResponse call
+func ParseFinopsBillingBillingIndexPostAdjustmentsResponse(rsp *http.Response) (*FinopsBillingBillingIndexPostAdjustmentsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingIndexPostAdjustmentsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingIndexAdjustmentRulesResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingCreatePostAdjustmentResponse parses an HTTP response from a FinopsBillingBillingCreatePostAdjustmentWithResponse call
+func ParseFinopsBillingBillingCreatePostAdjustmentResponse(rsp *http.Response) (*FinopsBillingBillingCreatePostAdjustmentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingCreatePostAdjustmentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingCreateRuleResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingDeletePostAdjustmentResponse parses an HTTP response from a FinopsBillingBillingDeletePostAdjustmentWithResponse call
+func ParseFinopsBillingBillingDeletePostAdjustmentResponse(rsp *http.Response) (*FinopsBillingBillingDeletePostAdjustmentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingDeletePostAdjustmentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingReplacePostAdjustmentResponse parses an HTTP response from a FinopsBillingBillingReplacePostAdjustmentWithResponse call
+func ParseFinopsBillingBillingReplacePostAdjustmentResponse(rsp *http.Response) (*FinopsBillingBillingReplacePostAdjustmentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingReplacePostAdjustmentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingIndexPreAdjustmentsResponse parses an HTTP response from a FinopsBillingBillingIndexPreAdjustmentsWithResponse call
+func ParseFinopsBillingBillingIndexPreAdjustmentsResponse(rsp *http.Response) (*FinopsBillingBillingIndexPreAdjustmentsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingIndexPreAdjustmentsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingIndexAdjustmentRulesResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingCreatePreAdjustmentResponse parses an HTTP response from a FinopsBillingBillingCreatePreAdjustmentWithResponse call
+func ParseFinopsBillingBillingCreatePreAdjustmentResponse(rsp *http.Response) (*FinopsBillingBillingCreatePreAdjustmentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingCreatePreAdjustmentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingCreateRuleResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingDeletePreAdjustmentResponse parses an HTTP response from a FinopsBillingBillingDeletePreAdjustmentWithResponse call
+func ParseFinopsBillingBillingDeletePreAdjustmentResponse(rsp *http.Response) (*FinopsBillingBillingDeletePreAdjustmentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingDeletePreAdjustmentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingReplacePreAdjustmentResponse parses an HTTP response from a FinopsBillingBillingReplacePreAdjustmentWithResponse call
+func ParseFinopsBillingBillingReplacePreAdjustmentResponse(rsp *http.Response) (*FinopsBillingBillingReplacePreAdjustmentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingReplacePreAdjustmentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingIndexEnterpriseRulesResponse parses an HTTP response from a FinopsBillingBillingIndexEnterpriseRulesWithResponse call
+func ParseFinopsBillingBillingIndexEnterpriseRulesResponse(rsp *http.Response) (*FinopsBillingBillingIndexEnterpriseRulesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingIndexEnterpriseRulesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingIndexEnterpriseRulesResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingCreateEnterpriseRuleResponse parses an HTTP response from a FinopsBillingBillingCreateEnterpriseRuleWithResponse call
+func ParseFinopsBillingBillingCreateEnterpriseRuleResponse(rsp *http.Response) (*FinopsBillingBillingCreateEnterpriseRuleResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingCreateEnterpriseRuleResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingCreateRuleResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingReplaceEnterpriseRulesetResponse parses an HTTP response from a FinopsBillingBillingReplaceEnterpriseRulesetWithResponse call
+func ParseFinopsBillingBillingReplaceEnterpriseRulesetResponse(rsp *http.Response) (*FinopsBillingBillingReplaceEnterpriseRulesetResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingReplaceEnterpriseRulesetResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingDeleteEnterpriseRuleResponse parses an HTTP response from a FinopsBillingBillingDeleteEnterpriseRuleWithResponse call
+func ParseFinopsBillingBillingDeleteEnterpriseRuleResponse(rsp *http.Response) (*FinopsBillingBillingDeleteEnterpriseRuleResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingDeleteEnterpriseRuleResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingReplaceEnterpriseRuleResponse parses an HTTP response from a FinopsBillingBillingReplaceEnterpriseRuleWithResponse call
+func ParseFinopsBillingBillingReplaceEnterpriseRuleResponse(rsp *http.Response) (*FinopsBillingBillingReplaceEnterpriseRuleResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingReplaceEnterpriseRuleResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingSettingsShowSettingsResponse parses an HTTP response from a FinopsBillingSettingsShowSettingsWithResponse call
+func ParseFinopsBillingSettingsShowSettingsResponse(rsp *http.Response) (*FinopsBillingSettingsShowSettingsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingSettingsShowSettingsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingShowSettingsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingSettingsReplaceSettingsResponse parses an HTTP response from a FinopsBillingSettingsReplaceSettingsWithResponse call
+func ParseFinopsBillingSettingsReplaceSettingsResponse(rsp *http.Response) (*FinopsBillingSettingsReplaceSettingsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingSettingsReplaceSettingsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingSharedCostRulesIndexResponse parses an HTTP response from a FinopsBillingSharedCostRulesIndexWithResponse call
+func ParseFinopsBillingSharedCostRulesIndexResponse(rsp *http.Response) (*FinopsBillingSharedCostRulesIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingSharedCostRulesIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingIndexSharedCostRulesResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingSharedCostRulesCreateResponse parses an HTTP response from a FinopsBillingSharedCostRulesCreateWithResponse call
+func ParseFinopsBillingSharedCostRulesCreateResponse(rsp *http.Response) (*FinopsBillingSharedCostRulesCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingSharedCostRulesCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest FinopsBillingShowSharedCostRuleResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingSharedCostRulesReorderResponse parses an HTTP response from a FinopsBillingSharedCostRulesReorderWithResponse call
+func ParseFinopsBillingSharedCostRulesReorderResponse(rsp *http.Response) (*FinopsBillingSharedCostRulesReorderResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingSharedCostRulesReorderResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingSharedCostRulesDeleteResponse parses an HTTP response from a FinopsBillingSharedCostRulesDeleteWithResponse call
+func ParseFinopsBillingSharedCostRulesDeleteResponse(rsp *http.Response) (*FinopsBillingSharedCostRulesDeleteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingSharedCostRulesDeleteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingSharedCostRulesShowResponse parses an HTTP response from a FinopsBillingSharedCostRulesShowWithResponse call
+func ParseFinopsBillingSharedCostRulesShowResponse(rsp *http.Response) (*FinopsBillingSharedCostRulesShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingSharedCostRulesShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingShowSharedCostRuleResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingSharedCostRulesUpdateResponse parses an HTTP response from a FinopsBillingSharedCostRulesUpdateWithResponse call
+func ParseFinopsBillingSharedCostRulesUpdateResponse(rsp *http.Response) (*FinopsBillingSharedCostRulesUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingSharedCostRulesUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingShowSharedCostRuleResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsCustomizationsReportSubscriptionsIndexResponse parses an HTTP response from a FinopsCustomizationsReportSubscriptionsIndexWithResponse call
+func ParseFinopsCustomizationsReportSubscriptionsIndexResponse(rsp *http.Response) (*FinopsCustomizationsReportSubscriptionsIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsCustomizationsReportSubscriptionsIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsCustomizationsReportSubscriptionList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsCustomizationsReportSubscriptionsCreateResponse parses an HTTP response from a FinopsCustomizationsReportSubscriptionsCreateWithResponse call
+func ParseFinopsCustomizationsReportSubscriptionsCreateResponse(rsp *http.Response) (*FinopsCustomizationsReportSubscriptionsCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsCustomizationsReportSubscriptionsCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest FinopsCustomizationsReportSubscriptionResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsCustomizationsReportSubscriptionsDeleteResponse parses an HTTP response from a FinopsCustomizationsReportSubscriptionsDeleteWithResponse call
+func ParseFinopsCustomizationsReportSubscriptionsDeleteResponse(rsp *http.Response) (*FinopsCustomizationsReportSubscriptionsDeleteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsCustomizationsReportSubscriptionsDeleteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsCustomizationsReportSubscriptionsShowResponse parses an HTTP response from a FinopsCustomizationsReportSubscriptionsShowWithResponse call
+func ParseFinopsCustomizationsReportSubscriptionsShowResponse(rsp *http.Response) (*FinopsCustomizationsReportSubscriptionsShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsCustomizationsReportSubscriptionsShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsCustomizationsReportSubscriptionResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsCustomizationsReportSubscriptionsUpdateResponse parses an HTTP response from a FinopsCustomizationsReportSubscriptionsUpdateWithResponse call
+func ParseFinopsCustomizationsReportSubscriptionsUpdateResponse(rsp *http.Response) (*FinopsCustomizationsReportSubscriptionsUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsCustomizationsReportSubscriptionsUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsCustomizationsReportSubscriptionResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseFinopsCustomizationsRuleBasedDimensionIndexResponse parses an HTTP response from a FinopsCustomizationsRuleBasedDimensionIndexWithResponse call
 func ParseFinopsCustomizationsRuleBasedDimensionIndexResponse(rsp *http.Response) (*FinopsCustomizationsRuleBasedDimensionIndexResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -67608,6 +85897,178 @@ func ParseFinopsCustomizationsRuleBasedDimensionRulesListReplaceResponse(rsp *ht
 	response := &FinopsCustomizationsRuleBasedDimensionRulesListReplaceResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowResponse parses an HTTP response from a FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowWithResponse call
+func ParseFinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowResponse(rsp *http.Response) (*FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionSummaryShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsCustomizationsRuleBasedDimensionSummary
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsCustomizationsSavedFiltersIndexResponse parses an HTTP response from a FinopsCustomizationsSavedFiltersIndexWithResponse call
+func ParseFinopsCustomizationsSavedFiltersIndexResponse(rsp *http.Response) (*FinopsCustomizationsSavedFiltersIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsCustomizationsSavedFiltersIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsCustomizationsIndexSavedFiltersResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsCustomizationsSavedFiltersCreateResponse parses an HTTP response from a FinopsCustomizationsSavedFiltersCreateWithResponse call
+func ParseFinopsCustomizationsSavedFiltersCreateResponse(rsp *http.Response) (*FinopsCustomizationsSavedFiltersCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsCustomizationsSavedFiltersCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest FinopsCustomizationsSavedFilterHTTPBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsCustomizationsSavedFiltersDeleteResponse parses an HTTP response from a FinopsCustomizationsSavedFiltersDeleteWithResponse call
+func ParseFinopsCustomizationsSavedFiltersDeleteResponse(rsp *http.Response) (*FinopsCustomizationsSavedFiltersDeleteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsCustomizationsSavedFiltersDeleteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsCustomizationsSavedFiltersShowResponse parses an HTTP response from a FinopsCustomizationsSavedFiltersShowWithResponse call
+func ParseFinopsCustomizationsSavedFiltersShowResponse(rsp *http.Response) (*FinopsCustomizationsSavedFiltersShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsCustomizationsSavedFiltersShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsCustomizationsSavedFiltersshowResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsCustomizationsSavedFiltersPatchResponse parses an HTTP response from a FinopsCustomizationsSavedFiltersPatchWithResponse call
+func ParseFinopsCustomizationsSavedFiltersPatchResponse(rsp *http.Response) (*FinopsCustomizationsSavedFiltersPatchResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsCustomizationsSavedFiltersPatchResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsCustomizationsSavedFilterHTTPBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsCustomizationsSavedFiltersUpdateResponse parses an HTTP response from a FinopsCustomizationsSavedFiltersUpdateWithResponse call
+func ParseFinopsCustomizationsSavedFiltersUpdateResponse(rsp *http.Response) (*FinopsCustomizationsSavedFiltersUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsCustomizationsSavedFiltersUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsCustomizationsSavedFilterHTTPBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
 	}
 
 	return response, nil
@@ -68571,6 +87032,116 @@ func ParseFinopsOnboardingBillConnectGCPValidateResponse(rsp *http.Response) (*F
 	return response, nil
 }
 
+// ParseFinopsOnboardingBillConnectSnowflakeCreateResponse parses an HTTP response from a FinopsOnboardingBillConnectSnowflakeCreateWithResponse call
+func ParseFinopsOnboardingBillConnectSnowflakeCreateResponse(rsp *http.Response) (*FinopsOnboardingBillConnectSnowflakeCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsOnboardingBillConnectSnowflakeCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest FinopsOnboardingSnowflakeBillConnect
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsOnboardingBillConnectSnowflakeDeleteResponse parses an HTTP response from a FinopsOnboardingBillConnectSnowflakeDeleteWithResponse call
+func ParseFinopsOnboardingBillConnectSnowflakeDeleteResponse(rsp *http.Response) (*FinopsOnboardingBillConnectSnowflakeDeleteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsOnboardingBillConnectSnowflakeDeleteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsOnboardingBillConnectSnowflakeShowResponse parses an HTTP response from a FinopsOnboardingBillConnectSnowflakeShowWithResponse call
+func ParseFinopsOnboardingBillConnectSnowflakeShowResponse(rsp *http.Response) (*FinopsOnboardingBillConnectSnowflakeShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsOnboardingBillConnectSnowflakeShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsOnboardingSnowflakeBillConnect
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsOnboardingBillConnectSnowflakeUpdateResponse parses an HTTP response from a FinopsOnboardingBillConnectSnowflakeUpdateWithResponse call
+func ParseFinopsOnboardingBillConnectSnowflakeUpdateResponse(rsp *http.Response) (*FinopsOnboardingBillConnectSnowflakeUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsOnboardingBillConnectSnowflakeUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsOnboardingBillConnectSnowflakeValidateResponse parses an HTTP response from a FinopsOnboardingBillConnectSnowflakeValidateWithResponse call
+func ParseFinopsOnboardingBillConnectSnowflakeValidateResponse(rsp *http.Response) (*FinopsOnboardingBillConnectSnowflakeValidateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsOnboardingBillConnectSnowflakeValidateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsOnboardingBillConnectCredentialValidationSnowflake
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseFinopsOnboardingBillConnectValidateResponse parses an HTTP response from a FinopsOnboardingBillConnectValidateWithResponse call
 func ParseFinopsOnboardingBillConnectValidateResponse(rsp *http.Response) (*FinopsOnboardingBillConnectValidateResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -68592,6 +87163,74 @@ func ParseFinopsOnboardingBillConnectValidateResponse(rsp *http.Response) (*Fino
 		}
 		response.JSON200 = &dest
 
+	}
+
+	return response, nil
+}
+
+// ParseFinopsOnboardingProcessingHistoryIndexResponse parses an HTTP response from a FinopsOnboardingProcessingHistoryIndexWithResponse call
+func ParseFinopsOnboardingProcessingHistoryIndexResponse(rsp *http.Response) (*FinopsOnboardingProcessingHistoryIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsOnboardingProcessingHistoryIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsOnboardingEnterpriseIndexResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsOnboardingProcessingHistoryReprocessResponse parses an HTTP response from a FinopsOnboardingProcessingHistoryReprocessWithResponse call
+func ParseFinopsOnboardingProcessingHistoryReprocessResponse(rsp *http.Response) (*FinopsOnboardingProcessingHistoryReprocessResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsOnboardingProcessingHistoryReprocessResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsOnboardingEnterpriseReprocessResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsOnboardingProcessingHistoryDownloadResponse parses an HTTP response from a FinopsOnboardingProcessingHistoryDownloadWithResponse call
+func ParseFinopsOnboardingProcessingHistoryDownloadResponse(rsp *http.Response) (*FinopsOnboardingProcessingHistoryDownloadResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsOnboardingProcessingHistoryDownloadResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
 	}
 
 	return response, nil
@@ -68806,6 +87445,142 @@ func ParseIamOrganizationShowResponse(rsp *http.Response) (*IamOrganizationShowR
 		}
 		response.JSON200 = &dest
 
+	}
+
+	return response, nil
+}
+
+// ParseIamAccessPolicyIndexResponse parses an HTTP response from a IamAccessPolicyIndexWithResponse call
+func ParseIamAccessPolicyIndexResponse(rsp *http.Response) (*IamAccessPolicyIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &IamAccessPolicyIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest IamAccessPolicyList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseIamAccessPolicyCreateResponse parses an HTTP response from a IamAccessPolicyCreateWithResponse call
+func ParseIamAccessPolicyCreateResponse(rsp *http.Response) (*IamAccessPolicyCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &IamAccessPolicyCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest IamCreateResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseIamAccessPolicyGetUserAccessPoliciesResponse parses an HTTP response from a IamAccessPolicyGetUserAccessPoliciesWithResponse call
+func ParseIamAccessPolicyGetUserAccessPoliciesResponse(rsp *http.Response) (*IamAccessPolicyGetUserAccessPoliciesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &IamAccessPolicyGetUserAccessPoliciesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest IamUserAccessPoliciesResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseIamAccessPolicyDeleteResponse parses an HTTP response from a IamAccessPolicyDeleteWithResponse call
+func ParseIamAccessPolicyDeleteResponse(rsp *http.Response) (*IamAccessPolicyDeleteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &IamAccessPolicyDeleteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseIamAccessPolicyShowResponse parses an HTTP response from a IamAccessPolicyShowWithResponse call
+func ParseIamAccessPolicyShowResponse(rsp *http.Response) (*IamAccessPolicyShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &IamAccessPolicyShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest IamAccessPolicy
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseIamAccessPolicyUpdateResponse parses an HTTP response from a IamAccessPolicyUpdateWithResponse call
+func ParseIamAccessPolicyUpdateResponse(rsp *http.Response) (*IamAccessPolicyUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &IamAccessPolicyUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
 	}
 
 	return response, nil
@@ -69993,6 +88768,32 @@ func ParseIamOrganizationShowMspResponse(rsp *http.Response) (*IamOrganizationSh
 	return response, nil
 }
 
+// ParseIamProjectIndexResponse parses an HTTP response from a IamProjectIndexWithResponse call
+func ParseIamProjectIndexResponse(rsp *http.Response) (*IamProjectIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &IamProjectIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest IamProjectCollection
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseIamRoleIndexResponse parses an HTTP response from a IamRoleIndexWithResponse call
 func ParseIamRoleIndexResponse(rsp *http.Response) (*IamRoleIndexResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -70502,15 +89303,15 @@ func ParseIamUserSettingBlobRetrivePutUrlResponse(rsp *http.Response) (*IamUserS
 	return response, nil
 }
 
-// ParseIamUserOrgsIndexResponse parses an HTTP response from a IamUserOrgsIndexWithResponse call
-func ParseIamUserOrgsIndexResponse(rsp *http.Response) (*IamUserOrgsIndexResponse, error) {
+// ParseIamUserMembershipsIndexResponse parses an HTTP response from a IamUserMembershipsIndexWithResponse call
+func ParseIamUserMembershipsIndexResponse(rsp *http.Response) (*IamUserMembershipsIndexResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &IamUserOrgsIndexResponse{
+	response := &IamUserMembershipsIndexResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -70518,6 +89319,58 @@ func ParseIamUserOrgsIndexResponse(rsp *http.Response) (*IamUserOrgsIndexRespons
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest IamUserOrgList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseIamUserMembershipsShowPrivilegesReportResponse parses an HTTP response from a IamUserMembershipsShowPrivilegesReportWithResponse call
+func ParseIamUserMembershipsShowPrivilegesReportResponse(rsp *http.Response) (*IamUserMembershipsShowPrivilegesReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &IamUserMembershipsShowPrivilegesReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest IamUserPrivilegesReport
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseIamUserMembershipsIndexProjectsResponse parses an HTTP response from a IamUserMembershipsIndexProjectsWithResponse call
+func ParseIamUserMembershipsIndexProjectsResponse(rsp *http.Response) (*IamUserMembershipsIndexProjectsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &IamUserMembershipsIndexProjectsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest IamUserProjectList
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -70951,6 +89804,166 @@ func ParseAuthTokenTokenResponse(rsp *http.Response) (*AuthTokenTokenResponse, e
 		}
 		response.JSON200 = &dest
 
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisAdjustmentDefinitionShowResponse parses an HTTP response from a BillAnalysisAdjustmentDefinitionShowWithResponse call
+func ParseBillAnalysisAdjustmentDefinitionShowResponse(rsp *http.Response) (*BillAnalysisAdjustmentDefinitionShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisAdjustmentDefinitionShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisAdjustmentDefinitionUpdateResponse parses an HTTP response from a BillAnalysisAdjustmentDefinitionUpdateWithResponse call
+func ParseBillAnalysisAdjustmentDefinitionUpdateResponse(rsp *http.Response) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisAdjustmentDefinitionUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisAnomaliesReportResponse parses an HTTP response from a BillAnalysisAnomaliesReportWithResponse call
+func ParseBillAnalysisAnomaliesReportResponse(rsp *http.Response) (*BillAnalysisAnomaliesReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisAnomaliesReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCostsAggregatedResponse parses an HTTP response from a BillAnalysisCostsAggregatedWithResponse call
+func ParseBillAnalysisCostsAggregatedResponse(rsp *http.Response) (*BillAnalysisCostsAggregatedResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCostsAggregatedResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCostsDimensionsResponse parses an HTTP response from a BillAnalysisCostsDimensionsWithResponse call
+func ParseBillAnalysisCostsDimensionsResponse(rsp *http.Response) (*BillAnalysisCostsDimensionsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCostsDimensionsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCostsMetricsResponse parses an HTTP response from a BillAnalysisCostsMetricsWithResponse call
+func ParseBillAnalysisCostsMetricsResponse(rsp *http.Response) (*BillAnalysisCostsMetricsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCostsMetricsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCostsSelectResponse parses an HTTP response from a BillAnalysisCostsSelectWithResponse call
+func ParseBillAnalysisCostsSelectResponse(rsp *http.Response) (*BillAnalysisCostsSelectResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCostsSelectResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisForecastsReportResponse parses an HTTP response from a BillAnalysisForecastsReportWithResponse call
+func ParseBillAnalysisForecastsReportResponse(rsp *http.Response) (*BillAnalysisForecastsReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisForecastsReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCurrencySettingShowResponse parses an HTTP response from a BillAnalysisCurrencySettingShowWithResponse call
+func ParseBillAnalysisCurrencySettingShowResponse(rsp *http.Response) (*BillAnalysisCurrencySettingShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCurrencySettingShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCurrencySettingUpdateResponse parses an HTTP response from a BillAnalysisCurrencySettingUpdateWithResponse call
+func ParseBillAnalysisCurrencySettingUpdateResponse(rsp *http.Response) (*BillAnalysisCurrencySettingUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCurrencySettingUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
 	}
 
 	return response, nil
@@ -72597,6 +91610,38 @@ func ParseRiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSu
 	return response, nil
 }
 
+// ParseOptimaRecommendationsRecommendationsIndexResponse parses an HTTP response from a OptimaRecommendationsRecommendationsIndexWithResponse call
+func ParseOptimaRecommendationsRecommendationsIndexResponse(rsp *http.Response) (*OptimaRecommendationsRecommendationsIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &OptimaRecommendationsRecommendationsIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseOptimaRecommendationsRecommendationsUpdateStatusResponse parses an HTTP response from a OptimaRecommendationsRecommendationsUpdateStatusWithResponse call
+func ParseOptimaRecommendationsRecommendationsUpdateStatusResponse(rsp *http.Response) (*OptimaRecommendationsRecommendationsUpdateStatusResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &OptimaRecommendationsRecommendationsUpdateStatusResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
 // ParseRiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostResponse parses an HTTP response from a RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostWithResponse call
 func ParseRiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostResponse(rsp *http.Response) (*RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -73872,6 +92917,156 @@ func ParseRiskGetCatalogFilterRiskV1OrgsOrgIdRegulatoryComplianceCatalogFilterPo
 	return response, nil
 }
 
+// ParseRiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostResponse parses an HTTP response from a RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostWithResponse call
+func ParseRiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostResponse(rsp *http.Response) (*RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RiskGetConformitySummaryRiskV1OrgsOrgIdRegulatoryComplianceConformitySummaryPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest RiskHTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseRiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostResponse parses an HTTP response from a RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostWithResponse call
+func ParseRiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostResponse(rsp *http.Response) (*RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RiskGetFailedAssetRiskV1OrgsOrgIdRegulatoryComplianceFailedAssetPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest RiskHTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseRiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostResponse parses an HTTP response from a RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostWithResponse call
 func ParseRiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostResponse(rsp *http.Response) (*RiskGetLifecycleForecastRiskV1OrgsOrgIdRegulatoryComplianceLifecycleForecastPostResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -73956,6 +93151,306 @@ func ParseRiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrend
 	}
 
 	response := &RiskGetLifecycleTrendRiskV1OrgsOrgIdRegulatoryComplianceLifecycleTrendPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest RiskHTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseRiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostResponse parses an HTTP response from a RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostWithResponse call
+func ParseRiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostResponse(rsp *http.Response) (*RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RiskGetBpcRuleListRiskV1OrgsOrgIdRegulatoryComplianceListPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest RiskHTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseRiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostResponse parses an HTTP response from a RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostWithResponse call
+func ParseRiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostResponse(rsp *http.Response) (*RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RiskGetMisconfigOverviewRiskV1OrgsOrgIdRegulatoryComplianceMisconfigurationOverviewPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest RiskHTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseRiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostResponse parses an HTTP response from a RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostWithResponse call
+func ParseRiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostResponse(rsp *http.Response) (*RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RiskSuppressRegulatoryComplianceRuleOrAssetRiskV1OrgsOrgIdRegulatoryComplianceRuleSuppressPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest RiskRCOSuppressResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest RiskHTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest RiskErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseRiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostResponse parses an HTTP response from a RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostWithResponse call
+func ParseRiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostResponse(rsp *http.Response) (*RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RiskGetYearWiseAssetListRiskV1OrgsOrgIdRegulatoryComplianceYearWiseAssetListPostResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -77845,15 +97340,15 @@ func ParseVisDeviceDeleteResponse(rsp *http.Response) (*VisDeviceDeleteResponse,
 	return response, nil
 }
 
-// ParseVisExportIndexResponse parses an HTTP response from a VisExportIndexWithResponse call
-func ParseVisExportIndexResponse(rsp *http.Response) (*VisExportIndexResponse, error) {
+// ParseVisExportResponse parses an HTTP response from a VisExportWithResponse call
+func ParseVisExportResponse(rsp *http.Response) (*VisExportResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &VisExportIndexResponse{
+	response := &VisExportResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -77871,15 +97366,15 @@ func ParseVisExportIndexResponse(rsp *http.Response) (*VisExportIndexResponse, e
 	return response, nil
 }
 
-// ParseVisExportDownloadResponse parses an HTTP response from a VisExportDownloadWithResponse call
-func ParseVisExportDownloadResponse(rsp *http.Response) (*VisExportDownloadResponse, error) {
+// ParseVisExport2Response parses an HTTP response from a VisExport2WithResponse call
+func ParseVisExport2Response(rsp *http.Response) (*VisExport2Response, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &VisExportDownloadResponse{
+	response := &VisExport2Response{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
