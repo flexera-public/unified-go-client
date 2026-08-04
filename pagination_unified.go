@@ -76,6 +76,20 @@ func (e *PartialError) Unwrap() error { return e.Err }
 //     extract.
 //   - First-page response not a JSON object: returned as-is, no
 //     pagination attempted.
+//
+// Loop-termination safety nets: a well-behaved server always eventually
+// stops returning a "nextPage" once the collection is exhausted, but two
+// defensive guards protect against a server that never does:
+//
+//   - Repeated skipToken: if a "nextPage" URL's skipToken has already been
+//     fetched in this walk, the server's cursor isn't advancing. Rather
+//     than loop forever, CollectPages treats this as end-of-pagination and
+//     returns everything merged so far (no new values would be gained by
+//     re-fetching the same page anyway).
+//   - maxPages cap: a hard upper bound on the number of subsequent-page
+//     fetches, in case a server produces an unbounded stream of distinct
+//     tokens. Exceeding it is treated as an anomaly and surfaced as a
+//     *PartialError rather than silently truncated.
 func CollectPages(ctx context.Context, noPaginate bool, initialSkipToken *string, fetch PageFetcher) (any, error) {
 	first, err := fetch(ctx, initialSkipToken)
 	if err != nil {
@@ -91,15 +105,32 @@ func CollectPages(ctx context.Context, noPaginate bool, initialSkipToken *string
 		return first, nil //nolint:nilerr
 	}
 
-	for {
+	seenTokens := make(map[string]bool)
+	if initialSkipToken != nil {
+		seenTokens[*initialSkipToken] = true
+	}
+
+	for pages := 0; ; pages++ {
 		nextPageURL := stringVal(merged["nextPage"])
 		if nextPageURL == "" {
 			break
+		}
+		if pages >= maxPaginationPages {
+			return merged, &PartialError{Merged: merged, LastNextPage: nextPageURL, Err: fmt.Errorf("pagination: exceeded max page limit (%d) without exhausting nextPage — possible server-side pagination bug", maxPaginationPages)}
 		}
 		token, err := SkipTokenFromURL(nextPageURL)
 		if err != nil {
 			return merged, &PartialError{Merged: merged, LastNextPage: nextPageURL, Err: fmt.Errorf("pagination: %w", err)}
 		}
+		if seenTokens[token] {
+			// The server keeps handing back a skipToken we've already
+			// fetched (a stuck/non-advancing cursor). Stop here instead
+			// of looping forever; we already have every value the
+			// server has given us.
+			break
+		}
+		seenTokens[token] = true
+
 		page, err := fetch(ctx, &token)
 		if err != nil {
 			return merged, &PartialError{Merged: merged, LastNextPage: nextPageURL, Err: err}
@@ -123,6 +154,11 @@ func CollectPages(ctx context.Context, noPaginate bool, initialSkipToken *string
 
 	return merged, nil
 }
+
+// maxPaginationPages caps the number of subsequent-page fetches CollectPages
+// will perform in a single walk, as a hard backstop against a server that
+// produces an unbounded stream of distinct (non-repeating) skipTokens.
+const maxPaginationPages = 10000
 
 // SkipTokenFromURL extracts the skipToken query parameter from a nextPage URL.
 func SkipTokenFromURL(rawURL string) (string, error) {
