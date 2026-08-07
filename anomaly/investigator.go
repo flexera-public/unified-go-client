@@ -210,7 +210,7 @@ func (i *Investigator) calcDynamicThreshold(ctx context.Context, orgID int, bcID
 		Dimension: strPtr("capability"),
 		Value:     strPtr("csm"),
 	}
-	resp, err := i.Client.CostsAggregatedWithResponse(ctx, int64(orgID), body)
+	resp, err := i.Client.CostsAggregatedWithResponse(ctx, int(orgID), nil, body)
 	if err != nil {
 		return 0, fmt.Errorf("aggregated cost: %w", err)
 	}
@@ -270,7 +270,7 @@ func (i *Investigator) detectForDimension(ctx context.Context, orgID int, bcIDs 
 	}
 
 	i.logf(ctx, "AI model detection for %s", cfg.Category)
-	resp, err := i.Client.AnomaliesReportWithResponse(ctx, int64(orgID), body)
+	resp, err := i.Client.AnomaliesReportWithResponse(ctx, int(orgID), nil, body)
 	if err != nil || resp.StatusCode() != http.StatusOK {
 		i.logf(ctx, "AI model failed for %s, falling back to Bollinger: %v", cfg.Category, err)
 		detectionMethod = "bollinger_band"
@@ -278,7 +278,7 @@ func (i *Investigator) detectForDimension(ctx context.Context, orgID int, bcIDs 
 		body.DetectionMethod = &bollinger
 		body.WindowSize = 1
 		body.StandardDeviations = 2.0
-		resp, err = i.Client.AnomaliesReportWithResponse(ctx, int64(orgID), body)
+		resp, err = i.Client.AnomaliesReportWithResponse(ctx, int(orgID), nil, body)
 		if err != nil {
 			return nil, detectionMethod, fmt.Errorf("anomaly detection: %w", err)
 		}

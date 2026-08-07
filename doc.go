@@ -31,17 +31,17 @@
 //
 // # Sub-packages
 //
-// Legacy per-service Flexera clients (superseded by the unified client above):
-//
-//	github.com/flexera-public/unified-go-client/service/budget/v1
-//	github.com/flexera-public/unified-go-client/service/policy/v1
-//	... (see service/)
-//
-// RightScale API clients:
+// Legacy per-service RightScale/Optima clients (used via service/optima bundle):
 //
 //	github.com/flexera-public/unified-go-client/rightscale/bill_analysis
 //	github.com/flexera-public/unified-go-client/rightscale/billing_center_service
 //	... (see rightscale/)
+//
+// The rightscale/bill_analysis package is generated from a hand-curated minimal
+// OpenAPI subset in unified-openapi, covering only Bill Analysis endpoints not yet
+// migrated to Flexera API Gateway. It exposes backward-compatible type aliases
+// (compat.go) so existing callers require no import-path changes. New code should
+// prefer the root BillAnalysis* methods on *ClientWithResponses directly.
 //
 // Anomaly investigation workflow:
 //

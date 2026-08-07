@@ -66,143 +66,242 @@ const (
 	Bearer AuthTokenResponseBodyTokenType = "Bearer"
 )
 
-// Defines values for BillAnalysisAnomaliesReportRequestBodyDetectionMethod.
+// Defines values for BillAnalysisAggregatedRequestBodyGranularity.
 const (
-	AiModel       BillAnalysisAnomaliesReportRequestBodyDetectionMethod = "ai_model"
-	BollingerBand BillAnalysisAnomaliesReportRequestBodyDetectionMethod = "bollinger_band"
+	BillAnalysisAggregatedRequestBodyGranularityDay   BillAnalysisAggregatedRequestBodyGranularity = "day"
+	BillAnalysisAggregatedRequestBodyGranularityMonth BillAnalysisAggregatedRequestBodyGranularity = "month"
 )
 
-// Defines values for BillAnalysisAnomaliesReportRequestBodyGranularity.
+// Defines values for BillAnalysisAggregatedRequestBodyPeriodType.
 const (
-	BillAnalysisAnomaliesReportRequestBodyGranularityDay   BillAnalysisAnomaliesReportRequestBodyGranularity = "day"
-	BillAnalysisAnomaliesReportRequestBodyGranularityMonth BillAnalysisAnomaliesReportRequestBodyGranularity = "month"
+	BillAnalysisAggregatedRequestBodyPeriodTypeBillingPeriod BillAnalysisAggregatedRequestBodyPeriodType = "billing_period"
+	BillAnalysisAggregatedRequestBodyPeriodTypeChargePeriod  BillAnalysisAggregatedRequestBodyPeriodType = "charge_period"
 )
 
-// Defines values for BillAnalysisAnomaliesReportRequestBodyMetric.
+// Defines values for BillAnalysisAggregatedRequestBody2Metric.
 const (
-	BillAnalysisAnomaliesReportRequestBodyMetricCostAmortizedBlendedAdj      BillAnalysisAnomaliesReportRequestBodyMetric = "cost_amortized_blended_adj"
-	BillAnalysisAnomaliesReportRequestBodyMetricCostAmortizedUnblendedAdj    BillAnalysisAnomaliesReportRequestBodyMetric = "cost_amortized_unblended_adj"
-	BillAnalysisAnomaliesReportRequestBodyMetricCostNonamortizedBlendedAdj   BillAnalysisAnomaliesReportRequestBodyMetric = "cost_nonamortized_blended_adj"
-	BillAnalysisAnomaliesReportRequestBodyMetricCostNonamortizedUnblendedAdj BillAnalysisAnomaliesReportRequestBodyMetric = "cost_nonamortized_unblended_adj"
+	BillAnalysisAggregatedRequestBody2MetricBilledCost    BillAnalysisAggregatedRequestBody2Metric = "BilledCost"
+	BillAnalysisAggregatedRequestBody2MetricEffectiveCost BillAnalysisAggregatedRequestBody2Metric = "EffectiveCost"
 )
 
-// Defines values for BillAnalysisBudgetFilterRequestBodyType.
+// Defines values for BillAnalysisBillLockingProviderSettingType.
 const (
-	BillAnalysisBudgetFilterRequestBodyTypeAnd   BillAnalysisBudgetFilterRequestBodyType = "and"
-	BillAnalysisBudgetFilterRequestBodyTypeEqual BillAnalysisBudgetFilterRequestBodyType = "equal"
-	BillAnalysisBudgetFilterRequestBodyTypeNot   BillAnalysisBudgetFilterRequestBodyType = "not"
-	BillAnalysisBudgetFilterRequestBodyTypeOr    BillAnalysisBudgetFilterRequestBodyType = "or"
+	BillAnalysisBillLockingProviderSettingTypeExactDate                      BillAnalysisBillLockingProviderSettingType = "exact_date"
+	BillAnalysisBillLockingProviderSettingTypeInvoiceFinalization            BillAnalysisBillLockingProviderSettingType = "invoice_finalization"
+	BillAnalysisBillLockingProviderSettingTypeInvoiceFinalizationMarketplace BillAnalysisBillLockingProviderSettingType = "invoice_finalization_marketplace"
 )
 
-// Defines values for BillAnalysisBudgetFilterResponseType.
+// Defines values for BillAnalysisBillLockingSettingsType.
 const (
-	BillAnalysisBudgetFilterResponseTypeAnd   BillAnalysisBudgetFilterResponseType = "and"
-	BillAnalysisBudgetFilterResponseTypeEqual BillAnalysisBudgetFilterResponseType = "equal"
-	BillAnalysisBudgetFilterResponseTypeNot   BillAnalysisBudgetFilterResponseType = "not"
-	BillAnalysisBudgetFilterResponseTypeOr    BillAnalysisBudgetFilterResponseType = "or"
+	BillAnalysisBillLockingSettingsTypeExactDate BillAnalysisBillLockingSettingsType = "exact_date"
 )
 
-// Defines values for BillAnalysisBudgetFilterResponseBodyType.
+// Defines values for BillAnalysisBillMonthStatus.
 const (
-	BillAnalysisBudgetFilterResponseBodyTypeAnd   BillAnalysisBudgetFilterResponseBodyType = "and"
-	BillAnalysisBudgetFilterResponseBodyTypeEqual BillAnalysisBudgetFilterResponseBodyType = "equal"
-	BillAnalysisBudgetFilterResponseBodyTypeNot   BillAnalysisBudgetFilterResponseBodyType = "not"
-	BillAnalysisBudgetFilterResponseBodyTypeOr    BillAnalysisBudgetFilterResponseBodyType = "or"
+	BillAnalysisBillMonthStatusLocked     BillAnalysisBillMonthStatus = "locked"
+	BillAnalysisBillMonthStatusProcessed  BillAnalysisBillMonthStatus = "processed"
+	BillAnalysisBillMonthStatusProcessing BillAnalysisBillMonthStatus = "processing"
 )
 
-// Defines values for BillAnalysisConditionRequestBodyType.
+// Defines values for BillAnalysisBudgetFilterType.
 const (
-	BillAnalysisConditionRequestBodyTypeAllocatedToBillingCenter BillAnalysisConditionRequestBodyType = "allocated_to_billing_center"
-	BillAnalysisConditionRequestBodyTypeAnd                      BillAnalysisConditionRequestBodyType = "and"
-	BillAnalysisConditionRequestBodyTypeDimensionContains        BillAnalysisConditionRequestBodyType = "dimension_contains"
-	BillAnalysisConditionRequestBodyTypeDimensionEquals          BillAnalysisConditionRequestBodyType = "dimension_equals"
-	BillAnalysisConditionRequestBodyTypeNot                      BillAnalysisConditionRequestBodyType = "not"
-	BillAnalysisConditionRequestBodyTypeOr                       BillAnalysisConditionRequestBodyType = "or"
+	BillAnalysisBudgetFilterTypeAnd   BillAnalysisBudgetFilterType = "and"
+	BillAnalysisBudgetFilterTypeEqual BillAnalysisBudgetFilterType = "equal"
+	BillAnalysisBudgetFilterTypeNot   BillAnalysisBudgetFilterType = "not"
+	BillAnalysisBudgetFilterTypeOr    BillAnalysisBudgetFilterType = "or"
 )
 
-// Defines values for BillAnalysisConditionResponseBodyType.
+// Defines values for BillAnalysisCommitmentReallocationSettingStrategy.
 const (
-	BillAnalysisConditionResponseBodyTypeAllocatedToBillingCenter BillAnalysisConditionResponseBodyType = "allocated_to_billing_center"
-	BillAnalysisConditionResponseBodyTypeAnd                      BillAnalysisConditionResponseBodyType = "and"
-	BillAnalysisConditionResponseBodyTypeDimensionContains        BillAnalysisConditionResponseBodyType = "dimension_contains"
-	BillAnalysisConditionResponseBodyTypeDimensionEquals          BillAnalysisConditionResponseBodyType = "dimension_equals"
-	BillAnalysisConditionResponseBodyTypeNot                      BillAnalysisConditionResponseBodyType = "not"
-	BillAnalysisConditionResponseBodyTypeOr                       BillAnalysisConditionResponseBodyType = "or"
+	BillAnalysisCommitmentReallocationSettingStrategyEffectiveCost BillAnalysisCommitmentReallocationSettingStrategy = "effective_cost"
 )
 
-// Defines values for BillAnalysisCostsAggregatedRequestBodyDataset.
+// Defines values for BillAnalysisCommitmentReallocationSettingTypeType.
 const (
-	BillAnalysisCostsAggregatedRequestBodyDatasetBilling    BillAnalysisCostsAggregatedRequestBodyDataset = "billing"
-	BillAnalysisCostsAggregatedRequestBodyDatasetEnterprise BillAnalysisCostsAggregatedRequestBodyDataset = "enterprise"
+	AwsReservedInstance BillAnalysisCommitmentReallocationSettingTypeType = "aws_reserved_instance"
+	AwsSavingsPlan      BillAnalysisCommitmentReallocationSettingTypeType = "aws_savings_plan"
+	AzureReservation    BillAnalysisCommitmentReallocationSettingTypeType = "azure_reservation"
 )
 
-// Defines values for BillAnalysisCostsAggregatedRequestBodyGranularity.
+// Defines values for BillAnalysisConditionType.
 const (
-	BillAnalysisCostsAggregatedRequestBodyGranularityDay   BillAnalysisCostsAggregatedRequestBodyGranularity = "day"
-	BillAnalysisCostsAggregatedRequestBodyGranularityMonth BillAnalysisCostsAggregatedRequestBodyGranularity = "month"
+	BillAnalysisConditionTypeAllocatedToBillingCenter BillAnalysisConditionType = "allocated_to_billing_center"
+	BillAnalysisConditionTypeAnd                      BillAnalysisConditionType = "and"
+	BillAnalysisConditionTypeDimensionContains        BillAnalysisConditionType = "dimension_contains"
+	BillAnalysisConditionTypeDimensionEquals          BillAnalysisConditionType = "dimension_equals"
+	BillAnalysisConditionTypeNot                      BillAnalysisConditionType = "not"
+	BillAnalysisConditionTypeOr                       BillAnalysisConditionType = "or"
 )
 
-// Defines values for BillAnalysisCostsAggregatedRequestBodyPeriodType.
+// Defines values for BillAnalysisCreateRequestBody5Visibility.
 const (
-	BillAnalysisCostsAggregatedRequestBodyPeriodTypeBillingPeriod BillAnalysisCostsAggregatedRequestBodyPeriodType = "billing_period"
-	BillAnalysisCostsAggregatedRequestBodyPeriodTypeChargePeriod  BillAnalysisCostsAggregatedRequestBodyPeriodType = "charge_period"
+	BillAnalysisCreateRequestBody5VisibilityDefault BillAnalysisCreateRequestBody5Visibility = "default"
+	BillAnalysisCreateRequestBody5VisibilityPublic  BillAnalysisCreateRequestBody5Visibility = "public"
 )
 
-// Defines values for BillAnalysisCostsSelectRequestBodyDataset.
+// Defines values for BillAnalysisCustomDimensionListKind.
 const (
-	BillAnalysisCostsSelectRequestBodyDatasetBilling    BillAnalysisCostsSelectRequestBodyDataset = "billing"
-	BillAnalysisCostsSelectRequestBodyDatasetEnterprise BillAnalysisCostsSelectRequestBodyDataset = "enterprise"
+	BillAnalysisCustomDimensionListKindBillAnalysisCustomDimensionList BillAnalysisCustomDimensionListKind = "bill-analysis#custom-dimension-list"
 )
 
-// Defines values for BillAnalysisCostsSelectRequestBodyGranularity.
+// Defines values for BillAnalysisExportSelectRequestBodyAdjDimensionGranularity.
 const (
-	BillAnalysisCostsSelectRequestBodyGranularityDay   BillAnalysisCostsSelectRequestBodyGranularity = "day"
-	BillAnalysisCostsSelectRequestBodyGranularityMonth BillAnalysisCostsSelectRequestBodyGranularity = "month"
+	BillAnalysisExportSelectRequestBodyAdjDimensionGranularityNone     BillAnalysisExportSelectRequestBodyAdjDimensionGranularity = "none"
+	BillAnalysisExportSelectRequestBodyAdjDimensionGranularityOrgLevel BillAnalysisExportSelectRequestBodyAdjDimensionGranularity = "org-level"
 )
 
-// Defines values for BillAnalysisCostsSelectRequestBodyPeriodType.
+// Defines values for BillAnalysisExportSelectRequestBodyGranularity.
 const (
-	BillAnalysisCostsSelectRequestBodyPeriodTypeBillingPeriod BillAnalysisCostsSelectRequestBodyPeriodType = "billing_period"
-	BillAnalysisCostsSelectRequestBodyPeriodTypeChargePeriod  BillAnalysisCostsSelectRequestBodyPeriodType = "charge_period"
+	BillAnalysisExportSelectRequestBodyGranularityDay   BillAnalysisExportSelectRequestBodyGranularity = "day"
+	BillAnalysisExportSelectRequestBodyGranularityMonth BillAnalysisExportSelectRequestBodyGranularity = "month"
 )
 
-// Defines values for BillAnalysisFilterV1RequestBodyType.
+// Defines values for BillAnalysisExportSelectStatusResultStatus.
 const (
-	BillAnalysisFilterV1RequestBodyTypeAnd       BillAnalysisFilterV1RequestBodyType = "and"
-	BillAnalysisFilterV1RequestBodyTypeEqual     BillAnalysisFilterV1RequestBodyType = "equal"
-	BillAnalysisFilterV1RequestBodyTypeNot       BillAnalysisFilterV1RequestBodyType = "not"
-	BillAnalysisFilterV1RequestBodyTypeOr        BillAnalysisFilterV1RequestBodyType = "or"
-	BillAnalysisFilterV1RequestBodyTypeSubstring BillAnalysisFilterV1RequestBodyType = "substring"
+	BillAnalysisExportSelectStatusResultStatusDone       BillAnalysisExportSelectStatusResultStatus = "Done"
+	BillAnalysisExportSelectStatusResultStatusFailed     BillAnalysisExportSelectStatusResultStatus = "Failed"
+	BillAnalysisExportSelectStatusResultStatusInProgress BillAnalysisExportSelectStatusResultStatus = "In Progress"
 )
 
-// Defines values for BillAnalysisForecastsReportRequestBodyGranularity.
+// Defines values for BillAnalysisFilterV1Type.
 const (
-	BillAnalysisForecastsReportRequestBodyGranularityDay   BillAnalysisForecastsReportRequestBodyGranularity = "day"
-	BillAnalysisForecastsReportRequestBodyGranularityMonth BillAnalysisForecastsReportRequestBodyGranularity = "month"
+	BillAnalysisFilterV1TypeAnd       BillAnalysisFilterV1Type = "and"
+	BillAnalysisFilterV1TypeEqual     BillAnalysisFilterV1Type = "equal"
+	BillAnalysisFilterV1TypeNot       BillAnalysisFilterV1Type = "not"
+	BillAnalysisFilterV1TypeOr        BillAnalysisFilterV1Type = "or"
+	BillAnalysisFilterV1TypeSubstring BillAnalysisFilterV1Type = "substring"
 )
 
-// Defines values for BillAnalysisForecastsReportRequestBodyMetric.
+// Defines values for BillAnalysisIndexRequestBodyMetric.
 const (
-	BillAnalysisForecastsReportRequestBodyMetricCostAmortizedBlendedAdj      BillAnalysisForecastsReportRequestBodyMetric = "cost_amortized_blended_adj"
-	BillAnalysisForecastsReportRequestBodyMetricCostAmortizedUnblendedAdj    BillAnalysisForecastsReportRequestBodyMetric = "cost_amortized_unblended_adj"
-	BillAnalysisForecastsReportRequestBodyMetricCostNonamortizedBlendedAdj   BillAnalysisForecastsReportRequestBodyMetric = "cost_nonamortized_blended_adj"
-	BillAnalysisForecastsReportRequestBodyMetricCostNonamortizedUnblendedAdj BillAnalysisForecastsReportRequestBodyMetric = "cost_nonamortized_unblended_adj"
+	BillAnalysisIndexRequestBodyMetricBilledCost    BillAnalysisIndexRequestBodyMetric = "BilledCost"
+	BillAnalysisIndexRequestBodyMetricEffectiveCost BillAnalysisIndexRequestBodyMetric = "EffectiveCost"
 )
 
-// Defines values for BillAnalysisRuleBasedDimensionConditionRequestBodyType.
+// Defines values for BillAnalysisIndexRequestBodySortOrder.
 const (
-	BillAnalysisRuleBasedDimensionConditionRequestBodyTypeAnd             BillAnalysisRuleBasedDimensionConditionRequestBodyType = "and"
-	BillAnalysisRuleBasedDimensionConditionRequestBodyTypeDimensionEquals BillAnalysisRuleBasedDimensionConditionRequestBodyType = "dimension_equals"
-	BillAnalysisRuleBasedDimensionConditionRequestBodyTypeNot             BillAnalysisRuleBasedDimensionConditionRequestBodyType = "not"
-	BillAnalysisRuleBasedDimensionConditionRequestBodyTypeOr              BillAnalysisRuleBasedDimensionConditionRequestBodyType = "or"
+	Asc  BillAnalysisIndexRequestBodySortOrder = "asc"
+	Desc BillAnalysisIndexRequestBodySortOrder = "desc"
 )
 
-// Defines values for BillAnalysisRuleBasedDimensionConditionResponseBodyType.
+// Defines values for BillAnalysisReportRequestBodyDetectionMethod.
 const (
-	BillAnalysisRuleBasedDimensionConditionResponseBodyTypeAnd             BillAnalysisRuleBasedDimensionConditionResponseBodyType = "and"
-	BillAnalysisRuleBasedDimensionConditionResponseBodyTypeDimensionEquals BillAnalysisRuleBasedDimensionConditionResponseBodyType = "dimension_equals"
-	BillAnalysisRuleBasedDimensionConditionResponseBodyTypeNot             BillAnalysisRuleBasedDimensionConditionResponseBodyType = "not"
-	BillAnalysisRuleBasedDimensionConditionResponseBodyTypeOr              BillAnalysisRuleBasedDimensionConditionResponseBodyType = "or"
+	AiModel       BillAnalysisReportRequestBodyDetectionMethod = "ai_model"
+	BollingerBand BillAnalysisReportRequestBodyDetectionMethod = "bollinger_band"
+)
+
+// Defines values for BillAnalysisReportRequestBodyGranularity.
+const (
+	BillAnalysisReportRequestBodyGranularityDay   BillAnalysisReportRequestBodyGranularity = "day"
+	BillAnalysisReportRequestBodyGranularityMonth BillAnalysisReportRequestBodyGranularity = "month"
+)
+
+// Defines values for BillAnalysisReportRequestBodyMetric.
+const (
+	BillAnalysisReportRequestBodyMetricBilledCost                   BillAnalysisReportRequestBodyMetric = "BilledCost"
+	BillAnalysisReportRequestBodyMetricCostAmortizedBlendedAdj      BillAnalysisReportRequestBodyMetric = "cost_amortized_blended_adj"
+	BillAnalysisReportRequestBodyMetricCostAmortizedUnblendedAdj    BillAnalysisReportRequestBodyMetric = "cost_amortized_unblended_adj"
+	BillAnalysisReportRequestBodyMetricCostNonamortizedBlendedAdj   BillAnalysisReportRequestBodyMetric = "cost_nonamortized_blended_adj"
+	BillAnalysisReportRequestBodyMetricCostNonamortizedUnblendedAdj BillAnalysisReportRequestBodyMetric = "cost_nonamortized_unblended_adj"
+	BillAnalysisReportRequestBodyMetricEffectiveCost                BillAnalysisReportRequestBodyMetric = "EffectiveCost"
+	BillAnalysisReportRequestBodyMetricModifiedBilledCost           BillAnalysisReportRequestBodyMetric = "ModifiedBilledCost"
+	BillAnalysisReportRequestBodyMetricModifiedEffectiveCost        BillAnalysisReportRequestBodyMetric = "ModifiedEffectiveCost"
+)
+
+// Defines values for BillAnalysisReportRequestBody3Granularity.
+const (
+	BillAnalysisReportRequestBody3GranularityDay   BillAnalysisReportRequestBody3Granularity = "day"
+	BillAnalysisReportRequestBody3GranularityMonth BillAnalysisReportRequestBody3Granularity = "month"
+)
+
+// Defines values for BillAnalysisReportRequestBody3Metric.
+const (
+	BillAnalysisReportRequestBody3MetricBilledCost                   BillAnalysisReportRequestBody3Metric = "BilledCost"
+	BillAnalysisReportRequestBody3MetricCostAmortizedBlendedAdj      BillAnalysisReportRequestBody3Metric = "cost_amortized_blended_adj"
+	BillAnalysisReportRequestBody3MetricCostAmortizedUnblendedAdj    BillAnalysisReportRequestBody3Metric = "cost_amortized_unblended_adj"
+	BillAnalysisReportRequestBody3MetricCostNonamortizedBlendedAdj   BillAnalysisReportRequestBody3Metric = "cost_nonamortized_blended_adj"
+	BillAnalysisReportRequestBody3MetricCostNonamortizedUnblendedAdj BillAnalysisReportRequestBody3Metric = "cost_nonamortized_unblended_adj"
+	BillAnalysisReportRequestBody3MetricEffectiveCost                BillAnalysisReportRequestBody3Metric = "EffectiveCost"
+	BillAnalysisReportRequestBody3MetricModifiedBilledCost           BillAnalysisReportRequestBody3Metric = "ModifiedBilledCost"
+	BillAnalysisReportRequestBody3MetricModifiedEffectiveCost        BillAnalysisReportRequestBody3Metric = "ModifiedEffectiveCost"
+)
+
+// Defines values for BillAnalysisReprocessRequestBodyAction.
+const (
+	BillAnalysisReprocessRequestBodyActionEnterpriseReprocess BillAnalysisReprocessRequestBodyAction = "enterprise_reprocess"
+	BillAnalysisReprocessRequestBodyActionReprocess           BillAnalysisReprocessRequestBodyAction = "reprocess"
+	BillAnalysisReprocessRequestBodyActionUnlock              BillAnalysisReprocessRequestBodyAction = "unlock"
+)
+
+// Defines values for BillAnalysisReprocessResponseAction.
+const (
+	BillAnalysisReprocessResponseActionReprocess BillAnalysisReprocessResponseAction = "reprocess"
+	BillAnalysisReprocessResponseActionUnlock    BillAnalysisReprocessResponseAction = "unlock"
+)
+
+// Defines values for BillAnalysisReprocessResponseStatus.
+const (
+	BillAnalysisReprocessResponseStatusAccepted       BillAnalysisReprocessResponseStatus = "accepted"
+	BillAnalysisReprocessResponseStatusPartialSuccess BillAnalysisReprocessResponseStatus = "partial_success"
+	BillAnalysisReprocessResponseStatusRejected       BillAnalysisReprocessResponseStatus = "rejected"
+)
+
+// Defines values for BillAnalysisReprocessResultItemResult.
+const (
+	ReprocessRequestFailed     BillAnalysisReprocessResultItemResult = "reprocess_request_failed"
+	ReprocessRequestSuccessful BillAnalysisReprocessResultItemResult = "reprocess_request_successful"
+	UnlockRequestFailed        BillAnalysisReprocessResultItemResult = "unlock_request_failed"
+	UnlockRequestSuccessful    BillAnalysisReprocessResultItemResult = "unlock_request_successful"
+)
+
+// Defines values for BillAnalysisReprocessResultItemState.
+const (
+	BillAnalysisReprocessResultItemStateLocked     BillAnalysisReprocessResultItemState = "locked"
+	BillAnalysisReprocessResultItemStateProcessed  BillAnalysisReprocessResultItemState = "processed"
+	BillAnalysisReprocessResultItemStateProcessing BillAnalysisReprocessResultItemState = "processing"
+	BillAnalysisReprocessResultItemStateUnlocked   BillAnalysisReprocessResultItemState = "unlocked"
+)
+
+// Defines values for BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboardVisibility.
+const (
+	BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboardVisibilityDefault BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboardVisibility = "default"
+	BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboardVisibilityPrivate BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboardVisibility = "private"
+	BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboardVisibilityPublic  BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboardVisibility = "public"
+)
+
+// Defines values for BillAnalysisRightscaleOptimaCloudVendorAccountKind.
+const (
+	BaCloudVendorAccount BillAnalysisRightscaleOptimaCloudVendorAccountKind = "ba#cloud_vendor_account"
+)
+
+// Defines values for BillAnalysisRuleBasedDimensionConditionType.
+const (
+	BillAnalysisRuleBasedDimensionConditionTypeAnd             BillAnalysisRuleBasedDimensionConditionType = "and"
+	BillAnalysisRuleBasedDimensionConditionTypeDimensionEquals BillAnalysisRuleBasedDimensionConditionType = "dimension_equals"
+	BillAnalysisRuleBasedDimensionConditionTypeNot             BillAnalysisRuleBasedDimensionConditionType = "not"
+	BillAnalysisRuleBasedDimensionConditionTypeOr              BillAnalysisRuleBasedDimensionConditionType = "or"
+)
+
+// Defines values for BillAnalysisSelectRequestBodyGranularity.
+const (
+	BillAnalysisSelectRequestBodyGranularityDay   BillAnalysisSelectRequestBodyGranularity = "day"
+	BillAnalysisSelectRequestBodyGranularityMonth BillAnalysisSelectRequestBodyGranularity = "month"
+)
+
+// Defines values for BillAnalysisSelectRequestBodyPeriodType.
+const (
+	BillAnalysisSelectRequestBodyPeriodTypeBillingPeriod BillAnalysisSelectRequestBodyPeriodType = "billing_period"
+	BillAnalysisSelectRequestBodyPeriodTypeChargePeriod  BillAnalysisSelectRequestBodyPeriodType = "charge_period"
+)
+
+// Defines values for BillAnalysisSettingId.
+const (
+	CurrencyCode BillAnalysisSettingId = "currency_code"
+)
+
+// Defines values for BillAnalysisSettingKind.
+const (
+	OptimaSetting BillAnalysisSettingKind = "optima#setting"
 )
 
 // Defines values for BudgetBudgetKind.
@@ -269,14 +368,14 @@ const (
 
 // Defines values for BudgetCreateRequestBodyMetric.
 const (
-	BilledCost                   BudgetCreateRequestBodyMetric = "BilledCost"
-	CostAmortizedBlendedAdj      BudgetCreateRequestBodyMetric = "cost_amortized_blended_adj"
-	CostAmortizedUnblendedAdj    BudgetCreateRequestBodyMetric = "cost_amortized_unblended_adj"
-	CostNonamortizedBlendedAdj   BudgetCreateRequestBodyMetric = "cost_nonamortized_blended_adj"
-	CostNonamortizedUnblendedAdj BudgetCreateRequestBodyMetric = "cost_nonamortized_unblended_adj"
-	EffectiveCost                BudgetCreateRequestBodyMetric = "EffectiveCost"
-	ModifiedBilledCost           BudgetCreateRequestBodyMetric = "ModifiedBilledCost"
-	ModifiedEffectiveCost        BudgetCreateRequestBodyMetric = "ModifiedEffectiveCost"
+	BudgetCreateRequestBodyMetricBilledCost                   BudgetCreateRequestBodyMetric = "BilledCost"
+	BudgetCreateRequestBodyMetricCostAmortizedBlendedAdj      BudgetCreateRequestBodyMetric = "cost_amortized_blended_adj"
+	BudgetCreateRequestBodyMetricCostAmortizedUnblendedAdj    BudgetCreateRequestBodyMetric = "cost_amortized_unblended_adj"
+	BudgetCreateRequestBodyMetricCostNonamortizedBlendedAdj   BudgetCreateRequestBodyMetric = "cost_nonamortized_blended_adj"
+	BudgetCreateRequestBodyMetricCostNonamortizedUnblendedAdj BudgetCreateRequestBodyMetric = "cost_nonamortized_unblended_adj"
+	BudgetCreateRequestBodyMetricEffectiveCost                BudgetCreateRequestBodyMetric = "EffectiveCost"
+	BudgetCreateRequestBodyMetricModifiedBilledCost           BudgetCreateRequestBodyMetric = "ModifiedBilledCost"
+	BudgetCreateRequestBodyMetricModifiedEffectiveCost        BudgetCreateRequestBodyMetric = "ModifiedEffectiveCost"
 )
 
 // Defines values for BudgetFlexeraFinopsAnalyticsCloudVendorAccountKind.
@@ -794,13 +893,13 @@ const (
 
 // Defines values for FinopsBillingSupportChargeSettingsTier.
 const (
-	FinopsBillingSupportChargeSettingsTierBusiness          FinopsBillingSupportChargeSettingsTier = "business"
-	FinopsBillingSupportChargeSettingsTierBusinessPlus      FinopsBillingSupportChargeSettingsTier = "businessPlus"
-	FinopsBillingSupportChargeSettingsTierDeveloper         FinopsBillingSupportChargeSettingsTier = "developer"
-	FinopsBillingSupportChargeSettingsTierEnterprise        FinopsBillingSupportChargeSettingsTier = "enterprise"
-	FinopsBillingSupportChargeSettingsTierEnterpriseOnRamp  FinopsBillingSupportChargeSettingsTier = "enterpriseOnRamp"
-	FinopsBillingSupportChargeSettingsTierSuppressed        FinopsBillingSupportChargeSettingsTier = "suppressed"
-	FinopsBillingSupportChargeSettingsTierUnifiedOperations FinopsBillingSupportChargeSettingsTier = "unifiedOperations"
+	Business          FinopsBillingSupportChargeSettingsTier = "business"
+	BusinessPlus      FinopsBillingSupportChargeSettingsTier = "businessPlus"
+	Developer         FinopsBillingSupportChargeSettingsTier = "developer"
+	Enterprise        FinopsBillingSupportChargeSettingsTier = "enterprise"
+	EnterpriseOnRamp  FinopsBillingSupportChargeSettingsTier = "enterpriseOnRamp"
+	Suppressed        FinopsBillingSupportChargeSettingsTier = "suppressed"
+	UnifiedOperations FinopsBillingSupportChargeSettingsTier = "unifiedOperations"
 )
 
 // Defines values for FinopsBillingUpchargeDiscountSettingsBaseOn.
@@ -2786,8 +2885,8 @@ const (
 
 // Defines values for SaasRuleExpressionMatchType.
 const (
-	All SaasRuleExpressionMatchType = "all"
-	Any SaasRuleExpressionMatchType = "any"
+	SaasRuleExpressionMatchTypeAll SaasRuleExpressionMatchType = "all"
+	SaasRuleExpressionMatchTypeAny SaasRuleExpressionMatchType = "any"
 )
 
 // Defines values for SaasSaaSUsageCostStatus.
@@ -3003,6 +3102,17 @@ const (
 	BillingCenterServiceUserBillingCentersShowParamsApiVersionN10 BillingCenterServiceUserBillingCentersShowParamsApiVersion = "1.0"
 )
 
+// Defines values for BillAnalysisBillMonthsDownloadParamsFormat.
+const (
+	BillAnalysisBillMonthsDownloadParamsFormatCsv BillAnalysisBillMonthsDownloadParamsFormat = "csv"
+)
+
+// Defines values for BillAnalysisOrgDashboardsIndexParamsVisibility.
+const (
+	BillAnalysisOrgDashboardsIndexParamsVisibilityDefault BillAnalysisOrgDashboardsIndexParamsVisibility = "default"
+	BillAnalysisOrgDashboardsIndexParamsVisibilityPublic  BillAnalysisOrgDashboardsIndexParamsVisibility = "public"
+)
+
 // Defines values for CredCredentialDeleteOrgParamsScheme.
 const (
 	CredCredentialDeleteOrgParamsSchemeApiKey CredCredentialDeleteOrgParamsScheme = "api-key"
@@ -3035,7 +3145,7 @@ const (
 
 // Defines values for FinopsOnboardingProcessingHistoryDownloadParamsFormat.
 const (
-	Csv FinopsOnboardingProcessingHistoryDownloadParamsFormat = "csv"
+	FinopsOnboardingProcessingHistoryDownloadParamsFormatCsv FinopsOnboardingProcessingHistoryDownloadParamsFormat = "csv"
 )
 
 // Defines values for IamUserInvitationIndexParamsStatus.
@@ -3252,18 +3362,6 @@ const (
 	IamMSPCustomerV2ShowV2ParamsViewDefault  IamMSPCustomerV2ShowV2ParamsView = "default"
 	IamMSPCustomerV2ShowV2ParamsViewExtended IamMSPCustomerV2ShowV2ParamsView = "extended"
 	IamMSPCustomerV2ShowV2ParamsViewIndex    IamMSPCustomerV2ShowV2ParamsView = "index"
-)
-
-// Defines values for BillAnalysisCostsDimensionsParamsDataset.
-const (
-	BillAnalysisCostsDimensionsParamsDatasetBilling    BillAnalysisCostsDimensionsParamsDataset = "billing"
-	BillAnalysisCostsDimensionsParamsDatasetEnterprise BillAnalysisCostsDimensionsParamsDataset = "enterprise"
-)
-
-// Defines values for BillAnalysisCostsMetricsParamsDataset.
-const (
-	Billing    BillAnalysisCostsMetricsParamsDataset = "billing"
-	Enterprise BillAnalysisCostsMetricsParamsDataset = "enterprise"
 )
 
 // Defines values for PolicyCustomCatalogIndexParamsCatalogSource.
@@ -3492,13 +3590,13 @@ const (
 
 // Defines values for SaasUsageMessageQueryIndexParamsView.
 const (
-	SaasUsageMessageQueryIndexParamsViewDefault  SaasUsageMessageQueryIndexParamsView = "default"
-	SaasUsageMessageQueryIndexParamsViewExtended SaasUsageMessageQueryIndexParamsView = "extended"
+	Default  SaasUsageMessageQueryIndexParamsView = "default"
+	Extended SaasUsageMessageQueryIndexParamsView = "extended"
 )
 
 // Defines values for VisQueryCreateParamsOutputCompression.
 const (
-	Gzip VisQueryCreateParamsOutputCompression = "gzip"
+	VisQueryCreateParamsOutputCompressionGzip VisQueryCreateParamsOutputCompression = "gzip"
 )
 
 // AuthError defines model for Auth_Error.
@@ -3582,17 +3680,11 @@ type AuthTokenResponseBody struct {
 // AuthTokenResponseBodyTokenType Refers to the access_token. Always "Bearer".
 type AuthTokenResponseBodyTokenType string
 
-// BillAnalysisAdjustmentDefinitionUpdateRequestBody defines model for BillAnalysis_AdjustmentDefinitionUpdateRequestBody.
-type BillAnalysisAdjustmentDefinitionUpdateRequestBody struct {
-	// DatedAdjustmentLists All of the dated adjustment lists for the org.
-	DatedAdjustmentLists []BillAnalysisDatedAdjustmentListRequestBody `json:"dated_adjustment_lists"`
-}
-
-// BillAnalysisAdjustmentRequestBody An adjustment that will be applied to any cost row for which one of the rules match.
+// BillAnalysisAdjustment An adjustment that will be applied to any cost row for which one of the rules match.
 // The first rule to match will determine the cost & usage multipliers to use.
 // The base cost will be the raw cost of the row, or if any build_on_adjustments are specified, then those adjusted costs will be added in to form the base cost.
 // The final cost of this adjustment will be the (base_cost * cost_multiplier) + (usage_amount * usage_multiplier)
-type BillAnalysisAdjustmentRequestBody struct {
+type BillAnalysisAdjustment struct {
 	// BuildOnAdjustments If none specified, the base cost is simply the raw cost.
 	// Can also specify one or more of the adjustment names that were defined earlier in the adjustment list, and the base cost will be the net cost after those adjustments are applied.
 	BuildOnAdjustments *[]string `json:"build_on_adjustments,omitempty"`
@@ -3603,549 +3695,13 @@ type BillAnalysisAdjustmentRequestBody struct {
 	// Rules List of rules to determine the cost/usage multipliers to apply to a given cost row.
 	// The rules will be evaluated in order until one matches. If none matches, this adjustment is not applied.
 	// The list may contain up to 100 rules.
-	Rules *[]BillAnalysisRuleRequestBody `json:"rules,omitempty"`
+	Rules *[]BillAnalysisRule `json:"rules,omitempty"`
 }
 
-// BillAnalysisAnomaliesReportRequestBody defines model for BillAnalysis_AnomaliesReportRequestBody.
-type BillAnalysisAnomaliesReportRequestBody struct {
-	// BillingCenterIds IDs of BillingCenters to get data for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
-	BillingCenterIds []string `json:"billingCenterIds"`
-
-	// DetectionMethod Specifies the detection method to use: either Bollinger Band or AI Model.
-	DetectionMethod *BillAnalysisAnomaliesReportRequestBodyDetectionMethod `json:"detectionMethod,omitempty"`
-
-	// Dimensions The list of supported dimensions by which to roll up the costs.
-	Dimensions *[]string `json:"dimensions,omitempty"`
-
-	// EndAt Latest timestamp (exclusive) of the costs.
-	// For month granularity: consists of a year and month in YYYY-MM format.
-	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
-	// Will be interpreted as UTC, which is used for period boundaries.
-	// No records will be returned on or after this timestamp.
-	EndAt string `json:"endAt"`
-
-	// Filter Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
-	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
-	// Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
-	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
-	//
-	// Examples of each filter type:
-	//
-	// {"type":"equal", "dimension":"vendor", "value":"aws"}
-	//
-	//   {"type":"substring", "dimension":"tag_env", "substring":"dev"}
-	//
-	//   {"type":"and", "expressions":[
-	//     {"type":"equal", "dimension":"vendor", "value":"aws"},
-	//     {"type":"equal", "dimension":"tag_env", "value":"dev"}
-	//   ]}
-	//
-	//   {"type":"or", "expressions":[
-	//     {"type":"substring", "dimension":"tag_env", "substring":"dev"},
-	//     {"type":"substring", "dimension":"tag_env", "substring":"stage"}
-	//   ]}
-	//
-	//   {"type":"not", "expression": {
-	//     "type":"equal", "dimension":"vendor", "substring":"aws"
-	//   }}
-	Filter *BillAnalysisFilterV1RequestBody `json:"filter,omitempty"`
-
-	// Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
-	// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
-	Granularity *BillAnalysisAnomaliesReportRequestBodyGranularity `json:"granularity,omitempty"`
-
-	// Limit limit number of records to return.
-	Limit *int32 `json:"limit,omitempty"`
-
-	// Metric Metric to perform anomaly detection on. Currently only cost metrics supported.
-	Metric BillAnalysisAnomaliesReportRequestBodyMetric `json:"metric"`
-
-	// StandardDeviations number of standard deviations to use for bollinger band calculations
-	StandardDeviations float64 `json:"standardDeviations"`
-
-	// StartAt Earliest timestamp (inclusive) of the returned costs.
-	// For month granularity: consists of a year and month in YYYY-MM format.
-	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
-	// Will be interpreted as UTC, which is used for period boundaries.
-	StartAt string `json:"startAt"`
-
-	// WindowSize window size to use for bollinger bands
-	WindowSize int64 `json:"windowSize"`
-}
-
-// BillAnalysisAnomaliesReportRequestBodyDetectionMethod Specifies the detection method to use: either Bollinger Band or AI Model.
-type BillAnalysisAnomaliesReportRequestBodyDetectionMethod string
-
-// BillAnalysisAnomaliesReportRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
-// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
-type BillAnalysisAnomaliesReportRequestBodyGranularity string
-
-// BillAnalysisAnomaliesReportRequestBodyMetric Metric to perform anomaly detection on. Currently only cost metrics supported.
-type BillAnalysisAnomaliesReportRequestBodyMetric string
-
-// BillAnalysisBudgetFilterRequestBody A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
-//
-// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
-// An empty filter expression implies all costs are included.
-//
-// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
-// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
-//
-// Examples of each filter type:
-// ```
-// {"type":"equal", "dimension":"vendor", "value":"AWS"}
-//
-// {"type":"and", "expressions":[
-//
-//	{"type":"equal", "dimension":"vendor", "value":"AWS"},
-//	{"type":"equal", "dimension":"rbd_team", "value":"Blue"}
-//
-// ]}
-//
-// {"type":"or", "expressions":[
-//
-//	{"type":"equal", "dimension":"rbd_team", "value":"Blue"},
-//	{"type":"equal", "dimension":"rbd_team", "value":"Green"}
-//
-// ]}
-//
-//	{"type":"not", "expression": {
-//	  "type":"equal", "dimension":"vendor", "substring":"AWS"
-//	}}
-//
-// ```
-// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
-type BillAnalysisBudgetFilterRequestBody struct {
-	// Dimension name of a dimension to examine. Required for the 'equal' filter type. Note the `billing_center_id` dimension is not supported at this time.
-	Dimension *string `json:"dimension,omitempty"`
-
-	// Expression A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
-	//
-	// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
-	// An empty filter expression implies all costs are included.
-	//
-	// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
-	// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
-	//
-	// Examples of each filter type:
-	// ```
-	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
-	//
-	// {"type":"and", "expressions":[
-	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
-	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
-	// ]}
-	//
-	// {"type":"or", "expressions":[
-	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"},
-	//   {"type":"equal", "dimension":"rbd_team", "value":"Green"}
-	// ]}
-	//
-	// {"type":"not", "expression": {
-	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
-	// }}
-	// ```
-	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
-	Expression *BillAnalysisBudgetFilterRequestBody `json:"expression,omitempty"`
-
-	// Expressions the filter expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' filter types.
-	Expressions *[]BillAnalysisBudgetFilterRequestBody `json:"expressions,omitempty"`
-
-	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-	Type BillAnalysisBudgetFilterRequestBodyType `json:"type"`
-
-	// Value a value that the dimension must match. Required for the 'equal' filter type.
-	Value *string `json:"value,omitempty"`
-}
-
-// BillAnalysisBudgetFilterRequestBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-type BillAnalysisBudgetFilterRequestBodyType string
-
-// BillAnalysisBudgetFilterResponse A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
-//
-// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
-// An empty filter expression implies all costs are included.
-//
-// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
-// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
-//
-// Examples of each filter type:
-// ```
-// {"type":"equal", "dimension":"vendor", "value":"AWS"}
-//
-// {"type":"and", "expressions":[
-//
-//	{"type":"equal", "dimension":"vendor", "value":"AWS"},
-//	{"type":"equal", "dimension":"rbd_team", "value":"Blue"}
-//
-// ]}
-//
-// {"type":"or", "expressions":[
-//
-//	{"type":"equal", "dimension":"rbd_team", "value":"Blue"},
-//	{"type":"equal", "dimension":"rbd_team", "value":"Green"}
-//
-// ]}
-//
-//	{"type":"not", "expression": {
-//	  "type":"equal", "dimension":"vendor", "substring":"AWS"
-//	}}
-//
-// ```
-// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
-type BillAnalysisBudgetFilterResponse struct {
-	// Dimension name of a dimension to examine. Required for the 'equal' filter type. Note the `billing_center_id` dimension is not supported at this time.
-	Dimension *string `json:"dimension,omitempty"`
-
-	// Expression A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
-	//
-	// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
-	// An empty filter expression implies all costs are included.
-	//
-	// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
-	// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
-	//
-	// Examples of each filter type:
-	// ```
-	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
-	//
-	// {"type":"and", "expressions":[
-	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
-	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
-	// ]}
-	//
-	// {"type":"or", "expressions":[
-	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"},
-	//   {"type":"equal", "dimension":"rbd_team", "value":"Green"}
-	// ]}
-	//
-	// {"type":"not", "expression": {
-	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
-	// }}
-	// ```
-	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
-	Expression *BillAnalysisBudgetFilterResponse `json:"expression,omitempty"`
-
-	// Expressions the filter expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' filter types.
-	Expressions *[]BillAnalysisBudgetFilterResponse `json:"expressions,omitempty"`
-
-	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-	Type BillAnalysisBudgetFilterResponseType `json:"type"`
-
-	// Value a value that the dimension must match. Required for the 'equal' filter type.
-	Value *string `json:"value,omitempty"`
-}
-
-// BillAnalysisBudgetFilterResponseType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-type BillAnalysisBudgetFilterResponseType string
-
-// BillAnalysisBudgetFilterResponseBody A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
-//
-// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
-// An empty filter expression implies all costs are included.
-//
-// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
-// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
-//
-// Examples of each filter type:
-// ```
-// {"type":"equal", "dimension":"vendor", "value":"AWS"}
-//
-// {"type":"and", "expressions":[
-//
-//	{"type":"equal", "dimension":"vendor", "value":"AWS"},
-//	{"type":"equal", "dimension":"rbd_team", "value":"Blue"}
-//
-// ]}
-//
-// {"type":"or", "expressions":[
-//
-//	{"type":"equal", "dimension":"rbd_team", "value":"Blue"},
-//	{"type":"equal", "dimension":"rbd_team", "value":"Green"}
-//
-// ]}
-//
-//	{"type":"not", "expression": {
-//	  "type":"equal", "dimension":"vendor", "substring":"AWS"
-//	}}
-//
-// ```
-// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
-type BillAnalysisBudgetFilterResponseBody struct {
-	// Dimension name of a dimension to examine. Required for the 'equal' filter type. Note the `billing_center_id` dimension is not supported at this time.
-	Dimension *string `json:"dimension,omitempty"`
-
-	// Expression A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
-	//
-	// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
-	// An empty filter expression implies all costs are included.
-	//
-	// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
-	// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
-	//
-	// Examples of each filter type:
-	// ```
-	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
-	//
-	// {"type":"and", "expressions":[
-	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
-	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
-	// ]}
-	//
-	// {"type":"or", "expressions":[
-	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"},
-	//   {"type":"equal", "dimension":"rbd_team", "value":"Green"}
-	// ]}
-	//
-	// {"type":"not", "expression": {
-	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
-	// }}
-	// ```
-	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
-	Expression *BillAnalysisBudgetFilterResponseBody `json:"expression,omitempty"`
-
-	// Expressions the filter expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' filter types.
-	Expressions *[]BillAnalysisBudgetFilterResponseBody `json:"expressions,omitempty"`
-
-	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-	Type BillAnalysisBudgetFilterResponseBodyType `json:"type"`
-
-	// Value a value that the dimension must match. Required for the 'equal' filter type.
-	Value *string `json:"value,omitempty"`
-}
-
-// BillAnalysisBudgetFilterResponseBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-type BillAnalysisBudgetFilterResponseBodyType string
-
-// BillAnalysisConditionRequestBody The criteria for the given multipliers to be applied to a cost row.
-// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
-//
-// Some of the types are primitive conditions, and others like 'and', 'or', and 'not', are used to build complex expressions.
-//
-// Examples of each condition type:
-// ~~~~
-// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
-// ~~~~
-// ~~~~
-// {"type":"allocated_to_billing_center", "billing_center_id":"1efg3457f129810cd12e1297a1de"}
-// ~~~~
-// ~~~~
-// {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
-// ~~~~
-// ~~~~
-// {"type":"and", "expressions":[
-//
-//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
-//	{"type":"dimension_equals", "dimension":"service", "value":"EC2"},
-//	{"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
-//
-// ]}
-// ~~~~
-// ~~~~
-// {"type":"or", "expressions":[
-//
-//	{"type":"allocated_to_billing_center", "billing_center_id":"1abc3457f129810cd12e1297a0cb"},
-//	{"type":"allocated_to_billing_center", "billing_center_id":"29810cd12e1297a1de1efg3457f1"}
-//
-// ]}
-// ~~~~
-// ~~~~
-//
-//	{"type":"not", "expression": {
-//	  "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
-//	}}
-//
-// ~~~~
-// ~~~~
-//
-//	{"type":"not", "expression": {
-//	  "type":"dimension_contains", "dimension":"vendor", "substring":"Azure"
-//	}}
-//
-// ~~~~
-// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
-type BillAnalysisConditionRequestBody struct {
-	// BillingCenterId to check whether the cost was allocated to this Billing Center ID. Required for the 'allocated_to_billing_center' type.
-	BillingCenterId *string `json:"billing_center_id,omitempty"`
-
-	// Dimension The dimension to check the value of. Required for the 'dimension_equals' and 'dimension_contains' type.
-	Dimension *string `json:"dimension,omitempty"`
-
-	// Expression The criteria for the given multipliers to be applied to a cost row.
-	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
-	//
-	// Some of the types are primitive conditions, and others like 'and', 'or', and 'not', are used to build complex expressions.
-	//
-	// Examples of each condition type:
-	// ~~~~
-	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
-	// ~~~~
-	// ~~~~
-	// {"type":"allocated_to_billing_center", "billing_center_id":"1efg3457f129810cd12e1297a1de"}
-	// ~~~~
-	// ~~~~
-	// {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
-	// ~~~~
-	// ~~~~
-	// {"type":"and", "expressions":[
-	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
-	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"},
-	//   {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
-	// ]}
-	// ~~~~
-	// ~~~~
-	// {"type":"or", "expressions":[
-	//   {"type":"allocated_to_billing_center", "billing_center_id":"1abc3457f129810cd12e1297a0cb"},
-	//   {"type":"allocated_to_billing_center", "billing_center_id":"29810cd12e1297a1de1efg3457f1"}
-	// ]}
-	// ~~~~
-	// ~~~~
-	// {"type":"not", "expression": {
-	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
-	// }}
-	// ~~~~
-	// ~~~~
-	// {"type":"not", "expression": {
-	//   "type":"dimension_contains", "dimension":"vendor", "substring":"Azure"
-	// }}
-	// ~~~~
-	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
-	Expression *BillAnalysisConditionRequestBody `json:"expression,omitempty"`
-
-	// Expressions the expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' types.
-	Expressions *[]BillAnalysisConditionRequestBody `json:"expressions,omitempty"`
-
-	// Substring The substring that the dimension must contain. Required for the 'dimension_contains' type.
-	Substring *string `json:"substring,omitempty"`
-
-	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-	Type BillAnalysisConditionRequestBodyType `json:"type"`
-
-	// Value The value that the dimension must match. Required for the 'dimension_equals' type.
-	Value *string `json:"value,omitempty"`
-}
-
-// BillAnalysisConditionRequestBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-type BillAnalysisConditionRequestBodyType string
-
-// BillAnalysisConditionResponseBody The criteria for the given multipliers to be applied to a cost row.
-// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
-//
-// Some of the types are primitive conditions, and others like 'and', 'or', and 'not', are used to build complex expressions.
-//
-// Examples of each condition type:
-// ~~~~
-// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
-// ~~~~
-// ~~~~
-// {"type":"allocated_to_billing_center", "billing_center_id":"1efg3457f129810cd12e1297a1de"}
-// ~~~~
-// ~~~~
-// {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
-// ~~~~
-// ~~~~
-// {"type":"and", "expressions":[
-//
-//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
-//	{"type":"dimension_equals", "dimension":"service", "value":"EC2"},
-//	{"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
-//
-// ]}
-// ~~~~
-// ~~~~
-// {"type":"or", "expressions":[
-//
-//	{"type":"allocated_to_billing_center", "billing_center_id":"1abc3457f129810cd12e1297a0cb"},
-//	{"type":"allocated_to_billing_center", "billing_center_id":"29810cd12e1297a1de1efg3457f1"}
-//
-// ]}
-// ~~~~
-// ~~~~
-//
-//	{"type":"not", "expression": {
-//	  "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
-//	}}
-//
-// ~~~~
-// ~~~~
-//
-//	{"type":"not", "expression": {
-//	  "type":"dimension_contains", "dimension":"vendor", "substring":"Azure"
-//	}}
-//
-// ~~~~
-// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
-type BillAnalysisConditionResponseBody struct {
-	// BillingCenterId to check whether the cost was allocated to this Billing Center ID. Required for the 'allocated_to_billing_center' type.
-	BillingCenterId *string `json:"billing_center_id,omitempty"`
-
-	// Dimension The dimension to check the value of. Required for the 'dimension_equals' and 'dimension_contains' type.
-	Dimension *string `json:"dimension,omitempty"`
-
-	// Expression The criteria for the given multipliers to be applied to a cost row.
-	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
-	//
-	// Some of the types are primitive conditions, and others like 'and', 'or', and 'not', are used to build complex expressions.
-	//
-	// Examples of each condition type:
-	// ~~~~
-	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
-	// ~~~~
-	// ~~~~
-	// {"type":"allocated_to_billing_center", "billing_center_id":"1efg3457f129810cd12e1297a1de"}
-	// ~~~~
-	// ~~~~
-	// {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
-	// ~~~~
-	// ~~~~
-	// {"type":"and", "expressions":[
-	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
-	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"},
-	//   {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
-	// ]}
-	// ~~~~
-	// ~~~~
-	// {"type":"or", "expressions":[
-	//   {"type":"allocated_to_billing_center", "billing_center_id":"1abc3457f129810cd12e1297a0cb"},
-	//   {"type":"allocated_to_billing_center", "billing_center_id":"29810cd12e1297a1de1efg3457f1"}
-	// ]}
-	// ~~~~
-	// ~~~~
-	// {"type":"not", "expression": {
-	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
-	// }}
-	// ~~~~
-	// ~~~~
-	// {"type":"not", "expression": {
-	//   "type":"dimension_contains", "dimension":"vendor", "substring":"Azure"
-	// }}
-	// ~~~~
-	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
-	Expression *BillAnalysisConditionResponseBody `json:"expression,omitempty"`
-
-	// Expressions the expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' types.
-	Expressions *[]BillAnalysisConditionResponseBody `json:"expressions,omitempty"`
-
-	// Substring The substring that the dimension must contain. Required for the 'dimension_contains' type.
-	Substring *string `json:"substring,omitempty"`
-
-	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-	Type BillAnalysisConditionResponseBodyType `json:"type"`
-
-	// Value The value that the dimension must match. Required for the 'dimension_equals' type.
-	Value *string `json:"value,omitempty"`
-}
-
-// BillAnalysisConditionResponseBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-type BillAnalysisConditionResponseBodyType string
-
-// BillAnalysisCostsAggregatedRequestBody defines model for BillAnalysis_CostsAggregatedRequestBody.
-type BillAnalysisCostsAggregatedRequestBody struct {
+// BillAnalysisAggregatedRequestBody defines model for BillAnalysis_AggregatedRequestBody.
+type BillAnalysisAggregatedRequestBody struct {
 	// BillingCenterIds IDs of BillingCenters to get cost data for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
 	BillingCenterIds []string `json:"billing_center_ids"`
-
-	// Dataset indicates which datasource to query from, if set to billing, it will query from billing data source.
-	Dataset *BillAnalysisCostsAggregatedRequestBodyDataset `json:"dataset,omitempty"`
 
 	// Dimensions The list of supported dimensions by which to roll up the costs.
 	Dimensions *[]string `json:"dimensions,omitempty"`
@@ -4181,11 +3737,11 @@ type BillAnalysisCostsAggregatedRequestBody struct {
 	//   {"type":"not", "expression": {
 	//     "type":"equal", "dimension":"vendor", "substring":"aws"
 	//   }}
-	Filter *BillAnalysisFilterV1RequestBody `json:"filter,omitempty"`
+	Filter *BillAnalysisFilterV1 `json:"filter,omitempty"`
 
 	// Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
 	// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
-	Granularity *BillAnalysisCostsAggregatedRequestBodyGranularity `json:"granularity,omitempty"`
+	Granularity *BillAnalysisAggregatedRequestBodyGranularity `json:"granularity,omitempty"`
 
 	// Limit Maximum number of records to return. If this limit does not allow all rows to be returned, rowsTruncated:true will be added to the response to indicate the result is incomplete.
 	Limit *int64 `json:"limit,omitempty"`
@@ -4200,7 +3756,7 @@ type BillAnalysisCostsAggregatedRequestBody struct {
 	//  - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
 	//
 	// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
-	PeriodType *BillAnalysisCostsAggregatedRequestBodyPeriodType `json:"period_type,omitempty"`
+	PeriodType *BillAnalysisAggregatedRequestBodyPeriodType `json:"period_type,omitempty"`
 
 	// StartAt Earliest timestamp (inclusive) of the returned costs.
 	// For month granularity: consists of a year and month in YYYY-MM format.
@@ -4212,27 +3768,642 @@ type BillAnalysisCostsAggregatedRequestBody struct {
 	Summarized *bool `json:"summarized,omitempty"`
 }
 
-// BillAnalysisCostsAggregatedRequestBodyDataset indicates which datasource to query from, if set to billing, it will query from billing data source.
-type BillAnalysisCostsAggregatedRequestBodyDataset string
-
-// BillAnalysisCostsAggregatedRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
+// BillAnalysisAggregatedRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
 // Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
-type BillAnalysisCostsAggregatedRequestBodyGranularity string
+type BillAnalysisAggregatedRequestBodyGranularity string
 
-// BillAnalysisCostsAggregatedRequestBodyPeriodType Determines which date column to use for filtering.
+// BillAnalysisAggregatedRequestBodyPeriodType Determines which date column to use for filtering.
 //   - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
 //   - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
 //
 // For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
-type BillAnalysisCostsAggregatedRequestBodyPeriodType string
+type BillAnalysisAggregatedRequestBodyPeriodType string
 
-// BillAnalysisCostsSelectRequestBody defines model for BillAnalysis_CostsSelectRequestBody.
-type BillAnalysisCostsSelectRequestBody struct {
+// BillAnalysisAggregatedRequestBody2 defines model for BillAnalysis_AggregatedRequestBody2.
+type BillAnalysisAggregatedRequestBody2 struct {
+	// EndAt Latest timestamp (exclusive) of the anomaly. Consists of a year, month, and day in YYYY-MM-DD format. Will be interpreted as UTC, which is used for period boundaries. No records will be returned on or after this timestamp.
+	EndAt string `json:"endAt"`
+
+	// Filter Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
+	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+	// Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	//
+	// Examples of each filter type:
+	//
+	// {"type":"equal", "dimension":"vendor", "value":"aws"}
+	//
+	//   {"type":"substring", "dimension":"tag_env", "substring":"dev"}
+	//
+	//   {"type":"and", "expressions":[
+	//     {"type":"equal", "dimension":"vendor", "value":"aws"},
+	//     {"type":"equal", "dimension":"tag_env", "value":"dev"}
+	//   ]}
+	//
+	//   {"type":"or", "expressions":[
+	//     {"type":"substring", "dimension":"tag_env", "substring":"dev"},
+	//     {"type":"substring", "dimension":"tag_env", "substring":"stage"}
+	//   ]}
+	//
+	//   {"type":"not", "expression": {
+	//     "type":"equal", "dimension":"vendor", "substring":"aws"
+	//   }}
+	Filter *BillAnalysisFilterV1 `json:"filter,omitempty"`
+
+	// Metric The metric used for the anomaly
+	Metric BillAnalysisAggregatedRequestBody2Metric `json:"metric"`
+
+	// StartAt Earliest timestamp (inclusive) of the returned anomaly. Consists of a year, month, and day in YYYY-MM-DD format. Will be interpreted as UTC, which is used for period boundaries.
+	StartAt string `json:"startAt"`
+}
+
+// BillAnalysisAggregatedRequestBody2Metric The metric used for the anomaly
+type BillAnalysisAggregatedRequestBody2Metric string
+
+// BillAnalysisAllDatedAdjustmentLists defines model for BillAnalysis_AllDatedAdjustmentLists.
+type BillAnalysisAllDatedAdjustmentLists struct {
+	DatedAdjustmentLists BillAnalysisDatedAdjustmentListResultCollection `json:"dated_adjustment_lists"`
+
+	// UpdatedAt the timestamp when any of the adjustment lists in the org were last updated (including deletions)
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// BillAnalysisAnalyticsQueryResult defines model for BillAnalysis_AnalyticsQueryResult.
+type BillAnalysisAnalyticsQueryResult struct {
+	// Rows Query result rows
+	Rows []BillAnalysisRow `json:"rows"`
+
+	// RowsTruncated Indicates whether the number of rows returned was limited due to exceeding the maximum allowed result size.
+	RowsTruncated *bool `json:"rowsTruncated,omitempty"`
+}
+
+// BillAnalysisAnomaly An identified cost anomaly
+type BillAnalysisAnomaly struct {
+	// Description Detailed description of the anomaly
+	Description *string `json:"description,omitempty"`
+
+	// DetectionDate Timestamp representing when the anomaly was detected
+	DetectionDate openapi_types.Date `json:"detectionDate"`
+
+	// Dimensions Dimensions used to detect anomaly. Each anomaly will be defined as a unique combination of these dimension values.
+	Dimensions map[string]string `json:"dimensions"`
+
+	// EndDate Timestamp representing end date of the anomalous data (YYYY-MM-DD)
+	EndDate *openapi_types.Date `json:"endDate,omitempty"`
+
+	// Id ID of the anomaly
+	Id string `json:"id"`
+
+	// Metric The metric used for the anomaly
+	Metric string `json:"metric"`
+
+	// Metrics List of anomaly metrics
+	Metrics map[string]float64 `json:"metrics"`
+
+	// Name A descriptive name for the anomaly
+	Name string `json:"name"`
+
+	// StartDate Timestamp representing start date of the anomalous data(YYYY-MM-DD)
+	StartDate *openapi_types.Date `json:"startDate,omitempty"`
+
+	// Type The type of anomaly
+	Type string `json:"type"`
+}
+
+// BillAnalysisAnomalyAggregatedResult defines model for BillAnalysis_AnomalyAggregatedResult.
+type BillAnalysisAnomalyAggregatedResult struct {
+	// Metrics List of aggregated anomaly metrics
+	Metrics []BillAnalysisAnomalyMetric `json:"metrics"`
+}
+
+// BillAnalysisAnomalyDetails defines model for BillAnalysis_AnomalyDetails.
+type BillAnalysisAnomalyDetails struct {
+	// Summary An identified cost anomaly
+	Summary BillAnalysisAnomaly `json:"summary"`
+
+	// TimeSeries TimeSeries data of the anomaly
+	TimeSeries []BillAnalysisAnomalyTimeseriesPoint `json:"timeSeries"`
+}
+
+// BillAnalysisAnomalyIndexResult defines model for BillAnalysis_AnomalyIndexResult.
+type BillAnalysisAnomalyIndexResult struct {
+	// Anomalies List of anomalies
+	Anomalies []BillAnalysisAnomaly `json:"anomalies"`
+
+	// Pagination Pagination information
+	Pagination BillAnalysisPagination `json:"pagination"`
+}
+
+// BillAnalysisAnomalyMetric A single aggregated KPI metric
+type BillAnalysisAnomalyMetric struct {
+	// Description Description of the anomaly metric
+	Description *string `json:"description,omitempty"`
+
+	// Name Name of the anomaly metric
+	Name string `json:"name"`
+
+	// Value Value associated with anomaly metric
+	Value float64 `json:"value"`
+}
+
+// BillAnalysisAnomalyTimeseriesPoint Timeseries chart datapoint for anomaly details
+type BillAnalysisAnomalyTimeseriesPoint struct {
+	// ActualCost Actual spend/cost value for this date
+	ActualCost float64 `json:"actualCost"`
+
+	// Anomalous True if this point is anomalous
+	Anomalous *bool `json:"anomalous,omitempty"`
+
+	// Date Date for this data point (YYYY-MM-DD)
+	Date openapi_types.Date `json:"date"`
+
+	// ExpectedCost Expected spend/cost value for this date
+	ExpectedCost float64 `json:"expectedCost"`
+}
+
+// BillAnalysisBillLockingProviderOptions Configuration options for the selected provider locking type
+type BillAnalysisBillLockingProviderOptions struct {
+	// Date Date value for locking (format depends on type)
+	Date *string `json:"date,omitempty"`
+}
+
+// BillAnalysisBillLockingProviderSetting Provider-specific locking configuration override
+type BillAnalysisBillLockingProviderSetting struct {
+	// Options Configuration options for the selected provider locking type
+	Options *BillAnalysisBillLockingProviderOptions `json:"options,omitempty"`
+
+	// Type Locking type strategy for this provider
+	Type BillAnalysisBillLockingProviderSettingType `json:"type"`
+}
+
+// BillAnalysisBillLockingProviderSettingType Locking type strategy for this provider
+type BillAnalysisBillLockingProviderSettingType string
+
+// BillAnalysisBillLockingProviders Per-provider locking overrides (currently AWS only)
+type BillAnalysisBillLockingProviders struct {
+	// Aws Provider-specific locking configuration override
+	Aws *BillAnalysisBillLockingProviderSetting `json:"aws,omitempty"`
+}
+
+// BillAnalysisBillLockingSettings Configuration settings for automatic bill locking
+type BillAnalysisBillLockingSettings struct {
+	// Options Configuration options for the selected locking type
+	Options *struct {
+		// Date Date value for locking (format depends on type)
+		Date string `json:"date"`
+	} `json:"options,omitempty"`
+
+	// Providers Per-provider locking overrides (currently AWS only)
+	Providers *BillAnalysisBillLockingProviders `json:"providers,omitempty"`
+
+	// Type Locking type strategy
+	Type BillAnalysisBillLockingSettingsType `json:"type"`
+}
+
+// BillAnalysisBillLockingSettingsType Locking type strategy
+type BillAnalysisBillLockingSettingsType string
+
+// BillAnalysisBillMonth Bill month information with processing status
+type BillAnalysisBillMonth struct {
+	// BillMonth Bill month in YYYYMM format
+	BillMonth string `json:"bill_month"`
+
+	// BillSourceId Unique identifier for the bill source
+	BillSourceId string `json:"bill_source_id"`
+
+	// IsHistoricalMonth Whether the bill month is historical rather than the current month
+	IsHistoricalMonth *bool `json:"is_historical_month,omitempty"`
+
+	// LastProcessEndAt Timestamp when processing last ended
+	LastProcessEndAt *time.Time `json:"last_process_end_at,omitempty"`
+
+	// LastProcessStartAt Timestamp when processing last started
+	LastProcessStartAt *time.Time `json:"last_process_start_at,omitempty"`
+
+	// LastUnlockedAndProcessedAt Timestamp when last unlocked and processed
+	LastUnlockedAndProcessedAt *time.Time `json:"last_unlocked_and_processed_at,omitempty"`
+
+	// LockedAt Timestamp when the bill month was locked
+	LockedAt *time.Time `json:"locked_at,omitempty"`
+
+	// NewVendorDataAvailableAt Timestamp when new vendor data became available, or 'No' if none
+	NewVendorDataAvailableAt *time.Time `json:"new_vendor_data_available_at,omitempty"`
+
+	// Status Current processing status of the bill month
+	Status BillAnalysisBillMonthStatus `json:"status"`
+}
+
+// BillAnalysisBillMonthStatus Current processing status of the bill month
+type BillAnalysisBillMonthStatus string
+
+// BillAnalysisBillMonthSearchResponse defines model for BillAnalysis_BillMonthSearchResponse.
+type BillAnalysisBillMonthSearchResponse struct {
+	// Count Total number of records matching the search criteria
+	Count int64 `json:"count"`
+
+	// DownloadUrl URL for downloading the complete dataset
+	DownloadUrl string `json:"downloadUrl"`
+
+	// NextPage URL for the next page of results
+	NextPage *string `json:"nextPage,omitempty"`
+
+	// PreviousPage Opaque cursor for previous page (omitted if on first page).
+	PreviousPage *string `json:"previousPage,omitempty"`
+
+	// UpdatedAt Date when the data was last updated
+	UpdatedAt openapi_types.Date `json:"updated_at"`
+
+	// Values Array of bill month records
+	Values []BillAnalysisBillMonth `json:"values"`
+}
+
+// BillAnalysisBillingSettingsResponse defines model for BillAnalysis_BillingSettingsResponse.
+type BillAnalysisBillingSettingsResponse struct {
+	// AutomaticBillLockingSettings Configuration settings for automatic bill locking
+	AutomaticBillLockingSettings BillAnalysisBillLockingSettings `json:"automatic_bill_locking_settings"`
+}
+
+// BillAnalysisBudgetFilter A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+//
+// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
+// An empty filter expression implies all costs are included.
+//
+// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
+// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
+//
+// Examples of each filter type:
+// ```
+// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+//
+// {"type":"and", "expressions":[
+//
+//	{"type":"equal", "dimension":"vendor", "value":"AWS"},
+//	{"type":"equal", "dimension":"rbd_team", "value":"Blue"}
+//
+// ]}
+//
+// {"type":"or", "expressions":[
+//
+//	{"type":"equal", "dimension":"rbd_team", "value":"Blue"},
+//	{"type":"equal", "dimension":"rbd_team", "value":"Green"}
+//
+// ]}
+//
+//	{"type":"not", "expression": {
+//	  "type":"equal", "dimension":"vendor", "substring":"AWS"
+//	}}
+//
+// ```
+// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+type BillAnalysisBudgetFilter struct {
+	// Dimension name of a dimension to examine. Required for the 'equal' filter type. Note the `billing_center_id` dimension is not supported at this time.
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+	//
+	// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
+	// An empty filter expression implies all costs are included.
+	//
+	// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
+	// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
+	//
+	// Examples of each filter type:
+	// ```
+	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+	//
+	// {"type":"and", "expressions":[
+	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
+	// ]}
+	//
+	// {"type":"or", "expressions":[
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Green"}
+	// ]}
+	//
+	// {"type":"not", "expression": {
+	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
+	// }}
+	// ```
+	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	Expression *BillAnalysisBudgetFilter `json:"expression,omitempty"`
+
+	// Expressions the filter expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' filter types.
+	Expressions *[]BillAnalysisBudgetFilter `json:"expressions,omitempty"`
+
+	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+	Type BillAnalysisBudgetFilterType `json:"type"`
+
+	// Value a value that the dimension must match. Required for the 'equal' filter type.
+	Value *string `json:"value,omitempty"`
+}
+
+// BillAnalysisBudgetFilterType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type BillAnalysisBudgetFilterType string
+
+// BillAnalysisCloudVendorAccountCollection defines model for BillAnalysis_CloudVendorAccountCollection.
+type BillAnalysisCloudVendorAccountCollection = []BillAnalysisRightscaleOptimaCloudVendorAccount
+
+// BillAnalysisCommitmentReallocationSetting defines model for BillAnalysis_CommitmentReallocationSetting.
+type BillAnalysisCommitmentReallocationSetting struct {
+	// BillSource Bill source identifier the commitment reallocation settings will be applied to.
+	BillSource string `json:"bill_source"`
+
+	// StartAt Year-month (UTC) the commitment reallocation settings will be effective at.
+	StartAt string `json:"start_at"`
+
+	// Strategy Commitment reallocation strategy to be applied. `effective_cost` means the cost of the commitment (only the consumed proportion) will be reallocated to the usage rows covered by it.
+	Strategy BillAnalysisCommitmentReallocationSettingStrategy `json:"strategy"`
+}
+
+// BillAnalysisCommitmentReallocationSettingStrategy Commitment reallocation strategy to be applied. `effective_cost` means the cost of the commitment (only the consumed proportion) will be reallocated to the usage rows covered by it.
+type BillAnalysisCommitmentReallocationSettingStrategy string
+
+// BillAnalysisCommitmentReallocationSettingType defines model for BillAnalysis_CommitmentReallocationSettingType.
+type BillAnalysisCommitmentReallocationSettingType struct {
+	// Settings list of configurations that would be effective for the type given.
+	Settings []BillAnalysisCommitmentReallocationSetting `json:"settings"`
+
+	// Type Type of reallocation to be configured
+	Type BillAnalysisCommitmentReallocationSettingTypeType `json:"type"`
+}
+
+// BillAnalysisCommitmentReallocationSettingTypeType Type of reallocation to be configured
+type BillAnalysisCommitmentReallocationSettingTypeType string
+
+// BillAnalysisCommitmentReallocationSettings defines model for BillAnalysis_CommitmentReallocationSettings.
+type BillAnalysisCommitmentReallocationSettings struct {
+	// CommitmentReallocationSettings List of commitment reallocation settings for the org given.
+	CommitmentReallocationSettings []BillAnalysisCommitmentReallocationSettingType `json:"commitment_reallocation_settings"`
+
+	// UpdatedAt the timestamp when the commitment reallocation settings list was last updated
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// BillAnalysisCondition The criteria for the given multipliers to be applied to a cost row.
+// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+//
+// Some of the types are primitive conditions, and others like 'and', 'or', and 'not', are used to build complex expressions.
+//
+// Examples of each condition type:
+// ~~~~
+// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+// ~~~~
+// ~~~~
+// {"type":"allocated_to_billing_center", "billing_center_id":"1efg3457f129810cd12e1297a1de"}
+// ~~~~
+// ~~~~
+// {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+// ~~~~
+// ~~~~
+// {"type":"and", "expressions":[
+//
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+//	{"type":"dimension_equals", "dimension":"service", "value":"EC2"},
+//	{"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+//
+// ]}
+// ~~~~
+// ~~~~
+// {"type":"or", "expressions":[
+//
+//	{"type":"allocated_to_billing_center", "billing_center_id":"1abc3457f129810cd12e1297a0cb"},
+//	{"type":"allocated_to_billing_center", "billing_center_id":"29810cd12e1297a1de1efg3457f1"}
+//
+// ]}
+// ~~~~
+// ~~~~
+//
+//	{"type":"not", "expression": {
+//	  "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+//	}}
+//
+// ~~~~
+// ~~~~
+//
+//	{"type":"not", "expression": {
+//	  "type":"dimension_contains", "dimension":"vendor", "substring":"Azure"
+//	}}
+//
+// ~~~~
+// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+type BillAnalysisCondition struct {
+	// BillingCenterId to check whether the cost was allocated to this Billing Center ID. Required for the 'allocated_to_billing_center' type.
+	BillingCenterId *string `json:"billing_center_id,omitempty"`
+
+	// Dimension The dimension to check the value of. Required for the 'dimension_equals' and 'dimension_contains' type.
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression The criteria for the given multipliers to be applied to a cost row.
+	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+	//
+	// Some of the types are primitive conditions, and others like 'and', 'or', and 'not', are used to build complex expressions.
+	//
+	// Examples of each condition type:
+	// ~~~~
+	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+	// ~~~~
+	// ~~~~
+	// {"type":"allocated_to_billing_center", "billing_center_id":"1efg3457f129810cd12e1297a1de"}
+	// ~~~~
+	// ~~~~
+	// {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+	// ~~~~
+	// ~~~~
+	// {"type":"and", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"},
+	//   {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"or", "expressions":[
+	//   {"type":"allocated_to_billing_center", "billing_center_id":"1abc3457f129810cd12e1297a0cb"},
+	//   {"type":"allocated_to_billing_center", "billing_center_id":"29810cd12e1297a1de1efg3457f1"}
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"not", "expression": {
+	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+	// }}
+	// ~~~~
+	// ~~~~
+	// {"type":"not", "expression": {
+	//   "type":"dimension_contains", "dimension":"vendor", "substring":"Azure"
+	// }}
+	// ~~~~
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+	Expression *BillAnalysisCondition `json:"expression,omitempty"`
+
+	// Expressions the expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' types.
+	Expressions *[]BillAnalysisCondition `json:"expressions,omitempty"`
+
+	// Substring The substring that the dimension must contain. Required for the 'dimension_contains' type.
+	Substring *string `json:"substring,omitempty"`
+
+	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+	Type BillAnalysisConditionType `json:"type"`
+
+	// Value The value that the dimension must match. Required for the 'dimension_equals' type.
+	Value *string `json:"value,omitempty"`
+}
+
+// BillAnalysisConditionType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type BillAnalysisConditionType string
+
+// BillAnalysisCreateRequestBody2 defines model for BillAnalysis_CreateRequestBody2.
+type BillAnalysisCreateRequestBody2 struct {
+	// Name Name to be displayed in the UI.
+	Name string `json:"name"`
+
+	// TagKey Tag key (the part of the tag before the "=" character).
+	TagKey string `json:"tag_key"`
+}
+
+// BillAnalysisCreateRequestBody3 defines model for BillAnalysis_CreateRequestBody3.
+type BillAnalysisCreateRequestBody3 struct {
+	// Name Name of the custom dimension to be displayed in the UI.
+	Name string `json:"name"`
+
+	// Tags Custom Dimension tags associated with given display name
+	Tags []BillAnalysisCustomDimensionTag `json:"tags"`
+}
+
+// BillAnalysisCreateRequestBody4 defines model for BillAnalysis_CreateRequestBody4.
+type BillAnalysisCreateRequestBody4 struct {
+	// Area UI Area
+	Area string `json:"area"`
+
+	// Config A json blob used by the UI
+	Config map[string]interface{} `json:"config"`
+
+	// Name Display name of dashboard
+	Name string `json:"name"`
+
+	// Scope Describes whether this dashboard is scoped to a particular billing center
+	Scope *[]string `json:"scope,omitempty"`
+}
+
+// BillAnalysisCreateRequestBody5 defines model for BillAnalysis_CreateRequestBody5.
+type BillAnalysisCreateRequestBody5 struct {
+	// Area UI Area
+	Area string `json:"area"`
+
+	// Config A json blob used by the UI
+	Config map[string]interface{} `json:"config"`
+
+	// Name Display name of dashboard
+	Name string `json:"name"`
+
+	// Scope Describes whether this dashboard is scoped to a particular billing center
+	Scope *[]string `json:"scope,omitempty"`
+
+	// Visibility A flag describing whether an org dashboard is public or default
+	Visibility *BillAnalysisCreateRequestBody5Visibility `json:"visibility,omitempty"`
+}
+
+// BillAnalysisCreateRequestBody5Visibility A flag describing whether an org dashboard is public or default
+type BillAnalysisCreateRequestBody5Visibility string
+
+// BillAnalysisCustomDashboardCollection defines model for BillAnalysis_CustomDashboardCollection.
+type BillAnalysisCustomDashboardCollection = []BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboard
+
+// BillAnalysisCustomDimensionCollection defines model for BillAnalysis_CustomDimensionCollection.
+type BillAnalysisCustomDimensionCollection = []BillAnalysisRightscaleCustomDimensionServiceCustomdimension
+
+// BillAnalysisCustomDimensionList defines model for BillAnalysis_CustomDimensionList.
+type BillAnalysisCustomDimensionList struct {
+	// Kind The resource's type
+	Kind   BillAnalysisCustomDimensionListKind         `json:"kind"`
+	Values BillAnalysisCustomDimensionResultCollection `json:"values"`
+}
+
+// BillAnalysisCustomDimensionListKind The resource's type
+type BillAnalysisCustomDimensionListKind string
+
+// BillAnalysisCustomDimensionResultCollection defines model for BillAnalysis_CustomDimensionResultCollection.
+type BillAnalysisCustomDimensionResultCollection = []BillAnalysisFlexeraOptimaCustomDimensionResults
+
+// BillAnalysisCustomDimensionTag A CustomDimensionTag contains tag key information
+type BillAnalysisCustomDimensionTag struct {
+	// Key Key (the part of the tag before the "=" character).
+	Key string `json:"key"`
+}
+
+// BillAnalysisDatedAdjustmentList List of adjustments that would apply as of the given effective date.
+type BillAnalysisDatedAdjustmentList struct {
+	// AdjustmentList List of adjustments that would apply as of the given effective date.
+	//  The list may contain up to 5 adjustments.
+	AdjustmentList []BillAnalysisAdjustment `json:"adjustment_list"`
+
+	// EffectiveAt Year-month (UTC) the list of adjustments will be effective.
+	EffectiveAt string `json:"effective_at"`
+}
+
+// BillAnalysisDatedAdjustmentListResultCollection defines model for BillAnalysis_DatedAdjustmentListResultCollection.
+type BillAnalysisDatedAdjustmentListResultCollection = []BillAnalysisRightscaleAdjustmentDefinitionServiceDatedAdjustmentListResult
+
+// BillAnalysisDatum defines model for BillAnalysis_Datum.
+type BillAnalysisDatum struct {
+	Annotations *map[string]float64 `json:"annotations,omitempty"`
+	Anomalous   bool                `json:"anomalous"`
+
+	// Date Date of the datum
+	Date  openapi_types.Date `json:"date"`
+	Value float64            `json:"value"`
+}
+
+// BillAnalysisDimensionsResult defines model for BillAnalysis_DimensionsResult.
+type BillAnalysisDimensionsResult struct {
+	// Dimensions List of dimensions available
+	Dimensions []BillAnalysisDimensionsView `json:"dimensions"`
+}
+
+// BillAnalysisDimensionsView defines model for BillAnalysis_DimensionsView.
+type BillAnalysisDimensionsView struct {
+	// Id The id used as an api parameter for the dimension
+	Id string `json:"id"`
+
+	// Name The display name of the dimension
+	Name string `json:"name"`
+
+	// Type The type of the dimension
+	Type string `json:"type"`
+}
+
+// BillAnalysisError defines model for BillAnalysis_Error.
+type BillAnalysisError struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillAnalysisExportSelectRequestBody defines model for BillAnalysis_ExportSelectRequestBody.
+type BillAnalysisExportSelectRequestBody struct {
+	// AdjDimensionGranularity Indicates which druid datasource to query.
+	//  - 'none' means no adjustment dimensions are included in the datasource, so any adjustments will already be aggregated into the final costs.
+	//  - 'org-level' means org-level adjustment dimensions are included in the datasource, so there will be separate rows for raw costs and for any adjustments.
+	AdjDimensionGranularity *BillAnalysisExportSelectRequestBodyAdjDimensionGranularity `json:"adj_dimension_granularity,omitempty"`
+
+	// AggregateToRequestedDimensions When true, the export will aggregate (sum) metrics, grouping by only the dimensions explicitly listed in the 'dimensions' parameter, resulting in fewer rows with summed metric values. When false (default), the export returns row-level data without aggregation, preserving the original granularity of the underlying cost data.
+	AggregateToRequestedDimensions *bool `json:"aggregate_to_requested_dimensions,omitempty"`
+
 	// BillingCenterIds IDs of BillingCenters to get cost data for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
 	BillingCenterIds []string `json:"billing_center_ids"`
-
-	// Dataset indicates which datasource to query from, if set to billing, it will query from billing data source.
-	Dataset *BillAnalysisCostsSelectRequestBodyDataset `json:"dataset,omitempty"`
 
 	// Dimensions The list of supported dimensions to return.
 	Dimensions []string `json:"dimensions"`
@@ -4268,26 +4439,16 @@ type BillAnalysisCostsSelectRequestBody struct {
 	//   {"type":"not", "expression": {
 	//     "type":"equal", "dimension":"vendor", "substring":"aws"
 	//   }}
-	Filter *BillAnalysisFilterV1RequestBody `json:"filter,omitempty"`
+	Filter *BillAnalysisFilterV1 `json:"filter,omitempty"`
 
 	// Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
 	// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
-	Granularity *BillAnalysisCostsSelectRequestBodyGranularity `json:"granularity,omitempty"`
-
-	// Limit limit number of records to return (max=100000).
-	Limit int64 `json:"limit"`
+	Granularity *BillAnalysisExportSelectRequestBodyGranularity `json:"granularity,omitempty"`
 
 	// Metrics Metrics to return.
 	// When metric 'usage_amount' is requested, dimension 'usage_unit' must be requested
 	// in the dimensions parameter.
 	Metrics []string `json:"metrics"`
-
-	// PeriodType Determines which date column to use for filtering.
-	//  - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
-	//  - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
-	//
-	// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
-	PeriodType *BillAnalysisCostsSelectRequestBodyPeriodType `json:"period_type,omitempty"`
 
 	// StartAt Earliest timestamp (inclusive) of the returned costs.
 	// For month granularity: consists of a year and month in YYYY-MM format.
@@ -4296,37 +4457,34 @@ type BillAnalysisCostsSelectRequestBody struct {
 	StartAt string `json:"start_at"`
 }
 
-// BillAnalysisCostsSelectRequestBodyDataset indicates which datasource to query from, if set to billing, it will query from billing data source.
-type BillAnalysisCostsSelectRequestBodyDataset string
+// BillAnalysisExportSelectRequestBodyAdjDimensionGranularity Indicates which druid datasource to query.
+//   - 'none' means no adjustment dimensions are included in the datasource, so any adjustments will already be aggregated into the final costs.
+//   - 'org-level' means org-level adjustment dimensions are included in the datasource, so there will be separate rows for raw costs and for any adjustments.
+type BillAnalysisExportSelectRequestBodyAdjDimensionGranularity string
 
-// BillAnalysisCostsSelectRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
+// BillAnalysisExportSelectRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
 // Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
-type BillAnalysisCostsSelectRequestBodyGranularity string
+type BillAnalysisExportSelectRequestBodyGranularity string
 
-// BillAnalysisCostsSelectRequestBodyPeriodType Determines which date column to use for filtering.
-//   - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
-//   - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
-//
-// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
-type BillAnalysisCostsSelectRequestBodyPeriodType string
-
-// BillAnalysisCurrencySettingUpdateRequestBody defines model for BillAnalysis_CurrencySettingUpdateRequestBody.
-type BillAnalysisCurrencySettingUpdateRequestBody struct {
-	// Value Setting value
-	Value string `json:"value"`
+// BillAnalysisExportSelectResult defines model for BillAnalysis_ExportSelectResult.
+type BillAnalysisExportSelectResult struct {
+	// ExportId The ID of the initiated export
+	ExportId string `json:"exportId"`
 }
 
-// BillAnalysisDatedAdjustmentListRequestBody List of adjustments that would apply as of the given effective date.
-type BillAnalysisDatedAdjustmentListRequestBody struct {
-	// AdjustmentList List of adjustments that would apply as of the given effective date.
-	//  The list may contain up to 5 adjustments.
-	AdjustmentList []BillAnalysisAdjustmentRequestBody `json:"adjustment_list"`
+// BillAnalysisExportSelectStatusResult defines model for BillAnalysis_ExportSelectStatusResult.
+type BillAnalysisExportSelectStatusResult struct {
+	// Status The status of the export operation
+	Status BillAnalysisExportSelectStatusResultStatus `json:"status"`
 
-	// EffectiveAt Year-month (UTC) the list of adjustments will be effective.
-	EffectiveAt string `json:"effective_at"`
+	// Urls URLs to download the export results, keyed by time period
+	Urls *map[string]string `json:"urls,omitempty"`
 }
 
-// BillAnalysisFilterV1RequestBody Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
+// BillAnalysisExportSelectStatusResultStatus The status of the export operation
+type BillAnalysisExportSelectStatusResultStatus string
+
+// BillAnalysisFilterV1 Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
 // The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
 // Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
 // The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
@@ -4350,7 +4508,7 @@ type BillAnalysisDatedAdjustmentListRequestBody struct {
 //	{"type":"not", "expression": {
 //	  "type":"equal", "dimension":"vendor", "substring":"aws"
 //	}}
-type BillAnalysisFilterV1RequestBody struct {
+type BillAnalysisFilterV1 struct {
 	// Dimension name of a dimension to examine. Required for the 'equal' and 'substring' filter types. Note the `billing_center_id` dimension is not supported at this time.
 	Dimension *string `json:"dimension,omitempty"`
 
@@ -4378,26 +4536,210 @@ type BillAnalysisFilterV1RequestBody struct {
 	//   {"type":"not", "expression": {
 	//     "type":"equal", "dimension":"vendor", "substring":"aws"
 	//   }}
-	Expression *BillAnalysisFilterV1RequestBody `json:"expression,omitempty"`
+	Expression *BillAnalysisFilterV1 `json:"expression,omitempty"`
 
 	// Expressions the filter expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' filter types.
-	Expressions *[]BillAnalysisFilterV1RequestBody `json:"expressions,omitempty"`
+	Expressions *[]BillAnalysisFilterV1 `json:"expressions,omitempty"`
 
 	// Substring a substring that the dimension value must contain. Required for the 'substring' filter type.
 	Substring *string `json:"substring,omitempty"`
 
 	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-	Type BillAnalysisFilterV1RequestBodyType `json:"type"`
+	Type BillAnalysisFilterV1Type `json:"type"`
 
 	// Value a value that the dimension must match. Required for the 'equal' filter type.
 	Value *string `json:"value,omitempty"`
 }
 
-// BillAnalysisFilterV1RequestBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-type BillAnalysisFilterV1RequestBodyType string
+// BillAnalysisFilterV1Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type BillAnalysisFilterV1Type string
 
-// BillAnalysisForecastsReportRequestBody defines model for BillAnalysis_ForecastsReportRequestBody.
-type BillAnalysisForecastsReportRequestBody struct {
+// BillAnalysisFlexeraOptimaCustomDimensionResults Information about a custom dimension
+type BillAnalysisFlexeraOptimaCustomDimensionResults struct {
+	// CreatedAt Creation timestamp
+	CreatedAt time.Time `json:"createdAt"`
+
+	// Id Identifier of the custom dimension.
+	Id string `json:"id"`
+
+	// Kind kind of data
+	Kind string `json:"kind"`
+
+	// Name Display name of a custom dimension
+	Name string `json:"name"`
+
+	// Tags Custom Dimension tags associated with given display name
+	Tags []BillAnalysisCustomDimensionTag `json:"tags"`
+
+	// UpdatedAt Updated at timestamp
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// BillAnalysisForecastSegment defines model for BillAnalysis_ForecastSegment.
+type BillAnalysisForecastSegment struct {
+	// ActualAmounts The actual amounts for this segment.
+	ActualAmounts *[]float64 `json:"actualAmounts,omitempty"`
+
+	// DimensionValues The dimension values for this segment.
+	DimensionValues *[]string `json:"dimensionValues,omitempty"`
+
+	// ForecastAmounts The forecasted amounts for this segment.
+	ForecastAmounts *[]float64 `json:"forecastAmounts,omitempty"`
+}
+
+// BillAnalysisIndexRequestBody defines model for BillAnalysis_IndexRequestBody.
+type BillAnalysisIndexRequestBody struct {
+	// EndAt Latest timestamp (exclusive) of the anomaly. Consists of a year, month, and day in YYYY-MM-DD format. Will be interpreted as UTC, which is used for period boundaries. No records will be returned on or after this timestamp.
+	EndAt string `json:"endAt"`
+
+	// Filter Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
+	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+	// Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	//
+	// Examples of each filter type:
+	//
+	// {"type":"equal", "dimension":"vendor", "value":"aws"}
+	//
+	//   {"type":"substring", "dimension":"tag_env", "substring":"dev"}
+	//
+	//   {"type":"and", "expressions":[
+	//     {"type":"equal", "dimension":"vendor", "value":"aws"},
+	//     {"type":"equal", "dimension":"tag_env", "value":"dev"}
+	//   ]}
+	//
+	//   {"type":"or", "expressions":[
+	//     {"type":"substring", "dimension":"tag_env", "substring":"dev"},
+	//     {"type":"substring", "dimension":"tag_env", "substring":"stage"}
+	//   ]}
+	//
+	//   {"type":"not", "expression": {
+	//     "type":"equal", "dimension":"vendor", "substring":"aws"
+	//   }}
+	Filter *BillAnalysisFilterV1 `json:"filter,omitempty"`
+
+	// Limit Pagination limit
+	Limit *int64 `json:"limit,omitempty"`
+
+	// Metric The metric used for the anomaly
+	Metric BillAnalysisIndexRequestBodyMetric `json:"metric"`
+
+	// Offset Pagination offset
+	Offset *int64 `json:"offset,omitempty"`
+
+	// SortColumn Sort column
+	SortColumn *string `json:"sortColumn,omitempty"`
+
+	// SortOrder Sort order
+	SortOrder *BillAnalysisIndexRequestBodySortOrder `json:"sortOrder,omitempty"`
+
+	// StartAt Earliest timestamp (inclusive) of the returned anomaly. Consists of a year, month, and day in YYYY-MM-DD format. Will be interpreted as UTC, which is used for period boundaries.
+	StartAt string `json:"startAt"`
+}
+
+// BillAnalysisIndexRequestBodyMetric The metric used for the anomaly
+type BillAnalysisIndexRequestBodyMetric string
+
+// BillAnalysisIndexRequestBodySortOrder Sort order
+type BillAnalysisIndexRequestBodySortOrder string
+
+// BillAnalysisMetricsResult defines model for BillAnalysis_MetricsResult.
+type BillAnalysisMetricsResult struct {
+	// Metrics List of metrics available
+	Metrics []BillAnalysisDimensionsView `json:"metrics"`
+}
+
+// BillAnalysisPagination Pagination information
+type BillAnalysisPagination struct {
+	// Limit Number of anomaly per page
+	Limit int64 `json:"limit"`
+
+	// Offset Pagination offset
+	Offset int64 `json:"offset"`
+
+	// Total Total number of anomalies
+	Total int64 `json:"total"`
+}
+
+// BillAnalysisReportRequestBody defines model for BillAnalysis_ReportRequestBody.
+type BillAnalysisReportRequestBody struct {
+	// BillingCenterIds IDs of BillingCenters to get data for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
+	BillingCenterIds []string `json:"billingCenterIds"`
+
+	// DetectionMethod Specifies the detection method to use: either Bollinger Band or AI Model.
+	DetectionMethod *BillAnalysisReportRequestBodyDetectionMethod `json:"detectionMethod,omitempty"`
+
+	// Dimensions The list of supported dimensions by which to roll up the costs.
+	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// EndAt Latest timestamp (exclusive) of the costs.
+	// For month granularity: consists of a year and month in YYYY-MM format.
+	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
+	// Will be interpreted as UTC, which is used for period boundaries.
+	// No records will be returned on or after this timestamp.
+	EndAt string `json:"endAt"`
+
+	// Filter Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
+	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+	// Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	//
+	// Examples of each filter type:
+	//
+	// {"type":"equal", "dimension":"vendor", "value":"aws"}
+	//
+	//   {"type":"substring", "dimension":"tag_env", "substring":"dev"}
+	//
+	//   {"type":"and", "expressions":[
+	//     {"type":"equal", "dimension":"vendor", "value":"aws"},
+	//     {"type":"equal", "dimension":"tag_env", "value":"dev"}
+	//   ]}
+	//
+	//   {"type":"or", "expressions":[
+	//     {"type":"substring", "dimension":"tag_env", "substring":"dev"},
+	//     {"type":"substring", "dimension":"tag_env", "substring":"stage"}
+	//   ]}
+	//
+	//   {"type":"not", "expression": {
+	//     "type":"equal", "dimension":"vendor", "substring":"aws"
+	//   }}
+	Filter *BillAnalysisFilterV1 `json:"filter,omitempty"`
+
+	// Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
+	// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
+	Granularity *BillAnalysisReportRequestBodyGranularity `json:"granularity,omitempty"`
+
+	// Limit limit number of records to return.
+	Limit *int32 `json:"limit,omitempty"`
+
+	// Metric Metric to perform anomaly detection on. Currently only cost metrics supported.
+	Metric BillAnalysisReportRequestBodyMetric `json:"metric"`
+
+	// StandardDeviations number of standard deviations to use for bollinger band calculations
+	StandardDeviations float64 `json:"standardDeviations"`
+
+	// StartAt Earliest timestamp (inclusive) of the returned costs.
+	// For month granularity: consists of a year and month in YYYY-MM format.
+	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
+	// Will be interpreted as UTC, which is used for period boundaries.
+	StartAt string `json:"startAt"`
+
+	// WindowSize window size to use for bollinger bands
+	WindowSize int64 `json:"windowSize"`
+}
+
+// BillAnalysisReportRequestBodyDetectionMethod Specifies the detection method to use: either Bollinger Band or AI Model.
+type BillAnalysisReportRequestBodyDetectionMethod string
+
+// BillAnalysisReportRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
+// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
+type BillAnalysisReportRequestBodyGranularity string
+
+// BillAnalysisReportRequestBodyMetric Metric to perform anomaly detection on. Currently only cost metrics supported.
+type BillAnalysisReportRequestBodyMetric string
+
+// BillAnalysisReportRequestBody3 defines model for BillAnalysis_ReportRequestBody3.
+type BillAnalysisReportRequestBody3 struct {
 	// BillingCenterIds IDs of BillingCenters to get data for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
 	BillingCenterIds []string `json:"billingCenterIds"`
 
@@ -4435,17 +4777,17 @@ type BillAnalysisForecastsReportRequestBody struct {
 	//   {"type":"not", "expression": {
 	//     "type":"equal", "dimension":"vendor", "substring":"aws"
 	//   }}
-	Filter *BillAnalysisFilterV1RequestBody `json:"filter,omitempty"`
+	Filter *BillAnalysisFilterV1 `json:"filter,omitempty"`
 
 	// Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
 	// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
-	Granularity BillAnalysisForecastsReportRequestBodyGranularity `json:"granularity"`
+	Granularity BillAnalysisReportRequestBody3Granularity `json:"granularity"`
 
 	// LookbackPeriod Number of months to look back for historical data. We use this to get historical data from the cost aggregated API. For example, if the startAt is "2024-01" and the lookBackPeriod is 24 months, then we will fetch historical data from "2022-01" until "2023-12".
 	LookbackPeriod int64 `json:"lookbackPeriod"`
 
 	// Metric Metric to perform anomaly detection on. Currently only cost metrics supported.
-	Metric BillAnalysisForecastsReportRequestBodyMetric `json:"metric"`
+	Metric BillAnalysisReportRequestBody3Metric `json:"metric"`
 
 	// StartAt Earliest timestamp (inclusive) of the returned costs.
 	// For month granularity: consists of a year and month in YYYY-MM format.
@@ -4454,183 +4796,192 @@ type BillAnalysisForecastsReportRequestBody struct {
 	StartAt string `json:"startAt"`
 }
 
-// BillAnalysisForecastsReportRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
+// BillAnalysisReportRequestBody3Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
 // Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
-type BillAnalysisForecastsReportRequestBodyGranularity string
+type BillAnalysisReportRequestBody3Granularity string
 
-// BillAnalysisForecastsReportRequestBodyMetric Metric to perform anomaly detection on. Currently only cost metrics supported.
-type BillAnalysisForecastsReportRequestBodyMetric string
+// BillAnalysisReportRequestBody3Metric Metric to perform anomaly detection on. Currently only cost metrics supported.
+type BillAnalysisReportRequestBody3Metric string
 
-// BillAnalysisRuleBasedDimensionConditionRequestBody A condition may be null, which will match unconditionally.
-//
-// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
-// A simple condition is checking whether a dimension in the cost row equals a certain value:
-// ~~~~
-// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
-// ~~~~
-// Others types like 'and', 'or', and 'not', are used to build complex expressions.
-//
-// For example:
-// ~~~~
-// {"type":"and", "expressions":[
-//
-//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
-//	{"type":"dimension_equals", "dimension":"service", "value":"EC2"}
-//
-// ]}
-// ~~~~
-// ~~~~
-// {"type":"or", "expressions":[
-//
-//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
-//	{"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
-//
-// ]}
-// ~~~~
-// ~~~~
-//
-//	{"type":"not", "expression": {
-//	  "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
-//	}}
-//
-// ~~~~
-// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
-type BillAnalysisRuleBasedDimensionConditionRequestBody struct {
-	// CaseInsensitive Specifies whether the condition should perform a case-insensitive match.
-	CaseInsensitive *bool `json:"caseInsensitive,omitempty"`
-
-	// Dimension The dimension to check the value of. Required for the 'dimension_equals' type.
-	Dimension *string `json:"dimension,omitempty"`
-
-	// Expression A condition may be null, which will match unconditionally.
-	//
-	// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
-	// A simple condition is checking whether a dimension in the cost row equals a certain value:
-	// ~~~~
-	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
-	// ~~~~
-	// Others types like 'and', 'or', and 'not', are used to build complex expressions.
-	//
-	// For example:
-	// ~~~~
-	// {"type":"and", "expressions":[
-	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
-	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"}
-	// ]}
-	// ~~~~
-	// ~~~~
-	// {"type":"or", "expressions":[
-	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
-	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
-	// ]}
-	// ~~~~
-	// ~~~~
-	// {"type":"not", "expression": {
-	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
-	// }}
-	// ~~~~
-	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
-	Expression *BillAnalysisRuleBasedDimensionConditionRequestBody `json:"expression,omitempty"`
-
-	// Expressions the expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' types.
-	Expressions *[]BillAnalysisRuleBasedDimensionConditionRequestBody `json:"expressions,omitempty"`
-
-	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-	Type BillAnalysisRuleBasedDimensionConditionRequestBodyType `json:"type"`
-
-	// Value The value that the dimension must match. Required for the 'dimension_equals' type.
-	Value *string `json:"value,omitempty"`
+// BillAnalysisReportResponseBody defines model for BillAnalysis_ReportResponseBody.
+type BillAnalysisReportResponseBody struct {
+	Values *[]BillAnalysisTimeSeriesWithAnomalies `json:"values,omitempty"`
 }
 
-// BillAnalysisRuleBasedDimensionConditionRequestBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-type BillAnalysisRuleBasedDimensionConditionRequestBodyType string
-
-// BillAnalysisRuleBasedDimensionConditionResponseBody A condition may be null, which will match unconditionally.
-//
-// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
-// A simple condition is checking whether a dimension in the cost row equals a certain value:
-// ~~~~
-// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
-// ~~~~
-// Others types like 'and', 'or', and 'not', are used to build complex expressions.
-//
-// For example:
-// ~~~~
-// {"type":"and", "expressions":[
-//
-//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
-//	{"type":"dimension_equals", "dimension":"service", "value":"EC2"}
-//
-// ]}
-// ~~~~
-// ~~~~
-// {"type":"or", "expressions":[
-//
-//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
-//	{"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
-//
-// ]}
-// ~~~~
-// ~~~~
-//
-//	{"type":"not", "expression": {
-//	  "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
-//	}}
-//
-// ~~~~
-// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
-type BillAnalysisRuleBasedDimensionConditionResponseBody struct {
-	// CaseInsensitive Specifies whether the condition should perform a case-insensitive match.
-	CaseInsensitive *bool `json:"caseInsensitive,omitempty"`
-
-	// Dimension The dimension to check the value of. Required for the 'dimension_equals' type.
-	Dimension *string `json:"dimension,omitempty"`
-
-	// Expression A condition may be null, which will match unconditionally.
-	//
-	// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
-	// A simple condition is checking whether a dimension in the cost row equals a certain value:
-	// ~~~~
-	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
-	// ~~~~
-	// Others types like 'and', 'or', and 'not', are used to build complex expressions.
-	//
-	// For example:
-	// ~~~~
-	// {"type":"and", "expressions":[
-	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
-	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"}
-	// ]}
-	// ~~~~
-	// ~~~~
-	// {"type":"or", "expressions":[
-	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
-	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
-	// ]}
-	// ~~~~
-	// ~~~~
-	// {"type":"not", "expression": {
-	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
-	// }}
-	// ~~~~
-	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
-	Expression *BillAnalysisRuleBasedDimensionConditionResponseBody `json:"expression,omitempty"`
-
-	// Expressions the expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' types.
-	Expressions *[]BillAnalysisRuleBasedDimensionConditionResponseBody `json:"expressions,omitempty"`
-
-	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-	Type BillAnalysisRuleBasedDimensionConditionResponseBodyType `json:"type"`
-
-	// Value The value that the dimension must match. Required for the 'dimension_equals' type.
-	Value *string `json:"value,omitempty"`
+// BillAnalysisReportResponseBody2 defines model for BillAnalysis_ReportResponseBody2.
+type BillAnalysisReportResponseBody2 struct {
+	// Segments The forecasted data for the given dimensions.
+	Segments *[]BillAnalysisForecastSegment `json:"segments,omitempty"`
 }
 
-// BillAnalysisRuleBasedDimensionConditionResponseBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-type BillAnalysisRuleBasedDimensionConditionResponseBodyType string
+// BillAnalysisReprocessItem Individual bill month item to reprocess
+type BillAnalysisReprocessItem struct {
+	// BillMonth Bill month in YYYYMM format
+	BillMonth string `json:"bill_month"`
 
-// BillAnalysisRuleRequestBody If the condition matches, the given cost_multiplier and usage_multiplier will be used.
-type BillAnalysisRuleRequestBody struct {
+	// BillSourceId Unique identifier for the bill source
+	BillSourceId string `json:"bill_source_id"`
+}
+
+// BillAnalysisReprocessRequestBody defines model for BillAnalysis_ReprocessRequestBody.
+type BillAnalysisReprocessRequestBody struct {
+	// Action Action to perform on the bill months
+	Action BillAnalysisReprocessRequestBodyAction `json:"action"`
+
+	// Items List of bill months to reprocess
+	Items []BillAnalysisReprocessItem `json:"items"`
+}
+
+// BillAnalysisReprocessRequestBodyAction Action to perform on the bill months
+type BillAnalysisReprocessRequestBodyAction string
+
+// BillAnalysisReprocessResponse defines model for BillAnalysis_ReprocessResponse.
+type BillAnalysisReprocessResponse struct {
+	// Action Action that was performed
+	Action BillAnalysisReprocessResponseAction `json:"action"`
+
+	// Items Results for each bill month item
+	Items []BillAnalysisReprocessResultItem `json:"items"`
+
+	// Message Additional message regarding the reprocess request
+	Message *string `json:"message,omitempty"`
+
+	// RetryLastAction Indicator for the last action to be retried
+	RetryLastAction *bool `json:"retry_last_action,omitempty"`
+
+	// Status Overall status of the reprocess request
+	Status BillAnalysisReprocessResponseStatus `json:"status"`
+}
+
+// BillAnalysisReprocessResponseAction Action that was performed
+type BillAnalysisReprocessResponseAction string
+
+// BillAnalysisReprocessResponseStatus Overall status of the reprocess request
+type BillAnalysisReprocessResponseStatus string
+
+// BillAnalysisReprocessResultItem Result of reprocessing a single bill month item
+type BillAnalysisReprocessResultItem struct {
+	// BillMonth Bill month in YYYYMM format
+	BillMonth string `json:"bill_month"`
+
+	// BillSourceId Unique identifier for the bill source
+	BillSourceId string `json:"bill_source_id"`
+
+	// Result Result of the reprocess/unlock request for this bill month
+	Result BillAnalysisReprocessResultItemResult `json:"result"`
+
+	// State Current state of the bill month after the action
+	State BillAnalysisReprocessResultItemState `json:"state"`
+}
+
+// BillAnalysisReprocessResultItemResult Result of the reprocess/unlock request for this bill month
+type BillAnalysisReprocessResultItemResult string
+
+// BillAnalysisReprocessResultItemState Current state of the bill month after the action
+type BillAnalysisReprocessResultItemState string
+
+// BillAnalysisRightscaleAdjustmentDefinitionServiceDatedAdjustmentListResult Represents a list of adjustments to be applied to bill costs as of the effective date.
+type BillAnalysisRightscaleAdjustmentDefinitionServiceDatedAdjustmentListResult struct {
+	// AdjustmentList List of adjustments that contains the multipliers and rules for each adjustment to be applied on the bills.
+	AdjustmentList []BillAnalysisAdjustment `json:"adjustment_list"`
+
+	// EffectiveAt Year-month (UTC) the list of adjustments will be effective.
+	EffectiveAt string `json:"effective_at"`
+
+	// UpdatedAt the timestamp when the adjustment list was last updated
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboard information about a custom dashboard
+type BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboard struct {
+	// Area UI Area
+	Area string `json:"area"`
+
+	// Config A json blob used by the UI
+	Config openapi_types.File `json:"config"`
+
+	// CreatedAt Creation timestamp
+	CreatedAt time.Time `json:"created_at"`
+
+	// Href href of the dashboard
+	Href string `json:"href"`
+
+	// Id ID of the dashboard
+	Id string `json:"id"`
+
+	// Kind kind of data
+	Kind string `json:"kind"`
+
+	// Name Display name of dashboard
+	Name string `json:"name"`
+
+	// Scope Describes whether this dashboard is scoped to a particular billing center
+	Scope *[]string `json:"scope,omitempty"`
+
+	// UpdatedAt Updated at timestamp
+	UpdatedAt time.Time `json:"updated_at"`
+
+	// Visibility visibility settings of the custom dashboard
+	Visibility *BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboardVisibility `json:"visibility,omitempty"`
+}
+
+// BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboardVisibility visibility settings of the custom dashboard
+type BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboardVisibility string
+
+// BillAnalysisRightscaleCustomDimensionServiceCustomdimension information about a custom dimension
+type BillAnalysisRightscaleCustomDimensionServiceCustomdimension struct {
+	// CreatedAt Creation timestamp
+	CreatedAt time.Time `json:"created_at"`
+
+	// Href href of the dimension
+	Href string `json:"href"`
+
+	// Id ID of the dimension
+	Id string `json:"id"`
+
+	// Kind kind of data
+	Kind string `json:"kind"`
+
+	// Name Display name of dimension
+	Name string `json:"name"`
+
+	// TagKey The key of the tag in the bill data
+	TagKey string `json:"tag_key"`
+
+	// UpdatedAt Updated at timestamp
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// BillAnalysisRightscaleOptimaCloudVendorAccount Resource for cloud vendor account information
+type BillAnalysisRightscaleOptimaCloudVendorAccount struct {
+	// Id Unique ID for the Cloud Vendor Account
+	Id   string                                             `json:"id"`
+	Kind BillAnalysisRightscaleOptimaCloudVendorAccountKind `json:"kind"`
+
+	// Name Name of the Cloud Vendor Account
+	Name *string `json:"name,omitempty"`
+
+	// VendorName Name of the Cloud Vendor
+	VendorName string `json:"vendor_name"`
+}
+
+// BillAnalysisRightscaleOptimaCloudVendorAccountKind defines model for BillAnalysisRightscaleOptimaCloudVendorAccount.Kind.
+type BillAnalysisRightscaleOptimaCloudVendorAccountKind string
+
+// BillAnalysisRow defines model for BillAnalysis_Row.
+type BillAnalysisRow struct {
+	// Dimensions One specific combination of dimension values.
+	Dimensions map[string]string `json:"dimensions"`
+
+	// Metrics Metrics for the associated dimensions.
+	Metrics map[string]float64 `json:"metrics"`
+
+	// Timestamp Timestamp of the data point.
+	Timestamp time.Time `json:"timestamp"`
+}
+
+// BillAnalysisRule If the condition matches, the given cost_multiplier and usage_multiplier will be used.
+type BillAnalysisRule struct {
 	// Condition The criteria for the given multipliers to be applied to a cost row.
 	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
 	//
@@ -4670,7 +5021,7 @@ type BillAnalysisRuleRequestBody struct {
 	// }}
 	// ~~~~
 	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
-	Condition *BillAnalysisConditionRequestBody `json:"condition,omitempty"`
+	Condition *BillAnalysisCondition `json:"condition,omitempty"`
 
 	// CostMultiplier will be multiplied by the base cost (may be the raw cost, or the net cost after certain other adjustments were applied).
 	CostMultiplier *float64 `json:"cost_multiplier,omitempty"`
@@ -4681,6 +5032,214 @@ type BillAnalysisRuleRequestBody struct {
 
 	// UsageMultiplier will be multiplied by the `usage_amount` to yield a cost amount. Be careful that this is only applied to the intended rows, probably would need to include `usage_unit` in the conditions.
 	UsageMultiplier *float64 `json:"usage_multiplier,omitempty"`
+}
+
+// BillAnalysisRuleBasedDimensionCondition A condition may be null, which will match unconditionally.
+//
+// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
+// A simple condition is checking whether a dimension in the cost row equals a certain value:
+// ~~~~
+// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+// ~~~~
+// Others types like 'and', 'or', and 'not', are used to build complex expressions.
+//
+// For example:
+// ~~~~
+// {"type":"and", "expressions":[
+//
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+//	{"type":"dimension_equals", "dimension":"service", "value":"EC2"}
+//
+// ]}
+// ~~~~
+// ~~~~
+// {"type":"or", "expressions":[
+//
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
+//
+// ]}
+// ~~~~
+// ~~~~
+//
+//	{"type":"not", "expression": {
+//	  "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+//	}}
+//
+// ~~~~
+// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+type BillAnalysisRuleBasedDimensionCondition struct {
+	// CaseInsensitive Specifies whether the condition should perform a case-insensitive match.
+	CaseInsensitive *bool `json:"caseInsensitive,omitempty"`
+
+	// Dimension The dimension to check the value of. Required for the 'dimension_equals' type.
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression A condition may be null, which will match unconditionally.
+	//
+	// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
+	// A simple condition is checking whether a dimension in the cost row equals a certain value:
+	// ~~~~
+	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+	// ~~~~
+	// Others types like 'and', 'or', and 'not', are used to build complex expressions.
+	//
+	// For example:
+	// ~~~~
+	// {"type":"and", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"}
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"or", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"not", "expression": {
+	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+	// }}
+	// ~~~~
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+	Expression *BillAnalysisRuleBasedDimensionCondition `json:"expression,omitempty"`
+
+	// Expressions the expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' types.
+	Expressions *[]BillAnalysisRuleBasedDimensionCondition `json:"expressions,omitempty"`
+
+	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+	Type BillAnalysisRuleBasedDimensionConditionType `json:"type"`
+
+	// Value The value that the dimension must match. Required for the 'dimension_equals' type.
+	Value *string `json:"value,omitempty"`
+}
+
+// BillAnalysisRuleBasedDimensionConditionType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type BillAnalysisRuleBasedDimensionConditionType string
+
+// BillAnalysisSelectRequestBody defines model for BillAnalysis_SelectRequestBody.
+type BillAnalysisSelectRequestBody struct {
+	// BillingCenterIds IDs of BillingCenters to get cost data for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
+	BillingCenterIds []string `json:"billing_center_ids"`
+
+	// Dimensions The list of supported dimensions to return.
+	Dimensions []string `json:"dimensions"`
+
+	// EndAt Latest timestamp (exclusive) of the costs.
+	// For month granularity: consists of a year and month in YYYY-MM format.
+	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
+	// Will be interpreted be UTC, which is used for period boundaries.
+	// No records will be returned on or after this timestamp.
+	EndAt string `json:"end_at"`
+
+	// Filter Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
+	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+	// Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	//
+	// Examples of each filter type:
+	//
+	// {"type":"equal", "dimension":"vendor", "value":"aws"}
+	//
+	//   {"type":"substring", "dimension":"tag_env", "substring":"dev"}
+	//
+	//   {"type":"and", "expressions":[
+	//     {"type":"equal", "dimension":"vendor", "value":"aws"},
+	//     {"type":"equal", "dimension":"tag_env", "value":"dev"}
+	//   ]}
+	//
+	//   {"type":"or", "expressions":[
+	//     {"type":"substring", "dimension":"tag_env", "substring":"dev"},
+	//     {"type":"substring", "dimension":"tag_env", "substring":"stage"}
+	//   ]}
+	//
+	//   {"type":"not", "expression": {
+	//     "type":"equal", "dimension":"vendor", "substring":"aws"
+	//   }}
+	Filter *BillAnalysisFilterV1 `json:"filter,omitempty"`
+
+	// Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
+	// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
+	Granularity *BillAnalysisSelectRequestBodyGranularity `json:"granularity,omitempty"`
+
+	// Limit limit number of records to return (max=100000).
+	Limit int64 `json:"limit"`
+
+	// Metrics Metrics to return.
+	// When metric 'usage_amount' is requested, dimension 'usage_unit' must be requested
+	// in the dimensions parameter.
+	Metrics []string `json:"metrics"`
+
+	// PeriodType Determines which date column to use for filtering.
+	//  - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
+	//  - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
+	//
+	// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
+	PeriodType *BillAnalysisSelectRequestBodyPeriodType `json:"period_type,omitempty"`
+
+	// StartAt Earliest timestamp (inclusive) of the returned costs.
+	// For month granularity: consists of a year and month in YYYY-MM format.
+	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
+	// Will be interpreted as UTC, which is used for period boundaries.
+	StartAt string `json:"start_at"`
+}
+
+// BillAnalysisSelectRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
+// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
+type BillAnalysisSelectRequestBodyGranularity string
+
+// BillAnalysisSelectRequestBodyPeriodType Determines which date column to use for filtering.
+//   - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
+//   - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
+//
+// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
+type BillAnalysisSelectRequestBodyPeriodType string
+
+// BillAnalysisSetting defines model for BillAnalysis_Setting.
+type BillAnalysisSetting struct {
+	// Id Setting ID
+	Id   BillAnalysisSettingId   `json:"id"`
+	Kind BillAnalysisSettingKind `json:"kind"`
+
+	// Value Setting value
+	Value string `json:"value"`
+}
+
+// BillAnalysisSettingId Setting ID
+type BillAnalysisSettingId string
+
+// BillAnalysisSettingKind defines model for BillAnalysisSetting.Kind.
+type BillAnalysisSettingKind string
+
+// BillAnalysisTimeSeries defines model for BillAnalysis_TimeSeries.
+type BillAnalysisTimeSeries struct {
+	// Data the values for the metric you selected, one for each date entry
+	Data       []BillAnalysisDatum `json:"data"`
+	Dimensions map[string]string   `json:"dimensions"`
+}
+
+// BillAnalysisTimeSeriesWithAnomalies List of anomalies found in the requested data.
+type BillAnalysisTimeSeriesWithAnomalies struct {
+	TimeSeries BillAnalysisTimeSeries `json:"timeSeries"`
+}
+
+// BillAnalysisUpdateRequestBody defines model for BillAnalysis_UpdateRequestBody.
+type BillAnalysisUpdateRequestBody struct {
+	// DatedAdjustmentLists All of the dated adjustment lists for the org.
+	DatedAdjustmentLists []BillAnalysisDatedAdjustmentList `json:"dated_adjustment_lists"`
+}
+
+// BillAnalysisUpdateRequestBody2 defines model for BillAnalysis_UpdateRequestBody2.
+type BillAnalysisUpdateRequestBody2 struct {
+	// Value Setting value
+	Value string `json:"value"`
+}
+
+// BillAnalysisUpsertRequestBody defines model for BillAnalysis_UpsertRequestBody.
+type BillAnalysisUpsertRequestBody struct {
+	// CommitmentReallocationSettings List of commitment reallocation settings for the org given.
+	CommitmentReallocationSettings []BillAnalysisCommitmentReallocationSettingType `json:"commitment_reallocation_settings"`
 }
 
 // BillingCenterServiceAllocationRuleRequestBody AllocationRule maps a tag, cloud vendor account, or Azure resource group to a specific BillingCenter.
@@ -20959,6 +21518,60 @@ type BillingCenterServiceUserBillingCentersShowParams struct {
 // BillingCenterServiceUserBillingCentersShowParamsApiVersion defines parameters for BillingCenterServiceUserBillingCentersShow.
 type BillingCenterServiceUserBillingCentersShowParamsApiVersion string
 
+// BillAnalysisBillMonthsSearchParams defines parameters for BillAnalysisBillMonthsSearch.
+type BillAnalysisBillMonthsSearchParams struct {
+	// Limit Maximum number of records to return
+	Limit *int64 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Offset Starting offset for pagination (if provided, uses offset-based pagination; if omitted, uses cursor-based). Ignored if skipToken is present.
+	Offset *int64 `form:"offset,omitempty" json:"offset,omitempty"`
+
+	// OrderBy Format: field=direction [and field=direction]. Directions: asc, desc
+	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
+
+	// Filter Supports operators: eq, ne, sw (starts with), ge, le, and, or. Use parentheses for grouping.
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// SkipToken Base64-encoded pagination token returned from previous search response
+	SkipToken *string `form:"skip_token,omitempty" json:"skip_token,omitempty"`
+}
+
+// BillAnalysisBillMonthsDownloadParams defines parameters for BillAnalysisBillMonthsDownload.
+type BillAnalysisBillMonthsDownloadParams struct {
+	// DownloadToken Token for downloading the complete result set
+	DownloadToken string `form:"download_token" json:"download_token"`
+
+	// Format Download format (default: csv)
+	Format *BillAnalysisBillMonthsDownloadParamsFormat `form:"format,omitempty" json:"format,omitempty"`
+}
+
+// BillAnalysisBillMonthsDownloadParamsFormat defines parameters for BillAnalysisBillMonthsDownload.
+type BillAnalysisBillMonthsDownloadParamsFormat string
+
+// BillAnalysisCloudVendorAccountsIndexParams defines parameters for BillAnalysisCloudVendorAccountsIndex.
+type BillAnalysisCloudVendorAccountsIndexParams struct {
+	// CloudVendor Filter accounts for one specific cloud
+	CloudVendor *string `form:"cloud_vendor,omitempty" json:"cloud_vendor,omitempty"`
+}
+
+// BillAnalysisOrgDashboardsIndexParams defines parameters for BillAnalysisOrgDashboardsIndex.
+type BillAnalysisOrgDashboardsIndexParams struct {
+	// Area Optional area filter
+	Area *string `form:"area,omitempty" json:"area,omitempty"`
+
+	// Visibility Optional visibility filter
+	Visibility *BillAnalysisOrgDashboardsIndexParamsVisibility `form:"visibility,omitempty" json:"visibility,omitempty"`
+}
+
+// BillAnalysisOrgDashboardsIndexParamsVisibility defines parameters for BillAnalysisOrgDashboardsIndex.
+type BillAnalysisOrgDashboardsIndexParamsVisibility string
+
+// BillAnalysisCustomDashboardsIndexParams defines parameters for BillAnalysisCustomDashboardsIndex.
+type BillAnalysisCustomDashboardsIndexParams struct {
+	// Area Optional area filter
+	Area *string `form:"area,omitempty" json:"area,omitempty"`
+}
+
 // CredCredentialIndexOrgParams defines parameters for CredCredentialIndexOrg.
 type CredCredentialIndexOrgParams struct {
 	// Filter Optional filter for Credentials.
@@ -22230,24 +22843,6 @@ type IamMSPCustomerV2ShowV2Params struct {
 
 // IamMSPCustomerV2ShowV2ParamsView defines parameters for IamMSPCustomerV2ShowV2.
 type IamMSPCustomerV2ShowV2ParamsView string
-
-// BillAnalysisCostsDimensionsParams defines parameters for BillAnalysisCostsDimensions.
-type BillAnalysisCostsDimensionsParams struct {
-	// Dataset indicates which datasource to query from, if set to billing, it will query from billing data source.
-	Dataset *BillAnalysisCostsDimensionsParamsDataset `form:"dataset,omitempty" json:"dataset,omitempty"`
-}
-
-// BillAnalysisCostsDimensionsParamsDataset defines parameters for BillAnalysisCostsDimensions.
-type BillAnalysisCostsDimensionsParamsDataset string
-
-// BillAnalysisCostsMetricsParams defines parameters for BillAnalysisCostsMetrics.
-type BillAnalysisCostsMetricsParams struct {
-	// Dataset indicates which datasource to query from, if set to billing, it will query from billing data source.
-	Dataset *BillAnalysisCostsMetricsParamsDataset `form:"dataset,omitempty" json:"dataset,omitempty"`
-}
-
-// BillAnalysisCostsMetricsParamsDataset defines parameters for BillAnalysisCostsMetrics.
-type BillAnalysisCostsMetricsParamsDataset string
 
 // PolicyCustomCatalogIndexParams defines parameters for PolicyCustomCatalogIndex.
 type PolicyCustomCatalogIndexParams struct {
@@ -23602,6 +24197,66 @@ type BillingCenterServiceBillingCenterAccessRulesRevokeJSONRequestBody = Billing
 // BillingCenterServiceBillingCentersUpsertAllocationTableJSONRequestBody defines body for BillingCenterServiceBillingCentersUpsertAllocationTable for application/json ContentType.
 type BillingCenterServiceBillingCentersUpsertAllocationTableJSONRequestBody = BillingCenterServiceBillingCentersUpsertAllocationTableRequestBody
 
+// BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody defines body for BillAnalysisAdjustmentDefinitionUpdate for application/json ContentType.
+type BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody = BillAnalysisUpdateRequestBody
+
+// BillAnalysisAnomaliesReportJSONRequestBody defines body for BillAnalysisAnomaliesReport for application/json ContentType.
+type BillAnalysisAnomaliesReportJSONRequestBody = BillAnalysisReportRequestBody
+
+// BillAnalysisBillMonthsReprocessJSONRequestBody defines body for BillAnalysisBillMonthsReprocess for application/json ContentType.
+type BillAnalysisBillMonthsReprocessJSONRequestBody = BillAnalysisReprocessRequestBody
+
+// BillAnalysisBillingSettingsUpdateJSONRequestBody defines body for BillAnalysisBillingSettingsUpdate for application/json ContentType.
+type BillAnalysisBillingSettingsUpdateJSONRequestBody = BillAnalysisBillingSettingsResponse
+
+// BillAnalysisCostsAggregatedJSONRequestBody defines body for BillAnalysisCostsAggregated for application/json ContentType.
+type BillAnalysisCostsAggregatedJSONRequestBody = BillAnalysisAggregatedRequestBody
+
+// BillAnalysisCostsExportSelectJSONRequestBody defines body for BillAnalysisCostsExportSelect for application/json ContentType.
+type BillAnalysisCostsExportSelectJSONRequestBody = BillAnalysisExportSelectRequestBody
+
+// BillAnalysisCostsSelectJSONRequestBody defines body for BillAnalysisCostsSelect for application/json ContentType.
+type BillAnalysisCostsSelectJSONRequestBody = BillAnalysisSelectRequestBody
+
+// BillAnalysisCustomDimensionsCreateJSONRequestBody defines body for BillAnalysisCustomDimensionsCreate for application/json ContentType.
+type BillAnalysisCustomDimensionsCreateJSONRequestBody = BillAnalysisCreateRequestBody2
+
+// BillAnalysisCustomDimensionsReplaceJSONRequestBody defines body for BillAnalysisCustomDimensionsReplace for application/json ContentType.
+type BillAnalysisCustomDimensionsReplaceJSONRequestBody = BillAnalysisCreateRequestBody2
+
+// BillAnalysisOrgDashboardsCreateJSONRequestBody defines body for BillAnalysisOrgDashboardsCreate for application/json ContentType.
+type BillAnalysisOrgDashboardsCreateJSONRequestBody = BillAnalysisCreateRequestBody5
+
+// BillAnalysisOrgDashboardsReplaceJSONRequestBody defines body for BillAnalysisOrgDashboardsReplace for application/json ContentType.
+type BillAnalysisOrgDashboardsReplaceJSONRequestBody = BillAnalysisCreateRequestBody5
+
+// BillAnalysisForecastsReportJSONRequestBody defines body for BillAnalysisForecastsReport for application/json ContentType.
+type BillAnalysisForecastsReportJSONRequestBody = BillAnalysisReportRequestBody3
+
+// BillAnalysisCommitmentReallocationSettingUpsertJSONRequestBody defines body for BillAnalysisCommitmentReallocationSettingUpsert for application/json ContentType.
+type BillAnalysisCommitmentReallocationSettingUpsertJSONRequestBody = BillAnalysisUpsertRequestBody
+
+// BillAnalysisCurrencySettingUpdateJSONRequestBody defines body for BillAnalysisCurrencySettingUpdate for application/json ContentType.
+type BillAnalysisCurrencySettingUpdateJSONRequestBody = BillAnalysisUpdateRequestBody2
+
+// BillAnalysisCustomDashboardsCreateJSONRequestBody defines body for BillAnalysisCustomDashboardsCreate for application/json ContentType.
+type BillAnalysisCustomDashboardsCreateJSONRequestBody = BillAnalysisCreateRequestBody4
+
+// BillAnalysisCustomDashboardsReplaceJSONRequestBody defines body for BillAnalysisCustomDashboardsReplace for application/json ContentType.
+type BillAnalysisCustomDashboardsReplaceJSONRequestBody = BillAnalysisCreateRequestBody4
+
+// BillAnalysisAnomaliesIndexJSONRequestBody defines body for BillAnalysisAnomaliesIndex for application/json ContentType.
+type BillAnalysisAnomaliesIndexJSONRequestBody = BillAnalysisIndexRequestBody
+
+// BillAnalysisAnomaliesAggregatedJSONRequestBody defines body for BillAnalysisAnomaliesAggregated for application/json ContentType.
+type BillAnalysisAnomaliesAggregatedJSONRequestBody = BillAnalysisAggregatedRequestBody2
+
+// BillAnalysisCustomDimensionCreateJSONRequestBody defines body for BillAnalysisCustomDimensionCreate for application/json ContentType.
+type BillAnalysisCustomDimensionCreateJSONRequestBody = BillAnalysisCreateRequestBody3
+
+// BillAnalysisCustomDimensionUpdateJSONRequestBody defines body for BillAnalysisCustomDimensionUpdate for application/json ContentType.
+type BillAnalysisCustomDimensionUpdateJSONRequestBody = BillAnalysisCreateRequestBody3
+
 // CredAPIKeyCredentialUpdateOrgJSONRequestBody defines body for CredAPIKeyCredentialUpdateOrg for application/json ContentType.
 type CredAPIKeyCredentialUpdateOrgJSONRequestBody = CredUpdateOrgRequestBody
 
@@ -23937,24 +24592,6 @@ type IamMSPCustomerV2UpdateV2JSONRequestBody = IamUpdateRequestBody7
 
 // AuthTokenTokenFormdataRequestBody defines body for AuthTokenToken for application/x-www-form-urlencoded ContentType.
 type AuthTokenTokenFormdataRequestBody = AuthTokenRequestBody
-
-// BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody defines body for BillAnalysisAdjustmentDefinitionUpdate for application/json ContentType.
-type BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody = BillAnalysisAdjustmentDefinitionUpdateRequestBody
-
-// BillAnalysisAnomaliesReportJSONRequestBody defines body for BillAnalysisAnomaliesReport for application/json ContentType.
-type BillAnalysisAnomaliesReportJSONRequestBody = BillAnalysisAnomaliesReportRequestBody
-
-// BillAnalysisCostsAggregatedJSONRequestBody defines body for BillAnalysisCostsAggregated for application/json ContentType.
-type BillAnalysisCostsAggregatedJSONRequestBody = BillAnalysisCostsAggregatedRequestBody
-
-// BillAnalysisCostsSelectJSONRequestBody defines body for BillAnalysisCostsSelect for application/json ContentType.
-type BillAnalysisCostsSelectJSONRequestBody = BillAnalysisCostsSelectRequestBody
-
-// BillAnalysisForecastsReportJSONRequestBody defines body for BillAnalysisForecastsReport for application/json ContentType.
-type BillAnalysisForecastsReportJSONRequestBody = BillAnalysisForecastsReportRequestBody
-
-// BillAnalysisCurrencySettingUpdateJSONRequestBody defines body for BillAnalysisCurrencySettingUpdate for application/json ContentType.
-type BillAnalysisCurrencySettingUpdateJSONRequestBody = BillAnalysisCurrencySettingUpdateRequestBody
 
 // PolicyCustomCatalogUpsertTagJSONRequestBody defines body for PolicyCustomCatalogUpsertTag for application/json ContentType.
 type PolicyCustomCatalogUpsertTagJSONRequestBody = PolicyUpsertTagRequestBody
@@ -24482,6 +25119,175 @@ type ClientInterface interface {
 
 	// BillingCenterServiceUserBillingCentersShow request
 	BillingCenterServiceUserBillingCentersShow(ctx context.Context, user int, orgId int, billingCenter string, params *BillingCenterServiceUserBillingCentersShowParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisAdjustmentDefinitionShow request
+	BillAnalysisAdjustmentDefinitionShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisAdjustmentDefinitionUpdateWithBody request with any body
+	BillAnalysisAdjustmentDefinitionUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisAdjustmentDefinitionUpdate(ctx context.Context, org int64, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisAnomaliesReportWithBody request with any body
+	BillAnalysisAnomaliesReportWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisAnomaliesReport(ctx context.Context, org int64, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisBillMonthsSearch request
+	BillAnalysisBillMonthsSearch(ctx context.Context, org int64, params *BillAnalysisBillMonthsSearchParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisBillMonthsReprocessWithBody request with any body
+	BillAnalysisBillMonthsReprocessWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisBillMonthsReprocess(ctx context.Context, org int64, body BillAnalysisBillMonthsReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisBillMonthsDownload request
+	BillAnalysisBillMonthsDownload(ctx context.Context, org int64, params *BillAnalysisBillMonthsDownloadParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisBillingSettingsShow request
+	BillAnalysisBillingSettingsShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisBillingSettingsUpdateWithBody request with any body
+	BillAnalysisBillingSettingsUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisBillingSettingsUpdate(ctx context.Context, org int64, body BillAnalysisBillingSettingsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCloudVendorAccountsIndex request
+	BillAnalysisCloudVendorAccountsIndex(ctx context.Context, org int64, params *BillAnalysisCloudVendorAccountsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCostsAggregatedWithBody request with any body
+	BillAnalysisCostsAggregatedWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisCostsAggregated(ctx context.Context, org int64, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCostsDimensions request
+	BillAnalysisCostsDimensions(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCostsExportSelectWithBody request with any body
+	BillAnalysisCostsExportSelectWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisCostsExportSelect(ctx context.Context, org int64, body BillAnalysisCostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCostsExportSelectStatus request
+	BillAnalysisCostsExportSelectStatus(ctx context.Context, org int64, exportId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCostsMetrics request
+	BillAnalysisCostsMetrics(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCostsSelectWithBody request with any body
+	BillAnalysisCostsSelectWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisCostsSelect(ctx context.Context, org int64, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCustomDimensionsIndex request
+	BillAnalysisCustomDimensionsIndex(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCustomDimensionsCreateWithBody request with any body
+	BillAnalysisCustomDimensionsCreateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisCustomDimensionsCreate(ctx context.Context, org int64, body BillAnalysisCustomDimensionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCustomDimensionsDestroy request
+	BillAnalysisCustomDimensionsDestroy(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCustomDimensionsShow request
+	BillAnalysisCustomDimensionsShow(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCustomDimensionsReplaceWithBody request with any body
+	BillAnalysisCustomDimensionsReplaceWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisCustomDimensionsReplace(ctx context.Context, org int64, id string, body BillAnalysisCustomDimensionsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisOrgDashboardsIndex request
+	BillAnalysisOrgDashboardsIndex(ctx context.Context, org int64, params *BillAnalysisOrgDashboardsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisOrgDashboardsCreateWithBody request with any body
+	BillAnalysisOrgDashboardsCreateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisOrgDashboardsCreate(ctx context.Context, org int64, body BillAnalysisOrgDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisOrgDashboardsDestroy request
+	BillAnalysisOrgDashboardsDestroy(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisOrgDashboardsShow request
+	BillAnalysisOrgDashboardsShow(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisOrgDashboardsReplaceWithBody request with any body
+	BillAnalysisOrgDashboardsReplaceWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisOrgDashboardsReplace(ctx context.Context, org int64, id string, body BillAnalysisOrgDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisForecastsReportWithBody request with any body
+	BillAnalysisForecastsReportWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisForecastsReport(ctx context.Context, org int64, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCommitmentReallocationSettingShow request
+	BillAnalysisCommitmentReallocationSettingShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCommitmentReallocationSettingUpsertWithBody request with any body
+	BillAnalysisCommitmentReallocationSettingUpsertWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisCommitmentReallocationSettingUpsert(ctx context.Context, org int64, body BillAnalysisCommitmentReallocationSettingUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCurrencySettingShow request
+	BillAnalysisCurrencySettingShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCurrencySettingUpdateWithBody request with any body
+	BillAnalysisCurrencySettingUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisCurrencySettingUpdate(ctx context.Context, org int64, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCustomDashboardsIndex request
+	BillAnalysisCustomDashboardsIndex(ctx context.Context, org int64, user int64, params *BillAnalysisCustomDashboardsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCustomDashboardsCreateWithBody request with any body
+	BillAnalysisCustomDashboardsCreateWithBody(ctx context.Context, org int64, user int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisCustomDashboardsCreate(ctx context.Context, org int64, user int64, body BillAnalysisCustomDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCustomDashboardsDestroy request
+	BillAnalysisCustomDashboardsDestroy(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCustomDashboardsShow request
+	BillAnalysisCustomDashboardsShow(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCustomDashboardsReplaceWithBody request with any body
+	BillAnalysisCustomDashboardsReplaceWithBody(ctx context.Context, org int64, user int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisCustomDashboardsReplace(ctx context.Context, org int64, user int64, id string, body BillAnalysisCustomDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisAnomaliesIndexWithBody request with any body
+	BillAnalysisAnomaliesIndexWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisAnomaliesIndex(ctx context.Context, org int64, body BillAnalysisAnomaliesIndexJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisAnomaliesAggregatedWithBody request with any body
+	BillAnalysisAnomaliesAggregatedWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisAnomaliesAggregated(ctx context.Context, org int64, body BillAnalysisAnomaliesAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisAnomaliesSummary request
+	BillAnalysisAnomaliesSummary(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCustomDimensionIndex request
+	BillAnalysisCustomDimensionIndex(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCustomDimensionCreateWithBody request with any body
+	BillAnalysisCustomDimensionCreateWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisCustomDimensionCreate(ctx context.Context, orgId int64, body BillAnalysisCustomDimensionCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCustomDimensionDelete request
+	BillAnalysisCustomDimensionDelete(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCustomDimensionShow request
+	BillAnalysisCustomDimensionShow(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillAnalysisCustomDimensionUpdateWithBody request with any body
+	BillAnalysisCustomDimensionUpdateWithBody(ctx context.Context, orgId int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillAnalysisCustomDimensionUpdate(ctx context.Context, orgId int64, id string, body BillAnalysisCustomDimensionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CredCredentialIndexOrg request
 	CredCredentialIndexOrg(ctx context.Context, orgId int64, params *CredCredentialIndexOrgParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -25547,48 +26353,6 @@ type ClientInterface interface {
 
 	AuthTokenTokenWithFormdataBody(ctx context.Context, body AuthTokenTokenFormdataRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// BillAnalysisAdjustmentDefinitionShow request
-	BillAnalysisAdjustmentDefinitionShow(ctx context.Context, org int, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BillAnalysisAdjustmentDefinitionUpdateWithBody request with any body
-	BillAnalysisAdjustmentDefinitionUpdateWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	BillAnalysisAdjustmentDefinitionUpdate(ctx context.Context, org int, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BillAnalysisAnomaliesReportWithBody request with any body
-	BillAnalysisAnomaliesReportWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	BillAnalysisAnomaliesReport(ctx context.Context, org int, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BillAnalysisCostsAggregatedWithBody request with any body
-	BillAnalysisCostsAggregatedWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	BillAnalysisCostsAggregated(ctx context.Context, org int, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BillAnalysisCostsDimensions request
-	BillAnalysisCostsDimensions(ctx context.Context, org int, params *BillAnalysisCostsDimensionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BillAnalysisCostsMetrics request
-	BillAnalysisCostsMetrics(ctx context.Context, org int, params *BillAnalysisCostsMetricsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BillAnalysisCostsSelectWithBody request with any body
-	BillAnalysisCostsSelectWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	BillAnalysisCostsSelect(ctx context.Context, org int, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BillAnalysisForecastsReportWithBody request with any body
-	BillAnalysisForecastsReportWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	BillAnalysisForecastsReport(ctx context.Context, org int, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BillAnalysisCurrencySettingShow request
-	BillAnalysisCurrencySettingShow(ctx context.Context, org int, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BillAnalysisCurrencySettingUpdateWithBody request with any body
-	BillAnalysisCurrencySettingUpdateWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	BillAnalysisCurrencySettingUpdate(ctx context.Context, org int, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
 	// PolicyCustomCatalogIndex request
 	PolicyCustomCatalogIndex(ctx context.Context, orgId int64, params *PolicyCustomCatalogIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -26624,6 +27388,762 @@ func (c *Client) BillingCenterServiceUserBillingCentersIndex(ctx context.Context
 
 func (c *Client) BillingCenterServiceUserBillingCentersShow(ctx context.Context, user int, orgId int, billingCenter string, params *BillingCenterServiceUserBillingCentersShowParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewBillingCenterServiceUserBillingCentersShowRequest(c.Server, user, orgId, billingCenter, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisAdjustmentDefinitionShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAdjustmentDefinitionShowRequest(c.Server, org)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisAdjustmentDefinitionUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisAdjustmentDefinitionUpdate(ctx context.Context, org int64, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAdjustmentDefinitionUpdateRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisAnomaliesReportWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAnomaliesReportRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisAnomaliesReport(ctx context.Context, org int64, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAnomaliesReportRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisBillMonthsSearch(ctx context.Context, org int64, params *BillAnalysisBillMonthsSearchParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisBillMonthsSearchRequest(c.Server, org, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisBillMonthsReprocessWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisBillMonthsReprocessRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisBillMonthsReprocess(ctx context.Context, org int64, body BillAnalysisBillMonthsReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisBillMonthsReprocessRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisBillMonthsDownload(ctx context.Context, org int64, params *BillAnalysisBillMonthsDownloadParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisBillMonthsDownloadRequest(c.Server, org, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisBillingSettingsShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisBillingSettingsShowRequest(c.Server, org)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisBillingSettingsUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisBillingSettingsUpdateRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisBillingSettingsUpdate(ctx context.Context, org int64, body BillAnalysisBillingSettingsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisBillingSettingsUpdateRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCloudVendorAccountsIndex(ctx context.Context, org int64, params *BillAnalysisCloudVendorAccountsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCloudVendorAccountsIndexRequest(c.Server, org, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCostsAggregatedWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsAggregatedRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCostsAggregated(ctx context.Context, org int64, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsAggregatedRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCostsDimensions(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsDimensionsRequest(c.Server, org)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCostsExportSelectWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsExportSelectRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCostsExportSelect(ctx context.Context, org int64, body BillAnalysisCostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsExportSelectRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCostsExportSelectStatus(ctx context.Context, org int64, exportId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsExportSelectStatusRequest(c.Server, org, exportId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCostsMetrics(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsMetricsRequest(c.Server, org)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCostsSelectWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsSelectRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCostsSelect(ctx context.Context, org int64, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsSelectRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDimensionsIndex(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionsIndexRequest(c.Server, org)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDimensionsCreateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionsCreateRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDimensionsCreate(ctx context.Context, org int64, body BillAnalysisCustomDimensionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionsCreateRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDimensionsDestroy(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionsDestroyRequest(c.Server, org, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDimensionsShow(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionsShowRequest(c.Server, org, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDimensionsReplaceWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionsReplaceRequestWithBody(c.Server, org, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDimensionsReplace(ctx context.Context, org int64, id string, body BillAnalysisCustomDimensionsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionsReplaceRequest(c.Server, org, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisOrgDashboardsIndex(ctx context.Context, org int64, params *BillAnalysisOrgDashboardsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisOrgDashboardsIndexRequest(c.Server, org, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisOrgDashboardsCreateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisOrgDashboardsCreateRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisOrgDashboardsCreate(ctx context.Context, org int64, body BillAnalysisOrgDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisOrgDashboardsCreateRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisOrgDashboardsDestroy(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisOrgDashboardsDestroyRequest(c.Server, org, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisOrgDashboardsShow(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisOrgDashboardsShowRequest(c.Server, org, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisOrgDashboardsReplaceWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisOrgDashboardsReplaceRequestWithBody(c.Server, org, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisOrgDashboardsReplace(ctx context.Context, org int64, id string, body BillAnalysisOrgDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisOrgDashboardsReplaceRequest(c.Server, org, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisForecastsReportWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisForecastsReportRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisForecastsReport(ctx context.Context, org int64, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisForecastsReportRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCommitmentReallocationSettingShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCommitmentReallocationSettingShowRequest(c.Server, org)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCommitmentReallocationSettingUpsertWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCommitmentReallocationSettingUpsertRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCommitmentReallocationSettingUpsert(ctx context.Context, org int64, body BillAnalysisCommitmentReallocationSettingUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCommitmentReallocationSettingUpsertRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCurrencySettingShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCurrencySettingShowRequest(c.Server, org)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCurrencySettingUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCurrencySettingUpdateRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCurrencySettingUpdate(ctx context.Context, org int64, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCurrencySettingUpdateRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDashboardsIndex(ctx context.Context, org int64, user int64, params *BillAnalysisCustomDashboardsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDashboardsIndexRequest(c.Server, org, user, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDashboardsCreateWithBody(ctx context.Context, org int64, user int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDashboardsCreateRequestWithBody(c.Server, org, user, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDashboardsCreate(ctx context.Context, org int64, user int64, body BillAnalysisCustomDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDashboardsCreateRequest(c.Server, org, user, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDashboardsDestroy(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDashboardsDestroyRequest(c.Server, org, user, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDashboardsShow(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDashboardsShowRequest(c.Server, org, user, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDashboardsReplaceWithBody(ctx context.Context, org int64, user int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDashboardsReplaceRequestWithBody(c.Server, org, user, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDashboardsReplace(ctx context.Context, org int64, user int64, id string, body BillAnalysisCustomDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDashboardsReplaceRequest(c.Server, org, user, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisAnomaliesIndexWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAnomaliesIndexRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisAnomaliesIndex(ctx context.Context, org int64, body BillAnalysisAnomaliesIndexJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAnomaliesIndexRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisAnomaliesAggregatedWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAnomaliesAggregatedRequestWithBody(c.Server, org, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisAnomaliesAggregated(ctx context.Context, org int64, body BillAnalysisAnomaliesAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAnomaliesAggregatedRequest(c.Server, org, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisAnomaliesSummary(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAnomaliesSummaryRequest(c.Server, org, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDimensionIndex(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionIndexRequest(c.Server, orgId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDimensionCreateWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionCreateRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDimensionCreate(ctx context.Context, orgId int64, body BillAnalysisCustomDimensionCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionCreateRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDimensionDelete(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionDeleteRequest(c.Server, orgId, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDimensionShow(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionShowRequest(c.Server, orgId, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDimensionUpdateWithBody(ctx context.Context, orgId int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionUpdateRequestWithBody(c.Server, orgId, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BillAnalysisCustomDimensionUpdate(ctx context.Context, orgId int64, id string, body BillAnalysisCustomDimensionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionUpdateRequest(c.Server, orgId, id, body)
 	if err != nil {
 		return nil, err
 	}
@@ -31338,198 +32858,6 @@ func (c *Client) AuthTokenTokenWithFormdataBody(ctx context.Context, body AuthTo
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisAdjustmentDefinitionShow(ctx context.Context, org int, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisAdjustmentDefinitionShowRequest(c.Server, org)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) BillAnalysisAdjustmentDefinitionUpdateWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody(c.Server, org, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) BillAnalysisAdjustmentDefinitionUpdate(ctx context.Context, org int, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisAdjustmentDefinitionUpdateRequest(c.Server, org, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) BillAnalysisAnomaliesReportWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisAnomaliesReportRequestWithBody(c.Server, org, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) BillAnalysisAnomaliesReport(ctx context.Context, org int, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisAnomaliesReportRequest(c.Server, org, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) BillAnalysisCostsAggregatedWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCostsAggregatedRequestWithBody(c.Server, org, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) BillAnalysisCostsAggregated(ctx context.Context, org int, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCostsAggregatedRequest(c.Server, org, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) BillAnalysisCostsDimensions(ctx context.Context, org int, params *BillAnalysisCostsDimensionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCostsDimensionsRequest(c.Server, org, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) BillAnalysisCostsMetrics(ctx context.Context, org int, params *BillAnalysisCostsMetricsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCostsMetricsRequest(c.Server, org, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) BillAnalysisCostsSelectWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCostsSelectRequestWithBody(c.Server, org, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) BillAnalysisCostsSelect(ctx context.Context, org int, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCostsSelectRequest(c.Server, org, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) BillAnalysisForecastsReportWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisForecastsReportRequestWithBody(c.Server, org, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) BillAnalysisForecastsReport(ctx context.Context, org int, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisForecastsReportRequest(c.Server, org, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) BillAnalysisCurrencySettingShow(ctx context.Context, org int, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCurrencySettingShowRequest(c.Server, org)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) BillAnalysisCurrencySettingUpdateWithBody(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCurrencySettingUpdateRequestWithBody(c.Server, org, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) BillAnalysisCurrencySettingUpdate(ctx context.Context, org int, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCurrencySettingUpdateRequest(c.Server, org, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
 func (c *Client) PolicyCustomCatalogIndex(ctx context.Context, orgId int64, params *PolicyCustomCatalogIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewPolicyCustomCatalogIndexRequest(c.Server, orgId, params)
 	if err != nil {
@@ -36031,6 +37359,2063 @@ func NewBillingCenterServiceUserBillingCentersShowRequest(server string, user in
 		req.Header.Set("Api-Version", headerParam0)
 
 	}
+
+	return req, nil
+}
+
+// NewBillAnalysisAdjustmentDefinitionShowRequest generates requests for BillAnalysisAdjustmentDefinitionShow
+func NewBillAnalysisAdjustmentDefinitionShowRequest(server string, org int64) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/adjustments/", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisAdjustmentDefinitionUpdateRequest calls the generic BillAnalysisAdjustmentDefinitionUpdate builder with application/json body
+func NewBillAnalysisAdjustmentDefinitionUpdateRequest(server string, org int64, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody generates requests for BillAnalysisAdjustmentDefinitionUpdate with any type of body
+func NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/adjustments/", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisAnomaliesReportRequest calls the generic BillAnalysisAnomaliesReport builder with application/json body
+func NewBillAnalysisAnomaliesReportRequest(server string, org int64, body BillAnalysisAnomaliesReportJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisAnomaliesReportRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisAnomaliesReportRequestWithBody generates requests for BillAnalysisAnomaliesReport with any type of body
+func NewBillAnalysisAnomaliesReportRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/anomalies/report", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisBillMonthsSearchRequest generates requests for BillAnalysisBillMonthsSearch
+func NewBillAnalysisBillMonthsSearchRequest(server string, org int64, params *BillAnalysisBillMonthsSearchParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/bill-months", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.OrderBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "orderBy", runtime.ParamLocationQuery, *params.OrderBy); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "skip_token", runtime.ParamLocationQuery, *params.SkipToken); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisBillMonthsReprocessRequest calls the generic BillAnalysisBillMonthsReprocess builder with application/json body
+func NewBillAnalysisBillMonthsReprocessRequest(server string, org int64, body BillAnalysisBillMonthsReprocessJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisBillMonthsReprocessRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisBillMonthsReprocessRequestWithBody generates requests for BillAnalysisBillMonthsReprocess with any type of body
+func NewBillAnalysisBillMonthsReprocessRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/bill-months", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisBillMonthsDownloadRequest generates requests for BillAnalysisBillMonthsDownload
+func NewBillAnalysisBillMonthsDownloadRequest(server string, org int64, params *BillAnalysisBillMonthsDownloadParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/bill-months/download", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "download_token", runtime.ParamLocationQuery, params.DownloadToken); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
+				}
+			}
+		}
+
+		if params.Format != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "format", runtime.ParamLocationQuery, *params.Format); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisBillingSettingsShowRequest generates requests for BillAnalysisBillingSettingsShow
+func NewBillAnalysisBillingSettingsShowRequest(server string, org int64) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/billing-settings", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisBillingSettingsUpdateRequest calls the generic BillAnalysisBillingSettingsUpdate builder with application/json body
+func NewBillAnalysisBillingSettingsUpdateRequest(server string, org int64, body BillAnalysisBillingSettingsUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisBillingSettingsUpdateRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisBillingSettingsUpdateRequestWithBody generates requests for BillAnalysisBillingSettingsUpdate with any type of body
+func NewBillAnalysisBillingSettingsUpdateRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/billing-settings", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisCloudVendorAccountsIndexRequest generates requests for BillAnalysisCloudVendorAccountsIndex
+func NewBillAnalysisCloudVendorAccountsIndexRequest(server string, org int64, params *BillAnalysisCloudVendorAccountsIndexParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/cloud_vendor_accounts", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.CloudVendor != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "cloud_vendor", runtime.ParamLocationQuery, *params.CloudVendor); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCostsAggregatedRequest calls the generic BillAnalysisCostsAggregated builder with application/json body
+func NewBillAnalysisCostsAggregatedRequest(server string, org int64, body BillAnalysisCostsAggregatedJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisCostsAggregatedRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisCostsAggregatedRequestWithBody generates requests for BillAnalysisCostsAggregated with any type of body
+func NewBillAnalysisCostsAggregatedRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/costs/aggregated", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisCostsDimensionsRequest generates requests for BillAnalysisCostsDimensions
+func NewBillAnalysisCostsDimensionsRequest(server string, org int64) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/costs/dimensions", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCostsExportSelectRequest calls the generic BillAnalysisCostsExportSelect builder with application/json body
+func NewBillAnalysisCostsExportSelectRequest(server string, org int64, body BillAnalysisCostsExportSelectJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisCostsExportSelectRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisCostsExportSelectRequestWithBody generates requests for BillAnalysisCostsExportSelect with any type of body
+func NewBillAnalysisCostsExportSelectRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/costs/export/select", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisCostsExportSelectStatusRequest generates requests for BillAnalysisCostsExportSelectStatus
+func NewBillAnalysisCostsExportSelectStatusRequest(server string, org int64, exportId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "exportId", runtime.ParamLocationPath, exportId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/costs/export/select/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCostsMetricsRequest generates requests for BillAnalysisCostsMetrics
+func NewBillAnalysisCostsMetricsRequest(server string, org int64) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/costs/metrics", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCostsSelectRequest calls the generic BillAnalysisCostsSelect builder with application/json body
+func NewBillAnalysisCostsSelectRequest(server string, org int64, body BillAnalysisCostsSelectJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisCostsSelectRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisCostsSelectRequestWithBody generates requests for BillAnalysisCostsSelect with any type of body
+func NewBillAnalysisCostsSelectRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/costs/select", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisCustomDimensionsIndexRequest generates requests for BillAnalysisCustomDimensionsIndex
+func NewBillAnalysisCustomDimensionsIndexRequest(server string, org int64) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/custom/dimensions", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCustomDimensionsCreateRequest calls the generic BillAnalysisCustomDimensionsCreate builder with application/json body
+func NewBillAnalysisCustomDimensionsCreateRequest(server string, org int64, body BillAnalysisCustomDimensionsCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisCustomDimensionsCreateRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisCustomDimensionsCreateRequestWithBody generates requests for BillAnalysisCustomDimensionsCreate with any type of body
+func NewBillAnalysisCustomDimensionsCreateRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/custom/dimensions", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisCustomDimensionsDestroyRequest generates requests for BillAnalysisCustomDimensionsDestroy
+func NewBillAnalysisCustomDimensionsDestroyRequest(server string, org int64, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/custom/dimensions/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCustomDimensionsShowRequest generates requests for BillAnalysisCustomDimensionsShow
+func NewBillAnalysisCustomDimensionsShowRequest(server string, org int64, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/custom/dimensions/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCustomDimensionsReplaceRequest calls the generic BillAnalysisCustomDimensionsReplace builder with application/json body
+func NewBillAnalysisCustomDimensionsReplaceRequest(server string, org int64, id string, body BillAnalysisCustomDimensionsReplaceJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisCustomDimensionsReplaceRequestWithBody(server, org, id, "application/json", bodyReader)
+}
+
+// NewBillAnalysisCustomDimensionsReplaceRequestWithBody generates requests for BillAnalysisCustomDimensionsReplace with any type of body
+func NewBillAnalysisCustomDimensionsReplaceRequestWithBody(server string, org int64, id string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/custom/dimensions/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisOrgDashboardsIndexRequest generates requests for BillAnalysisOrgDashboardsIndex
+func NewBillAnalysisOrgDashboardsIndexRequest(server string, org int64, params *BillAnalysisOrgDashboardsIndexParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/dashboards", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Area != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "area", runtime.ParamLocationQuery, *params.Area); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Visibility != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "visibility", runtime.ParamLocationQuery, *params.Visibility); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisOrgDashboardsCreateRequest calls the generic BillAnalysisOrgDashboardsCreate builder with application/json body
+func NewBillAnalysisOrgDashboardsCreateRequest(server string, org int64, body BillAnalysisOrgDashboardsCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisOrgDashboardsCreateRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisOrgDashboardsCreateRequestWithBody generates requests for BillAnalysisOrgDashboardsCreate with any type of body
+func NewBillAnalysisOrgDashboardsCreateRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/dashboards", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisOrgDashboardsDestroyRequest generates requests for BillAnalysisOrgDashboardsDestroy
+func NewBillAnalysisOrgDashboardsDestroyRequest(server string, org int64, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/dashboards/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisOrgDashboardsShowRequest generates requests for BillAnalysisOrgDashboardsShow
+func NewBillAnalysisOrgDashboardsShowRequest(server string, org int64, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/dashboards/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisOrgDashboardsReplaceRequest calls the generic BillAnalysisOrgDashboardsReplace builder with application/json body
+func NewBillAnalysisOrgDashboardsReplaceRequest(server string, org int64, id string, body BillAnalysisOrgDashboardsReplaceJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisOrgDashboardsReplaceRequestWithBody(server, org, id, "application/json", bodyReader)
+}
+
+// NewBillAnalysisOrgDashboardsReplaceRequestWithBody generates requests for BillAnalysisOrgDashboardsReplace with any type of body
+func NewBillAnalysisOrgDashboardsReplaceRequestWithBody(server string, org int64, id string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/dashboards/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisForecastsReportRequest calls the generic BillAnalysisForecastsReport builder with application/json body
+func NewBillAnalysisForecastsReportRequest(server string, org int64, body BillAnalysisForecastsReportJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisForecastsReportRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisForecastsReportRequestWithBody generates requests for BillAnalysisForecastsReport with any type of body
+func NewBillAnalysisForecastsReportRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/forecasts/report", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisCommitmentReallocationSettingShowRequest generates requests for BillAnalysisCommitmentReallocationSettingShow
+func NewBillAnalysisCommitmentReallocationSettingShowRequest(server string, org int64) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/settings/commitment_reallocations", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCommitmentReallocationSettingUpsertRequest calls the generic BillAnalysisCommitmentReallocationSettingUpsert builder with application/json body
+func NewBillAnalysisCommitmentReallocationSettingUpsertRequest(server string, org int64, body BillAnalysisCommitmentReallocationSettingUpsertJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisCommitmentReallocationSettingUpsertRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisCommitmentReallocationSettingUpsertRequestWithBody generates requests for BillAnalysisCommitmentReallocationSettingUpsert with any type of body
+func NewBillAnalysisCommitmentReallocationSettingUpsertRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/settings/commitment_reallocations", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisCurrencySettingShowRequest generates requests for BillAnalysisCurrencySettingShow
+func NewBillAnalysisCurrencySettingShowRequest(server string, org int64) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/settings/currency_code", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCurrencySettingUpdateRequest calls the generic BillAnalysisCurrencySettingUpdate builder with application/json body
+func NewBillAnalysisCurrencySettingUpdateRequest(server string, org int64, body BillAnalysisCurrencySettingUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisCurrencySettingUpdateRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisCurrencySettingUpdateRequestWithBody generates requests for BillAnalysisCurrencySettingUpdate with any type of body
+func NewBillAnalysisCurrencySettingUpdateRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/settings/currency_code", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisCustomDashboardsIndexRequest generates requests for BillAnalysisCustomDashboardsIndex
+func NewBillAnalysisCustomDashboardsIndexRequest(server string, org int64, user int64, params *BillAnalysisCustomDashboardsIndexParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "user", runtime.ParamLocationPath, user)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/users/%s/dashboards", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Area != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "area", runtime.ParamLocationQuery, *params.Area); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCustomDashboardsCreateRequest calls the generic BillAnalysisCustomDashboardsCreate builder with application/json body
+func NewBillAnalysisCustomDashboardsCreateRequest(server string, org int64, user int64, body BillAnalysisCustomDashboardsCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisCustomDashboardsCreateRequestWithBody(server, org, user, "application/json", bodyReader)
+}
+
+// NewBillAnalysisCustomDashboardsCreateRequestWithBody generates requests for BillAnalysisCustomDashboardsCreate with any type of body
+func NewBillAnalysisCustomDashboardsCreateRequestWithBody(server string, org int64, user int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "user", runtime.ParamLocationPath, user)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/users/%s/dashboards", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisCustomDashboardsDestroyRequest generates requests for BillAnalysisCustomDashboardsDestroy
+func NewBillAnalysisCustomDashboardsDestroyRequest(server string, org int64, user int64, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "user", runtime.ParamLocationPath, user)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/users/%s/dashboards/%s", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCustomDashboardsShowRequest generates requests for BillAnalysisCustomDashboardsShow
+func NewBillAnalysisCustomDashboardsShowRequest(server string, org int64, user int64, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "user", runtime.ParamLocationPath, user)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/users/%s/dashboards/%s", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCustomDashboardsReplaceRequest calls the generic BillAnalysisCustomDashboardsReplace builder with application/json body
+func NewBillAnalysisCustomDashboardsReplaceRequest(server string, org int64, user int64, id string, body BillAnalysisCustomDashboardsReplaceJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisCustomDashboardsReplaceRequestWithBody(server, org, user, id, "application/json", bodyReader)
+}
+
+// NewBillAnalysisCustomDashboardsReplaceRequestWithBody generates requests for BillAnalysisCustomDashboardsReplace with any type of body
+func NewBillAnalysisCustomDashboardsReplaceRequestWithBody(server string, org int64, user int64, id string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "user", runtime.ParamLocationPath, user)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/users/%s/dashboards/%s", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisAnomaliesIndexRequest calls the generic BillAnalysisAnomaliesIndex builder with application/json body
+func NewBillAnalysisAnomaliesIndexRequest(server string, org int64, body BillAnalysisAnomaliesIndexJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisAnomaliesIndexRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisAnomaliesIndexRequestWithBody generates requests for BillAnalysisAnomaliesIndex with any type of body
+func NewBillAnalysisAnomaliesIndexRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/v2/anomalies", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisAnomaliesAggregatedRequest calls the generic BillAnalysisAnomaliesAggregated builder with application/json body
+func NewBillAnalysisAnomaliesAggregatedRequest(server string, org int64, body BillAnalysisAnomaliesAggregatedJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisAnomaliesAggregatedRequestWithBody(server, org, "application/json", bodyReader)
+}
+
+// NewBillAnalysisAnomaliesAggregatedRequestWithBody generates requests for BillAnalysisAnomaliesAggregated with any type of body
+func NewBillAnalysisAnomaliesAggregatedRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/v2/anomalies/aggregated", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisAnomaliesSummaryRequest generates requests for BillAnalysisAnomaliesSummary
+func NewBillAnalysisAnomaliesSummaryRequest(server string, org int64, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/v2/anomalies/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCustomDimensionIndexRequest generates requests for BillAnalysisCustomDimensionIndex
+func NewBillAnalysisCustomDimensionIndexRequest(server string, orgId int64) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/v1/orgs/%s/custom-dimensions", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCustomDimensionCreateRequest calls the generic BillAnalysisCustomDimensionCreate builder with application/json body
+func NewBillAnalysisCustomDimensionCreateRequest(server string, orgId int64, body BillAnalysisCustomDimensionCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisCustomDimensionCreateRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewBillAnalysisCustomDimensionCreateRequestWithBody generates requests for BillAnalysisCustomDimensionCreate with any type of body
+func NewBillAnalysisCustomDimensionCreateRequestWithBody(server string, orgId int64, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/v1/orgs/%s/custom-dimensions", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewBillAnalysisCustomDimensionDeleteRequest generates requests for BillAnalysisCustomDimensionDelete
+func NewBillAnalysisCustomDimensionDeleteRequest(server string, orgId int64, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/v1/orgs/%s/custom-dimensions/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCustomDimensionShowRequest generates requests for BillAnalysisCustomDimensionShow
+func NewBillAnalysisCustomDimensionShowRequest(server string, orgId int64, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/v1/orgs/%s/custom-dimensions/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewBillAnalysisCustomDimensionUpdateRequest calls the generic BillAnalysisCustomDimensionUpdate builder with application/json body
+func NewBillAnalysisCustomDimensionUpdateRequest(server string, orgId int64, id string, body BillAnalysisCustomDimensionUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBillAnalysisCustomDimensionUpdateRequestWithBody(server, orgId, id, "application/json", bodyReader)
+}
+
+// NewBillAnalysisCustomDimensionUpdateRequestWithBody generates requests for BillAnalysisCustomDimensionUpdate with any type of body
+func NewBillAnalysisCustomDimensionUpdateRequestWithBody(server string, orgId int64, id string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/bill-analysis/v1/orgs/%s/custom-dimensions/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -50878,468 +54263,6 @@ func NewAuthTokenTokenRequestWithBody(server string, contentType string, body io
 	return req, nil
 }
 
-// NewBillAnalysisAdjustmentDefinitionShowRequest generates requests for BillAnalysisAdjustmentDefinitionShow
-func NewBillAnalysisAdjustmentDefinitionShowRequest(server string, org int) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/orgs/%s/adjustments/", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewBillAnalysisAdjustmentDefinitionUpdateRequest calls the generic BillAnalysisAdjustmentDefinitionUpdate builder with application/json body
-func NewBillAnalysisAdjustmentDefinitionUpdateRequest(server string, org int, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody(server, org, "application/json", bodyReader)
-}
-
-// NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody generates requests for BillAnalysisAdjustmentDefinitionUpdate with any type of body
-func NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody(server string, org int, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/orgs/%s/adjustments/", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("PUT", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewBillAnalysisAnomaliesReportRequest calls the generic BillAnalysisAnomaliesReport builder with application/json body
-func NewBillAnalysisAnomaliesReportRequest(server string, org int, body BillAnalysisAnomaliesReportJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisAnomaliesReportRequestWithBody(server, org, "application/json", bodyReader)
-}
-
-// NewBillAnalysisAnomaliesReportRequestWithBody generates requests for BillAnalysisAnomaliesReport with any type of body
-func NewBillAnalysisAnomaliesReportRequestWithBody(server string, org int, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/orgs/%s/anomalies/report", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("POST", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewBillAnalysisCostsAggregatedRequest calls the generic BillAnalysisCostsAggregated builder with application/json body
-func NewBillAnalysisCostsAggregatedRequest(server string, org int, body BillAnalysisCostsAggregatedJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisCostsAggregatedRequestWithBody(server, org, "application/json", bodyReader)
-}
-
-// NewBillAnalysisCostsAggregatedRequestWithBody generates requests for BillAnalysisCostsAggregated with any type of body
-func NewBillAnalysisCostsAggregatedRequestWithBody(server string, org int, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/orgs/%s/costs/aggregated", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("POST", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewBillAnalysisCostsDimensionsRequest generates requests for BillAnalysisCostsDimensions
-func NewBillAnalysisCostsDimensionsRequest(server string, org int, params *BillAnalysisCostsDimensionsParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/orgs/%s/costs/dimensions", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		queryValues := queryURL.Query()
-
-		if params.Dataset != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "dataset", runtime.ParamLocationQuery, *params.Dataset); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		queryURL.RawQuery = queryValues.Encode()
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewBillAnalysisCostsMetricsRequest generates requests for BillAnalysisCostsMetrics
-func NewBillAnalysisCostsMetricsRequest(server string, org int, params *BillAnalysisCostsMetricsParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/orgs/%s/costs/metrics", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		queryValues := queryURL.Query()
-
-		if params.Dataset != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "dataset", runtime.ParamLocationQuery, *params.Dataset); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		queryURL.RawQuery = queryValues.Encode()
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewBillAnalysisCostsSelectRequest calls the generic BillAnalysisCostsSelect builder with application/json body
-func NewBillAnalysisCostsSelectRequest(server string, org int, body BillAnalysisCostsSelectJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisCostsSelectRequestWithBody(server, org, "application/json", bodyReader)
-}
-
-// NewBillAnalysisCostsSelectRequestWithBody generates requests for BillAnalysisCostsSelect with any type of body
-func NewBillAnalysisCostsSelectRequestWithBody(server string, org int, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/orgs/%s/costs/select", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("POST", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewBillAnalysisForecastsReportRequest calls the generic BillAnalysisForecastsReport builder with application/json body
-func NewBillAnalysisForecastsReportRequest(server string, org int, body BillAnalysisForecastsReportJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisForecastsReportRequestWithBody(server, org, "application/json", bodyReader)
-}
-
-// NewBillAnalysisForecastsReportRequestWithBody generates requests for BillAnalysisForecastsReport with any type of body
-func NewBillAnalysisForecastsReportRequestWithBody(server string, org int, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/orgs/%s/forecasts/report", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("POST", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewBillAnalysisCurrencySettingShowRequest generates requests for BillAnalysisCurrencySettingShow
-func NewBillAnalysisCurrencySettingShowRequest(server string, org int) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/orgs/%s/settings/currency_code", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewBillAnalysisCurrencySettingUpdateRequest calls the generic BillAnalysisCurrencySettingUpdate builder with application/json body
-func NewBillAnalysisCurrencySettingUpdateRequest(server string, org int, body BillAnalysisCurrencySettingUpdateJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisCurrencySettingUpdateRequestWithBody(server, org, "application/json", bodyReader)
-}
-
-// NewBillAnalysisCurrencySettingUpdateRequestWithBody generates requests for BillAnalysisCurrencySettingUpdate with any type of body
-func NewBillAnalysisCurrencySettingUpdateRequestWithBody(server string, org int, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/orgs/%s/settings/currency_code", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("PUT", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
 // NewPolicyCustomCatalogIndexRequest generates requests for PolicyCustomCatalogIndex
 func NewPolicyCustomCatalogIndexRequest(server string, orgId int64, params *PolicyCustomCatalogIndexParams) (*http.Request, error) {
 	var err error
@@ -63360,6 +66283,175 @@ type ClientWithResponsesInterface interface {
 	// BillingCenterServiceUserBillingCentersShowWithResponse request
 	BillingCenterServiceUserBillingCentersShowWithResponse(ctx context.Context, user int, orgId int, billingCenter string, params *BillingCenterServiceUserBillingCentersShowParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceUserBillingCentersShowResponse, error)
 
+	// BillAnalysisAdjustmentDefinitionShowWithResponse request
+	BillAnalysisAdjustmentDefinitionShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionShowResponse, error)
+
+	// BillAnalysisAdjustmentDefinitionUpdateWithBodyWithResponse request with any body
+	BillAnalysisAdjustmentDefinitionUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error)
+
+	BillAnalysisAdjustmentDefinitionUpdateWithResponse(ctx context.Context, org int64, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error)
+
+	// BillAnalysisAnomaliesReportWithBodyWithResponse request with any body
+	BillAnalysisAnomaliesReportWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error)
+
+	BillAnalysisAnomaliesReportWithResponse(ctx context.Context, org int64, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error)
+
+	// BillAnalysisBillMonthsSearchWithResponse request
+	BillAnalysisBillMonthsSearchWithResponse(ctx context.Context, org int64, params *BillAnalysisBillMonthsSearchParams, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsSearchResponse, error)
+
+	// BillAnalysisBillMonthsReprocessWithBodyWithResponse request with any body
+	BillAnalysisBillMonthsReprocessWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsReprocessResponse, error)
+
+	BillAnalysisBillMonthsReprocessWithResponse(ctx context.Context, org int64, body BillAnalysisBillMonthsReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsReprocessResponse, error)
+
+	// BillAnalysisBillMonthsDownloadWithResponse request
+	BillAnalysisBillMonthsDownloadWithResponse(ctx context.Context, org int64, params *BillAnalysisBillMonthsDownloadParams, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsDownloadResponse, error)
+
+	// BillAnalysisBillingSettingsShowWithResponse request
+	BillAnalysisBillingSettingsShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisBillingSettingsShowResponse, error)
+
+	// BillAnalysisBillingSettingsUpdateWithBodyWithResponse request with any body
+	BillAnalysisBillingSettingsUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisBillingSettingsUpdateResponse, error)
+
+	BillAnalysisBillingSettingsUpdateWithResponse(ctx context.Context, org int64, body BillAnalysisBillingSettingsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisBillingSettingsUpdateResponse, error)
+
+	// BillAnalysisCloudVendorAccountsIndexWithResponse request
+	BillAnalysisCloudVendorAccountsIndexWithResponse(ctx context.Context, org int64, params *BillAnalysisCloudVendorAccountsIndexParams, reqEditors ...RequestEditorFn) (*BillAnalysisCloudVendorAccountsIndexResponse, error)
+
+	// BillAnalysisCostsAggregatedWithBodyWithResponse request with any body
+	BillAnalysisCostsAggregatedWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error)
+
+	BillAnalysisCostsAggregatedWithResponse(ctx context.Context, org int64, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error)
+
+	// BillAnalysisCostsDimensionsWithResponse request
+	BillAnalysisCostsDimensionsWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCostsDimensionsResponse, error)
+
+	// BillAnalysisCostsExportSelectWithBodyWithResponse request with any body
+	BillAnalysisCostsExportSelectWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsExportSelectResponse, error)
+
+	BillAnalysisCostsExportSelectWithResponse(ctx context.Context, org int64, body BillAnalysisCostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsExportSelectResponse, error)
+
+	// BillAnalysisCostsExportSelectStatusWithResponse request
+	BillAnalysisCostsExportSelectStatusWithResponse(ctx context.Context, org int64, exportId string, reqEditors ...RequestEditorFn) (*BillAnalysisCostsExportSelectStatusResponse, error)
+
+	// BillAnalysisCostsMetricsWithResponse request
+	BillAnalysisCostsMetricsWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCostsMetricsResponse, error)
+
+	// BillAnalysisCostsSelectWithBodyWithResponse request with any body
+	BillAnalysisCostsSelectWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error)
+
+	BillAnalysisCostsSelectWithResponse(ctx context.Context, org int64, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error)
+
+	// BillAnalysisCustomDimensionsIndexWithResponse request
+	BillAnalysisCustomDimensionsIndexWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsIndexResponse, error)
+
+	// BillAnalysisCustomDimensionsCreateWithBodyWithResponse request with any body
+	BillAnalysisCustomDimensionsCreateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsCreateResponse, error)
+
+	BillAnalysisCustomDimensionsCreateWithResponse(ctx context.Context, org int64, body BillAnalysisCustomDimensionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsCreateResponse, error)
+
+	// BillAnalysisCustomDimensionsDestroyWithResponse request
+	BillAnalysisCustomDimensionsDestroyWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsDestroyResponse, error)
+
+	// BillAnalysisCustomDimensionsShowWithResponse request
+	BillAnalysisCustomDimensionsShowWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsShowResponse, error)
+
+	// BillAnalysisCustomDimensionsReplaceWithBodyWithResponse request with any body
+	BillAnalysisCustomDimensionsReplaceWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsReplaceResponse, error)
+
+	BillAnalysisCustomDimensionsReplaceWithResponse(ctx context.Context, org int64, id string, body BillAnalysisCustomDimensionsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsReplaceResponse, error)
+
+	// BillAnalysisOrgDashboardsIndexWithResponse request
+	BillAnalysisOrgDashboardsIndexWithResponse(ctx context.Context, org int64, params *BillAnalysisOrgDashboardsIndexParams, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsIndexResponse, error)
+
+	// BillAnalysisOrgDashboardsCreateWithBodyWithResponse request with any body
+	BillAnalysisOrgDashboardsCreateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsCreateResponse, error)
+
+	BillAnalysisOrgDashboardsCreateWithResponse(ctx context.Context, org int64, body BillAnalysisOrgDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsCreateResponse, error)
+
+	// BillAnalysisOrgDashboardsDestroyWithResponse request
+	BillAnalysisOrgDashboardsDestroyWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsDestroyResponse, error)
+
+	// BillAnalysisOrgDashboardsShowWithResponse request
+	BillAnalysisOrgDashboardsShowWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsShowResponse, error)
+
+	// BillAnalysisOrgDashboardsReplaceWithBodyWithResponse request with any body
+	BillAnalysisOrgDashboardsReplaceWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsReplaceResponse, error)
+
+	BillAnalysisOrgDashboardsReplaceWithResponse(ctx context.Context, org int64, id string, body BillAnalysisOrgDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsReplaceResponse, error)
+
+	// BillAnalysisForecastsReportWithBodyWithResponse request with any body
+	BillAnalysisForecastsReportWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error)
+
+	BillAnalysisForecastsReportWithResponse(ctx context.Context, org int64, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error)
+
+	// BillAnalysisCommitmentReallocationSettingShowWithResponse request
+	BillAnalysisCommitmentReallocationSettingShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCommitmentReallocationSettingShowResponse, error)
+
+	// BillAnalysisCommitmentReallocationSettingUpsertWithBodyWithResponse request with any body
+	BillAnalysisCommitmentReallocationSettingUpsertWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCommitmentReallocationSettingUpsertResponse, error)
+
+	BillAnalysisCommitmentReallocationSettingUpsertWithResponse(ctx context.Context, org int64, body BillAnalysisCommitmentReallocationSettingUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCommitmentReallocationSettingUpsertResponse, error)
+
+	// BillAnalysisCurrencySettingShowWithResponse request
+	BillAnalysisCurrencySettingShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingShowResponse, error)
+
+	// BillAnalysisCurrencySettingUpdateWithBodyWithResponse request with any body
+	BillAnalysisCurrencySettingUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error)
+
+	BillAnalysisCurrencySettingUpdateWithResponse(ctx context.Context, org int64, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error)
+
+	// BillAnalysisCustomDashboardsIndexWithResponse request
+	BillAnalysisCustomDashboardsIndexWithResponse(ctx context.Context, org int64, user int64, params *BillAnalysisCustomDashboardsIndexParams, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsIndexResponse, error)
+
+	// BillAnalysisCustomDashboardsCreateWithBodyWithResponse request with any body
+	BillAnalysisCustomDashboardsCreateWithBodyWithResponse(ctx context.Context, org int64, user int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsCreateResponse, error)
+
+	BillAnalysisCustomDashboardsCreateWithResponse(ctx context.Context, org int64, user int64, body BillAnalysisCustomDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsCreateResponse, error)
+
+	// BillAnalysisCustomDashboardsDestroyWithResponse request
+	BillAnalysisCustomDashboardsDestroyWithResponse(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsDestroyResponse, error)
+
+	// BillAnalysisCustomDashboardsShowWithResponse request
+	BillAnalysisCustomDashboardsShowWithResponse(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsShowResponse, error)
+
+	// BillAnalysisCustomDashboardsReplaceWithBodyWithResponse request with any body
+	BillAnalysisCustomDashboardsReplaceWithBodyWithResponse(ctx context.Context, org int64, user int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsReplaceResponse, error)
+
+	BillAnalysisCustomDashboardsReplaceWithResponse(ctx context.Context, org int64, user int64, id string, body BillAnalysisCustomDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsReplaceResponse, error)
+
+	// BillAnalysisAnomaliesIndexWithBodyWithResponse request with any body
+	BillAnalysisAnomaliesIndexWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesIndexResponse, error)
+
+	BillAnalysisAnomaliesIndexWithResponse(ctx context.Context, org int64, body BillAnalysisAnomaliesIndexJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesIndexResponse, error)
+
+	// BillAnalysisAnomaliesAggregatedWithBodyWithResponse request with any body
+	BillAnalysisAnomaliesAggregatedWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesAggregatedResponse, error)
+
+	BillAnalysisAnomaliesAggregatedWithResponse(ctx context.Context, org int64, body BillAnalysisAnomaliesAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesAggregatedResponse, error)
+
+	// BillAnalysisAnomaliesSummaryWithResponse request
+	BillAnalysisAnomaliesSummaryWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesSummaryResponse, error)
+
+	// BillAnalysisCustomDimensionIndexWithResponse request
+	BillAnalysisCustomDimensionIndexWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionIndexResponse, error)
+
+	// BillAnalysisCustomDimensionCreateWithBodyWithResponse request with any body
+	BillAnalysisCustomDimensionCreateWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionCreateResponse, error)
+
+	BillAnalysisCustomDimensionCreateWithResponse(ctx context.Context, orgId int64, body BillAnalysisCustomDimensionCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionCreateResponse, error)
+
+	// BillAnalysisCustomDimensionDeleteWithResponse request
+	BillAnalysisCustomDimensionDeleteWithResponse(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionDeleteResponse, error)
+
+	// BillAnalysisCustomDimensionShowWithResponse request
+	BillAnalysisCustomDimensionShowWithResponse(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionShowResponse, error)
+
+	// BillAnalysisCustomDimensionUpdateWithBodyWithResponse request with any body
+	BillAnalysisCustomDimensionUpdateWithBodyWithResponse(ctx context.Context, orgId int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionUpdateResponse, error)
+
+	BillAnalysisCustomDimensionUpdateWithResponse(ctx context.Context, orgId int64, id string, body BillAnalysisCustomDimensionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionUpdateResponse, error)
+
 	// CredCredentialIndexOrgWithResponse request
 	CredCredentialIndexOrgWithResponse(ctx context.Context, orgId int64, params *CredCredentialIndexOrgParams, reqEditors ...RequestEditorFn) (*CredCredentialIndexOrgResponse, error)
 
@@ -64423,48 +67515,6 @@ type ClientWithResponsesInterface interface {
 	AuthTokenTokenWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AuthTokenTokenResponse, error)
 
 	AuthTokenTokenWithFormdataBodyWithResponse(ctx context.Context, body AuthTokenTokenFormdataRequestBody, reqEditors ...RequestEditorFn) (*AuthTokenTokenResponse, error)
-
-	// BillAnalysisAdjustmentDefinitionShowWithResponse request
-	BillAnalysisAdjustmentDefinitionShowWithResponse(ctx context.Context, org int, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionShowResponse, error)
-
-	// BillAnalysisAdjustmentDefinitionUpdateWithBodyWithResponse request with any body
-	BillAnalysisAdjustmentDefinitionUpdateWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error)
-
-	BillAnalysisAdjustmentDefinitionUpdateWithResponse(ctx context.Context, org int, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error)
-
-	// BillAnalysisAnomaliesReportWithBodyWithResponse request with any body
-	BillAnalysisAnomaliesReportWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error)
-
-	BillAnalysisAnomaliesReportWithResponse(ctx context.Context, org int, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error)
-
-	// BillAnalysisCostsAggregatedWithBodyWithResponse request with any body
-	BillAnalysisCostsAggregatedWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error)
-
-	BillAnalysisCostsAggregatedWithResponse(ctx context.Context, org int, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error)
-
-	// BillAnalysisCostsDimensionsWithResponse request
-	BillAnalysisCostsDimensionsWithResponse(ctx context.Context, org int, params *BillAnalysisCostsDimensionsParams, reqEditors ...RequestEditorFn) (*BillAnalysisCostsDimensionsResponse, error)
-
-	// BillAnalysisCostsMetricsWithResponse request
-	BillAnalysisCostsMetricsWithResponse(ctx context.Context, org int, params *BillAnalysisCostsMetricsParams, reqEditors ...RequestEditorFn) (*BillAnalysisCostsMetricsResponse, error)
-
-	// BillAnalysisCostsSelectWithBodyWithResponse request with any body
-	BillAnalysisCostsSelectWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error)
-
-	BillAnalysisCostsSelectWithResponse(ctx context.Context, org int, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error)
-
-	// BillAnalysisForecastsReportWithBodyWithResponse request with any body
-	BillAnalysisForecastsReportWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error)
-
-	BillAnalysisForecastsReportWithResponse(ctx context.Context, org int, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error)
-
-	// BillAnalysisCurrencySettingShowWithResponse request
-	BillAnalysisCurrencySettingShowWithResponse(ctx context.Context, org int, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingShowResponse, error)
-
-	// BillAnalysisCurrencySettingUpdateWithBodyWithResponse request with any body
-	BillAnalysisCurrencySettingUpdateWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error)
-
-	BillAnalysisCurrencySettingUpdateWithResponse(ctx context.Context, org int, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error)
 
 	// PolicyCustomCatalogIndexWithResponse request
 	PolicyCustomCatalogIndexWithResponse(ctx context.Context, orgId int64, params *PolicyCustomCatalogIndexParams, reqEditors ...RequestEditorFn) (*PolicyCustomCatalogIndexResponse, error)
@@ -65577,6 +68627,950 @@ func (r BillingCenterServiceUserBillingCentersShowResponse) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r BillingCenterServiceUserBillingCentersShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisAdjustmentDefinitionShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisAllDatedAdjustmentLists
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisAdjustmentDefinitionShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisAdjustmentDefinitionShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisAdjustmentDefinitionUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisAdjustmentDefinitionUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisAdjustmentDefinitionUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisAnomaliesReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisReportResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisAnomaliesReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisAnomaliesReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisBillMonthsSearchResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisBillMonthSearchResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisBillMonthsSearchResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisBillMonthsSearchResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisBillMonthsReprocessResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisReprocessResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisBillMonthsReprocessResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisBillMonthsReprocessResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisBillMonthsDownloadResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisBillMonthsDownloadResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisBillMonthsDownloadResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisBillingSettingsShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisBillingSettingsResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisBillingSettingsShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisBillingSettingsShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisBillingSettingsUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisBillingSettingsResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisBillingSettingsUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisBillingSettingsUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCloudVendorAccountsIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisCloudVendorAccountCollection
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCloudVendorAccountsIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCloudVendorAccountsIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCostsAggregatedResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisAnalyticsQueryResult
+	JSON202      *BillAnalysisAnalyticsQueryResult
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCostsAggregatedResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCostsAggregatedResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCostsDimensionsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisDimensionsResult
+	JSON202      *BillAnalysisDimensionsResult
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCostsDimensionsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCostsDimensionsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCostsExportSelectResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisExportSelectResult
+	JSON202      *BillAnalysisExportSelectResult
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCostsExportSelectResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCostsExportSelectResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCostsExportSelectStatusResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisExportSelectStatusResult
+	JSON202      *BillAnalysisExportSelectStatusResult
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCostsExportSelectStatusResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCostsExportSelectStatusResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCostsMetricsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisMetricsResult
+	JSON202      *BillAnalysisMetricsResult
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCostsMetricsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCostsMetricsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCostsSelectResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisAnalyticsQueryResult
+	JSON202      *BillAnalysisAnalyticsQueryResult
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCostsSelectResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCostsSelectResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCustomDimensionsIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisCustomDimensionCollection
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCustomDimensionsIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCustomDimensionsIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCustomDimensionsCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisRightscaleCustomDimensionServiceCustomdimension
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCustomDimensionsCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCustomDimensionsCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCustomDimensionsDestroyResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCustomDimensionsDestroyResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCustomDimensionsDestroyResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCustomDimensionsShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisRightscaleCustomDimensionServiceCustomdimension
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCustomDimensionsShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCustomDimensionsShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCustomDimensionsReplaceResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisRightscaleCustomDimensionServiceCustomdimension
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCustomDimensionsReplaceResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCustomDimensionsReplaceResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisOrgDashboardsIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisCustomDashboardCollection
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisOrgDashboardsIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisOrgDashboardsIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisOrgDashboardsCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboard
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisOrgDashboardsCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisOrgDashboardsCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisOrgDashboardsDestroyResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisOrgDashboardsDestroyResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisOrgDashboardsDestroyResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisOrgDashboardsShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboard
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisOrgDashboardsShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisOrgDashboardsShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisOrgDashboardsReplaceResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboard
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisOrgDashboardsReplaceResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisOrgDashboardsReplaceResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisForecastsReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisReportResponseBody2
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisForecastsReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisForecastsReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCommitmentReallocationSettingShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisCommitmentReallocationSettings
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCommitmentReallocationSettingShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCommitmentReallocationSettingShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCommitmentReallocationSettingUpsertResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCommitmentReallocationSettingUpsertResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCommitmentReallocationSettingUpsertResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCurrencySettingShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisSetting
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCurrencySettingShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCurrencySettingShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCurrencySettingUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCurrencySettingUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCurrencySettingUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCustomDashboardsIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisCustomDashboardCollection
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCustomDashboardsIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCustomDashboardsIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCustomDashboardsCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboard
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCustomDashboardsCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCustomDashboardsCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCustomDashboardsDestroyResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCustomDashboardsDestroyResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCustomDashboardsDestroyResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCustomDashboardsShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboard
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCustomDashboardsShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCustomDashboardsShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCustomDashboardsReplaceResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboard
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCustomDashboardsReplaceResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCustomDashboardsReplaceResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisAnomaliesIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisAnomalyIndexResult
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisAnomaliesIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisAnomaliesIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisAnomaliesAggregatedResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisAnomalyAggregatedResult
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisAnomaliesAggregatedResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisAnomaliesAggregatedResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisAnomaliesSummaryResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisAnomalyDetails
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisAnomaliesSummaryResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisAnomaliesSummaryResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCustomDimensionIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisCustomDimensionList
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCustomDimensionIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCustomDimensionIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCustomDimensionCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *BillAnalysisFlexeraOptimaCustomDimensionResults
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCustomDimensionCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCustomDimensionCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCustomDimensionDeleteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCustomDimensionDeleteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCustomDimensionDeleteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCustomDimensionShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisFlexeraOptimaCustomDimensionResults
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCustomDimensionShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCustomDimensionShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type BillAnalysisCustomDimensionUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BillAnalysisFlexeraOptimaCustomDimensionResults
+}
+
+// Status returns HTTPResponse.Status
+func (r BillAnalysisCustomDimensionUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r BillAnalysisCustomDimensionUpdateResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -71685,216 +75679,6 @@ func (r AuthTokenTokenResponse) StatusCode() int {
 	return 0
 }
 
-type BillAnalysisAdjustmentDefinitionShowResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r BillAnalysisAdjustmentDefinitionShowResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r BillAnalysisAdjustmentDefinitionShowResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type BillAnalysisAdjustmentDefinitionUpdateResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r BillAnalysisAdjustmentDefinitionUpdateResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r BillAnalysisAdjustmentDefinitionUpdateResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type BillAnalysisAnomaliesReportResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r BillAnalysisAnomaliesReportResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r BillAnalysisAnomaliesReportResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type BillAnalysisCostsAggregatedResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r BillAnalysisCostsAggregatedResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r BillAnalysisCostsAggregatedResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type BillAnalysisCostsDimensionsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r BillAnalysisCostsDimensionsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r BillAnalysisCostsDimensionsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type BillAnalysisCostsMetricsResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r BillAnalysisCostsMetricsResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r BillAnalysisCostsMetricsResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type BillAnalysisCostsSelectResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r BillAnalysisCostsSelectResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r BillAnalysisCostsSelectResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type BillAnalysisForecastsReportResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r BillAnalysisForecastsReportResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r BillAnalysisForecastsReportResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type BillAnalysisCurrencySettingShowResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r BillAnalysisCurrencySettingShowResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r BillAnalysisCurrencySettingShowResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type BillAnalysisCurrencySettingUpdateResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r BillAnalysisCurrencySettingUpdateResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r BillAnalysisCurrencySettingUpdateResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
 type PolicyCustomCatalogIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -76929,6 +80713,553 @@ func (c *ClientWithResponses) BillingCenterServiceUserBillingCentersShowWithResp
 	return ParseBillingCenterServiceUserBillingCentersShowResponse(rsp)
 }
 
+// BillAnalysisAdjustmentDefinitionShowWithResponse request returning *BillAnalysisAdjustmentDefinitionShowResponse
+func (c *ClientWithResponses) BillAnalysisAdjustmentDefinitionShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionShowResponse, error) {
+	rsp, err := c.BillAnalysisAdjustmentDefinitionShow(ctx, org, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisAdjustmentDefinitionShowResponse(rsp)
+}
+
+// BillAnalysisAdjustmentDefinitionUpdateWithBodyWithResponse request with arbitrary body returning *BillAnalysisAdjustmentDefinitionUpdateResponse
+func (c *ClientWithResponses) BillAnalysisAdjustmentDefinitionUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error) {
+	rsp, err := c.BillAnalysisAdjustmentDefinitionUpdateWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisAdjustmentDefinitionUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisAdjustmentDefinitionUpdateWithResponse(ctx context.Context, org int64, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error) {
+	rsp, err := c.BillAnalysisAdjustmentDefinitionUpdate(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisAdjustmentDefinitionUpdateResponse(rsp)
+}
+
+// BillAnalysisAnomaliesReportWithBodyWithResponse request with arbitrary body returning *BillAnalysisAnomaliesReportResponse
+func (c *ClientWithResponses) BillAnalysisAnomaliesReportWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error) {
+	rsp, err := c.BillAnalysisAnomaliesReportWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisAnomaliesReportResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisAnomaliesReportWithResponse(ctx context.Context, org int64, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error) {
+	rsp, err := c.BillAnalysisAnomaliesReport(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisAnomaliesReportResponse(rsp)
+}
+
+// BillAnalysisBillMonthsSearchWithResponse request returning *BillAnalysisBillMonthsSearchResponse
+func (c *ClientWithResponses) BillAnalysisBillMonthsSearchWithResponse(ctx context.Context, org int64, params *BillAnalysisBillMonthsSearchParams, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsSearchResponse, error) {
+	rsp, err := c.BillAnalysisBillMonthsSearch(ctx, org, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisBillMonthsSearchResponse(rsp)
+}
+
+// BillAnalysisBillMonthsReprocessWithBodyWithResponse request with arbitrary body returning *BillAnalysisBillMonthsReprocessResponse
+func (c *ClientWithResponses) BillAnalysisBillMonthsReprocessWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsReprocessResponse, error) {
+	rsp, err := c.BillAnalysisBillMonthsReprocessWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisBillMonthsReprocessResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisBillMonthsReprocessWithResponse(ctx context.Context, org int64, body BillAnalysisBillMonthsReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsReprocessResponse, error) {
+	rsp, err := c.BillAnalysisBillMonthsReprocess(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisBillMonthsReprocessResponse(rsp)
+}
+
+// BillAnalysisBillMonthsDownloadWithResponse request returning *BillAnalysisBillMonthsDownloadResponse
+func (c *ClientWithResponses) BillAnalysisBillMonthsDownloadWithResponse(ctx context.Context, org int64, params *BillAnalysisBillMonthsDownloadParams, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsDownloadResponse, error) {
+	rsp, err := c.BillAnalysisBillMonthsDownload(ctx, org, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisBillMonthsDownloadResponse(rsp)
+}
+
+// BillAnalysisBillingSettingsShowWithResponse request returning *BillAnalysisBillingSettingsShowResponse
+func (c *ClientWithResponses) BillAnalysisBillingSettingsShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisBillingSettingsShowResponse, error) {
+	rsp, err := c.BillAnalysisBillingSettingsShow(ctx, org, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisBillingSettingsShowResponse(rsp)
+}
+
+// BillAnalysisBillingSettingsUpdateWithBodyWithResponse request with arbitrary body returning *BillAnalysisBillingSettingsUpdateResponse
+func (c *ClientWithResponses) BillAnalysisBillingSettingsUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisBillingSettingsUpdateResponse, error) {
+	rsp, err := c.BillAnalysisBillingSettingsUpdateWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisBillingSettingsUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisBillingSettingsUpdateWithResponse(ctx context.Context, org int64, body BillAnalysisBillingSettingsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisBillingSettingsUpdateResponse, error) {
+	rsp, err := c.BillAnalysisBillingSettingsUpdate(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisBillingSettingsUpdateResponse(rsp)
+}
+
+// BillAnalysisCloudVendorAccountsIndexWithResponse request returning *BillAnalysisCloudVendorAccountsIndexResponse
+func (c *ClientWithResponses) BillAnalysisCloudVendorAccountsIndexWithResponse(ctx context.Context, org int64, params *BillAnalysisCloudVendorAccountsIndexParams, reqEditors ...RequestEditorFn) (*BillAnalysisCloudVendorAccountsIndexResponse, error) {
+	rsp, err := c.BillAnalysisCloudVendorAccountsIndex(ctx, org, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCloudVendorAccountsIndexResponse(rsp)
+}
+
+// BillAnalysisCostsAggregatedWithBodyWithResponse request with arbitrary body returning *BillAnalysisCostsAggregatedResponse
+func (c *ClientWithResponses) BillAnalysisCostsAggregatedWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error) {
+	rsp, err := c.BillAnalysisCostsAggregatedWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCostsAggregatedResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisCostsAggregatedWithResponse(ctx context.Context, org int64, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error) {
+	rsp, err := c.BillAnalysisCostsAggregated(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCostsAggregatedResponse(rsp)
+}
+
+// BillAnalysisCostsDimensionsWithResponse request returning *BillAnalysisCostsDimensionsResponse
+func (c *ClientWithResponses) BillAnalysisCostsDimensionsWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCostsDimensionsResponse, error) {
+	rsp, err := c.BillAnalysisCostsDimensions(ctx, org, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCostsDimensionsResponse(rsp)
+}
+
+// BillAnalysisCostsExportSelectWithBodyWithResponse request with arbitrary body returning *BillAnalysisCostsExportSelectResponse
+func (c *ClientWithResponses) BillAnalysisCostsExportSelectWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsExportSelectResponse, error) {
+	rsp, err := c.BillAnalysisCostsExportSelectWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCostsExportSelectResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisCostsExportSelectWithResponse(ctx context.Context, org int64, body BillAnalysisCostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsExportSelectResponse, error) {
+	rsp, err := c.BillAnalysisCostsExportSelect(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCostsExportSelectResponse(rsp)
+}
+
+// BillAnalysisCostsExportSelectStatusWithResponse request returning *BillAnalysisCostsExportSelectStatusResponse
+func (c *ClientWithResponses) BillAnalysisCostsExportSelectStatusWithResponse(ctx context.Context, org int64, exportId string, reqEditors ...RequestEditorFn) (*BillAnalysisCostsExportSelectStatusResponse, error) {
+	rsp, err := c.BillAnalysisCostsExportSelectStatus(ctx, org, exportId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCostsExportSelectStatusResponse(rsp)
+}
+
+// BillAnalysisCostsMetricsWithResponse request returning *BillAnalysisCostsMetricsResponse
+func (c *ClientWithResponses) BillAnalysisCostsMetricsWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCostsMetricsResponse, error) {
+	rsp, err := c.BillAnalysisCostsMetrics(ctx, org, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCostsMetricsResponse(rsp)
+}
+
+// BillAnalysisCostsSelectWithBodyWithResponse request with arbitrary body returning *BillAnalysisCostsSelectResponse
+func (c *ClientWithResponses) BillAnalysisCostsSelectWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error) {
+	rsp, err := c.BillAnalysisCostsSelectWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCostsSelectResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisCostsSelectWithResponse(ctx context.Context, org int64, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error) {
+	rsp, err := c.BillAnalysisCostsSelect(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCostsSelectResponse(rsp)
+}
+
+// BillAnalysisCustomDimensionsIndexWithResponse request returning *BillAnalysisCustomDimensionsIndexResponse
+func (c *ClientWithResponses) BillAnalysisCustomDimensionsIndexWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsIndexResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionsIndex(ctx, org, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDimensionsIndexResponse(rsp)
+}
+
+// BillAnalysisCustomDimensionsCreateWithBodyWithResponse request with arbitrary body returning *BillAnalysisCustomDimensionsCreateResponse
+func (c *ClientWithResponses) BillAnalysisCustomDimensionsCreateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsCreateResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionsCreateWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDimensionsCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisCustomDimensionsCreateWithResponse(ctx context.Context, org int64, body BillAnalysisCustomDimensionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsCreateResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionsCreate(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDimensionsCreateResponse(rsp)
+}
+
+// BillAnalysisCustomDimensionsDestroyWithResponse request returning *BillAnalysisCustomDimensionsDestroyResponse
+func (c *ClientWithResponses) BillAnalysisCustomDimensionsDestroyWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsDestroyResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionsDestroy(ctx, org, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDimensionsDestroyResponse(rsp)
+}
+
+// BillAnalysisCustomDimensionsShowWithResponse request returning *BillAnalysisCustomDimensionsShowResponse
+func (c *ClientWithResponses) BillAnalysisCustomDimensionsShowWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsShowResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionsShow(ctx, org, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDimensionsShowResponse(rsp)
+}
+
+// BillAnalysisCustomDimensionsReplaceWithBodyWithResponse request with arbitrary body returning *BillAnalysisCustomDimensionsReplaceResponse
+func (c *ClientWithResponses) BillAnalysisCustomDimensionsReplaceWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsReplaceResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionsReplaceWithBody(ctx, org, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDimensionsReplaceResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisCustomDimensionsReplaceWithResponse(ctx context.Context, org int64, id string, body BillAnalysisCustomDimensionsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsReplaceResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionsReplace(ctx, org, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDimensionsReplaceResponse(rsp)
+}
+
+// BillAnalysisOrgDashboardsIndexWithResponse request returning *BillAnalysisOrgDashboardsIndexResponse
+func (c *ClientWithResponses) BillAnalysisOrgDashboardsIndexWithResponse(ctx context.Context, org int64, params *BillAnalysisOrgDashboardsIndexParams, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsIndexResponse, error) {
+	rsp, err := c.BillAnalysisOrgDashboardsIndex(ctx, org, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisOrgDashboardsIndexResponse(rsp)
+}
+
+// BillAnalysisOrgDashboardsCreateWithBodyWithResponse request with arbitrary body returning *BillAnalysisOrgDashboardsCreateResponse
+func (c *ClientWithResponses) BillAnalysisOrgDashboardsCreateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsCreateResponse, error) {
+	rsp, err := c.BillAnalysisOrgDashboardsCreateWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisOrgDashboardsCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisOrgDashboardsCreateWithResponse(ctx context.Context, org int64, body BillAnalysisOrgDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsCreateResponse, error) {
+	rsp, err := c.BillAnalysisOrgDashboardsCreate(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisOrgDashboardsCreateResponse(rsp)
+}
+
+// BillAnalysisOrgDashboardsDestroyWithResponse request returning *BillAnalysisOrgDashboardsDestroyResponse
+func (c *ClientWithResponses) BillAnalysisOrgDashboardsDestroyWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsDestroyResponse, error) {
+	rsp, err := c.BillAnalysisOrgDashboardsDestroy(ctx, org, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisOrgDashboardsDestroyResponse(rsp)
+}
+
+// BillAnalysisOrgDashboardsShowWithResponse request returning *BillAnalysisOrgDashboardsShowResponse
+func (c *ClientWithResponses) BillAnalysisOrgDashboardsShowWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsShowResponse, error) {
+	rsp, err := c.BillAnalysisOrgDashboardsShow(ctx, org, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisOrgDashboardsShowResponse(rsp)
+}
+
+// BillAnalysisOrgDashboardsReplaceWithBodyWithResponse request with arbitrary body returning *BillAnalysisOrgDashboardsReplaceResponse
+func (c *ClientWithResponses) BillAnalysisOrgDashboardsReplaceWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsReplaceResponse, error) {
+	rsp, err := c.BillAnalysisOrgDashboardsReplaceWithBody(ctx, org, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisOrgDashboardsReplaceResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisOrgDashboardsReplaceWithResponse(ctx context.Context, org int64, id string, body BillAnalysisOrgDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsReplaceResponse, error) {
+	rsp, err := c.BillAnalysisOrgDashboardsReplace(ctx, org, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisOrgDashboardsReplaceResponse(rsp)
+}
+
+// BillAnalysisForecastsReportWithBodyWithResponse request with arbitrary body returning *BillAnalysisForecastsReportResponse
+func (c *ClientWithResponses) BillAnalysisForecastsReportWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error) {
+	rsp, err := c.BillAnalysisForecastsReportWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisForecastsReportResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisForecastsReportWithResponse(ctx context.Context, org int64, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error) {
+	rsp, err := c.BillAnalysisForecastsReport(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisForecastsReportResponse(rsp)
+}
+
+// BillAnalysisCommitmentReallocationSettingShowWithResponse request returning *BillAnalysisCommitmentReallocationSettingShowResponse
+func (c *ClientWithResponses) BillAnalysisCommitmentReallocationSettingShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCommitmentReallocationSettingShowResponse, error) {
+	rsp, err := c.BillAnalysisCommitmentReallocationSettingShow(ctx, org, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCommitmentReallocationSettingShowResponse(rsp)
+}
+
+// BillAnalysisCommitmentReallocationSettingUpsertWithBodyWithResponse request with arbitrary body returning *BillAnalysisCommitmentReallocationSettingUpsertResponse
+func (c *ClientWithResponses) BillAnalysisCommitmentReallocationSettingUpsertWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCommitmentReallocationSettingUpsertResponse, error) {
+	rsp, err := c.BillAnalysisCommitmentReallocationSettingUpsertWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCommitmentReallocationSettingUpsertResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisCommitmentReallocationSettingUpsertWithResponse(ctx context.Context, org int64, body BillAnalysisCommitmentReallocationSettingUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCommitmentReallocationSettingUpsertResponse, error) {
+	rsp, err := c.BillAnalysisCommitmentReallocationSettingUpsert(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCommitmentReallocationSettingUpsertResponse(rsp)
+}
+
+// BillAnalysisCurrencySettingShowWithResponse request returning *BillAnalysisCurrencySettingShowResponse
+func (c *ClientWithResponses) BillAnalysisCurrencySettingShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingShowResponse, error) {
+	rsp, err := c.BillAnalysisCurrencySettingShow(ctx, org, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCurrencySettingShowResponse(rsp)
+}
+
+// BillAnalysisCurrencySettingUpdateWithBodyWithResponse request with arbitrary body returning *BillAnalysisCurrencySettingUpdateResponse
+func (c *ClientWithResponses) BillAnalysisCurrencySettingUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error) {
+	rsp, err := c.BillAnalysisCurrencySettingUpdateWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCurrencySettingUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisCurrencySettingUpdateWithResponse(ctx context.Context, org int64, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error) {
+	rsp, err := c.BillAnalysisCurrencySettingUpdate(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCurrencySettingUpdateResponse(rsp)
+}
+
+// BillAnalysisCustomDashboardsIndexWithResponse request returning *BillAnalysisCustomDashboardsIndexResponse
+func (c *ClientWithResponses) BillAnalysisCustomDashboardsIndexWithResponse(ctx context.Context, org int64, user int64, params *BillAnalysisCustomDashboardsIndexParams, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsIndexResponse, error) {
+	rsp, err := c.BillAnalysisCustomDashboardsIndex(ctx, org, user, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDashboardsIndexResponse(rsp)
+}
+
+// BillAnalysisCustomDashboardsCreateWithBodyWithResponse request with arbitrary body returning *BillAnalysisCustomDashboardsCreateResponse
+func (c *ClientWithResponses) BillAnalysisCustomDashboardsCreateWithBodyWithResponse(ctx context.Context, org int64, user int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsCreateResponse, error) {
+	rsp, err := c.BillAnalysisCustomDashboardsCreateWithBody(ctx, org, user, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDashboardsCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisCustomDashboardsCreateWithResponse(ctx context.Context, org int64, user int64, body BillAnalysisCustomDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsCreateResponse, error) {
+	rsp, err := c.BillAnalysisCustomDashboardsCreate(ctx, org, user, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDashboardsCreateResponse(rsp)
+}
+
+// BillAnalysisCustomDashboardsDestroyWithResponse request returning *BillAnalysisCustomDashboardsDestroyResponse
+func (c *ClientWithResponses) BillAnalysisCustomDashboardsDestroyWithResponse(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsDestroyResponse, error) {
+	rsp, err := c.BillAnalysisCustomDashboardsDestroy(ctx, org, user, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDashboardsDestroyResponse(rsp)
+}
+
+// BillAnalysisCustomDashboardsShowWithResponse request returning *BillAnalysisCustomDashboardsShowResponse
+func (c *ClientWithResponses) BillAnalysisCustomDashboardsShowWithResponse(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsShowResponse, error) {
+	rsp, err := c.BillAnalysisCustomDashboardsShow(ctx, org, user, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDashboardsShowResponse(rsp)
+}
+
+// BillAnalysisCustomDashboardsReplaceWithBodyWithResponse request with arbitrary body returning *BillAnalysisCustomDashboardsReplaceResponse
+func (c *ClientWithResponses) BillAnalysisCustomDashboardsReplaceWithBodyWithResponse(ctx context.Context, org int64, user int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsReplaceResponse, error) {
+	rsp, err := c.BillAnalysisCustomDashboardsReplaceWithBody(ctx, org, user, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDashboardsReplaceResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisCustomDashboardsReplaceWithResponse(ctx context.Context, org int64, user int64, id string, body BillAnalysisCustomDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsReplaceResponse, error) {
+	rsp, err := c.BillAnalysisCustomDashboardsReplace(ctx, org, user, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDashboardsReplaceResponse(rsp)
+}
+
+// BillAnalysisAnomaliesIndexWithBodyWithResponse request with arbitrary body returning *BillAnalysisAnomaliesIndexResponse
+func (c *ClientWithResponses) BillAnalysisAnomaliesIndexWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesIndexResponse, error) {
+	rsp, err := c.BillAnalysisAnomaliesIndexWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisAnomaliesIndexResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisAnomaliesIndexWithResponse(ctx context.Context, org int64, body BillAnalysisAnomaliesIndexJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesIndexResponse, error) {
+	rsp, err := c.BillAnalysisAnomaliesIndex(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisAnomaliesIndexResponse(rsp)
+}
+
+// BillAnalysisAnomaliesAggregatedWithBodyWithResponse request with arbitrary body returning *BillAnalysisAnomaliesAggregatedResponse
+func (c *ClientWithResponses) BillAnalysisAnomaliesAggregatedWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesAggregatedResponse, error) {
+	rsp, err := c.BillAnalysisAnomaliesAggregatedWithBody(ctx, org, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisAnomaliesAggregatedResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisAnomaliesAggregatedWithResponse(ctx context.Context, org int64, body BillAnalysisAnomaliesAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesAggregatedResponse, error) {
+	rsp, err := c.BillAnalysisAnomaliesAggregated(ctx, org, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisAnomaliesAggregatedResponse(rsp)
+}
+
+// BillAnalysisAnomaliesSummaryWithResponse request returning *BillAnalysisAnomaliesSummaryResponse
+func (c *ClientWithResponses) BillAnalysisAnomaliesSummaryWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesSummaryResponse, error) {
+	rsp, err := c.BillAnalysisAnomaliesSummary(ctx, org, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisAnomaliesSummaryResponse(rsp)
+}
+
+// BillAnalysisCustomDimensionIndexWithResponse request returning *BillAnalysisCustomDimensionIndexResponse
+func (c *ClientWithResponses) BillAnalysisCustomDimensionIndexWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionIndexResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionIndex(ctx, orgId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDimensionIndexResponse(rsp)
+}
+
+// BillAnalysisCustomDimensionCreateWithBodyWithResponse request with arbitrary body returning *BillAnalysisCustomDimensionCreateResponse
+func (c *ClientWithResponses) BillAnalysisCustomDimensionCreateWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionCreateResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionCreateWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDimensionCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisCustomDimensionCreateWithResponse(ctx context.Context, orgId int64, body BillAnalysisCustomDimensionCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionCreateResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionCreate(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDimensionCreateResponse(rsp)
+}
+
+// BillAnalysisCustomDimensionDeleteWithResponse request returning *BillAnalysisCustomDimensionDeleteResponse
+func (c *ClientWithResponses) BillAnalysisCustomDimensionDeleteWithResponse(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionDeleteResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionDelete(ctx, orgId, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDimensionDeleteResponse(rsp)
+}
+
+// BillAnalysisCustomDimensionShowWithResponse request returning *BillAnalysisCustomDimensionShowResponse
+func (c *ClientWithResponses) BillAnalysisCustomDimensionShowWithResponse(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionShowResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionShow(ctx, orgId, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDimensionShowResponse(rsp)
+}
+
+// BillAnalysisCustomDimensionUpdateWithBodyWithResponse request with arbitrary body returning *BillAnalysisCustomDimensionUpdateResponse
+func (c *ClientWithResponses) BillAnalysisCustomDimensionUpdateWithBodyWithResponse(ctx context.Context, orgId int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionUpdateResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionUpdateWithBody(ctx, orgId, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDimensionUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) BillAnalysisCustomDimensionUpdateWithResponse(ctx context.Context, orgId int64, id string, body BillAnalysisCustomDimensionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionUpdateResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionUpdate(ctx, orgId, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBillAnalysisCustomDimensionUpdateResponse(rsp)
+}
+
 // CredCredentialIndexOrgWithResponse request returning *CredCredentialIndexOrgResponse
 func (c *ClientWithResponses) CredCredentialIndexOrgWithResponse(ctx context.Context, orgId int64, params *CredCredentialIndexOrgParams, reqEditors ...RequestEditorFn) (*CredCredentialIndexOrgResponse, error) {
 	rsp, err := c.CredCredentialIndexOrg(ctx, orgId, params, reqEditors...)
@@ -80345,144 +84676,6 @@ func (c *ClientWithResponses) AuthTokenTokenWithFormdataBodyWithResponse(ctx con
 	return ParseAuthTokenTokenResponse(rsp)
 }
 
-// BillAnalysisAdjustmentDefinitionShowWithResponse request returning *BillAnalysisAdjustmentDefinitionShowResponse
-func (c *ClientWithResponses) BillAnalysisAdjustmentDefinitionShowWithResponse(ctx context.Context, org int, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionShowResponse, error) {
-	rsp, err := c.BillAnalysisAdjustmentDefinitionShow(ctx, org, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillAnalysisAdjustmentDefinitionShowResponse(rsp)
-}
-
-// BillAnalysisAdjustmentDefinitionUpdateWithBodyWithResponse request with arbitrary body returning *BillAnalysisAdjustmentDefinitionUpdateResponse
-func (c *ClientWithResponses) BillAnalysisAdjustmentDefinitionUpdateWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error) {
-	rsp, err := c.BillAnalysisAdjustmentDefinitionUpdateWithBody(ctx, org, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillAnalysisAdjustmentDefinitionUpdateResponse(rsp)
-}
-
-func (c *ClientWithResponses) BillAnalysisAdjustmentDefinitionUpdateWithResponse(ctx context.Context, org int, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error) {
-	rsp, err := c.BillAnalysisAdjustmentDefinitionUpdate(ctx, org, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillAnalysisAdjustmentDefinitionUpdateResponse(rsp)
-}
-
-// BillAnalysisAnomaliesReportWithBodyWithResponse request with arbitrary body returning *BillAnalysisAnomaliesReportResponse
-func (c *ClientWithResponses) BillAnalysisAnomaliesReportWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error) {
-	rsp, err := c.BillAnalysisAnomaliesReportWithBody(ctx, org, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillAnalysisAnomaliesReportResponse(rsp)
-}
-
-func (c *ClientWithResponses) BillAnalysisAnomaliesReportWithResponse(ctx context.Context, org int, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error) {
-	rsp, err := c.BillAnalysisAnomaliesReport(ctx, org, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillAnalysisAnomaliesReportResponse(rsp)
-}
-
-// BillAnalysisCostsAggregatedWithBodyWithResponse request with arbitrary body returning *BillAnalysisCostsAggregatedResponse
-func (c *ClientWithResponses) BillAnalysisCostsAggregatedWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error) {
-	rsp, err := c.BillAnalysisCostsAggregatedWithBody(ctx, org, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillAnalysisCostsAggregatedResponse(rsp)
-}
-
-func (c *ClientWithResponses) BillAnalysisCostsAggregatedWithResponse(ctx context.Context, org int, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error) {
-	rsp, err := c.BillAnalysisCostsAggregated(ctx, org, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillAnalysisCostsAggregatedResponse(rsp)
-}
-
-// BillAnalysisCostsDimensionsWithResponse request returning *BillAnalysisCostsDimensionsResponse
-func (c *ClientWithResponses) BillAnalysisCostsDimensionsWithResponse(ctx context.Context, org int, params *BillAnalysisCostsDimensionsParams, reqEditors ...RequestEditorFn) (*BillAnalysisCostsDimensionsResponse, error) {
-	rsp, err := c.BillAnalysisCostsDimensions(ctx, org, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillAnalysisCostsDimensionsResponse(rsp)
-}
-
-// BillAnalysisCostsMetricsWithResponse request returning *BillAnalysisCostsMetricsResponse
-func (c *ClientWithResponses) BillAnalysisCostsMetricsWithResponse(ctx context.Context, org int, params *BillAnalysisCostsMetricsParams, reqEditors ...RequestEditorFn) (*BillAnalysisCostsMetricsResponse, error) {
-	rsp, err := c.BillAnalysisCostsMetrics(ctx, org, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillAnalysisCostsMetricsResponse(rsp)
-}
-
-// BillAnalysisCostsSelectWithBodyWithResponse request with arbitrary body returning *BillAnalysisCostsSelectResponse
-func (c *ClientWithResponses) BillAnalysisCostsSelectWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error) {
-	rsp, err := c.BillAnalysisCostsSelectWithBody(ctx, org, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillAnalysisCostsSelectResponse(rsp)
-}
-
-func (c *ClientWithResponses) BillAnalysisCostsSelectWithResponse(ctx context.Context, org int, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error) {
-	rsp, err := c.BillAnalysisCostsSelect(ctx, org, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillAnalysisCostsSelectResponse(rsp)
-}
-
-// BillAnalysisForecastsReportWithBodyWithResponse request with arbitrary body returning *BillAnalysisForecastsReportResponse
-func (c *ClientWithResponses) BillAnalysisForecastsReportWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error) {
-	rsp, err := c.BillAnalysisForecastsReportWithBody(ctx, org, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillAnalysisForecastsReportResponse(rsp)
-}
-
-func (c *ClientWithResponses) BillAnalysisForecastsReportWithResponse(ctx context.Context, org int, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error) {
-	rsp, err := c.BillAnalysisForecastsReport(ctx, org, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillAnalysisForecastsReportResponse(rsp)
-}
-
-// BillAnalysisCurrencySettingShowWithResponse request returning *BillAnalysisCurrencySettingShowResponse
-func (c *ClientWithResponses) BillAnalysisCurrencySettingShowWithResponse(ctx context.Context, org int, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingShowResponse, error) {
-	rsp, err := c.BillAnalysisCurrencySettingShow(ctx, org, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillAnalysisCurrencySettingShowResponse(rsp)
-}
-
-// BillAnalysisCurrencySettingUpdateWithBodyWithResponse request with arbitrary body returning *BillAnalysisCurrencySettingUpdateResponse
-func (c *ClientWithResponses) BillAnalysisCurrencySettingUpdateWithBodyWithResponse(ctx context.Context, org int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error) {
-	rsp, err := c.BillAnalysisCurrencySettingUpdateWithBody(ctx, org, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillAnalysisCurrencySettingUpdateResponse(rsp)
-}
-
-func (c *ClientWithResponses) BillAnalysisCurrencySettingUpdateWithResponse(ctx context.Context, org int, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error) {
-	rsp, err := c.BillAnalysisCurrencySettingUpdate(ctx, org, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillAnalysisCurrencySettingUpdateResponse(rsp)
-}
-
 // PolicyCustomCatalogIndexWithResponse request returning *PolicyCustomCatalogIndexResponse
 func (c *ClientWithResponses) PolicyCustomCatalogIndexWithResponse(ctx context.Context, orgId int64, params *PolicyCustomCatalogIndexParams, reqEditors ...RequestEditorFn) (*PolicyCustomCatalogIndexResponse, error) {
 	rsp, err := c.PolicyCustomCatalogIndex(ctx, orgId, params, reqEditors...)
@@ -83254,6 +87447,1086 @@ func ParseBillingCenterServiceUserBillingCentersShowResponse(rsp *http.Response)
 	response := &BillingCenterServiceUserBillingCentersShowResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisAdjustmentDefinitionShowResponse parses an HTTP response from a BillAnalysisAdjustmentDefinitionShowWithResponse call
+func ParseBillAnalysisAdjustmentDefinitionShowResponse(rsp *http.Response) (*BillAnalysisAdjustmentDefinitionShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisAdjustmentDefinitionShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisAllDatedAdjustmentLists
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisAdjustmentDefinitionUpdateResponse parses an HTTP response from a BillAnalysisAdjustmentDefinitionUpdateWithResponse call
+func ParseBillAnalysisAdjustmentDefinitionUpdateResponse(rsp *http.Response) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisAdjustmentDefinitionUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisAnomaliesReportResponse parses an HTTP response from a BillAnalysisAnomaliesReportWithResponse call
+func ParseBillAnalysisAnomaliesReportResponse(rsp *http.Response) (*BillAnalysisAnomaliesReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisAnomaliesReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisReportResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisBillMonthsSearchResponse parses an HTTP response from a BillAnalysisBillMonthsSearchWithResponse call
+func ParseBillAnalysisBillMonthsSearchResponse(rsp *http.Response) (*BillAnalysisBillMonthsSearchResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisBillMonthsSearchResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisBillMonthSearchResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisBillMonthsReprocessResponse parses an HTTP response from a BillAnalysisBillMonthsReprocessWithResponse call
+func ParseBillAnalysisBillMonthsReprocessResponse(rsp *http.Response) (*BillAnalysisBillMonthsReprocessResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisBillMonthsReprocessResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisReprocessResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisBillMonthsDownloadResponse parses an HTTP response from a BillAnalysisBillMonthsDownloadWithResponse call
+func ParseBillAnalysisBillMonthsDownloadResponse(rsp *http.Response) (*BillAnalysisBillMonthsDownloadResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisBillMonthsDownloadResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisBillingSettingsShowResponse parses an HTTP response from a BillAnalysisBillingSettingsShowWithResponse call
+func ParseBillAnalysisBillingSettingsShowResponse(rsp *http.Response) (*BillAnalysisBillingSettingsShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisBillingSettingsShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisBillingSettingsResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisBillingSettingsUpdateResponse parses an HTTP response from a BillAnalysisBillingSettingsUpdateWithResponse call
+func ParseBillAnalysisBillingSettingsUpdateResponse(rsp *http.Response) (*BillAnalysisBillingSettingsUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisBillingSettingsUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisBillingSettingsResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCloudVendorAccountsIndexResponse parses an HTTP response from a BillAnalysisCloudVendorAccountsIndexWithResponse call
+func ParseBillAnalysisCloudVendorAccountsIndexResponse(rsp *http.Response) (*BillAnalysisCloudVendorAccountsIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCloudVendorAccountsIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisCloudVendorAccountCollection
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCostsAggregatedResponse parses an HTTP response from a BillAnalysisCostsAggregatedWithResponse call
+func ParseBillAnalysisCostsAggregatedResponse(rsp *http.Response) (*BillAnalysisCostsAggregatedResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCostsAggregatedResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisAnalyticsQueryResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest BillAnalysisAnalyticsQueryResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCostsDimensionsResponse parses an HTTP response from a BillAnalysisCostsDimensionsWithResponse call
+func ParseBillAnalysisCostsDimensionsResponse(rsp *http.Response) (*BillAnalysisCostsDimensionsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCostsDimensionsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisDimensionsResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest BillAnalysisDimensionsResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCostsExportSelectResponse parses an HTTP response from a BillAnalysisCostsExportSelectWithResponse call
+func ParseBillAnalysisCostsExportSelectResponse(rsp *http.Response) (*BillAnalysisCostsExportSelectResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCostsExportSelectResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisExportSelectResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest BillAnalysisExportSelectResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCostsExportSelectStatusResponse parses an HTTP response from a BillAnalysisCostsExportSelectStatusWithResponse call
+func ParseBillAnalysisCostsExportSelectStatusResponse(rsp *http.Response) (*BillAnalysisCostsExportSelectStatusResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCostsExportSelectStatusResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisExportSelectStatusResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest BillAnalysisExportSelectStatusResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCostsMetricsResponse parses an HTTP response from a BillAnalysisCostsMetricsWithResponse call
+func ParseBillAnalysisCostsMetricsResponse(rsp *http.Response) (*BillAnalysisCostsMetricsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCostsMetricsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisMetricsResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest BillAnalysisMetricsResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCostsSelectResponse parses an HTTP response from a BillAnalysisCostsSelectWithResponse call
+func ParseBillAnalysisCostsSelectResponse(rsp *http.Response) (*BillAnalysisCostsSelectResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCostsSelectResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisAnalyticsQueryResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest BillAnalysisAnalyticsQueryResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCustomDimensionsIndexResponse parses an HTTP response from a BillAnalysisCustomDimensionsIndexWithResponse call
+func ParseBillAnalysisCustomDimensionsIndexResponse(rsp *http.Response) (*BillAnalysisCustomDimensionsIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCustomDimensionsIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisCustomDimensionCollection
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCustomDimensionsCreateResponse parses an HTTP response from a BillAnalysisCustomDimensionsCreateWithResponse call
+func ParseBillAnalysisCustomDimensionsCreateResponse(rsp *http.Response) (*BillAnalysisCustomDimensionsCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCustomDimensionsCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisRightscaleCustomDimensionServiceCustomdimension
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCustomDimensionsDestroyResponse parses an HTTP response from a BillAnalysisCustomDimensionsDestroyWithResponse call
+func ParseBillAnalysisCustomDimensionsDestroyResponse(rsp *http.Response) (*BillAnalysisCustomDimensionsDestroyResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCustomDimensionsDestroyResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCustomDimensionsShowResponse parses an HTTP response from a BillAnalysisCustomDimensionsShowWithResponse call
+func ParseBillAnalysisCustomDimensionsShowResponse(rsp *http.Response) (*BillAnalysisCustomDimensionsShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCustomDimensionsShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisRightscaleCustomDimensionServiceCustomdimension
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCustomDimensionsReplaceResponse parses an HTTP response from a BillAnalysisCustomDimensionsReplaceWithResponse call
+func ParseBillAnalysisCustomDimensionsReplaceResponse(rsp *http.Response) (*BillAnalysisCustomDimensionsReplaceResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCustomDimensionsReplaceResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisRightscaleCustomDimensionServiceCustomdimension
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisOrgDashboardsIndexResponse parses an HTTP response from a BillAnalysisOrgDashboardsIndexWithResponse call
+func ParseBillAnalysisOrgDashboardsIndexResponse(rsp *http.Response) (*BillAnalysisOrgDashboardsIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisOrgDashboardsIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisCustomDashboardCollection
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisOrgDashboardsCreateResponse parses an HTTP response from a BillAnalysisOrgDashboardsCreateWithResponse call
+func ParseBillAnalysisOrgDashboardsCreateResponse(rsp *http.Response) (*BillAnalysisOrgDashboardsCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisOrgDashboardsCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboard
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisOrgDashboardsDestroyResponse parses an HTTP response from a BillAnalysisOrgDashboardsDestroyWithResponse call
+func ParseBillAnalysisOrgDashboardsDestroyResponse(rsp *http.Response) (*BillAnalysisOrgDashboardsDestroyResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisOrgDashboardsDestroyResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisOrgDashboardsShowResponse parses an HTTP response from a BillAnalysisOrgDashboardsShowWithResponse call
+func ParseBillAnalysisOrgDashboardsShowResponse(rsp *http.Response) (*BillAnalysisOrgDashboardsShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisOrgDashboardsShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboard
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisOrgDashboardsReplaceResponse parses an HTTP response from a BillAnalysisOrgDashboardsReplaceWithResponse call
+func ParseBillAnalysisOrgDashboardsReplaceResponse(rsp *http.Response) (*BillAnalysisOrgDashboardsReplaceResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisOrgDashboardsReplaceResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboard
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisForecastsReportResponse parses an HTTP response from a BillAnalysisForecastsReportWithResponse call
+func ParseBillAnalysisForecastsReportResponse(rsp *http.Response) (*BillAnalysisForecastsReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisForecastsReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisReportResponseBody2
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCommitmentReallocationSettingShowResponse parses an HTTP response from a BillAnalysisCommitmentReallocationSettingShowWithResponse call
+func ParseBillAnalysisCommitmentReallocationSettingShowResponse(rsp *http.Response) (*BillAnalysisCommitmentReallocationSettingShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCommitmentReallocationSettingShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisCommitmentReallocationSettings
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCommitmentReallocationSettingUpsertResponse parses an HTTP response from a BillAnalysisCommitmentReallocationSettingUpsertWithResponse call
+func ParseBillAnalysisCommitmentReallocationSettingUpsertResponse(rsp *http.Response) (*BillAnalysisCommitmentReallocationSettingUpsertResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCommitmentReallocationSettingUpsertResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCurrencySettingShowResponse parses an HTTP response from a BillAnalysisCurrencySettingShowWithResponse call
+func ParseBillAnalysisCurrencySettingShowResponse(rsp *http.Response) (*BillAnalysisCurrencySettingShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCurrencySettingShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisSetting
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCurrencySettingUpdateResponse parses an HTTP response from a BillAnalysisCurrencySettingUpdateWithResponse call
+func ParseBillAnalysisCurrencySettingUpdateResponse(rsp *http.Response) (*BillAnalysisCurrencySettingUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCurrencySettingUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCustomDashboardsIndexResponse parses an HTTP response from a BillAnalysisCustomDashboardsIndexWithResponse call
+func ParseBillAnalysisCustomDashboardsIndexResponse(rsp *http.Response) (*BillAnalysisCustomDashboardsIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCustomDashboardsIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisCustomDashboardCollection
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCustomDashboardsCreateResponse parses an HTTP response from a BillAnalysisCustomDashboardsCreateWithResponse call
+func ParseBillAnalysisCustomDashboardsCreateResponse(rsp *http.Response) (*BillAnalysisCustomDashboardsCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCustomDashboardsCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboard
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCustomDashboardsDestroyResponse parses an HTTP response from a BillAnalysisCustomDashboardsDestroyWithResponse call
+func ParseBillAnalysisCustomDashboardsDestroyResponse(rsp *http.Response) (*BillAnalysisCustomDashboardsDestroyResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCustomDashboardsDestroyResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCustomDashboardsShowResponse parses an HTTP response from a BillAnalysisCustomDashboardsShowWithResponse call
+func ParseBillAnalysisCustomDashboardsShowResponse(rsp *http.Response) (*BillAnalysisCustomDashboardsShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCustomDashboardsShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboard
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCustomDashboardsReplaceResponse parses an HTTP response from a BillAnalysisCustomDashboardsReplaceWithResponse call
+func ParseBillAnalysisCustomDashboardsReplaceResponse(rsp *http.Response) (*BillAnalysisCustomDashboardsReplaceResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCustomDashboardsReplaceResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboard
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisAnomaliesIndexResponse parses an HTTP response from a BillAnalysisAnomaliesIndexWithResponse call
+func ParseBillAnalysisAnomaliesIndexResponse(rsp *http.Response) (*BillAnalysisAnomaliesIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisAnomaliesIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisAnomalyIndexResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisAnomaliesAggregatedResponse parses an HTTP response from a BillAnalysisAnomaliesAggregatedWithResponse call
+func ParseBillAnalysisAnomaliesAggregatedResponse(rsp *http.Response) (*BillAnalysisAnomaliesAggregatedResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisAnomaliesAggregatedResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisAnomalyAggregatedResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisAnomaliesSummaryResponse parses an HTTP response from a BillAnalysisAnomaliesSummaryWithResponse call
+func ParseBillAnalysisAnomaliesSummaryResponse(rsp *http.Response) (*BillAnalysisAnomaliesSummaryResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisAnomaliesSummaryResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisAnomalyDetails
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCustomDimensionIndexResponse parses an HTTP response from a BillAnalysisCustomDimensionIndexWithResponse call
+func ParseBillAnalysisCustomDimensionIndexResponse(rsp *http.Response) (*BillAnalysisCustomDimensionIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCustomDimensionIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisCustomDimensionList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCustomDimensionCreateResponse parses an HTTP response from a BillAnalysisCustomDimensionCreateWithResponse call
+func ParseBillAnalysisCustomDimensionCreateResponse(rsp *http.Response) (*BillAnalysisCustomDimensionCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCustomDimensionCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest BillAnalysisFlexeraOptimaCustomDimensionResults
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCustomDimensionDeleteResponse parses an HTTP response from a BillAnalysisCustomDimensionDeleteWithResponse call
+func ParseBillAnalysisCustomDimensionDeleteResponse(rsp *http.Response) (*BillAnalysisCustomDimensionDeleteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCustomDimensionDeleteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCustomDimensionShowResponse parses an HTTP response from a BillAnalysisCustomDimensionShowWithResponse call
+func ParseBillAnalysisCustomDimensionShowResponse(rsp *http.Response) (*BillAnalysisCustomDimensionShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCustomDimensionShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisFlexeraOptimaCustomDimensionResults
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseBillAnalysisCustomDimensionUpdateResponse parses an HTTP response from a BillAnalysisCustomDimensionUpdateWithResponse call
+func ParseBillAnalysisCustomDimensionUpdateResponse(rsp *http.Response) (*BillAnalysisCustomDimensionUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &BillAnalysisCustomDimensionUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillAnalysisFlexeraOptimaCustomDimensionResults
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
 	}
 
 	return response, nil
@@ -89804,166 +95077,6 @@ func ParseAuthTokenTokenResponse(rsp *http.Response) (*AuthTokenTokenResponse, e
 		}
 		response.JSON200 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseBillAnalysisAdjustmentDefinitionShowResponse parses an HTTP response from a BillAnalysisAdjustmentDefinitionShowWithResponse call
-func ParseBillAnalysisAdjustmentDefinitionShowResponse(rsp *http.Response) (*BillAnalysisAdjustmentDefinitionShowResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &BillAnalysisAdjustmentDefinitionShowResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseBillAnalysisAdjustmentDefinitionUpdateResponse parses an HTTP response from a BillAnalysisAdjustmentDefinitionUpdateWithResponse call
-func ParseBillAnalysisAdjustmentDefinitionUpdateResponse(rsp *http.Response) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &BillAnalysisAdjustmentDefinitionUpdateResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseBillAnalysisAnomaliesReportResponse parses an HTTP response from a BillAnalysisAnomaliesReportWithResponse call
-func ParseBillAnalysisAnomaliesReportResponse(rsp *http.Response) (*BillAnalysisAnomaliesReportResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &BillAnalysisAnomaliesReportResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseBillAnalysisCostsAggregatedResponse parses an HTTP response from a BillAnalysisCostsAggregatedWithResponse call
-func ParseBillAnalysisCostsAggregatedResponse(rsp *http.Response) (*BillAnalysisCostsAggregatedResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &BillAnalysisCostsAggregatedResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseBillAnalysisCostsDimensionsResponse parses an HTTP response from a BillAnalysisCostsDimensionsWithResponse call
-func ParseBillAnalysisCostsDimensionsResponse(rsp *http.Response) (*BillAnalysisCostsDimensionsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &BillAnalysisCostsDimensionsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseBillAnalysisCostsMetricsResponse parses an HTTP response from a BillAnalysisCostsMetricsWithResponse call
-func ParseBillAnalysisCostsMetricsResponse(rsp *http.Response) (*BillAnalysisCostsMetricsResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &BillAnalysisCostsMetricsResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseBillAnalysisCostsSelectResponse parses an HTTP response from a BillAnalysisCostsSelectWithResponse call
-func ParseBillAnalysisCostsSelectResponse(rsp *http.Response) (*BillAnalysisCostsSelectResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &BillAnalysisCostsSelectResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseBillAnalysisForecastsReportResponse parses an HTTP response from a BillAnalysisForecastsReportWithResponse call
-func ParseBillAnalysisForecastsReportResponse(rsp *http.Response) (*BillAnalysisForecastsReportResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &BillAnalysisForecastsReportResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseBillAnalysisCurrencySettingShowResponse parses an HTTP response from a BillAnalysisCurrencySettingShowWithResponse call
-func ParseBillAnalysisCurrencySettingShowResponse(rsp *http.Response) (*BillAnalysisCurrencySettingShowResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &BillAnalysisCurrencySettingShowResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseBillAnalysisCurrencySettingUpdateResponse parses an HTTP response from a BillAnalysisCurrencySettingUpdateWithResponse call
-func ParseBillAnalysisCurrencySettingUpdateResponse(rsp *http.Response) (*BillAnalysisCurrencySettingUpdateResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &BillAnalysisCurrencySettingUpdateResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
 	}
 
 	return response, nil

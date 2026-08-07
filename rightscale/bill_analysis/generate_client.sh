@@ -1,20 +1,20 @@
 #!/bin/bash
 
-# Use centralized OpenAPI spec from openapi_specs repository
+# Generates client.gen.go from the curated bill_analysis spec in the unified-openapi submodule.
+#
+# The unified-openapi submodule must be initialized:
+#   git submodule update --init --recursive
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-OPENAPI_DIR="$SCRIPT_DIR/../../../openapi"
-SPEC_DIR="$OPENAPI_DIR"
+REPO_ROOT="$SCRIPT_DIR/../.."
+SPEC_FILE="$REPO_ROOT/unified-openapi/generator/sources/rightscale/bill_analysis/openapi.json"
 
-# Fetch latest
-# (cd "$OPENAPI_DIR" && go run . fetch rightscale-bill-analysis --openapi_specs_dir ${SPEC_DIR})
+if [ ! -f "$SPEC_FILE" ]; then
+  echo "Error: $SPEC_FILE not found. Run 'git submodule update --init --recursive'." >&2
+  exit 1
+fi
 
 # Generate the client code from the OpenAPI 3 spec
-rm client.gen.go
-go tool oapi-codegen -package billanalysis -config config.yaml "$SPEC_DIR/sources/rightscale/bill_analysis/openapi.json"
-
-# Replace `openapi_types.Date` with `time.Time` type
-# This from misinterpretation of in the OpenAPI spec
-sed -i "s|openapi_types.Date|time.Time|g" client.gen.go
-
-# Remove openapi_types import as it's not referenced by anything anymore
-sed -i "s|openapi_types \"github.com/oapi-codegen/runtime/types\"||g" client.gen.go
+cd "$SCRIPT_DIR"
+rm -f client.gen.go
+go tool oapi-codegen -package billanalysis -config config.yaml "$SPEC_FILE"
+echo "✓ client.gen.go regenerated from unified-openapi"

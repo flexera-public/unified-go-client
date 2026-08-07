@@ -14,13 +14,15 @@ import (
 type CostClient interface {
 	CostsAggregatedWithResponse(
 		ctx context.Context,
-		org int64,
+		org int,
+		params *ba.CostsAggregatedParams,
 		body ba.CostsAggregatedJSONRequestBody,
 		reqEditors ...ba.RequestEditorFn,
 	) (*ba.CostsAggregatedResponse, error)
 	CostsSelectWithResponse(
 		ctx context.Context,
-		org int64,
+		org int,
+		params *ba.CostsSelectParams,
 		body ba.CostsSelectJSONRequestBody,
 		reqEditors ...ba.RequestEditorFn,
 	) (*ba.CostsSelectResponse, error)
@@ -187,11 +189,11 @@ func (h *Helper) callOnce(
 			d := append([]string{}, req.Dimensions...)
 			body.Dimensions = &d
 		}
-		resp, err := h.Cost.CostsAggregatedWithResponse(ctx, int64(req.OrgID), body)
+		resp, err := h.Cost.CostsAggregatedWithResponse(ctx, int(req.OrgID), nil, body)
 		if err != nil {
 			return nil, false, err
 		}
-		return unpackResult(resp.HTTPResponse, resp.Body, resp.JSON200, resp.JSON202)
+		return unpackResult(resp.HTTPResponse, resp.Body)
 
 	case EndpointSelect:
 		sgran := ba.SelectRequestBodyGranularity(req.Granularity)
@@ -205,25 +207,25 @@ func (h *Helper) callOnce(
 			Filter:           req.Filter,
 			Dimensions:       dims,
 		}
-		resp, err := h.Cost.CostsSelectWithResponse(ctx, int64(req.OrgID), body)
+		resp, err := h.Cost.CostsSelectWithResponse(ctx, int(req.OrgID), nil, body)
 		if err != nil {
 			return nil, false, err
 		}
-		return unpackResult(resp.HTTPResponse, resp.Body, resp.JSON200, resp.JSON202)
+		return unpackResult(resp.HTTPResponse, resp.Body)
 
 	default:
 		return nil, false, fmt.Errorf("unsupported endpoint %q", ep)
 	}
 }
 
-func unpackResult(httpResp *http.Response, body []byte, j200, j202 *ba.AnalyticsQueryResult) ([]ba.Row, bool, error) {
+func unpackResult(httpResp *http.Response, body []byte) ([]ba.Row, bool, error) {
 	status := 0
 	if httpResp != nil {
 		status = httpResp.StatusCode
 	}
-	result := j200
-	if result == nil {
-		result = j202
+	result, err := ba.ParseAnalyticsQueryResult(body, status)
+	if err != nil {
+		return nil, false, fmt.Errorf("cost API: unmarshal: %w", err)
 	}
 	if result == nil {
 		return nil, false, fmt.Errorf("cost API returned status %d: %s", status, string(body))

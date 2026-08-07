@@ -20,271 +20,223 @@ import (
 
 const (
 	GlobalSession_header_AuthorizationScopes = "GlobalSession_header_Authorization.Scopes"
-	SameUser_header_AuthorizationScopes      = "SameUser_header_Authorization.Scopes"
 )
 
-// ServerUrlAPAC defines the Server URL for APAC
-const ServerUrlAPAC = "https://api.optima-apac.flexeraeng.com"
+// ServerUrlHttpslocalhost80billAnalysis defines the Server URL for
+const ServerUrlHttpslocalhost80billAnalysis = "https://localhost:80/bill-analysis"
 
-// ServerUrlEU defines the Server URL for EU
-const ServerUrlEU = "https://api.optima-eu.flexeraeng.com"
-
-// ServerUrlNAM defines the Server URL for NAM
-const ServerUrlNAM = "https://api.optima.flexeraeng.com"
-
-// Defines values for AggregatedRequestBodyDataset.
+// Defines values for AnomaliesReportRequestBodyDetectionMethod.
 const (
-	AggregatedRequestBodyDatasetBilling    AggregatedRequestBodyDataset = "billing"
-	AggregatedRequestBodyDatasetEnterprise AggregatedRequestBodyDataset = "enterprise"
+	AiModel       AnomaliesReportRequestBodyDetectionMethod = "ai_model"
+	BollingerBand AnomaliesReportRequestBodyDetectionMethod = "bollinger_band"
 )
 
-// Defines values for AggregatedRequestBodyGranularity.
+// Defines values for AnomaliesReportRequestBodyGranularity.
 const (
-	AggregatedRequestBodyGranularityDay   AggregatedRequestBodyGranularity = "day"
-	AggregatedRequestBodyGranularityMonth AggregatedRequestBodyGranularity = "month"
+	AnomaliesReportRequestBodyGranularityDay   AnomaliesReportRequestBodyGranularity = "day"
+	AnomaliesReportRequestBodyGranularityMonth AnomaliesReportRequestBodyGranularity = "month"
 )
 
-// Defines values for AggregatedRequestBodyPeriodType.
+// Defines values for AnomaliesReportRequestBodyMetric.
 const (
-	AggregatedRequestBodyPeriodTypeBillingPeriod AggregatedRequestBodyPeriodType = "billing_period"
-	AggregatedRequestBodyPeriodTypeChargePeriod  AggregatedRequestBodyPeriodType = "charge_period"
-)
-
-// Defines values for AggregatedRequestBody2Metric.
-const (
-	AggregatedRequestBody2MetricBilledCost    AggregatedRequestBody2Metric = "BilledCost"
-	AggregatedRequestBody2MetricEffectiveCost AggregatedRequestBody2Metric = "EffectiveCost"
+	AnomaliesReportRequestBodyMetricCostAmortizedBlendedAdj      AnomaliesReportRequestBodyMetric = "cost_amortized_blended_adj"
+	AnomaliesReportRequestBodyMetricCostAmortizedUnblendedAdj    AnomaliesReportRequestBodyMetric = "cost_amortized_unblended_adj"
+	AnomaliesReportRequestBodyMetricCostNonamortizedBlendedAdj   AnomaliesReportRequestBodyMetric = "cost_nonamortized_blended_adj"
+	AnomaliesReportRequestBodyMetricCostNonamortizedUnblendedAdj AnomaliesReportRequestBodyMetric = "cost_nonamortized_unblended_adj"
 )
 
 // Defines values for BillMonthStatus.
 const (
-	BillMonthStatusLocked     BillMonthStatus = "locked"
-	BillMonthStatusProcessing BillMonthStatus = "processing"
+	Locked     BillMonthStatus = "locked"
+	Processing BillMonthStatus = "processing"
 )
 
-// Defines values for BudgetFilterType.
+// Defines values for BudgetFilterRequestBodyType.
 const (
-	BudgetFilterTypeAnd   BudgetFilterType = "and"
-	BudgetFilterTypeEqual BudgetFilterType = "equal"
-	BudgetFilterTypeNot   BudgetFilterType = "not"
-	BudgetFilterTypeOr    BudgetFilterType = "or"
+	BudgetFilterRequestBodyTypeAnd   BudgetFilterRequestBodyType = "and"
+	BudgetFilterRequestBodyTypeEqual BudgetFilterRequestBodyType = "equal"
+	BudgetFilterRequestBodyTypeNot   BudgetFilterRequestBodyType = "not"
+	BudgetFilterRequestBodyTypeOr    BudgetFilterRequestBodyType = "or"
 )
 
-// Defines values for CommitmentReallocationSettingStrategy.
+// Defines values for BudgetFilterResponseType.
 const (
-	CommitmentReallocationSettingStrategyEffectiveCost CommitmentReallocationSettingStrategy = "effective_cost"
+	BudgetFilterResponseTypeAnd   BudgetFilterResponseType = "and"
+	BudgetFilterResponseTypeEqual BudgetFilterResponseType = "equal"
+	BudgetFilterResponseTypeNot   BudgetFilterResponseType = "not"
+	BudgetFilterResponseTypeOr    BudgetFilterResponseType = "or"
 )
 
-// Defines values for CommitmentReallocationSettingTypeType.
+// Defines values for BudgetFilterResponseBodyType.
 const (
-	AwsReservedInstance CommitmentReallocationSettingTypeType = "aws_reserved_instance"
-	AwsSavingsPlan      CommitmentReallocationSettingTypeType = "aws_savings_plan"
-	AzureReservation    CommitmentReallocationSettingTypeType = "azure_reservation"
+	BudgetFilterResponseBodyTypeAnd   BudgetFilterResponseBodyType = "and"
+	BudgetFilterResponseBodyTypeEqual BudgetFilterResponseBodyType = "equal"
+	BudgetFilterResponseBodyTypeNot   BudgetFilterResponseBodyType = "not"
+	BudgetFilterResponseBodyTypeOr    BudgetFilterResponseBodyType = "or"
 )
 
-// Defines values for ConditionType.
+// Defines values for BudgetResponseMetric.
 const (
-	ConditionTypeAllocatedToBillingCenter ConditionType = "allocated_to_billing_center"
-	ConditionTypeAnd                      ConditionType = "and"
-	ConditionTypeDimensionContains        ConditionType = "dimension_contains"
-	ConditionTypeDimensionEquals          ConditionType = "dimension_equals"
-	ConditionTypeNot                      ConditionType = "not"
-	ConditionTypeOr                       ConditionType = "or"
+	BudgetResponseMetricCostAmortizedBlendedAdj      BudgetResponseMetric = "cost_amortized_blended_adj"
+	BudgetResponseMetricCostAmortizedUnblendedAdj    BudgetResponseMetric = "cost_amortized_unblended_adj"
+	BudgetResponseMetricCostNonamortizedBlendedAdj   BudgetResponseMetric = "cost_nonamortized_blended_adj"
+	BudgetResponseMetricCostNonamortizedUnblendedAdj BudgetResponseMetric = "cost_nonamortized_unblended_adj"
 )
 
-// Defines values for CreateRequestBodyMetric.
+// Defines values for BudgetsCreateRequestBodyMetric.
 const (
-	CreateRequestBodyMetricCostAmortizedBlendedAdj      CreateRequestBodyMetric = "cost_amortized_blended_adj"
-	CreateRequestBodyMetricCostAmortizedUnblendedAdj    CreateRequestBodyMetric = "cost_amortized_unblended_adj"
-	CreateRequestBodyMetricCostNonamortizedBlendedAdj   CreateRequestBodyMetric = "cost_nonamortized_blended_adj"
-	CreateRequestBodyMetricCostNonamortizedUnblendedAdj CreateRequestBodyMetric = "cost_nonamortized_unblended_adj"
+	BudgetsCreateRequestBodyMetricCostAmortizedBlendedAdj      BudgetsCreateRequestBodyMetric = "cost_amortized_blended_adj"
+	BudgetsCreateRequestBodyMetricCostAmortizedUnblendedAdj    BudgetsCreateRequestBodyMetric = "cost_amortized_unblended_adj"
+	BudgetsCreateRequestBodyMetricCostNonamortizedBlendedAdj   BudgetsCreateRequestBodyMetric = "cost_nonamortized_blended_adj"
+	BudgetsCreateRequestBodyMetricCostNonamortizedUnblendedAdj BudgetsCreateRequestBodyMetric = "cost_nonamortized_unblended_adj"
 )
 
-// Defines values for CreateRequestBody5Visibility.
+// Defines values for BudgetsCreateResponseBodyMetric.
 const (
-	CreateRequestBody5VisibilityDefault CreateRequestBody5Visibility = "default"
-	CreateRequestBody5VisibilityPublic  CreateRequestBody5Visibility = "public"
+	BudgetsCreateResponseBodyMetricCostAmortizedBlendedAdj      BudgetsCreateResponseBodyMetric = "cost_amortized_blended_adj"
+	BudgetsCreateResponseBodyMetricCostAmortizedUnblendedAdj    BudgetsCreateResponseBodyMetric = "cost_amortized_unblended_adj"
+	BudgetsCreateResponseBodyMetricCostNonamortizedBlendedAdj   BudgetsCreateResponseBodyMetric = "cost_nonamortized_blended_adj"
+	BudgetsCreateResponseBodyMetricCostNonamortizedUnblendedAdj BudgetsCreateResponseBodyMetric = "cost_nonamortized_unblended_adj"
 )
 
-// Defines values for CustomDimensionListKind.
+// Defines values for BudgetsShowResponseBodyMetric.
 const (
-	BillAnalysisCustomDimensionList CustomDimensionListKind = "bill-analysis#custom-dimension-list"
+	BudgetsShowResponseBodyMetricCostAmortizedBlendedAdj      BudgetsShowResponseBodyMetric = "cost_amortized_blended_adj"
+	BudgetsShowResponseBodyMetricCostAmortizedUnblendedAdj    BudgetsShowResponseBodyMetric = "cost_amortized_unblended_adj"
+	BudgetsShowResponseBodyMetricCostNonamortizedBlendedAdj   BudgetsShowResponseBodyMetric = "cost_nonamortized_blended_adj"
+	BudgetsShowResponseBodyMetricCostNonamortizedUnblendedAdj BudgetsShowResponseBodyMetric = "cost_nonamortized_unblended_adj"
 )
 
-// Defines values for ExportSelectRequestBodyAdjDimensionGranularity.
+// Defines values for BudgetsUpdateRequestBodyMetric.
 const (
-	None     ExportSelectRequestBodyAdjDimensionGranularity = "none"
-	OrgLevel ExportSelectRequestBodyAdjDimensionGranularity = "org-level"
+	BudgetsUpdateRequestBodyMetricCostAmortizedBlendedAdj      BudgetsUpdateRequestBodyMetric = "cost_amortized_blended_adj"
+	BudgetsUpdateRequestBodyMetricCostAmortizedUnblendedAdj    BudgetsUpdateRequestBodyMetric = "cost_amortized_unblended_adj"
+	BudgetsUpdateRequestBodyMetricCostNonamortizedBlendedAdj   BudgetsUpdateRequestBodyMetric = "cost_nonamortized_blended_adj"
+	BudgetsUpdateRequestBodyMetricCostNonamortizedUnblendedAdj BudgetsUpdateRequestBodyMetric = "cost_nonamortized_unblended_adj"
 )
 
-// Defines values for ExportSelectRequestBodyGranularity.
+// Defines values for ConditionRequestBodyType.
 const (
-	ExportSelectRequestBodyGranularityDay   ExportSelectRequestBodyGranularity = "day"
-	ExportSelectRequestBodyGranularityMonth ExportSelectRequestBodyGranularity = "month"
+	ConditionRequestBodyTypeAllocatedToBillingCenter ConditionRequestBodyType = "allocated_to_billing_center"
+	ConditionRequestBodyTypeAnd                      ConditionRequestBodyType = "and"
+	ConditionRequestBodyTypeDimensionContains        ConditionRequestBodyType = "dimension_contains"
+	ConditionRequestBodyTypeDimensionEquals          ConditionRequestBodyType = "dimension_equals"
+	ConditionRequestBodyTypeNot                      ConditionRequestBodyType = "not"
+	ConditionRequestBodyTypeOr                       ConditionRequestBodyType = "or"
 )
 
-// Defines values for ExportSelectStatusResultStatus.
+// Defines values for ConditionResponseBodyType.
 const (
-	Done       ExportSelectStatusResultStatus = "Done"
-	Failed     ExportSelectStatusResultStatus = "Failed"
-	InProgress ExportSelectStatusResultStatus = "In Progress"
+	ConditionResponseBodyTypeAllocatedToBillingCenter ConditionResponseBodyType = "allocated_to_billing_center"
+	ConditionResponseBodyTypeAnd                      ConditionResponseBodyType = "and"
+	ConditionResponseBodyTypeDimensionContains        ConditionResponseBodyType = "dimension_contains"
+	ConditionResponseBodyTypeDimensionEquals          ConditionResponseBodyType = "dimension_equals"
+	ConditionResponseBodyTypeNot                      ConditionResponseBodyType = "not"
+	ConditionResponseBodyTypeOr                       ConditionResponseBodyType = "or"
 )
 
-// Defines values for FilterV1Type.
+// Defines values for CostsAggregatedRequestBodyDataset.
 const (
-	FilterV1TypeAnd       FilterV1Type = "and"
-	FilterV1TypeEqual     FilterV1Type = "equal"
-	FilterV1TypeNot       FilterV1Type = "not"
-	FilterV1TypeOr        FilterV1Type = "or"
-	FilterV1TypeSubstring FilterV1Type = "substring"
+	CostsAggregatedRequestBodyDatasetBilling    CostsAggregatedRequestBodyDataset = "billing"
+	CostsAggregatedRequestBodyDatasetEnterprise CostsAggregatedRequestBodyDataset = "enterprise"
 )
 
-// Defines values for FlexeraOptimaBudgetMetric.
+// Defines values for CostsAggregatedRequestBodyGranularity.
 const (
-	FlexeraOptimaBudgetMetricCostAmortizedBlendedAdj      FlexeraOptimaBudgetMetric = "cost_amortized_blended_adj"
-	FlexeraOptimaBudgetMetricCostAmortizedUnblendedAdj    FlexeraOptimaBudgetMetric = "cost_amortized_unblended_adj"
-	FlexeraOptimaBudgetMetricCostNonamortizedBlendedAdj   FlexeraOptimaBudgetMetric = "cost_nonamortized_blended_adj"
-	FlexeraOptimaBudgetMetricCostNonamortizedUnblendedAdj FlexeraOptimaBudgetMetric = "cost_nonamortized_unblended_adj"
+	CostsAggregatedRequestBodyGranularityDay   CostsAggregatedRequestBodyGranularity = "day"
+	CostsAggregatedRequestBodyGranularityMonth CostsAggregatedRequestBodyGranularity = "month"
 )
 
-// Defines values for IndexRequestBodyMetric.
+// Defines values for CostsAggregatedRequestBodyPeriodType.
 const (
-	BilledCost    IndexRequestBodyMetric = "BilledCost"
-	EffectiveCost IndexRequestBodyMetric = "EffectiveCost"
+	CostsAggregatedRequestBodyPeriodTypeBillingPeriod CostsAggregatedRequestBodyPeriodType = "billing_period"
+	CostsAggregatedRequestBodyPeriodTypeChargePeriod  CostsAggregatedRequestBodyPeriodType = "charge_period"
 )
 
-// Defines values for IndexRequestBodySortOrder.
+// Defines values for CostsExportSelectRequestBodyAdjDimensionGranularity.
 const (
-	Asc  IndexRequestBodySortOrder = "asc"
-	Desc IndexRequestBodySortOrder = "desc"
+	None     CostsExportSelectRequestBodyAdjDimensionGranularity = "none"
+	OrgLevel CostsExportSelectRequestBodyAdjDimensionGranularity = "org-level"
 )
 
-// Defines values for LockingSettingsType.
+// Defines values for CostsExportSelectRequestBodyGranularity.
 const (
-	ExactDate          LockingSettingsType = "exact_date"
-	LastDate           LockingSettingsType = "last_date"
-	ReportFinalization LockingSettingsType = "report_finalization"
+	CostsExportSelectRequestBodyGranularityDay   CostsExportSelectRequestBodyGranularity = "day"
+	CostsExportSelectRequestBodyGranularityMonth CostsExportSelectRequestBodyGranularity = "month"
 )
 
-// Defines values for ReportRequestBodyDetectionMethod.
+// Defines values for CostsExportSelectStatusResponseBodyStatus.
 const (
-	AiModel       ReportRequestBodyDetectionMethod = "ai_model"
-	BollingerBand ReportRequestBodyDetectionMethod = "bollinger_band"
+	Done       CostsExportSelectStatusResponseBodyStatus = "Done"
+	Failed     CostsExportSelectStatusResponseBodyStatus = "Failed"
+	InProgress CostsExportSelectStatusResponseBodyStatus = "In Progress"
 )
 
-// Defines values for ReportRequestBodyGranularity.
+// Defines values for CostsSelectRequestBodyDataset.
 const (
-	ReportRequestBodyGranularityDay   ReportRequestBodyGranularity = "day"
-	ReportRequestBodyGranularityMonth ReportRequestBodyGranularity = "month"
+	CostsSelectRequestBodyDatasetBilling    CostsSelectRequestBodyDataset = "billing"
+	CostsSelectRequestBodyDatasetEnterprise CostsSelectRequestBodyDataset = "enterprise"
 )
 
-// Defines values for ReportRequestBodyMetric.
+// Defines values for CostsSelectRequestBodyGranularity.
 const (
-	ReportRequestBodyMetricCostAmortizedBlendedAdj      ReportRequestBodyMetric = "cost_amortized_blended_adj"
-	ReportRequestBodyMetricCostAmortizedUnblendedAdj    ReportRequestBodyMetric = "cost_amortized_unblended_adj"
-	ReportRequestBodyMetricCostNonamortizedBlendedAdj   ReportRequestBodyMetric = "cost_nonamortized_blended_adj"
-	ReportRequestBodyMetricCostNonamortizedUnblendedAdj ReportRequestBodyMetric = "cost_nonamortized_unblended_adj"
+	CostsSelectRequestBodyGranularityDay   CostsSelectRequestBodyGranularity = "day"
+	CostsSelectRequestBodyGranularityMonth CostsSelectRequestBodyGranularity = "month"
 )
 
-// Defines values for ReportRequestBody3Granularity.
+// Defines values for CostsSelectRequestBodyPeriodType.
 const (
-	ReportRequestBody3GranularityDay   ReportRequestBody3Granularity = "day"
-	ReportRequestBody3GranularityMonth ReportRequestBody3Granularity = "month"
+	CostsSelectRequestBodyPeriodTypeBillingPeriod CostsSelectRequestBodyPeriodType = "billing_period"
+	CostsSelectRequestBodyPeriodTypeChargePeriod  CostsSelectRequestBodyPeriodType = "charge_period"
 )
 
-// Defines values for ReportRequestBody3Metric.
+// Defines values for CurrencySettingShowResponseBodyId.
 const (
-	ReportRequestBody3MetricCostAmortizedBlendedAdj      ReportRequestBody3Metric = "cost_amortized_blended_adj"
-	ReportRequestBody3MetricCostAmortizedUnblendedAdj    ReportRequestBody3Metric = "cost_amortized_unblended_adj"
-	ReportRequestBody3MetricCostNonamortizedBlendedAdj   ReportRequestBody3Metric = "cost_nonamortized_blended_adj"
-	ReportRequestBody3MetricCostNonamortizedUnblendedAdj ReportRequestBody3Metric = "cost_nonamortized_unblended_adj"
+	CurrencyCode CurrencySettingShowResponseBodyId = "currency_code"
 )
 
-// Defines values for ReprocessRequestBodyAction.
+// Defines values for CurrencySettingShowResponseBodyKind.
 const (
-	ReprocessRequestBodyActionReprocess ReprocessRequestBodyAction = "reprocess"
-	ReprocessRequestBodyActionUnlock    ReprocessRequestBodyAction = "unlock"
+	OptimaSetting CurrencySettingShowResponseBodyKind = "optima#setting"
 )
 
-// Defines values for ReprocessResponseAction.
+// Defines values for FilterV1RequestBodyType.
 const (
-	ReprocessResponseActionReprocess ReprocessResponseAction = "reprocess"
-	ReprocessResponseActionUnlock    ReprocessResponseAction = "unlock"
+	FilterV1RequestBodyTypeAnd       FilterV1RequestBodyType = "and"
+	FilterV1RequestBodyTypeEqual     FilterV1RequestBodyType = "equal"
+	FilterV1RequestBodyTypeNot       FilterV1RequestBodyType = "not"
+	FilterV1RequestBodyTypeOr        FilterV1RequestBodyType = "or"
+	FilterV1RequestBodyTypeSubstring FilterV1RequestBodyType = "substring"
 )
 
-// Defines values for ReprocessResponseStatus.
+// Defines values for ForecastsReportRequestBodyGranularity.
 const (
-	Accepted       ReprocessResponseStatus = "accepted"
-	PartialSuccess ReprocessResponseStatus = "partial_success"
-	Rejected       ReprocessResponseStatus = "rejected"
+	Day   ForecastsReportRequestBodyGranularity = "day"
+	Month ForecastsReportRequestBodyGranularity = "month"
 )
 
-// Defines values for ReprocessResultItemResult.
+// Defines values for ForecastsReportRequestBodyMetric.
 const (
-	ReprocessRequestFailed     ReprocessResultItemResult = "reprocess_request_failed"
-	ReprocessRequestSuccessful ReprocessResultItemResult = "reprocess_request_successful"
-	UnlockRequestFailed        ReprocessResultItemResult = "unlock_request_failed"
-	UnlockRequestSuccessful    ReprocessResultItemResult = "unlock_request_successful"
+	CostAmortizedBlendedAdj      ForecastsReportRequestBodyMetric = "cost_amortized_blended_adj"
+	CostAmortizedUnblendedAdj    ForecastsReportRequestBodyMetric = "cost_amortized_unblended_adj"
+	CostNonamortizedBlendedAdj   ForecastsReportRequestBodyMetric = "cost_nonamortized_blended_adj"
+	CostNonamortizedUnblendedAdj ForecastsReportRequestBodyMetric = "cost_nonamortized_unblended_adj"
 )
 
-// Defines values for ReprocessResultItemState.
+// Defines values for RuleBasedDimensionConditionRequestBodyType.
 const (
-	ReprocessResultItemStateLocked     ReprocessResultItemState = "locked"
-	ReprocessResultItemStateProcessing ReprocessResultItemState = "processing"
-	ReprocessResultItemStateUnlocked   ReprocessResultItemState = "unlocked"
+	RuleBasedDimensionConditionRequestBodyTypeAnd             RuleBasedDimensionConditionRequestBodyType = "and"
+	RuleBasedDimensionConditionRequestBodyTypeDimensionEquals RuleBasedDimensionConditionRequestBodyType = "dimension_equals"
+	RuleBasedDimensionConditionRequestBodyTypeNot             RuleBasedDimensionConditionRequestBodyType = "not"
+	RuleBasedDimensionConditionRequestBodyTypeOr              RuleBasedDimensionConditionRequestBodyType = "or"
 )
 
-// Defines values for RightscaleBillAnalysisFrontServiceCustomdashboardVisibility.
+// Defines values for RuleBasedDimensionConditionResponseBodyType.
 const (
-	RightscaleBillAnalysisFrontServiceCustomdashboardVisibilityDefault RightscaleBillAnalysisFrontServiceCustomdashboardVisibility = "default"
-	RightscaleBillAnalysisFrontServiceCustomdashboardVisibilityPrivate RightscaleBillAnalysisFrontServiceCustomdashboardVisibility = "private"
-	RightscaleBillAnalysisFrontServiceCustomdashboardVisibilityPublic  RightscaleBillAnalysisFrontServiceCustomdashboardVisibility = "public"
-)
-
-// Defines values for RightscaleOptimaCloudVendorAccountKind.
-const (
-	BaCloudVendorAccount RightscaleOptimaCloudVendorAccountKind = "ba#cloud_vendor_account"
-)
-
-// Defines values for RuleBasedDimensionConditionType.
-const (
-	RuleBasedDimensionConditionTypeAnd             RuleBasedDimensionConditionType = "and"
-	RuleBasedDimensionConditionTypeDimensionEquals RuleBasedDimensionConditionType = "dimension_equals"
-	RuleBasedDimensionConditionTypeNot             RuleBasedDimensionConditionType = "not"
-	RuleBasedDimensionConditionTypeOr              RuleBasedDimensionConditionType = "or"
-)
-
-// Defines values for SelectRequestBodyDataset.
-const (
-	SelectRequestBodyDatasetBilling    SelectRequestBodyDataset = "billing"
-	SelectRequestBodyDatasetEnterprise SelectRequestBodyDataset = "enterprise"
-)
-
-// Defines values for SelectRequestBodyGranularity.
-const (
-	Day   SelectRequestBodyGranularity = "day"
-	Month SelectRequestBodyGranularity = "month"
-)
-
-// Defines values for SelectRequestBodyPeriodType.
-const (
-	SelectRequestBodyPeriodTypeBillingPeriod SelectRequestBodyPeriodType = "billing_period"
-	SelectRequestBodyPeriodTypeChargePeriod  SelectRequestBodyPeriodType = "charge_period"
-)
-
-// Defines values for SettingId.
-const (
-	CurrencyCode SettingId = "currency_code"
-)
-
-// Defines values for SettingKind.
-const (
-	OptimaSetting SettingKind = "optima#setting"
-)
-
-// Defines values for BillMonthsDownloadParamsFormat.
-const (
-	Csv BillMonthsDownloadParamsFormat = "csv"
+	RuleBasedDimensionConditionResponseBodyTypeAnd             RuleBasedDimensionConditionResponseBodyType = "and"
+	RuleBasedDimensionConditionResponseBodyTypeDimensionEquals RuleBasedDimensionConditionResponseBodyType = "dimension_equals"
+	RuleBasedDimensionConditionResponseBodyTypeNot             RuleBasedDimensionConditionResponseBodyType = "not"
+	RuleBasedDimensionConditionResponseBodyTypeOr              RuleBasedDimensionConditionResponseBodyType = "or"
 )
 
 // Defines values for CostsDimensionsParamsDataset.
@@ -299,17 +251,299 @@ const (
 	CostsMetricsParamsDatasetEnterprise CostsMetricsParamsDataset = "enterprise"
 )
 
-// Defines values for OrgDashboardsIndexParamsVisibility.
-const (
-	Default OrgDashboardsIndexParamsVisibility = "default"
-	Public  OrgDashboardsIndexParamsVisibility = "public"
-)
+// AdjustmentDefinitionShowBadGatewayResponseBody show_bad_gateway_response_body result type (default view)
+type AdjustmentDefinitionShowBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
 
-// Adjustment An adjustment that will be applied to any cost row for which one of the rules match.
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// AdjustmentDefinitionShowBadRequestResponseBody show_bad_request_response_body result type (default view)
+type AdjustmentDefinitionShowBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// AdjustmentDefinitionShowForbiddenResponseBody show_forbidden_response_body result type (default view)
+type AdjustmentDefinitionShowForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// AdjustmentDefinitionShowInternalErrorResponseBody show_internal_error_response_body result type (default view)
+type AdjustmentDefinitionShowInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// AdjustmentDefinitionShowNotFoundResponseBody show_not_found_response_body result type (default view)
+type AdjustmentDefinitionShowNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// AdjustmentDefinitionShowResponseBody ShowResponseBody result type (default view)
+type AdjustmentDefinitionShowResponseBody struct {
+	// DatedAdjustmentLists DatedAdjustmentListResultCollectionResponseBody is the result type for an array of DatedAdjustmentListResultResponseBody (default view)
+	DatedAdjustmentLists DatedAdjustmentListResultResponseBodyCollection `json:"dated_adjustment_lists"`
+
+	// UpdatedAt the timestamp when any of the adjustment lists in the org were last updated (including deletions)
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// AdjustmentDefinitionShowTooManyRequestsResponseBody show_too_many_requests_response_body result type (default view)
+type AdjustmentDefinitionShowTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// AdjustmentDefinitionShowUnauthorizedResponseBody show_unauthorized_response_body result type (default view)
+type AdjustmentDefinitionShowUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// AdjustmentDefinitionUpdateBadGatewayResponseBody update_bad_gateway_response_body result type (default view)
+type AdjustmentDefinitionUpdateBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// AdjustmentDefinitionUpdateBadRequestResponseBody update_bad_request_response_body result type (default view)
+type AdjustmentDefinitionUpdateBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// AdjustmentDefinitionUpdateForbiddenResponseBody update_forbidden_response_body result type (default view)
+type AdjustmentDefinitionUpdateForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// AdjustmentDefinitionUpdateInternalErrorResponseBody update_internal_error_response_body result type (default view)
+type AdjustmentDefinitionUpdateInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// AdjustmentDefinitionUpdateRequestBody defines model for AdjustmentDefinitionUpdateRequestBody.
+type AdjustmentDefinitionUpdateRequestBody struct {
+	// DatedAdjustmentLists All of the dated adjustment lists for the org.
+	DatedAdjustmentLists []DatedAdjustmentListRequestBody `json:"dated_adjustment_lists"`
+}
+
+// AdjustmentDefinitionUpdateTooManyRequestsResponseBody update_too_many_requests_response_body result type (default view)
+type AdjustmentDefinitionUpdateTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// AdjustmentDefinitionUpdateUnauthorizedResponseBody update_unauthorized_response_body result type (default view)
+type AdjustmentDefinitionUpdateUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// AdjustmentRequestBody An adjustment that will be applied to any cost row for which one of the rules match.
 // The first rule to match will determine the cost & usage multipliers to use.
 // The base cost will be the raw cost of the row, or if any build_on_adjustments are specified, then those adjusted costs will be added in to form the base cost.
 // The final cost of this adjustment will be the (base_cost * cost_multiplier) + (usage_amount * usage_multiplier)
-type Adjustment struct {
+type AdjustmentRequestBody struct {
 	// BuildOnAdjustments If none specified, the base cost is simply the raw cost.
 	// Can also specify one or more of the adjustment names that were defined earlier in the adjustment list, and the base cost will be the net cost after those adjustments are applied.
 	BuildOnAdjustments *[]string `json:"build_on_adjustments,omitempty"`
@@ -320,16 +554,139 @@ type Adjustment struct {
 	// Rules List of rules to determine the cost/usage multipliers to apply to a given cost row.
 	// The rules will be evaluated in order until one matches. If none matches, this adjustment is not applied.
 	// The list may contain up to 100 rules.
-	Rules *[]Rule `json:"rules,omitempty"`
+	Rules *[]RuleRequestBody `json:"rules,omitempty"`
 }
 
-// AggregatedRequestBody defines model for AggregatedRequestBody.
-type AggregatedRequestBody struct {
-	// BillingCenterIds IDs of BillingCenters to get cost data for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
-	BillingCenterIds []string `json:"billing_center_ids"`
+// AdjustmentResponseBody An adjustment that will be applied to any cost row for which one of the rules match.
+// The first rule to match will determine the cost & usage multipliers to use.
+// The base cost will be the raw cost of the row, or if any build_on_adjustments are specified, then those adjusted costs will be added in to form the base cost.
+// The final cost of this adjustment will be the (base_cost * cost_multiplier) + (usage_amount * usage_multiplier)
+type AdjustmentResponseBody struct {
+	// BuildOnAdjustments If none specified, the base cost is simply the raw cost.
+	// Can also specify one or more of the adjustment names that were defined earlier in the adjustment list, and the base cost will be the net cost after those adjustments are applied.
+	BuildOnAdjustments *[]string `json:"build_on_adjustments,omitempty"`
 
-	// Dataset indicates which datasource to query from, if set to billing, it will query from billing data source.
-	Dataset *AggregatedRequestBodyDataset `json:"dataset,omitempty"`
+	// Name Name of the adjustment
+	Name string `json:"name"`
+
+	// Rules List of rules to determine the cost/usage multipliers to apply to a given cost row.
+	// The rules will be evaluated in order until one matches. If none matches, this adjustment is not applied.
+	// The list may contain up to 100 rules.
+	Rules *[]RuleResponseBody `json:"rules,omitempty"`
+}
+
+// AnomaliesReportBadGatewayResponseBody report_bad_gateway_response_body result type (default view)
+type AnomaliesReportBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// AnomaliesReportBadRequestResponseBody report_bad_request_response_body result type (default view)
+type AnomaliesReportBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// AnomaliesReportForbiddenResponseBody report_forbidden_response_body result type (default view)
+type AnomaliesReportForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// AnomaliesReportInternalErrorResponseBody report_internal_error_response_body result type (default view)
+type AnomaliesReportInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// AnomaliesReportNotFoundResponseBody report_not_found_response_body result type (default view)
+type AnomaliesReportNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// AnomaliesReportRequestBody defines model for AnomaliesReportRequestBody.
+type AnomaliesReportRequestBody struct {
+	// BillingCenterIds IDs of BillingCenters to get data for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
+	BillingCenterIds []string `json:"billingCenterIds"`
+
+	// DetectionMethod Specifies the detection method to use: either Bollinger Band or AI Model.
+	DetectionMethod *AnomaliesReportRequestBodyDetectionMethod `json:"detectionMethod,omitempty"`
 
 	// Dimensions The list of supported dimensions by which to roll up the costs.
 	Dimensions *[]string `json:"dimensions,omitempty"`
@@ -339,80 +696,6 @@ type AggregatedRequestBody struct {
 	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
 	// Will be interpreted as UTC, which is used for period boundaries.
 	// No records will be returned on or after this timestamp.
-	EndAt string `json:"end_at"`
-
-	// Filter Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
-	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
-	// Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
-	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
-	//
-	// Examples of each filter type:
-	//
-	// {"type":"equal", "dimension":"vendor", "value":"aws"}
-	//
-	//   {"type":"substring", "dimension":"tag_env", "substring":"dev"}
-	//
-	//   {"type":"and", "expressions":[
-	//     {"type":"equal", "dimension":"vendor", "value":"aws"},
-	//     {"type":"equal", "dimension":"tag_env", "value":"dev"}
-	//   ]}
-	//
-	//   {"type":"or", "expressions":[
-	//     {"type":"substring", "dimension":"tag_env", "substring":"dev"},
-	//     {"type":"substring", "dimension":"tag_env", "substring":"stage"}
-	//   ]}
-	//
-	//   {"type":"not", "expression": {
-	//     "type":"equal", "dimension":"vendor", "substring":"aws"
-	//   }}
-	Filter *FilterV1 `json:"filter,omitempty"`
-
-	// Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
-	// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
-	Granularity *AggregatedRequestBodyGranularity `json:"granularity,omitempty"`
-
-	// Limit Maximum number of records to return. If this limit does not allow all rows to be returned, rowsTruncated:true will be added to the response to indicate the result is incomplete.
-	Limit *int64 `json:"limit,omitempty"`
-
-	// Metrics Metrics to return.
-	// When metric 'usage_amount' is requested, dimension 'usage_unit' must be requested
-	// in the dimensions parameter.
-	Metrics []string `json:"metrics"`
-
-	// PeriodType Determines which date column to use for filtering.
-	//  - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
-	//  - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
-	//
-	// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
-	PeriodType *AggregatedRequestBodyPeriodType `json:"period_type,omitempty"`
-
-	// StartAt Earliest timestamp (inclusive) of the returned costs.
-	// For month granularity: consists of a year and month in YYYY-MM format.
-	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
-	// Will be interpreted as UTC, which is used for period boundaries.
-	StartAt string `json:"start_at"`
-
-	// Summarized Combines the query results from the day/month buckets into a single bucket.
-	Summarized *bool `json:"summarized,omitempty"`
-}
-
-// AggregatedRequestBodyDataset indicates which datasource to query from, if set to billing, it will query from billing data source.
-type AggregatedRequestBodyDataset string
-
-// AggregatedRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
-// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
-type AggregatedRequestBodyGranularity string
-
-// AggregatedRequestBodyPeriodType Determines which date column to use for filtering.
-//   - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
-//   - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
-//
-// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
-type AggregatedRequestBodyPeriodType string
-
-// AggregatedRequestBody2 defines model for AggregatedRequestBody2.
-type AggregatedRequestBody2 struct {
-	// EndAt Latest timestamp (exclusive) of the anomaly. Consists of a year, month, and day in YYYY-MM-DD format. Will be interpreted as UTC, which is used for period boundaries. No records will be returned on or after this timestamp.
 	EndAt string `json:"endAt"`
 
 	// Filter Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
@@ -439,129 +722,68 @@ type AggregatedRequestBody2 struct {
 	//   {"type":"not", "expression": {
 	//     "type":"equal", "dimension":"vendor", "substring":"aws"
 	//   }}
-	Filter *FilterV1 `json:"filter,omitempty"`
+	Filter *FilterV1RequestBody `json:"filter,omitempty"`
 
-	// Metric The metric used for the anomaly
-	Metric AggregatedRequestBody2Metric `json:"metric"`
+	// Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
+	// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
+	Granularity *AnomaliesReportRequestBodyGranularity `json:"granularity,omitempty"`
 
-	// StartAt Earliest timestamp (inclusive) of the returned anomaly. Consists of a year, month, and day in YYYY-MM-DD format. Will be interpreted as UTC, which is used for period boundaries.
+	// Limit limit number of records to return.
+	Limit *int32 `json:"limit,omitempty"`
+
+	// Metric Metric to perform anomaly detection on. Currently only cost metrics supported.
+	Metric AnomaliesReportRequestBodyMetric `json:"metric"`
+
+	// StandardDeviations number of standard deviations to use for bollinger band calculations
+	StandardDeviations float64 `json:"standardDeviations"`
+
+	// StartAt Earliest timestamp (inclusive) of the returned costs.
+	// For month granularity: consists of a year and month in YYYY-MM format.
+	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
+	// Will be interpreted as UTC, which is used for period boundaries.
 	StartAt string `json:"startAt"`
+
+	// WindowSize window size to use for bollinger bands
+	WindowSize int64 `json:"windowSize"`
 }
 
-// AggregatedRequestBody2Metric The metric used for the anomaly
-type AggregatedRequestBody2Metric string
+// AnomaliesReportRequestBodyDetectionMethod Specifies the detection method to use: either Bollinger Band or AI Model.
+type AnomaliesReportRequestBodyDetectionMethod string
 
-// AllDatedAdjustmentLists defines model for AllDatedAdjustmentLists.
-type AllDatedAdjustmentLists struct {
-	DatedAdjustmentLists DatedAdjustmentListResultCollection `json:"dated_adjustment_lists"`
+// AnomaliesReportRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
+// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
+type AnomaliesReportRequestBodyGranularity string
 
-	// UpdatedAt the timestamp when any of the adjustment lists in the org were last updated (including deletions)
-	UpdatedAt time.Time `json:"updated_at"`
+// AnomaliesReportRequestBodyMetric Metric to perform anomaly detection on. Currently only cost metrics supported.
+type AnomaliesReportRequestBodyMetric string
+
+// AnomaliesReportResponseBody defines model for AnomaliesReportResponseBody.
+type AnomaliesReportResponseBody struct {
+	Values *[]TimeSeriesWithAnomaliesResponseBody `json:"values,omitempty"`
 }
 
-// AllRuleBasedDimensions defines model for AllRuleBasedDimensions.
-type AllRuleBasedDimensions struct {
-	// RuleBasedDimensions All rule-based dimensions defined in the org.
-	RuleBasedDimensions []RightscaleBillAnalysisFrontServiceRulebaseddimension `json:"rule_based_dimensions"`
+// AnomaliesReportUnauthorizedResponseBody report_unauthorized_response_body result type (default view)
+type AnomaliesReportUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
 
-	// UpdatedAt timestamp of when rule based dimensions were updated
-	UpdatedAt time.Time `json:"updated_at"`
-}
-
-// AnalyticsQueryResult defines model for AnalyticsQueryResult.
-type AnalyticsQueryResult struct {
-	// Rows Query result rows
-	Rows []Row `json:"rows"`
-
-	// RowsTruncated Indicates whether the number of rows returned was limited due to exceeding the maximum allowed result size.
-	RowsTruncated *bool `json:"rowsTruncated,omitempty"`
-}
-
-// Anomaly An identified cost anomaly
-type Anomaly struct {
-	// Description Detailed description of the anomaly
-	Description *string `json:"description,omitempty"`
-
-	// DetectionDate Timestamp representing when the anomaly was detected
-	DetectionDate openapi_types.Date `json:"detectionDate"`
-
-	// Dimensions Dimensions used to detect anomaly. Each anomaly will be defined as a unique combination of these dimension values.
-	Dimensions map[string]string `json:"dimensions"`
-
-	// EndDate Timestamp representing end date of the anomalous data (YYYY-MM-DD)
-	EndDate *openapi_types.Date `json:"endDate,omitempty"`
-
-	// Id ID of the anomaly
+	// Id ID is a unique identifier for this particular occurrence of the problem.
 	Id string `json:"id"`
 
-	// Metric The metric used for the anomaly
-	Metric string `json:"metric"`
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
 
-	// Metrics List of anomaly metrics
-	Metrics map[string]float64 `json:"metrics"`
-
-	// Name A descriptive name for the anomaly
+	// Name Name is the name of this class of errors.
 	Name string `json:"name"`
 
-	// StartDate Timestamp representing start date of the anomalous data(YYYY-MM-DD)
-	StartDate *openapi_types.Date `json:"startDate,omitempty"`
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
 
-	// Type The type of anomaly
-	Type string `json:"type"`
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
 }
 
-// AnomalyAggregatedResult defines model for AnomalyAggregatedResult.
-type AnomalyAggregatedResult struct {
-	// Metrics List of aggregated anomaly metrics
-	Metrics []AnomalyMetric `json:"metrics"`
-}
-
-// AnomalyDetails defines model for AnomalyDetails.
-type AnomalyDetails struct {
-	// Summary An identified cost anomaly
-	Summary Anomaly `json:"summary"`
-
-	// TimeSeries TimeSeries data of the anomaly
-	TimeSeries []AnomalyTimeseriesPoint `json:"timeSeries"`
-}
-
-// AnomalyIndexResult defines model for AnomalyIndexResult.
-type AnomalyIndexResult struct {
-	// Anomalies List of anomalies
-	Anomalies []Anomaly `json:"anomalies"`
-
-	// Pagination Pagination information
-	Pagination Pagination `json:"pagination"`
-}
-
-// AnomalyMetric A single aggregated KPI metric
-type AnomalyMetric struct {
-	// Description Description of the anomaly metric
-	Description *string `json:"description,omitempty"`
-
-	// Name Name of the anomaly metric
-	Name string `json:"name"`
-
-	// Value Value associated with anomaly metric
-	Value float64 `json:"value"`
-}
-
-// AnomalyTimeseriesPoint Timeseries chart datapoint for anomaly details
-type AnomalyTimeseriesPoint struct {
-	// ActualCost Actual spend/cost value for this date
-	ActualCost float64 `json:"actualCost"`
-
-	// Anomalous True if this point is anomalous
-	Anomalous *bool `json:"anomalous,omitempty"`
-
-	// Date Date for this data point (YYYY-MM-DD)
-	Date openapi_types.Date `json:"date"`
-
-	// ExpectedCost Expected spend/cost value for this date
-	ExpectedCost float64 `json:"expectedCost"`
-}
-
-// BillMonth Bill month information with processing status
+// BillMonth Bill month record with processing status
 type BillMonth struct {
 	// BillMonth Bill month in YYYYMM format
 	BillMonth string `json:"bill_month"`
@@ -581,7 +803,7 @@ type BillMonth struct {
 	// LockedAt Timestamp when the bill month was locked
 	LockedAt *time.Time `json:"locked_at,omitempty"`
 
-	// NewVendorDataAvailableAt Timestamp when new vendor data became available, or 'No' if none
+	// NewVendorDataAvailableAt Timestamp when new vendor data became available
 	NewVendorDataAvailableAt *time.Time `json:"new_vendor_data_available_at,omitempty"`
 
 	// Status Current processing status of the bill month
@@ -591,8 +813,92 @@ type BillMonth struct {
 // BillMonthStatus Current processing status of the bill month
 type BillMonthStatus string
 
-// BillMonthSearchResponse defines model for BillMonthSearchResponse.
-type BillMonthSearchResponse struct {
+// BillMonthsSearchBadGatewayResponseBody bad_gateway result type (default view)
+type BillMonthsSearchBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillMonthsSearchBadRequestResponseBody bad_request result type (default view)
+type BillMonthsSearchBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillMonthsSearchForbiddenResponseBody forbidden result type (default view)
+type BillMonthsSearchForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillMonthsSearchInternalErrorResponseBody internal_error result type (default view)
+type BillMonthsSearchInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillMonthsSearchResponseBody Bill months search result
+type BillMonthsSearchResponseBody struct {
 	// Count Total number of records matching the search criteria
 	Count int64 `json:"count"`
 
@@ -602,7 +908,7 @@ type BillMonthSearchResponse struct {
 	// NextPage URL for the next page of results
 	NextPage *string `json:"nextPage,omitempty"`
 
-	// PreviousPage Opaque cursor for previous page (omitted if on first page).
+	// PreviousPage Opaque cursor for previous page
 	PreviousPage *string `json:"previousPage,omitempty"`
 
 	// UpdatedAt Date when the data was last updated
@@ -612,16 +918,28 @@ type BillMonthSearchResponse struct {
 	Values []BillMonth `json:"values"`
 }
 
-// BillingSettingsResponse defines model for BillingSettingsResponse.
-type BillingSettingsResponse struct {
-	// AutomaticBillLockingSettings Configuration settings for automatic bill locking
-	AutomaticBillLockingSettings LockingSettings `json:"automatic_bill_locking_settings"`
+// BillMonthsSearchUnauthorizedResponseBody unauthorized result type (default view)
+type BillMonthsSearchUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
 }
 
-// BudgetCollection defines model for BudgetCollection.
-type BudgetCollection = []FlexeraOptimaBudget
-
-// BudgetFilter A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+// BudgetFilterRequestBody A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
 //
 // The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
 // An empty filter expression implies all costs are included.
@@ -653,7 +971,7 @@ type BudgetCollection = []FlexeraOptimaBudget
 //
 // ```
 // Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
-type BudgetFilter struct {
+type BudgetFilterRequestBody struct {
 	// Dimension name of a dimension to examine. Required for the 'equal' filter type. Note the `billing_center_id` dimension is not supported at this time.
 	Dimension *string `json:"dimension,omitempty"`
 
@@ -684,23 +1002,179 @@ type BudgetFilter struct {
 	// }}
 	// ```
 	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
-	Expression *BudgetFilter `json:"expression,omitempty"`
+	Expression *BudgetFilterRequestBody `json:"expression,omitempty"`
 
 	// Expressions the filter expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' filter types.
-	Expressions *[]BudgetFilter `json:"expressions,omitempty"`
+	Expressions *[]BudgetFilterRequestBody `json:"expressions,omitempty"`
 
 	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-	Type BudgetFilterType `json:"type"`
+	Type BudgetFilterRequestBodyType `json:"type"`
 
 	// Value a value that the dimension must match. Required for the 'equal' filter type.
 	Value *string `json:"value,omitempty"`
 }
 
-// BudgetFilterType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-type BudgetFilterType string
+// BudgetFilterRequestBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type BudgetFilterRequestBodyType string
 
-// BudgetMetrics defines model for BudgetMetrics.
-type BudgetMetrics struct {
+// BudgetFilterResponse A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+//
+// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
+// An empty filter expression implies all costs are included.
+//
+// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
+// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
+//
+// Examples of each filter type:
+// ```
+// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+//
+// {"type":"and", "expressions":[
+//
+//	{"type":"equal", "dimension":"vendor", "value":"AWS"},
+//	{"type":"equal", "dimension":"rbd_team", "value":"Blue"}
+//
+// ]}
+//
+// {"type":"or", "expressions":[
+//
+//	{"type":"equal", "dimension":"rbd_team", "value":"Blue"},
+//	{"type":"equal", "dimension":"rbd_team", "value":"Green"}
+//
+// ]}
+//
+//	{"type":"not", "expression": {
+//	  "type":"equal", "dimension":"vendor", "substring":"AWS"
+//	}}
+//
+// ```
+// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+type BudgetFilterResponse struct {
+	// Dimension name of a dimension to examine. Required for the 'equal' filter type. Note the `billing_center_id` dimension is not supported at this time.
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+	//
+	// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
+	// An empty filter expression implies all costs are included.
+	//
+	// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
+	// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
+	//
+	// Examples of each filter type:
+	// ```
+	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+	//
+	// {"type":"and", "expressions":[
+	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
+	// ]}
+	//
+	// {"type":"or", "expressions":[
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Green"}
+	// ]}
+	//
+	// {"type":"not", "expression": {
+	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
+	// }}
+	// ```
+	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	Expression *BudgetFilterResponse `json:"expression,omitempty"`
+
+	// Expressions the filter expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' filter types.
+	Expressions *[]BudgetFilterResponse `json:"expressions,omitempty"`
+
+	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+	Type BudgetFilterResponseType `json:"type"`
+
+	// Value a value that the dimension must match. Required for the 'equal' filter type.
+	Value *string `json:"value,omitempty"`
+}
+
+// BudgetFilterResponseType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type BudgetFilterResponseType string
+
+// BudgetFilterResponseBody A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+//
+// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
+// An empty filter expression implies all costs are included.
+//
+// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
+// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
+//
+// Examples of each filter type:
+// ```
+// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+//
+// {"type":"and", "expressions":[
+//
+//	{"type":"equal", "dimension":"vendor", "value":"AWS"},
+//	{"type":"equal", "dimension":"rbd_team", "value":"Blue"}
+//
+// ]}
+//
+// {"type":"or", "expressions":[
+//
+//	{"type":"equal", "dimension":"rbd_team", "value":"Blue"},
+//	{"type":"equal", "dimension":"rbd_team", "value":"Green"}
+//
+// ]}
+//
+//	{"type":"not", "expression": {
+//	  "type":"equal", "dimension":"vendor", "substring":"AWS"
+//	}}
+//
+// ```
+// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+type BudgetFilterResponseBody struct {
+	// Dimension name of a dimension to examine. Required for the 'equal' filter type. Note the `billing_center_id` dimension is not supported at this time.
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+	//
+	// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
+	// An empty filter expression implies all costs are included.
+	//
+	// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
+	// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
+	//
+	// Examples of each filter type:
+	// ```
+	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+	//
+	// {"type":"and", "expressions":[
+	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
+	// ]}
+	//
+	// {"type":"or", "expressions":[
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Green"}
+	// ]}
+	//
+	// {"type":"not", "expression": {
+	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
+	// }}
+	// ```
+	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	Expression *BudgetFilterResponseBody `json:"expression,omitempty"`
+
+	// Expressions the filter expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' filter types.
+	Expressions *[]BudgetFilterResponseBody `json:"expressions,omitempty"`
+
+	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+	Type BudgetFilterResponseBodyType `json:"type"`
+
+	// Value a value that the dimension must match. Required for the 'equal' filter type.
+	Value *string `json:"value,omitempty"`
+}
+
+// BudgetFilterResponseBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type BudgetFilterResponseBodyType string
+
+// BudgetMetricsResponse defines model for BudgetMetricsResponse.
+type BudgetMetricsResponse struct {
 	// BudgetAmount The budgeted amount of spend
 	BudgetAmount *float64 `json:"budgetAmount,omitempty"`
 
@@ -714,68 +1188,1202 @@ type BudgetMetrics struct {
 	SpendMinusForecast *float64 `json:"spendMinusForecast,omitempty"`
 }
 
-// BudgetReportRow defines model for BudgetReportRow.
-type BudgetReportRow struct {
+// BudgetReportRowResponse defines model for BudgetReportRowResponse.
+type BudgetReportRowResponse struct {
 	// Dimensions One specific combination of dimension values.
 	Dimensions map[string]interface{} `json:"dimensions"`
-	Metrics    BudgetMetrics          `json:"metrics"`
+	Metrics    BudgetMetricsResponse  `json:"metrics"`
 
 	// Timestamp Timestamp of the data point.
 	Timestamp time.Time `json:"timestamp"`
 }
 
-// BudgetSegment Describes a unique combination of dimension values, and provides a corresponding budget amount for each year-month
-type BudgetSegment struct {
-	// BudgetAmounts The budgeted amount of spend for each year-month
-	BudgetAmounts []float64 `json:"budgetAmounts"`
+// BudgetResponse Resource for budget information (default view)
+type BudgetResponse struct {
+	// CreatedAt Timestamp representing when the budget was first created
+	CreatedAt time.Time `json:"createdAt"`
 
-	// DimensionValues A combination of dimension values, unique to this segment in the budget.
-	DimensionValues []string `json:"dimensionValues"`
+	// Dimensions Dimensions used to break down this budget. Each budget segment will be defined as a unique combination of these dimension values.
+	Dimensions []string `json:"dimensions"`
 
-	// ForecastAmounts The forecasted amount of spend for each year-month
-	ForecastAmounts *[]float64 `json:"forecastAmounts,omitempty"`
+	// Filter A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+	//
+	// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
+	// An empty filter expression implies all costs are included.
+	//
+	// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
+	// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
+	//
+	// Examples of each filter type:
+	// ```
+	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+	//
+	// {"type":"and", "expressions":[
+	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
+	// ]}
+	//
+	// {"type":"or", "expressions":[
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Green"}
+	// ]}
+	//
+	// {"type":"not", "expression": {
+	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
+	// }}
+	// ```
+	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	Filter *BudgetFilterResponse `json:"filter,omitempty"`
+
+	// Id ID of the budget
+	Id string `json:"id"`
+
+	// Metric The cost metric used for the budget
+	Metric BudgetResponseMetric `json:"metric"`
+
+	// Name A descriptive name to uniquely identify the budget
+	Name string `json:"name"`
+
+	// Segments An array of budget segments, like rows in a spreadsheet. Each segment describes the budget amounts and forecast amounts for a particular combination of dimension values. A budget can define up to 2,000 segments.
+	Segments []BudgetSegmentResponse `json:"segments"`
+
+	// UpdatedAt Timestamp representing when the budget was most recently updated
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// YearMonths An array of year-month strings like `"2023-01"`, defining the time period covered by the budget.
+	YearMonths []string `json:"yearMonths"`
 }
 
-// CloudVendorAccountCollection defines model for CloudVendorAccountCollection.
-type CloudVendorAccountCollection = []RightscaleOptimaCloudVendorAccount
+// BudgetResponseMetric The cost metric used for the budget
+type BudgetResponseMetric string
 
-// CommitmentReallocationSetting defines model for CommitmentReallocationSetting.
-type CommitmentReallocationSetting struct {
-	// BillSource Bill source identifier the commitment reallocation settings will be applied to.
-	BillSource string `json:"bill_source"`
+// BudgetsBudgetResponseCollection IndexResponseBody is the result type for an array of BudgetResponse (default view)
+type BudgetsBudgetResponseCollection = []BudgetResponse
 
-	// StartAt Year-month (UTC) the commitment reallocation settings will be effective at.
-	StartAt string `json:"start_at"`
+// BudgetsCreateBadGatewayResponseBody create_bad_gateway_response_body result type (default view)
+type BudgetsCreateBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
 
-	// Strategy Commitment reallocation strategy to be applied. `effective_cost` means the cost of the commitment (only the consumed proportion) will be reallocated to the usage rows covered by it.
-	Strategy CommitmentReallocationSettingStrategy `json:"strategy"`
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
 }
 
-// CommitmentReallocationSettingStrategy Commitment reallocation strategy to be applied. `effective_cost` means the cost of the commitment (only the consumed proportion) will be reallocated to the usage rows covered by it.
-type CommitmentReallocationSettingStrategy string
+// BudgetsCreateBadRequestResponseBody create_bad_request_response_body result type (default view)
+type BudgetsCreateBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
 
-// CommitmentReallocationSettingType defines model for CommitmentReallocationSettingType.
-type CommitmentReallocationSettingType struct {
-	// Settings list of configurations that would be effective for the type given.
-	Settings []CommitmentReallocationSetting `json:"settings"`
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
 
-	// Type Type of reallocation to be configured
-	Type CommitmentReallocationSettingTypeType `json:"type"`
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
 }
 
-// CommitmentReallocationSettingTypeType Type of reallocation to be configured
-type CommitmentReallocationSettingTypeType string
+// BudgetsCreateConflictResponseBody create_conflict_response_body result type (default view)
+type BudgetsCreateConflictResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
 
-// CommitmentReallocationSettings defines model for CommitmentReallocationSettings.
-type CommitmentReallocationSettings struct {
-	// CommitmentReallocationSettings List of commitment reallocation settings for the org given.
-	CommitmentReallocationSettings []CommitmentReallocationSettingType `json:"commitment_reallocation_settings"`
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
 
-	// UpdatedAt the timestamp when the commitment reallocation settings list was last updated
-	UpdatedAt time.Time `json:"updated_at"`
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
 }
 
-// Condition The criteria for the given multipliers to be applied to a cost row.
+// BudgetsCreateForbiddenResponseBody create_forbidden_response_body result type (default view)
+type BudgetsCreateForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsCreateInternalErrorResponseBody create_internal_error_response_body result type (default view)
+type BudgetsCreateInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsCreateRequestBody defines model for BudgetsCreateRequestBody.
+type BudgetsCreateRequestBody struct {
+	// Dimensions Dimensions used to break down this budget. Each budget segment will be defined as a unique combination of these dimension values.
+	Dimensions []string `json:"dimensions"`
+
+	// Filter A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+	//
+	// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
+	// An empty filter expression implies all costs are included.
+	//
+	// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
+	// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
+	//
+	// Examples of each filter type:
+	// ```
+	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+	//
+	// {"type":"and", "expressions":[
+	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
+	// ]}
+	//
+	// {"type":"or", "expressions":[
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Green"}
+	// ]}
+	//
+	// {"type":"not", "expression": {
+	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
+	// }}
+	// ```
+	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	Filter *BudgetFilterRequestBody `json:"filter,omitempty"`
+
+	// Metric The cost metric used for the budget
+	Metric BudgetsCreateRequestBodyMetric `json:"metric"`
+
+	// Name A descriptive name to uniquely identify the budget
+	Name string `json:"name"`
+
+	// Segments An array of budget segments, like rows in a spreadsheet. Each segment describes the budget amounts and forecast amounts for a particular combination of dimension values. A budget can define up to 2,000 segments.
+	Segments []BudgetSegmentRequestBody `json:"segments"`
+
+	// YearMonths An array of year-month strings like `"2023-01"`, defining the time period covered by the budget.
+	YearMonths []string `json:"yearMonths"`
+}
+
+// BudgetsCreateRequestBodyMetric The cost metric used for the budget
+type BudgetsCreateRequestBodyMetric string
+
+// BudgetsCreateResponseBody CreateResponseBody result type (default view)
+type BudgetsCreateResponseBody struct {
+	// CreatedAt Timestamp representing when the budget was first created
+	CreatedAt time.Time `json:"createdAt"`
+
+	// Dimensions Dimensions used to break down this budget. Each budget segment will be defined as a unique combination of these dimension values.
+	Dimensions []string `json:"dimensions"`
+
+	// Filter A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+	//
+	// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
+	// An empty filter expression implies all costs are included.
+	//
+	// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
+	// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
+	//
+	// Examples of each filter type:
+	// ```
+	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+	//
+	// {"type":"and", "expressions":[
+	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
+	// ]}
+	//
+	// {"type":"or", "expressions":[
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Green"}
+	// ]}
+	//
+	// {"type":"not", "expression": {
+	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
+	// }}
+	// ```
+	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	Filter *BudgetFilterResponseBody `json:"filter,omitempty"`
+
+	// Id ID of the budget
+	Id string `json:"id"`
+
+	// Metric The cost metric used for the budget
+	Metric BudgetsCreateResponseBodyMetric `json:"metric"`
+
+	// Name A descriptive name to uniquely identify the budget
+	Name string `json:"name"`
+
+	// Segments An array of budget segments, like rows in a spreadsheet. Each segment describes the budget amounts and forecast amounts for a particular combination of dimension values. A budget can define up to 2,000 segments.
+	Segments []BudgetSegmentResponseBody `json:"segments"`
+
+	// UpdatedAt Timestamp representing when the budget was most recently updated
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// YearMonths An array of year-month strings like `"2023-01"`, defining the time period covered by the budget.
+	YearMonths []string `json:"yearMonths"`
+}
+
+// BudgetsCreateResponseBodyMetric The cost metric used for the budget
+type BudgetsCreateResponseBodyMetric string
+
+// BudgetsCreateTooManyRequestsResponseBody create_too_many_requests_response_body result type (default view)
+type BudgetsCreateTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsCreateUnauthorizedResponseBody create_unauthorized_response_body result type (default view)
+type BudgetsCreateUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsDeleteBadGatewayResponseBody delete_bad_gateway_response_body result type (default view)
+type BudgetsDeleteBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsDeleteBadRequestResponseBody delete_bad_request_response_body result type (default view)
+type BudgetsDeleteBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsDeleteForbiddenResponseBody delete_forbidden_response_body result type (default view)
+type BudgetsDeleteForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsDeleteInternalErrorResponseBody delete_internal_error_response_body result type (default view)
+type BudgetsDeleteInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsDeleteNotFoundResponseBody delete_not_found_response_body result type (default view)
+type BudgetsDeleteNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsDeleteTooManyRequestsResponseBody delete_too_many_requests_response_body result type (default view)
+type BudgetsDeleteTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsDeleteUnauthorizedResponseBody delete_unauthorized_response_body result type (default view)
+type BudgetsDeleteUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsIndexBadGatewayResponseBody index_bad_gateway_response_body result type (default view)
+type BudgetsIndexBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsIndexBadRequestResponseBody index_bad_request_response_body result type (default view)
+type BudgetsIndexBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsIndexForbiddenResponseBody index_forbidden_response_body result type (default view)
+type BudgetsIndexForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsIndexInternalErrorResponseBody index_internal_error_response_body result type (default view)
+type BudgetsIndexInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsIndexTooManyRequestsResponseBody index_too_many_requests_response_body result type (default view)
+type BudgetsIndexTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsIndexUnauthorizedResponseBody index_unauthorized_response_body result type (default view)
+type BudgetsIndexUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsReportBadGatewayResponseBody report_bad_gateway_response_body result type (default view)
+type BudgetsReportBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsReportBadRequestResponseBody report_bad_request_response_body result type (default view)
+type BudgetsReportBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsReportForbiddenResponseBody report_forbidden_response_body result type (default view)
+type BudgetsReportForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsReportInternalErrorResponseBody report_internal_error_response_body result type (default view)
+type BudgetsReportInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsReportNotFoundResponseBody report_not_found_response_body result type (default view)
+type BudgetsReportNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsReportRequestBody defines model for BudgetsReportRequestBody.
+type BudgetsReportRequestBody struct {
+	// Dimensions The list of supported dimensions by which to report budget spend.
+	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// EndAt Latest timestamp (exclusive) of the spend.
+	// Consists of a year and month in YYYY-MM format.
+	// Will be interpreted as UTC, which is used for period boundaries.
+	// No records will be returned on or after this timestamp.
+	EndAt string `json:"endAt"`
+
+	// IncludeUnbudgeted Include spend that has not been budgeted in the response. If true, an extra `is_budgeted` dimension will be populated on the returned rows.
+	IncludeUnbudgeted *bool `json:"includeUnbudgeted,omitempty"`
+
+	// StartAt Earliest timestamp (inclusive) of the returned spend.
+	// Consists of a year and month in YYYY-MM format.
+	// Will be interpreted as UTC, which is used for period boundaries.
+	StartAt string `json:"startAt"`
+
+	// Summarized Aggregate the rows for multiple year-months into a single row.
+	Summarized *bool `json:"summarized,omitempty"`
+}
+
+// BudgetsReportTooManyRequestsResponseBody report_too_many_requests_response_body result type (default view)
+type BudgetsReportTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsReportUnauthorizedResponseBody report_unauthorized_response_body result type (default view)
+type BudgetsReportUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsShowBadGatewayResponseBody show_bad_gateway_response_body result type (default view)
+type BudgetsShowBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsShowBadRequestResponseBody show_bad_request_response_body result type (default view)
+type BudgetsShowBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsShowForbiddenResponseBody show_forbidden_response_body result type (default view)
+type BudgetsShowForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsShowInternalErrorResponseBody show_internal_error_response_body result type (default view)
+type BudgetsShowInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsShowNotFoundResponseBody show_not_found_response_body result type (default view)
+type BudgetsShowNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsShowResponseBody ShowResponseBody result type (default view)
+type BudgetsShowResponseBody struct {
+	// CreatedAt Timestamp representing when the budget was first created
+	CreatedAt time.Time `json:"createdAt"`
+
+	// Dimensions Dimensions used to break down this budget. Each budget segment will be defined as a unique combination of these dimension values.
+	Dimensions []string `json:"dimensions"`
+
+	// Filter A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+	//
+	// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
+	// An empty filter expression implies all costs are included.
+	//
+	// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
+	// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
+	//
+	// Examples of each filter type:
+	// ```
+	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+	//
+	// {"type":"and", "expressions":[
+	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
+	// ]}
+	//
+	// {"type":"or", "expressions":[
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Green"}
+	// ]}
+	//
+	// {"type":"not", "expression": {
+	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
+	// }}
+	// ```
+	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	Filter *BudgetFilterResponseBody `json:"filter,omitempty"`
+
+	// Id ID of the budget
+	Id string `json:"id"`
+
+	// Metric The cost metric used for the budget
+	Metric BudgetsShowResponseBodyMetric `json:"metric"`
+
+	// Name A descriptive name to uniquely identify the budget
+	Name string `json:"name"`
+
+	// Segments An array of budget segments, like rows in a spreadsheet. Each segment describes the budget amounts and forecast amounts for a particular combination of dimension values. A budget can define up to 2,000 segments.
+	Segments []BudgetSegmentResponseBody `json:"segments"`
+
+	// UpdatedAt Timestamp representing when the budget was most recently updated
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// YearMonths An array of year-month strings like `"2023-01"`, defining the time period covered by the budget.
+	YearMonths []string `json:"yearMonths"`
+}
+
+// BudgetsShowResponseBodyMetric The cost metric used for the budget
+type BudgetsShowResponseBodyMetric string
+
+// BudgetsShowTooManyRequestsResponseBody show_too_many_requests_response_body result type (default view)
+type BudgetsShowTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsShowUnauthorizedResponseBody show_unauthorized_response_body result type (default view)
+type BudgetsShowUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsUpdateBadGatewayResponseBody update_bad_gateway_response_body result type (default view)
+type BudgetsUpdateBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsUpdateBadRequestResponseBody update_bad_request_response_body result type (default view)
+type BudgetsUpdateBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsUpdateConflictResponseBody update_conflict_response_body result type (default view)
+type BudgetsUpdateConflictResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsUpdateForbiddenResponseBody update_forbidden_response_body result type (default view)
+type BudgetsUpdateForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsUpdateInternalErrorResponseBody update_internal_error_response_body result type (default view)
+type BudgetsUpdateInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsUpdateNotFoundResponseBody update_not_found_response_body result type (default view)
+type BudgetsUpdateNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsUpdateRequestBody defines model for BudgetsUpdateRequestBody.
+type BudgetsUpdateRequestBody struct {
+	// Dimensions Dimensions used to break down this budget. Each budget segment will be defined as a unique combination of these dimension values.
+	Dimensions []string `json:"dimensions"`
+
+	// Filter A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+	//
+	// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
+	// An empty filter expression implies all costs are included.
+	//
+	// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
+	// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
+	//
+	// Examples of each filter type:
+	// ```
+	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
+	//
+	// {"type":"and", "expressions":[
+	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
+	// ]}
+	//
+	// {"type":"or", "expressions":[
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"},
+	//   {"type":"equal", "dimension":"rbd_team", "value":"Green"}
+	// ]}
+	//
+	// {"type":"not", "expression": {
+	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
+	// }}
+	// ```
+	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	Filter *BudgetFilterRequestBody `json:"filter,omitempty"`
+
+	// Metric The cost metric used for the budget
+	Metric BudgetsUpdateRequestBodyMetric `json:"metric"`
+
+	// Name A descriptive name to uniquely identify the budget
+	Name string `json:"name"`
+
+	// Segments An array of budget segments, like rows in a spreadsheet. Each segment describes the budget amounts and forecast amounts for a particular combination of dimension values. A budget can define up to 2,000 segments.
+	Segments []BudgetSegmentRequestBody `json:"segments"`
+
+	// YearMonths An array of year-month strings like `"2023-01"`, defining the time period covered by the budget.
+	YearMonths []string `json:"yearMonths"`
+}
+
+// BudgetsUpdateRequestBodyMetric The cost metric used for the budget
+type BudgetsUpdateRequestBodyMetric string
+
+// BudgetsUpdateTooManyRequestsResponseBody update_too_many_requests_response_body result type (default view)
+type BudgetsUpdateTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BudgetsUpdateUnauthorizedResponseBody update_unauthorized_response_body result type (default view)
+type BudgetsUpdateUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// ConditionRequestBody The criteria for the given multipliers to be applied to a cost row.
 // The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
 //
 // Some of the types are primitive conditions, and others like 'and', 'or', and 'not', are used to build complex expressions.
@@ -822,7 +2430,7 @@ type CommitmentReallocationSettings struct {
 //
 // ~~~~
 // The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
-type Condition struct {
+type ConditionRequestBody struct {
 	// BillingCenterId to check whether the cost was allocated to this Billing Center ID. Required for the 'allocated_to_billing_center' type.
 	BillingCenterId *string `json:"billing_center_id,omitempty"`
 
@@ -868,196 +2476,137 @@ type Condition struct {
 	// }}
 	// ~~~~
 	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
-	Expression *Condition `json:"expression,omitempty"`
+	Expression *ConditionRequestBody `json:"expression,omitempty"`
 
 	// Expressions the expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' types.
-	Expressions *[]Condition `json:"expressions,omitempty"`
+	Expressions *[]ConditionRequestBody `json:"expressions,omitempty"`
 
 	// Substring The substring that the dimension must contain. Required for the 'dimension_contains' type.
 	Substring *string `json:"substring,omitempty"`
 
 	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-	Type ConditionType `json:"type"`
+	Type ConditionRequestBodyType `json:"type"`
 
 	// Value The value that the dimension must match. Required for the 'dimension_equals' type.
 	Value *string `json:"value,omitempty"`
 }
 
-// ConditionType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-type ConditionType string
+// ConditionRequestBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type ConditionRequestBodyType string
 
-// CreateRequestBody defines model for CreateRequestBody.
-type CreateRequestBody struct {
-	// Dimensions Dimensions used to break down this budget. Each budget segment will be defined as a unique combination of these dimension values.
-	Dimensions []string `json:"dimensions"`
+// ConditionResponseBody The criteria for the given multipliers to be applied to a cost row.
+// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+//
+// Some of the types are primitive conditions, and others like 'and', 'or', and 'not', are used to build complex expressions.
+//
+// Examples of each condition type:
+// ~~~~
+// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+// ~~~~
+// ~~~~
+// {"type":"allocated_to_billing_center", "billing_center_id":"1efg3457f129810cd12e1297a1de"}
+// ~~~~
+// ~~~~
+// {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+// ~~~~
+// ~~~~
+// {"type":"and", "expressions":[
+//
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+//	{"type":"dimension_equals", "dimension":"service", "value":"EC2"},
+//	{"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+//
+// ]}
+// ~~~~
+// ~~~~
+// {"type":"or", "expressions":[
+//
+//	{"type":"allocated_to_billing_center", "billing_center_id":"1abc3457f129810cd12e1297a0cb"},
+//	{"type":"allocated_to_billing_center", "billing_center_id":"29810cd12e1297a1de1efg3457f1"}
+//
+// ]}
+// ~~~~
+// ~~~~
+//
+//	{"type":"not", "expression": {
+//	  "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+//	}}
+//
+// ~~~~
+// ~~~~
+//
+//	{"type":"not", "expression": {
+//	  "type":"dimension_contains", "dimension":"vendor", "substring":"Azure"
+//	}}
+//
+// ~~~~
+// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+type ConditionResponseBody struct {
+	// BillingCenterId to check whether the cost was allocated to this Billing Center ID. Required for the 'allocated_to_billing_center' type.
+	BillingCenterId *string `json:"billing_center_id,omitempty"`
 
-	// Filter A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
+	// Dimension The dimension to check the value of. Required for the 'dimension_equals' and 'dimension_contains' type.
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression The criteria for the given multipliers to be applied to a cost row.
+	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
 	//
-	// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
-	// An empty filter expression implies all costs are included.
+	// Some of the types are primitive conditions, and others like 'and', 'or', and 'not', are used to build complex expressions.
 	//
-	// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
-	// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
-	//
-	// Examples of each filter type:
-	// ```
-	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
-	//
+	// Examples of each condition type:
+	// ~~~~
+	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+	// ~~~~
+	// ~~~~
+	// {"type":"allocated_to_billing_center", "billing_center_id":"1efg3457f129810cd12e1297a1de"}
+	// ~~~~
+	// ~~~~
+	// {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+	// ~~~~
+	// ~~~~
 	// {"type":"and", "expressions":[
-	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
-	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"},
+	//   {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
 	// ]}
-	//
+	// ~~~~
+	// ~~~~
 	// {"type":"or", "expressions":[
-	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"},
-	//   {"type":"equal", "dimension":"rbd_team", "value":"Green"}
+	//   {"type":"allocated_to_billing_center", "billing_center_id":"1abc3457f129810cd12e1297a0cb"},
+	//   {"type":"allocated_to_billing_center", "billing_center_id":"29810cd12e1297a1de1efg3457f1"}
 	// ]}
-	//
+	// ~~~~
+	// ~~~~
 	// {"type":"not", "expression": {
-	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
+	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
 	// }}
-	// ```
-	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
-	Filter *BudgetFilter `json:"filter,omitempty"`
+	// ~~~~
+	// ~~~~
+	// {"type":"not", "expression": {
+	//   "type":"dimension_contains", "dimension":"vendor", "substring":"Azure"
+	// }}
+	// ~~~~
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+	Expression *ConditionResponseBody `json:"expression,omitempty"`
 
-	// Metric The cost metric used for the budget
-	Metric CreateRequestBodyMetric `json:"metric"`
+	// Expressions the expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' types.
+	Expressions *[]ConditionResponseBody `json:"expressions,omitempty"`
 
-	// Name A descriptive name to uniquely identify the budget
-	Name string `json:"name"`
+	// Substring The substring that the dimension must contain. Required for the 'dimension_contains' type.
+	Substring *string `json:"substring,omitempty"`
 
-	// Segments An array of budget segments, like rows in a spreadsheet. Each segment describes the budget amounts and forecast amounts for a particular combination of dimension values. A budget can define up to 2,000 segments.
-	Segments []BudgetSegment `json:"segments"`
+	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+	Type ConditionResponseBodyType `json:"type"`
 
-	// YearMonths An array of year-month strings like `"2023-01"`, defining the time period covered by the budget.
-	YearMonths []string `json:"yearMonths"`
+	// Value The value that the dimension must match. Required for the 'dimension_equals' type.
+	Value *string `json:"value,omitempty"`
 }
 
-// CreateRequestBodyMetric The cost metric used for the budget
-type CreateRequestBodyMetric string
+// ConditionResponseBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type ConditionResponseBodyType string
 
-// CreateRequestBody2 defines model for CreateRequestBody2.
-type CreateRequestBody2 struct {
-	// Name Name to be displayed in the UI.
-	Name string `json:"name"`
-
-	// TagKey Tag key (the part of the tag before the "=" character).
-	TagKey string `json:"tag_key"`
-}
-
-// CreateRequestBody3 defines model for CreateRequestBody3.
-type CreateRequestBody3 struct {
-	// Name Name of the custom dimension to be displayed in the UI.
-	Name string `json:"name"`
-
-	// Tags Custom Dimension tags associated with given display name
-	Tags []CustomDimensionTag `json:"tags"`
-}
-
-// CreateRequestBody4 defines model for CreateRequestBody4.
-type CreateRequestBody4 struct {
-	// Area UI Area
-	Area string `json:"area"`
-
-	// Config A json blob used by the UI
-	Config map[string]interface{} `json:"config"`
-
-	// Name Display name of dashboard
-	Name string `json:"name"`
-
-	// Scope Describes whether this dashboard is scoped to a particular billing center
-	Scope *[]string `json:"scope,omitempty"`
-}
-
-// CreateRequestBody5 defines model for CreateRequestBody5.
-type CreateRequestBody5 struct {
-	// Area UI Area
-	Area string `json:"area"`
-
-	// Config A json blob used by the UI
-	Config map[string]interface{} `json:"config"`
-
-	// Name Display name of dashboard
-	Name string `json:"name"`
-
-	// Scope Describes whether this dashboard is scoped to a particular billing center
-	Scope *[]string `json:"scope,omitempty"`
-
-	// Visibility A flag describing whether an org dashboard is public or default
-	Visibility *CreateRequestBody5Visibility `json:"visibility,omitempty"`
-}
-
-// CreateRequestBody5Visibility A flag describing whether an org dashboard is public or default
-type CreateRequestBody5Visibility string
-
-// CustomDashboardCollection defines model for CustomDashboardCollection.
-type CustomDashboardCollection = []RightscaleBillAnalysisFrontServiceCustomdashboard
-
-// CustomDimensionCollection defines model for CustomDimensionCollection.
-type CustomDimensionCollection = []RightscaleCustomDimensionServiceCustomdimension
-
-// CustomDimensionList defines model for CustomDimensionList.
-type CustomDimensionList struct {
-	// Kind The resource's type
-	Kind   CustomDimensionListKind         `json:"kind"`
-	Values CustomDimensionResultCollection `json:"values"`
-}
-
-// CustomDimensionListKind The resource's type
-type CustomDimensionListKind string
-
-// CustomDimensionResultCollection defines model for CustomDimensionResultCollection.
-type CustomDimensionResultCollection = []FlexeraOptimaCustomDimensionResults
-
-// CustomDimensionTag A CustomDimensionTag contains tag key information
-type CustomDimensionTag struct {
-	// Key Key (the part of the tag before the "=" character).
-	Key string `json:"key"`
-}
-
-// DatedAdjustmentList List of adjustments that would apply as of the given effective date.
-type DatedAdjustmentList struct {
-	// AdjustmentList List of adjustments that would apply as of the given effective date.
-	//  The list may contain up to 5 adjustments.
-	AdjustmentList []Adjustment `json:"adjustment_list"`
-
-	// EffectiveAt Year-month (UTC) the list of adjustments will be effective.
-	EffectiveAt string `json:"effective_at"`
-}
-
-// DatedAdjustmentListResultCollection defines model for DatedAdjustmentListResultCollection.
-type DatedAdjustmentListResultCollection = []RightscaleAdjustmentDefinitionServiceDatedAdjustmentListResult
-
-// Datum defines model for Datum.
-type Datum struct {
-	Annotations *map[string]float64 `json:"annotations,omitempty"`
-	Anomalous   bool                `json:"anomalous"`
-
-	// Date Date of the datum
-	Date  openapi_types.Date `json:"date"`
-	Value float64            `json:"value"`
-}
-
-// DimensionsResult defines model for DimensionsResult.
-type DimensionsResult struct {
-	// Dimensions List of dimensions available
-	Dimensions []DimensionsView `json:"dimensions"`
-}
-
-// DimensionsView defines model for DimensionsView.
-type DimensionsView struct {
-	// Id The id used as an api parameter for the dimension
-	Id string `json:"id"`
-
-	// Name The display name of the dimension
-	Name string `json:"name"`
-
-	// Type The type of the dimension
-	Type string `json:"type"`
-}
-
-// Error defines model for Error.
-type Error struct {
+// CostsAggregatedBadGatewayResponseBody aggregated_bad_gateway_response_body result type (default view)
+type CostsAggregatedBadGatewayResponseBody struct {
 	// Fault Is the error a server-side fault?
 	Fault bool `json:"fault"`
 
@@ -1077,18 +2626,891 @@ type Error struct {
 	Timeout bool `json:"timeout"`
 }
 
-// ExportSelectRequestBody defines model for ExportSelectRequestBody.
-type ExportSelectRequestBody struct {
-	// AdjDimensionGranularity Indicates which druid datasource to query.
-	//  - 'none' means no adjustment dimensions are included in the datasource, so any adjustments will already be aggregated into the final costs.
-	//  - 'org-level' means org-level adjustment dimensions are included in the datasource, so there will be separate rows for raw costs and for any adjustments.
-	AdjDimensionGranularity *ExportSelectRequestBodyAdjDimensionGranularity `json:"adj_dimension_granularity,omitempty"`
+// CostsAggregatedBadRequestResponseBody aggregated_bad_request_response_body result type (default view)
+type CostsAggregatedBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
 
-	// AggregateToRequestedDimensions When true, the export will aggregate (sum) metrics, grouping by only the dimensions explicitly listed in the 'dimensions' parameter, resulting in fewer rows with summed metric values. When false (default), the export returns row-level data without aggregation, preserving the original granularity of the underlying cost data.
-	AggregateToRequestedDimensions *bool `json:"aggregate_to_requested_dimensions,omitempty"`
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
 
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsAggregatedForbiddenResponseBody aggregated_forbidden_response_body result type (default view)
+type CostsAggregatedForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsAggregatedInternalErrorResponseBody aggregated_internal_error_response_body result type (default view)
+type CostsAggregatedInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsAggregatedNotFoundResponseBody aggregated_not_found_response_body result type (default view)
+type CostsAggregatedNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsAggregatedOKResponseBody AggregatedOKResponseBody result type (default view)
+type CostsAggregatedOKResponseBody struct {
+	// Rows Query result rows
+	Rows []RowResponseBody `json:"rows"`
+
+	// RowsTruncated Indicates whether the number of rows returned was limited due to exceeding the maximum allowed result size.
+	RowsTruncated *bool `json:"rowsTruncated,omitempty"`
+}
+
+// CostsAggregatedRequestBody defines model for CostsAggregatedRequestBody.
+type CostsAggregatedRequestBody struct {
 	// BillingCenterIds IDs of BillingCenters to get cost data for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
 	BillingCenterIds []string `json:"billing_center_ids"`
+
+	// Dataset indicates which datasource to query from, if set to billing, it will query from billing data source.
+	Dataset *CostsAggregatedRequestBodyDataset `json:"dataset,omitempty"`
+
+	// Dimensions The list of supported dimensions by which to roll up the costs.
+	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// EndAt Latest timestamp (exclusive) of the costs.
+	// For month granularity: consists of a year and month in YYYY-MM format.
+	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
+	// Will be interpreted as UTC, which is used for period boundaries.
+	// No records will be returned on or after this timestamp.
+	EndAt string `json:"end_at"`
+
+	// Filter Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
+	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+	// Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	//
+	// Examples of each filter type:
+	//
+	// {"type":"equal", "dimension":"vendor", "value":"aws"}
+	//
+	//   {"type":"substring", "dimension":"tag_env", "substring":"dev"}
+	//
+	//   {"type":"and", "expressions":[
+	//     {"type":"equal", "dimension":"vendor", "value":"aws"},
+	//     {"type":"equal", "dimension":"tag_env", "value":"dev"}
+	//   ]}
+	//
+	//   {"type":"or", "expressions":[
+	//     {"type":"substring", "dimension":"tag_env", "substring":"dev"},
+	//     {"type":"substring", "dimension":"tag_env", "substring":"stage"}
+	//   ]}
+	//
+	//   {"type":"not", "expression": {
+	//     "type":"equal", "dimension":"vendor", "substring":"aws"
+	//   }}
+	Filter *FilterV1RequestBody `json:"filter,omitempty"`
+
+	// Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
+	// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
+	Granularity *CostsAggregatedRequestBodyGranularity `json:"granularity,omitempty"`
+
+	// Limit Maximum number of records to return. If this limit does not allow all rows to be returned, rowsTruncated:true will be added to the response to indicate the result is incomplete.
+	Limit *int64 `json:"limit,omitempty"`
+
+	// Metrics Metrics to return.
+	// When metric 'usage_amount' is requested, dimension 'usage_unit' must be requested
+	// in the dimensions parameter.
+	Metrics []string `json:"metrics"`
+
+	// PeriodType Determines which date column to use for filtering.
+	//  - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
+	//  - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
+	//
+	// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
+	PeriodType *CostsAggregatedRequestBodyPeriodType `json:"period_type,omitempty"`
+
+	// StartAt Earliest timestamp (inclusive) of the returned costs.
+	// For month granularity: consists of a year and month in YYYY-MM format.
+	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
+	// Will be interpreted as UTC, which is used for period boundaries.
+	StartAt string `json:"start_at"`
+
+	// Summarized Combines the query results from the day/month buckets into a single bucket.
+	Summarized *bool `json:"summarized,omitempty"`
+}
+
+// CostsAggregatedRequestBodyDataset indicates which datasource to query from, if set to billing, it will query from billing data source.
+type CostsAggregatedRequestBodyDataset string
+
+// CostsAggregatedRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
+// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
+type CostsAggregatedRequestBodyGranularity string
+
+// CostsAggregatedRequestBodyPeriodType Determines which date column to use for filtering.
+//   - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
+//   - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
+//
+// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
+type CostsAggregatedRequestBodyPeriodType string
+
+// CostsAggregatedTooManyRequestsResponseBody aggregated_too_many_requests_response_body result type (default view)
+type CostsAggregatedTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsAggregatedUnauthorizedResponseBody aggregated_unauthorized_response_body result type (default view)
+type CostsAggregatedUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsDimensionsAcceptedResponseBody DimensionsAcceptedResponseBody result type (default view)
+type CostsDimensionsAcceptedResponseBody struct {
+	// Dimensions List of dimensions available
+	Dimensions []DimensionsViewResponseBody `json:"dimensions"`
+}
+
+// CostsDimensionsBadGatewayResponseBody dimensions_bad_gateway_response_body result type (default view)
+type CostsDimensionsBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsDimensionsBadRequestResponseBody dimensions_bad_request_response_body result type (default view)
+type CostsDimensionsBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsDimensionsForbiddenResponseBody dimensions_forbidden_response_body result type (default view)
+type CostsDimensionsForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsDimensionsInternalErrorResponseBody dimensions_internal_error_response_body result type (default view)
+type CostsDimensionsInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsDimensionsOKResponseBody DimensionsOKResponseBody result type (default view)
+type CostsDimensionsOKResponseBody struct {
+	// Dimensions List of dimensions available
+	Dimensions []DimensionsViewResponseBody `json:"dimensions"`
+}
+
+// CostsDimensionsTooManyRequestsResponseBody dimensions_too_many_requests_response_body result type (default view)
+type CostsDimensionsTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsDimensionsUnauthorizedResponseBody dimensions_unauthorized_response_body result type (default view)
+type CostsDimensionsUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsExportSelectAcceptedResponseBody Export initiated. Use the returned exportId to poll for status.
+type CostsExportSelectAcceptedResponseBody struct {
+	// ExportId The ID of the initiated export
+	ExportId string `json:"exportId"`
+}
+
+// CostsExportSelectBadGatewayResponseBody bad_gateway result type (default view)
+type CostsExportSelectBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsExportSelectBadRequestResponseBody bad_request result type (default view)
+type CostsExportSelectBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsExportSelectForbiddenResponseBody forbidden result type (default view)
+type CostsExportSelectForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsExportSelectInternalErrorResponseBody internal_error result type (default view)
+type CostsExportSelectInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsExportSelectRequestBody Request body for initiating a cost select export
+type CostsExportSelectRequestBody struct {
+	// AdjDimensionGranularity Indicates which druid datasource to query. 'none' means no adjustment dimensions; 'org-level' means org-level adjustment dimensions are included.
+	AdjDimensionGranularity *CostsExportSelectRequestBodyAdjDimensionGranularity `json:"adj_dimension_granularity,omitempty"`
+
+	// AggregateToRequestedDimensions When true, aggregates (sums) metrics grouped by only the dimensions listed in 'dimensions'.
+	AggregateToRequestedDimensions *bool `json:"aggregate_to_requested_dimensions,omitempty"`
+
+	// BillingCenterIds IDs of BillingCenters to get cost data for.
+	BillingCenterIds []string `json:"billing_center_ids"`
+
+	// Dimensions The list of supported dimensions to return.
+	Dimensions []string `json:"dimensions"`
+
+	// EndAt Latest timestamp (exclusive) of the costs. YYYY-MM for month granularity, YYYY-MM-DD for day.
+	EndAt string `json:"end_at"`
+
+	// Filter Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
+	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
+	// Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
+	//
+	// Examples of each filter type:
+	//
+	// {"type":"equal", "dimension":"vendor", "value":"aws"}
+	//
+	//   {"type":"substring", "dimension":"tag_env", "substring":"dev"}
+	//
+	//   {"type":"and", "expressions":[
+	//     {"type":"equal", "dimension":"vendor", "value":"aws"},
+	//     {"type":"equal", "dimension":"tag_env", "value":"dev"}
+	//   ]}
+	//
+	//   {"type":"or", "expressions":[
+	//     {"type":"substring", "dimension":"tag_env", "substring":"dev"},
+	//     {"type":"substring", "dimension":"tag_env", "substring":"stage"}
+	//   ]}
+	//
+	//   {"type":"not", "expression": {
+	//     "type":"equal", "dimension":"vendor", "substring":"aws"
+	//   }}
+	Filter *FilterV1RequestBody `json:"filter,omitempty"`
+
+	// Granularity Indicates which data source to query. 'month' or 'day'.
+	Granularity *CostsExportSelectRequestBodyGranularity `json:"granularity,omitempty"`
+
+	// Metrics Metrics to return.
+	Metrics []string `json:"metrics"`
+
+	// StartAt Earliest timestamp (inclusive) of the returned costs. YYYY-MM for month granularity, YYYY-MM-DD for day.
+	StartAt string `json:"start_at"`
+}
+
+// CostsExportSelectRequestBodyAdjDimensionGranularity Indicates which druid datasource to query. 'none' means no adjustment dimensions; 'org-level' means org-level adjustment dimensions are included.
+type CostsExportSelectRequestBodyAdjDimensionGranularity string
+
+// CostsExportSelectRequestBodyGranularity Indicates which data source to query. 'month' or 'day'.
+type CostsExportSelectRequestBodyGranularity string
+
+// CostsExportSelectStatusBadGatewayResponseBody bad_gateway result type (default view)
+type CostsExportSelectStatusBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsExportSelectStatusBadRequestResponseBody bad_request result type (default view)
+type CostsExportSelectStatusBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsExportSelectStatusForbiddenResponseBody forbidden result type (default view)
+type CostsExportSelectStatusForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsExportSelectStatusInternalErrorResponseBody internal_error result type (default view)
+type CostsExportSelectStatusInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsExportSelectStatusResponseBody Status and download URLs of a cost select export
+type CostsExportSelectStatusResponseBody struct {
+	// Status The status of the export operation
+	Status CostsExportSelectStatusResponseBodyStatus `json:"status"`
+
+	// Urls URLs to download the export results, keyed by time period
+	Urls *map[string]string `json:"urls,omitempty"`
+}
+
+// CostsExportSelectStatusResponseBodyStatus The status of the export operation
+type CostsExportSelectStatusResponseBodyStatus string
+
+// CostsExportSelectStatusUnauthorizedResponseBody unauthorized result type (default view)
+type CostsExportSelectStatusUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsExportSelectUnauthorizedResponseBody unauthorized result type (default view)
+type CostsExportSelectUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsMetricsAcceptedResponseBody MetricsAcceptedResponseBody result type (default view)
+type CostsMetricsAcceptedResponseBody struct {
+	// Metrics List of metrics available
+	Metrics []MetricsViewResponseBody `json:"metrics"`
+}
+
+// CostsMetricsBadGatewayResponseBody metrics_bad_gateway_response_body result type (default view)
+type CostsMetricsBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsMetricsBadRequestResponseBody metrics_bad_request_response_body result type (default view)
+type CostsMetricsBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsMetricsForbiddenResponseBody metrics_forbidden_response_body result type (default view)
+type CostsMetricsForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsMetricsInternalErrorResponseBody metrics_internal_error_response_body result type (default view)
+type CostsMetricsInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsMetricsOKResponseBody MetricsOKResponseBody result type (default view)
+type CostsMetricsOKResponseBody struct {
+	// Metrics List of metrics available
+	Metrics []MetricsViewResponseBody `json:"metrics"`
+}
+
+// CostsMetricsTooManyRequestsResponseBody metrics_too_many_requests_response_body result type (default view)
+type CostsMetricsTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsMetricsUnauthorizedResponseBody metrics_unauthorized_response_body result type (default view)
+type CostsMetricsUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsSelectBadGatewayResponseBody select_bad_gateway_response_body result type (default view)
+type CostsSelectBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsSelectBadRequestResponseBody select_bad_request_response_body result type (default view)
+type CostsSelectBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsSelectForbiddenResponseBody select_forbidden_response_body result type (default view)
+type CostsSelectForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsSelectInternalErrorResponseBody select_internal_error_response_body result type (default view)
+type CostsSelectInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CostsSelectOKResponseBody SelectOKResponseBody result type (default view)
+type CostsSelectOKResponseBody struct {
+	// Rows Query result rows
+	Rows []RowResponseBody `json:"rows"`
+
+	// RowsTruncated Indicates whether the number of rows returned was limited due to exceeding the maximum allowed result size.
+	RowsTruncated *bool `json:"rowsTruncated,omitempty"`
+}
+
+// CostsSelectRequestBody defines model for CostsSelectRequestBody.
+type CostsSelectRequestBody struct {
+	// BillingCenterIds IDs of BillingCenters to get cost data for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
+	BillingCenterIds []string `json:"billing_center_ids"`
+
+	// Dataset indicates which datasource to query from, if set to billing, it will query from billing data source.
+	Dataset *CostsSelectRequestBodyDataset `json:"dataset,omitempty"`
 
 	// Dimensions The list of supported dimensions to return.
 	Dimensions []string `json:"dimensions"`
@@ -1124,16 +3546,26 @@ type ExportSelectRequestBody struct {
 	//   {"type":"not", "expression": {
 	//     "type":"equal", "dimension":"vendor", "substring":"aws"
 	//   }}
-	Filter *FilterV1 `json:"filter,omitempty"`
+	Filter *FilterV1RequestBody `json:"filter,omitempty"`
 
 	// Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
 	// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
-	Granularity *ExportSelectRequestBodyGranularity `json:"granularity,omitempty"`
+	Granularity *CostsSelectRequestBodyGranularity `json:"granularity,omitempty"`
+
+	// Limit limit number of records to return (max=100000).
+	Limit int64 `json:"limit"`
 
 	// Metrics Metrics to return.
 	// When metric 'usage_amount' is requested, dimension 'usage_unit' must be requested
 	// in the dimensions parameter.
 	Metrics []string `json:"metrics"`
+
+	// PeriodType Determines which date column to use for filtering.
+	//  - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
+	//  - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
+	//
+	// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
+	PeriodType *CostsSelectRequestBodyPeriodType `json:"period_type,omitempty"`
 
 	// StartAt Earliest timestamp (inclusive) of the returned costs.
 	// For month granularity: consists of a year and month in YYYY-MM format.
@@ -1142,34 +3574,384 @@ type ExportSelectRequestBody struct {
 	StartAt string `json:"start_at"`
 }
 
-// ExportSelectRequestBodyAdjDimensionGranularity Indicates which druid datasource to query.
-//   - 'none' means no adjustment dimensions are included in the datasource, so any adjustments will already be aggregated into the final costs.
-//   - 'org-level' means org-level adjustment dimensions are included in the datasource, so there will be separate rows for raw costs and for any adjustments.
-type ExportSelectRequestBodyAdjDimensionGranularity string
+// CostsSelectRequestBodyDataset indicates which datasource to query from, if set to billing, it will query from billing data source.
+type CostsSelectRequestBodyDataset string
 
-// ExportSelectRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
+// CostsSelectRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
 // Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
-type ExportSelectRequestBodyGranularity string
+type CostsSelectRequestBodyGranularity string
 
-// ExportSelectResult defines model for ExportSelectResult.
-type ExportSelectResult struct {
-	// ExportId The ID of the initiated export
-	ExportId string `json:"exportId"`
+// CostsSelectRequestBodyPeriodType Determines which date column to use for filtering.
+//   - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
+//   - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
+//
+// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
+type CostsSelectRequestBodyPeriodType string
+
+// CostsSelectTooManyRequestsResponseBody select_too_many_requests_response_body result type (default view)
+type CostsSelectTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
 }
 
-// ExportSelectStatusResult defines model for ExportSelectStatusResult.
-type ExportSelectStatusResult struct {
-	// Status The status of the export operation
-	Status ExportSelectStatusResultStatus `json:"status"`
+// CostsSelectUnauthorizedResponseBody select_unauthorized_response_body result type (default view)
+type CostsSelectUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
 
-	// Urls URLs to download the export results, keyed by time period
-	Urls *map[string]string `json:"urls,omitempty"`
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
 }
 
-// ExportSelectStatusResultStatus The status of the export operation
-type ExportSelectStatusResultStatus string
+// CurrencySettingShowBadGatewayResponseBody show_bad_gateway_response_body result type (default view)
+type CurrencySettingShowBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
 
-// FilterV1 Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CurrencySettingShowBadRequestResponseBody show_bad_request_response_body result type (default view)
+type CurrencySettingShowBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CurrencySettingShowForbiddenResponseBody show_forbidden_response_body result type (default view)
+type CurrencySettingShowForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CurrencySettingShowInternalErrorResponseBody show_internal_error_response_body result type (default view)
+type CurrencySettingShowInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CurrencySettingShowResponseBody ShowResponseBody result type (default view)
+type CurrencySettingShowResponseBody struct {
+	// Id Setting ID
+	Id   CurrencySettingShowResponseBodyId   `json:"id"`
+	Kind CurrencySettingShowResponseBodyKind `json:"kind"`
+
+	// Value Setting value
+	Value string `json:"value"`
+}
+
+// CurrencySettingShowResponseBodyId Setting ID
+type CurrencySettingShowResponseBodyId string
+
+// CurrencySettingShowResponseBodyKind defines model for CurrencySettingShowResponseBody.Kind.
+type CurrencySettingShowResponseBodyKind string
+
+// CurrencySettingShowTooManyRequestsResponseBody show_too_many_requests_response_body result type (default view)
+type CurrencySettingShowTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CurrencySettingShowUnauthorizedResponseBody show_unauthorized_response_body result type (default view)
+type CurrencySettingShowUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CurrencySettingUpdateBadGatewayResponseBody update_bad_gateway_response_body result type (default view)
+type CurrencySettingUpdateBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CurrencySettingUpdateBadRequestResponseBody update_bad_request_response_body result type (default view)
+type CurrencySettingUpdateBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CurrencySettingUpdateForbiddenResponseBody update_forbidden_response_body result type (default view)
+type CurrencySettingUpdateForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CurrencySettingUpdateInternalErrorResponseBody update_internal_error_response_body result type (default view)
+type CurrencySettingUpdateInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CurrencySettingUpdateRequestBody defines model for CurrencySettingUpdateRequestBody.
+type CurrencySettingUpdateRequestBody struct {
+	// Value Setting value
+	Value string `json:"value"`
+}
+
+// CurrencySettingUpdateTooManyRequestsResponseBody update_too_many_requests_response_body result type (default view)
+type CurrencySettingUpdateTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// CurrencySettingUpdateUnauthorizedResponseBody update_unauthorized_response_body result type (default view)
+type CurrencySettingUpdateUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// DatedAdjustmentListRequestBody List of adjustments that would apply as of the given effective date.
+type DatedAdjustmentListRequestBody struct {
+	// AdjustmentList List of adjustments that would apply as of the given effective date.
+	//  The list may contain up to 5 adjustments.
+	AdjustmentList []AdjustmentRequestBody `json:"adjustment_list"`
+
+	// EffectiveAt Year-month (UTC) the list of adjustments will be effective.
+	EffectiveAt string `json:"effective_at"`
+}
+
+// DatedAdjustmentListResultResponseBody Represents a list of adjustments to be applied to bill costs as of the effective date. (default view)
+type DatedAdjustmentListResultResponseBody struct {
+	// AdjustmentList List of adjustments that contains the multipliers and rules for each adjustment to be applied on the bills.
+	AdjustmentList []AdjustmentResponseBody `json:"adjustment_list"`
+
+	// EffectiveAt Year-month (UTC) the list of adjustments will be effective.
+	EffectiveAt string `json:"effective_at"`
+
+	// UpdatedAt the timestamp when the adjustment list was last updated
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// DatedAdjustmentListResultResponseBodyCollection DatedAdjustmentListResultCollectionResponseBody is the result type for an array of DatedAdjustmentListResultResponseBody (default view)
+type DatedAdjustmentListResultResponseBodyCollection = []DatedAdjustmentListResultResponseBody
+
+// DatumResponseBody defines model for DatumResponseBody.
+type DatumResponseBody struct {
+	Annotations *map[string]float64 `json:"annotations,omitempty"`
+	Anomalous   bool                `json:"anomalous"`
+
+	// Date Date of the datum
+	Date  openapi_types.Date `json:"date"`
+	Value float64            `json:"value"`
+}
+
+// DimensionsViewResponseBody defines model for DimensionsViewResponseBody.
+type DimensionsViewResponseBody struct {
+	// Id The id used as an api parameter for the dimension
+	Id string `json:"id"`
+
+	// Name The display name of the dimension
+	Name string `json:"name"`
+
+	// Type The type of the dimension
+	Type string `json:"type"`
+}
+
+// FilterV1RequestBody Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
 // The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
 // Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
 // The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
@@ -1193,7 +3975,7 @@ type ExportSelectStatusResultStatus string
 //	{"type":"not", "expression": {
 //	  "type":"equal", "dimension":"vendor", "substring":"aws"
 //	}}
-type FilterV1 struct {
+type FilterV1RequestBody struct {
 	// Dimension name of a dimension to examine. Required for the 'equal' and 'substring' filter types. Note the `billing_center_id` dimension is not supported at this time.
 	Dimension *string `json:"dimension,omitempty"`
 
@@ -1221,106 +4003,26 @@ type FilterV1 struct {
 	//   {"type":"not", "expression": {
 	//     "type":"equal", "dimension":"vendor", "substring":"aws"
 	//   }}
-	Expression *FilterV1 `json:"expression,omitempty"`
+	Expression *FilterV1RequestBody `json:"expression,omitempty"`
 
 	// Expressions the filter expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' filter types.
-	Expressions *[]FilterV1 `json:"expressions,omitempty"`
+	Expressions *[]FilterV1RequestBody `json:"expressions,omitempty"`
 
 	// Substring a substring that the dimension value must contain. Required for the 'substring' filter type.
 	Substring *string `json:"substring,omitempty"`
 
 	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-	Type FilterV1Type `json:"type"`
+	Type FilterV1RequestBodyType `json:"type"`
 
 	// Value a value that the dimension must match. Required for the 'equal' filter type.
 	Value *string `json:"value,omitempty"`
 }
 
-// FilterV1Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-type FilterV1Type string
+// FilterV1RequestBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type FilterV1RequestBodyType string
 
-// FlexeraOptimaBudget Resource for budget information
-type FlexeraOptimaBudget struct {
-	// CreatedAt Timestamp representing when the budget was first created
-	CreatedAt time.Time `json:"createdAt"`
-
-	// Dimensions Dimensions used to break down this budget. Each budget segment will be defined as a unique combination of these dimension values.
-	Dimensions []string `json:"dimensions"`
-
-	// Filter A filter expression defines the scope of the budget, in terms of specific dimension values. This is useful when generating a budget report, as it allows you to exclude certain line items from the report, rather than have them reported as 'unbudgeted'. For example, you might define the budget filter to only include AWS costs, and exclude all Tax line items from the budget.
-	//
-	// The filter behaves similar to a WHERE clause in SQL, describing which rows should be included in the budget.
-	// An empty filter expression implies all costs are included.
-	//
-	// To define a filter, the 'type' field is required, and then other field(s) will be required depending on that selected type.
-	// The primary filter type is 'equal', checking the value of one dimension. And then the other types, 'and', 'or', and 'not', are used to build more complex expressions.
-	//
-	// Examples of each filter type:
-	// ```
-	// {"type":"equal", "dimension":"vendor", "value":"AWS"}
-	//
-	// {"type":"and", "expressions":[
-	//   {"type":"equal", "dimension":"vendor", "value":"AWS"},
-	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"}
-	// ]}
-	//
-	// {"type":"or", "expressions":[
-	//   {"type":"equal", "dimension":"rbd_team", "value":"Blue"},
-	//   {"type":"equal", "dimension":"rbd_team", "value":"Green"}
-	// ]}
-	//
-	// {"type":"not", "expression": {
-	//   "type":"equal", "dimension":"vendor", "substring":"AWS"
-	// }}
-	// ```
-	// Note: the docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
-	Filter *BudgetFilter `json:"filter,omitempty"`
-
-	// Id ID of the budget
-	Id string `json:"id"`
-
-	// Metric The cost metric used for the budget
-	Metric FlexeraOptimaBudgetMetric `json:"metric"`
-
-	// Name A descriptive name to uniquely identify the budget
-	Name string `json:"name"`
-
-	// Segments An array of budget segments, like rows in a spreadsheet. Each segment describes the budget amounts and forecast amounts for a particular combination of dimension values. A budget can define up to 2,000 segments.
-	Segments []BudgetSegment `json:"segments"`
-
-	// UpdatedAt Timestamp representing when the budget was most recently updated
-	UpdatedAt time.Time `json:"updatedAt"`
-
-	// YearMonths An array of year-month strings like `"2023-01"`, defining the time period covered by the budget.
-	YearMonths []string `json:"yearMonths"`
-}
-
-// FlexeraOptimaBudgetMetric The cost metric used for the budget
-type FlexeraOptimaBudgetMetric string
-
-// FlexeraOptimaCustomDimensionResults Information about a custom dimension
-type FlexeraOptimaCustomDimensionResults struct {
-	// CreatedAt Creation timestamp
-	CreatedAt time.Time `json:"createdAt"`
-
-	// Id Identifier of the custom dimension.
-	Id string `json:"id"`
-
-	// Kind kind of data
-	Kind string `json:"kind"`
-
-	// Name Display name of a custom dimension
-	Name string `json:"name"`
-
-	// Tags Custom Dimension tags associated with given display name
-	Tags []CustomDimensionTag `json:"tags"`
-
-	// UpdatedAt Updated at timestamp
-	UpdatedAt time.Time `json:"updatedAt"`
-}
-
-// ForecastSegment defines model for ForecastSegment.
-type ForecastSegment struct {
+// ForecastSegmentResponseBody defines model for ForecastSegmentResponseBody.
+type ForecastSegmentResponseBody struct {
 	// ActualAmounts The actual amounts for this segment.
 	ActualAmounts *[]float64 `json:"actualAmounts,omitempty"`
 
@@ -1331,215 +4033,113 @@ type ForecastSegment struct {
 	ForecastAmounts *[]float64 `json:"forecastAmounts,omitempty"`
 }
 
-// IndexRequestBody defines model for IndexRequestBody.
-type IndexRequestBody struct {
-	// EndAt Latest timestamp (exclusive) of the anomaly. Consists of a year, month, and day in YYYY-MM-DD format. Will be interpreted as UTC, which is used for period boundaries. No records will be returned on or after this timestamp.
-	EndAt string `json:"endAt"`
+// ForecastsReportBadGatewayResponseBody report_bad_gateway_response_body result type (default view)
+type ForecastsReportBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
 
-	// Filter Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
-	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
-	// Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
-	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
-	//
-	// Examples of each filter type:
-	//
-	// {"type":"equal", "dimension":"vendor", "value":"aws"}
-	//
-	//   {"type":"substring", "dimension":"tag_env", "substring":"dev"}
-	//
-	//   {"type":"and", "expressions":[
-	//     {"type":"equal", "dimension":"vendor", "value":"aws"},
-	//     {"type":"equal", "dimension":"tag_env", "value":"dev"}
-	//   ]}
-	//
-	//   {"type":"or", "expressions":[
-	//     {"type":"substring", "dimension":"tag_env", "substring":"dev"},
-	//     {"type":"substring", "dimension":"tag_env", "substring":"stage"}
-	//   ]}
-	//
-	//   {"type":"not", "expression": {
-	//     "type":"equal", "dimension":"vendor", "substring":"aws"
-	//   }}
-	Filter *FilterV1 `json:"filter,omitempty"`
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
 
-	// Limit Pagination limit
-	Limit *int64 `json:"limit,omitempty"`
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
 
-	// Metric The metric used for the anomaly
-	Metric IndexRequestBodyMetric `json:"metric"`
-
-	// Offset Pagination offset
-	Offset *int64 `json:"offset,omitempty"`
-
-	// SortColumn Sort column
-	SortColumn *string `json:"sortColumn,omitempty"`
-
-	// SortOrder Sort order
-	SortOrder *IndexRequestBodySortOrder `json:"sortOrder,omitempty"`
-
-	// StartAt Earliest timestamp (inclusive) of the returned anomaly. Consists of a year, month, and day in YYYY-MM-DD format. Will be interpreted as UTC, which is used for period boundaries.
-	StartAt string `json:"startAt"`
-}
-
-// IndexRequestBodyMetric The metric used for the anomaly
-type IndexRequestBodyMetric string
-
-// IndexRequestBodySortOrder Sort order
-type IndexRequestBodySortOrder string
-
-// LockingSettings Configuration settings for automatic bill locking
-type LockingSettings struct {
-	// Options Configuration options for the selected locking type
-	Options *struct {
-		// Date Date value for locking (format depends on type)
-		Date string `json:"date"`
-	} `json:"options,omitempty"`
-
-	// Type Locking type strategy
-	Type LockingSettingsType `json:"type"`
-}
-
-// LockingSettingsType Locking type strategy
-type LockingSettingsType string
-
-// MetricsResult defines model for MetricsResult.
-type MetricsResult struct {
-	// Metrics List of metrics available
-	Metrics []DimensionsView `json:"metrics"`
-}
-
-// Pagination Pagination information
-type Pagination struct {
-	// Limit Number of anomaly per page
-	Limit int64 `json:"limit"`
-
-	// Offset Pagination offset
-	Offset int64 `json:"offset"`
-
-	// Total Total number of anomalies
-	Total int64 `json:"total"`
-}
-
-// RbdCreateRequestBody defines model for RbdCreateRequestBody.
-type RbdCreateRequestBody struct {
-	// DatedRules Rules for how the dimension will be populated, as of a given date. The rules list can change over time, as a fresh list can be defined to take effect in a given month.
-	DatedRules []RuleBasedDimensionDatedRulesPayload `json:"dated_rules"`
-
-	// Name Display name for the dimension in the UI
+	// Name Name is the name of this class of errors.
 	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
 }
 
-// RbdUpdateRequestBody defines model for RbdUpdateRequestBody.
-type RbdUpdateRequestBody struct {
-	// DatedRules Rules for how the dimension will be populated, as of a given date. The rules list can change over time, as a fresh list can be defined to take effect in a given month.
-	DatedRules *[]RuleBasedDimensionDatedRulesPayload `json:"dated_rules,omitempty"`
+// ForecastsReportBadRequestResponseBody report_bad_request_response_body result type (default view)
+type ForecastsReportBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
 
-	// Name Display name for the dimension in the UI
-	Name *string `json:"name,omitempty"`
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
 }
 
-// ReportRequestBody defines model for ReportRequestBody.
-type ReportRequestBody struct {
-	// BillingCenterIds IDs of BillingCenters to get data for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
-	BillingCenterIds []string `json:"billingCenterIds"`
+// ForecastsReportForbiddenResponseBody report_forbidden_response_body result type (default view)
+type ForecastsReportForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
 
-	// DetectionMethod Specifies the detection method to use: either Bollinger Band or AI Model.
-	DetectionMethod *ReportRequestBodyDetectionMethod `json:"detectionMethod,omitempty"`
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
 
-	// Dimensions The list of supported dimensions by which to roll up the costs.
-	Dimensions *[]string `json:"dimensions,omitempty"`
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
 
-	// EndAt Latest timestamp (exclusive) of the costs.
-	// For month granularity: consists of a year and month in YYYY-MM format.
-	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
-	// Will be interpreted as UTC, which is used for period boundaries.
-	// No records will be returned on or after this timestamp.
-	EndAt string `json:"endAt"`
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
 
-	// Filter Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
-	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
-	// Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
-	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
-	//
-	// Examples of each filter type:
-	//
-	// {"type":"equal", "dimension":"vendor", "value":"aws"}
-	//
-	//   {"type":"substring", "dimension":"tag_env", "substring":"dev"}
-	//
-	//   {"type":"and", "expressions":[
-	//     {"type":"equal", "dimension":"vendor", "value":"aws"},
-	//     {"type":"equal", "dimension":"tag_env", "value":"dev"}
-	//   ]}
-	//
-	//   {"type":"or", "expressions":[
-	//     {"type":"substring", "dimension":"tag_env", "substring":"dev"},
-	//     {"type":"substring", "dimension":"tag_env", "substring":"stage"}
-	//   ]}
-	//
-	//   {"type":"not", "expression": {
-	//     "type":"equal", "dimension":"vendor", "substring":"aws"
-	//   }}
-	Filter *FilterV1 `json:"filter,omitempty"`
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
 
-	// Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
-	// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
-	Granularity *ReportRequestBodyGranularity `json:"granularity,omitempty"`
-
-	// Limit limit number of records to return.
-	Limit *int `json:"limit,omitempty"`
-
-	// Metric Metric to perform anomaly detection on. Currently only cost metrics supported.
-	Metric ReportRequestBodyMetric `json:"metric"`
-
-	// StandardDeviations number of standard deviations to use for bollinger band calculations
-	StandardDeviations float64 `json:"standardDeviations"`
-
-	// StartAt Earliest timestamp (inclusive) of the returned costs.
-	// For month granularity: consists of a year and month in YYYY-MM format.
-	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
-	// Will be interpreted as UTC, which is used for period boundaries.
-	StartAt string `json:"startAt"`
-
-	// WindowSize window size to use for bollinger bands
-	WindowSize int64 `json:"windowSize"`
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
 }
 
-// ReportRequestBodyDetectionMethod Specifies the detection method to use: either Bollinger Band or AI Model.
-type ReportRequestBodyDetectionMethod string
+// ForecastsReportInternalErrorResponseBody report_internal_error_response_body result type (default view)
+type ForecastsReportInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
 
-// ReportRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
-// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
-type ReportRequestBodyGranularity string
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
 
-// ReportRequestBodyMetric Metric to perform anomaly detection on. Currently only cost metrics supported.
-type ReportRequestBodyMetric string
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
 
-// ReportRequestBody2 defines model for ReportRequestBody2.
-type ReportRequestBody2 struct {
-	// Dimensions The list of supported dimensions by which to report budget spend.
-	Dimensions *[]string `json:"dimensions,omitempty"`
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
 
-	// EndAt Latest timestamp (exclusive) of the spend.
-	// Consists of a year and month in YYYY-MM format.
-	// Will be interpreted as UTC, which is used for period boundaries.
-	// No records will be returned on or after this timestamp.
-	EndAt string `json:"endAt"`
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
 
-	// IncludeUnbudgeted Include spend that has not been budgeted in the response. If true, an extra `is_budgeted` dimension will be populated on the returned rows.
-	IncludeUnbudgeted *bool `json:"includeUnbudgeted,omitempty"`
-
-	// StartAt Earliest timestamp (inclusive) of the returned spend.
-	// Consists of a year and month in YYYY-MM format.
-	// Will be interpreted as UTC, which is used for period boundaries.
-	StartAt string `json:"startAt"`
-
-	// Summarized Aggregate the rows for multiple year-months into a single row.
-	Summarized *bool `json:"summarized,omitempty"`
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
 }
 
-// ReportRequestBody3 defines model for ReportRequestBody3.
-type ReportRequestBody3 struct {
+// ForecastsReportNotFoundResponseBody report_not_found_response_body result type (default view)
+type ForecastsReportNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// ForecastsReportRequestBody defines model for ForecastsReportRequestBody.
+type ForecastsReportRequestBody struct {
 	// BillingCenterIds IDs of BillingCenters to get data for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
 	BillingCenterIds []string `json:"billingCenterIds"`
 
@@ -1577,17 +4177,17 @@ type ReportRequestBody3 struct {
 	//   {"type":"not", "expression": {
 	//     "type":"equal", "dimension":"vendor", "substring":"aws"
 	//   }}
-	Filter *FilterV1 `json:"filter,omitempty"`
+	Filter *FilterV1RequestBody `json:"filter,omitempty"`
 
 	// Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
 	// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
-	Granularity ReportRequestBody3Granularity `json:"granularity"`
+	Granularity ForecastsReportRequestBodyGranularity `json:"granularity"`
 
 	// LookbackPeriod Number of months to look back for historical data. We use this to get historical data from the cost aggregated API. For example, if the startAt is "2024-01" and the lookBackPeriod is 24 months, then we will fetch historical data from "2022-01" until "2023-12".
 	LookbackPeriod int64 `json:"lookbackPeriod"`
 
 	// Metric Metric to perform anomaly detection on. Currently only cost metrics supported.
-	Metric ReportRequestBody3Metric `json:"metric"`
+	Metric ForecastsReportRequestBodyMetric `json:"metric"`
 
 	// StartAt Earliest timestamp (inclusive) of the returned costs.
 	// For month granularity: consists of a year and month in YYYY-MM format.
@@ -1596,136 +4196,269 @@ type ReportRequestBody3 struct {
 	StartAt string `json:"startAt"`
 }
 
-// ReportRequestBody3Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
+// ForecastsReportRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
 // Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
-type ReportRequestBody3Granularity string
+type ForecastsReportRequestBodyGranularity string
 
-// ReportRequestBody3Metric Metric to perform anomaly detection on. Currently only cost metrics supported.
-type ReportRequestBody3Metric string
+// ForecastsReportRequestBodyMetric Metric to perform anomaly detection on. Currently only cost metrics supported.
+type ForecastsReportRequestBodyMetric string
 
-// ReportResponseBody defines model for ReportResponseBody.
-type ReportResponseBody struct {
-	Values *[]TimeSeriesWithAnomalies `json:"values,omitempty"`
-}
-
-// ReportResponseBody2 defines model for ReportResponseBody2.
-type ReportResponseBody2 struct {
+// ForecastsReportResponseBody defines model for ForecastsReportResponseBody.
+type ForecastsReportResponseBody struct {
 	// Segments The forecasted data for the given dimensions.
-	Segments *[]ForecastSegment `json:"segments,omitempty"`
+	Segments *[]ForecastSegmentResponseBody `json:"segments,omitempty"`
 }
 
-// ReprocessItem Individual bill month item to reprocess
-type ReprocessItem struct {
-	// BillMonth Bill month in YYYYMM format
-	BillMonth string `json:"bill_month"`
+// ForecastsReportUnauthorizedResponseBody report_unauthorized_response_body result type (default view)
+type ForecastsReportUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
 
-	// BillSourceId Unique identifier for the bill source
-	BillSourceId string `json:"bill_source_id"`
-}
-
-// ReprocessRequestBody defines model for ReprocessRequestBody.
-type ReprocessRequestBody struct {
-	// Action Action to perform on the bill months
-	Action ReprocessRequestBodyAction `json:"action"`
-
-	// Items List of bill months to reprocess
-	Items []ReprocessItem `json:"items"`
-}
-
-// ReprocessRequestBodyAction Action to perform on the bill months
-type ReprocessRequestBodyAction string
-
-// ReprocessResponse defines model for ReprocessResponse.
-type ReprocessResponse struct {
-	// Action Action that was performed
-	Action ReprocessResponseAction `json:"action"`
-
-	// Items Results for each bill month item
-	Items []ReprocessResultItem `json:"items"`
-
-	// Status Overall status of the reprocess request
-	Status ReprocessResponseStatus `json:"status"`
-}
-
-// ReprocessResponseAction Action that was performed
-type ReprocessResponseAction string
-
-// ReprocessResponseStatus Overall status of the reprocess request
-type ReprocessResponseStatus string
-
-// ReprocessResultItem Result of reprocessing a single bill month item
-type ReprocessResultItem struct {
-	// BillMonth Bill month in YYYYMM format
-	BillMonth string `json:"bill_month"`
-
-	// BillSourceId Unique identifier for the bill source
-	BillSourceId string `json:"bill_source_id"`
-
-	// Result Result of the reprocess/unlock request for this bill month
-	Result ReprocessResultItemResult `json:"result"`
-
-	// State Current state of the bill month after the action
-	State ReprocessResultItemState `json:"state"`
-}
-
-// ReprocessResultItemResult Result of the reprocess/unlock request for this bill month
-type ReprocessResultItemResult string
-
-// ReprocessResultItemState Current state of the bill month after the action
-type ReprocessResultItemState string
-
-// RightscaleAdjustmentDefinitionServiceDatedAdjustmentListResult Represents a list of adjustments to be applied to bill costs as of the effective date.
-type RightscaleAdjustmentDefinitionServiceDatedAdjustmentListResult struct {
-	// AdjustmentList List of adjustments that contains the multipliers and rules for each adjustment to be applied on the bills.
-	AdjustmentList []Adjustment `json:"adjustment_list"`
-
-	// EffectiveAt Year-month (UTC) the list of adjustments will be effective.
-	EffectiveAt string `json:"effective_at"`
-
-	// UpdatedAt the timestamp when the adjustment list was last updated
-	UpdatedAt time.Time `json:"updated_at"`
-}
-
-// RightscaleBillAnalysisFrontServiceCustomdashboard information about a custom dashboard
-type RightscaleBillAnalysisFrontServiceCustomdashboard struct {
-	// Area UI Area
-	Area string `json:"area"`
-
-	// Config A json blob used by the UI
-	Config openapi_types.File `json:"config"`
-
-	// CreatedAt Creation timestamp
-	CreatedAt time.Time `json:"created_at"`
-
-	// Href href of the dashboard
-	Href string `json:"href"`
-
-	// Id ID of the dashboard
+	// Id ID is a unique identifier for this particular occurrence of the problem.
 	Id string `json:"id"`
 
-	// Kind kind of data
-	Kind string `json:"kind"`
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
 
-	// Name Display name of dashboard
+	// Name Name is the name of this class of errors.
 	Name string `json:"name"`
 
-	// Scope Describes whether this dashboard is scoped to a particular billing center
-	Scope *[]string `json:"scope,omitempty"`
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
 
-	// UpdatedAt Updated at timestamp
-	UpdatedAt time.Time `json:"updated_at"`
-
-	// Visibility visibility settings of the custom dashboard
-	Visibility *RightscaleBillAnalysisFrontServiceCustomdashboardVisibility `json:"visibility,omitempty"`
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
 }
 
-// RightscaleBillAnalysisFrontServiceCustomdashboardVisibility visibility settings of the custom dashboard
-type RightscaleBillAnalysisFrontServiceCustomdashboardVisibility string
+// MetricsViewResponseBody defines model for MetricsViewResponseBody.
+type MetricsViewResponseBody struct {
+	// Id The id used as an api parameter for the metric
+	Id string `json:"id"`
 
-// RightscaleBillAnalysisFrontServiceRulebaseddimension A rule-based dimension that will be populated by the given rules.
-type RightscaleBillAnalysisFrontServiceRulebaseddimension struct {
+	// Name The display name of the metric
+	Name string `json:"name"`
+
+	// Type The type of the metric
+	Type string `json:"type"`
+}
+
+// RowResponseBody defines model for RowResponseBody.
+type RowResponseBody struct {
+	// Dimensions One specific combination of dimension values.
+	Dimensions map[string]string `json:"dimensions"`
+
+	// Metrics Metrics for the associated dimensions.
+	Metrics map[string]float64 `json:"metrics"`
+
+	// Timestamp Timestamp of the data point.
+	Timestamp time.Time `json:"timestamp"`
+}
+
+// RuleBasedDimensionConditionRequestBody A condition may be null, which will match unconditionally.
+//
+// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
+// A simple condition is checking whether a dimension in the cost row equals a certain value:
+// ~~~~
+// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+// ~~~~
+// Others types like 'and', 'or', and 'not', are used to build complex expressions.
+//
+// For example:
+// ~~~~
+// {"type":"and", "expressions":[
+//
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+//	{"type":"dimension_equals", "dimension":"service", "value":"EC2"}
+//
+// ]}
+// ~~~~
+// ~~~~
+// {"type":"or", "expressions":[
+//
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
+//
+// ]}
+// ~~~~
+// ~~~~
+//
+//	{"type":"not", "expression": {
+//	  "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+//	}}
+//
+// ~~~~
+// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+type RuleBasedDimensionConditionRequestBody struct {
+	// CaseInsensitive Specifies whether the condition should perform a case-insensitive match.
+	CaseInsensitive *bool `json:"caseInsensitive,omitempty"`
+
+	// Dimension The dimension to check the value of. Required for the 'dimension_equals' type.
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression A condition may be null, which will match unconditionally.
+	//
+	// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
+	// A simple condition is checking whether a dimension in the cost row equals a certain value:
+	// ~~~~
+	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+	// ~~~~
+	// Others types like 'and', 'or', and 'not', are used to build complex expressions.
+	//
+	// For example:
+	// ~~~~
+	// {"type":"and", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"}
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"or", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"not", "expression": {
+	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+	// }}
+	// ~~~~
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+	Expression *RuleBasedDimensionConditionRequestBody `json:"expression,omitempty"`
+
+	// Expressions the expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' types.
+	Expressions *[]RuleBasedDimensionConditionRequestBody `json:"expressions,omitempty"`
+
+	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+	Type RuleBasedDimensionConditionRequestBodyType `json:"type"`
+
+	// Value The value that the dimension must match. Required for the 'dimension_equals' type.
+	Value *string `json:"value,omitempty"`
+}
+
+// RuleBasedDimensionConditionRequestBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type RuleBasedDimensionConditionRequestBodyType string
+
+// RuleBasedDimensionConditionResponseBody A condition may be null, which will match unconditionally.
+//
+// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
+// A simple condition is checking whether a dimension in the cost row equals a certain value:
+// ~~~~
+// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+// ~~~~
+// Others types like 'and', 'or', and 'not', are used to build complex expressions.
+//
+// For example:
+// ~~~~
+// {"type":"and", "expressions":[
+//
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+//	{"type":"dimension_equals", "dimension":"service", "value":"EC2"}
+//
+// ]}
+// ~~~~
+// ~~~~
+// {"type":"or", "expressions":[
+//
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+//	{"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
+//
+// ]}
+// ~~~~
+// ~~~~
+//
+//	{"type":"not", "expression": {
+//	  "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+//	}}
+//
+// ~~~~
+// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+type RuleBasedDimensionConditionResponseBody struct {
+	// CaseInsensitive Specifies whether the condition should perform a case-insensitive match.
+	CaseInsensitive *bool `json:"caseInsensitive,omitempty"`
+
+	// Dimension The dimension to check the value of. Required for the 'dimension_equals' type.
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression A condition may be null, which will match unconditionally.
+	//
+	// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
+	// A simple condition is checking whether a dimension in the cost row equals a certain value:
+	// ~~~~
+	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+	// ~~~~
+	// Others types like 'and', 'or', and 'not', are used to build complex expressions.
+	//
+	// For example:
+	// ~~~~
+	// {"type":"and", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"}
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"or", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"not", "expression": {
+	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+	// }}
+	// ~~~~
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+	Expression *RuleBasedDimensionConditionResponseBody `json:"expression,omitempty"`
+
+	// Expressions the expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' types.
+	Expressions *[]RuleBasedDimensionConditionResponseBody `json:"expressions,omitempty"`
+
+	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+	Type RuleBasedDimensionConditionResponseBodyType `json:"type"`
+
+	// Value The value that the dimension must match. Required for the 'dimension_equals' type.
+	Value *string `json:"value,omitempty"`
+}
+
+// RuleBasedDimensionConditionResponseBodyType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
+type RuleBasedDimensionConditionResponseBodyType string
+
+// RuleBasedDimensionDatedRulesPayloadRequestBody Rules for how the dimension will be populated, as of a given date. The rules list can change over time, as a fresh list can be defined to take effect in a given month.
+type RuleBasedDimensionDatedRulesPayloadRequestBody struct {
+	// EffectiveAt The date (year-month) when this rules list takes effect, superseding any previous list. The list remains in effect until a subsequent list is defined to take effect at a later date.
+	EffectiveAt string `json:"effective_at"`
+
+	// Rules Rules for how the dimension will be populated. A rules list normally supports up to 500 rules. A simple mapping-style list may support up to 40,000 raw rules if it optimizes into no more than 500 rule groups. After mapping optimization, plain rules in one list may contain up to 1,000 condition expression elements. Across all rule-based dimensions, a single effective month may have up to 400,000 applicable raw rules in total, and up to 2,000 optimized rule groups after mapping optimization.
+	Rules []RuleBasedDimensionRuleRequestBody `json:"rules"`
+}
+
+// RuleBasedDimensionDatedRulesResponseBody The rules for how the dimension will be populated, as of a given date. (default view)
+type RuleBasedDimensionDatedRulesResponseBody struct {
+	// EffectiveAt The date (year-month) when this rules list takes effect, superseding any previous list. The list remains in effect until a subsequent list is defined to take effect at a later date.
+	EffectiveAt string `json:"effective_at"`
+
+	// Rules Rules for how the dimension will be populated.
+	Rules []RuleBasedDimensionRuleResponseBody `json:"rules"`
+
+	// UpdatedAt timestamp when the rules list was updated
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// RuleBasedDimensionPayloadRequestBody A rule-based dimension that will be populated by the given rules.
+type RuleBasedDimensionPayloadRequestBody struct {
 	// DatedRules Rules for how the dimension will be populated, as of a given date. The rules list can change over time, as a fresh list can be defined to take effect in a given month.
-	DatedRules []RightscaleBillAnalysisFrontServiceRulebaseddimensionsdatedrules `json:"dated_rules"`
+	DatedRules []RuleBasedDimensionDatedRulesPayloadRequestBody `json:"dated_rules"`
+
+	// Id ID of the rule-based dimension
+	Id string `json:"id"`
+
+	// Name Display name for the dimension in the UI
+	Name string `json:"name"`
+}
+
+// RuleBasedDimensionResponseBody A rule-based dimension that will be populated by the given rules. (default view)
+type RuleBasedDimensionResponseBody struct {
+	// DatedRules Rules for how the dimension will be populated, as of a given date. The rules list can change over time, as a fresh list can be defined to take effect in a given month.
+	DatedRules []RuleBasedDimensionDatedRulesResponseBody `json:"dated_rules"`
 
 	// Id ID of the rule-based dimension
 	Id string `json:"id"`
@@ -1737,72 +4470,1439 @@ type RightscaleBillAnalysisFrontServiceRulebaseddimension struct {
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
-// RightscaleBillAnalysisFrontServiceRulebaseddimensionsdatedrules The rules for how the dimension will be populated, as of a given date.
-type RightscaleBillAnalysisFrontServiceRulebaseddimensionsdatedrules struct {
+// RuleBasedDimensionRuleRequestBody For a given cost row, if the given condition is true, the given value will be used to populate this rule-based dimension.
+type RuleBasedDimensionRuleRequestBody struct {
+	// Condition A condition may be null, which will match unconditionally.
+	//
+	// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
+	// A simple condition is checking whether a dimension in the cost row equals a certain value:
+	// ~~~~
+	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+	// ~~~~
+	// Others types like 'and', 'or', and 'not', are used to build complex expressions.
+	//
+	// For example:
+	// ~~~~
+	// {"type":"and", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"}
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"or", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"not", "expression": {
+	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+	// }}
+	// ~~~~
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+	Condition *RuleBasedDimensionConditionRequestBody `json:"condition,omitempty"`
+
+	// Value the value to populate dimension with if condition is met
+	Value RuleBasedDimensionValueExpressionRequestBody `json:"value"`
+}
+
+// RuleBasedDimensionRuleResponseBody For a given cost row, if the given condition is true, the given value will be used to populate this rule-based dimension.
+type RuleBasedDimensionRuleResponseBody struct {
+	// Condition A condition may be null, which will match unconditionally.
+	//
+	// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
+	// A simple condition is checking whether a dimension in the cost row equals a certain value:
+	// ~~~~
+	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+	// ~~~~
+	// Others types like 'and', 'or', and 'not', are used to build complex expressions.
+	//
+	// For example:
+	// ~~~~
+	// {"type":"and", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"}
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"or", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"not", "expression": {
+	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+	// }}
+	// ~~~~
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+	Condition *RuleBasedDimensionConditionResponseBody `json:"condition,omitempty"`
+
+	// Value the value to populate dimension with if condition is met
+	Value RuleBasedDimensionValueExpressionResponseBody `json:"value"`
+}
+
+// RuleBasedDimensionValueExpressionRequestBody the value to populate dimension with if condition is met
+type RuleBasedDimensionValueExpressionRequestBody struct {
+	// Text the string to populate dimension with if condition is met
+	Text *string `json:"text,omitempty"`
+}
+
+// RuleBasedDimensionValueExpressionResponseBody the value to populate dimension with if condition is met
+type RuleBasedDimensionValueExpressionResponseBody struct {
+	// Text the string to populate dimension with if condition is met
+	Text *string `json:"text,omitempty"`
+}
+
+// RuleBasedDimensionsRbdCreateBadGatewayResponseBody rbd_create_bad_gateway_response_body result type (default view)
+type RuleBasedDimensionsRbdCreateBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdCreateBadRequestResponseBody rbd_create_bad_request_response_body result type (default view)
+type RuleBasedDimensionsRbdCreateBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdCreateConflictResponseBody rbd_create_conflict_response_body result type (default view)
+type RuleBasedDimensionsRbdCreateConflictResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdCreateForbiddenResponseBody rbd_create_forbidden_response_body result type (default view)
+type RuleBasedDimensionsRbdCreateForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdCreateInternalErrorResponseBody rbd_create_internal_error_response_body result type (default view)
+type RuleBasedDimensionsRbdCreateInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdCreateRequestBody defines model for RuleBasedDimensionsRbdCreateRequestBody.
+type RuleBasedDimensionsRbdCreateRequestBody struct {
+	// DatedRules Rules for how the dimension will be populated, as of a given date. The rules list can change over time, as a fresh list can be defined to take effect in a given month.
+	DatedRules []RuleBasedDimensionDatedRulesPayloadRequestBody `json:"dated_rules"`
+
+	// Name Display name for the dimension in the UI
+	Name string `json:"name"`
+}
+
+// RuleBasedDimensionsRbdCreateTooManyRequestsResponseBody rbd_create_too_many_requests_response_body result type (default view)
+type RuleBasedDimensionsRbdCreateTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdCreateUnauthorizedResponseBody rbd_create_unauthorized_response_body result type (default view)
+type RuleBasedDimensionsRbdCreateUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdDeleteBadGatewayResponseBody rbd_delete_bad_gateway_response_body result type (default view)
+type RuleBasedDimensionsRbdDeleteBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdDeleteBadRequestResponseBody rbd_delete_bad_request_response_body result type (default view)
+type RuleBasedDimensionsRbdDeleteBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdDeleteForbiddenResponseBody rbd_delete_forbidden_response_body result type (default view)
+type RuleBasedDimensionsRbdDeleteForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdDeleteInternalErrorResponseBody rbd_delete_internal_error_response_body result type (default view)
+type RuleBasedDimensionsRbdDeleteInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdDeleteNotFoundResponseBody rbd_delete_not_found_response_body result type (default view)
+type RuleBasedDimensionsRbdDeleteNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdDeleteTooManyRequestsResponseBody rbd_delete_too_many_requests_response_body result type (default view)
+type RuleBasedDimensionsRbdDeleteTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdDeleteUnauthorizedResponseBody rbd_delete_unauthorized_response_body result type (default view)
+type RuleBasedDimensionsRbdDeleteUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdShowBadGatewayResponseBody rbd_show_bad_gateway_response_body result type (default view)
+type RuleBasedDimensionsRbdShowBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdShowBadRequestResponseBody rbd_show_bad_request_response_body result type (default view)
+type RuleBasedDimensionsRbdShowBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdShowForbiddenResponseBody rbd_show_forbidden_response_body result type (default view)
+type RuleBasedDimensionsRbdShowForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdShowInternalErrorResponseBody rbd_show_internal_error_response_body result type (default view)
+type RuleBasedDimensionsRbdShowInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdShowNotFoundResponseBody rbd_show_not_found_response_body result type (default view)
+type RuleBasedDimensionsRbdShowNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdShowResponseBody rbd_show_response_body result type (default view)
+type RuleBasedDimensionsRbdShowResponseBody struct {
+	// DatedRules Rules for how the dimension will be populated, as of a given date. The rules list can change over time, as a fresh list can be defined to take effect in a given month.
+	DatedRules []RuleBasedDimensionDatedRulesResponseBody `json:"dated_rules"`
+
+	// Id ID of the rule-based dimension
+	Id string `json:"id"`
+
+	// Name Display name for the dimension in the UI
+	Name string `json:"name"`
+
+	// UpdatedAt timestamp when the rule-based dimension was updated
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// RuleBasedDimensionsRbdShowTooManyRequestsResponseBody rbd_show_too_many_requests_response_body result type (default view)
+type RuleBasedDimensionsRbdShowTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdShowUnauthorizedResponseBody rbd_show_unauthorized_response_body result type (default view)
+type RuleBasedDimensionsRbdShowUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdUpdateBadGatewayResponseBody rbd_update_bad_gateway_response_body result type (default view)
+type RuleBasedDimensionsRbdUpdateBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdUpdateBadRequestResponseBody rbd_update_bad_request_response_body result type (default view)
+type RuleBasedDimensionsRbdUpdateBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdUpdateForbiddenResponseBody rbd_update_forbidden_response_body result type (default view)
+type RuleBasedDimensionsRbdUpdateForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdUpdateInternalErrorResponseBody rbd_update_internal_error_response_body result type (default view)
+type RuleBasedDimensionsRbdUpdateInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdUpdateNotFoundResponseBody rbd_update_not_found_response_body result type (default view)
+type RuleBasedDimensionsRbdUpdateNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdUpdateRequestBody defines model for RuleBasedDimensionsRbdUpdateRequestBody.
+type RuleBasedDimensionsRbdUpdateRequestBody struct {
+	// DatedRules Rules for how the dimension will be populated, as of a given date. The rules list can change over time, as a fresh list can be defined to take effect in a given month.
+	DatedRules *[]RuleBasedDimensionDatedRulesPayloadRequestBody `json:"dated_rules,omitempty"`
+
+	// Name Display name for the dimension in the UI
+	Name *string `json:"name,omitempty"`
+}
+
+// RuleBasedDimensionsRbdUpdateTooManyRequestsResponseBody rbd_update_too_many_requests_response_body result type (default view)
+type RuleBasedDimensionsRbdUpdateTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRbdUpdateUnauthorizedResponseBody rbd_update_unauthorized_response_body result type (default view)
+type RuleBasedDimensionsRbdUpdateUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListDeleteBadGatewayResponseBody rules_list_delete_bad_gateway_response_body result type (default view)
+type RuleBasedDimensionsRulesListDeleteBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListDeleteBadRequestResponseBody rules_list_delete_bad_request_response_body result type (default view)
+type RuleBasedDimensionsRulesListDeleteBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListDeleteForbiddenResponseBody rules_list_delete_forbidden_response_body result type (default view)
+type RuleBasedDimensionsRulesListDeleteForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListDeleteInternalErrorResponseBody rules_list_delete_internal_error_response_body result type (default view)
+type RuleBasedDimensionsRulesListDeleteInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListDeleteNotFoundResponseBody rules_list_delete_not_found_response_body result type (default view)
+type RuleBasedDimensionsRulesListDeleteNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListDeleteTooManyRequestsResponseBody rules_list_delete_too_many_requests_response_body result type (default view)
+type RuleBasedDimensionsRulesListDeleteTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListDeleteUnauthorizedResponseBody rules_list_delete_unauthorized_response_body result type (default view)
+type RuleBasedDimensionsRulesListDeleteUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListReplaceBadGatewayResponseBody rules_list_replace_bad_gateway_response_body result type (default view)
+type RuleBasedDimensionsRulesListReplaceBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListReplaceBadRequestResponseBody rules_list_replace_bad_request_response_body result type (default view)
+type RuleBasedDimensionsRulesListReplaceBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListReplaceForbiddenResponseBody rules_list_replace_forbidden_response_body result type (default view)
+type RuleBasedDimensionsRulesListReplaceForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListReplaceInternalErrorResponseBody rules_list_replace_internal_error_response_body result type (default view)
+type RuleBasedDimensionsRulesListReplaceInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListReplaceNotFoundResponseBody rules_list_replace_not_found_response_body result type (default view)
+type RuleBasedDimensionsRulesListReplaceNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListReplaceRequestBody defines model for RuleBasedDimensionsRulesListReplaceRequestBody.
+type RuleBasedDimensionsRulesListReplaceRequestBody struct {
+	// Rules Rules for how the dimension will be populated. A rules list normally supports up to 500 rules. A simple mapping-style list may support up to 40,000 raw rules if it optimizes into no more than 500 rule groups. After mapping optimization, plain rules in one list may contain up to 1,000 condition expression elements. Across all rule-based dimensions, a single effective month may have up to 400,000 applicable raw rules in total, and up to 2,000 optimized rule groups after mapping optimization.
+	Rules []RuleBasedDimensionRuleRequestBody `json:"rules"`
+}
+
+// RuleBasedDimensionsRulesListReplaceTooManyRequestsResponseBody rules_list_replace_too_many_requests_response_body result type (default view)
+type RuleBasedDimensionsRulesListReplaceTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListReplaceUnauthorizedResponseBody rules_list_replace_unauthorized_response_body result type (default view)
+type RuleBasedDimensionsRulesListReplaceUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListShowBadGatewayResponseBody rules_list_show_bad_gateway_response_body result type (default view)
+type RuleBasedDimensionsRulesListShowBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListShowBadRequestResponseBody rules_list_show_bad_request_response_body result type (default view)
+type RuleBasedDimensionsRulesListShowBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListShowForbiddenResponseBody rules_list_show_forbidden_response_body result type (default view)
+type RuleBasedDimensionsRulesListShowForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListShowInternalErrorResponseBody rules_list_show_internal_error_response_body result type (default view)
+type RuleBasedDimensionsRulesListShowInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListShowNotFoundResponseBody rules_list_show_not_found_response_body result type (default view)
+type RuleBasedDimensionsRulesListShowNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListShowResponseBody rules_list_show_response_body result type (default view)
+type RuleBasedDimensionsRulesListShowResponseBody struct {
 	// EffectiveAt The date (year-month) when this rules list takes effect, superseding any previous list. The list remains in effect until a subsequent list is defined to take effect at a later date.
 	EffectiveAt string `json:"effective_at"`
 
 	// Rules Rules for how the dimension will be populated.
-	Rules []RuleBasedDimensionRule `json:"rules"`
+	Rules []RuleBasedDimensionRuleResponseBody `json:"rules"`
 
 	// UpdatedAt timestamp when the rules list was updated
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
-// RightscaleCustomDimensionServiceCustomdimension information about a custom dimension
-type RightscaleCustomDimensionServiceCustomdimension struct {
-	// CreatedAt Creation timestamp
-	CreatedAt time.Time `json:"created_at"`
+// RuleBasedDimensionsRulesListShowTooManyRequestsResponseBody rules_list_show_too_many_requests_response_body result type (default view)
+type RuleBasedDimensionsRulesListShowTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
 
-	// Href href of the dimension
-	Href string `json:"href"`
-
-	// Id ID of the dimension
+	// Id ID is a unique identifier for this particular occurrence of the problem.
 	Id string `json:"id"`
 
-	// Kind kind of data
-	Kind string `json:"kind"`
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
 
-	// Name Display name of dimension
+	// Name Name is the name of this class of errors.
 	Name string `json:"name"`
 
-	// TagKey The key of the tag in the bill data
-	TagKey string `json:"tag_key"`
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
 
-	// UpdatedAt Updated at timestamp
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsRulesListShowUnauthorizedResponseBody rules_list_show_unauthorized_response_body result type (default view)
+type RuleBasedDimensionsRulesListShowUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsShowBadGatewayResponseBody show_bad_gateway_response_body result type (default view)
+type RuleBasedDimensionsShowBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsShowBadRequestResponseBody show_bad_request_response_body result type (default view)
+type RuleBasedDimensionsShowBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsShowForbiddenResponseBody show_forbidden_response_body result type (default view)
+type RuleBasedDimensionsShowForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsShowInternalErrorResponseBody show_internal_error_response_body result type (default view)
+type RuleBasedDimensionsShowInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsShowResponseBody ShowResponseBody result type (default view)
+type RuleBasedDimensionsShowResponseBody struct {
+	// RuleBasedDimensions All rule-based dimensions defined in the org.
+	RuleBasedDimensions []RuleBasedDimensionResponseBody `json:"rule_based_dimensions"`
+
+	// UpdatedAt timestamp of when rule based dimensions were updated
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
-// RightscaleOptimaCloudVendorAccount Resource for cloud vendor account information
-type RightscaleOptimaCloudVendorAccount struct {
-	// Id Unique ID for the Cloud Vendor Account
-	Id   string                                 `json:"id"`
-	Kind RightscaleOptimaCloudVendorAccountKind `json:"kind"`
+// RuleBasedDimensionsShowTooManyRequestsResponseBody show_too_many_requests_response_body result type (default view)
+type RuleBasedDimensionsShowTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
 
-	// Name Name of the Cloud Vendor Account
-	Name *string `json:"name,omitempty"`
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
 
-	// VendorName Name of the Cloud Vendor
-	VendorName string `json:"vendor_name"`
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
 }
 
-// RightscaleOptimaCloudVendorAccountKind defines model for RightscaleOptimaCloudVendorAccount.Kind.
-type RightscaleOptimaCloudVendorAccountKind string
+// RuleBasedDimensionsShowUnauthorizedResponseBody show_unauthorized_response_body result type (default view)
+type RuleBasedDimensionsShowUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
 
-// Row defines model for Row.
-type Row struct {
-	// Dimensions One specific combination of dimension values.
-	Dimensions map[string]string `json:"dimensions"`
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
 
-	// Metrics Metrics for the associated dimensions.
-	Metrics map[string]float64 `json:"metrics"`
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
 
-	// Timestamp Timestamp of the data point.
-	Timestamp time.Time `json:"timestamp"`
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
 }
 
-// Rule If the condition matches, the given cost_multiplier and usage_multiplier will be used.
-type Rule struct {
+// RuleBasedDimensionsUpdateBadGatewayResponseBody update_bad_gateway_response_body result type (default view)
+type RuleBasedDimensionsUpdateBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsUpdateBadRequestResponseBody update_bad_request_response_body result type (default view)
+type RuleBasedDimensionsUpdateBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsUpdateForbiddenResponseBody update_forbidden_response_body result type (default view)
+type RuleBasedDimensionsUpdateForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsUpdateInternalErrorResponseBody update_internal_error_response_body result type (default view)
+type RuleBasedDimensionsUpdateInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsUpdateRequestBody defines model for RuleBasedDimensionsUpdateRequestBody.
+type RuleBasedDimensionsUpdateRequestBody struct {
+	// RuleBasedDimensions List of all rule-based dimensions in the org.
+	RuleBasedDimensions []RuleBasedDimensionPayloadRequestBody `json:"rule_based_dimensions"`
+}
+
+// RuleBasedDimensionsUpdateTooManyRequestsResponseBody update_too_many_requests_response_body result type (default view)
+type RuleBasedDimensionsUpdateTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleBasedDimensionsUpdateUnauthorizedResponseBody update_unauthorized_response_body result type (default view)
+type RuleBasedDimensionsUpdateUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// RuleRequestBody If the condition matches, the given cost_multiplier and usage_multiplier will be used.
+type RuleRequestBody struct {
 	// Condition The criteria for the given multipliers to be applied to a cost row.
 	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
 	//
@@ -1842,7 +5942,7 @@ type Rule struct {
 	// }}
 	// ~~~~
 	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
-	Condition *Condition `json:"condition,omitempty"`
+	Condition *ConditionRequestBody `json:"condition,omitempty"`
 
 	// CostMultiplier will be multiplied by the base cost (may be the raw cost, or the net cost after certain other adjustments were applied).
 	CostMultiplier *float64 `json:"cost_multiplier,omitempty"`
@@ -1855,293 +5955,124 @@ type Rule struct {
 	UsageMultiplier *float64 `json:"usage_multiplier,omitempty"`
 }
 
-// RuleBasedDimensionCondition A condition may be null, which will match unconditionally.
-//
-// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
-// A simple condition is checking whether a dimension in the cost row equals a certain value:
-// ~~~~
-// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
-// ~~~~
-// Others types like 'and', 'or', and 'not', are used to build complex expressions.
-//
-// For example:
-// ~~~~
-// {"type":"and", "expressions":[
-//
-//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
-//	{"type":"dimension_equals", "dimension":"service", "value":"EC2"}
-//
-// ]}
-// ~~~~
-// ~~~~
-// {"type":"or", "expressions":[
-//
-//	{"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
-//	{"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
-//
-// ]}
-// ~~~~
-// ~~~~
-//
-//	{"type":"not", "expression": {
-//	  "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
-//	}}
-//
-// ~~~~
-// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
-type RuleBasedDimensionCondition struct {
-	// CaseInsensitive Specifies whether the condition should perform a case-insensitive match.
-	CaseInsensitive *bool `json:"caseInsensitive,omitempty"`
-
-	// Dimension The dimension to check the value of. Required for the 'dimension_equals' type.
-	Dimension *string `json:"dimension,omitempty"`
-
-	// Expression A condition may be null, which will match unconditionally.
-	//
-	// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
-	// A simple condition is checking whether a dimension in the cost row equals a certain value:
-	// ~~~~
-	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
-	// ~~~~
-	// Others types like 'and', 'or', and 'not', are used to build complex expressions.
-	//
-	// For example:
-	// ~~~~
-	// {"type":"and", "expressions":[
-	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
-	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"}
-	// ]}
-	// ~~~~
-	// ~~~~
-	// {"type":"or", "expressions":[
-	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
-	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
-	// ]}
-	// ~~~~
-	// ~~~~
-	// {"type":"not", "expression": {
-	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
-	// }}
-	// ~~~~
-	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
-	Expression *RuleBasedDimensionCondition `json:"expression,omitempty"`
-
-	// Expressions the expressions that will be AND'd or OR'd together. Required for the 'and' and 'or' types.
-	Expressions *[]RuleBasedDimensionCondition `json:"expressions,omitempty"`
-
-	// Type This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-	Type RuleBasedDimensionConditionType `json:"type"`
-
-	// Value The value that the dimension must match. Required for the 'dimension_equals' type.
-	Value *string `json:"value,omitempty"`
-}
-
-// RuleBasedDimensionConditionType This 'type' param is required, but what the other param(s) are required will depend on what type is selected.
-type RuleBasedDimensionConditionType string
-
-// RuleBasedDimensionDatedRulesPayload Rules for how the dimension will be populated, as of a given date. The rules list can change over time, as a fresh list can be defined to take effect in a given month.
-type RuleBasedDimensionDatedRulesPayload struct {
-	// EffectiveAt The date (year-month) when this rules list takes effect, superseding any previous list. The list remains in effect until a subsequent list is defined to take effect at a later date.
-	EffectiveAt string `json:"effective_at"`
-
-	// Rules Rules for how the dimension will be populated. A rules list normally supports up to 500 rules. A simple mapping-style list may support up to 40,000 raw rules if it optimizes into no more than 500 rule groups. After mapping optimization, plain rules in one list may contain up to 1,000 condition expression elements. Across all rule-based dimensions, a single effective month may have up to 400,000 applicable raw rules in total, and up to 2,000 optimized rule groups after mapping optimization.
-	Rules []RuleBasedDimensionRule `json:"rules"`
-}
-
-// RuleBasedDimensionPayload A rule-based dimension that will be populated by the given rules.
-type RuleBasedDimensionPayload struct {
-	// DatedRules Rules for how the dimension will be populated, as of a given date. The rules list can change over time, as a fresh list can be defined to take effect in a given month.
-	DatedRules []RuleBasedDimensionDatedRulesPayload `json:"dated_rules"`
-
-	// Id ID of the rule-based dimension
-	Id string `json:"id"`
-
-	// Name Display name for the dimension in the UI
-	Name string `json:"name"`
-}
-
-// RuleBasedDimensionRule For a given cost row, if the given condition is true, the given value will be used to populate this rule-based dimension.
-type RuleBasedDimensionRule struct {
-	// Condition A condition may be null, which will match unconditionally.
-	//
-	// Otherwise, the 'type' field is required and, depending on which type is selected, other field(s) will be required.
-	// A simple condition is checking whether a dimension in the cost row equals a certain value:
-	// ~~~~
-	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
-	// ~~~~
-	// Others types like 'and', 'or', and 'not', are used to build complex expressions.
-	//
-	// For example:
-	// ~~~~
-	// {"type":"and", "expressions":[
-	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
-	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"}
-	// ]}
-	// ~~~~
-	// ~~~~
-	// {"type":"or", "expressions":[
-	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
-	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"Azure"},
-	// ]}
-	// ~~~~
-	// ~~~~
-	// {"type":"not", "expression": {
-	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
-	// }}
-	// ~~~~
-	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
-	Condition *RuleBasedDimensionCondition `json:"condition,omitempty"`
-
-	// Value the value to populate dimension with if condition is met
-	Value RuleBasedDimensionValueExpression `json:"value"`
-}
-
-// RuleBasedDimensionValueExpression the value to populate dimension with if condition is met
-type RuleBasedDimensionValueExpression struct {
-	// Text the string to populate dimension with if condition is met
-	Text *string `json:"text,omitempty"`
-}
-
-// RulesListReplaceRequestBody defines model for RulesListReplaceRequestBody.
-type RulesListReplaceRequestBody struct {
-	// Rules Rules for how the dimension will be populated. A rules list normally supports up to 500 rules. A simple mapping-style list may support up to 40,000 raw rules if it optimizes into no more than 500 rule groups. After mapping optimization, plain rules in one list may contain up to 1,000 condition expression elements. Across all rule-based dimensions, a single effective month may have up to 400,000 applicable raw rules in total, and up to 2,000 optimized rule groups after mapping optimization.
-	Rules []RuleBasedDimensionRule `json:"rules"`
-}
-
-// SelectRequestBody defines model for SelectRequestBody.
-type SelectRequestBody struct {
-	// BillingCenterIds IDs of BillingCenters to get cost data for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
-	BillingCenterIds []string `json:"billing_center_ids"`
-
-	// Dataset indicates which datasource to query from, if set to billing, it will query from billing data source.
-	Dataset *SelectRequestBodyDataset `json:"dataset,omitempty"`
-
-	// Dimensions The list of supported dimensions to return.
-	Dimensions []string `json:"dimensions"`
-
-	// EndAt Latest timestamp (exclusive) of the costs.
-	// For month granularity: consists of a year and month in YYYY-MM format.
-	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
-	// Will be interpreted be UTC, which is used for period boundaries.
-	// No records will be returned on or after this timestamp.
-	EndAt string `json:"end_at"`
-
-	// Filter Indicates which rows of data should be included in the computation for the query, similar to a WHERE clause in SQL.
+// RuleResponseBody If the condition matches, the given cost_multiplier and usage_multiplier will be used.
+type RuleResponseBody struct {
+	// Condition The criteria for the given multipliers to be applied to a cost row.
 	// The 'type' field is required, and then depending on which type is selected, other field(s) will be required.
-	// Some of the types are primitive filters, and others like 'and', 'or', and 'not', are used to build complex expressions.
-	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' filter type and contains another filter expression to be negated.
 	//
-	// Examples of each filter type:
+	// Some of the types are primitive conditions, and others like 'and', 'or', and 'not', are used to build complex expressions.
 	//
-	// {"type":"equal", "dimension":"vendor", "value":"aws"}
-	//
-	//   {"type":"substring", "dimension":"tag_env", "substring":"dev"}
-	//
-	//   {"type":"and", "expressions":[
-	//     {"type":"equal", "dimension":"vendor", "value":"aws"},
-	//     {"type":"equal", "dimension":"tag_env", "value":"dev"}
-	//   ]}
-	//
-	//   {"type":"or", "expressions":[
-	//     {"type":"substring", "dimension":"tag_env", "substring":"dev"},
-	//     {"type":"substring", "dimension":"tag_env", "substring":"stage"}
-	//   ]}
-	//
-	//   {"type":"not", "expression": {
-	//     "type":"equal", "dimension":"vendor", "substring":"aws"
-	//   }}
-	Filter *FilterV1 `json:"filter,omitempty"`
+	// Examples of each condition type:
+	// ~~~~
+	// {"type":"dimension_equals", "dimension":"vendor", "value":"AWS"}
+	// ~~~~
+	// ~~~~
+	// {"type":"allocated_to_billing_center", "billing_center_id":"1efg3457f129810cd12e1297a1de"}
+	// ~~~~
+	// ~~~~
+	// {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+	// ~~~~
+	// ~~~~
+	// {"type":"and", "expressions":[
+	//   {"type":"dimension_equals", "dimension":"vendor",  "value":"AWS"},
+	//   {"type":"dimension_equals", "dimension":"service", "value":"EC2"},
+	//   {"type":"dimension_contains", "dimension":"resource_type", "substring":"Compute"}
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"or", "expressions":[
+	//   {"type":"allocated_to_billing_center", "billing_center_id":"1abc3457f129810cd12e1297a0cb"},
+	//   {"type":"allocated_to_billing_center", "billing_center_id":"29810cd12e1297a1de1efg3457f1"}
+	// ]}
+	// ~~~~
+	// ~~~~
+	// {"type":"not", "expression": {
+	//   "type":"dimension_equals", "dimension":"vendor", "value":"Azure"
+	// }}
+	// ~~~~
+	// ~~~~
+	// {"type":"not", "expression": {
+	//   "type":"dimension_contains", "dimension":"vendor", "substring":"Azure"
+	// }}
+	// ~~~~
+	// The docs are not being generated correctly for the 'expression' field. It is used with the 'not' condition type and contains another expression to be negated.
+	Condition *ConditionResponseBody `json:"condition,omitempty"`
 
-	// Granularity Indicates which data source to query, having costs already aggregated up to this granularity.
-	// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
-	Granularity *SelectRequestBodyGranularity `json:"granularity,omitempty"`
+	// CostMultiplier will be multiplied by the base cost (may be the raw cost, or the net cost after certain other adjustments were applied).
+	CostMultiplier *float64 `json:"cost_multiplier,omitempty"`
 
-	// Limit limit number of records to return (max=100000).
-	Limit int64 `json:"limit"`
+	// CostMultiplierByMetric Optional cost multipliers (supports only Amortized and Non-amortized List Price as of now) for specific metrics (overrides cost_multiplier).
+	CostMultiplierByMetric *map[string]float64 `json:"cost_multiplier_by_metric,omitempty"`
+	Label                  *string             `json:"label,omitempty"`
 
-	// Metrics Metrics to return.
-	// When metric 'usage_amount' is requested, dimension 'usage_unit' must be requested
-	// in the dimensions parameter.
-	Metrics []string `json:"metrics"`
-
-	// PeriodType Determines which date column to use for filtering.
-	//  - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
-	//  - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
-	//
-	// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
-	PeriodType *SelectRequestBodyPeriodType `json:"period_type,omitempty"`
-
-	// StartAt Earliest timestamp (inclusive) of the returned costs.
-	// For month granularity: consists of a year and month in YYYY-MM format.
-	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
-	// Will be interpreted as UTC, which is used for period boundaries.
-	StartAt string `json:"start_at"`
+	// UsageMultiplier will be multiplied by the `usage_amount` to yield a cost amount. Be careful that this is only applied to the intended rows, probably would need to include `usage_unit` in the conditions.
+	UsageMultiplier *float64 `json:"usage_multiplier,omitempty"`
 }
 
-// SelectRequestBodyDataset indicates which datasource to query from, if set to billing, it will query from billing data source.
-type SelectRequestBodyDataset string
-
-// SelectRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
-// Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
-type SelectRequestBodyGranularity string
-
-// SelectRequestBodyPeriodType Determines which date column to use for filtering.
-//   - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
-//   - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
-//
-// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
-type SelectRequestBodyPeriodType string
-
-// Setting defines model for Setting.
-type Setting struct {
-	// Id Setting ID
-	Id   SettingId   `json:"id"`
-	Kind SettingKind `json:"kind"`
-
-	// Value Setting value
-	Value string `json:"value"`
-}
-
-// SettingId Setting ID
-type SettingId string
-
-// SettingKind defines model for Setting.Kind.
-type SettingKind string
-
-// TimeSeries defines model for TimeSeries.
-type TimeSeries struct {
+// TimeSeriesResponseBody defines model for TimeSeriesResponseBody.
+type TimeSeriesResponseBody struct {
 	// Data the values for the metric you selected, one for each date entry
-	Data       []Datum           `json:"data"`
-	Dimensions map[string]string `json:"dimensions"`
+	Data       []DatumResponseBody `json:"data"`
+	Dimensions map[string]string   `json:"dimensions"`
 }
 
-// TimeSeriesWithAnomalies List of anomalies found in the requested data.
-type TimeSeriesWithAnomalies struct {
-	TimeSeries TimeSeries `json:"timeSeries"`
+// TimeSeriesWithAnomaliesResponseBody List of anomalies found in the requested data.
+type TimeSeriesWithAnomaliesResponseBody struct {
+	TimeSeries TimeSeriesResponseBody `json:"timeSeries"`
 }
 
-// UpdateRequestBody defines model for UpdateRequestBody.
-type UpdateRequestBody struct {
-	// DatedAdjustmentLists All of the dated adjustment lists for the org.
-	DatedAdjustmentLists []DatedAdjustmentList `json:"dated_adjustment_lists"`
+// BudgetSegmentRequestBody Describes a unique combination of dimension values, and provides a corresponding budget amount for each year-month
+type BudgetSegmentRequestBody struct {
+	// BudgetAmounts The budgeted amount of spend for each year-month
+	BudgetAmounts []float64 `json:"budgetAmounts"`
+
+	// DimensionValues A combination of dimension values, unique to this segment in the budget.
+	DimensionValues []string `json:"dimensionValues"`
+
+	// ForecastAmounts The forecasted amount of spend for each year-month
+	ForecastAmounts *[]float64 `json:"forecastAmounts,omitempty"`
 }
 
-// UpdateRequestBody2 defines model for UpdateRequestBody2.
-type UpdateRequestBody2 struct {
-	// Value Setting value
-	Value string `json:"value"`
+// BudgetSegmentResponse Describes a unique combination of dimension values, and provides a corresponding budget amount for each year-month
+type BudgetSegmentResponse struct {
+	// BudgetAmounts The budgeted amount of spend for each year-month
+	BudgetAmounts []float64 `json:"budgetAmounts"`
+
+	// DimensionValues A combination of dimension values, unique to this segment in the budget.
+	DimensionValues []string `json:"dimensionValues"`
+
+	// ForecastAmounts The forecasted amount of spend for each year-month
+	ForecastAmounts *[]float64 `json:"forecastAmounts,omitempty"`
 }
 
-// UpdateRequestBody3 defines model for UpdateRequestBody3.
-type UpdateRequestBody3 struct {
-	// RuleBasedDimensions List of all rule-based dimensions in the org.
-	RuleBasedDimensions []RuleBasedDimensionPayload `json:"rule_based_dimensions"`
+// BudgetSegmentResponseBody Describes a unique combination of dimension values, and provides a corresponding budget amount for each year-month
+type BudgetSegmentResponseBody struct {
+	// BudgetAmounts The budgeted amount of spend for each year-month
+	BudgetAmounts []float64 `json:"budgetAmounts"`
+
+	// DimensionValues A combination of dimension values, unique to this segment in the budget.
+	DimensionValues []string `json:"dimensionValues"`
+
+	// ForecastAmounts The forecasted amount of spend for each year-month
+	ForecastAmounts *[]float64 `json:"forecastAmounts,omitempty"`
 }
 
-// UpsertRequestBody defines model for UpsertRequestBody.
-type UpsertRequestBody struct {
-	// CommitmentReallocationSettings List of commitment reallocation settings for the org given.
-	CommitmentReallocationSettings []CommitmentReallocationSettingType `json:"commitment_reallocation_settings"`
+// AdjustmentDefinitionShowParams defines parameters for AdjustmentDefinitionShow.
+type AdjustmentDefinitionShowParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
+
+// AdjustmentDefinitionUpdateParams defines parameters for AdjustmentDefinitionUpdate.
+type AdjustmentDefinitionUpdateParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
+
+// AnomaliesReportParams defines parameters for AnomaliesReport.
+type AnomaliesReportParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
 }
 
 // BillMonthsSearchParams defines parameters for BillMonthsSearch.
@@ -2149,153 +6080,219 @@ type BillMonthsSearchParams struct {
 	// Limit Maximum number of records to return
 	Limit *int64 `form:"limit,omitempty" json:"limit,omitempty"`
 
-	// Offset Starting offset for pagination (if provided, uses offset-based pagination; if omitted, uses cursor-based). Ignored if skipToken is present.
+	// Offset Starting offset for pagination
 	Offset *int64 `form:"offset,omitempty" json:"offset,omitempty"`
 
-	// OrderBy Format: field=direction [and field=direction]. Directions: asc, desc
+	// OrderBy Order spec, e.g. month=desc
 	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
 
-	// Filter Supports operators: eq, ne, sw (starts with), ge, le, and, or. Use parentheses for grouping.
+	// Filter Filter expression. Supports operators: eq, ne, sw, ge, le, and, or.
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
-	// SkipToken Base64-encoded pagination token returned from previous search response
+	// SkipToken Base64-encoded pagination token from previous response
 	SkipToken *string `form:"skip_token,omitempty" json:"skip_token,omitempty"`
+
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
 }
 
-// BillMonthsDownloadParams defines parameters for BillMonthsDownload.
-type BillMonthsDownloadParams struct {
-	// DownloadToken Token for downloading the complete result set
-	DownloadToken string `form:"download_token" json:"download_token"`
-
-	// Format Download format (default: csv)
-	Format *BillMonthsDownloadParamsFormat `form:"format,omitempty" json:"format,omitempty"`
+// BudgetsIndexParams defines parameters for BudgetsIndex.
+type BudgetsIndexParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
 }
 
-// BillMonthsDownloadParamsFormat defines parameters for BillMonthsDownload.
-type BillMonthsDownloadParamsFormat string
+// BudgetsCreateParams defines parameters for BudgetsCreate.
+type BudgetsCreateParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
 
-// CloudVendorAccountsIndexParams defines parameters for CloudVendorAccountsIndex.
-type CloudVendorAccountsIndexParams struct {
-	// CloudVendor Filter accounts for one specific cloud
-	CloudVendor *string `form:"cloud_vendor,omitempty" json:"cloud_vendor,omitempty"`
+// BudgetsDeleteParams defines parameters for BudgetsDelete.
+type BudgetsDeleteParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
+
+// BudgetsShowParams defines parameters for BudgetsShow.
+type BudgetsShowParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
+
+// BudgetsUpdateParams defines parameters for BudgetsUpdate.
+type BudgetsUpdateParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
+
+// BudgetsReportParams defines parameters for BudgetsReport.
+type BudgetsReportParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
+
+// CostsAggregatedParams defines parameters for CostsAggregated.
+type CostsAggregatedParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
 }
 
 // CostsDimensionsParams defines parameters for CostsDimensions.
 type CostsDimensionsParams struct {
 	// Dataset indicates which datasource to query from, if set to billing, it will query from billing data source.
 	Dataset *CostsDimensionsParamsDataset `form:"dataset,omitempty" json:"dataset,omitempty"`
+
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
 }
 
 // CostsDimensionsParamsDataset defines parameters for CostsDimensions.
 type CostsDimensionsParamsDataset string
 
+// CostsExportSelectParams defines parameters for CostsExportSelect.
+type CostsExportSelectParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
+
+// CostsExportSelectStatusParams defines parameters for CostsExportSelectStatus.
+type CostsExportSelectStatusParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
+
 // CostsMetricsParams defines parameters for CostsMetrics.
 type CostsMetricsParams struct {
 	// Dataset indicates which datasource to query from, if set to billing, it will query from billing data source.
 	Dataset *CostsMetricsParamsDataset `form:"dataset,omitempty" json:"dataset,omitempty"`
+
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
 }
 
 // CostsMetricsParamsDataset defines parameters for CostsMetrics.
 type CostsMetricsParamsDataset string
 
-// OrgDashboardsIndexParams defines parameters for OrgDashboardsIndex.
-type OrgDashboardsIndexParams struct {
-	// Area Optional area filter
-	Area *string `form:"area,omitempty" json:"area,omitempty"`
-
-	// Visibility Optional visibility filter
-	Visibility *OrgDashboardsIndexParamsVisibility `form:"visibility,omitempty" json:"visibility,omitempty"`
+// CostsSelectParams defines parameters for CostsSelect.
+type CostsSelectParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
 }
 
-// OrgDashboardsIndexParamsVisibility defines parameters for OrgDashboardsIndex.
-type OrgDashboardsIndexParamsVisibility string
+// ForecastsReportParams defines parameters for ForecastsReport.
+type ForecastsReportParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
 
-// CustomDashboardsIndexParams defines parameters for CustomDashboardsIndex.
-type CustomDashboardsIndexParams struct {
-	// Area Optional area filter
-	Area *string `form:"area,omitempty" json:"area,omitempty"`
+// CurrencySettingShowParams defines parameters for CurrencySettingShow.
+type CurrencySettingShowParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
+
+// CurrencySettingUpdateParams defines parameters for CurrencySettingUpdate.
+type CurrencySettingUpdateParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
+
+// RuleBasedDimensionsShowParams defines parameters for RuleBasedDimensionsShow.
+type RuleBasedDimensionsShowParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
+
+// RuleBasedDimensionsUpdateParams defines parameters for RuleBasedDimensionsUpdate.
+type RuleBasedDimensionsUpdateParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
+
+// RuleBasedDimensionsRbdDeleteParams defines parameters for RuleBasedDimensionsRbdDelete.
+type RuleBasedDimensionsRbdDeleteParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
+
+// RuleBasedDimensionsRbdShowParams defines parameters for RuleBasedDimensionsRbdShow.
+type RuleBasedDimensionsRbdShowParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
+
+// RuleBasedDimensionsRbdUpdateParams defines parameters for RuleBasedDimensionsRbdUpdate.
+type RuleBasedDimensionsRbdUpdateParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
+
+// RuleBasedDimensionsRbdCreateParams defines parameters for RuleBasedDimensionsRbdCreate.
+type RuleBasedDimensionsRbdCreateParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
+
+// RuleBasedDimensionsRulesListDeleteParams defines parameters for RuleBasedDimensionsRulesListDelete.
+type RuleBasedDimensionsRulesListDeleteParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
+
+// RuleBasedDimensionsRulesListShowParams defines parameters for RuleBasedDimensionsRulesListShow.
+type RuleBasedDimensionsRulesListShowParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
+}
+
+// RuleBasedDimensionsRulesListReplaceParams defines parameters for RuleBasedDimensionsRulesListReplace.
+type RuleBasedDimensionsRulesListReplaceParams struct {
+	// Authorization JWT token used to perform authorization
+	Authorization *string `json:"Authorization,omitempty"`
 }
 
 // AdjustmentDefinitionUpdateJSONRequestBody defines body for AdjustmentDefinitionUpdate for application/json ContentType.
-type AdjustmentDefinitionUpdateJSONRequestBody = UpdateRequestBody
+type AdjustmentDefinitionUpdateJSONRequestBody = AdjustmentDefinitionUpdateRequestBody
 
 // AnomaliesReportJSONRequestBody defines body for AnomaliesReport for application/json ContentType.
-type AnomaliesReportJSONRequestBody = ReportRequestBody
-
-// BillMonthsReprocessJSONRequestBody defines body for BillMonthsReprocess for application/json ContentType.
-type BillMonthsReprocessJSONRequestBody = ReprocessRequestBody
-
-// BillingSettingsUpdateJSONRequestBody defines body for BillingSettingsUpdate for application/json ContentType.
-type BillingSettingsUpdateJSONRequestBody = BillingSettingsResponse
+type AnomaliesReportJSONRequestBody = AnomaliesReportRequestBody
 
 // BudgetsCreateJSONRequestBody defines body for BudgetsCreate for application/json ContentType.
-type BudgetsCreateJSONRequestBody = CreateRequestBody
+type BudgetsCreateJSONRequestBody = BudgetsCreateRequestBody
 
 // BudgetsUpdateJSONRequestBody defines body for BudgetsUpdate for application/json ContentType.
-type BudgetsUpdateJSONRequestBody = CreateRequestBody
+type BudgetsUpdateJSONRequestBody = BudgetsUpdateRequestBody
 
 // BudgetsReportJSONRequestBody defines body for BudgetsReport for application/json ContentType.
-type BudgetsReportJSONRequestBody = ReportRequestBody2
+type BudgetsReportJSONRequestBody = BudgetsReportRequestBody
 
 // CostsAggregatedJSONRequestBody defines body for CostsAggregated for application/json ContentType.
-type CostsAggregatedJSONRequestBody = AggregatedRequestBody
+type CostsAggregatedJSONRequestBody = CostsAggregatedRequestBody
 
 // CostsExportSelectJSONRequestBody defines body for CostsExportSelect for application/json ContentType.
-type CostsExportSelectJSONRequestBody = ExportSelectRequestBody
+type CostsExportSelectJSONRequestBody = CostsExportSelectRequestBody
 
 // CostsSelectJSONRequestBody defines body for CostsSelect for application/json ContentType.
-type CostsSelectJSONRequestBody = SelectRequestBody
-
-// CustomDimensionsCreateJSONRequestBody defines body for CustomDimensionsCreate for application/json ContentType.
-type CustomDimensionsCreateJSONRequestBody = CreateRequestBody2
-
-// CustomDimensionsReplaceJSONRequestBody defines body for CustomDimensionsReplace for application/json ContentType.
-type CustomDimensionsReplaceJSONRequestBody = CreateRequestBody2
-
-// OrgDashboardsCreateJSONRequestBody defines body for OrgDashboardsCreate for application/json ContentType.
-type OrgDashboardsCreateJSONRequestBody = CreateRequestBody5
-
-// OrgDashboardsReplaceJSONRequestBody defines body for OrgDashboardsReplace for application/json ContentType.
-type OrgDashboardsReplaceJSONRequestBody = CreateRequestBody5
+type CostsSelectJSONRequestBody = CostsSelectRequestBody
 
 // ForecastsReportJSONRequestBody defines body for ForecastsReport for application/json ContentType.
-type ForecastsReportJSONRequestBody = ReportRequestBody3
-
-// CommitmentReallocationSettingUpsertJSONRequestBody defines body for CommitmentReallocationSettingUpsert for application/json ContentType.
-type CommitmentReallocationSettingUpsertJSONRequestBody = UpsertRequestBody
+type ForecastsReportJSONRequestBody = ForecastsReportRequestBody
 
 // CurrencySettingUpdateJSONRequestBody defines body for CurrencySettingUpdate for application/json ContentType.
-type CurrencySettingUpdateJSONRequestBody = UpdateRequestBody2
+type CurrencySettingUpdateJSONRequestBody = CurrencySettingUpdateRequestBody
 
 // RuleBasedDimensionsUpdateJSONRequestBody defines body for RuleBasedDimensionsUpdate for application/json ContentType.
-type RuleBasedDimensionsUpdateJSONRequestBody = UpdateRequestBody3
+type RuleBasedDimensionsUpdateJSONRequestBody = RuleBasedDimensionsUpdateRequestBody
 
 // RuleBasedDimensionsRbdUpdateJSONRequestBody defines body for RuleBasedDimensionsRbdUpdate for application/json ContentType.
-type RuleBasedDimensionsRbdUpdateJSONRequestBody = RbdUpdateRequestBody
+type RuleBasedDimensionsRbdUpdateJSONRequestBody = RuleBasedDimensionsRbdUpdateRequestBody
 
 // RuleBasedDimensionsRbdCreateJSONRequestBody defines body for RuleBasedDimensionsRbdCreate for application/json ContentType.
-type RuleBasedDimensionsRbdCreateJSONRequestBody = RbdCreateRequestBody
+type RuleBasedDimensionsRbdCreateJSONRequestBody = RuleBasedDimensionsRbdCreateRequestBody
 
 // RuleBasedDimensionsRulesListReplaceJSONRequestBody defines body for RuleBasedDimensionsRulesListReplace for application/json ContentType.
-type RuleBasedDimensionsRulesListReplaceJSONRequestBody = RulesListReplaceRequestBody
-
-// CustomDashboardsCreateJSONRequestBody defines body for CustomDashboardsCreate for application/json ContentType.
-type CustomDashboardsCreateJSONRequestBody = CreateRequestBody4
-
-// CustomDashboardsReplaceJSONRequestBody defines body for CustomDashboardsReplace for application/json ContentType.
-type CustomDashboardsReplaceJSONRequestBody = CreateRequestBody4
-
-// AnomaliesIndexJSONRequestBody defines body for AnomaliesIndex for application/json ContentType.
-type AnomaliesIndexJSONRequestBody = IndexRequestBody
-
-// AnomaliesAggregatedJSONRequestBody defines body for AnomaliesAggregated for application/json ContentType.
-type AnomaliesAggregatedJSONRequestBody = AggregatedRequestBody2
-
-// CustomDimensionCreateJSONRequestBody defines body for CustomDimensionCreate for application/json ContentType.
-type CustomDimensionCreateJSONRequestBody = CreateRequestBody3
-
-// CustomDimensionUpdateJSONRequestBody defines body for CustomDimensionUpdate for application/json ContentType.
-type CustomDimensionUpdateJSONRequestBody = CreateRequestBody3
+type RuleBasedDimensionsRulesListReplaceJSONRequestBody = RuleBasedDimensionsRulesListReplaceRequestBody
 
 // RequestEditorFn  is the function signature for the RequestEditor callback function
 type RequestEditorFn func(ctx context.Context, req *http.Request) error
@@ -2371,236 +6368,120 @@ func WithRequestEditorFn(fn RequestEditorFn) ClientOption {
 // The interface specification for the client above.
 type ClientInterface interface {
 	// AdjustmentDefinitionShow request
-	AdjustmentDefinitionShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	AdjustmentDefinitionShow(ctx context.Context, org int, params *AdjustmentDefinitionShowParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// AdjustmentDefinitionUpdateWithBody request with any body
-	AdjustmentDefinitionUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	AdjustmentDefinitionUpdateWithBody(ctx context.Context, org int, params *AdjustmentDefinitionUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	AdjustmentDefinitionUpdate(ctx context.Context, org int64, body AdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	AdjustmentDefinitionUpdate(ctx context.Context, org int, params *AdjustmentDefinitionUpdateParams, body AdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// AnomaliesReportWithBody request with any body
-	AnomaliesReportWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	AnomaliesReportWithBody(ctx context.Context, org int, params *AnomaliesReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	AnomaliesReport(ctx context.Context, org int64, body AnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	AnomaliesReport(ctx context.Context, org int, params *AnomaliesReportParams, body AnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillMonthsSearch request
-	BillMonthsSearch(ctx context.Context, org int64, params *BillMonthsSearchParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BillMonthsReprocessWithBody request with any body
-	BillMonthsReprocessWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	BillMonthsReprocess(ctx context.Context, org int64, body BillMonthsReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BillMonthsDownload request
-	BillMonthsDownload(ctx context.Context, org int64, params *BillMonthsDownloadParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BillingSettingsShow request
-	BillingSettingsShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// BillingSettingsUpdateWithBody request with any body
-	BillingSettingsUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	BillingSettingsUpdate(ctx context.Context, org int64, body BillingSettingsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillMonthsSearch(ctx context.Context, org int, params *BillMonthsSearchParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BudgetsIndex request
-	BudgetsIndex(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BudgetsIndex(ctx context.Context, org int, params *BudgetsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BudgetsCreateWithBody request with any body
-	BudgetsCreateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BudgetsCreateWithBody(ctx context.Context, org int, params *BudgetsCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BudgetsCreate(ctx context.Context, org int64, body BudgetsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BudgetsCreate(ctx context.Context, org int, params *BudgetsCreateParams, body BudgetsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BudgetsDelete request
-	BudgetsDelete(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BudgetsDelete(ctx context.Context, org int, id string, params *BudgetsDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BudgetsShow request
-	BudgetsShow(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BudgetsShow(ctx context.Context, org int, id string, params *BudgetsShowParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BudgetsUpdateWithBody request with any body
-	BudgetsUpdateWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BudgetsUpdateWithBody(ctx context.Context, org int, id string, params *BudgetsUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BudgetsUpdate(ctx context.Context, org int64, id string, body BudgetsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BudgetsUpdate(ctx context.Context, org int, id string, params *BudgetsUpdateParams, body BudgetsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BudgetsReportWithBody request with any body
-	BudgetsReportWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BudgetsReportWithBody(ctx context.Context, org int, id string, params *BudgetsReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BudgetsReport(ctx context.Context, org int64, id string, body BudgetsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CloudVendorAccountsIndex request
-	CloudVendorAccountsIndex(ctx context.Context, org int64, params *CloudVendorAccountsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BudgetsReport(ctx context.Context, org int, id string, params *BudgetsReportParams, body BudgetsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CostsAggregatedWithBody request with any body
-	CostsAggregatedWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CostsAggregatedWithBody(ctx context.Context, org int, params *CostsAggregatedParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	CostsAggregated(ctx context.Context, org int64, body CostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CostsAggregated(ctx context.Context, org int, params *CostsAggregatedParams, body CostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CostsDimensions request
-	CostsDimensions(ctx context.Context, org int64, params *CostsDimensionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CostsDimensions(ctx context.Context, org int, params *CostsDimensionsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CostsExportSelectWithBody request with any body
-	CostsExportSelectWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CostsExportSelectWithBody(ctx context.Context, org int, params *CostsExportSelectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	CostsExportSelect(ctx context.Context, org int64, body CostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CostsExportSelect(ctx context.Context, org int, params *CostsExportSelectParams, body CostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CostsExportSelectStatus request
-	CostsExportSelectStatus(ctx context.Context, org int64, exportId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CostsExportSelectStatus(ctx context.Context, org int, exportId string, params *CostsExportSelectStatusParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CostsMetrics request
-	CostsMetrics(ctx context.Context, org int64, params *CostsMetricsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CostsMetrics(ctx context.Context, org int, params *CostsMetricsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CostsSelectWithBody request with any body
-	CostsSelectWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CostsSelectWithBody(ctx context.Context, org int, params *CostsSelectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	CostsSelect(ctx context.Context, org int64, body CostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CustomDimensionsIndex request
-	CustomDimensionsIndex(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CustomDimensionsCreateWithBody request with any body
-	CustomDimensionsCreateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	CustomDimensionsCreate(ctx context.Context, org int64, body CustomDimensionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CustomDimensionsDestroy request
-	CustomDimensionsDestroy(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CustomDimensionsShow request
-	CustomDimensionsShow(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CustomDimensionsReplaceWithBody request with any body
-	CustomDimensionsReplaceWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	CustomDimensionsReplace(ctx context.Context, org int64, id string, body CustomDimensionsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// OrgDashboardsIndex request
-	OrgDashboardsIndex(ctx context.Context, org int64, params *OrgDashboardsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// OrgDashboardsCreateWithBody request with any body
-	OrgDashboardsCreateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	OrgDashboardsCreate(ctx context.Context, org int64, body OrgDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// OrgDashboardsDestroy request
-	OrgDashboardsDestroy(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// OrgDashboardsShow request
-	OrgDashboardsShow(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// OrgDashboardsReplaceWithBody request with any body
-	OrgDashboardsReplaceWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	OrgDashboardsReplace(ctx context.Context, org int64, id string, body OrgDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CostsSelect(ctx context.Context, org int, params *CostsSelectParams, body CostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ForecastsReportWithBody request with any body
-	ForecastsReportWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ForecastsReportWithBody(ctx context.Context, org int, params *ForecastsReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	ForecastsReport(ctx context.Context, org int64, body ForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CommitmentReallocationSettingShow request
-	CommitmentReallocationSettingShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CommitmentReallocationSettingUpsertWithBody request with any body
-	CommitmentReallocationSettingUpsertWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	CommitmentReallocationSettingUpsert(ctx context.Context, org int64, body CommitmentReallocationSettingUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ForecastsReport(ctx context.Context, org int, params *ForecastsReportParams, body ForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CurrencySettingShow request
-	CurrencySettingShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CurrencySettingShow(ctx context.Context, org int, params *CurrencySettingShowParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CurrencySettingUpdateWithBody request with any body
-	CurrencySettingUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CurrencySettingUpdateWithBody(ctx context.Context, org int, params *CurrencySettingUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	CurrencySettingUpdate(ctx context.Context, org int64, body CurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	CurrencySettingUpdate(ctx context.Context, org int, params *CurrencySettingUpdateParams, body CurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// RuleBasedDimensionsShow request
-	RuleBasedDimensionsShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	RuleBasedDimensionsShow(ctx context.Context, org int, params *RuleBasedDimensionsShowParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// RuleBasedDimensionsUpdateWithBody request with any body
-	RuleBasedDimensionsUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	RuleBasedDimensionsUpdateWithBody(ctx context.Context, org int, params *RuleBasedDimensionsUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	RuleBasedDimensionsUpdate(ctx context.Context, org int64, body RuleBasedDimensionsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	RuleBasedDimensionsUpdate(ctx context.Context, org int, params *RuleBasedDimensionsUpdateParams, body RuleBasedDimensionsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// RuleBasedDimensionsRbdDelete request
-	RuleBasedDimensionsRbdDelete(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	RuleBasedDimensionsRbdDelete(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// RuleBasedDimensionsRbdShow request
-	RuleBasedDimensionsRbdShow(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	RuleBasedDimensionsRbdShow(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdShowParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// RuleBasedDimensionsRbdUpdateWithBody request with any body
-	RuleBasedDimensionsRbdUpdateWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	RuleBasedDimensionsRbdUpdateWithBody(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	RuleBasedDimensionsRbdUpdate(ctx context.Context, org int64, id string, body RuleBasedDimensionsRbdUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	RuleBasedDimensionsRbdUpdate(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdUpdateParams, body RuleBasedDimensionsRbdUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// RuleBasedDimensionsRbdCreateWithBody request with any body
-	RuleBasedDimensionsRbdCreateWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	RuleBasedDimensionsRbdCreateWithBody(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	RuleBasedDimensionsRbdCreate(ctx context.Context, org int64, id string, body RuleBasedDimensionsRbdCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	RuleBasedDimensionsRbdCreate(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdCreateParams, body RuleBasedDimensionsRbdCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// RuleBasedDimensionsRulesListDelete request
-	RuleBasedDimensionsRulesListDelete(ctx context.Context, org int64, id string, effectiveAt string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	RuleBasedDimensionsRulesListDelete(ctx context.Context, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// RuleBasedDimensionsRulesListShow request
-	RuleBasedDimensionsRulesListShow(ctx context.Context, org int64, id string, effectiveAt string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	RuleBasedDimensionsRulesListShow(ctx context.Context, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListShowParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// RuleBasedDimensionsRulesListReplaceWithBody request with any body
-	RuleBasedDimensionsRulesListReplaceWithBody(ctx context.Context, org int64, id string, effectiveAt string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	RuleBasedDimensionsRulesListReplaceWithBody(ctx context.Context, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListReplaceParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	RuleBasedDimensionsRulesListReplace(ctx context.Context, org int64, id string, effectiveAt string, body RuleBasedDimensionsRulesListReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CustomDashboardsIndex request
-	CustomDashboardsIndex(ctx context.Context, org int64, user int64, params *CustomDashboardsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CustomDashboardsCreateWithBody request with any body
-	CustomDashboardsCreateWithBody(ctx context.Context, org int64, user int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	CustomDashboardsCreate(ctx context.Context, org int64, user int64, body CustomDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CustomDashboardsDestroy request
-	CustomDashboardsDestroy(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CustomDashboardsShow request
-	CustomDashboardsShow(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CustomDashboardsReplaceWithBody request with any body
-	CustomDashboardsReplaceWithBody(ctx context.Context, org int64, user int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	CustomDashboardsReplace(ctx context.Context, org int64, user int64, id string, body CustomDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AnomaliesIndexWithBody request with any body
-	AnomaliesIndexWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	AnomaliesIndex(ctx context.Context, org int64, body AnomaliesIndexJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AnomaliesAggregatedWithBody request with any body
-	AnomaliesAggregatedWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	AnomaliesAggregated(ctx context.Context, org int64, body AnomaliesAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AnomaliesSummary request
-	AnomaliesSummary(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CustomDimensionIndex request
-	CustomDimensionIndex(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CustomDimensionCreateWithBody request with any body
-	CustomDimensionCreateWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	CustomDimensionCreate(ctx context.Context, orgId int64, body CustomDimensionCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CustomDimensionDelete request
-	CustomDimensionDelete(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CustomDimensionShow request
-	CustomDimensionShow(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// CustomDimensionUpdateWithBody request with any body
-	CustomDimensionUpdateWithBody(ctx context.Context, orgId int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	CustomDimensionUpdate(ctx context.Context, orgId int64, id string, body CustomDimensionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	RuleBasedDimensionsRulesListReplace(ctx context.Context, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListReplaceParams, body RuleBasedDimensionsRulesListReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 }
 
-func (c *Client) AdjustmentDefinitionShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAdjustmentDefinitionShowRequest(c.Server, org)
+func (c *Client) AdjustmentDefinitionShow(ctx context.Context, org int, params *AdjustmentDefinitionShowParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAdjustmentDefinitionShowRequest(c.Server, org, params)
 	if err != nil {
 		return nil, err
 	}
@@ -2611,8 +6492,8 @@ func (c *Client) AdjustmentDefinitionShow(ctx context.Context, org int64, reqEdi
 	return c.Client.Do(req)
 }
 
-func (c *Client) AdjustmentDefinitionUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAdjustmentDefinitionUpdateRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) AdjustmentDefinitionUpdateWithBody(ctx context.Context, org int, params *AdjustmentDefinitionUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAdjustmentDefinitionUpdateRequestWithBody(c.Server, org, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2623,8 +6504,8 @@ func (c *Client) AdjustmentDefinitionUpdateWithBody(ctx context.Context, org int
 	return c.Client.Do(req)
 }
 
-func (c *Client) AdjustmentDefinitionUpdate(ctx context.Context, org int64, body AdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAdjustmentDefinitionUpdateRequest(c.Server, org, body)
+func (c *Client) AdjustmentDefinitionUpdate(ctx context.Context, org int, params *AdjustmentDefinitionUpdateParams, body AdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAdjustmentDefinitionUpdateRequest(c.Server, org, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2635,8 +6516,8 @@ func (c *Client) AdjustmentDefinitionUpdate(ctx context.Context, org int64, body
 	return c.Client.Do(req)
 }
 
-func (c *Client) AnomaliesReportWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAnomaliesReportRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) AnomaliesReportWithBody(ctx context.Context, org int, params *AnomaliesReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAnomaliesReportRequestWithBody(c.Server, org, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2647,8 +6528,8 @@ func (c *Client) AnomaliesReportWithBody(ctx context.Context, org int64, content
 	return c.Client.Do(req)
 }
 
-func (c *Client) AnomaliesReport(ctx context.Context, org int64, body AnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAnomaliesReportRequest(c.Server, org, body)
+func (c *Client) AnomaliesReport(ctx context.Context, org int, params *AnomaliesReportParams, body AnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAnomaliesReportRequest(c.Server, org, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2659,7 +6540,7 @@ func (c *Client) AnomaliesReport(ctx context.Context, org int64, body AnomaliesR
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillMonthsSearch(ctx context.Context, org int64, params *BillMonthsSearchParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) BillMonthsSearch(ctx context.Context, org int, params *BillMonthsSearchParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewBillMonthsSearchRequest(c.Server, org, params)
 	if err != nil {
 		return nil, err
@@ -2671,8 +6552,8 @@ func (c *Client) BillMonthsSearch(ctx context.Context, org int64, params *BillMo
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillMonthsReprocessWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillMonthsReprocessRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) BudgetsIndex(ctx context.Context, org int, params *BudgetsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBudgetsIndexRequest(c.Server, org, params)
 	if err != nil {
 		return nil, err
 	}
@@ -2683,8 +6564,8 @@ func (c *Client) BillMonthsReprocessWithBody(ctx context.Context, org int64, con
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillMonthsReprocess(ctx context.Context, org int64, body BillMonthsReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillMonthsReprocessRequest(c.Server, org, body)
+func (c *Client) BudgetsCreateWithBody(ctx context.Context, org int, params *BudgetsCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBudgetsCreateRequestWithBody(c.Server, org, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2695,8 +6576,8 @@ func (c *Client) BillMonthsReprocess(ctx context.Context, org int64, body BillMo
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillMonthsDownload(ctx context.Context, org int64, params *BillMonthsDownloadParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillMonthsDownloadRequest(c.Server, org, params)
+func (c *Client) BudgetsCreate(ctx context.Context, org int, params *BudgetsCreateParams, body BudgetsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBudgetsCreateRequest(c.Server, org, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2707,8 +6588,8 @@ func (c *Client) BillMonthsDownload(ctx context.Context, org int64, params *Bill
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillingSettingsShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillingSettingsShowRequest(c.Server, org)
+func (c *Client) BudgetsDelete(ctx context.Context, org int, id string, params *BudgetsDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBudgetsDeleteRequest(c.Server, org, id, params)
 	if err != nil {
 		return nil, err
 	}
@@ -2719,8 +6600,8 @@ func (c *Client) BillingSettingsShow(ctx context.Context, org int64, reqEditors 
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillingSettingsUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillingSettingsUpdateRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) BudgetsShow(ctx context.Context, org int, id string, params *BudgetsShowParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBudgetsShowRequest(c.Server, org, id, params)
 	if err != nil {
 		return nil, err
 	}
@@ -2731,8 +6612,8 @@ func (c *Client) BillingSettingsUpdateWithBody(ctx context.Context, org int64, c
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillingSettingsUpdate(ctx context.Context, org int64, body BillingSettingsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillingSettingsUpdateRequest(c.Server, org, body)
+func (c *Client) BudgetsUpdateWithBody(ctx context.Context, org int, id string, params *BudgetsUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBudgetsUpdateRequestWithBody(c.Server, org, id, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2743,8 +6624,8 @@ func (c *Client) BillingSettingsUpdate(ctx context.Context, org int64, body Bill
 	return c.Client.Do(req)
 }
 
-func (c *Client) BudgetsIndex(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBudgetsIndexRequest(c.Server, org)
+func (c *Client) BudgetsUpdate(ctx context.Context, org int, id string, params *BudgetsUpdateParams, body BudgetsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBudgetsUpdateRequest(c.Server, org, id, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2755,8 +6636,8 @@ func (c *Client) BudgetsIndex(ctx context.Context, org int64, reqEditors ...Requ
 	return c.Client.Do(req)
 }
 
-func (c *Client) BudgetsCreateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBudgetsCreateRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) BudgetsReportWithBody(ctx context.Context, org int, id string, params *BudgetsReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBudgetsReportRequestWithBody(c.Server, org, id, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2767,8 +6648,8 @@ func (c *Client) BudgetsCreateWithBody(ctx context.Context, org int64, contentTy
 	return c.Client.Do(req)
 }
 
-func (c *Client) BudgetsCreate(ctx context.Context, org int64, body BudgetsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBudgetsCreateRequest(c.Server, org, body)
+func (c *Client) BudgetsReport(ctx context.Context, org int, id string, params *BudgetsReportParams, body BudgetsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBudgetsReportRequest(c.Server, org, id, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2779,8 +6660,8 @@ func (c *Client) BudgetsCreate(ctx context.Context, org int64, body BudgetsCreat
 	return c.Client.Do(req)
 }
 
-func (c *Client) BudgetsDelete(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBudgetsDeleteRequest(c.Server, org, id)
+func (c *Client) CostsAggregatedWithBody(ctx context.Context, org int, params *CostsAggregatedParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCostsAggregatedRequestWithBody(c.Server, org, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2791,8 +6672,8 @@ func (c *Client) BudgetsDelete(ctx context.Context, org int64, id string, reqEdi
 	return c.Client.Do(req)
 }
 
-func (c *Client) BudgetsShow(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBudgetsShowRequest(c.Server, org, id)
+func (c *Client) CostsAggregated(ctx context.Context, org int, params *CostsAggregatedParams, body CostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCostsAggregatedRequest(c.Server, org, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2803,91 +6684,7 @@ func (c *Client) BudgetsShow(ctx context.Context, org int64, id string, reqEdito
 	return c.Client.Do(req)
 }
 
-func (c *Client) BudgetsUpdateWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBudgetsUpdateRequestWithBody(c.Server, org, id, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) BudgetsUpdate(ctx context.Context, org int64, id string, body BudgetsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBudgetsUpdateRequest(c.Server, org, id, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) BudgetsReportWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBudgetsReportRequestWithBody(c.Server, org, id, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) BudgetsReport(ctx context.Context, org int64, id string, body BudgetsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBudgetsReportRequest(c.Server, org, id, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CloudVendorAccountsIndex(ctx context.Context, org int64, params *CloudVendorAccountsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCloudVendorAccountsIndexRequest(c.Server, org, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CostsAggregatedWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCostsAggregatedRequestWithBody(c.Server, org, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CostsAggregated(ctx context.Context, org int64, body CostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCostsAggregatedRequest(c.Server, org, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CostsDimensions(ctx context.Context, org int64, params *CostsDimensionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CostsDimensions(ctx context.Context, org int, params *CostsDimensionsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCostsDimensionsRequest(c.Server, org, params)
 	if err != nil {
 		return nil, err
@@ -2899,8 +6696,8 @@ func (c *Client) CostsDimensions(ctx context.Context, org int64, params *CostsDi
 	return c.Client.Do(req)
 }
 
-func (c *Client) CostsExportSelectWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCostsExportSelectRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) CostsExportSelectWithBody(ctx context.Context, org int, params *CostsExportSelectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCostsExportSelectRequestWithBody(c.Server, org, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2911,8 +6708,8 @@ func (c *Client) CostsExportSelectWithBody(ctx context.Context, org int64, conte
 	return c.Client.Do(req)
 }
 
-func (c *Client) CostsExportSelect(ctx context.Context, org int64, body CostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCostsExportSelectRequest(c.Server, org, body)
+func (c *Client) CostsExportSelect(ctx context.Context, org int, params *CostsExportSelectParams, body CostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCostsExportSelectRequest(c.Server, org, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2923,8 +6720,8 @@ func (c *Client) CostsExportSelect(ctx context.Context, org int64, body CostsExp
 	return c.Client.Do(req)
 }
 
-func (c *Client) CostsExportSelectStatus(ctx context.Context, org int64, exportId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCostsExportSelectStatusRequest(c.Server, org, exportId)
+func (c *Client) CostsExportSelectStatus(ctx context.Context, org int, exportId string, params *CostsExportSelectStatusParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCostsExportSelectStatusRequest(c.Server, org, exportId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -2935,7 +6732,7 @@ func (c *Client) CostsExportSelectStatus(ctx context.Context, org int64, exportI
 	return c.Client.Do(req)
 }
 
-func (c *Client) CostsMetrics(ctx context.Context, org int64, params *CostsMetricsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) CostsMetrics(ctx context.Context, org int, params *CostsMetricsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCostsMetricsRequest(c.Server, org, params)
 	if err != nil {
 		return nil, err
@@ -2947,8 +6744,8 @@ func (c *Client) CostsMetrics(ctx context.Context, org int64, params *CostsMetri
 	return c.Client.Do(req)
 }
 
-func (c *Client) CostsSelectWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCostsSelectRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) CostsSelectWithBody(ctx context.Context, org int, params *CostsSelectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCostsSelectRequestWithBody(c.Server, org, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2959,8 +6756,8 @@ func (c *Client) CostsSelectWithBody(ctx context.Context, org int64, contentType
 	return c.Client.Do(req)
 }
 
-func (c *Client) CostsSelect(ctx context.Context, org int64, body CostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCostsSelectRequest(c.Server, org, body)
+func (c *Client) CostsSelect(ctx context.Context, org int, params *CostsSelectParams, body CostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCostsSelectRequest(c.Server, org, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2971,8 +6768,8 @@ func (c *Client) CostsSelect(ctx context.Context, org int64, body CostsSelectJSO
 	return c.Client.Do(req)
 }
 
-func (c *Client) CustomDimensionsIndex(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDimensionsIndexRequest(c.Server, org)
+func (c *Client) ForecastsReportWithBody(ctx context.Context, org int, params *ForecastsReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewForecastsReportRequestWithBody(c.Server, org, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2983,8 +6780,8 @@ func (c *Client) CustomDimensionsIndex(ctx context.Context, org int64, reqEditor
 	return c.Client.Do(req)
 }
 
-func (c *Client) CustomDimensionsCreateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDimensionsCreateRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) ForecastsReport(ctx context.Context, org int, params *ForecastsReportParams, body ForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewForecastsReportRequest(c.Server, org, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2995,8 +6792,8 @@ func (c *Client) CustomDimensionsCreateWithBody(ctx context.Context, org int64, 
 	return c.Client.Do(req)
 }
 
-func (c *Client) CustomDimensionsCreate(ctx context.Context, org int64, body CustomDimensionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDimensionsCreateRequest(c.Server, org, body)
+func (c *Client) CurrencySettingShow(ctx context.Context, org int, params *CurrencySettingShowParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCurrencySettingShowRequest(c.Server, org, params)
 	if err != nil {
 		return nil, err
 	}
@@ -3007,8 +6804,8 @@ func (c *Client) CustomDimensionsCreate(ctx context.Context, org int64, body Cus
 	return c.Client.Do(req)
 }
 
-func (c *Client) CustomDimensionsDestroy(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDimensionsDestroyRequest(c.Server, org, id)
+func (c *Client) CurrencySettingUpdateWithBody(ctx context.Context, org int, params *CurrencySettingUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCurrencySettingUpdateRequestWithBody(c.Server, org, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -3019,8 +6816,8 @@ func (c *Client) CustomDimensionsDestroy(ctx context.Context, org int64, id stri
 	return c.Client.Do(req)
 }
 
-func (c *Client) CustomDimensionsShow(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDimensionsShowRequest(c.Server, org, id)
+func (c *Client) CurrencySettingUpdate(ctx context.Context, org int, params *CurrencySettingUpdateParams, body CurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCurrencySettingUpdateRequest(c.Server, org, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -3031,8 +6828,8 @@ func (c *Client) CustomDimensionsShow(ctx context.Context, org int64, id string,
 	return c.Client.Do(req)
 }
 
-func (c *Client) CustomDimensionsReplaceWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDimensionsReplaceRequestWithBody(c.Server, org, id, contentType, body)
+func (c *Client) RuleBasedDimensionsShow(ctx context.Context, org int, params *RuleBasedDimensionsShowParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRuleBasedDimensionsShowRequest(c.Server, org, params)
 	if err != nil {
 		return nil, err
 	}
@@ -3043,8 +6840,8 @@ func (c *Client) CustomDimensionsReplaceWithBody(ctx context.Context, org int64,
 	return c.Client.Do(req)
 }
 
-func (c *Client) CustomDimensionsReplace(ctx context.Context, org int64, id string, body CustomDimensionsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDimensionsReplaceRequest(c.Server, org, id, body)
+func (c *Client) RuleBasedDimensionsUpdateWithBody(ctx context.Context, org int, params *RuleBasedDimensionsUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRuleBasedDimensionsUpdateRequestWithBody(c.Server, org, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -3055,8 +6852,8 @@ func (c *Client) CustomDimensionsReplace(ctx context.Context, org int64, id stri
 	return c.Client.Do(req)
 }
 
-func (c *Client) OrgDashboardsIndex(ctx context.Context, org int64, params *OrgDashboardsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewOrgDashboardsIndexRequest(c.Server, org, params)
+func (c *Client) RuleBasedDimensionsUpdate(ctx context.Context, org int, params *RuleBasedDimensionsUpdateParams, body RuleBasedDimensionsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRuleBasedDimensionsUpdateRequest(c.Server, org, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -3067,8 +6864,8 @@ func (c *Client) OrgDashboardsIndex(ctx context.Context, org int64, params *OrgD
 	return c.Client.Do(req)
 }
 
-func (c *Client) OrgDashboardsCreateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewOrgDashboardsCreateRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) RuleBasedDimensionsRbdDelete(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRuleBasedDimensionsRbdDeleteRequest(c.Server, org, id, params)
 	if err != nil {
 		return nil, err
 	}
@@ -3079,8 +6876,8 @@ func (c *Client) OrgDashboardsCreateWithBody(ctx context.Context, org int64, con
 	return c.Client.Do(req)
 }
 
-func (c *Client) OrgDashboardsCreate(ctx context.Context, org int64, body OrgDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewOrgDashboardsCreateRequest(c.Server, org, body)
+func (c *Client) RuleBasedDimensionsRbdShow(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdShowParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRuleBasedDimensionsRbdShowRequest(c.Server, org, id, params)
 	if err != nil {
 		return nil, err
 	}
@@ -3091,8 +6888,8 @@ func (c *Client) OrgDashboardsCreate(ctx context.Context, org int64, body OrgDas
 	return c.Client.Do(req)
 }
 
-func (c *Client) OrgDashboardsDestroy(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewOrgDashboardsDestroyRequest(c.Server, org, id)
+func (c *Client) RuleBasedDimensionsRbdUpdateWithBody(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRuleBasedDimensionsRbdUpdateRequestWithBody(c.Server, org, id, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -3103,8 +6900,8 @@ func (c *Client) OrgDashboardsDestroy(ctx context.Context, org int64, id string,
 	return c.Client.Do(req)
 }
 
-func (c *Client) OrgDashboardsShow(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewOrgDashboardsShowRequest(c.Server, org, id)
+func (c *Client) RuleBasedDimensionsRbdUpdate(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdUpdateParams, body RuleBasedDimensionsRbdUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRuleBasedDimensionsRbdUpdateRequest(c.Server, org, id, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -3115,8 +6912,8 @@ func (c *Client) OrgDashboardsShow(ctx context.Context, org int64, id string, re
 	return c.Client.Do(req)
 }
 
-func (c *Client) OrgDashboardsReplaceWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewOrgDashboardsReplaceRequestWithBody(c.Server, org, id, contentType, body)
+func (c *Client) RuleBasedDimensionsRbdCreateWithBody(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRuleBasedDimensionsRbdCreateRequestWithBody(c.Server, org, id, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -3127,8 +6924,8 @@ func (c *Client) OrgDashboardsReplaceWithBody(ctx context.Context, org int64, id
 	return c.Client.Do(req)
 }
 
-func (c *Client) OrgDashboardsReplace(ctx context.Context, org int64, id string, body OrgDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewOrgDashboardsReplaceRequest(c.Server, org, id, body)
+func (c *Client) RuleBasedDimensionsRbdCreate(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdCreateParams, body RuleBasedDimensionsRbdCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRuleBasedDimensionsRbdCreateRequest(c.Server, org, id, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -3139,8 +6936,8 @@ func (c *Client) OrgDashboardsReplace(ctx context.Context, org int64, id string,
 	return c.Client.Do(req)
 }
 
-func (c *Client) ForecastsReportWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewForecastsReportRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) RuleBasedDimensionsRulesListDelete(ctx context.Context, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRuleBasedDimensionsRulesListDeleteRequest(c.Server, org, id, effectiveAt, params)
 	if err != nil {
 		return nil, err
 	}
@@ -3151,8 +6948,8 @@ func (c *Client) ForecastsReportWithBody(ctx context.Context, org int64, content
 	return c.Client.Do(req)
 }
 
-func (c *Client) ForecastsReport(ctx context.Context, org int64, body ForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewForecastsReportRequest(c.Server, org, body)
+func (c *Client) RuleBasedDimensionsRulesListShow(ctx context.Context, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListShowParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRuleBasedDimensionsRulesListShowRequest(c.Server, org, id, effectiveAt, params)
 	if err != nil {
 		return nil, err
 	}
@@ -3163,8 +6960,8 @@ func (c *Client) ForecastsReport(ctx context.Context, org int64, body ForecastsR
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommitmentReallocationSettingShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommitmentReallocationSettingShowRequest(c.Server, org)
+func (c *Client) RuleBasedDimensionsRulesListReplaceWithBody(ctx context.Context, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListReplaceParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRuleBasedDimensionsRulesListReplaceRequestWithBody(c.Server, org, id, effectiveAt, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -3175,440 +6972,8 @@ func (c *Client) CommitmentReallocationSettingShow(ctx context.Context, org int6
 	return c.Client.Do(req)
 }
 
-func (c *Client) CommitmentReallocationSettingUpsertWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommitmentReallocationSettingUpsertRequestWithBody(c.Server, org, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CommitmentReallocationSettingUpsert(ctx context.Context, org int64, body CommitmentReallocationSettingUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCommitmentReallocationSettingUpsertRequest(c.Server, org, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CurrencySettingShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCurrencySettingShowRequest(c.Server, org)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CurrencySettingUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCurrencySettingUpdateRequestWithBody(c.Server, org, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CurrencySettingUpdate(ctx context.Context, org int64, body CurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCurrencySettingUpdateRequest(c.Server, org, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) RuleBasedDimensionsShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRuleBasedDimensionsShowRequest(c.Server, org)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) RuleBasedDimensionsUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRuleBasedDimensionsUpdateRequestWithBody(c.Server, org, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) RuleBasedDimensionsUpdate(ctx context.Context, org int64, body RuleBasedDimensionsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRuleBasedDimensionsUpdateRequest(c.Server, org, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) RuleBasedDimensionsRbdDelete(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRuleBasedDimensionsRbdDeleteRequest(c.Server, org, id)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) RuleBasedDimensionsRbdShow(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRuleBasedDimensionsRbdShowRequest(c.Server, org, id)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) RuleBasedDimensionsRbdUpdateWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRuleBasedDimensionsRbdUpdateRequestWithBody(c.Server, org, id, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) RuleBasedDimensionsRbdUpdate(ctx context.Context, org int64, id string, body RuleBasedDimensionsRbdUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRuleBasedDimensionsRbdUpdateRequest(c.Server, org, id, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) RuleBasedDimensionsRbdCreateWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRuleBasedDimensionsRbdCreateRequestWithBody(c.Server, org, id, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) RuleBasedDimensionsRbdCreate(ctx context.Context, org int64, id string, body RuleBasedDimensionsRbdCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRuleBasedDimensionsRbdCreateRequest(c.Server, org, id, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) RuleBasedDimensionsRulesListDelete(ctx context.Context, org int64, id string, effectiveAt string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRuleBasedDimensionsRulesListDeleteRequest(c.Server, org, id, effectiveAt)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) RuleBasedDimensionsRulesListShow(ctx context.Context, org int64, id string, effectiveAt string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRuleBasedDimensionsRulesListShowRequest(c.Server, org, id, effectiveAt)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) RuleBasedDimensionsRulesListReplaceWithBody(ctx context.Context, org int64, id string, effectiveAt string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRuleBasedDimensionsRulesListReplaceRequestWithBody(c.Server, org, id, effectiveAt, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) RuleBasedDimensionsRulesListReplace(ctx context.Context, org int64, id string, effectiveAt string, body RuleBasedDimensionsRulesListReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewRuleBasedDimensionsRulesListReplaceRequest(c.Server, org, id, effectiveAt, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CustomDashboardsIndex(ctx context.Context, org int64, user int64, params *CustomDashboardsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDashboardsIndexRequest(c.Server, org, user, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CustomDashboardsCreateWithBody(ctx context.Context, org int64, user int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDashboardsCreateRequestWithBody(c.Server, org, user, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CustomDashboardsCreate(ctx context.Context, org int64, user int64, body CustomDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDashboardsCreateRequest(c.Server, org, user, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CustomDashboardsDestroy(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDashboardsDestroyRequest(c.Server, org, user, id)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CustomDashboardsShow(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDashboardsShowRequest(c.Server, org, user, id)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CustomDashboardsReplaceWithBody(ctx context.Context, org int64, user int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDashboardsReplaceRequestWithBody(c.Server, org, user, id, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CustomDashboardsReplace(ctx context.Context, org int64, user int64, id string, body CustomDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDashboardsReplaceRequest(c.Server, org, user, id, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) AnomaliesIndexWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAnomaliesIndexRequestWithBody(c.Server, org, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) AnomaliesIndex(ctx context.Context, org int64, body AnomaliesIndexJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAnomaliesIndexRequest(c.Server, org, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) AnomaliesAggregatedWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAnomaliesAggregatedRequestWithBody(c.Server, org, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) AnomaliesAggregated(ctx context.Context, org int64, body AnomaliesAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAnomaliesAggregatedRequest(c.Server, org, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) AnomaliesSummary(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAnomaliesSummaryRequest(c.Server, org, id)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CustomDimensionIndex(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDimensionIndexRequest(c.Server, orgId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CustomDimensionCreateWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDimensionCreateRequestWithBody(c.Server, orgId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CustomDimensionCreate(ctx context.Context, orgId int64, body CustomDimensionCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDimensionCreateRequest(c.Server, orgId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CustomDimensionDelete(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDimensionDeleteRequest(c.Server, orgId, id)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CustomDimensionShow(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDimensionShowRequest(c.Server, orgId, id)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CustomDimensionUpdateWithBody(ctx context.Context, orgId int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDimensionUpdateRequestWithBody(c.Server, orgId, id, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) CustomDimensionUpdate(ctx context.Context, orgId int64, id string, body CustomDimensionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCustomDimensionUpdateRequest(c.Server, orgId, id, body)
+func (c *Client) RuleBasedDimensionsRulesListReplace(ctx context.Context, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListReplaceParams, body RuleBasedDimensionsRulesListReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRuleBasedDimensionsRulesListReplaceRequest(c.Server, org, id, effectiveAt, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -3620,7 +6985,7 @@ func (c *Client) CustomDimensionUpdate(ctx context.Context, orgId int64, id stri
 }
 
 // NewAdjustmentDefinitionShowRequest generates requests for AdjustmentDefinitionShow
-func NewAdjustmentDefinitionShowRequest(server string, org int64) (*http.Request, error) {
+func NewAdjustmentDefinitionShowRequest(server string, org int, params *AdjustmentDefinitionShowParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -3635,7 +7000,7 @@ func NewAdjustmentDefinitionShowRequest(server string, org int64) (*http.Request
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/adjustments/", pathParam0)
+	operationPath := fmt.Sprintf("/orgs/%s/adjustments/", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3650,22 +7015,37 @@ func NewAdjustmentDefinitionShowRequest(server string, org int64) (*http.Request
 		return nil, err
 	}
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewAdjustmentDefinitionUpdateRequest calls the generic AdjustmentDefinitionUpdate builder with application/json body
-func NewAdjustmentDefinitionUpdateRequest(server string, org int64, body AdjustmentDefinitionUpdateJSONRequestBody) (*http.Request, error) {
+func NewAdjustmentDefinitionUpdateRequest(server string, org int, params *AdjustmentDefinitionUpdateParams, body AdjustmentDefinitionUpdateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewAdjustmentDefinitionUpdateRequestWithBody(server, org, "application/json", bodyReader)
+	return NewAdjustmentDefinitionUpdateRequestWithBody(server, org, params, "application/json", bodyReader)
 }
 
 // NewAdjustmentDefinitionUpdateRequestWithBody generates requests for AdjustmentDefinitionUpdate with any type of body
-func NewAdjustmentDefinitionUpdateRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewAdjustmentDefinitionUpdateRequestWithBody(server string, org int, params *AdjustmentDefinitionUpdateParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -3680,7 +7060,7 @@ func NewAdjustmentDefinitionUpdateRequestWithBody(server string, org int64, cont
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/adjustments/", pathParam0)
+	operationPath := fmt.Sprintf("/orgs/%s/adjustments/", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3697,22 +7077,37 @@ func NewAdjustmentDefinitionUpdateRequestWithBody(server string, org int64, cont
 
 	req.Header.Add("Content-Type", contentType)
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewAnomaliesReportRequest calls the generic AnomaliesReport builder with application/json body
-func NewAnomaliesReportRequest(server string, org int64, body AnomaliesReportJSONRequestBody) (*http.Request, error) {
+func NewAnomaliesReportRequest(server string, org int, params *AnomaliesReportParams, body AnomaliesReportJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewAnomaliesReportRequestWithBody(server, org, "application/json", bodyReader)
+	return NewAnomaliesReportRequestWithBody(server, org, params, "application/json", bodyReader)
 }
 
 // NewAnomaliesReportRequestWithBody generates requests for AnomaliesReport with any type of body
-func NewAnomaliesReportRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewAnomaliesReportRequestWithBody(server string, org int, params *AnomaliesReportParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -3727,7 +7122,7 @@ func NewAnomaliesReportRequestWithBody(server string, org int64, contentType str
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/anomalies/report", pathParam0)
+	operationPath := fmt.Sprintf("/orgs/%s/anomalies/report", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3744,11 +7139,26 @@ func NewAnomaliesReportRequestWithBody(server string, org int64, contentType str
 
 	req.Header.Add("Content-Type", contentType)
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewBillMonthsSearchRequest generates requests for BillMonthsSearch
-func NewBillMonthsSearchRequest(server string, org int64, params *BillMonthsSearchParams) (*http.Request, error) {
+func NewBillMonthsSearchRequest(server string, org int, params *BillMonthsSearchParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -3763,7 +7173,7 @@ func NewBillMonthsSearchRequest(server string, org int64, params *BillMonthsSear
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/bill-months", pathParam0)
+	operationPath := fmt.Sprintf("/orgs/%s/bill-months", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -3864,207 +7274,26 @@ func NewBillMonthsSearchRequest(server string, org int64, params *BillMonthsSear
 		return nil, err
 	}
 
-	return req, nil
-}
-
-// NewBillMonthsReprocessRequest calls the generic BillMonthsReprocess builder with application/json body
-func NewBillMonthsReprocessRequest(server string, org int64, body BillMonthsReprocessJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewBillMonthsReprocessRequestWithBody(server, org, "application/json", bodyReader)
-}
-
-// NewBillMonthsReprocessRequestWithBody generates requests for BillMonthsReprocess with any type of body
-func NewBillMonthsReprocessRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/bill-months", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("PATCH", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewBillMonthsDownloadRequest generates requests for BillMonthsDownload
-func NewBillMonthsDownloadRequest(server string, org int64, params *BillMonthsDownloadParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/bill-months/download", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
 	if params != nil {
-		queryValues := queryURL.Query()
 
-		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "download_token", runtime.ParamLocationQuery, params.DownloadToken); err != nil {
-			return nil, err
-		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-			return nil, err
-		} else {
-			for k, v := range parsed {
-				for _, v2 := range v {
-					queryValues.Add(k, v2)
-				}
-			}
-		}
+		if params.Authorization != nil {
+			var headerParam0 string
 
-		if params.Format != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "format", runtime.ParamLocationQuery, *params.Format); err != nil {
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
 				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
 			}
 
+			req.Header.Set("Authorization", headerParam0)
 		}
 
-		queryURL.RawQuery = queryValues.Encode()
 	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewBillingSettingsShowRequest generates requests for BillingSettingsShow
-func NewBillingSettingsShowRequest(server string, org int64) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/billing-settings", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewBillingSettingsUpdateRequest calls the generic BillingSettingsUpdate builder with application/json body
-func NewBillingSettingsUpdateRequest(server string, org int64, body BillingSettingsUpdateJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewBillingSettingsUpdateRequestWithBody(server, org, "application/json", bodyReader)
-}
-
-// NewBillingSettingsUpdateRequestWithBody generates requests for BillingSettingsUpdate with any type of body
-func NewBillingSettingsUpdateRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/billing-settings", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("PATCH", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
 
 // NewBudgetsIndexRequest generates requests for BudgetsIndex
-func NewBudgetsIndexRequest(server string, org int64) (*http.Request, error) {
+func NewBudgetsIndexRequest(server string, org int, params *BudgetsIndexParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -4079,7 +7308,7 @@ func NewBudgetsIndexRequest(server string, org int64) (*http.Request, error) {
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/budgets", pathParam0)
+	operationPath := fmt.Sprintf("/orgs/%s/budgets", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -4092,24 +7321,39 @@ func NewBudgetsIndexRequest(server string, org int64) (*http.Request, error) {
 	req, err := http.NewRequest("GET", queryURL.String(), nil)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
 	}
 
 	return req, nil
 }
 
 // NewBudgetsCreateRequest calls the generic BudgetsCreate builder with application/json body
-func NewBudgetsCreateRequest(server string, org int64, body BudgetsCreateJSONRequestBody) (*http.Request, error) {
+func NewBudgetsCreateRequest(server string, org int, params *BudgetsCreateParams, body BudgetsCreateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBudgetsCreateRequestWithBody(server, org, "application/json", bodyReader)
+	return NewBudgetsCreateRequestWithBody(server, org, params, "application/json", bodyReader)
 }
 
 // NewBudgetsCreateRequestWithBody generates requests for BudgetsCreate with any type of body
-func NewBudgetsCreateRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewBudgetsCreateRequestWithBody(server string, org int, params *BudgetsCreateParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -4124,7 +7368,7 @@ func NewBudgetsCreateRequestWithBody(server string, org int64, contentType strin
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/budgets", pathParam0)
+	operationPath := fmt.Sprintf("/orgs/%s/budgets", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -4141,11 +7385,26 @@ func NewBudgetsCreateRequestWithBody(server string, org int64, contentType strin
 
 	req.Header.Add("Content-Type", contentType)
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewBudgetsDeleteRequest generates requests for BudgetsDelete
-func NewBudgetsDeleteRequest(server string, org int64, id string) (*http.Request, error) {
+func NewBudgetsDeleteRequest(server string, org int, id string, params *BudgetsDeleteParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -4167,7 +7426,7 @@ func NewBudgetsDeleteRequest(server string, org int64, id string) (*http.Request
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/budgets/%s", pathParam0, pathParam1)
+	operationPath := fmt.Sprintf("/orgs/%s/budgets/%s", pathParam0, pathParam1)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -4182,11 +7441,26 @@ func NewBudgetsDeleteRequest(server string, org int64, id string) (*http.Request
 		return nil, err
 	}
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewBudgetsShowRequest generates requests for BudgetsShow
-func NewBudgetsShowRequest(server string, org int64, id string) (*http.Request, error) {
+func NewBudgetsShowRequest(server string, org int, id string, params *BudgetsShowParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -4208,7 +7482,7 @@ func NewBudgetsShowRequest(server string, org int64, id string) (*http.Request, 
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/budgets/%s", pathParam0, pathParam1)
+	operationPath := fmt.Sprintf("/orgs/%s/budgets/%s", pathParam0, pathParam1)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -4223,22 +7497,37 @@ func NewBudgetsShowRequest(server string, org int64, id string) (*http.Request, 
 		return nil, err
 	}
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewBudgetsUpdateRequest calls the generic BudgetsUpdate builder with application/json body
-func NewBudgetsUpdateRequest(server string, org int64, id string, body BudgetsUpdateJSONRequestBody) (*http.Request, error) {
+func NewBudgetsUpdateRequest(server string, org int, id string, params *BudgetsUpdateParams, body BudgetsUpdateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBudgetsUpdateRequestWithBody(server, org, id, "application/json", bodyReader)
+	return NewBudgetsUpdateRequestWithBody(server, org, id, params, "application/json", bodyReader)
 }
 
 // NewBudgetsUpdateRequestWithBody generates requests for BudgetsUpdate with any type of body
-func NewBudgetsUpdateRequestWithBody(server string, org int64, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewBudgetsUpdateRequestWithBody(server string, org int, id string, params *BudgetsUpdateParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -4260,7 +7549,7 @@ func NewBudgetsUpdateRequestWithBody(server string, org int64, id string, conten
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/budgets/%s", pathParam0, pathParam1)
+	operationPath := fmt.Sprintf("/orgs/%s/budgets/%s", pathParam0, pathParam1)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -4277,22 +7566,37 @@ func NewBudgetsUpdateRequestWithBody(server string, org int64, id string, conten
 
 	req.Header.Add("Content-Type", contentType)
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewBudgetsReportRequest calls the generic BudgetsReport builder with application/json body
-func NewBudgetsReportRequest(server string, org int64, id string, body BudgetsReportJSONRequestBody) (*http.Request, error) {
+func NewBudgetsReportRequest(server string, org int, id string, params *BudgetsReportParams, body BudgetsReportJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBudgetsReportRequestWithBody(server, org, id, "application/json", bodyReader)
+	return NewBudgetsReportRequestWithBody(server, org, id, params, "application/json", bodyReader)
 }
 
 // NewBudgetsReportRequestWithBody generates requests for BudgetsReport with any type of body
-func NewBudgetsReportRequestWithBody(server string, org int64, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewBudgetsReportRequestWithBody(server string, org int, id string, params *BudgetsReportParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -4314,7 +7618,7 @@ func NewBudgetsReportRequestWithBody(server string, org int64, id string, conten
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/budgets/%s/report", pathParam0, pathParam1)
+	operationPath := fmt.Sprintf("/orgs/%s/budgets/%s/report", pathParam0, pathParam1)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -4331,78 +7635,37 @@ func NewBudgetsReportRequestWithBody(server string, org int64, id string, conten
 
 	req.Header.Add("Content-Type", contentType)
 
-	return req, nil
-}
-
-// NewCloudVendorAccountsIndexRequest generates requests for CloudVendorAccountsIndex
-func NewCloudVendorAccountsIndexRequest(server string, org int64, params *CloudVendorAccountsIndexParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/cloud_vendor_accounts", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
 	if params != nil {
-		queryValues := queryURL.Query()
 
-		if params.CloudVendor != nil {
+		if params.Authorization != nil {
+			var headerParam0 string
 
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "cloud_vendor", runtime.ParamLocationQuery, *params.CloudVendor); err != nil {
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
 				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
 			}
 
+			req.Header.Set("Authorization", headerParam0)
 		}
 
-		queryURL.RawQuery = queryValues.Encode()
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
 	}
 
 	return req, nil
 }
 
 // NewCostsAggregatedRequest calls the generic CostsAggregated builder with application/json body
-func NewCostsAggregatedRequest(server string, org int64, body CostsAggregatedJSONRequestBody) (*http.Request, error) {
+func NewCostsAggregatedRequest(server string, org int, params *CostsAggregatedParams, body CostsAggregatedJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewCostsAggregatedRequestWithBody(server, org, "application/json", bodyReader)
+	return NewCostsAggregatedRequestWithBody(server, org, params, "application/json", bodyReader)
 }
 
 // NewCostsAggregatedRequestWithBody generates requests for CostsAggregated with any type of body
-func NewCostsAggregatedRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewCostsAggregatedRequestWithBody(server string, org int, params *CostsAggregatedParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -4417,7 +7680,7 @@ func NewCostsAggregatedRequestWithBody(server string, org int64, contentType str
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/costs/aggregated", pathParam0)
+	operationPath := fmt.Sprintf("/orgs/%s/costs/aggregated", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -4434,11 +7697,26 @@ func NewCostsAggregatedRequestWithBody(server string, org int64, contentType str
 
 	req.Header.Add("Content-Type", contentType)
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewCostsDimensionsRequest generates requests for CostsDimensions
-func NewCostsDimensionsRequest(server string, org int64, params *CostsDimensionsParams) (*http.Request, error) {
+func NewCostsDimensionsRequest(server string, org int, params *CostsDimensionsParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -4453,7 +7731,7 @@ func NewCostsDimensionsRequest(server string, org int64, params *CostsDimensions
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/costs/dimensions", pathParam0)
+	operationPath := fmt.Sprintf("/orgs/%s/costs/dimensions", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -4490,22 +7768,37 @@ func NewCostsDimensionsRequest(server string, org int64, params *CostsDimensions
 		return nil, err
 	}
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewCostsExportSelectRequest calls the generic CostsExportSelect builder with application/json body
-func NewCostsExportSelectRequest(server string, org int64, body CostsExportSelectJSONRequestBody) (*http.Request, error) {
+func NewCostsExportSelectRequest(server string, org int, params *CostsExportSelectParams, body CostsExportSelectJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewCostsExportSelectRequestWithBody(server, org, "application/json", bodyReader)
+	return NewCostsExportSelectRequestWithBody(server, org, params, "application/json", bodyReader)
 }
 
 // NewCostsExportSelectRequestWithBody generates requests for CostsExportSelect with any type of body
-func NewCostsExportSelectRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewCostsExportSelectRequestWithBody(server string, org int, params *CostsExportSelectParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -4520,7 +7813,7 @@ func NewCostsExportSelectRequestWithBody(server string, org int64, contentType s
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/costs/export/select", pathParam0)
+	operationPath := fmt.Sprintf("/orgs/%s/costs/export/select", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -4537,11 +7830,26 @@ func NewCostsExportSelectRequestWithBody(server string, org int64, contentType s
 
 	req.Header.Add("Content-Type", contentType)
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewCostsExportSelectStatusRequest generates requests for CostsExportSelectStatus
-func NewCostsExportSelectStatusRequest(server string, org int64, exportId string) (*http.Request, error) {
+func NewCostsExportSelectStatusRequest(server string, org int, exportId string, params *CostsExportSelectStatusParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -4563,7 +7871,7 @@ func NewCostsExportSelectStatusRequest(server string, org int64, exportId string
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/costs/export/select/%s", pathParam0, pathParam1)
+	operationPath := fmt.Sprintf("/orgs/%s/costs/export/select/%s", pathParam0, pathParam1)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -4578,11 +7886,26 @@ func NewCostsExportSelectStatusRequest(server string, org int64, exportId string
 		return nil, err
 	}
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewCostsMetricsRequest generates requests for CostsMetrics
-func NewCostsMetricsRequest(server string, org int64, params *CostsMetricsParams) (*http.Request, error) {
+func NewCostsMetricsRequest(server string, org int, params *CostsMetricsParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -4597,7 +7920,7 @@ func NewCostsMetricsRequest(server string, org int64, params *CostsMetricsParams
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/costs/metrics", pathParam0)
+	operationPath := fmt.Sprintf("/orgs/%s/costs/metrics", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -4634,22 +7957,37 @@ func NewCostsMetricsRequest(server string, org int64, params *CostsMetricsParams
 		return nil, err
 	}
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewCostsSelectRequest calls the generic CostsSelect builder with application/json body
-func NewCostsSelectRequest(server string, org int64, body CostsSelectJSONRequestBody) (*http.Request, error) {
+func NewCostsSelectRequest(server string, org int, params *CostsSelectParams, body CostsSelectJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewCostsSelectRequestWithBody(server, org, "application/json", bodyReader)
+	return NewCostsSelectRequestWithBody(server, org, params, "application/json", bodyReader)
 }
 
 // NewCostsSelectRequestWithBody generates requests for CostsSelect with any type of body
-func NewCostsSelectRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewCostsSelectRequestWithBody(server string, org int, params *CostsSelectParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -4664,7 +8002,7 @@ func NewCostsSelectRequestWithBody(server string, org int64, contentType string,
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/costs/select", pathParam0)
+	operationPath := fmt.Sprintf("/orgs/%s/costs/select", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -4680,495 +8018,38 @@ func NewCostsSelectRequestWithBody(server string, org int64, contentType string,
 	}
 
 	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewCustomDimensionsIndexRequest generates requests for CustomDimensionsIndex
-func NewCustomDimensionsIndexRequest(server string, org int64) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/custom/dimensions", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCustomDimensionsCreateRequest calls the generic CustomDimensionsCreate builder with application/json body
-func NewCustomDimensionsCreateRequest(server string, org int64, body CustomDimensionsCreateJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCustomDimensionsCreateRequestWithBody(server, org, "application/json", bodyReader)
-}
-
-// NewCustomDimensionsCreateRequestWithBody generates requests for CustomDimensionsCreate with any type of body
-func NewCustomDimensionsCreateRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/custom/dimensions", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("POST", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewCustomDimensionsDestroyRequest generates requests for CustomDimensionsDestroy
-func NewCustomDimensionsDestroyRequest(server string, org int64, id string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/custom/dimensions/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCustomDimensionsShowRequest generates requests for CustomDimensionsShow
-func NewCustomDimensionsShowRequest(server string, org int64, id string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/custom/dimensions/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCustomDimensionsReplaceRequest calls the generic CustomDimensionsReplace builder with application/json body
-func NewCustomDimensionsReplaceRequest(server string, org int64, id string, body CustomDimensionsReplaceJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCustomDimensionsReplaceRequestWithBody(server, org, id, "application/json", bodyReader)
-}
-
-// NewCustomDimensionsReplaceRequestWithBody generates requests for CustomDimensionsReplace with any type of body
-func NewCustomDimensionsReplaceRequestWithBody(server string, org int64, id string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/custom/dimensions/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("PUT", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewOrgDashboardsIndexRequest generates requests for OrgDashboardsIndex
-func NewOrgDashboardsIndexRequest(server string, org int64, params *OrgDashboardsIndexParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/dashboards", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
 
 	if params != nil {
-		queryValues := queryURL.Query()
 
-		if params.Area != nil {
+		if params.Authorization != nil {
+			var headerParam0 string
 
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "area", runtime.ParamLocationQuery, *params.Area); err != nil {
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
 				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
 			}
 
+			req.Header.Set("Authorization", headerParam0)
 		}
 
-		if params.Visibility != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "visibility", runtime.ParamLocationQuery, *params.Visibility); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		queryURL.RawQuery = queryValues.Encode()
 	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewOrgDashboardsCreateRequest calls the generic OrgDashboardsCreate builder with application/json body
-func NewOrgDashboardsCreateRequest(server string, org int64, body OrgDashboardsCreateJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewOrgDashboardsCreateRequestWithBody(server, org, "application/json", bodyReader)
-}
-
-// NewOrgDashboardsCreateRequestWithBody generates requests for OrgDashboardsCreate with any type of body
-func NewOrgDashboardsCreateRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/dashboards", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("POST", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewOrgDashboardsDestroyRequest generates requests for OrgDashboardsDestroy
-func NewOrgDashboardsDestroyRequest(server string, org int64, id string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/dashboards/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewOrgDashboardsShowRequest generates requests for OrgDashboardsShow
-func NewOrgDashboardsShowRequest(server string, org int64, id string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/dashboards/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewOrgDashboardsReplaceRequest calls the generic OrgDashboardsReplace builder with application/json body
-func NewOrgDashboardsReplaceRequest(server string, org int64, id string, body OrgDashboardsReplaceJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewOrgDashboardsReplaceRequestWithBody(server, org, id, "application/json", bodyReader)
-}
-
-// NewOrgDashboardsReplaceRequestWithBody generates requests for OrgDashboardsReplace with any type of body
-func NewOrgDashboardsReplaceRequestWithBody(server string, org int64, id string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/dashboards/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("PUT", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
 
 // NewForecastsReportRequest calls the generic ForecastsReport builder with application/json body
-func NewForecastsReportRequest(server string, org int64, body ForecastsReportJSONRequestBody) (*http.Request, error) {
+func NewForecastsReportRequest(server string, org int, params *ForecastsReportParams, body ForecastsReportJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewForecastsReportRequestWithBody(server, org, "application/json", bodyReader)
+	return NewForecastsReportRequestWithBody(server, org, params, "application/json", bodyReader)
 }
 
 // NewForecastsReportRequestWithBody generates requests for ForecastsReport with any type of body
-func NewForecastsReportRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewForecastsReportRequestWithBody(server string, org int, params *ForecastsReportParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -5183,7 +8064,7 @@ func NewForecastsReportRequestWithBody(server string, org int64, contentType str
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/forecasts/report", pathParam0)
+	operationPath := fmt.Sprintf("/orgs/%s/forecasts/report", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5200,92 +8081,26 @@ func NewForecastsReportRequestWithBody(server string, org int64, contentType str
 
 	req.Header.Add("Content-Type", contentType)
 
-	return req, nil
-}
+	if params != nil {
 
-// NewCommitmentReallocationSettingShowRequest generates requests for CommitmentReallocationSettingShow
-func NewCommitmentReallocationSettingShowRequest(server string, org int64) (*http.Request, error) {
-	var err error
+		if params.Authorization != nil {
+			var headerParam0 string
 
-	var pathParam0 string
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
+			req.Header.Set("Authorization", headerParam0)
+		}
+
 	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/settings/commitment_reallocations", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCommitmentReallocationSettingUpsertRequest calls the generic CommitmentReallocationSettingUpsert builder with application/json body
-func NewCommitmentReallocationSettingUpsertRequest(server string, org int64, body CommitmentReallocationSettingUpsertJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCommitmentReallocationSettingUpsertRequestWithBody(server, org, "application/json", bodyReader)
-}
-
-// NewCommitmentReallocationSettingUpsertRequestWithBody generates requests for CommitmentReallocationSettingUpsert with any type of body
-func NewCommitmentReallocationSettingUpsertRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/settings/commitment_reallocations", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("PUT", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
 
 // NewCurrencySettingShowRequest generates requests for CurrencySettingShow
-func NewCurrencySettingShowRequest(server string, org int64) (*http.Request, error) {
+func NewCurrencySettingShowRequest(server string, org int, params *CurrencySettingShowParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -5300,7 +8115,7 @@ func NewCurrencySettingShowRequest(server string, org int64) (*http.Request, err
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/settings/currency_code", pathParam0)
+	operationPath := fmt.Sprintf("/orgs/%s/settings/currency_code", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5313,24 +8128,39 @@ func NewCurrencySettingShowRequest(server string, org int64) (*http.Request, err
 	req, err := http.NewRequest("GET", queryURL.String(), nil)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
 	}
 
 	return req, nil
 }
 
 // NewCurrencySettingUpdateRequest calls the generic CurrencySettingUpdate builder with application/json body
-func NewCurrencySettingUpdateRequest(server string, org int64, body CurrencySettingUpdateJSONRequestBody) (*http.Request, error) {
+func NewCurrencySettingUpdateRequest(server string, org int, params *CurrencySettingUpdateParams, body CurrencySettingUpdateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewCurrencySettingUpdateRequestWithBody(server, org, "application/json", bodyReader)
+	return NewCurrencySettingUpdateRequestWithBody(server, org, params, "application/json", bodyReader)
 }
 
 // NewCurrencySettingUpdateRequestWithBody generates requests for CurrencySettingUpdate with any type of body
-func NewCurrencySettingUpdateRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewCurrencySettingUpdateRequestWithBody(server string, org int, params *CurrencySettingUpdateParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -5345,7 +8175,7 @@ func NewCurrencySettingUpdateRequestWithBody(server string, org int64, contentTy
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/settings/currency_code", pathParam0)
+	operationPath := fmt.Sprintf("/orgs/%s/settings/currency_code", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5362,11 +8192,26 @@ func NewCurrencySettingUpdateRequestWithBody(server string, org int64, contentTy
 
 	req.Header.Add("Content-Type", contentType)
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewRuleBasedDimensionsShowRequest generates requests for RuleBasedDimensionsShow
-func NewRuleBasedDimensionsShowRequest(server string, org int64) (*http.Request, error) {
+func NewRuleBasedDimensionsShowRequest(server string, org int, params *RuleBasedDimensionsShowParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -5381,7 +8226,7 @@ func NewRuleBasedDimensionsShowRequest(server string, org int64) (*http.Request,
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/settings/rule_based_dimensions", pathParam0)
+	operationPath := fmt.Sprintf("/orgs/%s/settings/rule_based_dimensions", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5396,22 +8241,37 @@ func NewRuleBasedDimensionsShowRequest(server string, org int64) (*http.Request,
 		return nil, err
 	}
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewRuleBasedDimensionsUpdateRequest calls the generic RuleBasedDimensionsUpdate builder with application/json body
-func NewRuleBasedDimensionsUpdateRequest(server string, org int64, body RuleBasedDimensionsUpdateJSONRequestBody) (*http.Request, error) {
+func NewRuleBasedDimensionsUpdateRequest(server string, org int, params *RuleBasedDimensionsUpdateParams, body RuleBasedDimensionsUpdateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewRuleBasedDimensionsUpdateRequestWithBody(server, org, "application/json", bodyReader)
+	return NewRuleBasedDimensionsUpdateRequestWithBody(server, org, params, "application/json", bodyReader)
 }
 
 // NewRuleBasedDimensionsUpdateRequestWithBody generates requests for RuleBasedDimensionsUpdate with any type of body
-func NewRuleBasedDimensionsUpdateRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewRuleBasedDimensionsUpdateRequestWithBody(server string, org int, params *RuleBasedDimensionsUpdateParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -5426,7 +8286,7 @@ func NewRuleBasedDimensionsUpdateRequestWithBody(server string, org int64, conte
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/settings/rule_based_dimensions", pathParam0)
+	operationPath := fmt.Sprintf("/orgs/%s/settings/rule_based_dimensions", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5443,11 +8303,26 @@ func NewRuleBasedDimensionsUpdateRequestWithBody(server string, org int64, conte
 
 	req.Header.Add("Content-Type", contentType)
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewRuleBasedDimensionsRbdDeleteRequest generates requests for RuleBasedDimensionsRbdDelete
-func NewRuleBasedDimensionsRbdDeleteRequest(server string, org int64, id string) (*http.Request, error) {
+func NewRuleBasedDimensionsRbdDeleteRequest(server string, org int, id string, params *RuleBasedDimensionsRbdDeleteParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -5469,7 +8344,7 @@ func NewRuleBasedDimensionsRbdDeleteRequest(server string, org int64, id string)
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/settings/rule_based_dimensions/%s", pathParam0, pathParam1)
+	operationPath := fmt.Sprintf("/orgs/%s/settings/rule_based_dimensions/%s", pathParam0, pathParam1)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5484,11 +8359,26 @@ func NewRuleBasedDimensionsRbdDeleteRequest(server string, org int64, id string)
 		return nil, err
 	}
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewRuleBasedDimensionsRbdShowRequest generates requests for RuleBasedDimensionsRbdShow
-func NewRuleBasedDimensionsRbdShowRequest(server string, org int64, id string) (*http.Request, error) {
+func NewRuleBasedDimensionsRbdShowRequest(server string, org int, id string, params *RuleBasedDimensionsRbdShowParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -5510,7 +8400,7 @@ func NewRuleBasedDimensionsRbdShowRequest(server string, org int64, id string) (
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/settings/rule_based_dimensions/%s", pathParam0, pathParam1)
+	operationPath := fmt.Sprintf("/orgs/%s/settings/rule_based_dimensions/%s", pathParam0, pathParam1)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5525,22 +8415,37 @@ func NewRuleBasedDimensionsRbdShowRequest(server string, org int64, id string) (
 		return nil, err
 	}
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewRuleBasedDimensionsRbdUpdateRequest calls the generic RuleBasedDimensionsRbdUpdate builder with application/json body
-func NewRuleBasedDimensionsRbdUpdateRequest(server string, org int64, id string, body RuleBasedDimensionsRbdUpdateJSONRequestBody) (*http.Request, error) {
+func NewRuleBasedDimensionsRbdUpdateRequest(server string, org int, id string, params *RuleBasedDimensionsRbdUpdateParams, body RuleBasedDimensionsRbdUpdateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewRuleBasedDimensionsRbdUpdateRequestWithBody(server, org, id, "application/json", bodyReader)
+	return NewRuleBasedDimensionsRbdUpdateRequestWithBody(server, org, id, params, "application/json", bodyReader)
 }
 
 // NewRuleBasedDimensionsRbdUpdateRequestWithBody generates requests for RuleBasedDimensionsRbdUpdate with any type of body
-func NewRuleBasedDimensionsRbdUpdateRequestWithBody(server string, org int64, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewRuleBasedDimensionsRbdUpdateRequestWithBody(server string, org int, id string, params *RuleBasedDimensionsRbdUpdateParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -5562,7 +8467,7 @@ func NewRuleBasedDimensionsRbdUpdateRequestWithBody(server string, org int64, id
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/settings/rule_based_dimensions/%s", pathParam0, pathParam1)
+	operationPath := fmt.Sprintf("/orgs/%s/settings/rule_based_dimensions/%s", pathParam0, pathParam1)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5579,22 +8484,37 @@ func NewRuleBasedDimensionsRbdUpdateRequestWithBody(server string, org int64, id
 
 	req.Header.Add("Content-Type", contentType)
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewRuleBasedDimensionsRbdCreateRequest calls the generic RuleBasedDimensionsRbdCreate builder with application/json body
-func NewRuleBasedDimensionsRbdCreateRequest(server string, org int64, id string, body RuleBasedDimensionsRbdCreateJSONRequestBody) (*http.Request, error) {
+func NewRuleBasedDimensionsRbdCreateRequest(server string, org int, id string, params *RuleBasedDimensionsRbdCreateParams, body RuleBasedDimensionsRbdCreateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewRuleBasedDimensionsRbdCreateRequestWithBody(server, org, id, "application/json", bodyReader)
+	return NewRuleBasedDimensionsRbdCreateRequestWithBody(server, org, id, params, "application/json", bodyReader)
 }
 
 // NewRuleBasedDimensionsRbdCreateRequestWithBody generates requests for RuleBasedDimensionsRbdCreate with any type of body
-func NewRuleBasedDimensionsRbdCreateRequestWithBody(server string, org int64, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewRuleBasedDimensionsRbdCreateRequestWithBody(server string, org int, id string, params *RuleBasedDimensionsRbdCreateParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -5616,7 +8536,7 @@ func NewRuleBasedDimensionsRbdCreateRequestWithBody(server string, org int64, id
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/settings/rule_based_dimensions/%s", pathParam0, pathParam1)
+	operationPath := fmt.Sprintf("/orgs/%s/settings/rule_based_dimensions/%s", pathParam0, pathParam1)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5633,11 +8553,26 @@ func NewRuleBasedDimensionsRbdCreateRequestWithBody(server string, org int64, id
 
 	req.Header.Add("Content-Type", contentType)
 
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
+	}
+
 	return req, nil
 }
 
 // NewRuleBasedDimensionsRulesListDeleteRequest generates requests for RuleBasedDimensionsRulesListDelete
-func NewRuleBasedDimensionsRulesListDeleteRequest(server string, org int64, id string, effectiveAt string) (*http.Request, error) {
+func NewRuleBasedDimensionsRulesListDeleteRequest(server string, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListDeleteParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -5666,7 +8601,7 @@ func NewRuleBasedDimensionsRulesListDeleteRequest(server string, org int64, id s
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/settings/rule_based_dimensions/%s/rules/%s", pathParam0, pathParam1, pathParam2)
+	operationPath := fmt.Sprintf("/orgs/%s/settings/rule_based_dimensions/%s/rules/%s", pathParam0, pathParam1, pathParam2)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5679,13 +8614,28 @@ func NewRuleBasedDimensionsRulesListDeleteRequest(server string, org int64, id s
 	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
 	}
 
 	return req, nil
 }
 
 // NewRuleBasedDimensionsRulesListShowRequest generates requests for RuleBasedDimensionsRulesListShow
-func NewRuleBasedDimensionsRulesListShowRequest(server string, org int64, id string, effectiveAt string) (*http.Request, error) {
+func NewRuleBasedDimensionsRulesListShowRequest(server string, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListShowParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -5714,7 +8664,7 @@ func NewRuleBasedDimensionsRulesListShowRequest(server string, org int64, id str
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/settings/rule_based_dimensions/%s/rules/%s", pathParam0, pathParam1, pathParam2)
+	operationPath := fmt.Sprintf("/orgs/%s/settings/rule_based_dimensions/%s/rules/%s", pathParam0, pathParam1, pathParam2)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5727,24 +8677,39 @@ func NewRuleBasedDimensionsRulesListShowRequest(server string, org int64, id str
 	req, err := http.NewRequest("GET", queryURL.String(), nil)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+
+		if params.Authorization != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Authorization", headerParam0)
+		}
+
 	}
 
 	return req, nil
 }
 
 // NewRuleBasedDimensionsRulesListReplaceRequest calls the generic RuleBasedDimensionsRulesListReplace builder with application/json body
-func NewRuleBasedDimensionsRulesListReplaceRequest(server string, org int64, id string, effectiveAt string, body RuleBasedDimensionsRulesListReplaceJSONRequestBody) (*http.Request, error) {
+func NewRuleBasedDimensionsRulesListReplaceRequest(server string, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListReplaceParams, body RuleBasedDimensionsRulesListReplaceJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewRuleBasedDimensionsRulesListReplaceRequestWithBody(server, org, id, effectiveAt, "application/json", bodyReader)
+	return NewRuleBasedDimensionsRulesListReplaceRequestWithBody(server, org, id, effectiveAt, params, "application/json", bodyReader)
 }
 
 // NewRuleBasedDimensionsRulesListReplaceRequestWithBody generates requests for RuleBasedDimensionsRulesListReplace with any type of body
-func NewRuleBasedDimensionsRulesListReplaceRequestWithBody(server string, org int64, id string, effectiveAt string, contentType string, body io.Reader) (*http.Request, error) {
+func NewRuleBasedDimensionsRulesListReplaceRequestWithBody(server string, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListReplaceParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -5773,7 +8738,7 @@ func NewRuleBasedDimensionsRulesListReplaceRequestWithBody(server string, org in
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/settings/rule_based_dimensions/%s/rules/%s", pathParam0, pathParam1, pathParam2)
+	operationPath := fmt.Sprintf("/orgs/%s/settings/rule_based_dimensions/%s/rules/%s", pathParam0, pathParam1, pathParam2)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5789,632 +8754,21 @@ func NewRuleBasedDimensionsRulesListReplaceRequestWithBody(server string, org in
 	}
 
 	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewCustomDashboardsIndexRequest generates requests for CustomDashboardsIndex
-func NewCustomDashboardsIndexRequest(server string, org int64, user int64, params *CustomDashboardsIndexParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "user", runtime.ParamLocationPath, user)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/users/%s/dashboards", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
 
 	if params != nil {
-		queryValues := queryURL.Query()
 
-		if params.Area != nil {
+		if params.Authorization != nil {
+			var headerParam0 string
 
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "area", runtime.ParamLocationQuery, *params.Area); err != nil {
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "Authorization", runtime.ParamLocationHeader, *params.Authorization)
+			if err != nil {
 				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
 			}
 
+			req.Header.Set("Authorization", headerParam0)
 		}
 
-		queryURL.RawQuery = queryValues.Encode()
 	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCustomDashboardsCreateRequest calls the generic CustomDashboardsCreate builder with application/json body
-func NewCustomDashboardsCreateRequest(server string, org int64, user int64, body CustomDashboardsCreateJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCustomDashboardsCreateRequestWithBody(server, org, user, "application/json", bodyReader)
-}
-
-// NewCustomDashboardsCreateRequestWithBody generates requests for CustomDashboardsCreate with any type of body
-func NewCustomDashboardsCreateRequestWithBody(server string, org int64, user int64, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "user", runtime.ParamLocationPath, user)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/users/%s/dashboards", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("POST", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewCustomDashboardsDestroyRequest generates requests for CustomDashboardsDestroy
-func NewCustomDashboardsDestroyRequest(server string, org int64, user int64, id string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "user", runtime.ParamLocationPath, user)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam2 string
-
-	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/users/%s/dashboards/%s", pathParam0, pathParam1, pathParam2)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCustomDashboardsShowRequest generates requests for CustomDashboardsShow
-func NewCustomDashboardsShowRequest(server string, org int64, user int64, id string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "user", runtime.ParamLocationPath, user)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam2 string
-
-	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/users/%s/dashboards/%s", pathParam0, pathParam1, pathParam2)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCustomDashboardsReplaceRequest calls the generic CustomDashboardsReplace builder with application/json body
-func NewCustomDashboardsReplaceRequest(server string, org int64, user int64, id string, body CustomDashboardsReplaceJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCustomDashboardsReplaceRequestWithBody(server, org, user, id, "application/json", bodyReader)
-}
-
-// NewCustomDashboardsReplaceRequestWithBody generates requests for CustomDashboardsReplace with any type of body
-func NewCustomDashboardsReplaceRequestWithBody(server string, org int64, user int64, id string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "user", runtime.ParamLocationPath, user)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam2 string
-
-	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/users/%s/dashboards/%s", pathParam0, pathParam1, pathParam2)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("PUT", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewAnomaliesIndexRequest calls the generic AnomaliesIndex builder with application/json body
-func NewAnomaliesIndexRequest(server string, org int64, body AnomaliesIndexJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewAnomaliesIndexRequestWithBody(server, org, "application/json", bodyReader)
-}
-
-// NewAnomaliesIndexRequestWithBody generates requests for AnomaliesIndex with any type of body
-func NewAnomaliesIndexRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/v2/anomalies", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("POST", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewAnomaliesAggregatedRequest calls the generic AnomaliesAggregated builder with application/json body
-func NewAnomaliesAggregatedRequest(server string, org int64, body AnomaliesAggregatedJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewAnomaliesAggregatedRequestWithBody(server, org, "application/json", bodyReader)
-}
-
-// NewAnomaliesAggregatedRequestWithBody generates requests for AnomaliesAggregated with any type of body
-func NewAnomaliesAggregatedRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/v2/anomalies/aggregated", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("POST", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewAnomaliesSummaryRequest generates requests for AnomaliesSummary
-func NewAnomaliesSummaryRequest(server string, org int64, id string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/orgs/%s/v2/anomalies/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCustomDimensionIndexRequest generates requests for CustomDimensionIndex
-func NewCustomDimensionIndexRequest(server string, orgId int64) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/v1/orgs/%s/custom-dimensions", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCustomDimensionCreateRequest calls the generic CustomDimensionCreate builder with application/json body
-func NewCustomDimensionCreateRequest(server string, orgId int64, body CustomDimensionCreateJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCustomDimensionCreateRequestWithBody(server, orgId, "application/json", bodyReader)
-}
-
-// NewCustomDimensionCreateRequestWithBody generates requests for CustomDimensionCreate with any type of body
-func NewCustomDimensionCreateRequestWithBody(server string, orgId int64, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/v1/orgs/%s/custom-dimensions", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("POST", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewCustomDimensionDeleteRequest generates requests for CustomDimensionDelete
-func NewCustomDimensionDeleteRequest(server string, orgId int64, id string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/v1/orgs/%s/custom-dimensions/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCustomDimensionShowRequest generates requests for CustomDimensionShow
-func NewCustomDimensionShowRequest(server string, orgId int64, id string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/v1/orgs/%s/custom-dimensions/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewCustomDimensionUpdateRequest calls the generic CustomDimensionUpdate builder with application/json body
-func NewCustomDimensionUpdateRequest(server string, orgId int64, id string, body CustomDimensionUpdateJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewCustomDimensionUpdateRequestWithBody(server, orgId, id, "application/json", bodyReader)
-}
-
-// NewCustomDimensionUpdateRequestWithBody generates requests for CustomDimensionUpdate with any type of body
-func NewCustomDimensionUpdateRequestWithBody(server string, orgId int64, id string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/bill-analysis/v1/orgs/%s/custom-dimensions/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("PUT", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -6463,238 +8817,129 @@ func WithBaseURL(baseURL string) ClientOption {
 // ClientWithResponsesInterface is the interface specification for the client with responses above.
 type ClientWithResponsesInterface interface {
 	// AdjustmentDefinitionShowWithResponse request
-	AdjustmentDefinitionShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*AdjustmentDefinitionShowResponse, error)
+	AdjustmentDefinitionShowWithResponse(ctx context.Context, org int, params *AdjustmentDefinitionShowParams, reqEditors ...RequestEditorFn) (*AdjustmentDefinitionShowResponse, error)
 
 	// AdjustmentDefinitionUpdateWithBodyWithResponse request with any body
-	AdjustmentDefinitionUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AdjustmentDefinitionUpdateResponse, error)
+	AdjustmentDefinitionUpdateWithBodyWithResponse(ctx context.Context, org int, params *AdjustmentDefinitionUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AdjustmentDefinitionUpdateResponse, error)
 
-	AdjustmentDefinitionUpdateWithResponse(ctx context.Context, org int64, body AdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*AdjustmentDefinitionUpdateResponse, error)
+	AdjustmentDefinitionUpdateWithResponse(ctx context.Context, org int, params *AdjustmentDefinitionUpdateParams, body AdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*AdjustmentDefinitionUpdateResponse, error)
 
 	// AnomaliesReportWithBodyWithResponse request with any body
-	AnomaliesReportWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AnomaliesReportResponse, error)
+	AnomaliesReportWithBodyWithResponse(ctx context.Context, org int, params *AnomaliesReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AnomaliesReportResponse, error)
 
-	AnomaliesReportWithResponse(ctx context.Context, org int64, body AnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*AnomaliesReportResponse, error)
+	AnomaliesReportWithResponse(ctx context.Context, org int, params *AnomaliesReportParams, body AnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*AnomaliesReportResponse, error)
 
 	// BillMonthsSearchWithResponse request
-	BillMonthsSearchWithResponse(ctx context.Context, org int64, params *BillMonthsSearchParams, reqEditors ...RequestEditorFn) (*BillMonthsSearchResponse, error)
-
-	// BillMonthsReprocessWithBodyWithResponse request with any body
-	BillMonthsReprocessWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillMonthsReprocessResponse, error)
-
-	BillMonthsReprocessWithResponse(ctx context.Context, org int64, body BillMonthsReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*BillMonthsReprocessResponse, error)
-
-	// BillMonthsDownloadWithResponse request
-	BillMonthsDownloadWithResponse(ctx context.Context, org int64, params *BillMonthsDownloadParams, reqEditors ...RequestEditorFn) (*BillMonthsDownloadResponse, error)
-
-	// BillingSettingsShowWithResponse request
-	BillingSettingsShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillingSettingsShowResponse, error)
-
-	// BillingSettingsUpdateWithBodyWithResponse request with any body
-	BillingSettingsUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillingSettingsUpdateResponse, error)
-
-	BillingSettingsUpdateWithResponse(ctx context.Context, org int64, body BillingSettingsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillingSettingsUpdateResponse, error)
+	BillMonthsSearchWithResponse(ctx context.Context, org int, params *BillMonthsSearchParams, reqEditors ...RequestEditorFn) (*BillMonthsSearchResponse, error)
 
 	// BudgetsIndexWithResponse request
-	BudgetsIndexWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BudgetsIndexResponse, error)
+	BudgetsIndexWithResponse(ctx context.Context, org int, params *BudgetsIndexParams, reqEditors ...RequestEditorFn) (*BudgetsIndexResponse, error)
 
 	// BudgetsCreateWithBodyWithResponse request with any body
-	BudgetsCreateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BudgetsCreateResponse, error)
+	BudgetsCreateWithBodyWithResponse(ctx context.Context, org int, params *BudgetsCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BudgetsCreateResponse, error)
 
-	BudgetsCreateWithResponse(ctx context.Context, org int64, body BudgetsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BudgetsCreateResponse, error)
+	BudgetsCreateWithResponse(ctx context.Context, org int, params *BudgetsCreateParams, body BudgetsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BudgetsCreateResponse, error)
 
 	// BudgetsDeleteWithResponse request
-	BudgetsDeleteWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BudgetsDeleteResponse, error)
+	BudgetsDeleteWithResponse(ctx context.Context, org int, id string, params *BudgetsDeleteParams, reqEditors ...RequestEditorFn) (*BudgetsDeleteResponse, error)
 
 	// BudgetsShowWithResponse request
-	BudgetsShowWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BudgetsShowResponse, error)
+	BudgetsShowWithResponse(ctx context.Context, org int, id string, params *BudgetsShowParams, reqEditors ...RequestEditorFn) (*BudgetsShowResponse, error)
 
 	// BudgetsUpdateWithBodyWithResponse request with any body
-	BudgetsUpdateWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BudgetsUpdateResponse, error)
+	BudgetsUpdateWithBodyWithResponse(ctx context.Context, org int, id string, params *BudgetsUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BudgetsUpdateResponse, error)
 
-	BudgetsUpdateWithResponse(ctx context.Context, org int64, id string, body BudgetsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BudgetsUpdateResponse, error)
+	BudgetsUpdateWithResponse(ctx context.Context, org int, id string, params *BudgetsUpdateParams, body BudgetsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BudgetsUpdateResponse, error)
 
 	// BudgetsReportWithBodyWithResponse request with any body
-	BudgetsReportWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BudgetsReportResponse, error)
+	BudgetsReportWithBodyWithResponse(ctx context.Context, org int, id string, params *BudgetsReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BudgetsReportResponse, error)
 
-	BudgetsReportWithResponse(ctx context.Context, org int64, id string, body BudgetsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BudgetsReportResponse, error)
-
-	// CloudVendorAccountsIndexWithResponse request
-	CloudVendorAccountsIndexWithResponse(ctx context.Context, org int64, params *CloudVendorAccountsIndexParams, reqEditors ...RequestEditorFn) (*CloudVendorAccountsIndexResponse, error)
+	BudgetsReportWithResponse(ctx context.Context, org int, id string, params *BudgetsReportParams, body BudgetsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BudgetsReportResponse, error)
 
 	// CostsAggregatedWithBodyWithResponse request with any body
-	CostsAggregatedWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CostsAggregatedResponse, error)
+	CostsAggregatedWithBodyWithResponse(ctx context.Context, org int, params *CostsAggregatedParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CostsAggregatedResponse, error)
 
-	CostsAggregatedWithResponse(ctx context.Context, org int64, body CostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*CostsAggregatedResponse, error)
+	CostsAggregatedWithResponse(ctx context.Context, org int, params *CostsAggregatedParams, body CostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*CostsAggregatedResponse, error)
 
 	// CostsDimensionsWithResponse request
-	CostsDimensionsWithResponse(ctx context.Context, org int64, params *CostsDimensionsParams, reqEditors ...RequestEditorFn) (*CostsDimensionsResponse, error)
+	CostsDimensionsWithResponse(ctx context.Context, org int, params *CostsDimensionsParams, reqEditors ...RequestEditorFn) (*CostsDimensionsResponse, error)
 
 	// CostsExportSelectWithBodyWithResponse request with any body
-	CostsExportSelectWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CostsExportSelectResponse, error)
+	CostsExportSelectWithBodyWithResponse(ctx context.Context, org int, params *CostsExportSelectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CostsExportSelectResponse, error)
 
-	CostsExportSelectWithResponse(ctx context.Context, org int64, body CostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*CostsExportSelectResponse, error)
+	CostsExportSelectWithResponse(ctx context.Context, org int, params *CostsExportSelectParams, body CostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*CostsExportSelectResponse, error)
 
 	// CostsExportSelectStatusWithResponse request
-	CostsExportSelectStatusWithResponse(ctx context.Context, org int64, exportId string, reqEditors ...RequestEditorFn) (*CostsExportSelectStatusResponse, error)
+	CostsExportSelectStatusWithResponse(ctx context.Context, org int, exportId string, params *CostsExportSelectStatusParams, reqEditors ...RequestEditorFn) (*CostsExportSelectStatusResponse, error)
 
 	// CostsMetricsWithResponse request
-	CostsMetricsWithResponse(ctx context.Context, org int64, params *CostsMetricsParams, reqEditors ...RequestEditorFn) (*CostsMetricsResponse, error)
+	CostsMetricsWithResponse(ctx context.Context, org int, params *CostsMetricsParams, reqEditors ...RequestEditorFn) (*CostsMetricsResponse, error)
 
 	// CostsSelectWithBodyWithResponse request with any body
-	CostsSelectWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CostsSelectResponse, error)
+	CostsSelectWithBodyWithResponse(ctx context.Context, org int, params *CostsSelectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CostsSelectResponse, error)
 
-	CostsSelectWithResponse(ctx context.Context, org int64, body CostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*CostsSelectResponse, error)
-
-	// CustomDimensionsIndexWithResponse request
-	CustomDimensionsIndexWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*CustomDimensionsIndexResponse, error)
-
-	// CustomDimensionsCreateWithBodyWithResponse request with any body
-	CustomDimensionsCreateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CustomDimensionsCreateResponse, error)
-
-	CustomDimensionsCreateWithResponse(ctx context.Context, org int64, body CustomDimensionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*CustomDimensionsCreateResponse, error)
-
-	// CustomDimensionsDestroyWithResponse request
-	CustomDimensionsDestroyWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*CustomDimensionsDestroyResponse, error)
-
-	// CustomDimensionsShowWithResponse request
-	CustomDimensionsShowWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*CustomDimensionsShowResponse, error)
-
-	// CustomDimensionsReplaceWithBodyWithResponse request with any body
-	CustomDimensionsReplaceWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CustomDimensionsReplaceResponse, error)
-
-	CustomDimensionsReplaceWithResponse(ctx context.Context, org int64, id string, body CustomDimensionsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*CustomDimensionsReplaceResponse, error)
-
-	// OrgDashboardsIndexWithResponse request
-	OrgDashboardsIndexWithResponse(ctx context.Context, org int64, params *OrgDashboardsIndexParams, reqEditors ...RequestEditorFn) (*OrgDashboardsIndexResponse, error)
-
-	// OrgDashboardsCreateWithBodyWithResponse request with any body
-	OrgDashboardsCreateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*OrgDashboardsCreateResponse, error)
-
-	OrgDashboardsCreateWithResponse(ctx context.Context, org int64, body OrgDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*OrgDashboardsCreateResponse, error)
-
-	// OrgDashboardsDestroyWithResponse request
-	OrgDashboardsDestroyWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*OrgDashboardsDestroyResponse, error)
-
-	// OrgDashboardsShowWithResponse request
-	OrgDashboardsShowWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*OrgDashboardsShowResponse, error)
-
-	// OrgDashboardsReplaceWithBodyWithResponse request with any body
-	OrgDashboardsReplaceWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*OrgDashboardsReplaceResponse, error)
-
-	OrgDashboardsReplaceWithResponse(ctx context.Context, org int64, id string, body OrgDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*OrgDashboardsReplaceResponse, error)
+	CostsSelectWithResponse(ctx context.Context, org int, params *CostsSelectParams, body CostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*CostsSelectResponse, error)
 
 	// ForecastsReportWithBodyWithResponse request with any body
-	ForecastsReportWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ForecastsReportResponse, error)
+	ForecastsReportWithBodyWithResponse(ctx context.Context, org int, params *ForecastsReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ForecastsReportResponse, error)
 
-	ForecastsReportWithResponse(ctx context.Context, org int64, body ForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*ForecastsReportResponse, error)
-
-	// CommitmentReallocationSettingShowWithResponse request
-	CommitmentReallocationSettingShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*CommitmentReallocationSettingShowResponse, error)
-
-	// CommitmentReallocationSettingUpsertWithBodyWithResponse request with any body
-	CommitmentReallocationSettingUpsertWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommitmentReallocationSettingUpsertResponse, error)
-
-	CommitmentReallocationSettingUpsertWithResponse(ctx context.Context, org int64, body CommitmentReallocationSettingUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*CommitmentReallocationSettingUpsertResponse, error)
+	ForecastsReportWithResponse(ctx context.Context, org int, params *ForecastsReportParams, body ForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*ForecastsReportResponse, error)
 
 	// CurrencySettingShowWithResponse request
-	CurrencySettingShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*CurrencySettingShowResponse, error)
+	CurrencySettingShowWithResponse(ctx context.Context, org int, params *CurrencySettingShowParams, reqEditors ...RequestEditorFn) (*CurrencySettingShowResponse, error)
 
 	// CurrencySettingUpdateWithBodyWithResponse request with any body
-	CurrencySettingUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CurrencySettingUpdateResponse, error)
+	CurrencySettingUpdateWithBodyWithResponse(ctx context.Context, org int, params *CurrencySettingUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CurrencySettingUpdateResponse, error)
 
-	CurrencySettingUpdateWithResponse(ctx context.Context, org int64, body CurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*CurrencySettingUpdateResponse, error)
+	CurrencySettingUpdateWithResponse(ctx context.Context, org int, params *CurrencySettingUpdateParams, body CurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*CurrencySettingUpdateResponse, error)
 
 	// RuleBasedDimensionsShowWithResponse request
-	RuleBasedDimensionsShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsShowResponse, error)
+	RuleBasedDimensionsShowWithResponse(ctx context.Context, org int, params *RuleBasedDimensionsShowParams, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsShowResponse, error)
 
 	// RuleBasedDimensionsUpdateWithBodyWithResponse request with any body
-	RuleBasedDimensionsUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsUpdateResponse, error)
+	RuleBasedDimensionsUpdateWithBodyWithResponse(ctx context.Context, org int, params *RuleBasedDimensionsUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsUpdateResponse, error)
 
-	RuleBasedDimensionsUpdateWithResponse(ctx context.Context, org int64, body RuleBasedDimensionsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsUpdateResponse, error)
+	RuleBasedDimensionsUpdateWithResponse(ctx context.Context, org int, params *RuleBasedDimensionsUpdateParams, body RuleBasedDimensionsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsUpdateResponse, error)
 
 	// RuleBasedDimensionsRbdDeleteWithResponse request
-	RuleBasedDimensionsRbdDeleteWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdDeleteResponse, error)
+	RuleBasedDimensionsRbdDeleteWithResponse(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdDeleteParams, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdDeleteResponse, error)
 
 	// RuleBasedDimensionsRbdShowWithResponse request
-	RuleBasedDimensionsRbdShowWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdShowResponse, error)
+	RuleBasedDimensionsRbdShowWithResponse(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdShowParams, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdShowResponse, error)
 
 	// RuleBasedDimensionsRbdUpdateWithBodyWithResponse request with any body
-	RuleBasedDimensionsRbdUpdateWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdUpdateResponse, error)
+	RuleBasedDimensionsRbdUpdateWithBodyWithResponse(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdUpdateResponse, error)
 
-	RuleBasedDimensionsRbdUpdateWithResponse(ctx context.Context, org int64, id string, body RuleBasedDimensionsRbdUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdUpdateResponse, error)
+	RuleBasedDimensionsRbdUpdateWithResponse(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdUpdateParams, body RuleBasedDimensionsRbdUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdUpdateResponse, error)
 
 	// RuleBasedDimensionsRbdCreateWithBodyWithResponse request with any body
-	RuleBasedDimensionsRbdCreateWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdCreateResponse, error)
+	RuleBasedDimensionsRbdCreateWithBodyWithResponse(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdCreateResponse, error)
 
-	RuleBasedDimensionsRbdCreateWithResponse(ctx context.Context, org int64, id string, body RuleBasedDimensionsRbdCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdCreateResponse, error)
+	RuleBasedDimensionsRbdCreateWithResponse(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdCreateParams, body RuleBasedDimensionsRbdCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdCreateResponse, error)
 
 	// RuleBasedDimensionsRulesListDeleteWithResponse request
-	RuleBasedDimensionsRulesListDeleteWithResponse(ctx context.Context, org int64, id string, effectiveAt string, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRulesListDeleteResponse, error)
+	RuleBasedDimensionsRulesListDeleteWithResponse(ctx context.Context, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListDeleteParams, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRulesListDeleteResponse, error)
 
 	// RuleBasedDimensionsRulesListShowWithResponse request
-	RuleBasedDimensionsRulesListShowWithResponse(ctx context.Context, org int64, id string, effectiveAt string, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRulesListShowResponse, error)
+	RuleBasedDimensionsRulesListShowWithResponse(ctx context.Context, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListShowParams, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRulesListShowResponse, error)
 
 	// RuleBasedDimensionsRulesListReplaceWithBodyWithResponse request with any body
-	RuleBasedDimensionsRulesListReplaceWithBodyWithResponse(ctx context.Context, org int64, id string, effectiveAt string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRulesListReplaceResponse, error)
+	RuleBasedDimensionsRulesListReplaceWithBodyWithResponse(ctx context.Context, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListReplaceParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRulesListReplaceResponse, error)
 
-	RuleBasedDimensionsRulesListReplaceWithResponse(ctx context.Context, org int64, id string, effectiveAt string, body RuleBasedDimensionsRulesListReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRulesListReplaceResponse, error)
-
-	// CustomDashboardsIndexWithResponse request
-	CustomDashboardsIndexWithResponse(ctx context.Context, org int64, user int64, params *CustomDashboardsIndexParams, reqEditors ...RequestEditorFn) (*CustomDashboardsIndexResponse, error)
-
-	// CustomDashboardsCreateWithBodyWithResponse request with any body
-	CustomDashboardsCreateWithBodyWithResponse(ctx context.Context, org int64, user int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CustomDashboardsCreateResponse, error)
-
-	CustomDashboardsCreateWithResponse(ctx context.Context, org int64, user int64, body CustomDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*CustomDashboardsCreateResponse, error)
-
-	// CustomDashboardsDestroyWithResponse request
-	CustomDashboardsDestroyWithResponse(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*CustomDashboardsDestroyResponse, error)
-
-	// CustomDashboardsShowWithResponse request
-	CustomDashboardsShowWithResponse(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*CustomDashboardsShowResponse, error)
-
-	// CustomDashboardsReplaceWithBodyWithResponse request with any body
-	CustomDashboardsReplaceWithBodyWithResponse(ctx context.Context, org int64, user int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CustomDashboardsReplaceResponse, error)
-
-	CustomDashboardsReplaceWithResponse(ctx context.Context, org int64, user int64, id string, body CustomDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*CustomDashboardsReplaceResponse, error)
-
-	// AnomaliesIndexWithBodyWithResponse request with any body
-	AnomaliesIndexWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AnomaliesIndexResponse, error)
-
-	AnomaliesIndexWithResponse(ctx context.Context, org int64, body AnomaliesIndexJSONRequestBody, reqEditors ...RequestEditorFn) (*AnomaliesIndexResponse, error)
-
-	// AnomaliesAggregatedWithBodyWithResponse request with any body
-	AnomaliesAggregatedWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AnomaliesAggregatedResponse, error)
-
-	AnomaliesAggregatedWithResponse(ctx context.Context, org int64, body AnomaliesAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*AnomaliesAggregatedResponse, error)
-
-	// AnomaliesSummaryWithResponse request
-	AnomaliesSummaryWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*AnomaliesSummaryResponse, error)
-
-	// CustomDimensionIndexWithResponse request
-	CustomDimensionIndexWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*CustomDimensionIndexResponse, error)
-
-	// CustomDimensionCreateWithBodyWithResponse request with any body
-	CustomDimensionCreateWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CustomDimensionCreateResponse, error)
-
-	CustomDimensionCreateWithResponse(ctx context.Context, orgId int64, body CustomDimensionCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*CustomDimensionCreateResponse, error)
-
-	// CustomDimensionDeleteWithResponse request
-	CustomDimensionDeleteWithResponse(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*CustomDimensionDeleteResponse, error)
-
-	// CustomDimensionShowWithResponse request
-	CustomDimensionShowWithResponse(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*CustomDimensionShowResponse, error)
-
-	// CustomDimensionUpdateWithBodyWithResponse request with any body
-	CustomDimensionUpdateWithBodyWithResponse(ctx context.Context, orgId int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CustomDimensionUpdateResponse, error)
-
-	CustomDimensionUpdateWithResponse(ctx context.Context, orgId int64, id string, body CustomDimensionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*CustomDimensionUpdateResponse, error)
+	RuleBasedDimensionsRulesListReplaceWithResponse(ctx context.Context, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListReplaceParams, body RuleBasedDimensionsRulesListReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRulesListReplaceResponse, error)
 }
 
 type AdjustmentDefinitionShowResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *AllDatedAdjustmentLists
+	JSON200      *AdjustmentDefinitionShowResponseBody
+	JSON400      *AdjustmentDefinitionShowBadRequestResponseBody
+	JSON401      *AdjustmentDefinitionShowUnauthorizedResponseBody
+	JSON403      *AdjustmentDefinitionShowForbiddenResponseBody
+	JSON404      *AdjustmentDefinitionShowNotFoundResponseBody
+	JSON429      *AdjustmentDefinitionShowTooManyRequestsResponseBody
+	JSON500      *AdjustmentDefinitionShowInternalErrorResponseBody
+	JSON502      *AdjustmentDefinitionShowBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -6716,6 +8961,12 @@ func (r AdjustmentDefinitionShowResponse) StatusCode() int {
 type AdjustmentDefinitionUpdateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *AdjustmentDefinitionUpdateBadRequestResponseBody
+	JSON401      *AdjustmentDefinitionUpdateUnauthorizedResponseBody
+	JSON403      *AdjustmentDefinitionUpdateForbiddenResponseBody
+	JSON429      *AdjustmentDefinitionUpdateTooManyRequestsResponseBody
+	JSON500      *AdjustmentDefinitionUpdateInternalErrorResponseBody
+	JSON502      *AdjustmentDefinitionUpdateBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -6737,7 +8988,13 @@ func (r AdjustmentDefinitionUpdateResponse) StatusCode() int {
 type AnomaliesReportResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *ReportResponseBody
+	JSON200      *AnomaliesReportResponseBody
+	JSON400      *AnomaliesReportBadRequestResponseBody
+	JSON401      *AnomaliesReportUnauthorizedResponseBody
+	JSON403      *AnomaliesReportForbiddenResponseBody
+	JSON404      *AnomaliesReportNotFoundResponseBody
+	JSON500      *AnomaliesReportInternalErrorResponseBody
+	JSON502      *AnomaliesReportBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -6759,7 +9016,12 @@ func (r AnomaliesReportResponse) StatusCode() int {
 type BillMonthsSearchResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *BillMonthSearchResponse
+	JSON200      *BillMonthsSearchResponseBody
+	JSON400      *BillMonthsSearchBadRequestResponseBody
+	JSON401      *BillMonthsSearchUnauthorizedResponseBody
+	JSON403      *BillMonthsSearchForbiddenResponseBody
+	JSON500      *BillMonthsSearchInternalErrorResponseBody
+	JSON502      *BillMonthsSearchBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -6778,97 +9040,16 @@ func (r BillMonthsSearchResponse) StatusCode() int {
 	return 0
 }
 
-type BillMonthsReprocessResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *ReprocessResponse
-}
-
-// Status returns HTTPResponse.Status
-func (r BillMonthsReprocessResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r BillMonthsReprocessResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type BillMonthsDownloadResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r BillMonthsDownloadResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r BillMonthsDownloadResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type BillingSettingsShowResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *BillingSettingsResponse
-}
-
-// Status returns HTTPResponse.Status
-func (r BillingSettingsShowResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r BillingSettingsShowResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type BillingSettingsUpdateResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *BillingSettingsResponse
-}
-
-// Status returns HTTPResponse.Status
-func (r BillingSettingsUpdateResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r BillingSettingsUpdateResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
 type BudgetsIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *BudgetCollection
+	JSON200      *BudgetsBudgetResponseCollection
+	JSON400      *BudgetsIndexBadRequestResponseBody
+	JSON401      *BudgetsIndexUnauthorizedResponseBody
+	JSON403      *BudgetsIndexForbiddenResponseBody
+	JSON429      *BudgetsIndexTooManyRequestsResponseBody
+	JSON500      *BudgetsIndexInternalErrorResponseBody
+	JSON502      *BudgetsIndexBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -6890,7 +9071,14 @@ func (r BudgetsIndexResponse) StatusCode() int {
 type BudgetsCreateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *FlexeraOptimaBudget
+	JSON201      *BudgetsCreateResponseBody
+	JSON400      *BudgetsCreateBadRequestResponseBody
+	JSON401      *BudgetsCreateUnauthorizedResponseBody
+	JSON403      *BudgetsCreateForbiddenResponseBody
+	JSON409      *BudgetsCreateConflictResponseBody
+	JSON429      *BudgetsCreateTooManyRequestsResponseBody
+	JSON500      *BudgetsCreateInternalErrorResponseBody
+	JSON502      *BudgetsCreateBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -6912,6 +9100,13 @@ func (r BudgetsCreateResponse) StatusCode() int {
 type BudgetsDeleteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *BudgetsDeleteBadRequestResponseBody
+	JSON401      *BudgetsDeleteUnauthorizedResponseBody
+	JSON403      *BudgetsDeleteForbiddenResponseBody
+	JSON404      *BudgetsDeleteNotFoundResponseBody
+	JSON429      *BudgetsDeleteTooManyRequestsResponseBody
+	JSON500      *BudgetsDeleteInternalErrorResponseBody
+	JSON502      *BudgetsDeleteBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -6933,7 +9128,14 @@ func (r BudgetsDeleteResponse) StatusCode() int {
 type BudgetsShowResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *FlexeraOptimaBudget
+	JSON200      *BudgetsShowResponseBody
+	JSON400      *BudgetsShowBadRequestResponseBody
+	JSON401      *BudgetsShowUnauthorizedResponseBody
+	JSON403      *BudgetsShowForbiddenResponseBody
+	JSON404      *BudgetsShowNotFoundResponseBody
+	JSON429      *BudgetsShowTooManyRequestsResponseBody
+	JSON500      *BudgetsShowInternalErrorResponseBody
+	JSON502      *BudgetsShowBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -6955,6 +9157,14 @@ func (r BudgetsShowResponse) StatusCode() int {
 type BudgetsUpdateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *BudgetsUpdateBadRequestResponseBody
+	JSON401      *BudgetsUpdateUnauthorizedResponseBody
+	JSON403      *BudgetsUpdateForbiddenResponseBody
+	JSON404      *BudgetsUpdateNotFoundResponseBody
+	JSON409      *BudgetsUpdateConflictResponseBody
+	JSON429      *BudgetsUpdateTooManyRequestsResponseBody
+	JSON500      *BudgetsUpdateInternalErrorResponseBody
+	JSON502      *BudgetsUpdateBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -6976,7 +9186,14 @@ func (r BudgetsUpdateResponse) StatusCode() int {
 type BudgetsReportResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]BudgetReportRow
+	JSON200      *[]BudgetReportRowResponse
+	JSON400      *BudgetsReportBadRequestResponseBody
+	JSON401      *BudgetsReportUnauthorizedResponseBody
+	JSON403      *BudgetsReportForbiddenResponseBody
+	JSON404      *BudgetsReportNotFoundResponseBody
+	JSON429      *BudgetsReportTooManyRequestsResponseBody
+	JSON500      *BudgetsReportInternalErrorResponseBody
+	JSON502      *BudgetsReportBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -6995,33 +9212,18 @@ func (r BudgetsReportResponse) StatusCode() int {
 	return 0
 }
 
-type CloudVendorAccountsIndexResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *CloudVendorAccountCollection
-}
-
-// Status returns HTTPResponse.Status
-func (r CloudVendorAccountsIndexResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CloudVendorAccountsIndexResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
 type CostsAggregatedResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *AnalyticsQueryResult
-	JSON202      *AnalyticsQueryResult
+	JSON200      *CostsAggregatedOKResponseBody
+	JSON202      *CostsAggregatedOKResponseBody
+	JSON400      *CostsAggregatedBadRequestResponseBody
+	JSON401      *CostsAggregatedUnauthorizedResponseBody
+	JSON403      *CostsAggregatedForbiddenResponseBody
+	JSON404      *CostsAggregatedNotFoundResponseBody
+	JSON429      *CostsAggregatedTooManyRequestsResponseBody
+	JSON500      *CostsAggregatedInternalErrorResponseBody
+	JSON502      *CostsAggregatedBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -7043,8 +9245,14 @@ func (r CostsAggregatedResponse) StatusCode() int {
 type CostsDimensionsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *DimensionsResult
-	JSON202      *DimensionsResult
+	JSON200      *CostsDimensionsOKResponseBody
+	JSON202      *CostsDimensionsAcceptedResponseBody
+	JSON400      *CostsDimensionsBadRequestResponseBody
+	JSON401      *CostsDimensionsUnauthorizedResponseBody
+	JSON403      *CostsDimensionsForbiddenResponseBody
+	JSON429      *CostsDimensionsTooManyRequestsResponseBody
+	JSON500      *CostsDimensionsInternalErrorResponseBody
+	JSON502      *CostsDimensionsBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -7066,8 +9274,12 @@ func (r CostsDimensionsResponse) StatusCode() int {
 type CostsExportSelectResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *ExportSelectResult
-	JSON202      *ExportSelectResult
+	JSON202      *CostsExportSelectAcceptedResponseBody
+	JSON400      *CostsExportSelectBadRequestResponseBody
+	JSON401      *CostsExportSelectUnauthorizedResponseBody
+	JSON403      *CostsExportSelectForbiddenResponseBody
+	JSON500      *CostsExportSelectInternalErrorResponseBody
+	JSON502      *CostsExportSelectBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -7089,8 +9301,12 @@ func (r CostsExportSelectResponse) StatusCode() int {
 type CostsExportSelectStatusResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *ExportSelectStatusResult
-	JSON202      *ExportSelectStatusResult
+	JSON200      *CostsExportSelectStatusResponseBody
+	JSON400      *CostsExportSelectStatusBadRequestResponseBody
+	JSON401      *CostsExportSelectStatusUnauthorizedResponseBody
+	JSON403      *CostsExportSelectStatusForbiddenResponseBody
+	JSON500      *CostsExportSelectStatusInternalErrorResponseBody
+	JSON502      *CostsExportSelectStatusBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -7112,8 +9328,14 @@ func (r CostsExportSelectStatusResponse) StatusCode() int {
 type CostsMetricsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *MetricsResult
-	JSON202      *MetricsResult
+	JSON200      *CostsMetricsOKResponseBody
+	JSON202      *CostsMetricsAcceptedResponseBody
+	JSON400      *CostsMetricsBadRequestResponseBody
+	JSON401      *CostsMetricsUnauthorizedResponseBody
+	JSON403      *CostsMetricsForbiddenResponseBody
+	JSON429      *CostsMetricsTooManyRequestsResponseBody
+	JSON500      *CostsMetricsInternalErrorResponseBody
+	JSON502      *CostsMetricsBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -7135,8 +9357,14 @@ func (r CostsMetricsResponse) StatusCode() int {
 type CostsSelectResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *AnalyticsQueryResult
-	JSON202      *AnalyticsQueryResult
+	JSON200      *CostsSelectOKResponseBody
+	JSON202      *CostsSelectOKResponseBody
+	JSON400      *CostsSelectBadRequestResponseBody
+	JSON401      *CostsSelectUnauthorizedResponseBody
+	JSON403      *CostsSelectForbiddenResponseBody
+	JSON429      *CostsSelectTooManyRequestsResponseBody
+	JSON500      *CostsSelectInternalErrorResponseBody
+	JSON502      *CostsSelectBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -7155,228 +9383,16 @@ func (r CostsSelectResponse) StatusCode() int {
 	return 0
 }
 
-type CustomDimensionsIndexResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *CustomDimensionCollection
-}
-
-// Status returns HTTPResponse.Status
-func (r CustomDimensionsIndexResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CustomDimensionsIndexResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CustomDimensionsCreateResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *RightscaleCustomDimensionServiceCustomdimension
-}
-
-// Status returns HTTPResponse.Status
-func (r CustomDimensionsCreateResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CustomDimensionsCreateResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CustomDimensionsDestroyResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r CustomDimensionsDestroyResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CustomDimensionsDestroyResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CustomDimensionsShowResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *RightscaleCustomDimensionServiceCustomdimension
-}
-
-// Status returns HTTPResponse.Status
-func (r CustomDimensionsShowResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CustomDimensionsShowResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CustomDimensionsReplaceResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *RightscaleCustomDimensionServiceCustomdimension
-}
-
-// Status returns HTTPResponse.Status
-func (r CustomDimensionsReplaceResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CustomDimensionsReplaceResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type OrgDashboardsIndexResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *CustomDashboardCollection
-}
-
-// Status returns HTTPResponse.Status
-func (r OrgDashboardsIndexResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r OrgDashboardsIndexResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type OrgDashboardsCreateResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON201      *RightscaleBillAnalysisFrontServiceCustomdashboard
-}
-
-// Status returns HTTPResponse.Status
-func (r OrgDashboardsCreateResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r OrgDashboardsCreateResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type OrgDashboardsDestroyResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r OrgDashboardsDestroyResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r OrgDashboardsDestroyResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type OrgDashboardsShowResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *RightscaleBillAnalysisFrontServiceCustomdashboard
-}
-
-// Status returns HTTPResponse.Status
-func (r OrgDashboardsShowResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r OrgDashboardsShowResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type OrgDashboardsReplaceResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *RightscaleBillAnalysisFrontServiceCustomdashboard
-}
-
-// Status returns HTTPResponse.Status
-func (r OrgDashboardsReplaceResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r OrgDashboardsReplaceResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
 type ForecastsReportResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *ReportResponseBody2
+	JSON200      *ForecastsReportResponseBody
+	JSON400      *ForecastsReportBadRequestResponseBody
+	JSON401      *ForecastsReportUnauthorizedResponseBody
+	JSON403      *ForecastsReportForbiddenResponseBody
+	JSON404      *ForecastsReportNotFoundResponseBody
+	JSON500      *ForecastsReportInternalErrorResponseBody
+	JSON502      *ForecastsReportBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -7395,53 +9411,16 @@ func (r ForecastsReportResponse) StatusCode() int {
 	return 0
 }
 
-type CommitmentReallocationSettingShowResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *CommitmentReallocationSettings
-}
-
-// Status returns HTTPResponse.Status
-func (r CommitmentReallocationSettingShowResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CommitmentReallocationSettingShowResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CommitmentReallocationSettingUpsertResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r CommitmentReallocationSettingUpsertResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CommitmentReallocationSettingUpsertResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
 type CurrencySettingShowResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *Setting
+	JSON200      *CurrencySettingShowResponseBody
+	JSON400      *CurrencySettingShowBadRequestResponseBody
+	JSON401      *CurrencySettingShowUnauthorizedResponseBody
+	JSON403      *CurrencySettingShowForbiddenResponseBody
+	JSON429      *CurrencySettingShowTooManyRequestsResponseBody
+	JSON500      *CurrencySettingShowInternalErrorResponseBody
+	JSON502      *CurrencySettingShowBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -7463,6 +9442,12 @@ func (r CurrencySettingShowResponse) StatusCode() int {
 type CurrencySettingUpdateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *CurrencySettingUpdateBadRequestResponseBody
+	JSON401      *CurrencySettingUpdateUnauthorizedResponseBody
+	JSON403      *CurrencySettingUpdateForbiddenResponseBody
+	JSON429      *CurrencySettingUpdateTooManyRequestsResponseBody
+	JSON500      *CurrencySettingUpdateInternalErrorResponseBody
+	JSON502      *CurrencySettingUpdateBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -7484,7 +9469,13 @@ func (r CurrencySettingUpdateResponse) StatusCode() int {
 type RuleBasedDimensionsShowResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *AllRuleBasedDimensions
+	JSON200      *RuleBasedDimensionsShowResponseBody
+	JSON400      *RuleBasedDimensionsShowBadRequestResponseBody
+	JSON401      *RuleBasedDimensionsShowUnauthorizedResponseBody
+	JSON403      *RuleBasedDimensionsShowForbiddenResponseBody
+	JSON429      *RuleBasedDimensionsShowTooManyRequestsResponseBody
+	JSON500      *RuleBasedDimensionsShowInternalErrorResponseBody
+	JSON502      *RuleBasedDimensionsShowBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -7506,6 +9497,12 @@ func (r RuleBasedDimensionsShowResponse) StatusCode() int {
 type RuleBasedDimensionsUpdateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *RuleBasedDimensionsUpdateBadRequestResponseBody
+	JSON401      *RuleBasedDimensionsUpdateUnauthorizedResponseBody
+	JSON403      *RuleBasedDimensionsUpdateForbiddenResponseBody
+	JSON429      *RuleBasedDimensionsUpdateTooManyRequestsResponseBody
+	JSON500      *RuleBasedDimensionsUpdateInternalErrorResponseBody
+	JSON502      *RuleBasedDimensionsUpdateBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -7527,6 +9524,13 @@ func (r RuleBasedDimensionsUpdateResponse) StatusCode() int {
 type RuleBasedDimensionsRbdDeleteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *RuleBasedDimensionsRbdDeleteBadRequestResponseBody
+	JSON401      *RuleBasedDimensionsRbdDeleteUnauthorizedResponseBody
+	JSON403      *RuleBasedDimensionsRbdDeleteForbiddenResponseBody
+	JSON404      *RuleBasedDimensionsRbdDeleteNotFoundResponseBody
+	JSON429      *RuleBasedDimensionsRbdDeleteTooManyRequestsResponseBody
+	JSON500      *RuleBasedDimensionsRbdDeleteInternalErrorResponseBody
+	JSON502      *RuleBasedDimensionsRbdDeleteBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -7548,7 +9552,14 @@ func (r RuleBasedDimensionsRbdDeleteResponse) StatusCode() int {
 type RuleBasedDimensionsRbdShowResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *RightscaleBillAnalysisFrontServiceRulebaseddimension
+	JSON200      *RuleBasedDimensionsRbdShowResponseBody
+	JSON400      *RuleBasedDimensionsRbdShowBadRequestResponseBody
+	JSON401      *RuleBasedDimensionsRbdShowUnauthorizedResponseBody
+	JSON403      *RuleBasedDimensionsRbdShowForbiddenResponseBody
+	JSON404      *RuleBasedDimensionsRbdShowNotFoundResponseBody
+	JSON429      *RuleBasedDimensionsRbdShowTooManyRequestsResponseBody
+	JSON500      *RuleBasedDimensionsRbdShowInternalErrorResponseBody
+	JSON502      *RuleBasedDimensionsRbdShowBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -7570,6 +9581,13 @@ func (r RuleBasedDimensionsRbdShowResponse) StatusCode() int {
 type RuleBasedDimensionsRbdUpdateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *RuleBasedDimensionsRbdUpdateBadRequestResponseBody
+	JSON401      *RuleBasedDimensionsRbdUpdateUnauthorizedResponseBody
+	JSON403      *RuleBasedDimensionsRbdUpdateForbiddenResponseBody
+	JSON404      *RuleBasedDimensionsRbdUpdateNotFoundResponseBody
+	JSON429      *RuleBasedDimensionsRbdUpdateTooManyRequestsResponseBody
+	JSON500      *RuleBasedDimensionsRbdUpdateInternalErrorResponseBody
+	JSON502      *RuleBasedDimensionsRbdUpdateBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -7591,6 +9609,13 @@ func (r RuleBasedDimensionsRbdUpdateResponse) StatusCode() int {
 type RuleBasedDimensionsRbdCreateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *RuleBasedDimensionsRbdCreateBadRequestResponseBody
+	JSON401      *RuleBasedDimensionsRbdCreateUnauthorizedResponseBody
+	JSON403      *RuleBasedDimensionsRbdCreateForbiddenResponseBody
+	JSON409      *RuleBasedDimensionsRbdCreateConflictResponseBody
+	JSON429      *RuleBasedDimensionsRbdCreateTooManyRequestsResponseBody
+	JSON500      *RuleBasedDimensionsRbdCreateInternalErrorResponseBody
+	JSON502      *RuleBasedDimensionsRbdCreateBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -7612,6 +9637,13 @@ func (r RuleBasedDimensionsRbdCreateResponse) StatusCode() int {
 type RuleBasedDimensionsRulesListDeleteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *RuleBasedDimensionsRulesListDeleteBadRequestResponseBody
+	JSON401      *RuleBasedDimensionsRulesListDeleteUnauthorizedResponseBody
+	JSON403      *RuleBasedDimensionsRulesListDeleteForbiddenResponseBody
+	JSON404      *RuleBasedDimensionsRulesListDeleteNotFoundResponseBody
+	JSON429      *RuleBasedDimensionsRulesListDeleteTooManyRequestsResponseBody
+	JSON500      *RuleBasedDimensionsRulesListDeleteInternalErrorResponseBody
+	JSON502      *RuleBasedDimensionsRulesListDeleteBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -7633,7 +9665,14 @@ func (r RuleBasedDimensionsRulesListDeleteResponse) StatusCode() int {
 type RuleBasedDimensionsRulesListShowResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *RightscaleBillAnalysisFrontServiceRulebaseddimensionsdatedrules
+	JSON200      *RuleBasedDimensionsRulesListShowResponseBody
+	JSON400      *RuleBasedDimensionsRulesListShowBadRequestResponseBody
+	JSON401      *RuleBasedDimensionsRulesListShowUnauthorizedResponseBody
+	JSON403      *RuleBasedDimensionsRulesListShowForbiddenResponseBody
+	JSON404      *RuleBasedDimensionsRulesListShowNotFoundResponseBody
+	JSON429      *RuleBasedDimensionsRulesListShowTooManyRequestsResponseBody
+	JSON500      *RuleBasedDimensionsRulesListShowInternalErrorResponseBody
+	JSON502      *RuleBasedDimensionsRulesListShowBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -7655,6 +9694,13 @@ func (r RuleBasedDimensionsRulesListShowResponse) StatusCode() int {
 type RuleBasedDimensionsRulesListReplaceResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *RuleBasedDimensionsRulesListReplaceBadRequestResponseBody
+	JSON401      *RuleBasedDimensionsRulesListReplaceUnauthorizedResponseBody
+	JSON403      *RuleBasedDimensionsRulesListReplaceForbiddenResponseBody
+	JSON404      *RuleBasedDimensionsRulesListReplaceNotFoundResponseBody
+	JSON429      *RuleBasedDimensionsRulesListReplaceTooManyRequestsResponseBody
+	JSON500      *RuleBasedDimensionsRulesListReplaceInternalErrorResponseBody
+	JSON502      *RuleBasedDimensionsRulesListReplaceBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -7673,293 +9719,9 @@ func (r RuleBasedDimensionsRulesListReplaceResponse) StatusCode() int {
 	return 0
 }
 
-type CustomDashboardsIndexResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *CustomDashboardCollection
-}
-
-// Status returns HTTPResponse.Status
-func (r CustomDashboardsIndexResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CustomDashboardsIndexResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CustomDashboardsCreateResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON201      *RightscaleBillAnalysisFrontServiceCustomdashboard
-}
-
-// Status returns HTTPResponse.Status
-func (r CustomDashboardsCreateResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CustomDashboardsCreateResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CustomDashboardsDestroyResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r CustomDashboardsDestroyResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CustomDashboardsDestroyResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CustomDashboardsShowResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *RightscaleBillAnalysisFrontServiceCustomdashboard
-}
-
-// Status returns HTTPResponse.Status
-func (r CustomDashboardsShowResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CustomDashboardsShowResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CustomDashboardsReplaceResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *RightscaleBillAnalysisFrontServiceCustomdashboard
-}
-
-// Status returns HTTPResponse.Status
-func (r CustomDashboardsReplaceResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CustomDashboardsReplaceResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type AnomaliesIndexResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *AnomalyIndexResult
-}
-
-// Status returns HTTPResponse.Status
-func (r AnomaliesIndexResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r AnomaliesIndexResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type AnomaliesAggregatedResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *AnomalyAggregatedResult
-}
-
-// Status returns HTTPResponse.Status
-func (r AnomaliesAggregatedResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r AnomaliesAggregatedResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type AnomaliesSummaryResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *AnomalyDetails
-}
-
-// Status returns HTTPResponse.Status
-func (r AnomaliesSummaryResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r AnomaliesSummaryResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CustomDimensionIndexResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *CustomDimensionList
-}
-
-// Status returns HTTPResponse.Status
-func (r CustomDimensionIndexResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CustomDimensionIndexResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CustomDimensionCreateResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON201      *FlexeraOptimaCustomDimensionResults
-}
-
-// Status returns HTTPResponse.Status
-func (r CustomDimensionCreateResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CustomDimensionCreateResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CustomDimensionDeleteResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-}
-
-// Status returns HTTPResponse.Status
-func (r CustomDimensionDeleteResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CustomDimensionDeleteResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CustomDimensionShowResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *FlexeraOptimaCustomDimensionResults
-}
-
-// Status returns HTTPResponse.Status
-func (r CustomDimensionShowResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CustomDimensionShowResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type CustomDimensionUpdateResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *FlexeraOptimaCustomDimensionResults
-}
-
-// Status returns HTTPResponse.Status
-func (r CustomDimensionUpdateResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r CustomDimensionUpdateResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
 // AdjustmentDefinitionShowWithResponse request returning *AdjustmentDefinitionShowResponse
-func (c *ClientWithResponses) AdjustmentDefinitionShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*AdjustmentDefinitionShowResponse, error) {
-	rsp, err := c.AdjustmentDefinitionShow(ctx, org, reqEditors...)
+func (c *ClientWithResponses) AdjustmentDefinitionShowWithResponse(ctx context.Context, org int, params *AdjustmentDefinitionShowParams, reqEditors ...RequestEditorFn) (*AdjustmentDefinitionShowResponse, error) {
+	rsp, err := c.AdjustmentDefinitionShow(ctx, org, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -7967,16 +9729,16 @@ func (c *ClientWithResponses) AdjustmentDefinitionShowWithResponse(ctx context.C
 }
 
 // AdjustmentDefinitionUpdateWithBodyWithResponse request with arbitrary body returning *AdjustmentDefinitionUpdateResponse
-func (c *ClientWithResponses) AdjustmentDefinitionUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AdjustmentDefinitionUpdateResponse, error) {
-	rsp, err := c.AdjustmentDefinitionUpdateWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) AdjustmentDefinitionUpdateWithBodyWithResponse(ctx context.Context, org int, params *AdjustmentDefinitionUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AdjustmentDefinitionUpdateResponse, error) {
+	rsp, err := c.AdjustmentDefinitionUpdateWithBody(ctx, org, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseAdjustmentDefinitionUpdateResponse(rsp)
 }
 
-func (c *ClientWithResponses) AdjustmentDefinitionUpdateWithResponse(ctx context.Context, org int64, body AdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*AdjustmentDefinitionUpdateResponse, error) {
-	rsp, err := c.AdjustmentDefinitionUpdate(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) AdjustmentDefinitionUpdateWithResponse(ctx context.Context, org int, params *AdjustmentDefinitionUpdateParams, body AdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*AdjustmentDefinitionUpdateResponse, error) {
+	rsp, err := c.AdjustmentDefinitionUpdate(ctx, org, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -7984,16 +9746,16 @@ func (c *ClientWithResponses) AdjustmentDefinitionUpdateWithResponse(ctx context
 }
 
 // AnomaliesReportWithBodyWithResponse request with arbitrary body returning *AnomaliesReportResponse
-func (c *ClientWithResponses) AnomaliesReportWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AnomaliesReportResponse, error) {
-	rsp, err := c.AnomaliesReportWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) AnomaliesReportWithBodyWithResponse(ctx context.Context, org int, params *AnomaliesReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AnomaliesReportResponse, error) {
+	rsp, err := c.AnomaliesReportWithBody(ctx, org, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseAnomaliesReportResponse(rsp)
 }
 
-func (c *ClientWithResponses) AnomaliesReportWithResponse(ctx context.Context, org int64, body AnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*AnomaliesReportResponse, error) {
-	rsp, err := c.AnomaliesReport(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) AnomaliesReportWithResponse(ctx context.Context, org int, params *AnomaliesReportParams, body AnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*AnomaliesReportResponse, error) {
+	rsp, err := c.AnomaliesReport(ctx, org, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8001,7 +9763,7 @@ func (c *ClientWithResponses) AnomaliesReportWithResponse(ctx context.Context, o
 }
 
 // BillMonthsSearchWithResponse request returning *BillMonthsSearchResponse
-func (c *ClientWithResponses) BillMonthsSearchWithResponse(ctx context.Context, org int64, params *BillMonthsSearchParams, reqEditors ...RequestEditorFn) (*BillMonthsSearchResponse, error) {
+func (c *ClientWithResponses) BillMonthsSearchWithResponse(ctx context.Context, org int, params *BillMonthsSearchParams, reqEditors ...RequestEditorFn) (*BillMonthsSearchResponse, error) {
 	rsp, err := c.BillMonthsSearch(ctx, org, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -8009,61 +9771,9 @@ func (c *ClientWithResponses) BillMonthsSearchWithResponse(ctx context.Context, 
 	return ParseBillMonthsSearchResponse(rsp)
 }
 
-// BillMonthsReprocessWithBodyWithResponse request with arbitrary body returning *BillMonthsReprocessResponse
-func (c *ClientWithResponses) BillMonthsReprocessWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillMonthsReprocessResponse, error) {
-	rsp, err := c.BillMonthsReprocessWithBody(ctx, org, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillMonthsReprocessResponse(rsp)
-}
-
-func (c *ClientWithResponses) BillMonthsReprocessWithResponse(ctx context.Context, org int64, body BillMonthsReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*BillMonthsReprocessResponse, error) {
-	rsp, err := c.BillMonthsReprocess(ctx, org, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillMonthsReprocessResponse(rsp)
-}
-
-// BillMonthsDownloadWithResponse request returning *BillMonthsDownloadResponse
-func (c *ClientWithResponses) BillMonthsDownloadWithResponse(ctx context.Context, org int64, params *BillMonthsDownloadParams, reqEditors ...RequestEditorFn) (*BillMonthsDownloadResponse, error) {
-	rsp, err := c.BillMonthsDownload(ctx, org, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillMonthsDownloadResponse(rsp)
-}
-
-// BillingSettingsShowWithResponse request returning *BillingSettingsShowResponse
-func (c *ClientWithResponses) BillingSettingsShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillingSettingsShowResponse, error) {
-	rsp, err := c.BillingSettingsShow(ctx, org, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillingSettingsShowResponse(rsp)
-}
-
-// BillingSettingsUpdateWithBodyWithResponse request with arbitrary body returning *BillingSettingsUpdateResponse
-func (c *ClientWithResponses) BillingSettingsUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillingSettingsUpdateResponse, error) {
-	rsp, err := c.BillingSettingsUpdateWithBody(ctx, org, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillingSettingsUpdateResponse(rsp)
-}
-
-func (c *ClientWithResponses) BillingSettingsUpdateWithResponse(ctx context.Context, org int64, body BillingSettingsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillingSettingsUpdateResponse, error) {
-	rsp, err := c.BillingSettingsUpdate(ctx, org, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseBillingSettingsUpdateResponse(rsp)
-}
-
 // BudgetsIndexWithResponse request returning *BudgetsIndexResponse
-func (c *ClientWithResponses) BudgetsIndexWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BudgetsIndexResponse, error) {
-	rsp, err := c.BudgetsIndex(ctx, org, reqEditors...)
+func (c *ClientWithResponses) BudgetsIndexWithResponse(ctx context.Context, org int, params *BudgetsIndexParams, reqEditors ...RequestEditorFn) (*BudgetsIndexResponse, error) {
+	rsp, err := c.BudgetsIndex(ctx, org, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8071,16 +9781,16 @@ func (c *ClientWithResponses) BudgetsIndexWithResponse(ctx context.Context, org 
 }
 
 // BudgetsCreateWithBodyWithResponse request with arbitrary body returning *BudgetsCreateResponse
-func (c *ClientWithResponses) BudgetsCreateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BudgetsCreateResponse, error) {
-	rsp, err := c.BudgetsCreateWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BudgetsCreateWithBodyWithResponse(ctx context.Context, org int, params *BudgetsCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BudgetsCreateResponse, error) {
+	rsp, err := c.BudgetsCreateWithBody(ctx, org, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBudgetsCreateResponse(rsp)
 }
 
-func (c *ClientWithResponses) BudgetsCreateWithResponse(ctx context.Context, org int64, body BudgetsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BudgetsCreateResponse, error) {
-	rsp, err := c.BudgetsCreate(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) BudgetsCreateWithResponse(ctx context.Context, org int, params *BudgetsCreateParams, body BudgetsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BudgetsCreateResponse, error) {
+	rsp, err := c.BudgetsCreate(ctx, org, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8088,8 +9798,8 @@ func (c *ClientWithResponses) BudgetsCreateWithResponse(ctx context.Context, org
 }
 
 // BudgetsDeleteWithResponse request returning *BudgetsDeleteResponse
-func (c *ClientWithResponses) BudgetsDeleteWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BudgetsDeleteResponse, error) {
-	rsp, err := c.BudgetsDelete(ctx, org, id, reqEditors...)
+func (c *ClientWithResponses) BudgetsDeleteWithResponse(ctx context.Context, org int, id string, params *BudgetsDeleteParams, reqEditors ...RequestEditorFn) (*BudgetsDeleteResponse, error) {
+	rsp, err := c.BudgetsDelete(ctx, org, id, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8097,8 +9807,8 @@ func (c *ClientWithResponses) BudgetsDeleteWithResponse(ctx context.Context, org
 }
 
 // BudgetsShowWithResponse request returning *BudgetsShowResponse
-func (c *ClientWithResponses) BudgetsShowWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BudgetsShowResponse, error) {
-	rsp, err := c.BudgetsShow(ctx, org, id, reqEditors...)
+func (c *ClientWithResponses) BudgetsShowWithResponse(ctx context.Context, org int, id string, params *BudgetsShowParams, reqEditors ...RequestEditorFn) (*BudgetsShowResponse, error) {
+	rsp, err := c.BudgetsShow(ctx, org, id, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8106,16 +9816,16 @@ func (c *ClientWithResponses) BudgetsShowWithResponse(ctx context.Context, org i
 }
 
 // BudgetsUpdateWithBodyWithResponse request with arbitrary body returning *BudgetsUpdateResponse
-func (c *ClientWithResponses) BudgetsUpdateWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BudgetsUpdateResponse, error) {
-	rsp, err := c.BudgetsUpdateWithBody(ctx, org, id, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BudgetsUpdateWithBodyWithResponse(ctx context.Context, org int, id string, params *BudgetsUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BudgetsUpdateResponse, error) {
+	rsp, err := c.BudgetsUpdateWithBody(ctx, org, id, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBudgetsUpdateResponse(rsp)
 }
 
-func (c *ClientWithResponses) BudgetsUpdateWithResponse(ctx context.Context, org int64, id string, body BudgetsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BudgetsUpdateResponse, error) {
-	rsp, err := c.BudgetsUpdate(ctx, org, id, body, reqEditors...)
+func (c *ClientWithResponses) BudgetsUpdateWithResponse(ctx context.Context, org int, id string, params *BudgetsUpdateParams, body BudgetsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BudgetsUpdateResponse, error) {
+	rsp, err := c.BudgetsUpdate(ctx, org, id, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8123,42 +9833,33 @@ func (c *ClientWithResponses) BudgetsUpdateWithResponse(ctx context.Context, org
 }
 
 // BudgetsReportWithBodyWithResponse request with arbitrary body returning *BudgetsReportResponse
-func (c *ClientWithResponses) BudgetsReportWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BudgetsReportResponse, error) {
-	rsp, err := c.BudgetsReportWithBody(ctx, org, id, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BudgetsReportWithBodyWithResponse(ctx context.Context, org int, id string, params *BudgetsReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BudgetsReportResponse, error) {
+	rsp, err := c.BudgetsReportWithBody(ctx, org, id, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBudgetsReportResponse(rsp)
 }
 
-func (c *ClientWithResponses) BudgetsReportWithResponse(ctx context.Context, org int64, id string, body BudgetsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BudgetsReportResponse, error) {
-	rsp, err := c.BudgetsReport(ctx, org, id, body, reqEditors...)
+func (c *ClientWithResponses) BudgetsReportWithResponse(ctx context.Context, org int, id string, params *BudgetsReportParams, body BudgetsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BudgetsReportResponse, error) {
+	rsp, err := c.BudgetsReport(ctx, org, id, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBudgetsReportResponse(rsp)
-}
-
-// CloudVendorAccountsIndexWithResponse request returning *CloudVendorAccountsIndexResponse
-func (c *ClientWithResponses) CloudVendorAccountsIndexWithResponse(ctx context.Context, org int64, params *CloudVendorAccountsIndexParams, reqEditors ...RequestEditorFn) (*CloudVendorAccountsIndexResponse, error) {
-	rsp, err := c.CloudVendorAccountsIndex(ctx, org, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCloudVendorAccountsIndexResponse(rsp)
 }
 
 // CostsAggregatedWithBodyWithResponse request with arbitrary body returning *CostsAggregatedResponse
-func (c *ClientWithResponses) CostsAggregatedWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CostsAggregatedResponse, error) {
-	rsp, err := c.CostsAggregatedWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) CostsAggregatedWithBodyWithResponse(ctx context.Context, org int, params *CostsAggregatedParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CostsAggregatedResponse, error) {
+	rsp, err := c.CostsAggregatedWithBody(ctx, org, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseCostsAggregatedResponse(rsp)
 }
 
-func (c *ClientWithResponses) CostsAggregatedWithResponse(ctx context.Context, org int64, body CostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*CostsAggregatedResponse, error) {
-	rsp, err := c.CostsAggregated(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) CostsAggregatedWithResponse(ctx context.Context, org int, params *CostsAggregatedParams, body CostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*CostsAggregatedResponse, error) {
+	rsp, err := c.CostsAggregated(ctx, org, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8166,7 +9867,7 @@ func (c *ClientWithResponses) CostsAggregatedWithResponse(ctx context.Context, o
 }
 
 // CostsDimensionsWithResponse request returning *CostsDimensionsResponse
-func (c *ClientWithResponses) CostsDimensionsWithResponse(ctx context.Context, org int64, params *CostsDimensionsParams, reqEditors ...RequestEditorFn) (*CostsDimensionsResponse, error) {
+func (c *ClientWithResponses) CostsDimensionsWithResponse(ctx context.Context, org int, params *CostsDimensionsParams, reqEditors ...RequestEditorFn) (*CostsDimensionsResponse, error) {
 	rsp, err := c.CostsDimensions(ctx, org, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -8175,16 +9876,16 @@ func (c *ClientWithResponses) CostsDimensionsWithResponse(ctx context.Context, o
 }
 
 // CostsExportSelectWithBodyWithResponse request with arbitrary body returning *CostsExportSelectResponse
-func (c *ClientWithResponses) CostsExportSelectWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CostsExportSelectResponse, error) {
-	rsp, err := c.CostsExportSelectWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) CostsExportSelectWithBodyWithResponse(ctx context.Context, org int, params *CostsExportSelectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CostsExportSelectResponse, error) {
+	rsp, err := c.CostsExportSelectWithBody(ctx, org, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseCostsExportSelectResponse(rsp)
 }
 
-func (c *ClientWithResponses) CostsExportSelectWithResponse(ctx context.Context, org int64, body CostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*CostsExportSelectResponse, error) {
-	rsp, err := c.CostsExportSelect(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) CostsExportSelectWithResponse(ctx context.Context, org int, params *CostsExportSelectParams, body CostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*CostsExportSelectResponse, error) {
+	rsp, err := c.CostsExportSelect(ctx, org, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8192,8 +9893,8 @@ func (c *ClientWithResponses) CostsExportSelectWithResponse(ctx context.Context,
 }
 
 // CostsExportSelectStatusWithResponse request returning *CostsExportSelectStatusResponse
-func (c *ClientWithResponses) CostsExportSelectStatusWithResponse(ctx context.Context, org int64, exportId string, reqEditors ...RequestEditorFn) (*CostsExportSelectStatusResponse, error) {
-	rsp, err := c.CostsExportSelectStatus(ctx, org, exportId, reqEditors...)
+func (c *ClientWithResponses) CostsExportSelectStatusWithResponse(ctx context.Context, org int, exportId string, params *CostsExportSelectStatusParams, reqEditors ...RequestEditorFn) (*CostsExportSelectStatusResponse, error) {
+	rsp, err := c.CostsExportSelectStatus(ctx, org, exportId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8201,7 +9902,7 @@ func (c *ClientWithResponses) CostsExportSelectStatusWithResponse(ctx context.Co
 }
 
 // CostsMetricsWithResponse request returning *CostsMetricsResponse
-func (c *ClientWithResponses) CostsMetricsWithResponse(ctx context.Context, org int64, params *CostsMetricsParams, reqEditors ...RequestEditorFn) (*CostsMetricsResponse, error) {
+func (c *ClientWithResponses) CostsMetricsWithResponse(ctx context.Context, org int, params *CostsMetricsParams, reqEditors ...RequestEditorFn) (*CostsMetricsResponse, error) {
 	rsp, err := c.CostsMetrics(ctx, org, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -8210,190 +9911,42 @@ func (c *ClientWithResponses) CostsMetricsWithResponse(ctx context.Context, org 
 }
 
 // CostsSelectWithBodyWithResponse request with arbitrary body returning *CostsSelectResponse
-func (c *ClientWithResponses) CostsSelectWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CostsSelectResponse, error) {
-	rsp, err := c.CostsSelectWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) CostsSelectWithBodyWithResponse(ctx context.Context, org int, params *CostsSelectParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CostsSelectResponse, error) {
+	rsp, err := c.CostsSelectWithBody(ctx, org, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseCostsSelectResponse(rsp)
 }
 
-func (c *ClientWithResponses) CostsSelectWithResponse(ctx context.Context, org int64, body CostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*CostsSelectResponse, error) {
-	rsp, err := c.CostsSelect(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) CostsSelectWithResponse(ctx context.Context, org int, params *CostsSelectParams, body CostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*CostsSelectResponse, error) {
+	rsp, err := c.CostsSelect(ctx, org, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseCostsSelectResponse(rsp)
-}
-
-// CustomDimensionsIndexWithResponse request returning *CustomDimensionsIndexResponse
-func (c *ClientWithResponses) CustomDimensionsIndexWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*CustomDimensionsIndexResponse, error) {
-	rsp, err := c.CustomDimensionsIndex(ctx, org, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDimensionsIndexResponse(rsp)
-}
-
-// CustomDimensionsCreateWithBodyWithResponse request with arbitrary body returning *CustomDimensionsCreateResponse
-func (c *ClientWithResponses) CustomDimensionsCreateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CustomDimensionsCreateResponse, error) {
-	rsp, err := c.CustomDimensionsCreateWithBody(ctx, org, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDimensionsCreateResponse(rsp)
-}
-
-func (c *ClientWithResponses) CustomDimensionsCreateWithResponse(ctx context.Context, org int64, body CustomDimensionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*CustomDimensionsCreateResponse, error) {
-	rsp, err := c.CustomDimensionsCreate(ctx, org, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDimensionsCreateResponse(rsp)
-}
-
-// CustomDimensionsDestroyWithResponse request returning *CustomDimensionsDestroyResponse
-func (c *ClientWithResponses) CustomDimensionsDestroyWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*CustomDimensionsDestroyResponse, error) {
-	rsp, err := c.CustomDimensionsDestroy(ctx, org, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDimensionsDestroyResponse(rsp)
-}
-
-// CustomDimensionsShowWithResponse request returning *CustomDimensionsShowResponse
-func (c *ClientWithResponses) CustomDimensionsShowWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*CustomDimensionsShowResponse, error) {
-	rsp, err := c.CustomDimensionsShow(ctx, org, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDimensionsShowResponse(rsp)
-}
-
-// CustomDimensionsReplaceWithBodyWithResponse request with arbitrary body returning *CustomDimensionsReplaceResponse
-func (c *ClientWithResponses) CustomDimensionsReplaceWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CustomDimensionsReplaceResponse, error) {
-	rsp, err := c.CustomDimensionsReplaceWithBody(ctx, org, id, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDimensionsReplaceResponse(rsp)
-}
-
-func (c *ClientWithResponses) CustomDimensionsReplaceWithResponse(ctx context.Context, org int64, id string, body CustomDimensionsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*CustomDimensionsReplaceResponse, error) {
-	rsp, err := c.CustomDimensionsReplace(ctx, org, id, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDimensionsReplaceResponse(rsp)
-}
-
-// OrgDashboardsIndexWithResponse request returning *OrgDashboardsIndexResponse
-func (c *ClientWithResponses) OrgDashboardsIndexWithResponse(ctx context.Context, org int64, params *OrgDashboardsIndexParams, reqEditors ...RequestEditorFn) (*OrgDashboardsIndexResponse, error) {
-	rsp, err := c.OrgDashboardsIndex(ctx, org, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseOrgDashboardsIndexResponse(rsp)
-}
-
-// OrgDashboardsCreateWithBodyWithResponse request with arbitrary body returning *OrgDashboardsCreateResponse
-func (c *ClientWithResponses) OrgDashboardsCreateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*OrgDashboardsCreateResponse, error) {
-	rsp, err := c.OrgDashboardsCreateWithBody(ctx, org, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseOrgDashboardsCreateResponse(rsp)
-}
-
-func (c *ClientWithResponses) OrgDashboardsCreateWithResponse(ctx context.Context, org int64, body OrgDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*OrgDashboardsCreateResponse, error) {
-	rsp, err := c.OrgDashboardsCreate(ctx, org, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseOrgDashboardsCreateResponse(rsp)
-}
-
-// OrgDashboardsDestroyWithResponse request returning *OrgDashboardsDestroyResponse
-func (c *ClientWithResponses) OrgDashboardsDestroyWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*OrgDashboardsDestroyResponse, error) {
-	rsp, err := c.OrgDashboardsDestroy(ctx, org, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseOrgDashboardsDestroyResponse(rsp)
-}
-
-// OrgDashboardsShowWithResponse request returning *OrgDashboardsShowResponse
-func (c *ClientWithResponses) OrgDashboardsShowWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*OrgDashboardsShowResponse, error) {
-	rsp, err := c.OrgDashboardsShow(ctx, org, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseOrgDashboardsShowResponse(rsp)
-}
-
-// OrgDashboardsReplaceWithBodyWithResponse request with arbitrary body returning *OrgDashboardsReplaceResponse
-func (c *ClientWithResponses) OrgDashboardsReplaceWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*OrgDashboardsReplaceResponse, error) {
-	rsp, err := c.OrgDashboardsReplaceWithBody(ctx, org, id, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseOrgDashboardsReplaceResponse(rsp)
-}
-
-func (c *ClientWithResponses) OrgDashboardsReplaceWithResponse(ctx context.Context, org int64, id string, body OrgDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*OrgDashboardsReplaceResponse, error) {
-	rsp, err := c.OrgDashboardsReplace(ctx, org, id, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseOrgDashboardsReplaceResponse(rsp)
 }
 
 // ForecastsReportWithBodyWithResponse request with arbitrary body returning *ForecastsReportResponse
-func (c *ClientWithResponses) ForecastsReportWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ForecastsReportResponse, error) {
-	rsp, err := c.ForecastsReportWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) ForecastsReportWithBodyWithResponse(ctx context.Context, org int, params *ForecastsReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ForecastsReportResponse, error) {
+	rsp, err := c.ForecastsReportWithBody(ctx, org, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseForecastsReportResponse(rsp)
 }
 
-func (c *ClientWithResponses) ForecastsReportWithResponse(ctx context.Context, org int64, body ForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*ForecastsReportResponse, error) {
-	rsp, err := c.ForecastsReport(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) ForecastsReportWithResponse(ctx context.Context, org int, params *ForecastsReportParams, body ForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*ForecastsReportResponse, error) {
+	rsp, err := c.ForecastsReport(ctx, org, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseForecastsReportResponse(rsp)
-}
-
-// CommitmentReallocationSettingShowWithResponse request returning *CommitmentReallocationSettingShowResponse
-func (c *ClientWithResponses) CommitmentReallocationSettingShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*CommitmentReallocationSettingShowResponse, error) {
-	rsp, err := c.CommitmentReallocationSettingShow(ctx, org, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCommitmentReallocationSettingShowResponse(rsp)
-}
-
-// CommitmentReallocationSettingUpsertWithBodyWithResponse request with arbitrary body returning *CommitmentReallocationSettingUpsertResponse
-func (c *ClientWithResponses) CommitmentReallocationSettingUpsertWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CommitmentReallocationSettingUpsertResponse, error) {
-	rsp, err := c.CommitmentReallocationSettingUpsertWithBody(ctx, org, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCommitmentReallocationSettingUpsertResponse(rsp)
-}
-
-func (c *ClientWithResponses) CommitmentReallocationSettingUpsertWithResponse(ctx context.Context, org int64, body CommitmentReallocationSettingUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*CommitmentReallocationSettingUpsertResponse, error) {
-	rsp, err := c.CommitmentReallocationSettingUpsert(ctx, org, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCommitmentReallocationSettingUpsertResponse(rsp)
 }
 
 // CurrencySettingShowWithResponse request returning *CurrencySettingShowResponse
-func (c *ClientWithResponses) CurrencySettingShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*CurrencySettingShowResponse, error) {
-	rsp, err := c.CurrencySettingShow(ctx, org, reqEditors...)
+func (c *ClientWithResponses) CurrencySettingShowWithResponse(ctx context.Context, org int, params *CurrencySettingShowParams, reqEditors ...RequestEditorFn) (*CurrencySettingShowResponse, error) {
+	rsp, err := c.CurrencySettingShow(ctx, org, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8401,16 +9954,16 @@ func (c *ClientWithResponses) CurrencySettingShowWithResponse(ctx context.Contex
 }
 
 // CurrencySettingUpdateWithBodyWithResponse request with arbitrary body returning *CurrencySettingUpdateResponse
-func (c *ClientWithResponses) CurrencySettingUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CurrencySettingUpdateResponse, error) {
-	rsp, err := c.CurrencySettingUpdateWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) CurrencySettingUpdateWithBodyWithResponse(ctx context.Context, org int, params *CurrencySettingUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CurrencySettingUpdateResponse, error) {
+	rsp, err := c.CurrencySettingUpdateWithBody(ctx, org, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseCurrencySettingUpdateResponse(rsp)
 }
 
-func (c *ClientWithResponses) CurrencySettingUpdateWithResponse(ctx context.Context, org int64, body CurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*CurrencySettingUpdateResponse, error) {
-	rsp, err := c.CurrencySettingUpdate(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) CurrencySettingUpdateWithResponse(ctx context.Context, org int, params *CurrencySettingUpdateParams, body CurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*CurrencySettingUpdateResponse, error) {
+	rsp, err := c.CurrencySettingUpdate(ctx, org, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8418,8 +9971,8 @@ func (c *ClientWithResponses) CurrencySettingUpdateWithResponse(ctx context.Cont
 }
 
 // RuleBasedDimensionsShowWithResponse request returning *RuleBasedDimensionsShowResponse
-func (c *ClientWithResponses) RuleBasedDimensionsShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsShowResponse, error) {
-	rsp, err := c.RuleBasedDimensionsShow(ctx, org, reqEditors...)
+func (c *ClientWithResponses) RuleBasedDimensionsShowWithResponse(ctx context.Context, org int, params *RuleBasedDimensionsShowParams, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsShowResponse, error) {
+	rsp, err := c.RuleBasedDimensionsShow(ctx, org, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8427,16 +9980,16 @@ func (c *ClientWithResponses) RuleBasedDimensionsShowWithResponse(ctx context.Co
 }
 
 // RuleBasedDimensionsUpdateWithBodyWithResponse request with arbitrary body returning *RuleBasedDimensionsUpdateResponse
-func (c *ClientWithResponses) RuleBasedDimensionsUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsUpdateResponse, error) {
-	rsp, err := c.RuleBasedDimensionsUpdateWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) RuleBasedDimensionsUpdateWithBodyWithResponse(ctx context.Context, org int, params *RuleBasedDimensionsUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsUpdateResponse, error) {
+	rsp, err := c.RuleBasedDimensionsUpdateWithBody(ctx, org, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseRuleBasedDimensionsUpdateResponse(rsp)
 }
 
-func (c *ClientWithResponses) RuleBasedDimensionsUpdateWithResponse(ctx context.Context, org int64, body RuleBasedDimensionsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsUpdateResponse, error) {
-	rsp, err := c.RuleBasedDimensionsUpdate(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) RuleBasedDimensionsUpdateWithResponse(ctx context.Context, org int, params *RuleBasedDimensionsUpdateParams, body RuleBasedDimensionsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsUpdateResponse, error) {
+	rsp, err := c.RuleBasedDimensionsUpdate(ctx, org, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8444,8 +9997,8 @@ func (c *ClientWithResponses) RuleBasedDimensionsUpdateWithResponse(ctx context.
 }
 
 // RuleBasedDimensionsRbdDeleteWithResponse request returning *RuleBasedDimensionsRbdDeleteResponse
-func (c *ClientWithResponses) RuleBasedDimensionsRbdDeleteWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdDeleteResponse, error) {
-	rsp, err := c.RuleBasedDimensionsRbdDelete(ctx, org, id, reqEditors...)
+func (c *ClientWithResponses) RuleBasedDimensionsRbdDeleteWithResponse(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdDeleteParams, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdDeleteResponse, error) {
+	rsp, err := c.RuleBasedDimensionsRbdDelete(ctx, org, id, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8453,8 +10006,8 @@ func (c *ClientWithResponses) RuleBasedDimensionsRbdDeleteWithResponse(ctx conte
 }
 
 // RuleBasedDimensionsRbdShowWithResponse request returning *RuleBasedDimensionsRbdShowResponse
-func (c *ClientWithResponses) RuleBasedDimensionsRbdShowWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdShowResponse, error) {
-	rsp, err := c.RuleBasedDimensionsRbdShow(ctx, org, id, reqEditors...)
+func (c *ClientWithResponses) RuleBasedDimensionsRbdShowWithResponse(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdShowParams, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdShowResponse, error) {
+	rsp, err := c.RuleBasedDimensionsRbdShow(ctx, org, id, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8462,16 +10015,16 @@ func (c *ClientWithResponses) RuleBasedDimensionsRbdShowWithResponse(ctx context
 }
 
 // RuleBasedDimensionsRbdUpdateWithBodyWithResponse request with arbitrary body returning *RuleBasedDimensionsRbdUpdateResponse
-func (c *ClientWithResponses) RuleBasedDimensionsRbdUpdateWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdUpdateResponse, error) {
-	rsp, err := c.RuleBasedDimensionsRbdUpdateWithBody(ctx, org, id, contentType, body, reqEditors...)
+func (c *ClientWithResponses) RuleBasedDimensionsRbdUpdateWithBodyWithResponse(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdUpdateResponse, error) {
+	rsp, err := c.RuleBasedDimensionsRbdUpdateWithBody(ctx, org, id, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseRuleBasedDimensionsRbdUpdateResponse(rsp)
 }
 
-func (c *ClientWithResponses) RuleBasedDimensionsRbdUpdateWithResponse(ctx context.Context, org int64, id string, body RuleBasedDimensionsRbdUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdUpdateResponse, error) {
-	rsp, err := c.RuleBasedDimensionsRbdUpdate(ctx, org, id, body, reqEditors...)
+func (c *ClientWithResponses) RuleBasedDimensionsRbdUpdateWithResponse(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdUpdateParams, body RuleBasedDimensionsRbdUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdUpdateResponse, error) {
+	rsp, err := c.RuleBasedDimensionsRbdUpdate(ctx, org, id, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8479,16 +10032,16 @@ func (c *ClientWithResponses) RuleBasedDimensionsRbdUpdateWithResponse(ctx conte
 }
 
 // RuleBasedDimensionsRbdCreateWithBodyWithResponse request with arbitrary body returning *RuleBasedDimensionsRbdCreateResponse
-func (c *ClientWithResponses) RuleBasedDimensionsRbdCreateWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdCreateResponse, error) {
-	rsp, err := c.RuleBasedDimensionsRbdCreateWithBody(ctx, org, id, contentType, body, reqEditors...)
+func (c *ClientWithResponses) RuleBasedDimensionsRbdCreateWithBodyWithResponse(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdCreateResponse, error) {
+	rsp, err := c.RuleBasedDimensionsRbdCreateWithBody(ctx, org, id, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseRuleBasedDimensionsRbdCreateResponse(rsp)
 }
 
-func (c *ClientWithResponses) RuleBasedDimensionsRbdCreateWithResponse(ctx context.Context, org int64, id string, body RuleBasedDimensionsRbdCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdCreateResponse, error) {
-	rsp, err := c.RuleBasedDimensionsRbdCreate(ctx, org, id, body, reqEditors...)
+func (c *ClientWithResponses) RuleBasedDimensionsRbdCreateWithResponse(ctx context.Context, org int, id string, params *RuleBasedDimensionsRbdCreateParams, body RuleBasedDimensionsRbdCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRbdCreateResponse, error) {
+	rsp, err := c.RuleBasedDimensionsRbdCreate(ctx, org, id, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8496,8 +10049,8 @@ func (c *ClientWithResponses) RuleBasedDimensionsRbdCreateWithResponse(ctx conte
 }
 
 // RuleBasedDimensionsRulesListDeleteWithResponse request returning *RuleBasedDimensionsRulesListDeleteResponse
-func (c *ClientWithResponses) RuleBasedDimensionsRulesListDeleteWithResponse(ctx context.Context, org int64, id string, effectiveAt string, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRulesListDeleteResponse, error) {
-	rsp, err := c.RuleBasedDimensionsRulesListDelete(ctx, org, id, effectiveAt, reqEditors...)
+func (c *ClientWithResponses) RuleBasedDimensionsRulesListDeleteWithResponse(ctx context.Context, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListDeleteParams, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRulesListDeleteResponse, error) {
+	rsp, err := c.RuleBasedDimensionsRulesListDelete(ctx, org, id, effectiveAt, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8505,8 +10058,8 @@ func (c *ClientWithResponses) RuleBasedDimensionsRulesListDeleteWithResponse(ctx
 }
 
 // RuleBasedDimensionsRulesListShowWithResponse request returning *RuleBasedDimensionsRulesListShowResponse
-func (c *ClientWithResponses) RuleBasedDimensionsRulesListShowWithResponse(ctx context.Context, org int64, id string, effectiveAt string, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRulesListShowResponse, error) {
-	rsp, err := c.RuleBasedDimensionsRulesListShow(ctx, org, id, effectiveAt, reqEditors...)
+func (c *ClientWithResponses) RuleBasedDimensionsRulesListShowWithResponse(ctx context.Context, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListShowParams, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRulesListShowResponse, error) {
+	rsp, err := c.RuleBasedDimensionsRulesListShow(ctx, org, id, effectiveAt, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -8514,185 +10067,20 @@ func (c *ClientWithResponses) RuleBasedDimensionsRulesListShowWithResponse(ctx c
 }
 
 // RuleBasedDimensionsRulesListReplaceWithBodyWithResponse request with arbitrary body returning *RuleBasedDimensionsRulesListReplaceResponse
-func (c *ClientWithResponses) RuleBasedDimensionsRulesListReplaceWithBodyWithResponse(ctx context.Context, org int64, id string, effectiveAt string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRulesListReplaceResponse, error) {
-	rsp, err := c.RuleBasedDimensionsRulesListReplaceWithBody(ctx, org, id, effectiveAt, contentType, body, reqEditors...)
+func (c *ClientWithResponses) RuleBasedDimensionsRulesListReplaceWithBodyWithResponse(ctx context.Context, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListReplaceParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRulesListReplaceResponse, error) {
+	rsp, err := c.RuleBasedDimensionsRulesListReplaceWithBody(ctx, org, id, effectiveAt, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseRuleBasedDimensionsRulesListReplaceResponse(rsp)
 }
 
-func (c *ClientWithResponses) RuleBasedDimensionsRulesListReplaceWithResponse(ctx context.Context, org int64, id string, effectiveAt string, body RuleBasedDimensionsRulesListReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRulesListReplaceResponse, error) {
-	rsp, err := c.RuleBasedDimensionsRulesListReplace(ctx, org, id, effectiveAt, body, reqEditors...)
+func (c *ClientWithResponses) RuleBasedDimensionsRulesListReplaceWithResponse(ctx context.Context, org int, id string, effectiveAt string, params *RuleBasedDimensionsRulesListReplaceParams, body RuleBasedDimensionsRulesListReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*RuleBasedDimensionsRulesListReplaceResponse, error) {
+	rsp, err := c.RuleBasedDimensionsRulesListReplace(ctx, org, id, effectiveAt, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseRuleBasedDimensionsRulesListReplaceResponse(rsp)
-}
-
-// CustomDashboardsIndexWithResponse request returning *CustomDashboardsIndexResponse
-func (c *ClientWithResponses) CustomDashboardsIndexWithResponse(ctx context.Context, org int64, user int64, params *CustomDashboardsIndexParams, reqEditors ...RequestEditorFn) (*CustomDashboardsIndexResponse, error) {
-	rsp, err := c.CustomDashboardsIndex(ctx, org, user, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDashboardsIndexResponse(rsp)
-}
-
-// CustomDashboardsCreateWithBodyWithResponse request with arbitrary body returning *CustomDashboardsCreateResponse
-func (c *ClientWithResponses) CustomDashboardsCreateWithBodyWithResponse(ctx context.Context, org int64, user int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CustomDashboardsCreateResponse, error) {
-	rsp, err := c.CustomDashboardsCreateWithBody(ctx, org, user, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDashboardsCreateResponse(rsp)
-}
-
-func (c *ClientWithResponses) CustomDashboardsCreateWithResponse(ctx context.Context, org int64, user int64, body CustomDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*CustomDashboardsCreateResponse, error) {
-	rsp, err := c.CustomDashboardsCreate(ctx, org, user, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDashboardsCreateResponse(rsp)
-}
-
-// CustomDashboardsDestroyWithResponse request returning *CustomDashboardsDestroyResponse
-func (c *ClientWithResponses) CustomDashboardsDestroyWithResponse(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*CustomDashboardsDestroyResponse, error) {
-	rsp, err := c.CustomDashboardsDestroy(ctx, org, user, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDashboardsDestroyResponse(rsp)
-}
-
-// CustomDashboardsShowWithResponse request returning *CustomDashboardsShowResponse
-func (c *ClientWithResponses) CustomDashboardsShowWithResponse(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*CustomDashboardsShowResponse, error) {
-	rsp, err := c.CustomDashboardsShow(ctx, org, user, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDashboardsShowResponse(rsp)
-}
-
-// CustomDashboardsReplaceWithBodyWithResponse request with arbitrary body returning *CustomDashboardsReplaceResponse
-func (c *ClientWithResponses) CustomDashboardsReplaceWithBodyWithResponse(ctx context.Context, org int64, user int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CustomDashboardsReplaceResponse, error) {
-	rsp, err := c.CustomDashboardsReplaceWithBody(ctx, org, user, id, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDashboardsReplaceResponse(rsp)
-}
-
-func (c *ClientWithResponses) CustomDashboardsReplaceWithResponse(ctx context.Context, org int64, user int64, id string, body CustomDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*CustomDashboardsReplaceResponse, error) {
-	rsp, err := c.CustomDashboardsReplace(ctx, org, user, id, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDashboardsReplaceResponse(rsp)
-}
-
-// AnomaliesIndexWithBodyWithResponse request with arbitrary body returning *AnomaliesIndexResponse
-func (c *ClientWithResponses) AnomaliesIndexWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AnomaliesIndexResponse, error) {
-	rsp, err := c.AnomaliesIndexWithBody(ctx, org, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseAnomaliesIndexResponse(rsp)
-}
-
-func (c *ClientWithResponses) AnomaliesIndexWithResponse(ctx context.Context, org int64, body AnomaliesIndexJSONRequestBody, reqEditors ...RequestEditorFn) (*AnomaliesIndexResponse, error) {
-	rsp, err := c.AnomaliesIndex(ctx, org, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseAnomaliesIndexResponse(rsp)
-}
-
-// AnomaliesAggregatedWithBodyWithResponse request with arbitrary body returning *AnomaliesAggregatedResponse
-func (c *ClientWithResponses) AnomaliesAggregatedWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AnomaliesAggregatedResponse, error) {
-	rsp, err := c.AnomaliesAggregatedWithBody(ctx, org, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseAnomaliesAggregatedResponse(rsp)
-}
-
-func (c *ClientWithResponses) AnomaliesAggregatedWithResponse(ctx context.Context, org int64, body AnomaliesAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*AnomaliesAggregatedResponse, error) {
-	rsp, err := c.AnomaliesAggregated(ctx, org, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseAnomaliesAggregatedResponse(rsp)
-}
-
-// AnomaliesSummaryWithResponse request returning *AnomaliesSummaryResponse
-func (c *ClientWithResponses) AnomaliesSummaryWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*AnomaliesSummaryResponse, error) {
-	rsp, err := c.AnomaliesSummary(ctx, org, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseAnomaliesSummaryResponse(rsp)
-}
-
-// CustomDimensionIndexWithResponse request returning *CustomDimensionIndexResponse
-func (c *ClientWithResponses) CustomDimensionIndexWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*CustomDimensionIndexResponse, error) {
-	rsp, err := c.CustomDimensionIndex(ctx, orgId, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDimensionIndexResponse(rsp)
-}
-
-// CustomDimensionCreateWithBodyWithResponse request with arbitrary body returning *CustomDimensionCreateResponse
-func (c *ClientWithResponses) CustomDimensionCreateWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CustomDimensionCreateResponse, error) {
-	rsp, err := c.CustomDimensionCreateWithBody(ctx, orgId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDimensionCreateResponse(rsp)
-}
-
-func (c *ClientWithResponses) CustomDimensionCreateWithResponse(ctx context.Context, orgId int64, body CustomDimensionCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*CustomDimensionCreateResponse, error) {
-	rsp, err := c.CustomDimensionCreate(ctx, orgId, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDimensionCreateResponse(rsp)
-}
-
-// CustomDimensionDeleteWithResponse request returning *CustomDimensionDeleteResponse
-func (c *ClientWithResponses) CustomDimensionDeleteWithResponse(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*CustomDimensionDeleteResponse, error) {
-	rsp, err := c.CustomDimensionDelete(ctx, orgId, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDimensionDeleteResponse(rsp)
-}
-
-// CustomDimensionShowWithResponse request returning *CustomDimensionShowResponse
-func (c *ClientWithResponses) CustomDimensionShowWithResponse(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*CustomDimensionShowResponse, error) {
-	rsp, err := c.CustomDimensionShow(ctx, orgId, id, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDimensionShowResponse(rsp)
-}
-
-// CustomDimensionUpdateWithBodyWithResponse request with arbitrary body returning *CustomDimensionUpdateResponse
-func (c *ClientWithResponses) CustomDimensionUpdateWithBodyWithResponse(ctx context.Context, orgId int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CustomDimensionUpdateResponse, error) {
-	rsp, err := c.CustomDimensionUpdateWithBody(ctx, orgId, id, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDimensionUpdateResponse(rsp)
-}
-
-func (c *ClientWithResponses) CustomDimensionUpdateWithResponse(ctx context.Context, orgId int64, id string, body CustomDimensionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*CustomDimensionUpdateResponse, error) {
-	rsp, err := c.CustomDimensionUpdate(ctx, orgId, id, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseCustomDimensionUpdateResponse(rsp)
 }
 
 // ParseAdjustmentDefinitionShowResponse parses an HTTP response from a AdjustmentDefinitionShowWithResponse call
@@ -8710,11 +10098,60 @@ func ParseAdjustmentDefinitionShowResponse(rsp *http.Response) (*AdjustmentDefin
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest AllDatedAdjustmentLists
+		var dest AdjustmentDefinitionShowResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest AdjustmentDefinitionShowBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest AdjustmentDefinitionShowUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest AdjustmentDefinitionShowForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest AdjustmentDefinitionShowNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest AdjustmentDefinitionShowTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest AdjustmentDefinitionShowInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest AdjustmentDefinitionShowBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
 
 	}
 
@@ -8732,6 +10169,51 @@ func ParseAdjustmentDefinitionUpdateResponse(rsp *http.Response) (*AdjustmentDef
 	response := &AdjustmentDefinitionUpdateResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest AdjustmentDefinitionUpdateBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest AdjustmentDefinitionUpdateUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest AdjustmentDefinitionUpdateForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest AdjustmentDefinitionUpdateTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest AdjustmentDefinitionUpdateInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest AdjustmentDefinitionUpdateBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
 	}
 
 	return response, nil
@@ -8752,11 +10234,53 @@ func ParseAnomaliesReportResponse(rsp *http.Response) (*AnomaliesReportResponse,
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest ReportResponseBody
+		var dest AnomaliesReportResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest AnomaliesReportBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest AnomaliesReportUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest AnomaliesReportForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest AnomaliesReportNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest AnomaliesReportInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest AnomaliesReportBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
 
 	}
 
@@ -8778,105 +10302,46 @@ func ParseBillMonthsSearchResponse(rsp *http.Response) (*BillMonthsSearchRespons
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest BillMonthSearchResponse
+		var dest BillMonthsSearchResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseBillMonthsReprocessResponse parses an HTTP response from a BillMonthsReprocessWithResponse call
-func ParseBillMonthsReprocessResponse(rsp *http.Response) (*BillMonthsReprocessResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &BillMonthsReprocessResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest ReprocessResponse
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BillMonthsSearchBadRequestResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON400 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseBillMonthsDownloadResponse parses an HTTP response from a BillMonthsDownloadWithResponse call
-func ParseBillMonthsDownloadResponse(rsp *http.Response) (*BillMonthsDownloadResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &BillMonthsDownloadResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseBillingSettingsShowResponse parses an HTTP response from a BillingSettingsShowWithResponse call
-func ParseBillingSettingsShowResponse(rsp *http.Response) (*BillingSettingsShowResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &BillingSettingsShowResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest BillingSettingsResponse
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BillMonthsSearchUnauthorizedResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON401 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseBillingSettingsUpdateResponse parses an HTTP response from a BillingSettingsUpdateWithResponse call
-func ParseBillingSettingsUpdateResponse(rsp *http.Response) (*BillingSettingsUpdateResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &BillingSettingsUpdateResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest BillingSettingsResponse
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillMonthsSearchForbiddenResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillMonthsSearchInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillMonthsSearchBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
 
 	}
 
@@ -8898,11 +10363,53 @@ func ParseBudgetsIndexResponse(rsp *http.Response) (*BudgetsIndexResponse, error
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest BudgetCollection
+		var dest BudgetsBudgetResponseCollection
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BudgetsIndexBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BudgetsIndexUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BudgetsIndexForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest BudgetsIndexTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BudgetsIndexInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BudgetsIndexBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
 
 	}
 
@@ -8924,11 +10431,60 @@ func ParseBudgetsCreateResponse(rsp *http.Response) (*BudgetsCreateResponse, err
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest FlexeraOptimaBudget
+		var dest BudgetsCreateResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BudgetsCreateBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BudgetsCreateUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BudgetsCreateForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest BudgetsCreateConflictResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest BudgetsCreateTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BudgetsCreateInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BudgetsCreateBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
 
 	}
 
@@ -8946,6 +10502,58 @@ func ParseBudgetsDeleteResponse(rsp *http.Response) (*BudgetsDeleteResponse, err
 	response := &BudgetsDeleteResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BudgetsDeleteBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BudgetsDeleteUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BudgetsDeleteForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BudgetsDeleteNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest BudgetsDeleteTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BudgetsDeleteInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BudgetsDeleteBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
 	}
 
 	return response, nil
@@ -8966,11 +10574,60 @@ func ParseBudgetsShowResponse(rsp *http.Response) (*BudgetsShowResponse, error) 
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest FlexeraOptimaBudget
+		var dest BudgetsShowResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BudgetsShowBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BudgetsShowUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BudgetsShowForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BudgetsShowNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest BudgetsShowTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BudgetsShowInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BudgetsShowBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
 
 	}
 
@@ -8988,6 +10645,65 @@ func ParseBudgetsUpdateResponse(rsp *http.Response) (*BudgetsUpdateResponse, err
 	response := &BudgetsUpdateResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BudgetsUpdateBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BudgetsUpdateUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BudgetsUpdateForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BudgetsUpdateNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest BudgetsUpdateConflictResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest BudgetsUpdateTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BudgetsUpdateInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BudgetsUpdateBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
 	}
 
 	return response, nil
@@ -9008,37 +10724,60 @@ func ParseBudgetsReportResponse(rsp *http.Response) (*BudgetsReportResponse, err
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []BudgetReportRow
+		var dest []BudgetReportRowResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseCloudVendorAccountsIndexResponse parses an HTTP response from a CloudVendorAccountsIndexWithResponse call
-func ParseCloudVendorAccountsIndexResponse(rsp *http.Response) (*CloudVendorAccountsIndexResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CloudVendorAccountsIndexResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest CloudVendorAccountCollection
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BudgetsReportBadRequestResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BudgetsReportUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BudgetsReportForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BudgetsReportNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest BudgetsReportTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BudgetsReportInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BudgetsReportBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
 
 	}
 
@@ -9060,18 +10799,67 @@ func ParseCostsAggregatedResponse(rsp *http.Response) (*CostsAggregatedResponse,
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest AnalyticsQueryResult
+		var dest CostsAggregatedOKResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
-		var dest AnalyticsQueryResult
+		var dest CostsAggregatedOKResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest CostsAggregatedBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest CostsAggregatedUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest CostsAggregatedForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest CostsAggregatedNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest CostsAggregatedTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest CostsAggregatedInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest CostsAggregatedBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
 
 	}
 
@@ -9093,18 +10881,60 @@ func ParseCostsDimensionsResponse(rsp *http.Response) (*CostsDimensionsResponse,
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest DimensionsResult
+		var dest CostsDimensionsOKResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
-		var dest DimensionsResult
+		var dest CostsDimensionsAcceptedResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest CostsDimensionsBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest CostsDimensionsUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest CostsDimensionsForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest CostsDimensionsTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest CostsDimensionsInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest CostsDimensionsBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
 
 	}
 
@@ -9125,19 +10955,47 @@ func ParseCostsExportSelectResponse(rsp *http.Response) (*CostsExportSelectRespo
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest ExportSelectResult
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
-		var dest ExportSelectResult
+		var dest CostsExportSelectAcceptedResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest CostsExportSelectBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest CostsExportSelectUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest CostsExportSelectForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest CostsExportSelectInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest CostsExportSelectBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
 
 	}
 
@@ -9159,18 +11017,46 @@ func ParseCostsExportSelectStatusResponse(rsp *http.Response) (*CostsExportSelec
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest ExportSelectStatusResult
+		var dest CostsExportSelectStatusResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
-		var dest ExportSelectStatusResult
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest CostsExportSelectStatusBadRequestResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON202 = &dest
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest CostsExportSelectStatusUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest CostsExportSelectStatusForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest CostsExportSelectStatusInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest CostsExportSelectStatusBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
 
 	}
 
@@ -9192,18 +11078,60 @@ func ParseCostsMetricsResponse(rsp *http.Response) (*CostsMetricsResponse, error
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest MetricsResult
+		var dest CostsMetricsOKResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
-		var dest MetricsResult
+		var dest CostsMetricsAcceptedResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest CostsMetricsBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest CostsMetricsUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest CostsMetricsForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest CostsMetricsTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest CostsMetricsInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest CostsMetricsBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
 
 	}
 
@@ -9225,258 +11153,60 @@ func ParseCostsSelectResponse(rsp *http.Response) (*CostsSelectResponse, error) 
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest AnalyticsQueryResult
+		var dest CostsSelectOKResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
-		var dest AnalyticsQueryResult
+		var dest CostsSelectOKResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON202 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseCustomDimensionsIndexResponse parses an HTTP response from a CustomDimensionsIndexWithResponse call
-func ParseCustomDimensionsIndexResponse(rsp *http.Response) (*CustomDimensionsIndexResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CustomDimensionsIndexResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest CustomDimensionCollection
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest CostsSelectBadRequestResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON400 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseCustomDimensionsCreateResponse parses an HTTP response from a CustomDimensionsCreateWithResponse call
-func ParseCustomDimensionsCreateResponse(rsp *http.Response) (*CustomDimensionsCreateResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CustomDimensionsCreateResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest RightscaleCustomDimensionServiceCustomdimension
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest CostsSelectUnauthorizedResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON401 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseCustomDimensionsDestroyResponse parses an HTTP response from a CustomDimensionsDestroyWithResponse call
-func ParseCustomDimensionsDestroyResponse(rsp *http.Response) (*CustomDimensionsDestroyResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CustomDimensionsDestroyResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseCustomDimensionsShowResponse parses an HTTP response from a CustomDimensionsShowWithResponse call
-func ParseCustomDimensionsShowResponse(rsp *http.Response) (*CustomDimensionsShowResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CustomDimensionsShowResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest RightscaleCustomDimensionServiceCustomdimension
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest CostsSelectForbiddenResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON403 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseCustomDimensionsReplaceResponse parses an HTTP response from a CustomDimensionsReplaceWithResponse call
-func ParseCustomDimensionsReplaceResponse(rsp *http.Response) (*CustomDimensionsReplaceResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CustomDimensionsReplaceResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest RightscaleCustomDimensionServiceCustomdimension
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest CostsSelectTooManyRequestsResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON429 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseOrgDashboardsIndexResponse parses an HTTP response from a OrgDashboardsIndexWithResponse call
-func ParseOrgDashboardsIndexResponse(rsp *http.Response) (*OrgDashboardsIndexResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &OrgDashboardsIndexResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest CustomDashboardCollection
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest CostsSelectInternalErrorResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON500 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseOrgDashboardsCreateResponse parses an HTTP response from a OrgDashboardsCreateWithResponse call
-func ParseOrgDashboardsCreateResponse(rsp *http.Response) (*OrgDashboardsCreateResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &OrgDashboardsCreateResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest RightscaleBillAnalysisFrontServiceCustomdashboard
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest CostsSelectBadGatewayResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON201 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseOrgDashboardsDestroyResponse parses an HTTP response from a OrgDashboardsDestroyWithResponse call
-func ParseOrgDashboardsDestroyResponse(rsp *http.Response) (*OrgDashboardsDestroyResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &OrgDashboardsDestroyResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseOrgDashboardsShowResponse parses an HTTP response from a OrgDashboardsShowWithResponse call
-func ParseOrgDashboardsShowResponse(rsp *http.Response) (*OrgDashboardsShowResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &OrgDashboardsShowResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest RightscaleBillAnalysisFrontServiceCustomdashboard
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseOrgDashboardsReplaceResponse parses an HTTP response from a OrgDashboardsReplaceWithResponse call
-func ParseOrgDashboardsReplaceResponse(rsp *http.Response) (*OrgDashboardsReplaceResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &OrgDashboardsReplaceResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest RightscaleBillAnalysisFrontServiceCustomdashboard
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
+		response.JSON502 = &dest
 
 	}
 
@@ -9498,54 +11228,54 @@ func ParseForecastsReportResponse(rsp *http.Response) (*ForecastsReportResponse,
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest ReportResponseBody2
+		var dest ForecastsReportResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseCommitmentReallocationSettingShowResponse parses an HTTP response from a CommitmentReallocationSettingShowWithResponse call
-func ParseCommitmentReallocationSettingShowResponse(rsp *http.Response) (*CommitmentReallocationSettingShowResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CommitmentReallocationSettingShowResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest CommitmentReallocationSettings
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ForecastsReportBadRequestResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON400 = &dest
 
-	}
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ForecastsReportUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
 
-	return response, nil
-}
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ForecastsReportForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
 
-// ParseCommitmentReallocationSettingUpsertResponse parses an HTTP response from a CommitmentReallocationSettingUpsertWithResponse call
-func ParseCommitmentReallocationSettingUpsertResponse(rsp *http.Response) (*CommitmentReallocationSettingUpsertResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ForecastsReportNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
 
-	response := &CommitmentReallocationSettingUpsertResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ForecastsReportInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest ForecastsReportBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
 	}
 
 	return response, nil
@@ -9566,11 +11296,53 @@ func ParseCurrencySettingShowResponse(rsp *http.Response) (*CurrencySettingShowR
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest Setting
+		var dest CurrencySettingShowResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest CurrencySettingShowBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest CurrencySettingShowUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest CurrencySettingShowForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest CurrencySettingShowTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest CurrencySettingShowInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest CurrencySettingShowBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
 
 	}
 
@@ -9588,6 +11360,51 @@ func ParseCurrencySettingUpdateResponse(rsp *http.Response) (*CurrencySettingUpd
 	response := &CurrencySettingUpdateResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest CurrencySettingUpdateBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest CurrencySettingUpdateUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest CurrencySettingUpdateForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest CurrencySettingUpdateTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest CurrencySettingUpdateInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest CurrencySettingUpdateBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
 	}
 
 	return response, nil
@@ -9608,11 +11425,53 @@ func ParseRuleBasedDimensionsShowResponse(rsp *http.Response) (*RuleBasedDimensi
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest AllRuleBasedDimensions
+		var dest RuleBasedDimensionsShowResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest RuleBasedDimensionsShowBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest RuleBasedDimensionsShowUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest RuleBasedDimensionsShowForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RuleBasedDimensionsShowTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest RuleBasedDimensionsShowInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest RuleBasedDimensionsShowBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
 
 	}
 
@@ -9632,6 +11491,51 @@ func ParseRuleBasedDimensionsUpdateResponse(rsp *http.Response) (*RuleBasedDimen
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest RuleBasedDimensionsUpdateBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest RuleBasedDimensionsUpdateUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest RuleBasedDimensionsUpdateForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RuleBasedDimensionsUpdateTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest RuleBasedDimensionsUpdateInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest RuleBasedDimensionsUpdateBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -9646,6 +11550,58 @@ func ParseRuleBasedDimensionsRbdDeleteResponse(rsp *http.Response) (*RuleBasedDi
 	response := &RuleBasedDimensionsRbdDeleteResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest RuleBasedDimensionsRbdDeleteBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest RuleBasedDimensionsRbdDeleteUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest RuleBasedDimensionsRbdDeleteForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest RuleBasedDimensionsRbdDeleteNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RuleBasedDimensionsRbdDeleteTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest RuleBasedDimensionsRbdDeleteInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest RuleBasedDimensionsRbdDeleteBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
 	}
 
 	return response, nil
@@ -9666,11 +11622,60 @@ func ParseRuleBasedDimensionsRbdShowResponse(rsp *http.Response) (*RuleBasedDime
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest RightscaleBillAnalysisFrontServiceRulebaseddimension
+		var dest RuleBasedDimensionsRbdShowResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest RuleBasedDimensionsRbdShowBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest RuleBasedDimensionsRbdShowUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest RuleBasedDimensionsRbdShowForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest RuleBasedDimensionsRbdShowNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RuleBasedDimensionsRbdShowTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest RuleBasedDimensionsRbdShowInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest RuleBasedDimensionsRbdShowBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
 
 	}
 
@@ -9690,6 +11695,58 @@ func ParseRuleBasedDimensionsRbdUpdateResponse(rsp *http.Response) (*RuleBasedDi
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest RuleBasedDimensionsRbdUpdateBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest RuleBasedDimensionsRbdUpdateUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest RuleBasedDimensionsRbdUpdateForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest RuleBasedDimensionsRbdUpdateNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RuleBasedDimensionsRbdUpdateTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest RuleBasedDimensionsRbdUpdateInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest RuleBasedDimensionsRbdUpdateBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -9706,6 +11763,58 @@ func ParseRuleBasedDimensionsRbdCreateResponse(rsp *http.Response) (*RuleBasedDi
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest RuleBasedDimensionsRbdCreateBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest RuleBasedDimensionsRbdCreateUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest RuleBasedDimensionsRbdCreateForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest RuleBasedDimensionsRbdCreateConflictResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RuleBasedDimensionsRbdCreateTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest RuleBasedDimensionsRbdCreateInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest RuleBasedDimensionsRbdCreateBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -9720,6 +11829,58 @@ func ParseRuleBasedDimensionsRulesListDeleteResponse(rsp *http.Response) (*RuleB
 	response := &RuleBasedDimensionsRulesListDeleteResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest RuleBasedDimensionsRulesListDeleteBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest RuleBasedDimensionsRulesListDeleteUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest RuleBasedDimensionsRulesListDeleteForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest RuleBasedDimensionsRulesListDeleteNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RuleBasedDimensionsRulesListDeleteTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest RuleBasedDimensionsRulesListDeleteInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest RuleBasedDimensionsRulesListDeleteBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
 	}
 
 	return response, nil
@@ -9740,11 +11901,60 @@ func ParseRuleBasedDimensionsRulesListShowResponse(rsp *http.Response) (*RuleBas
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest RightscaleBillAnalysisFrontServiceRulebaseddimensionsdatedrules
+		var dest RuleBasedDimensionsRulesListShowResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest RuleBasedDimensionsRulesListShowBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest RuleBasedDimensionsRulesListShowUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest RuleBasedDimensionsRulesListShowForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest RuleBasedDimensionsRulesListShowNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RuleBasedDimensionsRulesListShowTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest RuleBasedDimensionsRulesListShowInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest RuleBasedDimensionsRulesListShowBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
 
 	}
 
@@ -9764,321 +11974,55 @@ func ParseRuleBasedDimensionsRulesListReplaceResponse(rsp *http.Response) (*Rule
 		HTTPResponse: rsp,
 	}
 
-	return response, nil
-}
-
-// ParseCustomDashboardsIndexResponse parses an HTTP response from a CustomDashboardsIndexWithResponse call
-func ParseCustomDashboardsIndexResponse(rsp *http.Response) (*CustomDashboardsIndexResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CustomDashboardsIndexResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest CustomDashboardCollection
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest RuleBasedDimensionsRulesListReplaceBadRequestResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON400 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseCustomDashboardsCreateResponse parses an HTTP response from a CustomDashboardsCreateWithResponse call
-func ParseCustomDashboardsCreateResponse(rsp *http.Response) (*CustomDashboardsCreateResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CustomDashboardsCreateResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest RightscaleBillAnalysisFrontServiceCustomdashboard
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest RuleBasedDimensionsRulesListReplaceUnauthorizedResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON201 = &dest
+		response.JSON401 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseCustomDashboardsDestroyResponse parses an HTTP response from a CustomDashboardsDestroyWithResponse call
-func ParseCustomDashboardsDestroyResponse(rsp *http.Response) (*CustomDashboardsDestroyResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CustomDashboardsDestroyResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseCustomDashboardsShowResponse parses an HTTP response from a CustomDashboardsShowWithResponse call
-func ParseCustomDashboardsShowResponse(rsp *http.Response) (*CustomDashboardsShowResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CustomDashboardsShowResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest RightscaleBillAnalysisFrontServiceCustomdashboard
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest RuleBasedDimensionsRulesListReplaceForbiddenResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON403 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseCustomDashboardsReplaceResponse parses an HTTP response from a CustomDashboardsReplaceWithResponse call
-func ParseCustomDashboardsReplaceResponse(rsp *http.Response) (*CustomDashboardsReplaceResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CustomDashboardsReplaceResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest RightscaleBillAnalysisFrontServiceCustomdashboard
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest RuleBasedDimensionsRulesListReplaceNotFoundResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON404 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseAnomaliesIndexResponse parses an HTTP response from a AnomaliesIndexWithResponse call
-func ParseAnomaliesIndexResponse(rsp *http.Response) (*AnomaliesIndexResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &AnomaliesIndexResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest AnomalyIndexResult
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest RuleBasedDimensionsRulesListReplaceTooManyRequestsResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON429 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseAnomaliesAggregatedResponse parses an HTTP response from a AnomaliesAggregatedWithResponse call
-func ParseAnomaliesAggregatedResponse(rsp *http.Response) (*AnomaliesAggregatedResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &AnomaliesAggregatedResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest AnomalyAggregatedResult
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest RuleBasedDimensionsRulesListReplaceInternalErrorResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON500 = &dest
 
-	}
-
-	return response, nil
-}
-
-// ParseAnomaliesSummaryResponse parses an HTTP response from a AnomaliesSummaryWithResponse call
-func ParseAnomaliesSummaryResponse(rsp *http.Response) (*AnomaliesSummaryResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &AnomaliesSummaryResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest AnomalyDetails
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest RuleBasedDimensionsRulesListReplaceBadGatewayResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCustomDimensionIndexResponse parses an HTTP response from a CustomDimensionIndexWithResponse call
-func ParseCustomDimensionIndexResponse(rsp *http.Response) (*CustomDimensionIndexResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CustomDimensionIndexResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest CustomDimensionList
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCustomDimensionCreateResponse parses an HTTP response from a CustomDimensionCreateWithResponse call
-func ParseCustomDimensionCreateResponse(rsp *http.Response) (*CustomDimensionCreateResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CustomDimensionCreateResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest FlexeraOptimaCustomDimensionResults
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON201 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCustomDimensionDeleteResponse parses an HTTP response from a CustomDimensionDeleteWithResponse call
-func ParseCustomDimensionDeleteResponse(rsp *http.Response) (*CustomDimensionDeleteResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CustomDimensionDeleteResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	return response, nil
-}
-
-// ParseCustomDimensionShowResponse parses an HTTP response from a CustomDimensionShowWithResponse call
-func ParseCustomDimensionShowResponse(rsp *http.Response) (*CustomDimensionShowResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CustomDimensionShowResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest FlexeraOptimaCustomDimensionResults
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseCustomDimensionUpdateResponse parses an HTTP response from a CustomDimensionUpdateWithResponse call
-func ParseCustomDimensionUpdateResponse(rsp *http.Response) (*CustomDimensionUpdateResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &CustomDimensionUpdateResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest FlexeraOptimaCustomDimensionResults
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
+		response.JSON502 = &dest
 
 	}
 
