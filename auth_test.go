@@ -203,9 +203,13 @@ func TestNewClientWithResponsesForAuth_RetryWrapsOAuthDoer(t *testing.T) {
 	if !ok {
 		t.Fatalf("unexpected client type: %T", cli.ClientInterface)
 	}
-	rd, ok := base.Client.(*retryingDoer)
+	route, ok := base.Client.(*optimaRoutingDoer)
 	if !ok {
-		t.Fatalf("expected *retryingDoer wrapping OAuth doer, got %T", base.Client)
+		t.Fatalf("expected *optimaRoutingDoer wrapping the rest of the chain, got %T", base.Client)
+	}
+	rd, ok := route.next.(*retryingDoer)
+	if !ok {
+		t.Fatalf("expected *retryingDoer wrapping OAuth doer, got %T", route.next)
 	}
 	if _, ok := rd.next.(*OAuth2Doer); !ok {
 		t.Fatalf("expected retryingDoer.next = *OAuth2Doer, got %T", rd.next)
@@ -233,9 +237,13 @@ func TestNewClientWithResponsesForAuth_UsesSharedTokenSource(t *testing.T) {
 	if !ok {
 		t.Fatalf("unexpected client type: %T", cli.ClientInterface)
 	}
-	rd, ok := base.Client.(*retryingDoer)
+	route, ok := base.Client.(*optimaRoutingDoer)
 	if !ok {
-		t.Fatalf("expected *retryingDoer, got %T", base.Client)
+		t.Fatalf("expected *optimaRoutingDoer wrapping the rest of the chain, got %T", base.Client)
+	}
+	rd, ok := route.next.(*retryingDoer)
+	if !ok {
+		t.Fatalf("expected *retryingDoer, got %T", route.next)
 	}
 	// Pointer-equal: the same OAuth doer instance is shared with the
 	// caller's source; no fresh mint occurred.

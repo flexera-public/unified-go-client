@@ -16,6 +16,12 @@ type ClientAuth struct {
 	APIBaseURL   string
 	LoginBaseURL string
 
+	// OptimaBaseURL overrides the host that Optima-hosted operations
+	// (bill_analysis, billing_center_service, optima_recommendations —
+	// see optimaHostedPathPrefixes) are automatically rerouted to. When
+	// empty, it is derived from Zone via OptimaBaseURL(Zone).
+	OptimaBaseURL string
+
 	AccessToken  string
 	ClientID     string
 	ClientSecret string
@@ -71,7 +77,12 @@ func NewClientWithResponsesForAuth(a ClientAuth, opts ...ClientOption) (*ClientW
 	if err != nil {
 		return nil, err
 	}
+	optimaBaseURL := strings.TrimSpace(a.OptimaBaseURL)
+	if optimaBaseURL == "" {
+		optimaBaseURL = OptimaBaseURL(normalizeZone(a.Zone))
+	}
 	all := append([]ClientOption{WithRetryingHTTPClient(DefaultRetryConfig())}, opts...)
+	all = append(all, WithOptimaRouting(optimaBaseURL))
 	if a.hasAccessToken() {
 		return helper.NewStaticTokenClient(a.AccessToken, all...)
 	}

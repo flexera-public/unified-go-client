@@ -25121,154 +25121,154 @@ type ClientInterface interface {
 	BillingCenterServiceUserBillingCentersShow(ctx context.Context, user int, orgId int, billingCenter string, params *BillingCenterServiceUserBillingCentersShowParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisAdjustmentDefinitionShow request
-	BillAnalysisAdjustmentDefinitionShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisAdjustmentDefinitionShow(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisAdjustmentDefinitionUpdateWithBody request with any body
-	BillAnalysisAdjustmentDefinitionUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisAdjustmentDefinitionUpdateWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BillAnalysisAdjustmentDefinitionUpdate(ctx context.Context, org int64, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisAdjustmentDefinitionUpdate(ctx context.Context, orgId int64, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisAnomaliesReportWithBody request with any body
-	BillAnalysisAnomaliesReportWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisAnomaliesReportWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BillAnalysisAnomaliesReport(ctx context.Context, org int64, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisAnomaliesReport(ctx context.Context, orgId int64, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisBillMonthsSearch request
-	BillAnalysisBillMonthsSearch(ctx context.Context, org int64, params *BillAnalysisBillMonthsSearchParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisBillMonthsSearch(ctx context.Context, orgId int64, params *BillAnalysisBillMonthsSearchParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisBillMonthsReprocessWithBody request with any body
-	BillAnalysisBillMonthsReprocessWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisBillMonthsReprocessWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BillAnalysisBillMonthsReprocess(ctx context.Context, org int64, body BillAnalysisBillMonthsReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisBillMonthsReprocess(ctx context.Context, orgId int64, body BillAnalysisBillMonthsReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisBillMonthsDownload request
-	BillAnalysisBillMonthsDownload(ctx context.Context, org int64, params *BillAnalysisBillMonthsDownloadParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisBillMonthsDownload(ctx context.Context, orgId int64, params *BillAnalysisBillMonthsDownloadParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisBillingSettingsShow request
-	BillAnalysisBillingSettingsShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisBillingSettingsShow(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisBillingSettingsUpdateWithBody request with any body
-	BillAnalysisBillingSettingsUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisBillingSettingsUpdateWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BillAnalysisBillingSettingsUpdate(ctx context.Context, org int64, body BillAnalysisBillingSettingsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisBillingSettingsUpdate(ctx context.Context, orgId int64, body BillAnalysisBillingSettingsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCloudVendorAccountsIndex request
-	BillAnalysisCloudVendorAccountsIndex(ctx context.Context, org int64, params *BillAnalysisCloudVendorAccountsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCloudVendorAccountsIndex(ctx context.Context, orgId int64, params *BillAnalysisCloudVendorAccountsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCostsAggregatedWithBody request with any body
-	BillAnalysisCostsAggregatedWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCostsAggregatedWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BillAnalysisCostsAggregated(ctx context.Context, org int64, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCostsAggregated(ctx context.Context, orgId int64, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCostsDimensions request
-	BillAnalysisCostsDimensions(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCostsDimensions(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCostsExportSelectWithBody request with any body
-	BillAnalysisCostsExportSelectWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCostsExportSelectWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BillAnalysisCostsExportSelect(ctx context.Context, org int64, body BillAnalysisCostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCostsExportSelect(ctx context.Context, orgId int64, body BillAnalysisCostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCostsExportSelectStatus request
-	BillAnalysisCostsExportSelectStatus(ctx context.Context, org int64, exportId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCostsExportSelectStatus(ctx context.Context, orgId int64, exportId string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCostsMetrics request
-	BillAnalysisCostsMetrics(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCostsMetrics(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCostsSelectWithBody request with any body
-	BillAnalysisCostsSelectWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCostsSelectWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BillAnalysisCostsSelect(ctx context.Context, org int64, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCostsSelect(ctx context.Context, orgId int64, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCustomDimensionsIndex request
-	BillAnalysisCustomDimensionsIndex(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCustomDimensionsIndex(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCustomDimensionsCreateWithBody request with any body
-	BillAnalysisCustomDimensionsCreateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCustomDimensionsCreateWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BillAnalysisCustomDimensionsCreate(ctx context.Context, org int64, body BillAnalysisCustomDimensionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCustomDimensionsCreate(ctx context.Context, orgId int64, body BillAnalysisCustomDimensionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCustomDimensionsDestroy request
-	BillAnalysisCustomDimensionsDestroy(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCustomDimensionsDestroy(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCustomDimensionsShow request
-	BillAnalysisCustomDimensionsShow(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCustomDimensionsShow(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCustomDimensionsReplaceWithBody request with any body
-	BillAnalysisCustomDimensionsReplaceWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCustomDimensionsReplaceWithBody(ctx context.Context, orgId int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BillAnalysisCustomDimensionsReplace(ctx context.Context, org int64, id string, body BillAnalysisCustomDimensionsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCustomDimensionsReplace(ctx context.Context, orgId int64, id string, body BillAnalysisCustomDimensionsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisOrgDashboardsIndex request
-	BillAnalysisOrgDashboardsIndex(ctx context.Context, org int64, params *BillAnalysisOrgDashboardsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisOrgDashboardsIndex(ctx context.Context, orgId int64, params *BillAnalysisOrgDashboardsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisOrgDashboardsCreateWithBody request with any body
-	BillAnalysisOrgDashboardsCreateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisOrgDashboardsCreateWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BillAnalysisOrgDashboardsCreate(ctx context.Context, org int64, body BillAnalysisOrgDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisOrgDashboardsCreate(ctx context.Context, orgId int64, body BillAnalysisOrgDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisOrgDashboardsDestroy request
-	BillAnalysisOrgDashboardsDestroy(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisOrgDashboardsDestroy(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisOrgDashboardsShow request
-	BillAnalysisOrgDashboardsShow(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisOrgDashboardsShow(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisOrgDashboardsReplaceWithBody request with any body
-	BillAnalysisOrgDashboardsReplaceWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisOrgDashboardsReplaceWithBody(ctx context.Context, orgId int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BillAnalysisOrgDashboardsReplace(ctx context.Context, org int64, id string, body BillAnalysisOrgDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisOrgDashboardsReplace(ctx context.Context, orgId int64, id string, body BillAnalysisOrgDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisForecastsReportWithBody request with any body
-	BillAnalysisForecastsReportWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisForecastsReportWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BillAnalysisForecastsReport(ctx context.Context, org int64, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisForecastsReport(ctx context.Context, orgId int64, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCommitmentReallocationSettingShow request
-	BillAnalysisCommitmentReallocationSettingShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCommitmentReallocationSettingShow(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCommitmentReallocationSettingUpsertWithBody request with any body
-	BillAnalysisCommitmentReallocationSettingUpsertWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCommitmentReallocationSettingUpsertWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BillAnalysisCommitmentReallocationSettingUpsert(ctx context.Context, org int64, body BillAnalysisCommitmentReallocationSettingUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCommitmentReallocationSettingUpsert(ctx context.Context, orgId int64, body BillAnalysisCommitmentReallocationSettingUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCurrencySettingShow request
-	BillAnalysisCurrencySettingShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCurrencySettingShow(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCurrencySettingUpdateWithBody request with any body
-	BillAnalysisCurrencySettingUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCurrencySettingUpdateWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BillAnalysisCurrencySettingUpdate(ctx context.Context, org int64, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCurrencySettingUpdate(ctx context.Context, orgId int64, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCustomDashboardsIndex request
-	BillAnalysisCustomDashboardsIndex(ctx context.Context, org int64, user int64, params *BillAnalysisCustomDashboardsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCustomDashboardsIndex(ctx context.Context, orgId int64, user int64, params *BillAnalysisCustomDashboardsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCustomDashboardsCreateWithBody request with any body
-	BillAnalysisCustomDashboardsCreateWithBody(ctx context.Context, org int64, user int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCustomDashboardsCreateWithBody(ctx context.Context, orgId int64, user int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BillAnalysisCustomDashboardsCreate(ctx context.Context, org int64, user int64, body BillAnalysisCustomDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCustomDashboardsCreate(ctx context.Context, orgId int64, user int64, body BillAnalysisCustomDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCustomDashboardsDestroy request
-	BillAnalysisCustomDashboardsDestroy(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCustomDashboardsDestroy(ctx context.Context, orgId int64, user int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCustomDashboardsShow request
-	BillAnalysisCustomDashboardsShow(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCustomDashboardsShow(ctx context.Context, orgId int64, user int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCustomDashboardsReplaceWithBody request with any body
-	BillAnalysisCustomDashboardsReplaceWithBody(ctx context.Context, org int64, user int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCustomDashboardsReplaceWithBody(ctx context.Context, orgId int64, user int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BillAnalysisCustomDashboardsReplace(ctx context.Context, org int64, user int64, id string, body BillAnalysisCustomDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisCustomDashboardsReplace(ctx context.Context, orgId int64, user int64, id string, body BillAnalysisCustomDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisAnomaliesIndexWithBody request with any body
-	BillAnalysisAnomaliesIndexWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisAnomaliesIndexWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BillAnalysisAnomaliesIndex(ctx context.Context, org int64, body BillAnalysisAnomaliesIndexJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisAnomaliesIndex(ctx context.Context, orgId int64, body BillAnalysisAnomaliesIndexJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisAnomaliesAggregatedWithBody request with any body
-	BillAnalysisAnomaliesAggregatedWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisAnomaliesAggregatedWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	BillAnalysisAnomaliesAggregated(ctx context.Context, org int64, body BillAnalysisAnomaliesAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisAnomaliesAggregated(ctx context.Context, orgId int64, body BillAnalysisAnomaliesAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisAnomaliesSummary request
-	BillAnalysisAnomaliesSummary(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	BillAnalysisAnomaliesSummary(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillAnalysisCustomDimensionIndex request
 	BillAnalysisCustomDimensionIndex(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -27398,8 +27398,8 @@ func (c *Client) BillingCenterServiceUserBillingCentersShow(ctx context.Context,
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisAdjustmentDefinitionShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisAdjustmentDefinitionShowRequest(c.Server, org)
+func (c *Client) BillAnalysisAdjustmentDefinitionShow(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAdjustmentDefinitionShowRequest(c.Server, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -27410,8 +27410,8 @@ func (c *Client) BillAnalysisAdjustmentDefinitionShow(ctx context.Context, org i
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisAdjustmentDefinitionUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) BillAnalysisAdjustmentDefinitionUpdateWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27422,8 +27422,8 @@ func (c *Client) BillAnalysisAdjustmentDefinitionUpdateWithBody(ctx context.Cont
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisAdjustmentDefinitionUpdate(ctx context.Context, org int64, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisAdjustmentDefinitionUpdateRequest(c.Server, org, body)
+func (c *Client) BillAnalysisAdjustmentDefinitionUpdate(ctx context.Context, orgId int64, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAdjustmentDefinitionUpdateRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27434,8 +27434,8 @@ func (c *Client) BillAnalysisAdjustmentDefinitionUpdate(ctx context.Context, org
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisAnomaliesReportWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisAnomaliesReportRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) BillAnalysisAnomaliesReportWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAnomaliesReportRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27446,8 +27446,8 @@ func (c *Client) BillAnalysisAnomaliesReportWithBody(ctx context.Context, org in
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisAnomaliesReport(ctx context.Context, org int64, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisAnomaliesReportRequest(c.Server, org, body)
+func (c *Client) BillAnalysisAnomaliesReport(ctx context.Context, orgId int64, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAnomaliesReportRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27458,8 +27458,8 @@ func (c *Client) BillAnalysisAnomaliesReport(ctx context.Context, org int64, bod
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisBillMonthsSearch(ctx context.Context, org int64, params *BillAnalysisBillMonthsSearchParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisBillMonthsSearchRequest(c.Server, org, params)
+func (c *Client) BillAnalysisBillMonthsSearch(ctx context.Context, orgId int64, params *BillAnalysisBillMonthsSearchParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisBillMonthsSearchRequest(c.Server, orgId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -27470,8 +27470,8 @@ func (c *Client) BillAnalysisBillMonthsSearch(ctx context.Context, org int64, pa
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisBillMonthsReprocessWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisBillMonthsReprocessRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) BillAnalysisBillMonthsReprocessWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisBillMonthsReprocessRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27482,8 +27482,8 @@ func (c *Client) BillAnalysisBillMonthsReprocessWithBody(ctx context.Context, or
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisBillMonthsReprocess(ctx context.Context, org int64, body BillAnalysisBillMonthsReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisBillMonthsReprocessRequest(c.Server, org, body)
+func (c *Client) BillAnalysisBillMonthsReprocess(ctx context.Context, orgId int64, body BillAnalysisBillMonthsReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisBillMonthsReprocessRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27494,8 +27494,8 @@ func (c *Client) BillAnalysisBillMonthsReprocess(ctx context.Context, org int64,
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisBillMonthsDownload(ctx context.Context, org int64, params *BillAnalysisBillMonthsDownloadParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisBillMonthsDownloadRequest(c.Server, org, params)
+func (c *Client) BillAnalysisBillMonthsDownload(ctx context.Context, orgId int64, params *BillAnalysisBillMonthsDownloadParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisBillMonthsDownloadRequest(c.Server, orgId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -27506,8 +27506,8 @@ func (c *Client) BillAnalysisBillMonthsDownload(ctx context.Context, org int64, 
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisBillingSettingsShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisBillingSettingsShowRequest(c.Server, org)
+func (c *Client) BillAnalysisBillingSettingsShow(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisBillingSettingsShowRequest(c.Server, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -27518,8 +27518,8 @@ func (c *Client) BillAnalysisBillingSettingsShow(ctx context.Context, org int64,
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisBillingSettingsUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisBillingSettingsUpdateRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) BillAnalysisBillingSettingsUpdateWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisBillingSettingsUpdateRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27530,8 +27530,8 @@ func (c *Client) BillAnalysisBillingSettingsUpdateWithBody(ctx context.Context, 
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisBillingSettingsUpdate(ctx context.Context, org int64, body BillAnalysisBillingSettingsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisBillingSettingsUpdateRequest(c.Server, org, body)
+func (c *Client) BillAnalysisBillingSettingsUpdate(ctx context.Context, orgId int64, body BillAnalysisBillingSettingsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisBillingSettingsUpdateRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27542,8 +27542,8 @@ func (c *Client) BillAnalysisBillingSettingsUpdate(ctx context.Context, org int6
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCloudVendorAccountsIndex(ctx context.Context, org int64, params *BillAnalysisCloudVendorAccountsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCloudVendorAccountsIndexRequest(c.Server, org, params)
+func (c *Client) BillAnalysisCloudVendorAccountsIndex(ctx context.Context, orgId int64, params *BillAnalysisCloudVendorAccountsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCloudVendorAccountsIndexRequest(c.Server, orgId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -27554,8 +27554,8 @@ func (c *Client) BillAnalysisCloudVendorAccountsIndex(ctx context.Context, org i
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCostsAggregatedWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCostsAggregatedRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) BillAnalysisCostsAggregatedWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsAggregatedRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27566,8 +27566,8 @@ func (c *Client) BillAnalysisCostsAggregatedWithBody(ctx context.Context, org in
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCostsAggregated(ctx context.Context, org int64, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCostsAggregatedRequest(c.Server, org, body)
+func (c *Client) BillAnalysisCostsAggregated(ctx context.Context, orgId int64, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsAggregatedRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27578,8 +27578,8 @@ func (c *Client) BillAnalysisCostsAggregated(ctx context.Context, org int64, bod
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCostsDimensions(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCostsDimensionsRequest(c.Server, org)
+func (c *Client) BillAnalysisCostsDimensions(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsDimensionsRequest(c.Server, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -27590,8 +27590,8 @@ func (c *Client) BillAnalysisCostsDimensions(ctx context.Context, org int64, req
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCostsExportSelectWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCostsExportSelectRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) BillAnalysisCostsExportSelectWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsExportSelectRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27602,8 +27602,8 @@ func (c *Client) BillAnalysisCostsExportSelectWithBody(ctx context.Context, org 
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCostsExportSelect(ctx context.Context, org int64, body BillAnalysisCostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCostsExportSelectRequest(c.Server, org, body)
+func (c *Client) BillAnalysisCostsExportSelect(ctx context.Context, orgId int64, body BillAnalysisCostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsExportSelectRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27614,8 +27614,8 @@ func (c *Client) BillAnalysisCostsExportSelect(ctx context.Context, org int64, b
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCostsExportSelectStatus(ctx context.Context, org int64, exportId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCostsExportSelectStatusRequest(c.Server, org, exportId)
+func (c *Client) BillAnalysisCostsExportSelectStatus(ctx context.Context, orgId int64, exportId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsExportSelectStatusRequest(c.Server, orgId, exportId)
 	if err != nil {
 		return nil, err
 	}
@@ -27626,8 +27626,8 @@ func (c *Client) BillAnalysisCostsExportSelectStatus(ctx context.Context, org in
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCostsMetrics(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCostsMetricsRequest(c.Server, org)
+func (c *Client) BillAnalysisCostsMetrics(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsMetricsRequest(c.Server, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -27638,8 +27638,8 @@ func (c *Client) BillAnalysisCostsMetrics(ctx context.Context, org int64, reqEdi
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCostsSelectWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCostsSelectRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) BillAnalysisCostsSelectWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsSelectRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27650,8 +27650,8 @@ func (c *Client) BillAnalysisCostsSelectWithBody(ctx context.Context, org int64,
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCostsSelect(ctx context.Context, org int64, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCostsSelectRequest(c.Server, org, body)
+func (c *Client) BillAnalysisCostsSelect(ctx context.Context, orgId int64, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCostsSelectRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27662,8 +27662,8 @@ func (c *Client) BillAnalysisCostsSelect(ctx context.Context, org int64, body Bi
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCustomDimensionsIndex(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCustomDimensionsIndexRequest(c.Server, org)
+func (c *Client) BillAnalysisCustomDimensionsIndex(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionsIndexRequest(c.Server, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -27674,8 +27674,8 @@ func (c *Client) BillAnalysisCustomDimensionsIndex(ctx context.Context, org int6
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCustomDimensionsCreateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCustomDimensionsCreateRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) BillAnalysisCustomDimensionsCreateWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionsCreateRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27686,8 +27686,8 @@ func (c *Client) BillAnalysisCustomDimensionsCreateWithBody(ctx context.Context,
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCustomDimensionsCreate(ctx context.Context, org int64, body BillAnalysisCustomDimensionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCustomDimensionsCreateRequest(c.Server, org, body)
+func (c *Client) BillAnalysisCustomDimensionsCreate(ctx context.Context, orgId int64, body BillAnalysisCustomDimensionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionsCreateRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27698,8 +27698,8 @@ func (c *Client) BillAnalysisCustomDimensionsCreate(ctx context.Context, org int
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCustomDimensionsDestroy(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCustomDimensionsDestroyRequest(c.Server, org, id)
+func (c *Client) BillAnalysisCustomDimensionsDestroy(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionsDestroyRequest(c.Server, orgId, id)
 	if err != nil {
 		return nil, err
 	}
@@ -27710,8 +27710,8 @@ func (c *Client) BillAnalysisCustomDimensionsDestroy(ctx context.Context, org in
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCustomDimensionsShow(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCustomDimensionsShowRequest(c.Server, org, id)
+func (c *Client) BillAnalysisCustomDimensionsShow(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionsShowRequest(c.Server, orgId, id)
 	if err != nil {
 		return nil, err
 	}
@@ -27722,8 +27722,8 @@ func (c *Client) BillAnalysisCustomDimensionsShow(ctx context.Context, org int64
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCustomDimensionsReplaceWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCustomDimensionsReplaceRequestWithBody(c.Server, org, id, contentType, body)
+func (c *Client) BillAnalysisCustomDimensionsReplaceWithBody(ctx context.Context, orgId int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionsReplaceRequestWithBody(c.Server, orgId, id, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27734,8 +27734,8 @@ func (c *Client) BillAnalysisCustomDimensionsReplaceWithBody(ctx context.Context
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCustomDimensionsReplace(ctx context.Context, org int64, id string, body BillAnalysisCustomDimensionsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCustomDimensionsReplaceRequest(c.Server, org, id, body)
+func (c *Client) BillAnalysisCustomDimensionsReplace(ctx context.Context, orgId int64, id string, body BillAnalysisCustomDimensionsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDimensionsReplaceRequest(c.Server, orgId, id, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27746,8 +27746,8 @@ func (c *Client) BillAnalysisCustomDimensionsReplace(ctx context.Context, org in
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisOrgDashboardsIndex(ctx context.Context, org int64, params *BillAnalysisOrgDashboardsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisOrgDashboardsIndexRequest(c.Server, org, params)
+func (c *Client) BillAnalysisOrgDashboardsIndex(ctx context.Context, orgId int64, params *BillAnalysisOrgDashboardsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisOrgDashboardsIndexRequest(c.Server, orgId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -27758,8 +27758,8 @@ func (c *Client) BillAnalysisOrgDashboardsIndex(ctx context.Context, org int64, 
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisOrgDashboardsCreateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisOrgDashboardsCreateRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) BillAnalysisOrgDashboardsCreateWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisOrgDashboardsCreateRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27770,8 +27770,8 @@ func (c *Client) BillAnalysisOrgDashboardsCreateWithBody(ctx context.Context, or
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisOrgDashboardsCreate(ctx context.Context, org int64, body BillAnalysisOrgDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisOrgDashboardsCreateRequest(c.Server, org, body)
+func (c *Client) BillAnalysisOrgDashboardsCreate(ctx context.Context, orgId int64, body BillAnalysisOrgDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisOrgDashboardsCreateRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27782,8 +27782,8 @@ func (c *Client) BillAnalysisOrgDashboardsCreate(ctx context.Context, org int64,
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisOrgDashboardsDestroy(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisOrgDashboardsDestroyRequest(c.Server, org, id)
+func (c *Client) BillAnalysisOrgDashboardsDestroy(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisOrgDashboardsDestroyRequest(c.Server, orgId, id)
 	if err != nil {
 		return nil, err
 	}
@@ -27794,8 +27794,8 @@ func (c *Client) BillAnalysisOrgDashboardsDestroy(ctx context.Context, org int64
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisOrgDashboardsShow(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisOrgDashboardsShowRequest(c.Server, org, id)
+func (c *Client) BillAnalysisOrgDashboardsShow(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisOrgDashboardsShowRequest(c.Server, orgId, id)
 	if err != nil {
 		return nil, err
 	}
@@ -27806,8 +27806,8 @@ func (c *Client) BillAnalysisOrgDashboardsShow(ctx context.Context, org int64, i
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisOrgDashboardsReplaceWithBody(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisOrgDashboardsReplaceRequestWithBody(c.Server, org, id, contentType, body)
+func (c *Client) BillAnalysisOrgDashboardsReplaceWithBody(ctx context.Context, orgId int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisOrgDashboardsReplaceRequestWithBody(c.Server, orgId, id, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27818,8 +27818,8 @@ func (c *Client) BillAnalysisOrgDashboardsReplaceWithBody(ctx context.Context, o
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisOrgDashboardsReplace(ctx context.Context, org int64, id string, body BillAnalysisOrgDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisOrgDashboardsReplaceRequest(c.Server, org, id, body)
+func (c *Client) BillAnalysisOrgDashboardsReplace(ctx context.Context, orgId int64, id string, body BillAnalysisOrgDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisOrgDashboardsReplaceRequest(c.Server, orgId, id, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27830,8 +27830,8 @@ func (c *Client) BillAnalysisOrgDashboardsReplace(ctx context.Context, org int64
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisForecastsReportWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisForecastsReportRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) BillAnalysisForecastsReportWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisForecastsReportRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27842,8 +27842,8 @@ func (c *Client) BillAnalysisForecastsReportWithBody(ctx context.Context, org in
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisForecastsReport(ctx context.Context, org int64, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisForecastsReportRequest(c.Server, org, body)
+func (c *Client) BillAnalysisForecastsReport(ctx context.Context, orgId int64, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisForecastsReportRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27854,8 +27854,8 @@ func (c *Client) BillAnalysisForecastsReport(ctx context.Context, org int64, bod
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCommitmentReallocationSettingShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCommitmentReallocationSettingShowRequest(c.Server, org)
+func (c *Client) BillAnalysisCommitmentReallocationSettingShow(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCommitmentReallocationSettingShowRequest(c.Server, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -27866,8 +27866,8 @@ func (c *Client) BillAnalysisCommitmentReallocationSettingShow(ctx context.Conte
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCommitmentReallocationSettingUpsertWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCommitmentReallocationSettingUpsertRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) BillAnalysisCommitmentReallocationSettingUpsertWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCommitmentReallocationSettingUpsertRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27878,8 +27878,8 @@ func (c *Client) BillAnalysisCommitmentReallocationSettingUpsertWithBody(ctx con
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCommitmentReallocationSettingUpsert(ctx context.Context, org int64, body BillAnalysisCommitmentReallocationSettingUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCommitmentReallocationSettingUpsertRequest(c.Server, org, body)
+func (c *Client) BillAnalysisCommitmentReallocationSettingUpsert(ctx context.Context, orgId int64, body BillAnalysisCommitmentReallocationSettingUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCommitmentReallocationSettingUpsertRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27890,8 +27890,8 @@ func (c *Client) BillAnalysisCommitmentReallocationSettingUpsert(ctx context.Con
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCurrencySettingShow(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCurrencySettingShowRequest(c.Server, org)
+func (c *Client) BillAnalysisCurrencySettingShow(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCurrencySettingShowRequest(c.Server, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -27902,8 +27902,8 @@ func (c *Client) BillAnalysisCurrencySettingShow(ctx context.Context, org int64,
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCurrencySettingUpdateWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCurrencySettingUpdateRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) BillAnalysisCurrencySettingUpdateWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCurrencySettingUpdateRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27914,8 +27914,8 @@ func (c *Client) BillAnalysisCurrencySettingUpdateWithBody(ctx context.Context, 
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCurrencySettingUpdate(ctx context.Context, org int64, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCurrencySettingUpdateRequest(c.Server, org, body)
+func (c *Client) BillAnalysisCurrencySettingUpdate(ctx context.Context, orgId int64, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCurrencySettingUpdateRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27926,8 +27926,8 @@ func (c *Client) BillAnalysisCurrencySettingUpdate(ctx context.Context, org int6
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCustomDashboardsIndex(ctx context.Context, org int64, user int64, params *BillAnalysisCustomDashboardsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCustomDashboardsIndexRequest(c.Server, org, user, params)
+func (c *Client) BillAnalysisCustomDashboardsIndex(ctx context.Context, orgId int64, user int64, params *BillAnalysisCustomDashboardsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDashboardsIndexRequest(c.Server, orgId, user, params)
 	if err != nil {
 		return nil, err
 	}
@@ -27938,8 +27938,8 @@ func (c *Client) BillAnalysisCustomDashboardsIndex(ctx context.Context, org int6
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCustomDashboardsCreateWithBody(ctx context.Context, org int64, user int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCustomDashboardsCreateRequestWithBody(c.Server, org, user, contentType, body)
+func (c *Client) BillAnalysisCustomDashboardsCreateWithBody(ctx context.Context, orgId int64, user int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDashboardsCreateRequestWithBody(c.Server, orgId, user, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27950,8 +27950,8 @@ func (c *Client) BillAnalysisCustomDashboardsCreateWithBody(ctx context.Context,
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCustomDashboardsCreate(ctx context.Context, org int64, user int64, body BillAnalysisCustomDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCustomDashboardsCreateRequest(c.Server, org, user, body)
+func (c *Client) BillAnalysisCustomDashboardsCreate(ctx context.Context, orgId int64, user int64, body BillAnalysisCustomDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDashboardsCreateRequest(c.Server, orgId, user, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27962,8 +27962,8 @@ func (c *Client) BillAnalysisCustomDashboardsCreate(ctx context.Context, org int
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCustomDashboardsDestroy(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCustomDashboardsDestroyRequest(c.Server, org, user, id)
+func (c *Client) BillAnalysisCustomDashboardsDestroy(ctx context.Context, orgId int64, user int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDashboardsDestroyRequest(c.Server, orgId, user, id)
 	if err != nil {
 		return nil, err
 	}
@@ -27974,8 +27974,8 @@ func (c *Client) BillAnalysisCustomDashboardsDestroy(ctx context.Context, org in
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCustomDashboardsShow(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCustomDashboardsShowRequest(c.Server, org, user, id)
+func (c *Client) BillAnalysisCustomDashboardsShow(ctx context.Context, orgId int64, user int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDashboardsShowRequest(c.Server, orgId, user, id)
 	if err != nil {
 		return nil, err
 	}
@@ -27986,8 +27986,8 @@ func (c *Client) BillAnalysisCustomDashboardsShow(ctx context.Context, org int64
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCustomDashboardsReplaceWithBody(ctx context.Context, org int64, user int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCustomDashboardsReplaceRequestWithBody(c.Server, org, user, id, contentType, body)
+func (c *Client) BillAnalysisCustomDashboardsReplaceWithBody(ctx context.Context, orgId int64, user int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDashboardsReplaceRequestWithBody(c.Server, orgId, user, id, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -27998,8 +27998,8 @@ func (c *Client) BillAnalysisCustomDashboardsReplaceWithBody(ctx context.Context
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisCustomDashboardsReplace(ctx context.Context, org int64, user int64, id string, body BillAnalysisCustomDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisCustomDashboardsReplaceRequest(c.Server, org, user, id, body)
+func (c *Client) BillAnalysisCustomDashboardsReplace(ctx context.Context, orgId int64, user int64, id string, body BillAnalysisCustomDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisCustomDashboardsReplaceRequest(c.Server, orgId, user, id, body)
 	if err != nil {
 		return nil, err
 	}
@@ -28010,8 +28010,8 @@ func (c *Client) BillAnalysisCustomDashboardsReplace(ctx context.Context, org in
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisAnomaliesIndexWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisAnomaliesIndexRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) BillAnalysisAnomaliesIndexWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAnomaliesIndexRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -28022,8 +28022,8 @@ func (c *Client) BillAnalysisAnomaliesIndexWithBody(ctx context.Context, org int
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisAnomaliesIndex(ctx context.Context, org int64, body BillAnalysisAnomaliesIndexJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisAnomaliesIndexRequest(c.Server, org, body)
+func (c *Client) BillAnalysisAnomaliesIndex(ctx context.Context, orgId int64, body BillAnalysisAnomaliesIndexJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAnomaliesIndexRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -28034,8 +28034,8 @@ func (c *Client) BillAnalysisAnomaliesIndex(ctx context.Context, org int64, body
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisAnomaliesAggregatedWithBody(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisAnomaliesAggregatedRequestWithBody(c.Server, org, contentType, body)
+func (c *Client) BillAnalysisAnomaliesAggregatedWithBody(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAnomaliesAggregatedRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -28046,8 +28046,8 @@ func (c *Client) BillAnalysisAnomaliesAggregatedWithBody(ctx context.Context, or
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisAnomaliesAggregated(ctx context.Context, org int64, body BillAnalysisAnomaliesAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisAnomaliesAggregatedRequest(c.Server, org, body)
+func (c *Client) BillAnalysisAnomaliesAggregated(ctx context.Context, orgId int64, body BillAnalysisAnomaliesAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAnomaliesAggregatedRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -28058,8 +28058,8 @@ func (c *Client) BillAnalysisAnomaliesAggregated(ctx context.Context, org int64,
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillAnalysisAnomaliesSummary(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillAnalysisAnomaliesSummaryRequest(c.Server, org, id)
+func (c *Client) BillAnalysisAnomaliesSummary(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillAnalysisAnomaliesSummaryRequest(c.Server, orgId, id)
 	if err != nil {
 		return nil, err
 	}
@@ -37364,12 +37364,12 @@ func NewBillingCenterServiceUserBillingCentersShowRequest(server string, user in
 }
 
 // NewBillAnalysisAdjustmentDefinitionShowRequest generates requests for BillAnalysisAdjustmentDefinitionShow
-func NewBillAnalysisAdjustmentDefinitionShowRequest(server string, org int64) (*http.Request, error) {
+func NewBillAnalysisAdjustmentDefinitionShowRequest(server string, orgId int64) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -37398,23 +37398,23 @@ func NewBillAnalysisAdjustmentDefinitionShowRequest(server string, org int64) (*
 }
 
 // NewBillAnalysisAdjustmentDefinitionUpdateRequest calls the generic BillAnalysisAdjustmentDefinitionUpdate builder with application/json body
-func NewBillAnalysisAdjustmentDefinitionUpdateRequest(server string, org int64, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody) (*http.Request, error) {
+func NewBillAnalysisAdjustmentDefinitionUpdateRequest(server string, orgId int64, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody(server, org, "application/json", bodyReader)
+	return NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody(server, orgId, "application/json", bodyReader)
 }
 
 // NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody generates requests for BillAnalysisAdjustmentDefinitionUpdate with any type of body
-func NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody(server string, orgId int64, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -37445,23 +37445,23 @@ func NewBillAnalysisAdjustmentDefinitionUpdateRequestWithBody(server string, org
 }
 
 // NewBillAnalysisAnomaliesReportRequest calls the generic BillAnalysisAnomaliesReport builder with application/json body
-func NewBillAnalysisAnomaliesReportRequest(server string, org int64, body BillAnalysisAnomaliesReportJSONRequestBody) (*http.Request, error) {
+func NewBillAnalysisAnomaliesReportRequest(server string, orgId int64, body BillAnalysisAnomaliesReportJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisAnomaliesReportRequestWithBody(server, org, "application/json", bodyReader)
+	return NewBillAnalysisAnomaliesReportRequestWithBody(server, orgId, "application/json", bodyReader)
 }
 
 // NewBillAnalysisAnomaliesReportRequestWithBody generates requests for BillAnalysisAnomaliesReport with any type of body
-func NewBillAnalysisAnomaliesReportRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewBillAnalysisAnomaliesReportRequestWithBody(server string, orgId int64, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -37492,12 +37492,12 @@ func NewBillAnalysisAnomaliesReportRequestWithBody(server string, org int64, con
 }
 
 // NewBillAnalysisBillMonthsSearchRequest generates requests for BillAnalysisBillMonthsSearch
-func NewBillAnalysisBillMonthsSearchRequest(server string, org int64, params *BillAnalysisBillMonthsSearchParams) (*http.Request, error) {
+func NewBillAnalysisBillMonthsSearchRequest(server string, orgId int64, params *BillAnalysisBillMonthsSearchParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -37612,23 +37612,23 @@ func NewBillAnalysisBillMonthsSearchRequest(server string, org int64, params *Bi
 }
 
 // NewBillAnalysisBillMonthsReprocessRequest calls the generic BillAnalysisBillMonthsReprocess builder with application/json body
-func NewBillAnalysisBillMonthsReprocessRequest(server string, org int64, body BillAnalysisBillMonthsReprocessJSONRequestBody) (*http.Request, error) {
+func NewBillAnalysisBillMonthsReprocessRequest(server string, orgId int64, body BillAnalysisBillMonthsReprocessJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisBillMonthsReprocessRequestWithBody(server, org, "application/json", bodyReader)
+	return NewBillAnalysisBillMonthsReprocessRequestWithBody(server, orgId, "application/json", bodyReader)
 }
 
 // NewBillAnalysisBillMonthsReprocessRequestWithBody generates requests for BillAnalysisBillMonthsReprocess with any type of body
-func NewBillAnalysisBillMonthsReprocessRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewBillAnalysisBillMonthsReprocessRequestWithBody(server string, orgId int64, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -37659,12 +37659,12 @@ func NewBillAnalysisBillMonthsReprocessRequestWithBody(server string, org int64,
 }
 
 // NewBillAnalysisBillMonthsDownloadRequest generates requests for BillAnalysisBillMonthsDownload
-func NewBillAnalysisBillMonthsDownloadRequest(server string, org int64, params *BillAnalysisBillMonthsDownloadParams) (*http.Request, error) {
+func NewBillAnalysisBillMonthsDownloadRequest(server string, orgId int64, params *BillAnalysisBillMonthsDownloadParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -37727,12 +37727,12 @@ func NewBillAnalysisBillMonthsDownloadRequest(server string, org int64, params *
 }
 
 // NewBillAnalysisBillingSettingsShowRequest generates requests for BillAnalysisBillingSettingsShow
-func NewBillAnalysisBillingSettingsShowRequest(server string, org int64) (*http.Request, error) {
+func NewBillAnalysisBillingSettingsShowRequest(server string, orgId int64) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -37761,23 +37761,23 @@ func NewBillAnalysisBillingSettingsShowRequest(server string, org int64) (*http.
 }
 
 // NewBillAnalysisBillingSettingsUpdateRequest calls the generic BillAnalysisBillingSettingsUpdate builder with application/json body
-func NewBillAnalysisBillingSettingsUpdateRequest(server string, org int64, body BillAnalysisBillingSettingsUpdateJSONRequestBody) (*http.Request, error) {
+func NewBillAnalysisBillingSettingsUpdateRequest(server string, orgId int64, body BillAnalysisBillingSettingsUpdateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisBillingSettingsUpdateRequestWithBody(server, org, "application/json", bodyReader)
+	return NewBillAnalysisBillingSettingsUpdateRequestWithBody(server, orgId, "application/json", bodyReader)
 }
 
 // NewBillAnalysisBillingSettingsUpdateRequestWithBody generates requests for BillAnalysisBillingSettingsUpdate with any type of body
-func NewBillAnalysisBillingSettingsUpdateRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewBillAnalysisBillingSettingsUpdateRequestWithBody(server string, orgId int64, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -37808,12 +37808,12 @@ func NewBillAnalysisBillingSettingsUpdateRequestWithBody(server string, org int6
 }
 
 // NewBillAnalysisCloudVendorAccountsIndexRequest generates requests for BillAnalysisCloudVendorAccountsIndex
-func NewBillAnalysisCloudVendorAccountsIndexRequest(server string, org int64, params *BillAnalysisCloudVendorAccountsIndexParams) (*http.Request, error) {
+func NewBillAnalysisCloudVendorAccountsIndexRequest(server string, orgId int64, params *BillAnalysisCloudVendorAccountsIndexParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -37864,23 +37864,23 @@ func NewBillAnalysisCloudVendorAccountsIndexRequest(server string, org int64, pa
 }
 
 // NewBillAnalysisCostsAggregatedRequest calls the generic BillAnalysisCostsAggregated builder with application/json body
-func NewBillAnalysisCostsAggregatedRequest(server string, org int64, body BillAnalysisCostsAggregatedJSONRequestBody) (*http.Request, error) {
+func NewBillAnalysisCostsAggregatedRequest(server string, orgId int64, body BillAnalysisCostsAggregatedJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisCostsAggregatedRequestWithBody(server, org, "application/json", bodyReader)
+	return NewBillAnalysisCostsAggregatedRequestWithBody(server, orgId, "application/json", bodyReader)
 }
 
 // NewBillAnalysisCostsAggregatedRequestWithBody generates requests for BillAnalysisCostsAggregated with any type of body
-func NewBillAnalysisCostsAggregatedRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewBillAnalysisCostsAggregatedRequestWithBody(server string, orgId int64, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -37911,12 +37911,12 @@ func NewBillAnalysisCostsAggregatedRequestWithBody(server string, org int64, con
 }
 
 // NewBillAnalysisCostsDimensionsRequest generates requests for BillAnalysisCostsDimensions
-func NewBillAnalysisCostsDimensionsRequest(server string, org int64) (*http.Request, error) {
+func NewBillAnalysisCostsDimensionsRequest(server string, orgId int64) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -37945,23 +37945,23 @@ func NewBillAnalysisCostsDimensionsRequest(server string, org int64) (*http.Requ
 }
 
 // NewBillAnalysisCostsExportSelectRequest calls the generic BillAnalysisCostsExportSelect builder with application/json body
-func NewBillAnalysisCostsExportSelectRequest(server string, org int64, body BillAnalysisCostsExportSelectJSONRequestBody) (*http.Request, error) {
+func NewBillAnalysisCostsExportSelectRequest(server string, orgId int64, body BillAnalysisCostsExportSelectJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisCostsExportSelectRequestWithBody(server, org, "application/json", bodyReader)
+	return NewBillAnalysisCostsExportSelectRequestWithBody(server, orgId, "application/json", bodyReader)
 }
 
 // NewBillAnalysisCostsExportSelectRequestWithBody generates requests for BillAnalysisCostsExportSelect with any type of body
-func NewBillAnalysisCostsExportSelectRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewBillAnalysisCostsExportSelectRequestWithBody(server string, orgId int64, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -37992,12 +37992,12 @@ func NewBillAnalysisCostsExportSelectRequestWithBody(server string, org int64, c
 }
 
 // NewBillAnalysisCostsExportSelectStatusRequest generates requests for BillAnalysisCostsExportSelectStatus
-func NewBillAnalysisCostsExportSelectStatusRequest(server string, org int64, exportId string) (*http.Request, error) {
+func NewBillAnalysisCostsExportSelectStatusRequest(server string, orgId int64, exportId string) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38033,12 +38033,12 @@ func NewBillAnalysisCostsExportSelectStatusRequest(server string, org int64, exp
 }
 
 // NewBillAnalysisCostsMetricsRequest generates requests for BillAnalysisCostsMetrics
-func NewBillAnalysisCostsMetricsRequest(server string, org int64) (*http.Request, error) {
+func NewBillAnalysisCostsMetricsRequest(server string, orgId int64) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38067,23 +38067,23 @@ func NewBillAnalysisCostsMetricsRequest(server string, org int64) (*http.Request
 }
 
 // NewBillAnalysisCostsSelectRequest calls the generic BillAnalysisCostsSelect builder with application/json body
-func NewBillAnalysisCostsSelectRequest(server string, org int64, body BillAnalysisCostsSelectJSONRequestBody) (*http.Request, error) {
+func NewBillAnalysisCostsSelectRequest(server string, orgId int64, body BillAnalysisCostsSelectJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisCostsSelectRequestWithBody(server, org, "application/json", bodyReader)
+	return NewBillAnalysisCostsSelectRequestWithBody(server, orgId, "application/json", bodyReader)
 }
 
 // NewBillAnalysisCostsSelectRequestWithBody generates requests for BillAnalysisCostsSelect with any type of body
-func NewBillAnalysisCostsSelectRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewBillAnalysisCostsSelectRequestWithBody(server string, orgId int64, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38114,12 +38114,12 @@ func NewBillAnalysisCostsSelectRequestWithBody(server string, org int64, content
 }
 
 // NewBillAnalysisCustomDimensionsIndexRequest generates requests for BillAnalysisCustomDimensionsIndex
-func NewBillAnalysisCustomDimensionsIndexRequest(server string, org int64) (*http.Request, error) {
+func NewBillAnalysisCustomDimensionsIndexRequest(server string, orgId int64) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38148,23 +38148,23 @@ func NewBillAnalysisCustomDimensionsIndexRequest(server string, org int64) (*htt
 }
 
 // NewBillAnalysisCustomDimensionsCreateRequest calls the generic BillAnalysisCustomDimensionsCreate builder with application/json body
-func NewBillAnalysisCustomDimensionsCreateRequest(server string, org int64, body BillAnalysisCustomDimensionsCreateJSONRequestBody) (*http.Request, error) {
+func NewBillAnalysisCustomDimensionsCreateRequest(server string, orgId int64, body BillAnalysisCustomDimensionsCreateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisCustomDimensionsCreateRequestWithBody(server, org, "application/json", bodyReader)
+	return NewBillAnalysisCustomDimensionsCreateRequestWithBody(server, orgId, "application/json", bodyReader)
 }
 
 // NewBillAnalysisCustomDimensionsCreateRequestWithBody generates requests for BillAnalysisCustomDimensionsCreate with any type of body
-func NewBillAnalysisCustomDimensionsCreateRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewBillAnalysisCustomDimensionsCreateRequestWithBody(server string, orgId int64, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38195,12 +38195,12 @@ func NewBillAnalysisCustomDimensionsCreateRequestWithBody(server string, org int
 }
 
 // NewBillAnalysisCustomDimensionsDestroyRequest generates requests for BillAnalysisCustomDimensionsDestroy
-func NewBillAnalysisCustomDimensionsDestroyRequest(server string, org int64, id string) (*http.Request, error) {
+func NewBillAnalysisCustomDimensionsDestroyRequest(server string, orgId int64, id string) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38236,12 +38236,12 @@ func NewBillAnalysisCustomDimensionsDestroyRequest(server string, org int64, id 
 }
 
 // NewBillAnalysisCustomDimensionsShowRequest generates requests for BillAnalysisCustomDimensionsShow
-func NewBillAnalysisCustomDimensionsShowRequest(server string, org int64, id string) (*http.Request, error) {
+func NewBillAnalysisCustomDimensionsShowRequest(server string, orgId int64, id string) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38277,23 +38277,23 @@ func NewBillAnalysisCustomDimensionsShowRequest(server string, org int64, id str
 }
 
 // NewBillAnalysisCustomDimensionsReplaceRequest calls the generic BillAnalysisCustomDimensionsReplace builder with application/json body
-func NewBillAnalysisCustomDimensionsReplaceRequest(server string, org int64, id string, body BillAnalysisCustomDimensionsReplaceJSONRequestBody) (*http.Request, error) {
+func NewBillAnalysisCustomDimensionsReplaceRequest(server string, orgId int64, id string, body BillAnalysisCustomDimensionsReplaceJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisCustomDimensionsReplaceRequestWithBody(server, org, id, "application/json", bodyReader)
+	return NewBillAnalysisCustomDimensionsReplaceRequestWithBody(server, orgId, id, "application/json", bodyReader)
 }
 
 // NewBillAnalysisCustomDimensionsReplaceRequestWithBody generates requests for BillAnalysisCustomDimensionsReplace with any type of body
-func NewBillAnalysisCustomDimensionsReplaceRequestWithBody(server string, org int64, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewBillAnalysisCustomDimensionsReplaceRequestWithBody(server string, orgId int64, id string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38331,12 +38331,12 @@ func NewBillAnalysisCustomDimensionsReplaceRequestWithBody(server string, org in
 }
 
 // NewBillAnalysisOrgDashboardsIndexRequest generates requests for BillAnalysisOrgDashboardsIndex
-func NewBillAnalysisOrgDashboardsIndexRequest(server string, org int64, params *BillAnalysisOrgDashboardsIndexParams) (*http.Request, error) {
+func NewBillAnalysisOrgDashboardsIndexRequest(server string, orgId int64, params *BillAnalysisOrgDashboardsIndexParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38403,23 +38403,23 @@ func NewBillAnalysisOrgDashboardsIndexRequest(server string, org int64, params *
 }
 
 // NewBillAnalysisOrgDashboardsCreateRequest calls the generic BillAnalysisOrgDashboardsCreate builder with application/json body
-func NewBillAnalysisOrgDashboardsCreateRequest(server string, org int64, body BillAnalysisOrgDashboardsCreateJSONRequestBody) (*http.Request, error) {
+func NewBillAnalysisOrgDashboardsCreateRequest(server string, orgId int64, body BillAnalysisOrgDashboardsCreateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisOrgDashboardsCreateRequestWithBody(server, org, "application/json", bodyReader)
+	return NewBillAnalysisOrgDashboardsCreateRequestWithBody(server, orgId, "application/json", bodyReader)
 }
 
 // NewBillAnalysisOrgDashboardsCreateRequestWithBody generates requests for BillAnalysisOrgDashboardsCreate with any type of body
-func NewBillAnalysisOrgDashboardsCreateRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewBillAnalysisOrgDashboardsCreateRequestWithBody(server string, orgId int64, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38450,12 +38450,12 @@ func NewBillAnalysisOrgDashboardsCreateRequestWithBody(server string, org int64,
 }
 
 // NewBillAnalysisOrgDashboardsDestroyRequest generates requests for BillAnalysisOrgDashboardsDestroy
-func NewBillAnalysisOrgDashboardsDestroyRequest(server string, org int64, id string) (*http.Request, error) {
+func NewBillAnalysisOrgDashboardsDestroyRequest(server string, orgId int64, id string) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38491,12 +38491,12 @@ func NewBillAnalysisOrgDashboardsDestroyRequest(server string, org int64, id str
 }
 
 // NewBillAnalysisOrgDashboardsShowRequest generates requests for BillAnalysisOrgDashboardsShow
-func NewBillAnalysisOrgDashboardsShowRequest(server string, org int64, id string) (*http.Request, error) {
+func NewBillAnalysisOrgDashboardsShowRequest(server string, orgId int64, id string) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38532,23 +38532,23 @@ func NewBillAnalysisOrgDashboardsShowRequest(server string, org int64, id string
 }
 
 // NewBillAnalysisOrgDashboardsReplaceRequest calls the generic BillAnalysisOrgDashboardsReplace builder with application/json body
-func NewBillAnalysisOrgDashboardsReplaceRequest(server string, org int64, id string, body BillAnalysisOrgDashboardsReplaceJSONRequestBody) (*http.Request, error) {
+func NewBillAnalysisOrgDashboardsReplaceRequest(server string, orgId int64, id string, body BillAnalysisOrgDashboardsReplaceJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisOrgDashboardsReplaceRequestWithBody(server, org, id, "application/json", bodyReader)
+	return NewBillAnalysisOrgDashboardsReplaceRequestWithBody(server, orgId, id, "application/json", bodyReader)
 }
 
 // NewBillAnalysisOrgDashboardsReplaceRequestWithBody generates requests for BillAnalysisOrgDashboardsReplace with any type of body
-func NewBillAnalysisOrgDashboardsReplaceRequestWithBody(server string, org int64, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewBillAnalysisOrgDashboardsReplaceRequestWithBody(server string, orgId int64, id string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38586,23 +38586,23 @@ func NewBillAnalysisOrgDashboardsReplaceRequestWithBody(server string, org int64
 }
 
 // NewBillAnalysisForecastsReportRequest calls the generic BillAnalysisForecastsReport builder with application/json body
-func NewBillAnalysisForecastsReportRequest(server string, org int64, body BillAnalysisForecastsReportJSONRequestBody) (*http.Request, error) {
+func NewBillAnalysisForecastsReportRequest(server string, orgId int64, body BillAnalysisForecastsReportJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisForecastsReportRequestWithBody(server, org, "application/json", bodyReader)
+	return NewBillAnalysisForecastsReportRequestWithBody(server, orgId, "application/json", bodyReader)
 }
 
 // NewBillAnalysisForecastsReportRequestWithBody generates requests for BillAnalysisForecastsReport with any type of body
-func NewBillAnalysisForecastsReportRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewBillAnalysisForecastsReportRequestWithBody(server string, orgId int64, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38633,12 +38633,12 @@ func NewBillAnalysisForecastsReportRequestWithBody(server string, org int64, con
 }
 
 // NewBillAnalysisCommitmentReallocationSettingShowRequest generates requests for BillAnalysisCommitmentReallocationSettingShow
-func NewBillAnalysisCommitmentReallocationSettingShowRequest(server string, org int64) (*http.Request, error) {
+func NewBillAnalysisCommitmentReallocationSettingShowRequest(server string, orgId int64) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38667,23 +38667,23 @@ func NewBillAnalysisCommitmentReallocationSettingShowRequest(server string, org 
 }
 
 // NewBillAnalysisCommitmentReallocationSettingUpsertRequest calls the generic BillAnalysisCommitmentReallocationSettingUpsert builder with application/json body
-func NewBillAnalysisCommitmentReallocationSettingUpsertRequest(server string, org int64, body BillAnalysisCommitmentReallocationSettingUpsertJSONRequestBody) (*http.Request, error) {
+func NewBillAnalysisCommitmentReallocationSettingUpsertRequest(server string, orgId int64, body BillAnalysisCommitmentReallocationSettingUpsertJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisCommitmentReallocationSettingUpsertRequestWithBody(server, org, "application/json", bodyReader)
+	return NewBillAnalysisCommitmentReallocationSettingUpsertRequestWithBody(server, orgId, "application/json", bodyReader)
 }
 
 // NewBillAnalysisCommitmentReallocationSettingUpsertRequestWithBody generates requests for BillAnalysisCommitmentReallocationSettingUpsert with any type of body
-func NewBillAnalysisCommitmentReallocationSettingUpsertRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewBillAnalysisCommitmentReallocationSettingUpsertRequestWithBody(server string, orgId int64, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38714,12 +38714,12 @@ func NewBillAnalysisCommitmentReallocationSettingUpsertRequestWithBody(server st
 }
 
 // NewBillAnalysisCurrencySettingShowRequest generates requests for BillAnalysisCurrencySettingShow
-func NewBillAnalysisCurrencySettingShowRequest(server string, org int64) (*http.Request, error) {
+func NewBillAnalysisCurrencySettingShowRequest(server string, orgId int64) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38748,23 +38748,23 @@ func NewBillAnalysisCurrencySettingShowRequest(server string, org int64) (*http.
 }
 
 // NewBillAnalysisCurrencySettingUpdateRequest calls the generic BillAnalysisCurrencySettingUpdate builder with application/json body
-func NewBillAnalysisCurrencySettingUpdateRequest(server string, org int64, body BillAnalysisCurrencySettingUpdateJSONRequestBody) (*http.Request, error) {
+func NewBillAnalysisCurrencySettingUpdateRequest(server string, orgId int64, body BillAnalysisCurrencySettingUpdateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisCurrencySettingUpdateRequestWithBody(server, org, "application/json", bodyReader)
+	return NewBillAnalysisCurrencySettingUpdateRequestWithBody(server, orgId, "application/json", bodyReader)
 }
 
 // NewBillAnalysisCurrencySettingUpdateRequestWithBody generates requests for BillAnalysisCurrencySettingUpdate with any type of body
-func NewBillAnalysisCurrencySettingUpdateRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewBillAnalysisCurrencySettingUpdateRequestWithBody(server string, orgId int64, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38795,12 +38795,12 @@ func NewBillAnalysisCurrencySettingUpdateRequestWithBody(server string, org int6
 }
 
 // NewBillAnalysisCustomDashboardsIndexRequest generates requests for BillAnalysisCustomDashboardsIndex
-func NewBillAnalysisCustomDashboardsIndexRequest(server string, org int64, user int64, params *BillAnalysisCustomDashboardsIndexParams) (*http.Request, error) {
+func NewBillAnalysisCustomDashboardsIndexRequest(server string, orgId int64, user int64, params *BillAnalysisCustomDashboardsIndexParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38858,23 +38858,23 @@ func NewBillAnalysisCustomDashboardsIndexRequest(server string, org int64, user 
 }
 
 // NewBillAnalysisCustomDashboardsCreateRequest calls the generic BillAnalysisCustomDashboardsCreate builder with application/json body
-func NewBillAnalysisCustomDashboardsCreateRequest(server string, org int64, user int64, body BillAnalysisCustomDashboardsCreateJSONRequestBody) (*http.Request, error) {
+func NewBillAnalysisCustomDashboardsCreateRequest(server string, orgId int64, user int64, body BillAnalysisCustomDashboardsCreateJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisCustomDashboardsCreateRequestWithBody(server, org, user, "application/json", bodyReader)
+	return NewBillAnalysisCustomDashboardsCreateRequestWithBody(server, orgId, user, "application/json", bodyReader)
 }
 
 // NewBillAnalysisCustomDashboardsCreateRequestWithBody generates requests for BillAnalysisCustomDashboardsCreate with any type of body
-func NewBillAnalysisCustomDashboardsCreateRequestWithBody(server string, org int64, user int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewBillAnalysisCustomDashboardsCreateRequestWithBody(server string, orgId int64, user int64, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38912,12 +38912,12 @@ func NewBillAnalysisCustomDashboardsCreateRequestWithBody(server string, org int
 }
 
 // NewBillAnalysisCustomDashboardsDestroyRequest generates requests for BillAnalysisCustomDashboardsDestroy
-func NewBillAnalysisCustomDashboardsDestroyRequest(server string, org int64, user int64, id string) (*http.Request, error) {
+func NewBillAnalysisCustomDashboardsDestroyRequest(server string, orgId int64, user int64, id string) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -38960,12 +38960,12 @@ func NewBillAnalysisCustomDashboardsDestroyRequest(server string, org int64, use
 }
 
 // NewBillAnalysisCustomDashboardsShowRequest generates requests for BillAnalysisCustomDashboardsShow
-func NewBillAnalysisCustomDashboardsShowRequest(server string, org int64, user int64, id string) (*http.Request, error) {
+func NewBillAnalysisCustomDashboardsShowRequest(server string, orgId int64, user int64, id string) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -39008,23 +39008,23 @@ func NewBillAnalysisCustomDashboardsShowRequest(server string, org int64, user i
 }
 
 // NewBillAnalysisCustomDashboardsReplaceRequest calls the generic BillAnalysisCustomDashboardsReplace builder with application/json body
-func NewBillAnalysisCustomDashboardsReplaceRequest(server string, org int64, user int64, id string, body BillAnalysisCustomDashboardsReplaceJSONRequestBody) (*http.Request, error) {
+func NewBillAnalysisCustomDashboardsReplaceRequest(server string, orgId int64, user int64, id string, body BillAnalysisCustomDashboardsReplaceJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisCustomDashboardsReplaceRequestWithBody(server, org, user, id, "application/json", bodyReader)
+	return NewBillAnalysisCustomDashboardsReplaceRequestWithBody(server, orgId, user, id, "application/json", bodyReader)
 }
 
 // NewBillAnalysisCustomDashboardsReplaceRequestWithBody generates requests for BillAnalysisCustomDashboardsReplace with any type of body
-func NewBillAnalysisCustomDashboardsReplaceRequestWithBody(server string, org int64, user int64, id string, contentType string, body io.Reader) (*http.Request, error) {
+func NewBillAnalysisCustomDashboardsReplaceRequestWithBody(server string, orgId int64, user int64, id string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -39069,23 +39069,23 @@ func NewBillAnalysisCustomDashboardsReplaceRequestWithBody(server string, org in
 }
 
 // NewBillAnalysisAnomaliesIndexRequest calls the generic BillAnalysisAnomaliesIndex builder with application/json body
-func NewBillAnalysisAnomaliesIndexRequest(server string, org int64, body BillAnalysisAnomaliesIndexJSONRequestBody) (*http.Request, error) {
+func NewBillAnalysisAnomaliesIndexRequest(server string, orgId int64, body BillAnalysisAnomaliesIndexJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisAnomaliesIndexRequestWithBody(server, org, "application/json", bodyReader)
+	return NewBillAnalysisAnomaliesIndexRequestWithBody(server, orgId, "application/json", bodyReader)
 }
 
 // NewBillAnalysisAnomaliesIndexRequestWithBody generates requests for BillAnalysisAnomaliesIndex with any type of body
-func NewBillAnalysisAnomaliesIndexRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewBillAnalysisAnomaliesIndexRequestWithBody(server string, orgId int64, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -39116,23 +39116,23 @@ func NewBillAnalysisAnomaliesIndexRequestWithBody(server string, org int64, cont
 }
 
 // NewBillAnalysisAnomaliesAggregatedRequest calls the generic BillAnalysisAnomaliesAggregated builder with application/json body
-func NewBillAnalysisAnomaliesAggregatedRequest(server string, org int64, body BillAnalysisAnomaliesAggregatedJSONRequestBody) (*http.Request, error) {
+func NewBillAnalysisAnomaliesAggregatedRequest(server string, orgId int64, body BillAnalysisAnomaliesAggregatedJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewBillAnalysisAnomaliesAggregatedRequestWithBody(server, org, "application/json", bodyReader)
+	return NewBillAnalysisAnomaliesAggregatedRequestWithBody(server, orgId, "application/json", bodyReader)
 }
 
 // NewBillAnalysisAnomaliesAggregatedRequestWithBody generates requests for BillAnalysisAnomaliesAggregated with any type of body
-func NewBillAnalysisAnomaliesAggregatedRequestWithBody(server string, org int64, contentType string, body io.Reader) (*http.Request, error) {
+func NewBillAnalysisAnomaliesAggregatedRequestWithBody(server string, orgId int64, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -39163,12 +39163,12 @@ func NewBillAnalysisAnomaliesAggregatedRequestWithBody(server string, org int64,
 }
 
 // NewBillAnalysisAnomaliesSummaryRequest generates requests for BillAnalysisAnomaliesSummary
-func NewBillAnalysisAnomaliesSummaryRequest(server string, org int64, id string) (*http.Request, error) {
+func NewBillAnalysisAnomaliesSummaryRequest(server string, orgId int64, id string) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org", runtime.ParamLocationPath, org)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -66284,154 +66284,154 @@ type ClientWithResponsesInterface interface {
 	BillingCenterServiceUserBillingCentersShowWithResponse(ctx context.Context, user int, orgId int, billingCenter string, params *BillingCenterServiceUserBillingCentersShowParams, reqEditors ...RequestEditorFn) (*BillingCenterServiceUserBillingCentersShowResponse, error)
 
 	// BillAnalysisAdjustmentDefinitionShowWithResponse request
-	BillAnalysisAdjustmentDefinitionShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionShowResponse, error)
+	BillAnalysisAdjustmentDefinitionShowWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionShowResponse, error)
 
 	// BillAnalysisAdjustmentDefinitionUpdateWithBodyWithResponse request with any body
-	BillAnalysisAdjustmentDefinitionUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error)
+	BillAnalysisAdjustmentDefinitionUpdateWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error)
 
-	BillAnalysisAdjustmentDefinitionUpdateWithResponse(ctx context.Context, org int64, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error)
+	BillAnalysisAdjustmentDefinitionUpdateWithResponse(ctx context.Context, orgId int64, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error)
 
 	// BillAnalysisAnomaliesReportWithBodyWithResponse request with any body
-	BillAnalysisAnomaliesReportWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error)
+	BillAnalysisAnomaliesReportWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error)
 
-	BillAnalysisAnomaliesReportWithResponse(ctx context.Context, org int64, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error)
+	BillAnalysisAnomaliesReportWithResponse(ctx context.Context, orgId int64, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error)
 
 	// BillAnalysisBillMonthsSearchWithResponse request
-	BillAnalysisBillMonthsSearchWithResponse(ctx context.Context, org int64, params *BillAnalysisBillMonthsSearchParams, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsSearchResponse, error)
+	BillAnalysisBillMonthsSearchWithResponse(ctx context.Context, orgId int64, params *BillAnalysisBillMonthsSearchParams, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsSearchResponse, error)
 
 	// BillAnalysisBillMonthsReprocessWithBodyWithResponse request with any body
-	BillAnalysisBillMonthsReprocessWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsReprocessResponse, error)
+	BillAnalysisBillMonthsReprocessWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsReprocessResponse, error)
 
-	BillAnalysisBillMonthsReprocessWithResponse(ctx context.Context, org int64, body BillAnalysisBillMonthsReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsReprocessResponse, error)
+	BillAnalysisBillMonthsReprocessWithResponse(ctx context.Context, orgId int64, body BillAnalysisBillMonthsReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsReprocessResponse, error)
 
 	// BillAnalysisBillMonthsDownloadWithResponse request
-	BillAnalysisBillMonthsDownloadWithResponse(ctx context.Context, org int64, params *BillAnalysisBillMonthsDownloadParams, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsDownloadResponse, error)
+	BillAnalysisBillMonthsDownloadWithResponse(ctx context.Context, orgId int64, params *BillAnalysisBillMonthsDownloadParams, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsDownloadResponse, error)
 
 	// BillAnalysisBillingSettingsShowWithResponse request
-	BillAnalysisBillingSettingsShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisBillingSettingsShowResponse, error)
+	BillAnalysisBillingSettingsShowWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*BillAnalysisBillingSettingsShowResponse, error)
 
 	// BillAnalysisBillingSettingsUpdateWithBodyWithResponse request with any body
-	BillAnalysisBillingSettingsUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisBillingSettingsUpdateResponse, error)
+	BillAnalysisBillingSettingsUpdateWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisBillingSettingsUpdateResponse, error)
 
-	BillAnalysisBillingSettingsUpdateWithResponse(ctx context.Context, org int64, body BillAnalysisBillingSettingsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisBillingSettingsUpdateResponse, error)
+	BillAnalysisBillingSettingsUpdateWithResponse(ctx context.Context, orgId int64, body BillAnalysisBillingSettingsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisBillingSettingsUpdateResponse, error)
 
 	// BillAnalysisCloudVendorAccountsIndexWithResponse request
-	BillAnalysisCloudVendorAccountsIndexWithResponse(ctx context.Context, org int64, params *BillAnalysisCloudVendorAccountsIndexParams, reqEditors ...RequestEditorFn) (*BillAnalysisCloudVendorAccountsIndexResponse, error)
+	BillAnalysisCloudVendorAccountsIndexWithResponse(ctx context.Context, orgId int64, params *BillAnalysisCloudVendorAccountsIndexParams, reqEditors ...RequestEditorFn) (*BillAnalysisCloudVendorAccountsIndexResponse, error)
 
 	// BillAnalysisCostsAggregatedWithBodyWithResponse request with any body
-	BillAnalysisCostsAggregatedWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error)
+	BillAnalysisCostsAggregatedWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error)
 
-	BillAnalysisCostsAggregatedWithResponse(ctx context.Context, org int64, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error)
+	BillAnalysisCostsAggregatedWithResponse(ctx context.Context, orgId int64, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error)
 
 	// BillAnalysisCostsDimensionsWithResponse request
-	BillAnalysisCostsDimensionsWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCostsDimensionsResponse, error)
+	BillAnalysisCostsDimensionsWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*BillAnalysisCostsDimensionsResponse, error)
 
 	// BillAnalysisCostsExportSelectWithBodyWithResponse request with any body
-	BillAnalysisCostsExportSelectWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsExportSelectResponse, error)
+	BillAnalysisCostsExportSelectWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsExportSelectResponse, error)
 
-	BillAnalysisCostsExportSelectWithResponse(ctx context.Context, org int64, body BillAnalysisCostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsExportSelectResponse, error)
+	BillAnalysisCostsExportSelectWithResponse(ctx context.Context, orgId int64, body BillAnalysisCostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsExportSelectResponse, error)
 
 	// BillAnalysisCostsExportSelectStatusWithResponse request
-	BillAnalysisCostsExportSelectStatusWithResponse(ctx context.Context, org int64, exportId string, reqEditors ...RequestEditorFn) (*BillAnalysisCostsExportSelectStatusResponse, error)
+	BillAnalysisCostsExportSelectStatusWithResponse(ctx context.Context, orgId int64, exportId string, reqEditors ...RequestEditorFn) (*BillAnalysisCostsExportSelectStatusResponse, error)
 
 	// BillAnalysisCostsMetricsWithResponse request
-	BillAnalysisCostsMetricsWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCostsMetricsResponse, error)
+	BillAnalysisCostsMetricsWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*BillAnalysisCostsMetricsResponse, error)
 
 	// BillAnalysisCostsSelectWithBodyWithResponse request with any body
-	BillAnalysisCostsSelectWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error)
+	BillAnalysisCostsSelectWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error)
 
-	BillAnalysisCostsSelectWithResponse(ctx context.Context, org int64, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error)
+	BillAnalysisCostsSelectWithResponse(ctx context.Context, orgId int64, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error)
 
 	// BillAnalysisCustomDimensionsIndexWithResponse request
-	BillAnalysisCustomDimensionsIndexWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsIndexResponse, error)
+	BillAnalysisCustomDimensionsIndexWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsIndexResponse, error)
 
 	// BillAnalysisCustomDimensionsCreateWithBodyWithResponse request with any body
-	BillAnalysisCustomDimensionsCreateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsCreateResponse, error)
+	BillAnalysisCustomDimensionsCreateWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsCreateResponse, error)
 
-	BillAnalysisCustomDimensionsCreateWithResponse(ctx context.Context, org int64, body BillAnalysisCustomDimensionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsCreateResponse, error)
+	BillAnalysisCustomDimensionsCreateWithResponse(ctx context.Context, orgId int64, body BillAnalysisCustomDimensionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsCreateResponse, error)
 
 	// BillAnalysisCustomDimensionsDestroyWithResponse request
-	BillAnalysisCustomDimensionsDestroyWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsDestroyResponse, error)
+	BillAnalysisCustomDimensionsDestroyWithResponse(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsDestroyResponse, error)
 
 	// BillAnalysisCustomDimensionsShowWithResponse request
-	BillAnalysisCustomDimensionsShowWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsShowResponse, error)
+	BillAnalysisCustomDimensionsShowWithResponse(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsShowResponse, error)
 
 	// BillAnalysisCustomDimensionsReplaceWithBodyWithResponse request with any body
-	BillAnalysisCustomDimensionsReplaceWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsReplaceResponse, error)
+	BillAnalysisCustomDimensionsReplaceWithBodyWithResponse(ctx context.Context, orgId int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsReplaceResponse, error)
 
-	BillAnalysisCustomDimensionsReplaceWithResponse(ctx context.Context, org int64, id string, body BillAnalysisCustomDimensionsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsReplaceResponse, error)
+	BillAnalysisCustomDimensionsReplaceWithResponse(ctx context.Context, orgId int64, id string, body BillAnalysisCustomDimensionsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsReplaceResponse, error)
 
 	// BillAnalysisOrgDashboardsIndexWithResponse request
-	BillAnalysisOrgDashboardsIndexWithResponse(ctx context.Context, org int64, params *BillAnalysisOrgDashboardsIndexParams, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsIndexResponse, error)
+	BillAnalysisOrgDashboardsIndexWithResponse(ctx context.Context, orgId int64, params *BillAnalysisOrgDashboardsIndexParams, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsIndexResponse, error)
 
 	// BillAnalysisOrgDashboardsCreateWithBodyWithResponse request with any body
-	BillAnalysisOrgDashboardsCreateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsCreateResponse, error)
+	BillAnalysisOrgDashboardsCreateWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsCreateResponse, error)
 
-	BillAnalysisOrgDashboardsCreateWithResponse(ctx context.Context, org int64, body BillAnalysisOrgDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsCreateResponse, error)
+	BillAnalysisOrgDashboardsCreateWithResponse(ctx context.Context, orgId int64, body BillAnalysisOrgDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsCreateResponse, error)
 
 	// BillAnalysisOrgDashboardsDestroyWithResponse request
-	BillAnalysisOrgDashboardsDestroyWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsDestroyResponse, error)
+	BillAnalysisOrgDashboardsDestroyWithResponse(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsDestroyResponse, error)
 
 	// BillAnalysisOrgDashboardsShowWithResponse request
-	BillAnalysisOrgDashboardsShowWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsShowResponse, error)
+	BillAnalysisOrgDashboardsShowWithResponse(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsShowResponse, error)
 
 	// BillAnalysisOrgDashboardsReplaceWithBodyWithResponse request with any body
-	BillAnalysisOrgDashboardsReplaceWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsReplaceResponse, error)
+	BillAnalysisOrgDashboardsReplaceWithBodyWithResponse(ctx context.Context, orgId int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsReplaceResponse, error)
 
-	BillAnalysisOrgDashboardsReplaceWithResponse(ctx context.Context, org int64, id string, body BillAnalysisOrgDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsReplaceResponse, error)
+	BillAnalysisOrgDashboardsReplaceWithResponse(ctx context.Context, orgId int64, id string, body BillAnalysisOrgDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsReplaceResponse, error)
 
 	// BillAnalysisForecastsReportWithBodyWithResponse request with any body
-	BillAnalysisForecastsReportWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error)
+	BillAnalysisForecastsReportWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error)
 
-	BillAnalysisForecastsReportWithResponse(ctx context.Context, org int64, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error)
+	BillAnalysisForecastsReportWithResponse(ctx context.Context, orgId int64, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error)
 
 	// BillAnalysisCommitmentReallocationSettingShowWithResponse request
-	BillAnalysisCommitmentReallocationSettingShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCommitmentReallocationSettingShowResponse, error)
+	BillAnalysisCommitmentReallocationSettingShowWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*BillAnalysisCommitmentReallocationSettingShowResponse, error)
 
 	// BillAnalysisCommitmentReallocationSettingUpsertWithBodyWithResponse request with any body
-	BillAnalysisCommitmentReallocationSettingUpsertWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCommitmentReallocationSettingUpsertResponse, error)
+	BillAnalysisCommitmentReallocationSettingUpsertWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCommitmentReallocationSettingUpsertResponse, error)
 
-	BillAnalysisCommitmentReallocationSettingUpsertWithResponse(ctx context.Context, org int64, body BillAnalysisCommitmentReallocationSettingUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCommitmentReallocationSettingUpsertResponse, error)
+	BillAnalysisCommitmentReallocationSettingUpsertWithResponse(ctx context.Context, orgId int64, body BillAnalysisCommitmentReallocationSettingUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCommitmentReallocationSettingUpsertResponse, error)
 
 	// BillAnalysisCurrencySettingShowWithResponse request
-	BillAnalysisCurrencySettingShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingShowResponse, error)
+	BillAnalysisCurrencySettingShowWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingShowResponse, error)
 
 	// BillAnalysisCurrencySettingUpdateWithBodyWithResponse request with any body
-	BillAnalysisCurrencySettingUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error)
+	BillAnalysisCurrencySettingUpdateWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error)
 
-	BillAnalysisCurrencySettingUpdateWithResponse(ctx context.Context, org int64, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error)
+	BillAnalysisCurrencySettingUpdateWithResponse(ctx context.Context, orgId int64, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error)
 
 	// BillAnalysisCustomDashboardsIndexWithResponse request
-	BillAnalysisCustomDashboardsIndexWithResponse(ctx context.Context, org int64, user int64, params *BillAnalysisCustomDashboardsIndexParams, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsIndexResponse, error)
+	BillAnalysisCustomDashboardsIndexWithResponse(ctx context.Context, orgId int64, user int64, params *BillAnalysisCustomDashboardsIndexParams, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsIndexResponse, error)
 
 	// BillAnalysisCustomDashboardsCreateWithBodyWithResponse request with any body
-	BillAnalysisCustomDashboardsCreateWithBodyWithResponse(ctx context.Context, org int64, user int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsCreateResponse, error)
+	BillAnalysisCustomDashboardsCreateWithBodyWithResponse(ctx context.Context, orgId int64, user int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsCreateResponse, error)
 
-	BillAnalysisCustomDashboardsCreateWithResponse(ctx context.Context, org int64, user int64, body BillAnalysisCustomDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsCreateResponse, error)
+	BillAnalysisCustomDashboardsCreateWithResponse(ctx context.Context, orgId int64, user int64, body BillAnalysisCustomDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsCreateResponse, error)
 
 	// BillAnalysisCustomDashboardsDestroyWithResponse request
-	BillAnalysisCustomDashboardsDestroyWithResponse(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsDestroyResponse, error)
+	BillAnalysisCustomDashboardsDestroyWithResponse(ctx context.Context, orgId int64, user int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsDestroyResponse, error)
 
 	// BillAnalysisCustomDashboardsShowWithResponse request
-	BillAnalysisCustomDashboardsShowWithResponse(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsShowResponse, error)
+	BillAnalysisCustomDashboardsShowWithResponse(ctx context.Context, orgId int64, user int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsShowResponse, error)
 
 	// BillAnalysisCustomDashboardsReplaceWithBodyWithResponse request with any body
-	BillAnalysisCustomDashboardsReplaceWithBodyWithResponse(ctx context.Context, org int64, user int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsReplaceResponse, error)
+	BillAnalysisCustomDashboardsReplaceWithBodyWithResponse(ctx context.Context, orgId int64, user int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsReplaceResponse, error)
 
-	BillAnalysisCustomDashboardsReplaceWithResponse(ctx context.Context, org int64, user int64, id string, body BillAnalysisCustomDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsReplaceResponse, error)
+	BillAnalysisCustomDashboardsReplaceWithResponse(ctx context.Context, orgId int64, user int64, id string, body BillAnalysisCustomDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsReplaceResponse, error)
 
 	// BillAnalysisAnomaliesIndexWithBodyWithResponse request with any body
-	BillAnalysisAnomaliesIndexWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesIndexResponse, error)
+	BillAnalysisAnomaliesIndexWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesIndexResponse, error)
 
-	BillAnalysisAnomaliesIndexWithResponse(ctx context.Context, org int64, body BillAnalysisAnomaliesIndexJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesIndexResponse, error)
+	BillAnalysisAnomaliesIndexWithResponse(ctx context.Context, orgId int64, body BillAnalysisAnomaliesIndexJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesIndexResponse, error)
 
 	// BillAnalysisAnomaliesAggregatedWithBodyWithResponse request with any body
-	BillAnalysisAnomaliesAggregatedWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesAggregatedResponse, error)
+	BillAnalysisAnomaliesAggregatedWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesAggregatedResponse, error)
 
-	BillAnalysisAnomaliesAggregatedWithResponse(ctx context.Context, org int64, body BillAnalysisAnomaliesAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesAggregatedResponse, error)
+	BillAnalysisAnomaliesAggregatedWithResponse(ctx context.Context, orgId int64, body BillAnalysisAnomaliesAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesAggregatedResponse, error)
 
 	// BillAnalysisAnomaliesSummaryWithResponse request
-	BillAnalysisAnomaliesSummaryWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesSummaryResponse, error)
+	BillAnalysisAnomaliesSummaryWithResponse(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesSummaryResponse, error)
 
 	// BillAnalysisCustomDimensionIndexWithResponse request
 	BillAnalysisCustomDimensionIndexWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionIndexResponse, error)
@@ -80714,8 +80714,8 @@ func (c *ClientWithResponses) BillingCenterServiceUserBillingCentersShowWithResp
 }
 
 // BillAnalysisAdjustmentDefinitionShowWithResponse request returning *BillAnalysisAdjustmentDefinitionShowResponse
-func (c *ClientWithResponses) BillAnalysisAdjustmentDefinitionShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionShowResponse, error) {
-	rsp, err := c.BillAnalysisAdjustmentDefinitionShow(ctx, org, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisAdjustmentDefinitionShowWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionShowResponse, error) {
+	rsp, err := c.BillAnalysisAdjustmentDefinitionShow(ctx, orgId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80723,16 +80723,16 @@ func (c *ClientWithResponses) BillAnalysisAdjustmentDefinitionShowWithResponse(c
 }
 
 // BillAnalysisAdjustmentDefinitionUpdateWithBodyWithResponse request with arbitrary body returning *BillAnalysisAdjustmentDefinitionUpdateResponse
-func (c *ClientWithResponses) BillAnalysisAdjustmentDefinitionUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error) {
-	rsp, err := c.BillAnalysisAdjustmentDefinitionUpdateWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisAdjustmentDefinitionUpdateWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error) {
+	rsp, err := c.BillAnalysisAdjustmentDefinitionUpdateWithBody(ctx, orgId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBillAnalysisAdjustmentDefinitionUpdateResponse(rsp)
 }
 
-func (c *ClientWithResponses) BillAnalysisAdjustmentDefinitionUpdateWithResponse(ctx context.Context, org int64, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error) {
-	rsp, err := c.BillAnalysisAdjustmentDefinitionUpdate(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisAdjustmentDefinitionUpdateWithResponse(ctx context.Context, orgId int64, body BillAnalysisAdjustmentDefinitionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAdjustmentDefinitionUpdateResponse, error) {
+	rsp, err := c.BillAnalysisAdjustmentDefinitionUpdate(ctx, orgId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80740,16 +80740,16 @@ func (c *ClientWithResponses) BillAnalysisAdjustmentDefinitionUpdateWithResponse
 }
 
 // BillAnalysisAnomaliesReportWithBodyWithResponse request with arbitrary body returning *BillAnalysisAnomaliesReportResponse
-func (c *ClientWithResponses) BillAnalysisAnomaliesReportWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error) {
-	rsp, err := c.BillAnalysisAnomaliesReportWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisAnomaliesReportWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error) {
+	rsp, err := c.BillAnalysisAnomaliesReportWithBody(ctx, orgId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBillAnalysisAnomaliesReportResponse(rsp)
 }
 
-func (c *ClientWithResponses) BillAnalysisAnomaliesReportWithResponse(ctx context.Context, org int64, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error) {
-	rsp, err := c.BillAnalysisAnomaliesReport(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisAnomaliesReportWithResponse(ctx context.Context, orgId int64, body BillAnalysisAnomaliesReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesReportResponse, error) {
+	rsp, err := c.BillAnalysisAnomaliesReport(ctx, orgId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80757,8 +80757,8 @@ func (c *ClientWithResponses) BillAnalysisAnomaliesReportWithResponse(ctx contex
 }
 
 // BillAnalysisBillMonthsSearchWithResponse request returning *BillAnalysisBillMonthsSearchResponse
-func (c *ClientWithResponses) BillAnalysisBillMonthsSearchWithResponse(ctx context.Context, org int64, params *BillAnalysisBillMonthsSearchParams, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsSearchResponse, error) {
-	rsp, err := c.BillAnalysisBillMonthsSearch(ctx, org, params, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisBillMonthsSearchWithResponse(ctx context.Context, orgId int64, params *BillAnalysisBillMonthsSearchParams, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsSearchResponse, error) {
+	rsp, err := c.BillAnalysisBillMonthsSearch(ctx, orgId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80766,16 +80766,16 @@ func (c *ClientWithResponses) BillAnalysisBillMonthsSearchWithResponse(ctx conte
 }
 
 // BillAnalysisBillMonthsReprocessWithBodyWithResponse request with arbitrary body returning *BillAnalysisBillMonthsReprocessResponse
-func (c *ClientWithResponses) BillAnalysisBillMonthsReprocessWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsReprocessResponse, error) {
-	rsp, err := c.BillAnalysisBillMonthsReprocessWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisBillMonthsReprocessWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsReprocessResponse, error) {
+	rsp, err := c.BillAnalysisBillMonthsReprocessWithBody(ctx, orgId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBillAnalysisBillMonthsReprocessResponse(rsp)
 }
 
-func (c *ClientWithResponses) BillAnalysisBillMonthsReprocessWithResponse(ctx context.Context, org int64, body BillAnalysisBillMonthsReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsReprocessResponse, error) {
-	rsp, err := c.BillAnalysisBillMonthsReprocess(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisBillMonthsReprocessWithResponse(ctx context.Context, orgId int64, body BillAnalysisBillMonthsReprocessJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsReprocessResponse, error) {
+	rsp, err := c.BillAnalysisBillMonthsReprocess(ctx, orgId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80783,8 +80783,8 @@ func (c *ClientWithResponses) BillAnalysisBillMonthsReprocessWithResponse(ctx co
 }
 
 // BillAnalysisBillMonthsDownloadWithResponse request returning *BillAnalysisBillMonthsDownloadResponse
-func (c *ClientWithResponses) BillAnalysisBillMonthsDownloadWithResponse(ctx context.Context, org int64, params *BillAnalysisBillMonthsDownloadParams, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsDownloadResponse, error) {
-	rsp, err := c.BillAnalysisBillMonthsDownload(ctx, org, params, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisBillMonthsDownloadWithResponse(ctx context.Context, orgId int64, params *BillAnalysisBillMonthsDownloadParams, reqEditors ...RequestEditorFn) (*BillAnalysisBillMonthsDownloadResponse, error) {
+	rsp, err := c.BillAnalysisBillMonthsDownload(ctx, orgId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80792,8 +80792,8 @@ func (c *ClientWithResponses) BillAnalysisBillMonthsDownloadWithResponse(ctx con
 }
 
 // BillAnalysisBillingSettingsShowWithResponse request returning *BillAnalysisBillingSettingsShowResponse
-func (c *ClientWithResponses) BillAnalysisBillingSettingsShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisBillingSettingsShowResponse, error) {
-	rsp, err := c.BillAnalysisBillingSettingsShow(ctx, org, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisBillingSettingsShowWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*BillAnalysisBillingSettingsShowResponse, error) {
+	rsp, err := c.BillAnalysisBillingSettingsShow(ctx, orgId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80801,16 +80801,16 @@ func (c *ClientWithResponses) BillAnalysisBillingSettingsShowWithResponse(ctx co
 }
 
 // BillAnalysisBillingSettingsUpdateWithBodyWithResponse request with arbitrary body returning *BillAnalysisBillingSettingsUpdateResponse
-func (c *ClientWithResponses) BillAnalysisBillingSettingsUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisBillingSettingsUpdateResponse, error) {
-	rsp, err := c.BillAnalysisBillingSettingsUpdateWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisBillingSettingsUpdateWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisBillingSettingsUpdateResponse, error) {
+	rsp, err := c.BillAnalysisBillingSettingsUpdateWithBody(ctx, orgId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBillAnalysisBillingSettingsUpdateResponse(rsp)
 }
 
-func (c *ClientWithResponses) BillAnalysisBillingSettingsUpdateWithResponse(ctx context.Context, org int64, body BillAnalysisBillingSettingsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisBillingSettingsUpdateResponse, error) {
-	rsp, err := c.BillAnalysisBillingSettingsUpdate(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisBillingSettingsUpdateWithResponse(ctx context.Context, orgId int64, body BillAnalysisBillingSettingsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisBillingSettingsUpdateResponse, error) {
+	rsp, err := c.BillAnalysisBillingSettingsUpdate(ctx, orgId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80818,8 +80818,8 @@ func (c *ClientWithResponses) BillAnalysisBillingSettingsUpdateWithResponse(ctx 
 }
 
 // BillAnalysisCloudVendorAccountsIndexWithResponse request returning *BillAnalysisCloudVendorAccountsIndexResponse
-func (c *ClientWithResponses) BillAnalysisCloudVendorAccountsIndexWithResponse(ctx context.Context, org int64, params *BillAnalysisCloudVendorAccountsIndexParams, reqEditors ...RequestEditorFn) (*BillAnalysisCloudVendorAccountsIndexResponse, error) {
-	rsp, err := c.BillAnalysisCloudVendorAccountsIndex(ctx, org, params, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCloudVendorAccountsIndexWithResponse(ctx context.Context, orgId int64, params *BillAnalysisCloudVendorAccountsIndexParams, reqEditors ...RequestEditorFn) (*BillAnalysisCloudVendorAccountsIndexResponse, error) {
+	rsp, err := c.BillAnalysisCloudVendorAccountsIndex(ctx, orgId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80827,16 +80827,16 @@ func (c *ClientWithResponses) BillAnalysisCloudVendorAccountsIndexWithResponse(c
 }
 
 // BillAnalysisCostsAggregatedWithBodyWithResponse request with arbitrary body returning *BillAnalysisCostsAggregatedResponse
-func (c *ClientWithResponses) BillAnalysisCostsAggregatedWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error) {
-	rsp, err := c.BillAnalysisCostsAggregatedWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCostsAggregatedWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error) {
+	rsp, err := c.BillAnalysisCostsAggregatedWithBody(ctx, orgId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBillAnalysisCostsAggregatedResponse(rsp)
 }
 
-func (c *ClientWithResponses) BillAnalysisCostsAggregatedWithResponse(ctx context.Context, org int64, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error) {
-	rsp, err := c.BillAnalysisCostsAggregated(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCostsAggregatedWithResponse(ctx context.Context, orgId int64, body BillAnalysisCostsAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsAggregatedResponse, error) {
+	rsp, err := c.BillAnalysisCostsAggregated(ctx, orgId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80844,8 +80844,8 @@ func (c *ClientWithResponses) BillAnalysisCostsAggregatedWithResponse(ctx contex
 }
 
 // BillAnalysisCostsDimensionsWithResponse request returning *BillAnalysisCostsDimensionsResponse
-func (c *ClientWithResponses) BillAnalysisCostsDimensionsWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCostsDimensionsResponse, error) {
-	rsp, err := c.BillAnalysisCostsDimensions(ctx, org, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCostsDimensionsWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*BillAnalysisCostsDimensionsResponse, error) {
+	rsp, err := c.BillAnalysisCostsDimensions(ctx, orgId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80853,16 +80853,16 @@ func (c *ClientWithResponses) BillAnalysisCostsDimensionsWithResponse(ctx contex
 }
 
 // BillAnalysisCostsExportSelectWithBodyWithResponse request with arbitrary body returning *BillAnalysisCostsExportSelectResponse
-func (c *ClientWithResponses) BillAnalysisCostsExportSelectWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsExportSelectResponse, error) {
-	rsp, err := c.BillAnalysisCostsExportSelectWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCostsExportSelectWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsExportSelectResponse, error) {
+	rsp, err := c.BillAnalysisCostsExportSelectWithBody(ctx, orgId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBillAnalysisCostsExportSelectResponse(rsp)
 }
 
-func (c *ClientWithResponses) BillAnalysisCostsExportSelectWithResponse(ctx context.Context, org int64, body BillAnalysisCostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsExportSelectResponse, error) {
-	rsp, err := c.BillAnalysisCostsExportSelect(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCostsExportSelectWithResponse(ctx context.Context, orgId int64, body BillAnalysisCostsExportSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsExportSelectResponse, error) {
+	rsp, err := c.BillAnalysisCostsExportSelect(ctx, orgId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80870,8 +80870,8 @@ func (c *ClientWithResponses) BillAnalysisCostsExportSelectWithResponse(ctx cont
 }
 
 // BillAnalysisCostsExportSelectStatusWithResponse request returning *BillAnalysisCostsExportSelectStatusResponse
-func (c *ClientWithResponses) BillAnalysisCostsExportSelectStatusWithResponse(ctx context.Context, org int64, exportId string, reqEditors ...RequestEditorFn) (*BillAnalysisCostsExportSelectStatusResponse, error) {
-	rsp, err := c.BillAnalysisCostsExportSelectStatus(ctx, org, exportId, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCostsExportSelectStatusWithResponse(ctx context.Context, orgId int64, exportId string, reqEditors ...RequestEditorFn) (*BillAnalysisCostsExportSelectStatusResponse, error) {
+	rsp, err := c.BillAnalysisCostsExportSelectStatus(ctx, orgId, exportId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80879,8 +80879,8 @@ func (c *ClientWithResponses) BillAnalysisCostsExportSelectStatusWithResponse(ct
 }
 
 // BillAnalysisCostsMetricsWithResponse request returning *BillAnalysisCostsMetricsResponse
-func (c *ClientWithResponses) BillAnalysisCostsMetricsWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCostsMetricsResponse, error) {
-	rsp, err := c.BillAnalysisCostsMetrics(ctx, org, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCostsMetricsWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*BillAnalysisCostsMetricsResponse, error) {
+	rsp, err := c.BillAnalysisCostsMetrics(ctx, orgId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80888,16 +80888,16 @@ func (c *ClientWithResponses) BillAnalysisCostsMetricsWithResponse(ctx context.C
 }
 
 // BillAnalysisCostsSelectWithBodyWithResponse request with arbitrary body returning *BillAnalysisCostsSelectResponse
-func (c *ClientWithResponses) BillAnalysisCostsSelectWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error) {
-	rsp, err := c.BillAnalysisCostsSelectWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCostsSelectWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error) {
+	rsp, err := c.BillAnalysisCostsSelectWithBody(ctx, orgId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBillAnalysisCostsSelectResponse(rsp)
 }
 
-func (c *ClientWithResponses) BillAnalysisCostsSelectWithResponse(ctx context.Context, org int64, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error) {
-	rsp, err := c.BillAnalysisCostsSelect(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCostsSelectWithResponse(ctx context.Context, orgId int64, body BillAnalysisCostsSelectJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCostsSelectResponse, error) {
+	rsp, err := c.BillAnalysisCostsSelect(ctx, orgId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80905,8 +80905,8 @@ func (c *ClientWithResponses) BillAnalysisCostsSelectWithResponse(ctx context.Co
 }
 
 // BillAnalysisCustomDimensionsIndexWithResponse request returning *BillAnalysisCustomDimensionsIndexResponse
-func (c *ClientWithResponses) BillAnalysisCustomDimensionsIndexWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsIndexResponse, error) {
-	rsp, err := c.BillAnalysisCustomDimensionsIndex(ctx, org, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCustomDimensionsIndexWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsIndexResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionsIndex(ctx, orgId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80914,16 +80914,16 @@ func (c *ClientWithResponses) BillAnalysisCustomDimensionsIndexWithResponse(ctx 
 }
 
 // BillAnalysisCustomDimensionsCreateWithBodyWithResponse request with arbitrary body returning *BillAnalysisCustomDimensionsCreateResponse
-func (c *ClientWithResponses) BillAnalysisCustomDimensionsCreateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsCreateResponse, error) {
-	rsp, err := c.BillAnalysisCustomDimensionsCreateWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCustomDimensionsCreateWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsCreateResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionsCreateWithBody(ctx, orgId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBillAnalysisCustomDimensionsCreateResponse(rsp)
 }
 
-func (c *ClientWithResponses) BillAnalysisCustomDimensionsCreateWithResponse(ctx context.Context, org int64, body BillAnalysisCustomDimensionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsCreateResponse, error) {
-	rsp, err := c.BillAnalysisCustomDimensionsCreate(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCustomDimensionsCreateWithResponse(ctx context.Context, orgId int64, body BillAnalysisCustomDimensionsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsCreateResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionsCreate(ctx, orgId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80931,8 +80931,8 @@ func (c *ClientWithResponses) BillAnalysisCustomDimensionsCreateWithResponse(ctx
 }
 
 // BillAnalysisCustomDimensionsDestroyWithResponse request returning *BillAnalysisCustomDimensionsDestroyResponse
-func (c *ClientWithResponses) BillAnalysisCustomDimensionsDestroyWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsDestroyResponse, error) {
-	rsp, err := c.BillAnalysisCustomDimensionsDestroy(ctx, org, id, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCustomDimensionsDestroyWithResponse(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsDestroyResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionsDestroy(ctx, orgId, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80940,8 +80940,8 @@ func (c *ClientWithResponses) BillAnalysisCustomDimensionsDestroyWithResponse(ct
 }
 
 // BillAnalysisCustomDimensionsShowWithResponse request returning *BillAnalysisCustomDimensionsShowResponse
-func (c *ClientWithResponses) BillAnalysisCustomDimensionsShowWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsShowResponse, error) {
-	rsp, err := c.BillAnalysisCustomDimensionsShow(ctx, org, id, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCustomDimensionsShowWithResponse(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsShowResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionsShow(ctx, orgId, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80949,16 +80949,16 @@ func (c *ClientWithResponses) BillAnalysisCustomDimensionsShowWithResponse(ctx c
 }
 
 // BillAnalysisCustomDimensionsReplaceWithBodyWithResponse request with arbitrary body returning *BillAnalysisCustomDimensionsReplaceResponse
-func (c *ClientWithResponses) BillAnalysisCustomDimensionsReplaceWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsReplaceResponse, error) {
-	rsp, err := c.BillAnalysisCustomDimensionsReplaceWithBody(ctx, org, id, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCustomDimensionsReplaceWithBodyWithResponse(ctx context.Context, orgId int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsReplaceResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionsReplaceWithBody(ctx, orgId, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBillAnalysisCustomDimensionsReplaceResponse(rsp)
 }
 
-func (c *ClientWithResponses) BillAnalysisCustomDimensionsReplaceWithResponse(ctx context.Context, org int64, id string, body BillAnalysisCustomDimensionsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsReplaceResponse, error) {
-	rsp, err := c.BillAnalysisCustomDimensionsReplace(ctx, org, id, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCustomDimensionsReplaceWithResponse(ctx context.Context, orgId int64, id string, body BillAnalysisCustomDimensionsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDimensionsReplaceResponse, error) {
+	rsp, err := c.BillAnalysisCustomDimensionsReplace(ctx, orgId, id, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80966,8 +80966,8 @@ func (c *ClientWithResponses) BillAnalysisCustomDimensionsReplaceWithResponse(ct
 }
 
 // BillAnalysisOrgDashboardsIndexWithResponse request returning *BillAnalysisOrgDashboardsIndexResponse
-func (c *ClientWithResponses) BillAnalysisOrgDashboardsIndexWithResponse(ctx context.Context, org int64, params *BillAnalysisOrgDashboardsIndexParams, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsIndexResponse, error) {
-	rsp, err := c.BillAnalysisOrgDashboardsIndex(ctx, org, params, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisOrgDashboardsIndexWithResponse(ctx context.Context, orgId int64, params *BillAnalysisOrgDashboardsIndexParams, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsIndexResponse, error) {
+	rsp, err := c.BillAnalysisOrgDashboardsIndex(ctx, orgId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80975,16 +80975,16 @@ func (c *ClientWithResponses) BillAnalysisOrgDashboardsIndexWithResponse(ctx con
 }
 
 // BillAnalysisOrgDashboardsCreateWithBodyWithResponse request with arbitrary body returning *BillAnalysisOrgDashboardsCreateResponse
-func (c *ClientWithResponses) BillAnalysisOrgDashboardsCreateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsCreateResponse, error) {
-	rsp, err := c.BillAnalysisOrgDashboardsCreateWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisOrgDashboardsCreateWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsCreateResponse, error) {
+	rsp, err := c.BillAnalysisOrgDashboardsCreateWithBody(ctx, orgId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBillAnalysisOrgDashboardsCreateResponse(rsp)
 }
 
-func (c *ClientWithResponses) BillAnalysisOrgDashboardsCreateWithResponse(ctx context.Context, org int64, body BillAnalysisOrgDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsCreateResponse, error) {
-	rsp, err := c.BillAnalysisOrgDashboardsCreate(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisOrgDashboardsCreateWithResponse(ctx context.Context, orgId int64, body BillAnalysisOrgDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsCreateResponse, error) {
+	rsp, err := c.BillAnalysisOrgDashboardsCreate(ctx, orgId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -80992,8 +80992,8 @@ func (c *ClientWithResponses) BillAnalysisOrgDashboardsCreateWithResponse(ctx co
 }
 
 // BillAnalysisOrgDashboardsDestroyWithResponse request returning *BillAnalysisOrgDashboardsDestroyResponse
-func (c *ClientWithResponses) BillAnalysisOrgDashboardsDestroyWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsDestroyResponse, error) {
-	rsp, err := c.BillAnalysisOrgDashboardsDestroy(ctx, org, id, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisOrgDashboardsDestroyWithResponse(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsDestroyResponse, error) {
+	rsp, err := c.BillAnalysisOrgDashboardsDestroy(ctx, orgId, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -81001,8 +81001,8 @@ func (c *ClientWithResponses) BillAnalysisOrgDashboardsDestroyWithResponse(ctx c
 }
 
 // BillAnalysisOrgDashboardsShowWithResponse request returning *BillAnalysisOrgDashboardsShowResponse
-func (c *ClientWithResponses) BillAnalysisOrgDashboardsShowWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsShowResponse, error) {
-	rsp, err := c.BillAnalysisOrgDashboardsShow(ctx, org, id, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisOrgDashboardsShowWithResponse(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsShowResponse, error) {
+	rsp, err := c.BillAnalysisOrgDashboardsShow(ctx, orgId, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -81010,16 +81010,16 @@ func (c *ClientWithResponses) BillAnalysisOrgDashboardsShowWithResponse(ctx cont
 }
 
 // BillAnalysisOrgDashboardsReplaceWithBodyWithResponse request with arbitrary body returning *BillAnalysisOrgDashboardsReplaceResponse
-func (c *ClientWithResponses) BillAnalysisOrgDashboardsReplaceWithBodyWithResponse(ctx context.Context, org int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsReplaceResponse, error) {
-	rsp, err := c.BillAnalysisOrgDashboardsReplaceWithBody(ctx, org, id, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisOrgDashboardsReplaceWithBodyWithResponse(ctx context.Context, orgId int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsReplaceResponse, error) {
+	rsp, err := c.BillAnalysisOrgDashboardsReplaceWithBody(ctx, orgId, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBillAnalysisOrgDashboardsReplaceResponse(rsp)
 }
 
-func (c *ClientWithResponses) BillAnalysisOrgDashboardsReplaceWithResponse(ctx context.Context, org int64, id string, body BillAnalysisOrgDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsReplaceResponse, error) {
-	rsp, err := c.BillAnalysisOrgDashboardsReplace(ctx, org, id, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisOrgDashboardsReplaceWithResponse(ctx context.Context, orgId int64, id string, body BillAnalysisOrgDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisOrgDashboardsReplaceResponse, error) {
+	rsp, err := c.BillAnalysisOrgDashboardsReplace(ctx, orgId, id, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -81027,16 +81027,16 @@ func (c *ClientWithResponses) BillAnalysisOrgDashboardsReplaceWithResponse(ctx c
 }
 
 // BillAnalysisForecastsReportWithBodyWithResponse request with arbitrary body returning *BillAnalysisForecastsReportResponse
-func (c *ClientWithResponses) BillAnalysisForecastsReportWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error) {
-	rsp, err := c.BillAnalysisForecastsReportWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisForecastsReportWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error) {
+	rsp, err := c.BillAnalysisForecastsReportWithBody(ctx, orgId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBillAnalysisForecastsReportResponse(rsp)
 }
 
-func (c *ClientWithResponses) BillAnalysisForecastsReportWithResponse(ctx context.Context, org int64, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error) {
-	rsp, err := c.BillAnalysisForecastsReport(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisForecastsReportWithResponse(ctx context.Context, orgId int64, body BillAnalysisForecastsReportJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisForecastsReportResponse, error) {
+	rsp, err := c.BillAnalysisForecastsReport(ctx, orgId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -81044,8 +81044,8 @@ func (c *ClientWithResponses) BillAnalysisForecastsReportWithResponse(ctx contex
 }
 
 // BillAnalysisCommitmentReallocationSettingShowWithResponse request returning *BillAnalysisCommitmentReallocationSettingShowResponse
-func (c *ClientWithResponses) BillAnalysisCommitmentReallocationSettingShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCommitmentReallocationSettingShowResponse, error) {
-	rsp, err := c.BillAnalysisCommitmentReallocationSettingShow(ctx, org, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCommitmentReallocationSettingShowWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*BillAnalysisCommitmentReallocationSettingShowResponse, error) {
+	rsp, err := c.BillAnalysisCommitmentReallocationSettingShow(ctx, orgId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -81053,16 +81053,16 @@ func (c *ClientWithResponses) BillAnalysisCommitmentReallocationSettingShowWithR
 }
 
 // BillAnalysisCommitmentReallocationSettingUpsertWithBodyWithResponse request with arbitrary body returning *BillAnalysisCommitmentReallocationSettingUpsertResponse
-func (c *ClientWithResponses) BillAnalysisCommitmentReallocationSettingUpsertWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCommitmentReallocationSettingUpsertResponse, error) {
-	rsp, err := c.BillAnalysisCommitmentReallocationSettingUpsertWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCommitmentReallocationSettingUpsertWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCommitmentReallocationSettingUpsertResponse, error) {
+	rsp, err := c.BillAnalysisCommitmentReallocationSettingUpsertWithBody(ctx, orgId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBillAnalysisCommitmentReallocationSettingUpsertResponse(rsp)
 }
 
-func (c *ClientWithResponses) BillAnalysisCommitmentReallocationSettingUpsertWithResponse(ctx context.Context, org int64, body BillAnalysisCommitmentReallocationSettingUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCommitmentReallocationSettingUpsertResponse, error) {
-	rsp, err := c.BillAnalysisCommitmentReallocationSettingUpsert(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCommitmentReallocationSettingUpsertWithResponse(ctx context.Context, orgId int64, body BillAnalysisCommitmentReallocationSettingUpsertJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCommitmentReallocationSettingUpsertResponse, error) {
+	rsp, err := c.BillAnalysisCommitmentReallocationSettingUpsert(ctx, orgId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -81070,8 +81070,8 @@ func (c *ClientWithResponses) BillAnalysisCommitmentReallocationSettingUpsertWit
 }
 
 // BillAnalysisCurrencySettingShowWithResponse request returning *BillAnalysisCurrencySettingShowResponse
-func (c *ClientWithResponses) BillAnalysisCurrencySettingShowWithResponse(ctx context.Context, org int64, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingShowResponse, error) {
-	rsp, err := c.BillAnalysisCurrencySettingShow(ctx, org, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCurrencySettingShowWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingShowResponse, error) {
+	rsp, err := c.BillAnalysisCurrencySettingShow(ctx, orgId, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -81079,16 +81079,16 @@ func (c *ClientWithResponses) BillAnalysisCurrencySettingShowWithResponse(ctx co
 }
 
 // BillAnalysisCurrencySettingUpdateWithBodyWithResponse request with arbitrary body returning *BillAnalysisCurrencySettingUpdateResponse
-func (c *ClientWithResponses) BillAnalysisCurrencySettingUpdateWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error) {
-	rsp, err := c.BillAnalysisCurrencySettingUpdateWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCurrencySettingUpdateWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error) {
+	rsp, err := c.BillAnalysisCurrencySettingUpdateWithBody(ctx, orgId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBillAnalysisCurrencySettingUpdateResponse(rsp)
 }
 
-func (c *ClientWithResponses) BillAnalysisCurrencySettingUpdateWithResponse(ctx context.Context, org int64, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error) {
-	rsp, err := c.BillAnalysisCurrencySettingUpdate(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCurrencySettingUpdateWithResponse(ctx context.Context, orgId int64, body BillAnalysisCurrencySettingUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCurrencySettingUpdateResponse, error) {
+	rsp, err := c.BillAnalysisCurrencySettingUpdate(ctx, orgId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -81096,8 +81096,8 @@ func (c *ClientWithResponses) BillAnalysisCurrencySettingUpdateWithResponse(ctx 
 }
 
 // BillAnalysisCustomDashboardsIndexWithResponse request returning *BillAnalysisCustomDashboardsIndexResponse
-func (c *ClientWithResponses) BillAnalysisCustomDashboardsIndexWithResponse(ctx context.Context, org int64, user int64, params *BillAnalysisCustomDashboardsIndexParams, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsIndexResponse, error) {
-	rsp, err := c.BillAnalysisCustomDashboardsIndex(ctx, org, user, params, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCustomDashboardsIndexWithResponse(ctx context.Context, orgId int64, user int64, params *BillAnalysisCustomDashboardsIndexParams, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsIndexResponse, error) {
+	rsp, err := c.BillAnalysisCustomDashboardsIndex(ctx, orgId, user, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -81105,16 +81105,16 @@ func (c *ClientWithResponses) BillAnalysisCustomDashboardsIndexWithResponse(ctx 
 }
 
 // BillAnalysisCustomDashboardsCreateWithBodyWithResponse request with arbitrary body returning *BillAnalysisCustomDashboardsCreateResponse
-func (c *ClientWithResponses) BillAnalysisCustomDashboardsCreateWithBodyWithResponse(ctx context.Context, org int64, user int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsCreateResponse, error) {
-	rsp, err := c.BillAnalysisCustomDashboardsCreateWithBody(ctx, org, user, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCustomDashboardsCreateWithBodyWithResponse(ctx context.Context, orgId int64, user int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsCreateResponse, error) {
+	rsp, err := c.BillAnalysisCustomDashboardsCreateWithBody(ctx, orgId, user, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBillAnalysisCustomDashboardsCreateResponse(rsp)
 }
 
-func (c *ClientWithResponses) BillAnalysisCustomDashboardsCreateWithResponse(ctx context.Context, org int64, user int64, body BillAnalysisCustomDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsCreateResponse, error) {
-	rsp, err := c.BillAnalysisCustomDashboardsCreate(ctx, org, user, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCustomDashboardsCreateWithResponse(ctx context.Context, orgId int64, user int64, body BillAnalysisCustomDashboardsCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsCreateResponse, error) {
+	rsp, err := c.BillAnalysisCustomDashboardsCreate(ctx, orgId, user, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -81122,8 +81122,8 @@ func (c *ClientWithResponses) BillAnalysisCustomDashboardsCreateWithResponse(ctx
 }
 
 // BillAnalysisCustomDashboardsDestroyWithResponse request returning *BillAnalysisCustomDashboardsDestroyResponse
-func (c *ClientWithResponses) BillAnalysisCustomDashboardsDestroyWithResponse(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsDestroyResponse, error) {
-	rsp, err := c.BillAnalysisCustomDashboardsDestroy(ctx, org, user, id, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCustomDashboardsDestroyWithResponse(ctx context.Context, orgId int64, user int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsDestroyResponse, error) {
+	rsp, err := c.BillAnalysisCustomDashboardsDestroy(ctx, orgId, user, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -81131,8 +81131,8 @@ func (c *ClientWithResponses) BillAnalysisCustomDashboardsDestroyWithResponse(ct
 }
 
 // BillAnalysisCustomDashboardsShowWithResponse request returning *BillAnalysisCustomDashboardsShowResponse
-func (c *ClientWithResponses) BillAnalysisCustomDashboardsShowWithResponse(ctx context.Context, org int64, user int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsShowResponse, error) {
-	rsp, err := c.BillAnalysisCustomDashboardsShow(ctx, org, user, id, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCustomDashboardsShowWithResponse(ctx context.Context, orgId int64, user int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsShowResponse, error) {
+	rsp, err := c.BillAnalysisCustomDashboardsShow(ctx, orgId, user, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -81140,16 +81140,16 @@ func (c *ClientWithResponses) BillAnalysisCustomDashboardsShowWithResponse(ctx c
 }
 
 // BillAnalysisCustomDashboardsReplaceWithBodyWithResponse request with arbitrary body returning *BillAnalysisCustomDashboardsReplaceResponse
-func (c *ClientWithResponses) BillAnalysisCustomDashboardsReplaceWithBodyWithResponse(ctx context.Context, org int64, user int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsReplaceResponse, error) {
-	rsp, err := c.BillAnalysisCustomDashboardsReplaceWithBody(ctx, org, user, id, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCustomDashboardsReplaceWithBodyWithResponse(ctx context.Context, orgId int64, user int64, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsReplaceResponse, error) {
+	rsp, err := c.BillAnalysisCustomDashboardsReplaceWithBody(ctx, orgId, user, id, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBillAnalysisCustomDashboardsReplaceResponse(rsp)
 }
 
-func (c *ClientWithResponses) BillAnalysisCustomDashboardsReplaceWithResponse(ctx context.Context, org int64, user int64, id string, body BillAnalysisCustomDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsReplaceResponse, error) {
-	rsp, err := c.BillAnalysisCustomDashboardsReplace(ctx, org, user, id, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisCustomDashboardsReplaceWithResponse(ctx context.Context, orgId int64, user int64, id string, body BillAnalysisCustomDashboardsReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisCustomDashboardsReplaceResponse, error) {
+	rsp, err := c.BillAnalysisCustomDashboardsReplace(ctx, orgId, user, id, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -81157,16 +81157,16 @@ func (c *ClientWithResponses) BillAnalysisCustomDashboardsReplaceWithResponse(ct
 }
 
 // BillAnalysisAnomaliesIndexWithBodyWithResponse request with arbitrary body returning *BillAnalysisAnomaliesIndexResponse
-func (c *ClientWithResponses) BillAnalysisAnomaliesIndexWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesIndexResponse, error) {
-	rsp, err := c.BillAnalysisAnomaliesIndexWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisAnomaliesIndexWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesIndexResponse, error) {
+	rsp, err := c.BillAnalysisAnomaliesIndexWithBody(ctx, orgId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBillAnalysisAnomaliesIndexResponse(rsp)
 }
 
-func (c *ClientWithResponses) BillAnalysisAnomaliesIndexWithResponse(ctx context.Context, org int64, body BillAnalysisAnomaliesIndexJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesIndexResponse, error) {
-	rsp, err := c.BillAnalysisAnomaliesIndex(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisAnomaliesIndexWithResponse(ctx context.Context, orgId int64, body BillAnalysisAnomaliesIndexJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesIndexResponse, error) {
+	rsp, err := c.BillAnalysisAnomaliesIndex(ctx, orgId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -81174,16 +81174,16 @@ func (c *ClientWithResponses) BillAnalysisAnomaliesIndexWithResponse(ctx context
 }
 
 // BillAnalysisAnomaliesAggregatedWithBodyWithResponse request with arbitrary body returning *BillAnalysisAnomaliesAggregatedResponse
-func (c *ClientWithResponses) BillAnalysisAnomaliesAggregatedWithBodyWithResponse(ctx context.Context, org int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesAggregatedResponse, error) {
-	rsp, err := c.BillAnalysisAnomaliesAggregatedWithBody(ctx, org, contentType, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisAnomaliesAggregatedWithBodyWithResponse(ctx context.Context, orgId int64, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesAggregatedResponse, error) {
+	rsp, err := c.BillAnalysisAnomaliesAggregatedWithBody(ctx, orgId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseBillAnalysisAnomaliesAggregatedResponse(rsp)
 }
 
-func (c *ClientWithResponses) BillAnalysisAnomaliesAggregatedWithResponse(ctx context.Context, org int64, body BillAnalysisAnomaliesAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesAggregatedResponse, error) {
-	rsp, err := c.BillAnalysisAnomaliesAggregated(ctx, org, body, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisAnomaliesAggregatedWithResponse(ctx context.Context, orgId int64, body BillAnalysisAnomaliesAggregatedJSONRequestBody, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesAggregatedResponse, error) {
+	rsp, err := c.BillAnalysisAnomaliesAggregated(ctx, orgId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -81191,8 +81191,8 @@ func (c *ClientWithResponses) BillAnalysisAnomaliesAggregatedWithResponse(ctx co
 }
 
 // BillAnalysisAnomaliesSummaryWithResponse request returning *BillAnalysisAnomaliesSummaryResponse
-func (c *ClientWithResponses) BillAnalysisAnomaliesSummaryWithResponse(ctx context.Context, org int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesSummaryResponse, error) {
-	rsp, err := c.BillAnalysisAnomaliesSummary(ctx, org, id, reqEditors...)
+func (c *ClientWithResponses) BillAnalysisAnomaliesSummaryWithResponse(ctx context.Context, orgId int64, id string, reqEditors ...RequestEditorFn) (*BillAnalysisAnomaliesSummaryResponse, error) {
+	rsp, err := c.BillAnalysisAnomaliesSummary(ctx, orgId, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
