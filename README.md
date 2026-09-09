@@ -5,7 +5,13 @@
 
 Go client for the Flexera One unified API. Generated from the [unified-openapi](https://github.com/flexera-public/unified-openapi) spec using [oapi-codegen](https://github.com/oapi-codegen/oapi-codegen).
 
-Requires Go 1.24.5 or newer.
+## Experimental Project
+
+This project is currently considered **experimental**.
+
+While we intend to minimize disruption, breaking changes may occur as we continue to evolve the design, APIs, and implementation. **Until the project reaches a stable v1.0.0 release, backward compatibility is not guaranteed.**
+
+We welcome feedback and contributions, but recommend evaluating the current level of stability before adopting this project in production environments.
 
 ## Import
 
