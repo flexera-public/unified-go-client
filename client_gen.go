@@ -722,19 +722,19 @@ const (
 	CredUpdateOrgRequestBody5GrantTypeRefreshToken      CredUpdateOrgRequestBody5GrantType = "refresh_token"
 )
 
-// Defines values for DivntAzureCostAndUsageModelAccountType.
-const (
-	CSP DivntAzureCostAndUsageModelAccountType = "CSP"
-	EA  DivntAzureCostAndUsageModelAccountType = "EA"
-	MCA DivntAzureCostAndUsageModelAccountType = "MCA"
-)
-
 // Defines values for DivntAzureCostAndUsageModelBillingScope.
 const (
 	DivntAzureCostAndUsageModelBillingScopeBillingAccount DivntAzureCostAndUsageModelBillingScope = "Billing Account"
 	DivntAzureCostAndUsageModelBillingScopeBillingProfile DivntAzureCostAndUsageModelBillingScope = "Billing Profile"
 	DivntAzureCostAndUsageModelBillingScopeCustomerTenant DivntAzureCostAndUsageModelBillingScope = "Customer Tenant"
 	DivntAzureCostAndUsageModelBillingScopeInvoice        DivntAzureCostAndUsageModelBillingScope = "Invoice"
+)
+
+// Defines values for DivntOnboardingCreateRequestAccountType.
+const (
+	DivntOnboardingCreateRequestAccountTypeCSP DivntOnboardingCreateRequestAccountType = "CSP"
+	DivntOnboardingCreateRequestAccountTypeEA  DivntOnboardingCreateRequestAccountType = "EA"
+	DivntOnboardingCreateRequestAccountTypeMCA DivntOnboardingCreateRequestAccountType = "MCA"
 )
 
 // Defines values for DivntOnboardingCreateRequestOnboardingType.
@@ -747,6 +747,13 @@ const (
 const (
 	DivntOnboardingCreateRequestProviderAws   DivntOnboardingCreateRequestProvider = "aws"
 	DivntOnboardingCreateRequestProviderAzure DivntOnboardingCreateRequestProvider = "azure"
+)
+
+// Defines values for DivntOnboardingUpdateRequestAccountType.
+const (
+	DivntOnboardingUpdateRequestAccountTypeCSP DivntOnboardingUpdateRequestAccountType = "CSP"
+	DivntOnboardingUpdateRequestAccountTypeEA  DivntOnboardingUpdateRequestAccountType = "EA"
+	DivntOnboardingUpdateRequestAccountTypeMCA DivntOnboardingUpdateRequestAccountType = "MCA"
 )
 
 // Defines values for DivntOnboardingUpdateRequestOnboardingType.
@@ -767,6 +774,124 @@ const (
 const (
 	EqualSplit           FinopsBillingAllocationPayloadType = "equalSplit"
 	FixedPercentageSplit FinopsBillingAllocationPayloadType = "fixedPercentageSplit"
+)
+
+// Defines values for FinopsBillingAuditFilterDimension.
+const (
+	FinopsBillingAuditFilterDimensionBillingAccountId    FinopsBillingAuditFilterDimension = "billingAccountId"
+	FinopsBillingAuditFilterDimensionBillingAccountName  FinopsBillingAuditFilterDimension = "billingAccountName"
+	FinopsBillingAuditFilterDimensionBillingCenterLevel1 FinopsBillingAuditFilterDimension = "billingCenterLevel1"
+	FinopsBillingAuditFilterDimensionBillingCenterLevel2 FinopsBillingAuditFilterDimension = "billingCenterLevel2"
+	FinopsBillingAuditFilterDimensionBillingCenterLevel3 FinopsBillingAuditFilterDimension = "billingCenterLevel3"
+	FinopsBillingAuditFilterDimensionBillingCenterLevel4 FinopsBillingAuditFilterDimension = "billingCenterLevel4"
+	FinopsBillingAuditFilterDimensionBillingCenterLevel5 FinopsBillingAuditFilterDimension = "billingCenterLevel5"
+	FinopsBillingAuditFilterDimensionBillingCenterLevel6 FinopsBillingAuditFilterDimension = "billingCenterLevel6"
+	FinopsBillingAuditFilterDimensionBillingCenterLevel7 FinopsBillingAuditFilterDimension = "billingCenterLevel7"
+	FinopsBillingAuditFilterDimensionBillingCenterLevel8 FinopsBillingAuditFilterDimension = "billingCenterLevel8"
+	FinopsBillingAuditFilterDimensionBillingCenterLevel9 FinopsBillingAuditFilterDimension = "billingCenterLevel9"
+	FinopsBillingAuditFilterDimensionChargeCategory      FinopsBillingAuditFilterDimension = "chargeCategory"
+	FinopsBillingAuditFilterDimensionCustomer            FinopsBillingAuditFilterDimension = "customer"
+	FinopsBillingAuditFilterDimensionPlanName            FinopsBillingAuditFilterDimension = "planName"
+	FinopsBillingAuditFilterDimensionRuleId              FinopsBillingAuditFilterDimension = "ruleId"
+	FinopsBillingAuditFilterDimensionRuleName            FinopsBillingAuditFilterDimension = "ruleName"
+	FinopsBillingAuditFilterDimensionRuleType            FinopsBillingAuditFilterDimension = "ruleType"
+	FinopsBillingAuditFilterDimensionServiceCategory     FinopsBillingAuditFilterDimension = "serviceCategory"
+	FinopsBillingAuditFilterDimensionServiceName         FinopsBillingAuditFilterDimension = "serviceName"
+	FinopsBillingAuditFilterDimensionSubAccountId        FinopsBillingAuditFilterDimension = "subAccountId"
+	FinopsBillingAuditFilterDimensionSubAccountName      FinopsBillingAuditFilterDimension = "subAccountName"
+)
+
+// Defines values for FinopsBillingAuditFilterType.
+const (
+	FinopsBillingAuditFilterTypeAnd       FinopsBillingAuditFilterType = "and"
+	FinopsBillingAuditFilterTypeEqual     FinopsBillingAuditFilterType = "equal"
+	FinopsBillingAuditFilterTypeNot       FinopsBillingAuditFilterType = "not"
+	FinopsBillingAuditFilterTypeOr        FinopsBillingAuditFilterType = "or"
+	FinopsBillingAuditFilterTypeSubstring FinopsBillingAuditFilterType = "substring"
+)
+
+// Defines values for FinopsBillingAuditRequestAggregationColumns.
+const (
+	FinopsBillingAuditRequestAggregationColumnsBillingAccountId    FinopsBillingAuditRequestAggregationColumns = "billingAccountId"
+	FinopsBillingAuditRequestAggregationColumnsBillingAccountName  FinopsBillingAuditRequestAggregationColumns = "billingAccountName"
+	FinopsBillingAuditRequestAggregationColumnsBillingCenterLevel1 FinopsBillingAuditRequestAggregationColumns = "billingCenterLevel1"
+	FinopsBillingAuditRequestAggregationColumnsBillingCenterLevel2 FinopsBillingAuditRequestAggregationColumns = "billingCenterLevel2"
+	FinopsBillingAuditRequestAggregationColumnsBillingCenterLevel3 FinopsBillingAuditRequestAggregationColumns = "billingCenterLevel3"
+	FinopsBillingAuditRequestAggregationColumnsBillingCenterLevel4 FinopsBillingAuditRequestAggregationColumns = "billingCenterLevel4"
+	FinopsBillingAuditRequestAggregationColumnsBillingCenterLevel5 FinopsBillingAuditRequestAggregationColumns = "billingCenterLevel5"
+	FinopsBillingAuditRequestAggregationColumnsBillingCenterLevel6 FinopsBillingAuditRequestAggregationColumns = "billingCenterLevel6"
+	FinopsBillingAuditRequestAggregationColumnsBillingCenterLevel7 FinopsBillingAuditRequestAggregationColumns = "billingCenterLevel7"
+	FinopsBillingAuditRequestAggregationColumnsBillingCenterLevel8 FinopsBillingAuditRequestAggregationColumns = "billingCenterLevel8"
+	FinopsBillingAuditRequestAggregationColumnsBillingCenterLevel9 FinopsBillingAuditRequestAggregationColumns = "billingCenterLevel9"
+	FinopsBillingAuditRequestAggregationColumnsChargeCategory      FinopsBillingAuditRequestAggregationColumns = "chargeCategory"
+	FinopsBillingAuditRequestAggregationColumnsCustomer            FinopsBillingAuditRequestAggregationColumns = "customer"
+	FinopsBillingAuditRequestAggregationColumnsPlanName            FinopsBillingAuditRequestAggregationColumns = "planName"
+	FinopsBillingAuditRequestAggregationColumnsRuleId              FinopsBillingAuditRequestAggregationColumns = "ruleId"
+	FinopsBillingAuditRequestAggregationColumnsRuleName            FinopsBillingAuditRequestAggregationColumns = "ruleName"
+	FinopsBillingAuditRequestAggregationColumnsRuleType            FinopsBillingAuditRequestAggregationColumns = "ruleType"
+	FinopsBillingAuditRequestAggregationColumnsServiceCategory     FinopsBillingAuditRequestAggregationColumns = "serviceCategory"
+	FinopsBillingAuditRequestAggregationColumnsServiceName         FinopsBillingAuditRequestAggregationColumns = "serviceName"
+	FinopsBillingAuditRequestAggregationColumnsSubAccountId        FinopsBillingAuditRequestAggregationColumns = "subAccountId"
+	FinopsBillingAuditRequestAggregationColumnsSubAccountName      FinopsBillingAuditRequestAggregationColumns = "subAccountName"
+)
+
+// Defines values for FinopsBillingAuditRequestPeriodType.
+const (
+	FinopsBillingAuditRequestPeriodTypeBillPeriod   FinopsBillingAuditRequestPeriodType = "billPeriod"
+	FinopsBillingAuditRequestPeriodTypeChargePeriod FinopsBillingAuditRequestPeriodType = "chargePeriod"
+)
+
+// Defines values for FinopsBillingAuditResultAggregationColumns.
+const (
+	FinopsBillingAuditResultAggregationColumnsBillingAccountId    FinopsBillingAuditResultAggregationColumns = "billingAccountId"
+	FinopsBillingAuditResultAggregationColumnsBillingAccountName  FinopsBillingAuditResultAggregationColumns = "billingAccountName"
+	FinopsBillingAuditResultAggregationColumnsBillingCenterLevel1 FinopsBillingAuditResultAggregationColumns = "billingCenterLevel1"
+	FinopsBillingAuditResultAggregationColumnsBillingCenterLevel2 FinopsBillingAuditResultAggregationColumns = "billingCenterLevel2"
+	FinopsBillingAuditResultAggregationColumnsBillingCenterLevel3 FinopsBillingAuditResultAggregationColumns = "billingCenterLevel3"
+	FinopsBillingAuditResultAggregationColumnsBillingCenterLevel4 FinopsBillingAuditResultAggregationColumns = "billingCenterLevel4"
+	FinopsBillingAuditResultAggregationColumnsBillingCenterLevel5 FinopsBillingAuditResultAggregationColumns = "billingCenterLevel5"
+	FinopsBillingAuditResultAggregationColumnsBillingCenterLevel6 FinopsBillingAuditResultAggregationColumns = "billingCenterLevel6"
+	FinopsBillingAuditResultAggregationColumnsBillingCenterLevel7 FinopsBillingAuditResultAggregationColumns = "billingCenterLevel7"
+	FinopsBillingAuditResultAggregationColumnsBillingCenterLevel8 FinopsBillingAuditResultAggregationColumns = "billingCenterLevel8"
+	FinopsBillingAuditResultAggregationColumnsBillingCenterLevel9 FinopsBillingAuditResultAggregationColumns = "billingCenterLevel9"
+	FinopsBillingAuditResultAggregationColumnsChargeCategory      FinopsBillingAuditResultAggregationColumns = "chargeCategory"
+	FinopsBillingAuditResultAggregationColumnsCustomer            FinopsBillingAuditResultAggregationColumns = "customer"
+	FinopsBillingAuditResultAggregationColumnsPlanName            FinopsBillingAuditResultAggregationColumns = "planName"
+	FinopsBillingAuditResultAggregationColumnsRuleId              FinopsBillingAuditResultAggregationColumns = "ruleId"
+	FinopsBillingAuditResultAggregationColumnsRuleName            FinopsBillingAuditResultAggregationColumns = "ruleName"
+	FinopsBillingAuditResultAggregationColumnsRuleType            FinopsBillingAuditResultAggregationColumns = "ruleType"
+	FinopsBillingAuditResultAggregationColumnsServiceCategory     FinopsBillingAuditResultAggregationColumns = "serviceCategory"
+	FinopsBillingAuditResultAggregationColumnsServiceName         FinopsBillingAuditResultAggregationColumns = "serviceName"
+	FinopsBillingAuditResultAggregationColumnsSubAccountId        FinopsBillingAuditResultAggregationColumns = "subAccountId"
+	FinopsBillingAuditResultAggregationColumnsSubAccountName      FinopsBillingAuditResultAggregationColumns = "subAccountName"
+)
+
+// Defines values for FinopsBillingAuditResultKind.
+const (
+	FinopsBillingAuditResultKindFinopsBillingAuditResult FinopsBillingAuditResultKind = "finops:billing-audit-result"
+)
+
+// Defines values for FinopsBillingAuditResultPeriodType.
+const (
+	FinopsBillingAuditResultPeriodTypeBillPeriod   FinopsBillingAuditResultPeriodType = "billPeriod"
+	FinopsBillingAuditResultPeriodTypeChargePeriod FinopsBillingAuditResultPeriodType = "chargePeriod"
+)
+
+// Defines values for FinopsBillingCreateCreditAssignmentRequestBodyAction.
+const (
+	Hide     FinopsBillingCreateCreditAssignmentRequestBodyAction = "hide"
+	Reassign FinopsBillingCreateCreditAssignmentRequestBodyAction = "reassign"
+	Show     FinopsBillingCreateCreditAssignmentRequestBodyAction = "show"
+)
+
+// Defines values for FinopsBillingCreditAssignmentKind.
+const (
+	FinopsBillingCreditAssignmentKindFinopsBillingCreditAssignment FinopsBillingCreditAssignmentKind = "finops:billing-credit-assignment"
+)
+
+// Defines values for FinopsBillingCreditAssignmentSummaryKind.
+const (
+	FinopsBillingCreditAssignmentSummaryKindFinopsBillingCreditAssignmentSummary FinopsBillingCreditAssignmentSummaryKind = "finops:billing-credit-assignment-summary"
 )
 
 // Defines values for FinopsBillingFeeShareDistributed.
@@ -811,6 +936,13 @@ const (
 	FinopsBillingFlexeraIamPrincipalKindIamUser           FinopsBillingFlexeraIamPrincipalKind = "iam:user"
 )
 
+// Defines values for FinopsBillingGenerateTaxSettingsBaseOn.
+const (
+	FinopsBillingGenerateTaxSettingsBaseOnBilledCost   FinopsBillingGenerateTaxSettingsBaseOn = "billedCost"
+	FinopsBillingGenerateTaxSettingsBaseOnListCost     FinopsBillingGenerateTaxSettingsBaseOn = "listCost"
+	FinopsBillingGenerateTaxSettingsBaseOnModifiedCost FinopsBillingGenerateTaxSettingsBaseOn = "modifiedCost"
+)
+
 // Defines values for FinopsBillingHideCreditsSettingsCreditTypes.
 const (
 	BundledDiscount           FinopsBillingHideCreditsSettingsCreditTypes = "bundledDiscount"
@@ -825,6 +957,11 @@ const (
 // Defines values for FinopsBillingIndexAdjustmentRulesResultKind.
 const (
 	FinopsBillingAdjustmentRuleList FinopsBillingIndexAdjustmentRulesResultKind = "finops:billing-adjustment-rule-list"
+)
+
+// Defines values for FinopsBillingIndexCreditAssignmentsResultKind.
+const (
+	FinopsBillingCreditAssignmentList FinopsBillingIndexCreditAssignmentsResultKind = "finops:billing-credit-assignment-list"
 )
 
 // Defines values for FinopsBillingIndexEnterpriseRulesResultKind.
@@ -847,9 +984,18 @@ const (
 	FinopsBillingSharedCostRuleList FinopsBillingIndexSharedCostRulesResultKind = "finops:billing-shared-cost-rule-list"
 )
 
+// Defines values for FinopsBillingMarkupMarkdownSettingsBaseOn.
+const (
+	FinopsBillingMarkupMarkdownSettingsBaseOnBilledCost   FinopsBillingMarkupMarkdownSettingsBaseOn = "billedCost"
+	FinopsBillingMarkupMarkdownSettingsBaseOnListCost     FinopsBillingMarkupMarkdownSettingsBaseOn = "listCost"
+	FinopsBillingMarkupMarkdownSettingsBaseOnModifiedCost FinopsBillingMarkupMarkdownSettingsBaseOn = "modifiedCost"
+)
+
 // Defines values for FinopsBillingReplaceSettingsRequestBodyBaseCostsOn.
 const (
+	FinopsBillingReplaceSettingsRequestBodyBaseCostsOnBilledCost    FinopsBillingReplaceSettingsRequestBodyBaseCostsOn = "billedCost"
 	FinopsBillingReplaceSettingsRequestBodyBaseCostsOnListCost      FinopsBillingReplaceSettingsRequestBodyBaseCostsOn = "listCost"
+	FinopsBillingReplaceSettingsRequestBodyBaseCostsOnModifiedCost  FinopsBillingReplaceSettingsRequestBodyBaseCostsOn = "modifiedCost"
 	FinopsBillingReplaceSettingsRequestBodyBaseCostsOnObservedCosts FinopsBillingReplaceSettingsRequestBodyBaseCostsOn = "observedCosts"
 )
 
@@ -875,6 +1021,14 @@ const (
 	FinopsBillingShowPlanResponseBodyKindFinopsBillingAdjustmentPlan FinopsBillingShowPlanResponseBodyKind = "finops:billing-adjustment-plan"
 )
 
+// Defines values for FinopsBillingShowSettingsResponseBodyBaseCostsOn.
+const (
+	FinopsBillingShowSettingsResponseBodyBaseCostsOnBilledCost    FinopsBillingShowSettingsResponseBodyBaseCostsOn = "billedCost"
+	FinopsBillingShowSettingsResponseBodyBaseCostsOnListCost      FinopsBillingShowSettingsResponseBodyBaseCostsOn = "listCost"
+	FinopsBillingShowSettingsResponseBodyBaseCostsOnModifiedCost  FinopsBillingShowSettingsResponseBodyBaseCostsOn = "modifiedCost"
+	FinopsBillingShowSettingsResponseBodyBaseCostsOnObservedCosts FinopsBillingShowSettingsResponseBodyBaseCostsOn = "observedCosts"
+)
+
 // Defines values for FinopsBillingShowSharedCostRuleResultKind.
 const (
 	FinopsBillingShowSharedCostRuleResultKindFinopsBillingSharedCostRule FinopsBillingShowSharedCostRuleResultKind = "finops:billing-shared-cost-rule"
@@ -887,8 +1041,8 @@ const (
 
 // Defines values for FinopsBillingSupportChargeSettingsApplyBy.
 const (
-	Customer   FinopsBillingSupportChargeSettingsApplyBy = "customer"
-	SubAccount FinopsBillingSupportChargeSettingsApplyBy = "subAccount"
+	FinopsBillingSupportChargeSettingsApplyByCustomer   FinopsBillingSupportChargeSettingsApplyBy = "customer"
+	FinopsBillingSupportChargeSettingsApplyBySubAccount FinopsBillingSupportChargeSettingsApplyBy = "subAccount"
 )
 
 // Defines values for FinopsBillingSupportChargeSettingsTier.
@@ -904,13 +1058,25 @@ const (
 
 // Defines values for FinopsBillingUpchargeDiscountSettingsBaseOn.
 const (
-	FinopsBillingUpchargeDiscountSettingsBaseOnListCost      FinopsBillingUpchargeDiscountSettingsBaseOn = "listCost"
-	FinopsBillingUpchargeDiscountSettingsBaseOnObservedCosts FinopsBillingUpchargeDiscountSettingsBaseOn = "observedCosts"
+	BilledCost    FinopsBillingUpchargeDiscountSettingsBaseOn = "billedCost"
+	ListCost      FinopsBillingUpchargeDiscountSettingsBaseOn = "listCost"
+	ModifiedCost  FinopsBillingUpchargeDiscountSettingsBaseOn = "modifiedCost"
+	ObservedCosts FinopsBillingUpchargeDiscountSettingsBaseOn = "observedCosts"
 )
 
 // Defines values for FinopsBillingUpdateRequestBodyStatus.
 const (
 	FinopsBillingUpdateRequestBodyStatusActive FinopsBillingUpdateRequestBodyStatus = "active"
+)
+
+// Defines values for FinopsBillingVendorCreditRowKind.
+const (
+	FinopsBillingVendorCredit FinopsBillingVendorCreditRowKind = "finops:billing-vendor-credit"
+)
+
+// Defines values for FinopsBillingVendorCreditsResultKind.
+const (
+	FinopsBillingVendorCreditList FinopsBillingVendorCreditsResultKind = "finops:billing-vendor-credit-list"
 )
 
 // Defines values for FinopsCustomizationsCreateRequestBodyDashboardScope.
@@ -1044,11 +1210,11 @@ const (
 
 // Defines values for FinopsCustomizationsRuleBasedDimensionConditionType.
 const (
-	FinopsCustomizationsRuleBasedDimensionConditionTypeAnd               FinopsCustomizationsRuleBasedDimensionConditionType = "and"
-	FinopsCustomizationsRuleBasedDimensionConditionTypeDimensionContains FinopsCustomizationsRuleBasedDimensionConditionType = "dimension_contains"
-	FinopsCustomizationsRuleBasedDimensionConditionTypeDimensionEquals   FinopsCustomizationsRuleBasedDimensionConditionType = "dimension_equals"
-	FinopsCustomizationsRuleBasedDimensionConditionTypeNot               FinopsCustomizationsRuleBasedDimensionConditionType = "not"
-	FinopsCustomizationsRuleBasedDimensionConditionTypeOr                FinopsCustomizationsRuleBasedDimensionConditionType = "or"
+	And               FinopsCustomizationsRuleBasedDimensionConditionType = "and"
+	DimensionContains FinopsCustomizationsRuleBasedDimensionConditionType = "dimension_contains"
+	DimensionEquals   FinopsCustomizationsRuleBasedDimensionConditionType = "dimension_equals"
+	Not               FinopsCustomizationsRuleBasedDimensionConditionType = "not"
+	Or                FinopsCustomizationsRuleBasedDimensionConditionType = "or"
 )
 
 // Defines values for FinopsCustomizationsRuleBasedDimensionListKind.
@@ -1635,7 +1801,7 @@ const (
 
 // Defines values for IamFlexeraIamUserKind.
 const (
-	IamUser IamFlexeraIamUserKind = "iam#user"
+	IamFlexeraIamUserKindIamUser IamFlexeraIamUserKind = "iam#user"
 )
 
 // Defines values for IamFlexeraIamUserStatus.
@@ -1800,6 +1966,11 @@ const (
 // Defines values for IamUserPrivilegesReportKind.
 const (
 	IamUserPrivilegesReportKindIamUserPrivilegesReport IamUserPrivilegesReportKind = "iam:user-privileges-report"
+)
+
+// Defines values for IamUserProfileKind.
+const (
+	IamUserProfileKindIamUser IamUserProfileKind = "iam#user"
 )
 
 // Defines values for IamUserProjectListKind.
@@ -2511,11 +2682,59 @@ const (
 	PolicyUpdateTemplateRequestBodySeverityMedium   PolicyUpdateTemplateRequestBodySeverity = "medium"
 )
 
+// Defines values for RiskEnumerateFiltersRequestProviders.
+const (
+	RiskEnumerateFiltersRequestProvidersAws    RiskEnumerateFiltersRequestProviders = "aws"
+	RiskEnumerateFiltersRequestProvidersAzure  RiskEnumerateFiltersRequestProviders = "azure"
+	RiskEnumerateFiltersRequestProvidersGc     RiskEnumerateFiltersRequestProviders = "gc"
+	RiskEnumerateFiltersRequestProvidersOnprem RiskEnumerateFiltersRequestProviders = "onprem"
+)
+
+// Defines values for RiskFailedAssetsFiltersProviders.
+const (
+	RiskFailedAssetsFiltersProvidersAws    RiskFailedAssetsFiltersProviders = "aws"
+	RiskFailedAssetsFiltersProvidersAzure  RiskFailedAssetsFiltersProviders = "azure"
+	RiskFailedAssetsFiltersProvidersGc     RiskFailedAssetsFiltersProviders = "gc"
+	RiskFailedAssetsFiltersProvidersOnprem RiskFailedAssetsFiltersProviders = "onprem"
+)
+
 // Defines values for RiskFailedAssetsFiltersType.
 const (
 	RiskFailedAssetsFiltersTypeAll       RiskFailedAssetsFiltersType = "all"
 	RiskFailedAssetsFiltersTypeContainer RiskFailedAssetsFiltersType = "container"
 	RiskFailedAssetsFiltersTypeVm        RiskFailedAssetsFiltersType = "vm"
+)
+
+// Defines values for RiskFindingsDistributionRequestProviders.
+const (
+	RiskFindingsDistributionRequestProvidersAws    RiskFindingsDistributionRequestProviders = "aws"
+	RiskFindingsDistributionRequestProvidersAzure  RiskFindingsDistributionRequestProviders = "azure"
+	RiskFindingsDistributionRequestProvidersGc     RiskFindingsDistributionRequestProviders = "gc"
+	RiskFindingsDistributionRequestProvidersOnprem RiskFindingsDistributionRequestProviders = "onprem"
+)
+
+// Defines values for RiskFindingsSummaryFiltersProviders.
+const (
+	RiskFindingsSummaryFiltersProvidersAws    RiskFindingsSummaryFiltersProviders = "aws"
+	RiskFindingsSummaryFiltersProvidersAzure  RiskFindingsSummaryFiltersProviders = "azure"
+	RiskFindingsSummaryFiltersProvidersGc     RiskFindingsSummaryFiltersProviders = "gc"
+	RiskFindingsSummaryFiltersProvidersOnprem RiskFindingsSummaryFiltersProviders = "onprem"
+)
+
+// Defines values for RiskFindingsTrendFiltersProviders.
+const (
+	RiskFindingsTrendFiltersProvidersAws    RiskFindingsTrendFiltersProviders = "aws"
+	RiskFindingsTrendFiltersProvidersAzure  RiskFindingsTrendFiltersProviders = "azure"
+	RiskFindingsTrendFiltersProvidersGc     RiskFindingsTrendFiltersProviders = "gc"
+	RiskFindingsTrendFiltersProvidersOnprem RiskFindingsTrendFiltersProviders = "onprem"
+)
+
+// Defines values for RiskListFindingsDistributionFiltersProviders.
+const (
+	RiskListFindingsDistributionFiltersProvidersAws    RiskListFindingsDistributionFiltersProviders = "aws"
+	RiskListFindingsDistributionFiltersProvidersAzure  RiskListFindingsDistributionFiltersProviders = "azure"
+	RiskListFindingsDistributionFiltersProvidersGc     RiskListFindingsDistributionFiltersProviders = "gc"
+	RiskListFindingsDistributionFiltersProvidersOnprem RiskListFindingsDistributionFiltersProviders = "onprem"
 )
 
 // Defines values for RiskMisconfigRulesFilterParamsFeatureType.
@@ -2545,6 +2764,14 @@ const (
 	InProgress   RiskOnboardingStatusValueStatus = "inProgress"
 	NotOnboarded RiskOnboardingStatusValueStatus = "notOnboarded"
 	Onboarded    RiskOnboardingStatusValueStatus = "onboarded"
+)
+
+// Defines values for RiskOpenCVECountFiltersProviders.
+const (
+	RiskOpenCVECountFiltersProvidersAws    RiskOpenCVECountFiltersProviders = "aws"
+	RiskOpenCVECountFiltersProvidersAzure  RiskOpenCVECountFiltersProviders = "azure"
+	RiskOpenCVECountFiltersProvidersGc     RiskOpenCVECountFiltersProviders = "gc"
+	RiskOpenCVECountFiltersProvidersOnprem RiskOpenCVECountFiltersProviders = "onprem"
 )
 
 // Defines values for SaasAllocationCreateRequestBodyMatchType.
@@ -3127,14 +3354,14 @@ const (
 
 // Defines values for CredCredentialDeleteProjectParamsScheme.
 const (
-	ApiKey CredCredentialDeleteProjectParamsScheme = "api-key"
-	Aws    CredCredentialDeleteProjectParamsScheme = "aws"
-	AwsSts CredCredentialDeleteProjectParamsScheme = "aws-sts"
-	Basic  CredCredentialDeleteProjectParamsScheme = "basic"
-	Digest CredCredentialDeleteProjectParamsScheme = "digest"
-	Ntlm   CredCredentialDeleteProjectParamsScheme = "ntlm"
-	Oauth2 CredCredentialDeleteProjectParamsScheme = "oauth2"
-	Oracle CredCredentialDeleteProjectParamsScheme = "oracle"
+	CredCredentialDeleteProjectParamsSchemeApiKey CredCredentialDeleteProjectParamsScheme = "api-key"
+	CredCredentialDeleteProjectParamsSchemeAws    CredCredentialDeleteProjectParamsScheme = "aws"
+	CredCredentialDeleteProjectParamsSchemeAwsSts CredCredentialDeleteProjectParamsScheme = "aws-sts"
+	CredCredentialDeleteProjectParamsSchemeBasic  CredCredentialDeleteProjectParamsScheme = "basic"
+	CredCredentialDeleteProjectParamsSchemeDigest CredCredentialDeleteProjectParamsScheme = "digest"
+	CredCredentialDeleteProjectParamsSchemeNtlm   CredCredentialDeleteProjectParamsScheme = "ntlm"
+	CredCredentialDeleteProjectParamsSchemeOauth2 CredCredentialDeleteProjectParamsScheme = "oauth2"
+	CredCredentialDeleteProjectParamsSchemeOracle CredCredentialDeleteProjectParamsScheme = "oracle"
 )
 
 // Defines values for FinopsCustomizationsSavedFiltersIndexParamsVisibility.
@@ -7368,9 +7595,6 @@ type DivntAwsCostAndUsageModel struct {
 // Always optional:
 //   - ActualExportUrl, AmortizedExportUrl, EffectiveFrom
 type DivntAzureCostAndUsageModel struct {
-	// AccountType Azure account type.
-	AccountType DivntAzureCostAndUsageModelAccountType `json:"AccountType"`
-
 	// ActualExportUrl Actual cost export URL.
 	ActualExportUrl *string `json:"ActualExportUrl"`
 
@@ -7399,9 +7623,6 @@ type DivntAzureCostAndUsageModel struct {
 	InvoiceSectionIds *[]string `json:"InvoiceSectionIds"`
 }
 
-// DivntAzureCostAndUsageModelAccountType Azure account type.
-type DivntAzureCostAndUsageModelAccountType string
-
 // DivntAzureCostAndUsageModelBillingScope Billing scope. Required for MCA ('Billing Account', 'Billing Profile', 'Invoice') and CSP ('Billing Account', 'Billing Profile', 'Customer Tenant') account types.
 type DivntAzureCostAndUsageModelBillingScope string
 
@@ -7423,6 +7644,9 @@ type DivntOkResponseAny struct {
 
 // DivntOnboardingCreateRequest Schema for POST requests with strict validation for Creation.
 type DivntOnboardingCreateRequest struct {
+	// AccountType Azure account type. Required for Azure BPC and CCO.
+	AccountType *DivntOnboardingCreateRequestAccountType `json:"AccountType"`
+
 	// BillingAccountId Billing Account ID
 	BillingAccountId *string `json:"BillingAccountId"`
 
@@ -7475,6 +7699,9 @@ type DivntOnboardingCreateRequest struct {
 	TokenUrl *string `json:"TokenUrl"`
 }
 
+// DivntOnboardingCreateRequestAccountType Azure account type. Required for Azure BPC and CCO.
+type DivntOnboardingCreateRequestAccountType string
+
 // DivntOnboardingCreateRequest_CostAndUsage Cost and Usage configuration
 type DivntOnboardingCreateRequest_CostAndUsage struct {
 	union json.RawMessage
@@ -7488,6 +7715,9 @@ type DivntOnboardingCreateRequestProvider string
 
 // DivntOnboardingUpdateRequest Schema for PUT requests. Accepts all fields; route applies CCO-aware filtering.
 type DivntOnboardingUpdateRequest struct {
+	// AccountType Azure account type. Required for Azure BPC and CCO.
+	AccountType *DivntOnboardingUpdateRequestAccountType `json:"AccountType"`
+
 	// BillingAccountId Billing Account ID.
 	BillingAccountId *string `json:"BillingAccountId"`
 
@@ -7536,6 +7766,9 @@ type DivntOnboardingUpdateRequest struct {
 	// TokenUrl Token URL.
 	TokenUrl *string `json:"TokenUrl"`
 }
+
+// DivntOnboardingUpdateRequestAccountType Azure account type. Required for Azure BPC and CCO.
+type DivntOnboardingUpdateRequestAccountType string
 
 // DivntOnboardingUpdateRequestOnboardingType Onboarding type.
 type DivntOnboardingUpdateRequestOnboardingType string
@@ -7683,6 +7916,241 @@ type FinopsBillingAllocationPayload struct {
 // FinopsBillingAllocationPayloadType The allocation strategy.
 type FinopsBillingAllocationPayloadType string
 
+// FinopsBillingAuditFilter A single node of the audit filter tree. The "type" field
+// selects between leaf predicates and boolean combinators.
+//
+// Required companion fields by type:
+//   - "equal":     dimension, value         -- dimension = value
+//   - "substring": dimension, substring     -- dimension contains substring (case-insensitive)
+//   - "and":       expressions              -- conjunction of child filters (>= 2)
+//   - "or":        expressions              -- disjunction of child filters (>= 2)
+//   - "not":       expression               -- negation of a single child filter
+//
+// Example payloads:
+//
+//	{"type":"equal", "dimension":"chargeCategory", "value":"Usage"}
+//
+//	{"type":"substring", "dimension":"ruleName", "substring":"upcharge"}
+//
+//	{"type":"or", "expressions":[
+//	  {"type":"equal", "dimension":"ruleType", "value":"markupMarkdown"},
+//	  {"type":"equal", "dimension":"ruleType", "value":"upchargeDiscount"}
+//	]}
+//
+//	{"type":"and", "expressions":[
+//	  {"type":"equal", "dimension":"serviceName", "value":"AmazonEC2"},
+//	  {"type":"not", "expression":
+//	    {"type":"equal", "dimension":"ruleType", "value":"removeTax"}
+//	  }
+//	]}
+type FinopsBillingAuditFilter struct {
+	// Dimension Column to filter on. Required when type is "equal" or "substring".
+	Dimension *FinopsBillingAuditFilterDimension `json:"dimension,omitempty"`
+
+	// Expression A single node of the audit filter tree. The "type" field
+	// selects between leaf predicates and boolean combinators.
+	//
+	// Required companion fields by type:
+	//   - "equal":     dimension, value         -- dimension = value
+	//   - "substring": dimension, substring     -- dimension contains substring (case-insensitive)
+	//   - "and":       expressions              -- conjunction of child filters (>= 2)
+	//   - "or":        expressions              -- disjunction of child filters (>= 2)
+	//   - "not":       expression               -- negation of a single child filter
+	//
+	// Example payloads:
+	//
+	//   {"type":"equal", "dimension":"chargeCategory", "value":"Usage"}
+	//
+	//   {"type":"substring", "dimension":"ruleName", "substring":"upcharge"}
+	//
+	//   {"type":"or", "expressions":[
+	//     {"type":"equal", "dimension":"ruleType", "value":"markupMarkdown"},
+	//     {"type":"equal", "dimension":"ruleType", "value":"upchargeDiscount"}
+	//   ]}
+	//
+	//   {"type":"and", "expressions":[
+	//     {"type":"equal", "dimension":"serviceName", "value":"AmazonEC2"},
+	//     {"type":"not", "expression":
+	//       {"type":"equal", "dimension":"ruleType", "value":"removeTax"}
+	//     }
+	//   ]}
+	Expression *FinopsBillingAuditFilter `json:"expression,omitempty"`
+
+	// Expressions Child filters AND'd or OR'd together. Required when type = "and" or "or". Must contain at least two entries.
+	Expressions *[]FinopsBillingAuditFilter `json:"expressions,omitempty"`
+
+	// Substring Case-insensitive substring the dimension must contain. Required when type = "substring".
+	Substring *string `json:"substring,omitempty"`
+
+	// Type Filter node type.
+	Type FinopsBillingAuditFilterType `json:"type"`
+
+	// Value Exact value the dimension must equal. Required when type = "equal".
+	Value *string `json:"value,omitempty"`
+}
+
+// FinopsBillingAuditFilterDimension Column to filter on. Required when type is "equal" or "substring".
+type FinopsBillingAuditFilterDimension string
+
+// FinopsBillingAuditFilterType Filter node type.
+type FinopsBillingAuditFilterType string
+
+// FinopsBillingAuditRequest A request for a single-month rule audit aggregation.
+type FinopsBillingAuditRequest struct {
+	// AggregationColumns Columns to group by. Order is preserved in the response.
+	AggregationColumns []FinopsBillingAuditRequestAggregationColumns `json:"aggregationColumns"`
+
+	// Filter A single node of the audit filter tree. The "type" field
+	// selects between leaf predicates and boolean combinators.
+	//
+	// Required companion fields by type:
+	//   - "equal":     dimension, value         -- dimension = value
+	//   - "substring": dimension, substring     -- dimension contains substring (case-insensitive)
+	//   - "and":       expressions              -- conjunction of child filters (>= 2)
+	//   - "or":        expressions              -- disjunction of child filters (>= 2)
+	//   - "not":       expression               -- negation of a single child filter
+	//
+	// Example payloads:
+	//
+	//   {"type":"equal", "dimension":"chargeCategory", "value":"Usage"}
+	//
+	//   {"type":"substring", "dimension":"ruleName", "substring":"upcharge"}
+	//
+	//   {"type":"or", "expressions":[
+	//     {"type":"equal", "dimension":"ruleType", "value":"markupMarkdown"},
+	//     {"type":"equal", "dimension":"ruleType", "value":"upchargeDiscount"}
+	//   ]}
+	//
+	//   {"type":"and", "expressions":[
+	//     {"type":"equal", "dimension":"serviceName", "value":"AmazonEC2"},
+	//     {"type":"not", "expression":
+	//       {"type":"equal", "dimension":"ruleType", "value":"removeTax"}
+	//     }
+	//   ]}
+	Filter *FinopsBillingAuditFilter `json:"filter,omitempty"`
+
+	// PeriodType Which timestamp column `yearMonth` applies to: `chargePeriod` (when the resource was consumed) or `billPeriod` (when the charge appeared on the bill). Mirrors the UI's View Settings → Period Type radio. Defaults to `chargePeriod` when omitted.
+	PeriodType *FinopsBillingAuditRequestPeriodType `json:"periodType,omitempty"`
+
+	// YearMonth Year-month in YYYYMM (audit grain is monthly)
+	YearMonth string `json:"yearMonth"`
+}
+
+// FinopsBillingAuditRequestAggregationColumns defines model for FinopsBillingAuditRequest.AggregationColumns.
+type FinopsBillingAuditRequestAggregationColumns string
+
+// FinopsBillingAuditRequestPeriodType Which timestamp column `yearMonth` applies to: `chargePeriod` (when the resource was consumed) or `billPeriod` (when the charge appeared on the bill). Mirrors the UI's View Settings → Period Type radio. Defaults to `chargePeriod` when omitted.
+type FinopsBillingAuditRequestPeriodType string
+
+// FinopsBillingAuditResult defines model for FinopsBilling_AuditResult.
+type FinopsBillingAuditResult struct {
+	// AggregationColumns Echo of the requested aggregation columns, in order.
+	AggregationColumns []FinopsBillingAuditResultAggregationColumns `json:"aggregationColumns"`
+
+	// Kind The resource's type
+	Kind FinopsBillingAuditResultKind `json:"kind"`
+
+	// PeriodType Echo of the requested period type (or `chargePeriod` if the request omitted it).
+	PeriodType FinopsBillingAuditResultPeriodType `json:"periodType"`
+	Rows       []FinopsBillingAuditRow            `json:"rows"`
+
+	// YearMonth Echo of the requested year-month.
+	YearMonth string `json:"yearMonth"`
+}
+
+// FinopsBillingAuditResultAggregationColumns defines model for FinopsBillingAuditResult.AggregationColumns.
+type FinopsBillingAuditResultAggregationColumns string
+
+// FinopsBillingAuditResultKind The resource's type
+type FinopsBillingAuditResultKind string
+
+// FinopsBillingAuditResultPeriodType Echo of the requested period type (or `chargePeriod` if the request omitted it).
+type FinopsBillingAuditResultPeriodType string
+
+// FinopsBillingAuditRow One aggregated audit row. Only the columns named in the request's aggregationColumns are populated.
+type FinopsBillingAuditRow struct {
+	// BilledChange Sum of billed_change (modifiedBilledCost - billedCost)
+	BilledChange *string `json:"billedChange,omitempty"`
+
+	// BilledCost Sum of billed_cost
+	BilledCost *string `json:"billedCost,omitempty"`
+
+	// BillingAccountId Billing account ID
+	BillingAccountId *string `json:"billingAccountId,omitempty"`
+
+	// BillingAccountName Billing account name
+	BillingAccountName *string `json:"billingAccountName,omitempty"`
+
+	// BillingCenterLevel1 Billing center level 1 name
+	BillingCenterLevel1 *string `json:"billingCenterLevel1,omitempty"`
+
+	// BillingCenterLevel2 Billing center level 2 name
+	BillingCenterLevel2 *string `json:"billingCenterLevel2,omitempty"`
+
+	// BillingCenterLevel3 Billing center level 3 name
+	BillingCenterLevel3 *string `json:"billingCenterLevel3,omitempty"`
+
+	// BillingCenterLevel4 Billing center level 4 name
+	BillingCenterLevel4 *string `json:"billingCenterLevel4,omitempty"`
+
+	// BillingCenterLevel5 Billing center level 5 name
+	BillingCenterLevel5 *string `json:"billingCenterLevel5,omitempty"`
+
+	// BillingCenterLevel6 Billing center level 6 name
+	BillingCenterLevel6 *string `json:"billingCenterLevel6,omitempty"`
+
+	// BillingCenterLevel7 Billing center level 7 name
+	BillingCenterLevel7 *string `json:"billingCenterLevel7,omitempty"`
+
+	// BillingCenterLevel8 Billing center level 8 name
+	BillingCenterLevel8 *string `json:"billingCenterLevel8,omitempty"`
+
+	// BillingCenterLevel9 Billing center level 9 name
+	BillingCenterLevel9 *string `json:"billingCenterLevel9,omitempty"`
+
+	// ChargeCategory Charge category
+	ChargeCategory *string `json:"chargeCategory,omitempty"`
+
+	// Customer MSP customer (child org) identifier
+	Customer *string `json:"customer,omitempty"`
+
+	// EffectiveChange Sum of effective_change
+	EffectiveChange *string `json:"effectiveChange,omitempty"`
+
+	// EffectiveCost Sum of effective_cost
+	EffectiveCost *string `json:"effectiveCost,omitempty"`
+
+	// ModifiedBilledCost Sum of billed_cost + billed_change
+	ModifiedBilledCost *string `json:"modifiedBilledCost,omitempty"`
+
+	// ModifiedEffectiveCost Sum of effective_cost + effective_change
+	ModifiedEffectiveCost *string `json:"modifiedEffectiveCost,omitempty"`
+
+	// PlanName Adjustment plan / rule category name
+	PlanName *string `json:"planName,omitempty"`
+
+	// RuleId Rule ID
+	RuleId *string `json:"ruleId,omitempty"`
+
+	// RuleName Rule name
+	RuleName *string `json:"ruleName,omitempty"`
+
+	// RuleType Rule type
+	RuleType *string `json:"ruleType,omitempty"`
+
+	// ServiceCategory Service category
+	ServiceCategory *string `json:"serviceCategory,omitempty"`
+
+	// ServiceName Service name
+	ServiceName *string `json:"serviceName,omitempty"`
+
+	// SubAccountId Sub-account ID
+	SubAccountId *string `json:"subAccountId,omitempty"`
+
+	// SubAccountName Sub-account name
+	SubAccountName *string `json:"subAccountName,omitempty"`
+}
+
 // FinopsBillingCreateAdjustmentPlanRule Defines a new adjustment plan rule.
 type FinopsBillingCreateAdjustmentPlanRule struct {
 	// AzureReservationReallocation Configure reallocation of AWS reserved instance or Azure reservation benefits across customer accounts.
@@ -7784,6 +8252,48 @@ type FinopsBillingCreateAdjustmentPlanRule struct {
 
 	// VolumeDiscounts Configure a removeAzureLicenseCosts rule.
 	VolumeDiscounts *FinopsBillingRemoveAzureLicenseCostsSettings `json:"volumeDiscounts,omitempty"`
+}
+
+// FinopsBillingCreateCreditAssignmentRequestBody defines model for FinopsBilling_CreateCreditAssignmentRequestBody.
+type FinopsBillingCreateCreditAssignmentRequestBody struct {
+	// Action Disposition of this credit assignment: one of reassign, show, or hide.
+	Action FinopsBillingCreateCreditAssignmentRequestBodyAction `json:"action"`
+
+	// BillMonth Bill month in YYYYMM format this assignment applies to.
+	BillMonth string `json:"billMonth"`
+
+	// Credits One or more credit descriptors to be actioned.
+	Credits []FinopsBillingCreditDescriptor `json:"credits"`
+
+	// Name Human-readable name for this assignment.
+	Name string `json:"name"`
+
+	// Provider The unique provider affected by the credit assignment.
+	Provider *string `json:"provider,omitempty"`
+
+	// TargetBillingAccountId Required when action is reassign.
+	TargetBillingAccountId *string `json:"targetBillingAccountId,omitempty"`
+
+	// TargetBillingAccountName Used when action is reassign.
+	TargetBillingAccountName *string `json:"targetBillingAccountName,omitempty"`
+
+	// TargetCustomerId The customer (child org) identifier to reassign the credit to. Used when action is reassign.
+	TargetCustomerId *int `json:"targetCustomerId,omitempty"`
+
+	// TargetSubAccountId The sub-account to reassign the credit to. Required when action is reassign.
+	TargetSubAccountId *string `json:"targetSubAccountId,omitempty"`
+
+	// TargetSubAccountName The sub-account to reassign the credit to. Used when action is reassign.
+	TargetSubAccountName *string `json:"targetSubAccountName,omitempty"`
+}
+
+// FinopsBillingCreateCreditAssignmentRequestBodyAction Disposition of this credit assignment: one of reassign, show, or hide.
+type FinopsBillingCreateCreditAssignmentRequestBodyAction string
+
+// FinopsBillingCreateCreditAssignmentResult defines model for FinopsBilling_CreateCreditAssignmentResult.
+type FinopsBillingCreateCreditAssignmentResult struct {
+	// Id ID of the created credit assignment.
+	Id openapi_types.UUID `json:"id"`
 }
 
 // FinopsBillingCreateEnterpriseRuleRequestBody defines model for FinopsBilling_CreateEnterpriseRuleRequestBody.
@@ -8068,10 +8578,148 @@ type FinopsBillingCreateRuleRequestBody struct {
 	VolumeDiscounts *FinopsBillingRemoveAzureLicenseCostsSettings `json:"volumeDiscounts,omitempty"`
 }
 
-// FinopsBillingCreateRuleResponseBody defines model for FinopsBilling_CreateRuleResponseBody.
-type FinopsBillingCreateRuleResponseBody struct {
-	// Id id identifies this rule
+// FinopsBillingCreditAssignment defines model for FinopsBilling_CreditAssignment.
+type FinopsBillingCreditAssignment struct {
+	// Action Disposition of this credit assignment: one of reassign, show, or hide.
+	Action string `json:"action"`
+
+	// BillMonth Bill month in YYYYMM format this assignment applies to.
+	BillMonth string `json:"billMonth"`
+
+	// CreatedAt timestamp when the credit assignment was created
+	CreatedAt time.Time `json:"createdAt"`
+
+	// CreatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	CreatedBy FinopsBillingFlexeraIamPrincipal `json:"createdBy"`
+
+	// Credits One or more credit descriptors to be actioned.
+	Credits []FinopsBillingCreditDescriptor `json:"credits"`
+
+	// Id Unique identifier of the credit assignment.
 	Id openapi_types.UUID `json:"id"`
+
+	// Kind The resource's type
+	Kind FinopsBillingCreditAssignmentKind `json:"kind"`
+
+	// Name Human-readable name for this assignment.
+	Name string `json:"name"`
+
+	// Provider The unique provider affected by the credit assignment.
+	Provider *string `json:"provider,omitempty"`
+
+	// TargetBillingAccountId Required when action is reassign.
+	TargetBillingAccountId *string `json:"targetBillingAccountId,omitempty"`
+
+	// TargetBillingAccountName Used when action is reassign.
+	TargetBillingAccountName *string `json:"targetBillingAccountName,omitempty"`
+
+	// TargetCustomerId The customer (child org) identifier to reassign the credit to. Used when action is reassign.
+	TargetCustomerId *int `json:"targetCustomerId,omitempty"`
+
+	// TargetSubAccountId The sub-account to reassign the credit to. Required when action is reassign.
+	TargetSubAccountId *string `json:"targetSubAccountId,omitempty"`
+
+	// TargetSubAccountName The sub-account to reassign the credit to. Used when action is reassign.
+	TargetSubAccountName *string `json:"targetSubAccountName,omitempty"`
+
+	// UpdatedAt timestamp when the credit assignment was updated
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// UpdatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	UpdatedBy FinopsBillingFlexeraIamPrincipal `json:"updatedBy"`
+}
+
+// FinopsBillingCreditAssignmentKind The resource's type
+type FinopsBillingCreditAssignmentKind string
+
+// FinopsBillingCreditAssignmentSummary A credit assignment, including a summary of its credit descriptors.
+type FinopsBillingCreditAssignmentSummary struct {
+	// Action Disposition of this credit assignment: one of reassign, show, or hide.
+	Action string `json:"action"`
+
+	// Amount The credit amount to reassign. Required when action is reassign.
+	Amount *string `json:"amount,omitempty"`
+
+	// BillMonth Bill month in YYYYMM format this assignment applies to.
+	BillMonth string `json:"billMonth"`
+
+	// CreatedAt timestamp when the credit assignment summary was created
+	CreatedAt time.Time `json:"createdAt"`
+
+	// CreatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	CreatedBy FinopsBillingFlexeraIamPrincipal `json:"createdBy"`
+
+	// CreditTypes The unique credit types affected by the credit assignment.
+	CreditTypes *[]string `json:"creditTypes,omitempty"`
+
+	// CustomerIds The unique customer (child org) identifiers affected by the credit assignment.
+	CustomerIds *[]int `json:"customerIds,omitempty"`
+
+	// Id Unique identifier of the credit assignment.
+	Id openapi_types.UUID `json:"id"`
+
+	// Kind The resource's type
+	Kind FinopsBillingCreditAssignmentSummaryKind `json:"kind"`
+
+	// Name Human-readable name for this assignment.
+	Name string `json:"name"`
+
+	// Provider The unique provider affected by the credit assignment.
+	Provider *string `json:"provider,omitempty"`
+
+	// SourceAccounts The source accounts affected by the credit assignment.
+	SourceAccounts *[]FinopsBillingCreditSourceAccount `json:"sourceAccounts,omitempty"`
+
+	// TargetBillingAccountId Required when action is reassign.
+	TargetBillingAccountId *string `json:"targetBillingAccountId,omitempty"`
+
+	// TargetBillingAccountName Used when action is reassign.
+	TargetBillingAccountName *string `json:"targetBillingAccountName,omitempty"`
+
+	// TargetCustomerId The customer (child org) identifier to reassign the credit to. Used when action is reassign.
+	TargetCustomerId *int `json:"targetCustomerId,omitempty"`
+
+	// TargetSubAccountId The sub-account to reassign the credit to. Required when action is reassign.
+	TargetSubAccountId *string `json:"targetSubAccountId,omitempty"`
+
+	// TargetSubAccountName The sub-account to reassign the credit to. Used when action is reassign.
+	TargetSubAccountName *string `json:"targetSubAccountName,omitempty"`
+
+	// UpdatedAt timestamp when the credit assignment summary was updated
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// UpdatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	UpdatedBy FinopsBillingFlexeraIamPrincipal `json:"updatedBy"`
+}
+
+// FinopsBillingCreditAssignmentSummaryKind The resource's type
+type FinopsBillingCreditAssignmentSummaryKind string
+
+// FinopsBillingCreditDescriptor A CreditDescriptor describes a single set of credits.
+type FinopsBillingCreditDescriptor struct {
+	// Amount The credit amount to reassign. Required when action is reassign.
+	Amount *string `json:"amount,omitempty"`
+
+	// BillingAccountId The billing account the credit originates from.
+	BillingAccountId string `json:"billingAccountId"`
+
+	// BillingAccountName The billing account the credit originates from.
+	BillingAccountName *string `json:"billingAccountName,omitempty"`
+
+	// CreditType The CCO line item type classification.
+	CreditType string `json:"creditType"`
+
+	// CustomerId The customer (child org) identifier.
+	CustomerId *int `json:"customerId,omitempty"`
+
+	// Description The ChargeDescription of the credit row.
+	Description string `json:"description"`
+
+	// SubAccountId The sub-account the credit originates from.
+	SubAccountId string `json:"subAccountId"`
+
+	// SubAccountName The sub-account the credit originates from.
+	SubAccountName *string `json:"subAccountName,omitempty"`
 }
 
 // FinopsBillingCreditMemoSettings Configure the creation of credit usage as a new line item.
@@ -8118,6 +8766,21 @@ type FinopsBillingCreditMemoSettings struct {
 
 	// Credit Credit is the decimal value to add to the bill. Negative numbers reduce the bill.
 	Credit *string `json:"credit,omitempty"`
+}
+
+// FinopsBillingCreditSourceAccount defines model for FinopsBilling_CreditSourceAccount.
+type FinopsBillingCreditSourceAccount struct {
+	// BillingAccountId The source billing account ID.
+	BillingAccountId string `json:"billingAccountId"`
+
+	// BillingAccountName The source billing account name.
+	BillingAccountName *string `json:"billingAccountName,omitempty"`
+
+	// SubAccountId The source sub-account ID.
+	SubAccountId string `json:"subAccountId"`
+
+	// SubAccountName The source sub-account name.
+	SubAccountName *string `json:"subAccountName,omitempty"`
 }
 
 // FinopsBillingCustomRateTier defines model for FinopsBilling_CustomRateTier.
@@ -8677,6 +9340,9 @@ type FinopsBillingFlexeraIamPrincipalKind string
 
 // FinopsBillingGenerateTaxSettings Apply a tax charge as a new line item.
 type FinopsBillingGenerateTaxSettings struct {
+	// BaseOn BaseOn selects which cost column the tax is based on. When omitted, the organization's baseCostsOn setting is used. BaseOn does not accept the legacy observedCosts value explicitly; legacy baseCostsOn values are normalized before use.
+	BaseOn *FinopsBillingGenerateTaxSettingsBaseOn `json:"baseOn,omitempty"`
+
 	// Condition An adjustment condition, used by adjustment rules and adjustment plan rules.
 	//
 	// A rule's condition may be omitted or null, which will match unconditionally.
@@ -8717,9 +9383,12 @@ type FinopsBillingGenerateTaxSettings struct {
 	// Together types **"and"**, **"or"**, and **"not"** enable complex combinations of other conditions.
 	Condition *FinopsBillingAdjustmentCondition `json:"condition,omitempty"`
 
-	// Rate Rate is the percentage of the total billed cost to add to the bill as tax.
+	// Rate Rate is the percentage of the cost selected by baseOn to add to the bill as tax.
 	Rate *string `json:"rate,omitempty"`
 }
+
+// FinopsBillingGenerateTaxSettingsBaseOn BaseOn selects which cost column the tax is based on. When omitted, the organization's baseCostsOn setting is used. BaseOn does not accept the legacy observedCosts value explicitly; legacy baseCostsOn values are normalized before use.
+type FinopsBillingGenerateTaxSettingsBaseOn string
 
 // FinopsBillingHideCreditsSettings Configure how vendor credits are, or are not, applied.
 type FinopsBillingHideCreditsSettings struct {
@@ -8739,11 +9408,26 @@ type FinopsBillingIndexAdjustmentRulesResult struct {
 	NextPage *string `json:"nextPage,omitempty"`
 
 	// Values The requested adjustment rule values.
-	Values *[]FinopsBillingFlexeraFinopsBillingAdjustmentRule `json:"values,omitempty"`
+	Values []FinopsBillingFlexeraFinopsBillingAdjustmentRule `json:"values"`
 }
 
 // FinopsBillingIndexAdjustmentRulesResultKind The resource's type
 type FinopsBillingIndexAdjustmentRulesResultKind string
+
+// FinopsBillingIndexCreditAssignmentsResult defines model for FinopsBilling_IndexCreditAssignmentsResult.
+type FinopsBillingIndexCreditAssignmentsResult struct {
+	// Kind The resource's type
+	Kind FinopsBillingIndexCreditAssignmentsResultKind `json:"kind"`
+
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	NextPage *string `json:"nextPage,omitempty"`
+
+	// Values The requested credit assignment values (summarized).
+	Values []FinopsBillingCreditAssignmentSummary `json:"values"`
+}
+
+// FinopsBillingIndexCreditAssignmentsResultKind The resource's type
+type FinopsBillingIndexCreditAssignmentsResultKind string
 
 // FinopsBillingIndexEnterpriseRulesResult defines model for FinopsBilling_IndexEnterpriseRulesResult.
 type FinopsBillingIndexEnterpriseRulesResult struct {
@@ -8754,7 +9438,7 @@ type FinopsBillingIndexEnterpriseRulesResult struct {
 	NextPage *string `json:"nextPage,omitempty"`
 
 	// Values The requested enterprise adjustment rule values.
-	Values *[]FinopsBillingFlexeraFinopsBillingEnterpriseRule `json:"values,omitempty"`
+	Values []FinopsBillingFlexeraFinopsBillingEnterpriseRule `json:"values"`
 }
 
 // FinopsBillingIndexEnterpriseRulesResultKind The resource's type
@@ -8769,7 +9453,7 @@ type FinopsBillingIndexPlansResult struct {
 	NextPage *string `json:"nextPage,omitempty"`
 
 	// Values The requested adjustment plan values.
-	Values *[]FinopsBillingFlexeraFinopsBillingAdjustmentPlan `json:"values,omitempty"`
+	Values []FinopsBillingFlexeraFinopsBillingAdjustmentPlan `json:"values"`
 }
 
 // FinopsBillingIndexPlansResultKind The resource's type
@@ -8784,7 +9468,7 @@ type FinopsBillingIndexRulesResult struct {
 	NextPage *string `json:"nextPage,omitempty"`
 
 	// Values The requested adjustment plan rules.
-	Values *[]FinopsBillingFlexeraFinopsBillingAdjustmentPlanRule `json:"values,omitempty"`
+	Values []FinopsBillingFlexeraFinopsBillingAdjustmentPlanRule `json:"values"`
 }
 
 // FinopsBillingIndexRulesResultKind The resource's type
@@ -8804,6 +9488,9 @@ type FinopsBillingIndexSharedCostRulesResultKind string
 
 // FinopsBillingMarkupMarkdownSettings Configure the modification of existing costs by a percentage.
 type FinopsBillingMarkupMarkdownSettings struct {
+	// BaseOn BaseOn selects which cost column the markup is applied to. When omitted, the organization's baseCostsOn setting is used. BaseOn does not accept the legacy observedCosts value explicitly; legacy baseCostsOn values are normalized before use.
+	BaseOn *FinopsBillingMarkupMarkdownSettingsBaseOn `json:"baseOn,omitempty"`
+
 	// Condition An adjustment condition, used by adjustment rules and adjustment plan rules.
 	//
 	// A rule's condition may be omitted or null, which will match unconditionally.
@@ -8847,6 +9534,9 @@ type FinopsBillingMarkupMarkdownSettings struct {
 	// Markup Markup is the percentage added into the existing value. Negative numbers subtract.
 	Markup *string `json:"markup,omitempty"`
 }
+
+// FinopsBillingMarkupMarkdownSettingsBaseOn BaseOn selects which cost column the markup is applied to. When omitted, the organization's baseCostsOn setting is used. BaseOn does not accept the legacy observedCosts value explicitly; legacy baseCostsOn values are normalized before use.
+type FinopsBillingMarkupMarkdownSettingsBaseOn string
 
 // FinopsBillingOrderEntry Maps a shared cost rule to its new priority position.
 type FinopsBillingOrderEntry struct {
@@ -9113,11 +9803,11 @@ type FinopsBillingReplacePlanRequestBody struct {
 
 // FinopsBillingReplaceSettingsRequestBody defines model for FinopsBilling_ReplaceSettingsRequestBody.
 type FinopsBillingReplaceSettingsRequestBody struct {
-	// BaseCostsOn The base cost value used for adjustments. Note that using 'listCost' may reduce the utility of some adjustment rules.
+	// BaseCostsOn The base cost value used for adjustments. Note that using 'listCost' may reduce the utility of some adjustment rules. The 'observedCosts' value is deprecated; use 'billedCost' or 'modifiedCost' instead. The 'observedCosts' value is retained for legacy compatibility.
 	BaseCostsOn *FinopsBillingReplaceSettingsRequestBodyBaseCostsOn `json:"baseCostsOn,omitempty"`
 }
 
-// FinopsBillingReplaceSettingsRequestBodyBaseCostsOn The base cost value used for adjustments. Note that using 'listCost' may reduce the utility of some adjustment rules.
+// FinopsBillingReplaceSettingsRequestBodyBaseCostsOn The base cost value used for adjustments. Note that using 'listCost' may reduce the utility of some adjustment rules. The 'observedCosts' value is deprecated; use 'billedCost' or 'modifiedCost' instead. The 'observedCosts' value is retained for legacy compatibility.
 type FinopsBillingReplaceSettingsRequestBodyBaseCostsOn string
 
 // FinopsBillingReservationReallocationSettings Configure reallocation of AWS reserved instance or Azure reservation benefits across customer accounts.
@@ -9277,9 +9967,12 @@ type FinopsBillingShowPlanResponseBodyKind string
 
 // FinopsBillingShowSettingsResponseBody defines model for FinopsBilling_ShowSettingsResponseBody.
 type FinopsBillingShowSettingsResponseBody struct {
-	// BaseCostsOn The base cost value used for adjustments. Note that using 'listCost' may reduce the utility of some adjustment rules.
-	BaseCostsOn string `json:"baseCostsOn"`
+	// BaseCostsOn The base cost value used for adjustments. Note that using 'listCost' may reduce the utility of some adjustment rules. The 'observedCosts' value is deprecated; use 'billedCost' or 'modifiedCost' instead. The 'observedCosts' value is retained for legacy compatibility.
+	BaseCostsOn FinopsBillingShowSettingsResponseBodyBaseCostsOn `json:"baseCostsOn"`
 }
+
+// FinopsBillingShowSettingsResponseBodyBaseCostsOn The base cost value used for adjustments. Note that using 'listCost' may reduce the utility of some adjustment rules. The 'observedCosts' value is deprecated; use 'billedCost' or 'modifiedCost' instead. The 'observedCosts' value is retained for legacy compatibility.
+type FinopsBillingShowSettingsResponseBodyBaseCostsOn string
 
 // FinopsBillingShowSharedCostRuleResult defines model for FinopsBilling_ShowSharedCostRuleResult.
 type FinopsBillingShowSharedCostRuleResult struct {
@@ -9421,7 +10114,7 @@ type FinopsBillingUpchargeDiscountSettings struct {
 	// Amount Amount is the percentage of the existing value added as a new entry. Negative numbers reduce the bill.
 	Amount *string `json:"amount,omitempty"`
 
-	// BaseOn BaseOn allows you to select whether the new line item's Billed Cost and Effective Cost reflect observed costs or the List Cost.
+	// BaseOn BaseOn selects which cost column the new line item is based on. When omitted, the organization's baseCostsOn setting is used. The observedCosts value is deprecated; use billedCost or modifiedCost instead. ObservedCosts is retained for legacy compatibility.
 	BaseOn *FinopsBillingUpchargeDiscountSettingsBaseOn `json:"baseOn,omitempty"`
 
 	// Condition An adjustment condition, used by adjustment rules and adjustment plan rules.
@@ -9474,7 +10167,7 @@ type FinopsBillingUpchargeDiscountSettings struct {
 	Tiers *[]FinopsBillingUpchargeTier `json:"tiers,omitempty"`
 }
 
-// FinopsBillingUpchargeDiscountSettingsBaseOn BaseOn allows you to select whether the new line item's Billed Cost and Effective Cost reflect observed costs or the List Cost.
+// FinopsBillingUpchargeDiscountSettingsBaseOn BaseOn selects which cost column the new line item is based on. When omitted, the organization's baseCostsOn setting is used. The observedCosts value is deprecated; use billedCost or modifiedCost instead. ObservedCosts is retained for legacy compatibility.
 type FinopsBillingUpchargeDiscountSettingsBaseOn string
 
 // FinopsBillingUpchargeTier defines model for FinopsBilling_UpchargeTier.
@@ -9518,6 +10211,75 @@ type FinopsBillingValueListCondition struct {
 	// Values The dimension values to include.
 	Values []string `json:"values"`
 }
+
+// FinopsBillingVendorCreditRow A single aggregated credit row eligible for assignment.
+type FinopsBillingVendorCreditRow struct {
+	// Amount Sum of effective cost for this group. Negative values are credits.
+	Amount *string `json:"amount,omitempty"`
+
+	// AssignedBy ID of credit assignment that targets this row, if any.
+	AssignedBy *openapi_types.UUID `json:"assignedBy,omitempty"`
+
+	// BillMonth The billing month (YYYYMM) of the credit row.
+	BillMonth *string `json:"billMonth,omitempty"`
+
+	// BillingAccountId The source billing account ID.
+	BillingAccountId *string `json:"billingAccountId,omitempty"`
+
+	// BillingAccountName The source billing account name.
+	BillingAccountName *string `json:"billingAccountName,omitempty"`
+
+	// ChargeDescription The ChargeDescription of the credit row.
+	ChargeDescription *string `json:"chargeDescription,omitempty"`
+
+	// CreditType The CCO line item type classification of this credit.
+	CreditType *string `json:"creditType,omitempty"`
+
+	// CustomerId MSP customer (child org) identifier.
+	CustomerId *int `json:"customerId,omitempty"`
+
+	// Kind The resource's type
+	Kind FinopsBillingVendorCreditRowKind `json:"kind"`
+
+	// LineItemCount Number of bill rows aggregated into this result.
+	LineItemCount *int `json:"lineItemCount,omitempty"`
+
+	// Provider The cloud provider associated with this credit row.
+	Provider *string `json:"provider,omitempty"`
+
+	// SubAccountId The source sub-account ID.
+	SubAccountId *string `json:"subAccountId,omitempty"`
+
+	// SubAccountName The source sub-account name.
+	SubAccountName *string `json:"subAccountName,omitempty"`
+}
+
+// FinopsBillingVendorCreditRowKind The resource's type
+type FinopsBillingVendorCreditRowKind string
+
+// FinopsBillingVendorCreditsResult defines model for FinopsBilling_VendorCreditsResult.
+type FinopsBillingVendorCreditsResult struct {
+	// Count Total number of vendor credits matching the filter.
+	Count *int `json:"count,omitempty"`
+
+	// Filter Echo of the active filter.
+	Filter *string `json:"filter,omitempty"`
+
+	// Kind The resource's type
+	Kind FinopsBillingVendorCreditsResultKind `json:"kind"`
+
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	NextPage *string `json:"nextPage,omitempty"`
+
+	// OrderBy Echo of the requested orderBy.
+	OrderBy *string `json:"orderBy,omitempty"`
+
+	// Values The requested vendor credit values.
+	Values []FinopsBillingVendorCreditRow `json:"values"`
+}
+
+// FinopsBillingVendorCreditsResultKind The resource's type
+type FinopsBillingVendorCreditsResultKind string
 
 // FinopsCustomizationsCreateRequestBody defines model for FinopsCustomizations_CreateRequestBody.
 type FinopsCustomizationsCreateRequestBody struct {
@@ -12520,11 +13282,11 @@ type IamCreateRequestBody4 struct {
 // IamCreateRequestBody5 defines model for Iam_CreateRequestBody5.
 type IamCreateRequestBody5 struct {
 	// CertificatePublicKey The PEM or DER encoded public key certificate of the Identity Provider
-	// used to	verify SAML message and assertion signatures.
+	// used to    verify SAML message and assertion signatures.
 	CertificatePublicKey string `json:"certificatePublicKey"`
 
 	// DiscoveryHint String that users may enter to allow them to authenticate with this identity
-	// 		provider. The company's domain name is a good choice. The hint is optional but must be unique if provided.
+	//         provider. The company's domain name is a good choice. The hint is optional but must be unique if provided.
 	DiscoveryHint *string `json:"discoveryHint,omitempty"`
 
 	// GroupSyncPolicy Action to take during JIT flow, for groups configured for the identity provider, if JIT provisioning is enabled.
@@ -12540,34 +13302,34 @@ type IamCreateRequestBody5 struct {
 	JitProvisioningEnabled *IamCreateRequestBody5JitProvisioningEnabled `json:"jitProvisioningEnabled,omitempty"`
 
 	// LogoutRedirectUrl The URL to redirect the user to upon logout,
-	// 	for example, the organization's Identity Provider page. By default, upon logout, the user
-	// 	is redirected to the Flexera One login page.
+	//     for example, the organization's Identity Provider page. By default, upon logout, the user
+	//     is redirected to the Flexera One login page.
 	LogoutRedirectUrl *string `json:"logoutRedirectUrl,omitempty"`
 
 	// Name Display name for this identity provider
 	Name string `json:"name"`
 
 	// RequestBinding The SAML Authentication Request Protocol binding used to send SAML
-	// 	AuthnRequest messages to the IdP.
+	//     AuthnRequest messages to the IdP.
 	RequestBinding IamCreateRequestBody5RequestBinding `json:"requestBinding"`
 
 	// RequestSignatureAlgorithm Specifies the signature algorithm used to sign SAML AuthnRequest
-	// 	messages sent to the IdP.
+	//     messages sent to the IdP.
 	RequestSignatureAlgorithm IamCreateRequestBody5RequestSignatureAlgorithm `json:"requestSignatureAlgorithm"`
 
 	// ResponseSignatureAlgorithm Specifies the minimum signature algorithm when validating SAML
-	// 	assertions issued by the IdP.
+	//     assertions issued by the IdP.
 	ResponseSignatureAlgorithm IamCreateRequestBody5ResponseSignatureAlgorithm `json:"responseSignatureAlgorithm"`
 
 	// ResponseSignatureVerification The protocol to use when authenticating users from this identity
-	// 		provider
+	//         provider
 	ResponseSignatureVerification IamCreateRequestBody5ResponseSignatureVerification `json:"responseSignatureVerification"`
 
 	// SignAuthnRequests Specifies whether to sign SAML 2 AuthnRequest messages.
 	SignAuthnRequests IamCreateRequestBody5SignAuthnRequests `json:"signAuthnRequests"`
 
 	// SsoUrl The binding-specific IdP Authentication Request Protocol endpoint that receives SAML
-	// 	AuthnRequest messages.
+	//     AuthnRequest messages.
 	SsoUrl string `json:"ssoUrl"`
 }
 
@@ -13183,14 +13945,14 @@ type IamFlexeraIamIdentityProvider struct {
 	CertificateDetails *IamFlexeraIamCertificateDetails `json:"certificateDetails,omitempty"`
 
 	// CertificatePublicKey The PEM or DER encoded public key certificate of the Identity Provider
-	// used to	verify SAML message and assertion signatures.
+	// used to    verify SAML message and assertion signatures.
 	CertificatePublicKey *string `json:"certificatePublicKey,omitempty"`
 
 	// CreatedAt Timestamp of creation
 	CreatedAt time.Time `json:"createdAt"`
 
 	// DiscoveryHint String that users may enter to allow them to authenticate with this identity
-	// 		provider. The company's domain name is a good choice. The hint is optional but must be unique if provided.
+	//         provider. The company's domain name is a good choice. The hint is optional but must be unique if provided.
 	DiscoveryHint *string              `json:"discoveryHint,omitempty"`
 	Domains       *IamDomainCollection `json:"domains,omitempty"`
 
@@ -13213,8 +13975,8 @@ type IamFlexeraIamIdentityProvider struct {
 	Kind IamFlexeraIamIdentityProviderKind `json:"kind"`
 
 	// LogoutRedirectUrl The URL to redirect the user to upon logout,
-	// 	for example, the organization's Identity Provider page. By default, upon logout, the user
-	// 	is redirected to the Flexera One login page.
+	//     for example, the organization's Identity Provider page. By default, upon logout, the user
+	//     is redirected to the Flexera One login page.
 	LogoutRedirectUrl *string `json:"logoutRedirectUrl,omitempty"`
 
 	// Name Display name for this identity provider
@@ -13224,11 +13986,11 @@ type IamFlexeraIamIdentityProvider struct {
 	OrgId int `json:"orgId"`
 
 	// RequestBinding The SAML Authentication Request Protocol binding used to send SAML
-	// 	AuthnRequest messages to the IdP.
+	//     AuthnRequest messages to the IdP.
 	RequestBinding *IamFlexeraIamIdentityProviderRequestBinding `json:"requestBinding,omitempty"`
 
 	// RequestSignatureAlgorithm Specifies the signature algorithm used to sign SAML AuthnRequest
-	// 	messages sent to the IdP.
+	//     messages sent to the IdP.
 	RequestSignatureAlgorithm *IamFlexeraIamIdentityProviderRequestSignatureAlgorithm `json:"requestSignatureAlgorithm,omitempty"`
 
 	// RequestSigningKeyId ID for last known active signing key.
@@ -13236,18 +13998,18 @@ type IamFlexeraIamIdentityProvider struct {
 	RequestSigningKeys  *IamSAML2IdentityProviderSigningKeyCollection `json:"requestSigningKeys,omitempty"`
 
 	// ResponseSignatureAlgorithm Specifies the minimum signature algorithm when validating SAML
-	// 	assertions issued by the IdP.
+	//     assertions issued by the IdP.
 	ResponseSignatureAlgorithm *IamFlexeraIamIdentityProviderResponseSignatureAlgorithm `json:"responseSignatureAlgorithm,omitempty"`
 
 	// ResponseSignatureVerification The protocol to use when authenticating users from this identity
-	// 		provider
+	//         provider
 	ResponseSignatureVerification *IamFlexeraIamIdentityProviderResponseSignatureVerification `json:"responseSignatureVerification,omitempty"`
 
 	// SignAuthnRequests Specifies whether to sign SAML 2 AuthnRequest messages.
 	SignAuthnRequests *IamFlexeraIamIdentityProviderSignAuthnRequests `json:"signAuthnRequests,omitempty"`
 
 	// SsoUrl The binding-specific IdP Authentication Request Protocol endpoint that receives SAML
-	// 	AuthnRequest messages.
+	//     AuthnRequest messages.
 	SsoUrl *string `json:"ssoUrl,omitempty"`
 
 	// UpdatedAt Timestamp of last update
@@ -13728,6 +14490,22 @@ type IamFlexeraIamUser struct {
 	// Id ID of the user
 	Id int `json:"id"`
 
+	// IsNameManagedByIDP Indicates whether this user's name is managed by an
+	// external identity provider (AD/SAML).
+	//
+	// When **true**, the org has a SAML IDP configured with both JIT-provisioning and
+	// profile-master enabled. Name edits made via the UI may be overridden on the user's
+	// next SSO login if the AD/SAML attribute mapping still points to different values.
+	//
+	// The UI should display a warning to admins when this flag is true before they edit
+	// the user's name, to set expectations about sync behavior.
+	//
+	// Note: This is an org-level check. It does not distinguish between federated users
+	// (who sync from AD) and local Okta users in the same org. This is a known MVP
+	// limitation — a future version will perform a per-user check based on the user's
+	// identity provider type.
+	IsNameManagedByIDP *bool `json:"isNameManagedByIDP,omitempty"`
+
 	// Kind The resource's type
 	Kind IamFlexeraIamUserKind `json:"kind"`
 
@@ -14135,8 +14913,8 @@ type IamGrantRequestBody struct {
 	} `json:"role"`
 
 	// Scope The context in which the access rule applies. If the scope's kind is iam:org the access
-	// 	rule applies throughout the org, and its projects. If the scope's kind is iam:project, the access rule applies to
-	// 	exactly one project within the org.
+	//     rule applies throughout the org, and its projects. If the scope's kind is iam:project, the access rule applies to
+	//     exactly one project within the org.
 	Scope *struct {
 		// Ref A reference to the scope of the access rule. If no scope is provided, the org scope will be used by default.
 		Ref string `json:"ref"`
@@ -14813,11 +15591,11 @@ type IamUpdateRequestBody2 struct {
 // IamUpdateRequestBody3 defines model for Iam_UpdateRequestBody3.
 type IamUpdateRequestBody3 struct {
 	// CertificatePublicKey The PEM or DER encoded public key certificate of the Identity Provider
-	// used to	verify SAML message and assertion signatures.
+	// used to    verify SAML message and assertion signatures.
 	CertificatePublicKey *string `json:"certificatePublicKey,omitempty"`
 
 	// DiscoveryHint String that users may enter to allow them to authenticate with this identity
-	// 		provider. The company's domain name is a good choice. The hint is optional but must be unique if provided.
+	//         provider. The company's domain name is a good choice. The hint is optional but must be unique if provided.
 	DiscoveryHint *string `json:"discoveryHint,omitempty"`
 
 	// GroupSyncPolicy Action to take during JIT flow, for groups configured for the identity provider, if JIT provisioning is enabled.
@@ -14833,37 +15611,37 @@ type IamUpdateRequestBody3 struct {
 	JitProvisioningEnabled *IamUpdateRequestBody3JitProvisioningEnabled `json:"jitProvisioningEnabled,omitempty"`
 
 	// LogoutRedirectUrl The URL to redirect the user to upon logout,
-	// 	for example, the organization's Identity Provider page. By default, upon logout, the user
-	// 	is redirected to the Flexera One login page.
+	//     for example, the organization's Identity Provider page. By default, upon logout, the user
+	//     is redirected to the Flexera One login page.
 	LogoutRedirectUrl *string `json:"logoutRedirectUrl,omitempty"`
 
 	// Name Display name for this identity provider
 	Name *string `json:"name,omitempty"`
 
 	// RequestBinding The SAML Authentication Request Protocol binding used to send SAML
-	// 	AuthnRequest messages to the IdP.
+	//     AuthnRequest messages to the IdP.
 	RequestBinding *IamUpdateRequestBody3RequestBinding `json:"requestBinding,omitempty"`
 
 	// RequestSignatureAlgorithm Specifies the signature algorithm used to sign SAML AuthnRequest
-	// 	messages sent to the IdP.
+	//     messages sent to the IdP.
 	RequestSignatureAlgorithm *IamUpdateRequestBody3RequestSignatureAlgorithm `json:"requestSignatureAlgorithm,omitempty"`
 
 	// RequestSigningKeyId ID for last known active signing key.
 	RequestSigningKeyId *string `json:"requestSigningKeyId,omitempty"`
 
 	// ResponseSignatureAlgorithm Specifies the minimum signature algorithm when validating SAML
-	// 	assertions issued by the IdP.
+	//     assertions issued by the IdP.
 	ResponseSignatureAlgorithm *IamUpdateRequestBody3ResponseSignatureAlgorithm `json:"responseSignatureAlgorithm,omitempty"`
 
 	// ResponseSignatureVerification The protocol to use when authenticating users from this identity
-	// 		provider
+	//         provider
 	ResponseSignatureVerification *IamUpdateRequestBody3ResponseSignatureVerification `json:"responseSignatureVerification,omitempty"`
 
 	// SignAuthnRequests Specifies whether to sign SAML 2 AuthnRequest messages.
 	SignAuthnRequests *IamUpdateRequestBody3SignAuthnRequests `json:"signAuthnRequests,omitempty"`
 
 	// SsoUrl The binding-specific IdP Authentication Request Protocol endpoint that receives SAML
-	// 	AuthnRequest messages.
+	//     AuthnRequest messages.
 	SsoUrl *string `json:"ssoUrl,omitempty"`
 }
 
@@ -14940,6 +15718,15 @@ type IamUpdateRequestBody7 struct {
 
 	// Owners List of users that will have owner access.
 	Owners *[]IamOwnerUser `json:"owners,omitempty"`
+}
+
+// IamUpdateRequestBody8 defines model for Iam_UpdateRequestBody8.
+type IamUpdateRequestBody8 struct {
+	// FirstName First name to set.
+	FirstName *string `json:"firstName,omitempty"`
+
+	// LastName Last name to set.
+	LastName *string `json:"lastName,omitempty"`
 }
 
 // IamUserAccessPoliciesResult defines model for Iam_UserAccessPoliciesResult.
@@ -15048,6 +15835,37 @@ type IamUserPrivilegesReport struct {
 
 // IamUserPrivilegesReportKind The resource's type
 type IamUserPrivilegesReportKind string
+
+// IamUserProfile defines model for Iam_UserProfile.
+type IamUserProfile struct {
+	// Email Email address of the user
+	Email string `json:"email"`
+
+	// FirstName First name of the user
+	FirstName *string `json:"firstName,omitempty"`
+
+	// Id ID of the user
+	Id int `json:"id"`
+
+	// IsNameManagedByIDP Indicates whether this user's name is managed by an
+	// external identity provider (AD/SAML).
+	//
+	// When **true**, the user last authenticated via SSO/SAML federation. Name edits may be
+	// overridden on their next SSO login if the IdP attribute mapping still points to different values.
+	//
+	// The UI should display a warning when this flag is true, explaining that the name
+	// change may not persist through the next SSO login.
+	IsNameManagedByIDP *bool `json:"isNameManagedByIDP,omitempty"`
+
+	// Kind The resource's type
+	Kind IamUserProfileKind `json:"kind"`
+
+	// LastName Last name of the user
+	LastName *string `json:"lastName,omitempty"`
+}
+
+// IamUserProfileKind The resource's type
+type IamUserProfileKind string
 
 // IamUserProjectList defines model for Iam_UserProjectList.
 type IamUserProjectList struct {
@@ -15461,10 +16279,10 @@ type PolicyCreateAppliedPolicyRequestBody struct {
 	SkipApprovals *bool `json:"skipApprovals,omitempty"`
 
 	// TemplateRef The \"templateRef\" is used to specify the policy template or published template that is to be applied.
-	// 			This field may accept either a published template reference like: \"ref::3::policy:published-template:5b06ead5e0dacc007058c784\",
-	// 			or a policy template reference like: \"ref:::project/2345:policy:policy-template:507f1f77bcf86cd799439011\".
-	// 			A policy template must not be applied outside of the project it was uploaded to and a published template must not be applied outside its org.
-	// 			A user can enable a policy template to be used in multiple projects by either publishing it or uploading a copy to each project.
+	//             This field may accept either a published template reference like: \"ref::3::policy:published-template:5b06ead5e0dacc007058c784\",
+	//             or a policy template reference like: \"ref:::project/2345:policy:policy-template:507f1f77bcf86cd799439011\".
+	//             A policy template must not be applied outside of the project it was uploaded to and a published template must not be applied outside its org.
+	//             A user can enable a policy template to be used in multiple projects by either publishing it or uploading a copy to each project.
 	TemplateRef string `json:"templateRef"`
 }
 
@@ -15510,8 +16328,8 @@ type PolicyCreatePolicyAggregateRequestBody struct {
 	SkipApprovals *bool `json:"skipApprovals,omitempty"`
 
 	// TemplateRef The \"templateRef\" is used to specify the published template that is to be applied.
-	// 			This field accepts a published template reference like: \"ref::3::policy:published-template:5b06ead5e0dacc007058c784\".
-	// 			A published template must not be applied outside its org.
+	//             This field accepts a published template reference like: \"ref::3::policy:published-template:5b06ead5e0dacc007058c784\".
+	//             A published template must not be applied outside its org.
 	TemplateRef string `json:"templateRef"`
 }
 
@@ -15595,7 +16413,7 @@ type PolicyCreateRequestBody struct {
 	SkipApprovals *bool `json:"skipApprovals,omitempty"`
 
 	// TemplateRef The \"templateRef\" is used to specify the published template that is to be applied.
-	// 			This field accepts a published template reference like: \"ref::3::policy:published-template:5b06ead5e0dacc007058c784\".
+	//             This field accepts a published template reference like: \"ref::3::policy:published-template:5b06ead5e0dacc007058c784\".
 	TemplateRef string `json:"templateRef"`
 }
 
@@ -16412,9 +17230,9 @@ type PolicyFlexeraPolicyPolicyAggregate struct {
 	Options *[]PolicyConfigurationOption `json:"options,omitempty"`
 
 	// ProjectIds projectIds is a list of projects the aggregate should create an applied policy in.
-	// 	If given invalid project ids or ids of projects the creator of the policy aggregate does not have access to,
-	// 	the policy aggregate errors will include an entry for the project with the appropriate error.
-	// 	If passed duplicate ids it will create duplicate applied policies.
+	//     If given invalid project ids or ids of projects the creator of the policy aggregate does not have access to,
+	//     the policy aggregate errors will include an entry for the project with the appropriate error.
+	//     If passed duplicate ids it will create duplicate applied policies.
 	ProjectIds *[]int64 `json:"projectIds,omitempty"`
 
 	// PublishedTemplate PublishedTemplateLink describes a published template link.
@@ -17608,7 +18426,7 @@ type PolicyUpsertTagRequestBody struct {
 // RiskAssetStatisticsRequest defines model for Risk_AssetStatisticsRequest.
 type RiskAssetStatisticsRequest struct {
 	// Metrics Metrics to compute. Omit or pass empty list to fetch all.
-	Metrics *[]string                 `json:"metrics"`
+	Metrics *[]string                 `json:"metrics,omitempty"`
 	Scope   *RiskAssetStatisticsScope `json:"scope,omitempty"`
 }
 
@@ -17622,13 +18440,13 @@ type RiskAssetStatisticsScope struct {
 // RiskBpcRuleListRequest defines model for Risk_BpcRuleListRequest.
 type RiskBpcRuleListRequest struct {
 	// ComplianceStandard Standard code, e.g. CIS_CONTROLS_8
-	ComplianceStandard *string `json:"complianceStandard"`
+	ComplianceStandard *string `json:"complianceStandard,omitempty"`
 
 	// ControlId Control ID, e.g. CIS_CTRL_8__7_1
-	ControlId *string `json:"controlId"`
+	ControlId *string `json:"controlId,omitempty"`
 
 	// Date YYYY-MM-DD. If omitted, uses the latest available run
-	Date *string `json:"date"`
+	Date *string `json:"date,omitempty"`
 
 	// FeatureType Type of rules to fetch
 	FeatureType *string `json:"featureType,omitempty"`
@@ -17696,43 +18514,43 @@ type RiskCISCategoryItem struct {
 // RiskCVEDetailsItem CVE details item model.
 type RiskCVEDetailsItem struct {
 	// AttackVector Attack vector
-	AttackVector *string `json:"attackVector"`
+	AttackVector string `json:"attackVector"`
 
 	// CveTitle CVE ID
 	CveTitle string `json:"cveTitle"`
 
 	// CvssScore CVSS score
-	CvssScore *float32 `json:"cvssScore"`
+	CvssScore float32 `json:"cvssScore"`
 
 	// CvssVersion CVSS version
-	CvssVersion *string `json:"cvssVersion"`
+	CvssVersion string `json:"cvssVersion"`
 
 	// MalwareName Malware name
-	MalwareName *string `json:"malwareName"`
+	MalwareName string `json:"malwareName"`
 
 	// NvdSeverity NVD severity
-	NvdSeverity *string `json:"nvdSeverity"`
+	NvdSeverity string `json:"nvdSeverity"`
 
 	// PublishDate CVE publish date
-	PublishDate *string `json:"publishDate"`
+	PublishDate string `json:"publishDate"`
 
 	// SecuniaAdvisoryCriticality Secunia advisor criticality
-	SecuniaAdvisoryCriticality *string `json:"secuniaAdvisoryCriticality"`
+	SecuniaAdvisoryCriticality string `json:"secuniaAdvisoryCriticality"`
 
 	// SecuniaAdvisoryId Secunia advisory ID
-	SecuniaAdvisoryId *string `json:"secuniaAdvisoryId"`
+	SecuniaAdvisoryId string `json:"secuniaAdvisoryId"`
 
 	// SecuniaAdvisoryTitle Secunia advisory title
-	SecuniaAdvisoryTitle *string `json:"secuniaAdvisoryTitle"`
+	SecuniaAdvisoryTitle string `json:"secuniaAdvisoryTitle"`
 
 	// SolutionStatus Solution status
-	SolutionStatus *string `json:"solutionStatus"`
+	SolutionStatus string `json:"solutionStatus"`
 
 	// ThreatExploitRisk Threat exploit risk
-	ThreatExploitRisk *string `json:"threatExploitRisk"`
+	ThreatExploitRisk string `json:"threatExploitRisk"`
 
 	// ThreatScore Threat score
-	ThreatScore *float32 `json:"threatScore"`
+	ThreatScore float32 `json:"threatScore"`
 }
 
 // RiskCVEDetailsResponse Response model for CVE Details API.
@@ -17747,7 +18565,7 @@ type RiskCVEDetailsResponse struct {
 // RiskCatalogFilterRequest defines model for Risk_CatalogFilterRequest.
 type RiskCatalogFilterRequest struct {
 	// Dimensions Dimensions to fetch. Omit or pass empty list to fetch all.
-	Dimensions *[]string               `json:"dimensions"`
+	Dimensions *[]string               `json:"dimensions,omitempty"`
 	Scope      *RiskCatalogFilterScope `json:"scope,omitempty"`
 }
 
@@ -17772,10 +18590,10 @@ type RiskComplianceExportRequest struct {
 	Accounts []string `json:"accounts"`
 
 	// Category List of control categories to filter by
-	Category *[]string `json:"category"`
+	Category *[]string `json:"category,omitempty"`
 
 	// ComplianceStandard Compliance standard name (e.g., 'NIST_800-82_rev2'). If not provided, summary export will be generated.
-	ComplianceStandard *string `json:"complianceStandard"`
+	ComplianceStandard *string `json:"complianceStandard,omitempty"`
 
 	// Format Export format - 'json' or 'xlsx'
 	Format string `json:"format"`
@@ -17784,7 +18602,7 @@ type RiskComplianceExportRequest struct {
 	Imc bool `json:"imc"`
 
 	// Level CIS level filter. Allowed values: 1 or 2
-	Level *int `json:"level"`
+	Level *int `json:"level,omitempty"`
 
 	// Providers List of cloud providers. Allowed values: 'aws', 'azure', 'all'
 	Providers []string `json:"providers"`
@@ -17931,7 +18749,7 @@ type RiskConformitySummaryRequest struct {
 // RiskControlItem Single control item for compliance standards.
 type RiskControlItem struct {
 	// Category Control category (only for CIS standard)
-	Category *string `json:"category"`
+	Category *string `json:"category,omitempty"`
 
 	// ComplianceStandard Compliance standard identifier
 	ComplianceStandard string `json:"complianceStandard"`
@@ -17946,13 +18764,13 @@ type RiskControlItem struct {
 	ControlImplemented string `json:"controlImplemented"`
 
 	// Level CIS level (only for CIS standard)
-	Level *int `json:"level"`
+	Level *int `json:"level,omitempty"`
 
 	// NonCompliantResources Number of non-compliant resources
 	NonCompliantResources int `json:"nonCompliantResources"`
 
 	// Scoring Scoring type (only for CIS standard)
-	Scoring *string `json:"scoring"`
+	Scoring *string `json:"scoring,omitempty"`
 }
 
 // RiskControlsData Controls data for compliance standards.
@@ -17961,13 +18779,13 @@ type RiskControlsData struct {
 	Controls *[]RiskControlItem `json:"controls,omitempty"`
 
 	// ControlsPassed Number of controls passed
-	ControlsPassed *int `json:"controlsPassed"`
+	ControlsPassed *int `json:"controlsPassed,omitempty"`
 
 	// InCompliance Compliance percentage (floored)
-	InCompliance *int `json:"inCompliance"`
+	InCompliance *int `json:"inCompliance,omitempty"`
 
 	// TotalControls Total number of controls
-	TotalControls *int `json:"totalControls"`
+	TotalControls *int `json:"totalControls,omitempty"`
 }
 
 // RiskEnumerateFiltersRequest defines model for Risk_EnumerateFiltersRequest.
@@ -17980,10 +18798,10 @@ type RiskEnumerateFiltersRequest struct {
 	Condition *RiskEnumerationCondition `json:"condition,omitempty"`
 
 	// Date Single date YYYY-MM-DD
-	Date *string `json:"date"`
+	Date *string `json:"date,omitempty"`
 
 	// Providers List of providers. Use ['all'] for all providers. Supports: aws, azure, gc, onprem
-	Providers *[]string `json:"providers,omitempty"`
+	Providers *[]RiskEnumerateFiltersRequestProviders `json:"providers,omitempty"`
 
 	// Regions List of AWS regions. Use ['all'] for all regions
 	Regions *[]string `json:"regions,omitempty"`
@@ -17992,8 +18810,11 @@ type RiskEnumerateFiltersRequest struct {
 	Route string `json:"route"`
 
 	// Services List of services or 'all' (optional)
-	Services *[]string `json:"services"`
+	Services *[]string `json:"services,omitempty"`
 }
+
+// RiskEnumerateFiltersRequestProviders defines model for RiskEnumerateFiltersRequest.Providers.
+type RiskEnumerateFiltersRequestProviders string
 
 // RiskEnumerateFiltersResponse defines model for Risk_EnumerateFiltersResponse.
 type RiskEnumerateFiltersResponse struct {
@@ -18004,10 +18825,10 @@ type RiskEnumerateFiltersResponse struct {
 // RiskEnumerationCondition defines model for Risk_EnumerationCondition.
 type RiskEnumerationCondition struct {
 	// CveId CVE identifier (e.g. CVE-2023-12345)
-	CveId *string `json:"cveId"`
+	CveId *string `json:"cveId,omitempty"`
 
 	// Type Context type: 'vm' or 'container'
-	Type *string `json:"type"`
+	Type *string `json:"type,omitempty"`
 }
 
 // RiskErrorResponse defines model for Risk_ErrorResponse.
@@ -18035,25 +18856,25 @@ type RiskFailedAssetFilterParam struct {
 	Accounts []string `json:"accounts"`
 
 	// Args Rule arguments string (comma-separated or JSON array string)
-	Args *string `json:"args"`
+	Args *string `json:"args,omitempty"`
 
 	// PageSize Number of items per page
-	PageSize *int `json:"pageSize"`
+	PageSize *int `json:"pageSize,omitempty"`
 
 	// Providers List of cloud providers or ['all']
-	Providers *[]string `json:"providers"`
+	Providers *[]string `json:"providers,omitempty"`
 
 	// Regions List of cloud regions or ['all']
-	Regions *[]string `json:"regions"`
+	Regions *[]string `json:"regions,omitempty"`
 
 	// RuleName Security rule name to filter assets by
 	RuleName string `json:"ruleName"`
 
 	// ShowSuppressed Whether to include suppressed assets: 'true', 'false', or omit for all
-	ShowSuppressed *string `json:"showSuppressed"`
+	ShowSuppressed *string `json:"showSuppressed,omitempty"`
 
 	// SkipToken Cursor-based pagination token for next page
-	SkipToken *string `json:"skipToken"`
+	SkipToken *string `json:"skipToken,omitempty"`
 }
 
 // RiskFailedAssetItem Single failed asset item.
@@ -18110,7 +18931,7 @@ type RiskFailedAssetListResponse struct {
 	Kind *string `json:"kind,omitempty"`
 
 	// NextPage URL for fetching next page with skipToken
-	NextPage *string `json:"nextPage"`
+	NextPage *string `json:"nextPage,omitempty"`
 
 	// Values List of failed assets
 	Values []RiskFailedAssetItem `json:"values"`
@@ -18125,10 +18946,10 @@ type RiskFailedAssetRequest struct {
 	RuleName string `json:"ruleName"`
 
 	// ShowSuppressed 'true', 'false', or omit for all
-	ShowSuppressed *string `json:"showSuppressed"`
+	ShowSuppressed *string `json:"showSuppressed,omitempty"`
 
 	// SkipToken Cursor for pagination
-	SkipToken *string `json:"skipToken"`
+	SkipToken *string `json:"skipToken,omitempty"`
 }
 
 // RiskFailedAssetsExportFilters Request filters for Failed Assets Export API (simplified).
@@ -18149,41 +18970,44 @@ type RiskFailedAssetsFilters struct {
 	CveId string `json:"cveId"`
 
 	// Date Date filter in YYYY-MM-DD format
-	Date *string `json:"date"`
+	Date *string `json:"date,omitempty"`
 
 	// Filter Advanced filter expression
-	Filter *string `json:"filter"`
+	Filter *string `json:"filter,omitempty"`
 
 	// Limit Number of results per page (max: 1000)
-	Limit *int `json:"limit"`
+	Limit *int `json:"limit,omitempty"`
 
 	// Offset Number of results to skip (for pagination)
-	Offset *int `json:"offset"`
+	Offset *int `json:"offset,omitempty"`
 
 	// OrderBy Sort order (field asc/desc)
-	OrderBy *string `json:"orderBy"`
+	OrderBy *string `json:"orderBy,omitempty"`
 
 	// Providers List of providers. Use ['all'] for all providers. Supports: aws, azure, gc, onprem
-	Providers *[]string `json:"providers,omitempty"`
+	Providers *[]RiskFailedAssetsFiltersProviders `json:"providers,omitempty"`
 
 	// Regions List of AWS regions. Use ['all'] for all regions
 	Regions *[]string `json:"regions,omitempty"`
 
 	// Services List of services or 'all' (optional)
-	Services *[]string `json:"services"`
+	Services *[]string `json:"services,omitempty"`
 
 	// SoftwareManufacturer Software manufacturer name
-	SoftwareManufacturer *string `json:"softwareManufacturer"`
+	SoftwareManufacturer *string `json:"softwareManufacturer,omitempty"`
 
 	// SoftwareProduct Software product name
-	SoftwareProduct *string `json:"softwareProduct"`
+	SoftwareProduct *string `json:"softwareProduct,omitempty"`
 
 	// SoftwareVersion Software version
-	SoftwareVersion *string `json:"softwareVersion"`
+	SoftwareVersion *string `json:"softwareVersion,omitempty"`
 
 	// Type Asset type - Virtual Machine, Container Image, or All types
 	Type RiskFailedAssetsFiltersType `json:"type"`
 }
+
+// RiskFailedAssetsFiltersProviders defines model for RiskFailedAssetsFilters.Providers.
+type RiskFailedAssetsFiltersProviders string
 
 // RiskFailedAssetsFiltersType Asset type - Virtual Machine, Container Image, or All types
 type RiskFailedAssetsFiltersType string
@@ -18194,32 +19018,35 @@ type RiskFindingsDistributionRequest struct {
 	Accounts *[]string `json:"accounts,omitempty"`
 
 	// Date Specific date in YYYY-MM-DD format
-	Date *string `json:"date"`
+	Date *string `json:"date,omitempty"`
 
 	// Filter Filter expression like 'manufacturerName co "Microsoft"'
-	Filter *string `json:"filter"`
+	Filter *string `json:"filter,omitempty"`
 
 	// GroupBy Field to group findings by
 	GroupBy string `json:"groupBy"`
 
 	// Limit Maximum number of results to return
-	Limit *int `json:"limit"`
+	Limit *int `json:"limit,omitempty"`
 
 	// Offset Number of results to skip for pagination
-	Offset *int `json:"offset"`
+	Offset *int `json:"offset,omitempty"`
 
 	// OrderBy Order expression like 'manufacturerName asc'
-	OrderBy *string `json:"orderBy"`
+	OrderBy *string `json:"orderBy,omitempty"`
 
 	// Providers List of providers. Use ['all'] for all providers. Supports: aws, azure, gc, onprem
-	Providers *[]string `json:"providers,omitempty"`
+	Providers *[]RiskFindingsDistributionRequestProviders `json:"providers,omitempty"`
 
 	// Regions List of AWS regions. Use ['all'] for all regions
 	Regions *[]string `json:"regions,omitempty"`
 
 	// Services List of services or 'all' (optional)
-	Services *[]string `json:"services"`
+	Services *[]string `json:"services,omitempty"`
 }
+
+// RiskFindingsDistributionRequestProviders defines model for RiskFindingsDistributionRequest.Providers.
+type RiskFindingsDistributionRequestProviders string
 
 // RiskFindingsSummaryFilters Request body filters for vulnerability findings summary.
 //
@@ -18239,17 +19066,20 @@ type RiskFindingsSummaryFilters struct {
 	Accounts *[]string `json:"accounts,omitempty"`
 
 	// Date Date in YYYY-MM-DD format (optional)
-	Date *string `json:"date"`
+	Date *string `json:"date,omitempty"`
 
 	// Providers List of providers. Use ['all'] for all providers. Supports: aws, azure, gc, onprem
-	Providers *[]string `json:"providers,omitempty"`
+	Providers *[]RiskFindingsSummaryFiltersProviders `json:"providers,omitempty"`
 
 	// Regions List of AWS regions. Use ['all'] for all regions
 	Regions *[]string `json:"regions,omitempty"`
 
 	// Services Must be ['all'] or omitted. Specific service filtering not supported for Total Findings.
-	Services *[]string `json:"services"`
+	Services *[]string `json:"services,omitempty"`
 }
+
+// RiskFindingsSummaryFiltersProviders defines model for RiskFindingsSummaryFilters.Providers.
+type RiskFindingsSummaryFiltersProviders string
 
 // RiskFindingsSummaryResponse Response model for findings summary endpoint.
 type RiskFindingsSummaryResponse struct {
@@ -18272,14 +19102,17 @@ type RiskFindingsTrendFilters struct {
 	Days int `json:"days"`
 
 	// Providers List of providers. Use ['all'] for all providers. Supports: aws, azure, gc, onprem
-	Providers *[]string `json:"providers,omitempty"`
+	Providers *[]RiskFindingsTrendFiltersProviders `json:"providers,omitempty"`
 
 	// Regions List of AWS regions. Use ['all'] for all regions
 	Regions *[]string `json:"regions,omitempty"`
 
 	// Services List of services or 'all' (optional)
-	Services *[]string `json:"services"`
+	Services *[]string `json:"services,omitempty"`
 }
+
+// RiskFindingsTrendFiltersProviders defines model for RiskFindingsTrendFilters.Providers.
+type RiskFindingsTrendFiltersProviders string
 
 // RiskHTTPValidationError defines model for Risk_HTTPValidationError.
 type RiskHTTPValidationError struct {
@@ -18309,7 +19142,7 @@ type RiskLifecycleForecastRequest struct {
 	Horizon RiskLifecycleForecastHorizon `json:"horizon"`
 
 	// IncludeStatuses Status buckets to include. Valid values: supported, endOfSupport, endOfLife, obsolete. Omit or pass empty list to include all.
-	IncludeStatuses *[]string                     `json:"includeStatuses"`
+	IncludeStatuses *[]string                     `json:"includeStatuses,omitempty"`
 	Interval        RiskLifecycleForecastInterval `json:"interval"`
 	Scope           *RiskLifecycleForecastScope   `json:"scope,omitempty"`
 }
@@ -18349,29 +19182,32 @@ type RiskListFindingsDistributionFilters struct {
 	Accounts *[]string `json:"accounts,omitempty"`
 
 	// Date Single date in YYYY-MM-DD format
-	Date *string `json:"date"`
+	Date *string `json:"date,omitempty"`
 
 	// Filter Filter expression supporting 'co' (contains) and 'in' operators. Examples: "cveTitle co 'cve-id'", "softwareManufacturer in ['manufacturer1', 'manufacturer2']"
-	Filter *string `json:"filter"`
+	Filter *string `json:"filter,omitempty"`
 
 	// Limit Maximum number of results to return (default: 100, max: 1000)
-	Limit *int `json:"limit"`
+	Limit *int `json:"limit,omitempty"`
 
 	// Offset Number of results to skip (for pagination)
-	Offset *int `json:"offset"`
+	Offset *int `json:"offset,omitempty"`
 
 	// OrderBy Order by field and direction (e.g., 'softwareManufacturer asc', 'findings desc')
-	OrderBy *string `json:"orderBy"`
+	OrderBy *string `json:"orderBy,omitempty"`
 
 	// Providers List of providers. Use ['all'] for all providers. Supports: aws, azure, gc, onprem
-	Providers *[]string `json:"providers,omitempty"`
+	Providers *[]RiskListFindingsDistributionFiltersProviders `json:"providers,omitempty"`
 
 	// Regions List of AWS regions. Use ['all'] for all regions
 	Regions *[]string `json:"regions,omitempty"`
 
 	// Services List of services or 'all' (optional)
-	Services *[]string `json:"services"`
+	Services *[]string `json:"services,omitempty"`
 }
+
+// RiskListFindingsDistributionFiltersProviders defines model for RiskListFindingsDistributionFilters.Providers.
+type RiskListFindingsDistributionFiltersProviders string
 
 // RiskMisconfigOverviewFilterParams Filter parameters for misconfiguration overview requests.
 type RiskMisconfigOverviewFilterParams struct {
@@ -18442,10 +19278,10 @@ type RiskMisconfigOverviewResponse struct {
 // RiskMisconfigRuleItem Single misconfiguration rule item.
 type RiskMisconfigRuleItem struct {
 	// Args Rule arguments as JSON string
-	Args *string `json:"args"`
+	Args *string `json:"args,omitempty"`
 
 	// AutoRemediationStatus Auto-remediation status
-	AutoRemediationStatus *bool `json:"autoRemediationStatus"`
+	AutoRemediationStatus *bool `json:"autoRemediationStatus,omitempty"`
 
 	// ComplianceStandardNames List of compliance standard names
 	ComplianceStandardNames []string `json:"complianceStandardNames"`
@@ -18502,19 +19338,19 @@ type RiskMisconfigRulesFilterParams struct {
 	Accounts []string `json:"accounts"`
 
 	// ComplianceStandard Required when featureType is 'compliance'
-	ComplianceStandard *string `json:"complianceStandard"`
+	ComplianceStandard *string `json:"complianceStandard,omitempty"`
 
 	// ControlId Required when featureType is 'compliance'
-	ControlId *string `json:"controlId"`
+	ControlId *string `json:"controlId,omitempty"`
 
 	// Date Required when featureType is 'compliance'. Format: YYYY-MM-DD
-	Date *string `json:"date"`
+	Date *string `json:"date,omitempty"`
 
 	// EventId Required when featureType is 'event'
-	EventId *string `json:"eventId"`
+	EventId *string `json:"eventId,omitempty"`
 
 	// EventTime Required when featureType is 'event'. Format: YYYY-MM-DD HH:MM:SS
-	EventTime *string `json:"eventTime"`
+	EventTime *string `json:"eventTime,omitempty"`
 
 	// FeatureType Feature type to filter by. Possible values: risk, compliance, event, policy
 	FeatureType RiskMisconfigRulesFilterParamsFeatureType `json:"featureType"`
@@ -18571,7 +19407,7 @@ type RiskNotificationCreateRequest struct {
 	UserId string `json:"userId"`
 
 	// UserName User name (optional)
-	UserName *string `json:"userName"`
+	UserName *string `json:"userName,omitempty"`
 }
 
 // RiskNotificationCreateRequestIntervalDays Interval in days (must be 1, 7, 14, or 30)
@@ -18597,23 +19433,23 @@ type RiskNotificationResponseItem struct {
 
 // RiskOkPaginatedResponseAny defines model for Risk_OkPaginatedResponse_Any_.
 type RiskOkPaginatedResponseAny struct {
-	Count      *int           `json:"count"`
-	Kind       *string        `json:"kind"`
-	PageNumber *int           `json:"pageNumber"`
-	TotalPages *int           `json:"totalPages"`
-	Values     *[]interface{} `json:"values"`
+	Count      *int           `json:"count,omitempty"`
+	Kind       *string        `json:"kind,omitempty"`
+	PageNumber *int           `json:"pageNumber,omitempty"`
+	TotalPages *int           `json:"totalPages,omitempty"`
+	Values     *[]interface{} `json:"values,omitempty"`
 }
 
 // RiskOnboardingErrorResponse Error response model for onboarding API.
 type RiskOnboardingErrorResponse struct {
 	// Details Additional error details (fallback added if omitted)
-	Details *string `json:"details"`
+	Details *string `json:"details,omitempty"`
 
 	// Error Error message
 	Error string `json:"error"`
 
 	// OrgId Organization ID if available (numeric string)
-	OrgId *string `json:"org_id"`
+	OrgId *string `json:"org_id,omitempty"`
 }
 
 // RiskOnboardingStatusResponse defines model for Risk_OnboardingStatusResponse.
@@ -18646,20 +19482,23 @@ type RiskOpenCVECountFilters struct {
 	Accounts *[]string `json:"accounts,omitempty"`
 
 	// Date Date in YYYY-MM-DD format
-	Date *string `json:"date"`
+	Date *string `json:"date,omitempty"`
 
 	// GroupBy Field to group by (manufacturerName, productName, softwareName, costCenter, businessUnit, location)
 	GroupBy string `json:"groupBy"`
 
 	// Providers List of providers. Use ['all'] for all providers. Supports: aws, azure, gc, onprem
-	Providers *[]string `json:"providers,omitempty"`
+	Providers *[]RiskOpenCVECountFiltersProviders `json:"providers,omitempty"`
 
 	// Regions List of AWS regions. Use ['all'] for all regions
 	Regions *[]string `json:"regions,omitempty"`
 
 	// Services List of services or 'all' (optional)
-	Services *[]string `json:"services"`
+	Services *[]string `json:"services,omitempty"`
 }
+
+// RiskOpenCVECountFiltersProviders defines model for RiskOpenCVECountFilters.Providers.
+type RiskOpenCVECountFiltersProviders string
 
 // RiskRCOSuppressItem Item to be suppressed - can be either a rule or a failed asset.
 //
@@ -18669,13 +19508,13 @@ type RiskOpenCVECountFilters struct {
 // failed-asset suppression.
 type RiskRCOSuppressItem struct {
 	// Args Arguments for the rule (required when suppressing a rule)
-	Args *string `json:"args"`
+	Args *string `json:"args,omitempty"`
 
 	// RiskId Risk ID (required when suppressing a failed asset)
-	RiskId *string `json:"riskId"`
+	RiskId *string `json:"riskId,omitempty"`
 
 	// RuleId Rule ID (required when suppressing a rule)
-	RuleId *string `json:"ruleId"`
+	RuleId *string `json:"ruleId,omitempty"`
 
 	// Suppressed Whether to suppress (true) or unsuppress (false)
 	Suppressed bool `json:"suppressed"`
@@ -18687,7 +19526,7 @@ type RiskRCOSuppressRequest struct {
 	Items []RiskRCOSuppressItem `json:"items"`
 
 	// UserName Name of the user performing the suppress action
-	UserName *string `json:"userName"`
+	UserName *string `json:"userName,omitempty"`
 }
 
 // RiskRCOSuppressResponse Response model for regulatory-compliance suppress API.
@@ -18756,16 +19595,16 @@ type RiskRiskDetailsValue struct {
 	EasyRemediation bool `json:"easyRemediation"`
 
 	// FirstDiscovered Date when risk was first discovered
-	FirstDiscovered *string `json:"firstDiscovered"`
+	FirstDiscovered *string `json:"firstDiscovered,omitempty"`
 
 	// LastScanned Last scan date
-	LastScanned *string `json:"lastScanned"`
+	LastScanned *string `json:"lastScanned,omitempty"`
 
 	// Location Cloud region or location
-	Location *string `json:"location"`
+	Location *string `json:"location,omitempty"`
 
 	// RiskScore Risk score
-	RiskScore *float32 `json:"riskScore"`
+	RiskScore *float32 `json:"riskScore,omitempty"`
 
 	// RuleDescription Full description of the rule
 	RuleDescription string `json:"ruleDescription"`
@@ -18789,7 +19628,7 @@ type RiskRiskDetailsValue struct {
 	Status string `json:"status"`
 
 	// User User associated with the risk
-	User *string `json:"user"`
+	User *string `json:"user,omitempty"`
 }
 
 // RiskSeverityBreakdown Individual severity breakdown in response.
@@ -18819,19 +19658,19 @@ type RiskStandardControlDetailsRequest struct {
 	Accounts []string `json:"accounts"`
 
 	// Category List of control categories to filter by
-	Category *[]string `json:"category"`
+	Category *[]string `json:"category,omitempty"`
 
 	// Etime End time for data in YYYY-MM-DD format
-	Etime *string `json:"etime"`
+	Etime *string `json:"etime,omitempty"`
 
 	// Imc IMC filter flag
-	Imc *bool `json:"imc"`
+	Imc *bool `json:"imc,omitempty"`
 
 	// Level CIS level filter. Allowed values: 1 or 2
-	Level *int `json:"level"`
+	Level *int `json:"level,omitempty"`
 
 	// ProviderType Provider type. Use 'on-prem' to query on-premises compliance data. Omit or set to 'cloud' for cloud provider data.
-	ProviderType *string `json:"providerType"`
+	ProviderType *string `json:"providerType,omitempty"`
 
 	// Providers List of cloud providers. Allowed values: 'aws', 'azure', 'all'
 	Providers []string `json:"providers"`
@@ -18858,13 +19697,13 @@ type RiskSuppressItem struct {
 	Accid string `json:"accid"`
 
 	// Args Arguments for the rule (required when suppressing a rule)
-	Args *string `json:"args"`
+	Args *string `json:"args,omitempty"`
 
 	// RiskId Risk ID (required when suppressing a failed asset)
-	RiskId *string `json:"riskId"`
+	RiskId *string `json:"riskId,omitempty"`
 
 	// RuleId Rule ID (required when suppressing a rule)
-	RuleId *string `json:"ruleId"`
+	RuleId *string `json:"ruleId,omitempty"`
 
 	// Suppressed Whether to suppress (true) or unsuppress (false)
 	Suppressed bool `json:"suppressed"`
@@ -18876,7 +19715,7 @@ type RiskSuppressRequest struct {
 	Items []RiskSuppressItem `json:"items"`
 
 	// UserName Name of the user performing the suppress action
-	UserName *string `json:"userName"`
+	UserName *string `json:"userName,omitempty"`
 }
 
 // RiskSuppressResponse Response model for suppress API.
@@ -18959,13 +19798,13 @@ type RiskYearWiseAssetListPagination struct {
 // RiskYearWiseAssetListRequest defines model for Risk_YearWiseAssetListRequest.
 type RiskYearWiseAssetListRequest struct {
 	// Fields Fields to include in the response.
-	Fields *[]string `json:"fields"`
+	Fields *[]string `json:"fields,omitempty"`
 
 	// Filter Filter expression like 'manufacturer co "Microsoft"'
-	Filter *string `json:"filter"`
+	Filter *string `json:"filter,omitempty"`
 
 	// OrderBy Order expression like 'manufacturer asc'
-	OrderBy    *string                          `json:"orderBy"`
+	OrderBy    *string                          `json:"orderBy,omitempty"`
 	Pagination *RiskYearWiseAssetListPagination `json:"pagination,omitempty"`
 	Scope      *RiskYearWiseAssetListScope      `json:"scope,omitempty"`
 }
@@ -19096,9 +19935,9 @@ type SaasApplicationVndFlexeraFsmGroupType struct {
 // SaasCommonSaasDataName defines model for Saas_CommonSaasDataName.
 type SaasCommonSaasDataName struct {
 	// Name This name is recommended to be specified by the user of the api allowing
-	// 		the user to reference the SaaSData more easily when submitting the ImportJob object. This name
-	// 		must be unique within the context of SaaSData objects for the organization Id. If no name is specified,
-	// 		a UUID Type 4 identifier will be automatically assigned.
+	//         the user to reference the SaaSData more easily when submitting the ImportJob object. This name
+	//         must be unique within the context of SaaSData objects for the organization Id. If no name is specified,
+	//         a UUID Type 4 identifier will be automatically assigned.
 	Name string `json:"name"`
 }
 
@@ -19758,12 +20597,12 @@ type SaasFlexeraFsmImportjob struct {
 	ImportSettings SaasImportSettings `json:"importSettings"`
 
 	// SaasDataList The SaaSData objects to process. The maximum number of SaaSData objects that may be
-	// 							processed for a given ImportJob is ten.
+	//                             processed for a given ImportJob is ten.
 	SaasDataList []SaasFlexeraFsmFiledata `json:"saasDataList"`
 
 	// SourceHref If applicable, the source where this import job was created. Within the context of
-	// 							the /saas APIs, an import job is generally sourced from a managed app. The source can vary
-	// 			 				depending on the task, specified by importSettings.taskName, being run
+	//                             the /saas APIs, an import job is generally sourced from a managed app. The source can vary
+	//                              depending on the task, specified by importSettings.taskName, being run
 	SourceHref string `json:"sourceHref"`
 
 	// StartedAt The date the import job was started within the system.
@@ -20003,27 +20842,27 @@ type SaasFlexeraFsmManagedapplicationevent struct {
 	OccurredAt *string `json:"occurredAt,omitempty"`
 
 	// SubAppName Product key, possible values are
-	// 						O365 Exchange
-	// 						O365 OneDrive
-	// 						O365 SharePoint
-	// 						O365 Skype
-	// 						O365 Yammer
-	// 						O365 Teams
+	//                         O365 Exchange
+	//                         O365 OneDrive
+	//                         O365 SharePoint
+	//                         O365 Skype
+	//                         O365 Yammer
+	//                         O365 Teams
 	SubAppName *string `json:"subAppName,omitempty"`
 
 	// Type Event type, possible values are
-	// 						Product Access
-	// 						Email Access
-	// 						Shared Document Access
-	// 						Calendar Access
-	// 						Message Sent
-	// 						Video Conference
-	// 						CRM Campaign Access
-	// 						CRM Lead Access
-	// 						CRM Deal Access
-	// 						Workflow Access
-	// 						VOIP Call
-	// 						Online Course Completed
+	//                         Product Access
+	//                         Email Access
+	//                         Shared Document Access
+	//                         Calendar Access
+	//                         Message Sent
+	//                         Video Conference
+	//                         CRM Campaign Access
+	//                         CRM Lead Access
+	//                         CRM Deal Access
+	//                         Workflow Access
+	//                         VOIP Call
+	//                         Online Course Completed
 	Type *string `json:"type,omitempty"`
 
 	// UniqueId Unique Id
@@ -21222,6 +22061,383 @@ type SaasUserCountsByEventsPerformedResult struct {
 	UserCounts *[]SaasFlexeraSaasMetricsUserTotalByEventCounts `json:"userCounts,omitempty"`
 }
 
+// UobsAnthropicCreateRequest defines model for Uobs_AnthropicCreateRequest.
+type UobsAnthropicCreateRequest struct {
+	// BaseUrl Anthropic API base URL (optional/Advanced).
+	BaseUrl *string `json:"baseUrl"`
+
+	// ConnectorName Human-readable connector name.
+	ConnectorName string                   `json:"connectorName"`
+	Credentials   UobsAnthropicCredentials `json:"credentials"`
+	Provider      string                   `json:"provider"`
+}
+
+// UobsAnthropicCredentials defines model for Uobs_AnthropicCredentials.
+type UobsAnthropicCredentials struct {
+	// AnalyticsApiKey Anthropic Analytics API key (required). Write-only.
+	AnalyticsApiKey *string `json:"analyticsApiKey,omitempty"`
+}
+
+// UobsAnthropicUpdateRequest defines model for Uobs_AnthropicUpdateRequest.
+type UobsAnthropicUpdateRequest struct {
+	// BaseUrl Anthropic API base URL (optional/Advanced).
+	BaseUrl *string `json:"baseUrl"`
+
+	// ConnectorName Human-readable connector name.
+	ConnectorName *string                   `json:"connectorName"`
+	Credentials   *UobsAnthropicCredentials `json:"credentials,omitempty"`
+	Provider      string                    `json:"provider"`
+}
+
+// UobsAwsOnboardingCreateRequest defines model for Uobs_AwsOnboardingCreateRequest.
+type UobsAwsOnboardingCreateRequest struct {
+	// BillingAccountId Billing Account ID
+	BillingAccountId *string `json:"BillingAccountId"`
+
+	// ConnectorName Connector name.
+	ConnectorName string                 `json:"ConnectorName"`
+	CostAndUsage  *UobsCostAndUsageModel `json:"CostAndUsage,omitempty"`
+
+	// ExternalId External ID.
+	ExternalId *string `json:"ExternalId"`
+
+	// IncludeBPC Include BPC flag.
+	IncludeBPC string `json:"IncludeBPC"`
+
+	// IncludeCostAndUsage Include CCO flag.
+	IncludeCostAndUsage string `json:"IncludeCostAndUsage"`
+
+	// IncludeInventory Include inventory flag.
+	IncludeInventory string `json:"IncludeInventory"`
+
+	// RoleARN Role ARN.
+	RoleARN string `json:"RoleARN"`
+}
+
+// UobsAwsOnboardingUpdateRequest defines model for Uobs_AwsOnboardingUpdateRequest.
+type UobsAwsOnboardingUpdateRequest struct {
+	// ConnectorName Connector name.
+	ConnectorName *string                `json:"ConnectorName"`
+	CostAndUsage  *UobsCostAndUsageModel `json:"CostAndUsage,omitempty"`
+
+	// IncludeBPC Include BPC flag.
+	IncludeBPC *string `json:"IncludeBPC"`
+
+	// IncludeCostAndUsage Include CCO flag.
+	IncludeCostAndUsage *string `json:"IncludeCostAndUsage"`
+
+	// IncludeInventory Include inventory flag.
+	IncludeInventory *string `json:"IncludeInventory"`
+}
+
+// UobsAzureOnboardingCreateRequest defines model for Uobs_AzureOnboardingCreateRequest.
+type UobsAzureOnboardingCreateRequest struct {
+	// BillingAccountId Billing Account ID
+	BillingAccountId *string `json:"BillingAccountId"`
+
+	// ClientId Client ID.
+	ClientId string `json:"ClientId"`
+
+	// ClientSecret Client secret.
+	ClientSecret string `json:"ClientSecret"`
+
+	// ConnectorName Connector name.
+	ConnectorName string                 `json:"ConnectorName"`
+	CostAndUsage  *UobsCostAndUsageModel `json:"CostAndUsage,omitempty"`
+
+	// IncludeBPC Include BPC flag.
+	IncludeBPC string `json:"IncludeBPC"`
+
+	// IncludeCostAndUsage Include CCO flag.
+	IncludeCostAndUsage string `json:"IncludeCostAndUsage"`
+
+	// IncludeInventory Include inventory flag.
+	IncludeInventory string `json:"IncludeInventory"`
+
+	// SubscriptionId Subscription ID.
+	SubscriptionId *string `json:"SubscriptionId"`
+
+	// TenantId Tenant ID.
+	TenantId string `json:"TenantId"`
+
+	// TokenUrl Token URL.
+	TokenUrl string `json:"TokenUrl"`
+}
+
+// UobsAzureOnboardingUpdateRequest defines model for Uobs_AzureOnboardingUpdateRequest.
+type UobsAzureOnboardingUpdateRequest struct {
+	// ConnectorName Connector name.
+	ConnectorName *string                `json:"ConnectorName"`
+	CostAndUsage  *UobsCostAndUsageModel `json:"CostAndUsage,omitempty"`
+
+	// IncludeBPC Include BPC flag.
+	IncludeBPC *string `json:"IncludeBPC"`
+
+	// IncludeCostAndUsage Include CCO flag.
+	IncludeCostAndUsage *string `json:"IncludeCostAndUsage"`
+
+	// IncludeInventory Include inventory flag.
+	IncludeInventory *string `json:"IncludeInventory"`
+
+	// SubscriptionId Subscription ID for Azure provider only.
+	SubscriptionId *string `json:"SubscriptionId"`
+
+	// TenantId Tenant ID for Azure provider only.
+	TenantId *string `json:"TenantId"`
+}
+
+// UobsCostAndUsageModel defines model for Uobs_CostAndUsageModel.
+type UobsCostAndUsageModel struct {
+	BillingAccount  *string `json:"BillingAccount"`
+	BillingS3Bucket *string `json:"BillingS3Bucket"`
+	EffectiveFrom   *string `json:"EffectiveFrom"`
+	ReportPrefix    *string `json:"ReportPrefix"`
+}
+
+// UobsCursorCreateRequest defines model for Uobs_CursorCreateRequest.
+type UobsCursorCreateRequest struct {
+	// ConnectorName Human-readable connector name.
+	ConnectorName string                `json:"connectorName"`
+	Credentials   UobsCursorCredentials `json:"credentials"`
+	Provider      string                `json:"provider"`
+}
+
+// UobsCursorCredentials defines model for Uobs_CursorCredentials.
+type UobsCursorCredentials struct {
+	// AdminApiKey Cursor team Admin API key (required). Sent to Cursor as HTTP Basic auth with the key as username and an empty password. Write-only.
+	AdminApiKey *string `json:"adminApiKey,omitempty"`
+}
+
+// UobsCursorUpdateRequest defines model for Uobs_CursorUpdateRequest.
+type UobsCursorUpdateRequest struct {
+	// ConnectorName Human-readable connector name.
+	ConnectorName *string                `json:"connectorName"`
+	Credentials   *UobsCursorCredentials `json:"credentials,omitempty"`
+	Provider      string                 `json:"provider"`
+}
+
+// UobsErrorResponse defines model for Uobs_ErrorResponse.
+type UobsErrorResponse struct {
+	Fault     *bool  `json:"fault,omitempty"`
+	Id        string `json:"id"`
+	Message   string `json:"message"`
+	Name      string `json:"name"`
+	Temporary *bool  `json:"temporary,omitempty"`
+	Timeout   *bool  `json:"timeout,omitempty"`
+}
+
+// UobsGoogleWorkspaceCreateRequest defines model for Uobs_GoogleWorkspaceCreateRequest.
+type UobsGoogleWorkspaceCreateRequest struct {
+	// AdminSubject Admin user to impersonate via domain-wide delegation.
+	AdminSubject string `json:"adminSubject"`
+
+	// ConnectorName Human-readable connector name.
+	ConnectorName string                         `json:"connectorName"`
+	Credentials   UobsGoogleWorkspaceCredentials `json:"credentials"`
+
+	// PrimaryDomain Primary Google Workspace domain.
+	PrimaryDomain string `json:"primaryDomain"`
+	Provider      string `json:"provider"`
+}
+
+// UobsGoogleWorkspaceCredentials defines model for Uobs_GoogleWorkspaceCredentials.
+type UobsGoogleWorkspaceCredentials struct {
+	// ServiceAccountKey Google service-account JSON key, base64-encoded. Write-only.
+	ServiceAccountKey *string `json:"serviceAccountKey,omitempty"`
+}
+
+// UobsGoogleWorkspaceUpdateRequest defines model for Uobs_GoogleWorkspaceUpdateRequest.
+type UobsGoogleWorkspaceUpdateRequest struct {
+	// AdminSubject Admin user to impersonate via domain-wide delegation.
+	AdminSubject *string `json:"adminSubject"`
+
+	// ConnectorName Human-readable connector name.
+	ConnectorName *string                         `json:"connectorName"`
+	Credentials   *UobsGoogleWorkspaceCredentials `json:"credentials,omitempty"`
+
+	// PrimaryDomain Primary Google Workspace domain.
+	PrimaryDomain *string `json:"primaryDomain"`
+	Provider      string  `json:"provider"`
+}
+
+// UobsN8nCreateRequest defines model for Uobs_N8nCreateRequest.
+type UobsN8nCreateRequest struct {
+	// ConnectorName Human-readable connector name.
+	ConnectorName string             `json:"connectorName"`
+	Credentials   UobsN8nCredentials `json:"credentials"`
+
+	// InstanceUrl Base URL of the n8n instance.
+	InstanceUrl string `json:"instanceUrl"`
+	Provider    string `json:"provider"`
+}
+
+// UobsN8nCredentials defines model for Uobs_N8nCredentials.
+type UobsN8nCredentials struct {
+	// ApiKey n8n personal access token (PAT). Write-only.
+	ApiKey *string `json:"apiKey,omitempty"`
+}
+
+// UobsN8nUpdateRequest defines model for Uobs_N8nUpdateRequest.
+type UobsN8nUpdateRequest struct {
+	// ConnectorName Human-readable connector name.
+	ConnectorName *string             `json:"connectorName"`
+	Credentials   *UobsN8nCredentials `json:"credentials,omitempty"`
+
+	// InstanceUrl Base URL of the n8n instance.
+	InstanceUrl *string `json:"instanceUrl"`
+	Provider    string  `json:"provider"`
+}
+
+// UobsOkResponseAny defines model for Uobs_OkResponse_Any_.
+type UobsOkResponseAny struct {
+	Kind   *string        `json:"kind"`
+	Values *[]interface{} `json:"values"`
+}
+
+// UobsOkResponseSaasConnectorRead defines model for Uobs_OkResponse_SaasConnectorRead_.
+type UobsOkResponseSaasConnectorRead struct {
+	Kind   *string                  `json:"kind"`
+	Values *[]UobsSaasConnectorRead `json:"values"`
+}
+
+// UobsOkResponseValidationResult defines model for Uobs_OkResponse_ValidationResult_.
+type UobsOkResponseValidationResult struct {
+	Kind   *string                 `json:"kind"`
+	Values *[]UobsValidationResult `json:"values"`
+}
+
+// UobsOpenAiCreateRequest defines model for Uobs_OpenAiCreateRequest.
+type UobsOpenAiCreateRequest struct {
+	// BaseUrl OpenAI API base URL (optional/Advanced).
+	BaseUrl *string `json:"baseUrl"`
+
+	// ConnectorName Human-readable connector name.
+	ConnectorName string                `json:"connectorName"`
+	Credentials   UobsOpenAiCredentials `json:"credentials"`
+	Provider      string                `json:"provider"`
+}
+
+// UobsOpenAiCredentials defines model for Uobs_OpenAiCredentials.
+type UobsOpenAiCredentials struct {
+	// AdminApiKey OpenAI Admin API key (required). Write-only.
+	AdminApiKey *string `json:"adminApiKey,omitempty"`
+
+	// ComplianceApiKey OpenAI Compliance API key (optional/Advanced). Write-only.
+	ComplianceApiKey *string `json:"complianceApiKey"`
+
+	// ScimToken OpenAI SCIM token (optional/Advanced). Write-only.
+	ScimToken *string `json:"scimToken"`
+}
+
+// UobsOpenAiUpdateRequest defines model for Uobs_OpenAiUpdateRequest.
+type UobsOpenAiUpdateRequest struct {
+	// BaseUrl OpenAI API base URL (optional/Advanced).
+	BaseUrl *string `json:"baseUrl"`
+
+	// ConnectorName Human-readable connector name.
+	ConnectorName *string                `json:"connectorName"`
+	Credentials   *UobsOpenAiCredentials `json:"credentials,omitempty"`
+	Provider      string                 `json:"provider"`
+}
+
+// UobsSaasConnectorRead defines model for Uobs_SaasConnectorRead.
+type UobsSaasConnectorRead struct {
+	// Config Non-secret, per-provider allow-listed configuration (e.g. instanceUrl, baseUrl, adminSubject, primaryDomain, clientId).
+	Config *map[string]interface{} `json:"config,omitempty"`
+
+	// ConnectorId Connector id (uuid).
+	ConnectorId string `json:"connectorId"`
+
+	// ConnectorName Human-readable connector name.
+	ConnectorName string `json:"connectorName"`
+
+	// CredentialId Primary credential id in the Flexera Credentials service.
+	CredentialId string `json:"credentialId"`
+
+	// EnrollmentStatus Enrollment status: ONBOARDED | IN-PROGRESS | FAILED | OFFBOARDED.
+	EnrollmentStatus *string `json:"enrollmentStatus"`
+
+	// LastRunAt ISO-8601 timestamp of the last execution; null if it has not run.
+	LastRunAt *string `json:"lastRunAt"`
+
+	// LastRunErrors Errors from the last execution (empty if none / not run).
+	LastRunErrors *[]interface{} `json:"lastRunErrors,omitempty"`
+
+	// LastRunStatus Status of the last data-retrieval execution (COMPLETED | FAILED | RUNNING | QUEUED); null if it has not run.
+	LastRunStatus *string `json:"lastRunStatus"`
+
+	// OffboardedAt ISO-8601 timestamp of soft-delete, if offboarded.
+	OffboardedAt *string `json:"offboardedAt"`
+
+	// OnboardedAt ISO-8601 timestamp of first onboarding.
+	OnboardedAt *string `json:"onboardedAt"`
+
+	// OrgId Flexera organization id.
+	OrgId string `json:"orgId"`
+
+	// Provider AICM provider discriminator, e.g. n8n.
+	Provider string `json:"provider"`
+
+	// SecondaryCredentialIds Map of secret-field name -> credential id for any secondary credentials.
+	SecondaryCredentialIds *map[string]string `json:"secondaryCredentialIds,omitempty"`
+
+	// UpdatedAt ISO-8601 timestamp of the last update.
+	UpdatedAt *string `json:"updatedAt"`
+}
+
+// UobsSalesforceAgentforceCreateRequest defines model for Uobs_SalesforceAgentforceCreateRequest.
+type UobsSalesforceAgentforceCreateRequest struct {
+	// ClientId Salesforce connected-app client ID.
+	ClientId string `json:"clientId"`
+
+	// ConnectorName Human-readable connector name.
+	ConnectorName string                              `json:"connectorName"`
+	Credentials   UobsSalesforceAgentforceCredentials `json:"credentials"`
+
+	// InstanceUrl Salesforce instance URL.
+	InstanceUrl string `json:"instanceUrl"`
+	Provider    string `json:"provider"`
+}
+
+// UobsSalesforceAgentforceCredentials defines model for Uobs_SalesforceAgentforceCredentials.
+type UobsSalesforceAgentforceCredentials struct {
+	// ClientSecret Salesforce connected-app client secret (OAuth2 client_credentials). Write-only.
+	ClientSecret *string `json:"clientSecret,omitempty"`
+}
+
+// UobsSalesforceAgentforceUpdateRequest defines model for Uobs_SalesforceAgentforceUpdateRequest.
+type UobsSalesforceAgentforceUpdateRequest struct {
+	// ClientId Salesforce connected-app client ID.
+	ClientId *string `json:"clientId"`
+
+	// ConnectorName Human-readable connector name.
+	ConnectorName *string                              `json:"connectorName"`
+	Credentials   *UobsSalesforceAgentforceCredentials `json:"credentials,omitempty"`
+
+	// InstanceUrl Salesforce instance URL.
+	InstanceUrl *string `json:"instanceUrl"`
+	Provider    string  `json:"provider"`
+}
+
+// UobsValidationResult Verdict from the synchronous connection-test endpoint (AISM-338).
+//
+// Returned at HTTP 200 for every validation outcome (valid, rejected, vendor
+// unreachable, vendor timeout) — the HTTP status reflects the call to us, the
+// verdict lives here.
+type UobsValidationResult struct {
+	// Code On failure, the vendor's real HTTP status (e.g. 401/403), or 502 (could not reach the vendor) / 504 (vendor timed out). Absent on success.
+	Code *int `json:"code"`
+
+	// Detail On failure, the specific vendor/handler detail (secret-free). Absent on success.
+	Detail *string `json:"detail"`
+
+	// Reason On failure, a normalized human-readable message. Absent on success.
+	Reason *string `json:"reason"`
+
+	// Success True when the vendor accepted the submitted credentials.
+	Success bool `json:"success"`
+}
+
 // VisCreateRequestBody defines model for Vis_CreateRequestBody.
 type VisCreateRequestBody struct {
 	// QueryName The query to execute.
@@ -21496,7 +22712,7 @@ type BillingCenterServiceUserBillingCentersIndexParams struct {
 	View *BillingCenterServiceUserBillingCentersIndexParamsView `form:"view,omitempty" json:"view,omitempty"`
 
 	// HighestAccessibleBCsOnly Returns the highest level of billing centers accessible to the user when true
-	// 					and all levels of billing centers accessible to the user when false.
+	//                     and all levels of billing centers accessible to the user when false.
 	HighestAccessibleBCsOnly *bool `form:"highestAccessibleBCsOnly,omitempty" json:"highestAccessibleBCsOnly,omitempty"`
 
 	// ApiVersion API Version, must be specified using this header
@@ -21629,66 +22845,6 @@ type CredCredentialIndexProjectParams struct {
 
 // CredCredentialDeleteProjectParamsScheme defines parameters for CredCredentialDeleteProject.
 type CredCredentialDeleteProjectParamsScheme string
-
-// DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetParams defines parameters for DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGet.
-type DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetParams struct {
-	// ConnectorId Connector ID (required)
-	ConnectorId string `form:"connector_id" json:"connector_id"`
-
-	// AccountId Account ID (optional)
-	AccountId *string `form:"account_id,omitempty" json:"account_id,omitempty"`
-}
-
-// DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetParams defines parameters for DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGet.
-type DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetParams struct {
-	// Limit Maximum number of results
-	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
-
-	// Offset Number of results to skip
-	Offset *int `form:"offset,omitempty" json:"offset,omitempty"`
-
-	// Filter Advanced filter expression for querying connectors.
-	//
-	// ### Supported Fields & Operators
-	//
-	// | Field           | Operators | Description                               |
-	// |-----------------|-----------|-------------------------------------------|
-	// | connectorName   | eq, co    | Exact or contains match on connector name |
-	// | accountId       | eq, co    | Exact / contains match on account ID      |
-	// | provider        | in        | Allowed values based on caller access     |
-	// | createdAt       | ge, le    | Timestamp range filtering                 |
-	// | masterAccountId | eq, co    | Match against master account ID           |
-	// | enrollmentStatus| in        | allowed: ONBOARDED, OFFBOARDED, FAILED, IN-PROGRESS|
-	// | onboardingType  | in        | Filter by type: 'Auto Discovery', 'Individual', 'Linked' |
-	// | billingAccountId| eq, co    | Exact / contains match on billing acct ID |
-	// | products        | in        | Allowed values: 'di', 'bpc', 'cco', 'oe', 'ai'  |
-	//
-	// ### Formatting Rules
-	//
-	// - Operators must be lowercase
-	// - Values must be wrapped in single quotes: `'value'`
-	// - Multiple conditions must be joined using `and`
-	// - Timestamp must use strict ISO format: `YYYY-MM-DDTHH:MM:SS.ffZ`
-	//
-	// ### Examples
-	//
-	// - `connectorName co 'aws'`
-	// - `accountId eq '123456789012'`
-	// - `accountId co '1234'`
-	// - `masterAccountId eq '987654321000'`
-	// - `masterAccountId co '9876'`
-	// - `enrollmentStatus in ['ONBOARDED','OFFBOARDED','FAILED']`
-	// - `provider in ['aws','azure']`
-	// - `createdAt ge '2025-11-01T00:00:00.00Z' and createdAt le '2025-11-30T23:59:00.59Z'`
-	// - `enrollmentStatus in ['error'] and connectorName co 'finops'`
-	// - `onboardingType in ['Auto Discovery','Individual']`
-	// - `billingAccountId eq '123456789012'`
-	// - `billingAccountId co '1234'`
-	// - `products in ['di','bpc']`
-	// - `products in ['oe']`
-	// - `products in ['ai']`
-	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
-}
 
 // DivntTriggerOnboardingDeleteDataInventoryV1OrgsOrgIdOnboardingConnectorIdDeleteParams defines parameters for DivntTriggerOnboardingDeleteDataInventoryV1OrgsOrgIdOnboardingConnectorIdDelete.
 type DivntTriggerOnboardingDeleteDataInventoryV1OrgsOrgIdOnboardingConnectorIdDeleteParams struct {
@@ -21981,6 +23137,104 @@ type FinopsBillingSettingsReplaceSettingsParams struct {
 	IfMatch *string `json:"If-Match,omitempty"`
 }
 
+// FinopsBillingBillingCreditsIndexCreditAssignmentsParams defines parameters for FinopsBillingBillingCreditsIndexCreditAssignments.
+type FinopsBillingBillingCreditsIndexCreditAssignmentsParams struct {
+	// Filter Optional filter for returning credit assignments matching specific criteria.
+	//
+	// Filter parameters may be combined with 'and' and 'or' logical operators.
+	//
+	// ### Credit Assignment Filter Attributes
+	// - billMonth, the bill month (YYYYMM) the assignment applies to
+	// - action, the assignment action: reassign, show, or hide
+	// - name, the name of the credit assignment
+	// - provider, the cloud provider
+	// - targetBillingAccountId, the target billing account identifier
+	// - targetBillingAccountName, the target billing account name
+	// - targetSubAccountId, the target sub-account identifier
+	// - targetSubAccountName, the target sub-account name
+	// - targetCustomerId, the target customer identifier
+	// - credits.description, the charge description of a credit row
+	// - credits.creditType, the CCO line item type of a credit row
+	// - credits.billingAccountId, the source billing account identifier
+	// - credits.billingAccountName, the source billing account name
+	// - credits.subAccountId, the source sub-account identifier
+	// - credits.subAccountName, the source sub-account name
+	// - credits.customerId, the source customer identifier
+	//
+	// ### Credit Assignment Filter Comparisons
+	// - eq, attribute matches the value, e.g. billMonth eq '202601'
+	// - in, attribute is one of the values, e.g. action in ['reassign', 'hide']
+	// - co, attribute contains the value, e.g. credits.description co 'EDP'
+	//
+	// These same field names, except those starting with "credits.", are available for sorting in "orderBy".
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// OrderBy Optional orderBy query allows to specify an expression for determining what values are used to order the entities.
+	//             Multiple expressions can be specified using comma separated values.
+	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
+
+	// Limit Return no more than limit values per page
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
+	// Partial responses will include a "nextPage" attribute in their response body, which contains the URL of the next page including the appropriate skipToken.
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
+}
+
+// FinopsBillingBillingCreditsDeleteCreditAssignmentParams defines parameters for FinopsBillingBillingCreditsDeleteCreditAssignment.
+type FinopsBillingBillingCreditsDeleteCreditAssignmentParams struct {
+	// IfMatch Only modify the resource if this tag is still current.
+	//
+	// Provide the ETag from a prior interaction with the service to avoid losing someone else's update.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsBillingBillingCreditsReplaceCreditAssignmentParams defines parameters for FinopsBillingBillingCreditsReplaceCreditAssignment.
+type FinopsBillingBillingCreditsReplaceCreditAssignmentParams struct {
+	// IfMatch Only modify the resource if this tag is still current.
+	//
+	// Provide the ETag from a prior interaction with the service to avoid losing someone else's update.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
+// FinopsBillingBillingCreditsIndexVendorCreditsParams defines parameters for FinopsBillingBillingCreditsIndexVendorCredits.
+type FinopsBillingBillingCreditsIndexVendorCreditsParams struct {
+	// Filter Optional filter for returning vendor credits matching specific criteria.
+	//
+	// Filter parameters may be combined with 'and' and 'or' logical operators.
+	//
+	// ### Vendor Credits Filter Attributes
+	// - billMonth, the YYYYMM string representing the billing month of a credit row
+	// - chargeDescription, the charge description of a credit row
+	// - creditType, the CCO line item type of a credit row
+	// - amount, the amount of the credit
+	// - customerId, the source customer identifier
+	// - billingAccountId, the source billing account identifier
+	// - billingAccountName, the source billing account name
+	// - subAccountId, the source sub-account identifier
+	// - subAccountName, the source sub-account name
+	// - provider, the cloud provider
+	//
+	// ### Vendor Credits Filter Comparisons
+	// - eq, attribute matches the value, e.g. customerId eq '1001'
+	// - in, attribute is one of the values, e.g. creditType in ['EdpDiscount', 'other']
+	// - co, attribute contains the value, e.g. chargeDescription co 'EDP'
+	//
+	// These same field names are available for sorting in "orderBy".
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// OrderBy Optional orderBy query allows to specify an expression for determining what values are used to order the entities.
+	//             Multiple expressions can be specified using comma separated values.
+	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
+
+	// Limit Return no more than limit values per page
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
+	// Partial responses will include a "nextPage" attribute in their response body, which contains the URL of the next page including the appropriate skipToken.
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
+}
+
 // FinopsBillingSharedCostRulesReorderParams defines parameters for FinopsBillingSharedCostRulesReorder.
 type FinopsBillingSharedCostRulesReorderParams struct {
 	// IfMatch Only modify the collection if this tag is still current. Provide the ETag from a prior GET request for the collection (GET /shared-cost-rules) to ensure the collection state hasn't changed since you viewed it.
@@ -22034,7 +23288,7 @@ type FinopsCustomizationsSavedFiltersIndexParams struct {
 	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
 
 	// OrderBy Optional orderBy query allows to specify an expression for determining what values are used to order the entities.
-	// 			Multiple expressions can be specified using comma separated values.
+	//             Multiple expressions can be specified using comma separated values.
 	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
 
 	// Visibility Optional visibility filter for results.
@@ -22210,19 +23464,19 @@ type IamAccessRuleIndexParams struct {
 	// ### Examples
 	// Find access rules for a specific user
 	//
-	// 	subjectRef eq 'ref:nam:::iam:user:123'
+	//     subjectRef eq 'ref:nam:::iam:user:123'
 	//
 	// Find access rules for a specific user in a specific project
 	//
-	// 	subjectRef eq 'ref:nam:::iam:user:123' and scopeRef eq 'ref:nam:10::iam:project:100'
+	//     subjectRef eq 'ref:nam:::iam:user:123' and scopeRef eq 'ref:nam:10::iam:project:100'
 	//
 	// Find access rules for a particular role
 	//
-	// 	roleName eq 'org_owner'
+	//     roleName eq 'org_owner'
 	//
 	// Find access rules for a specific service account, role and project
 	//
-	// 	subjectRef eq 'ref:nam:10::iam:service-account:456' and scopeRef eq 'ref:nam:10::iam:project:100' and roleName eq 'iam_admin'
+	//     subjectRef eq 'ref:nam:10::iam:service-account:456' and scopeRef eq 'ref:nam:10::iam:project:100' and roleName eq 'iam_admin'
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
 	// View View used to render details of the subject
@@ -22248,22 +23502,22 @@ type IamAPIEventIndexParams struct {
 	//
 	// * Operators must be lowercase
 	//
-	// 	* valid	: eq
-	// 	* invalid : EQ
+	//     * valid    : eq
+	//     * invalid : EQ
 	//
 	// * Filters can be combined using the 'and' logical operator.
 	//
-	//     To return API events which occurred between the two timestamps:	"timestamp ge '2019-10-21T10:20:50Z' and timestamp le '2019-10-22T10:20:50Z'"
+	//     To return API events which occurred between the two timestamps:    "timestamp ge '2019-10-21T10:20:50Z' and timestamp le '2019-10-22T10:20:50Z'"
 	//
 	// * When used as a query string, the filter parameter value must be URL-encoded:
 	//
-	// 		...?filter=(timestamp%20ge%20%272019-10-21T10%3A20%3A50Z%27%20and%20timestamp%20le%20%272019-10-22T10%3A20%3A50Z%27)
+	//         ...?filter=(timestamp%20ge%20%272019-10-21T10%3A20%3A50Z%27%20and%20timestamp%20le%20%272019-10-22T10%3A20%3A50Z%27)
 	//
 	// * When using cURL, the same expression can be URL encoded as follows:
 	//
-	// 		$ curl -s {$BASE_URL}/iam/v1/orgs/100/api-events \
-	// 			-H "Authorization: Bearer $TOKEN" \
-	// 			-G --data-urlencode "filter=(timestamp le '2020-10-21T10:20:50Z')"
+	//         $ curl -s {$BASE_URL}/iam/v1/orgs/100/api-events \
+	//             -H "Authorization: Bearer $TOKEN" \
+	//             -G --data-urlencode "filter=(timestamp le '2020-10-21T10:20:50Z')"
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
 	// Limit The maximum number of events to return per page
@@ -22326,32 +23580,32 @@ type IamCustomizationTypeIndexParams struct {
 	// | Filter | Description | Allowed Operator | Behavior | Example |
 	// | --- | ---| --- | --- | --- |
 	// | id | Filters on the customization type's id | co | Contains - The entire operator value must be a substring of the attribute value for a match. |  id co 'navbar' |
-	// |	|	| eq | Equal - The attribute and operator values must be identical for a match. | id eq 'navbar-logo-url'  |
-	// |	|	| ne | Not Equal - The attribute and operator values are not identical. | id ne 'navbar' |
+	// |    |    | eq | Equal - The attribute and operator values must be identical for a match. | id eq 'navbar-logo-url'  |
+	// |    |    | ne | Not Equal - The attribute and operator values are not identical. | id ne 'navbar' |
 	// | valueType | Filters on the customization type's value type | eq | Equal - The attribute and operator values must be identical for a match. | valueType eq 'URL'  |
-	// |	|	| ne | Not Equal - The attribute and operator values are not identical. | valueType ne 'URL' |
+	// |    |    | ne | Not Equal - The attribute and operator values are not identical. | valueType ne 'URL' |
 	// | authenticationRequired | Filters on the customization type's authentication requirement | eq | Equal - The attribute and operator values must be identical for a match. | authenticationRequired eq 'true'  |
-	// |	|	| ne | Not Equal - The attribute and operator values are not identical. | authenticationRequired ne 'true' |
+	// |    |    | ne | Not Equal - The attribute and operator values are not identical. | authenticationRequired ne 'true' |
 	//
 	// * All operators are case-sensitive and only lowercase is allowed.
 	//
-	// 		e.g:
-	// 			valid	: eq
-	// 			invalid : EQ
+	//         e.g:
+	//             valid    : eq
+	//             invalid : EQ
 	//
 	// * Filters can be combined using the and/or logical operator.
 	//
-	// 		e.g: (id co 'navbar' or id eq 'navbar-logo-url')
+	//         e.g: (id co 'navbar' or id eq 'navbar-logo-url')
 	//
 	// * When used as a query string, the filter parameter value must be URL encoded.
 	//
-	// 		e.g: ?filter=(id%20co%20'navbar'%20or%id%20eq%20'navbar-logo-url')
+	//         e.g: ?filter=(id%20co%20'navbar'%20or%id%20eq%20'navbar-logo-url')
 	//
-	// 	When using cURL, the same expression can be URL encoded as follows:
+	//     When using cURL, the same expression can be URL encoded as follows:
 	//
-	// 		$ curl -s {$BASE_URL}/iam/v1/orgs/{$ORG_ID}/customization-types \
-	// 			-H "Authorization: Bearer $TOKEN" \
-	// 			-G --data-urlencode "filter=(id co 'navbar' or id eq 'navbar-logo-url')"
+	//         $ curl -s {$BASE_URL}/iam/v1/orgs/{$ORG_ID}/customization-types \
+	//             -H "Authorization: Bearer $TOKEN" \
+	//             -G --data-urlencode "filter=(id co 'navbar' or id eq 'navbar-logo-url')"
 	//
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
@@ -22383,28 +23637,28 @@ type IamCustomizationIndexParams struct {
 	// | Filter | Description | Allowed Operator | Behavior | Example |
 	// | --- | ---| --- | --- | --- |
 	// | id | Filters on the customization's id | co | Contains - The entire operator value must be a substring of the attribute value for a match. |  id co 'navbar' |
-	// |	|	| eq | Equal - The attribute and operator values must be identical for a match. | id eq 'navbar-logo-url'  |
-	// |	|	| ne | Not Equal - The attribute and operator values are not identical. | id ne 'navbar-logo-url' |
+	// |    |    | eq | Equal - The attribute and operator values must be identical for a match. | id eq 'navbar-logo-url'  |
+	// |    |    | ne | Not Equal - The attribute and operator values are not identical. | id ne 'navbar-logo-url' |
 	//
 	// * All operators are case-sensitive and only lowercase is allowed.
 	//
-	// 		e.g:
-	// 			valid	: eq
-	// 			invalid : EQ
+	//         e.g:
+	//             valid    : eq
+	//             invalid : EQ
 	//
 	// * Filters can be combined using the and/or logical operator.
 	//
-	// 		e.g: (id co 'navbar' or id eq 'navbar-logo-url')
+	//         e.g: (id co 'navbar' or id eq 'navbar-logo-url')
 	//
 	// * When used as a query string, the filter parameter value must be URL encoded.
 	//
-	// 		e.g: ?filter=(id%20co%20'navbar'%20or%id%20eq%20'navbar-logo-url')
+	//         e.g: ?filter=(id%20co%20'navbar'%20or%id%20eq%20'navbar-logo-url')
 	//
-	// 	When using cURL, the same expression can be URL encoded as follows:
+	//     When using cURL, the same expression can be URL encoded as follows:
 	//
-	// 		$ curl -s {$BASE_URL}/iam/v1/orgs/{$ORG_ID}/customizations \
-	// 			-H "Authorization: Bearer $TOKEN" \
-	// 			-G --data-urlencode "filter=(id co 'navbar' or id eq 'navbar-logo-url')"
+	//         $ curl -s {$BASE_URL}/iam/v1/orgs/{$ORG_ID}/customizations \
+	//             -H "Authorization: Bearer $TOKEN" \
+	//             -G --data-urlencode "filter=(id co 'navbar' or id eq 'navbar-logo-url')"
 	//
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
@@ -22441,22 +23695,22 @@ type IamEventIndexParams struct {
 	//
 	// * Operators must be lowercase
 	//
-	// 	* valid	: eq
-	// 	* invalid : EQ
+	//     * valid    : eq
+	//     * invalid : EQ
 	//
 	// * Filters can be combined using the 'and' logical operator.
 	//
-	//     To return events which occurred between the two timestamps:	"timestamp ge '2019-10-21T10:20:50Z' and timestamp le '2019-10-22T10:20:50Z'"
+	//     To return events which occurred between the two timestamps:    "timestamp ge '2019-10-21T10:20:50Z' and timestamp le '2019-10-22T10:20:50Z'"
 	//
 	// * When used as a query string, the filter parameter value must be URL-encoded:
 	//
-	// 		...?filter=(timestamp%20ge%20%272019-10-21T10%3A20%3A50Z%27%20and%20timestamp%20le%20%272019-10-22T10%3A20%3A50Z%27)
+	//         ...?filter=(timestamp%20ge%20%272019-10-21T10%3A20%3A50Z%27%20and%20timestamp%20le%20%272019-10-22T10%3A20%3A50Z%27)
 	//
 	// * When using cURL, the same expression can be URL encoded as follows:
 	//
-	// 		$ curl -s {$BASE_URL}/iam/v1/orgs/100/events \
-	// 			-H "Authorization: Bearer $TOKEN" \
-	// 			-G --data-urlencode "filter=(timestamp le '2020-10-21T10:20:50Z')"
+	//         $ curl -s {$BASE_URL}/iam/v1/orgs/100/events \
+	//             -H "Authorization: Bearer $TOKEN" \
+	//             -G --data-urlencode "filter=(timestamp le '2020-10-21T10:20:50Z')"
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
 	// Limit The maximum number of events to return per page
@@ -22574,56 +23828,62 @@ type IamServiceAccountClientCreateParams struct {
 	XRecipientPublicKey *string `json:"X-Recipient-Public-Key,omitempty"`
 }
 
+// IamServiceAccountClientRotateParams defines parameters for IamServiceAccountClientRotate.
+type IamServiceAccountClientRotateParams struct {
+	// XRecipientPublicKey Optional recipient public key. When provided, the Rotate response omits clientSecret and instead includes encryptedSecret, iv, authTag, and ephemeralPublicKey so the client secret can be delivered encrypted.
+	XRecipientPublicKey *string `json:"X-Recipient-Public-Key,omitempty"`
+}
+
 // IamUserIndexParams defines parameters for IamUserIndex.
 type IamUserIndexParams struct {
 	// Filter A filter to narrow the number of users to return. Supported
-	// 					 fields in the filter are [email, firstName, lastName, lastUILogin, lastAPILogin, hasActiveRefreshToken]
+	//                      fields in the filter are [email, firstName, lastName, lastUILogin, lastAPILogin, hasActiveRefreshToken]
 	// The following filters are supported:
 	// | Filter | Description | Allowed Operator | Behavior | Example |
 	// | --- | ---| --- | --- | --- |
 	// | email | Filters on the user's email | co | Contains - The entire operator value must be a substring of the attribute value for a match. |  email co 'company.com' |
-	// |	|	| eq | Equal - The attribute and operator values must be identical for a match. | email eq 'jdoe@company.com'  |
-	// |	|	| ne | Not Equal - The attribute and operator values are not identical. | email ne 'jdoe@company.com' |
+	// |    |    | eq | Equal - The attribute and operator values must be identical for a match. | email eq 'jdoe@company.com'  |
+	// |    |    | ne | Not Equal - The attribute and operator values are not identical. | email ne 'jdoe@company.com' |
 	// | firstName | Filters on the user's firstName | co | Contains - The entire operator value must be a substring of the attribute value for a match. |  firstName co 'Jo' |
-	// |	|	| eq | Equal - The attribute and operator values must be identical for a match. | firstName eq 'Jon'  |
-	// |	|	| ne | Not Equal - The attribute and operator values are not identical. | firstName ne 'Jon' |
+	// |    |    | eq | Equal - The attribute and operator values must be identical for a match. | firstName eq 'Jon'  |
+	// |    |    | ne | Not Equal - The attribute and operator values are not identical. | firstName ne 'Jon' |
 	// | lastName | Filters on the user's lastName | co | Contains - The entire operator value must be a substring of the attribute value for a match. |  lastName co 'Jo' |
-	// |	|	| eq | Equal - The attribute and operator values must be identical for a match. | lastName eq 'Johnson'  |
-	// |	|	| ne | Not Equal - The attribute and operator values are not identical. | lastName ne 'Johnson' |
+	// |    |    | eq | Equal - The attribute and operator values must be identical for a match. | lastName eq 'Johnson'  |
+	// |    |    | ne | Not Equal - The attribute and operator values are not identical. | lastName ne 'Johnson' |
 	// | lastUILogin | Filters on the lastUILogin timestamp | gt | Greater than - The lastUILogin timestamp must be greater than the provided value for a match. |  lastUILogin gt  "2021-05-16T16:31:52.1000Z"|
-	// |	|	| lt | Lesser than - The lastUILogin timestamp must be lesser than the provided value for a match. | lastUILogin lt  "2021-05-16T16:31:52.1000Z"  |
-	// |	|	| ge | Greater than or equal - The lastUILogin timestamp must be greater than or equal to the provided value for a match. | lastUILogin ge  "2021-05-16T16:31:52.1000Z"  |
-	// |	|	| le | Lesser than or equal - The lastUILogin timestamp must be lesser than or equal to the provided value for a match. | lastUILogin le  "2021-05-16T16:31:52.1000Z"  |
+	// |    |    | lt | Lesser than - The lastUILogin timestamp must be lesser than the provided value for a match. | lastUILogin lt  "2021-05-16T16:31:52.1000Z"  |
+	// |    |    | ge | Greater than or equal - The lastUILogin timestamp must be greater than or equal to the provided value for a match. | lastUILogin ge  "2021-05-16T16:31:52.1000Z"  |
+	// |    |    | le | Lesser than or equal - The lastUILogin timestamp must be lesser than or equal to the provided value for a match. | lastUILogin le  "2021-05-16T16:31:52.1000Z"  |
 	// | lastAPILogin | Filters on the lastAPILogin timestamp | gt | Greater than - The lastAPILogin timestamp must be greater than the provided value for a match. |  lastAPILogin gt  "2021-05-16T16:31:52.1000Z"|
-	// |	|	| lt | Lesser than - The lastAPILogin timestamp must be lesser than the provided value for a match. | lastAPILogin lt  "2021-05-16T16:31:52.1000Z"  |
-	// |	|	| ge | Greater than or equal - The lastAPILogin timestamp must be greater than or equal to the provided value for a match. | lastAPILogin ge  "2021-05-16T16:31:52.1000Z"  |
-	// |	|	| le | Lesser than or equal - The lastAPILogin timestamp must be lesser than or equal to the provided value for a match. | lastAPILogin le  "2021-05-16T16:31:52.1000Z"  |
+	// |    |    | lt | Lesser than - The lastAPILogin timestamp must be lesser than the provided value for a match. | lastAPILogin lt  "2021-05-16T16:31:52.1000Z"  |
+	// |    |    | ge | Greater than or equal - The lastAPILogin timestamp must be greater than or equal to the provided value for a match. | lastAPILogin ge  "2021-05-16T16:31:52.1000Z"  |
+	// |    |    | le | Lesser than or equal - The lastAPILogin timestamp must be lesser than or equal to the provided value for a match. | lastAPILogin le  "2021-05-16T16:31:52.1000Z"  |
 	// | hasActiveRefreshToken | Filters on whether the user has an active refresh token | eq | Equal - The attribute and operator values must be identical for a match. | hasActiveRefreshToken eq true  |
 	//
 	// * All operators are case-sensitive and only lowercase is allowed.
 	//
-	// 		e.g:
-	// 			valid	: eq
-	// 			invalid : EQ
+	//         e.g:
+	//             valid    : eq
+	//             invalid : EQ
 	//
 	// * Filters can be combined using the and/or logical operator.
 	//
-	// 		e.g: (email co 'flexera.com' and lastUILogin ge '2021-05-16T16:31:52.1000Z')
+	//         e.g: (email co 'flexera.com' and lastUILogin ge '2021-05-16T16:31:52.1000Z')
 	//
 	// * When used as a query string, the filter parameter value must be URL encoded.
 	//
-	// 		e.g: ?filter=(email%20co%20'flexera.com'%20and%20lastUILogin%20ge%20'2021-05-16T16:31:52.1000Z')
+	//         e.g: ?filter=(email%20co%20'flexera.com'%20and%20lastUILogin%20ge%20'2021-05-16T16:31:52.1000Z')
 	//
-	// 	When using cURL, the same expression can be URL encoded as follows:
+	//     When using cURL, the same expression can be URL encoded as follows:
 	//
-	// 		$ curl -s {$BASE_URL}/iam/v1/orgs/{$ORG_ID}/users \
-	// 			-H "Authorization: Bearer $TOKEN" \
-	// 			-G --data-urlencode "filter=(email co 'flexera.com' and lastUILogin ge '2021-05-16T16:31:52.1000Z')"
+	//         $ curl -s {$BASE_URL}/iam/v1/orgs/{$ORG_ID}/users \
+	//             -H "Authorization: Bearer $TOKEN" \
+	//             -G --data-urlencode "filter=(email co 'flexera.com' and lastUILogin ge '2021-05-16T16:31:52.1000Z')"
 	//
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
 	// OrderBy The order by which to sort the users.
-	// 					Supported fields in the orderBy are [firstName, lastName, email, lastUILogin, lastAPILogin]
+	//                     Supported fields in the orderBy are [firstName, lastName, email, lastUILogin, lastAPILogin]
 	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
 
 	// AccessSource Filter users by access source type
@@ -22710,28 +23970,28 @@ type IamMSPCustomerIndexParams struct {
 	// | Filter | Description | Allowed Operator | Behavior | Example |
 	// | --- | ---| --- | --- | --- |
 	// | name | Filters on the organization name | co | Contains - The entire operator value must be a substring of the attribute value for a match. |  name co 'SAP' |
-	// |	|	| eq | Equal - The attribute and operator values must be identical for a match. | name eq 'HP'  |
-	// |	|	| ne | Not Equal - The attribute and operator values are not identical. | name ne 'SAP' |
+	// |    |    | eq | Equal - The attribute and operator values must be identical for a match. | name eq 'HP'  |
+	// |    |    | ne | Not Equal - The attribute and operator values are not identical. | name ne 'SAP' |
 	//
 	// * All operators are case-sensitive and only lowercase is allowed.
 	//
-	// 		e.g:
-	// 			valid	: eq
-	// 			invalid : EQ
+	//         e.g:
+	//             valid    : eq
+	//             invalid : EQ
 	//
 	// * Filters can be combined using the and/or logical operator.
 	//
-	// 		e.g: (name co 'SAP' or name eq 'HP')
+	//         e.g: (name co 'SAP' or name eq 'HP')
 	//
 	// * When used as a query string, the filter parameter value must be URL encoded.
 	//
-	// 		e.g: ?filter=(name%20co%20'SAP'%20or%20name%20eq%20'HP')
+	//         e.g: ?filter=(name%20co%20'SAP'%20or%20name%20eq%20'HP')
 	//
-	// 	When using cURL, the same expression can be URL encoded as follows:
+	//     When using cURL, the same expression can be URL encoded as follows:
 	//
-	// 		$ curl -s {$BASE_URL}/msp/v1/orgs/{$ORG_ID}/customers \
-	// 			-H "Authorization: Bearer $TOKEN" \
-	// 			-G --data-urlencode "filter=(name co 'SAP' or name eq 'HP')"
+	//         $ curl -s {$BASE_URL}/msp/v1/orgs/{$ORG_ID}/customers \
+	//             -H "Authorization: Bearer $TOKEN" \
+	//             -G --data-urlencode "filter=(name co 'SAP' or name eq 'HP')"
 	//
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 }
@@ -22744,28 +24004,28 @@ type IamMSPCustomerTagIndexCustomersParams struct {
 	// | Filter | Description | Allowed Operator | Behavior | Example |
 	// | --- | ---| --- | --- | --- |
 	// | tags | Filters on the tag(s) | co | Contains - The entire operator value must be a substring of the attribute value for a match. |  tags co 'SAP' |
-	// |	|	| eq | Equal - The attribute and operator values must be identical for a match. | tags eq 'HP'  |
-	// |	|	| ne | Not Equal - The attribute and operator values are not identical. | tags ne 'SAP' |
+	// |    |    | eq | Equal - The attribute and operator values must be identical for a match. | tags eq 'HP'  |
+	// |    |    | ne | Not Equal - The attribute and operator values are not identical. | tags ne 'SAP' |
 	//
 	// * All operators are case-sensitive and only lowercase is allowed.
 	//
-	// 		e.g:
-	// 			valid	: eq
-	// 			invalid : EQ
+	//         e.g:
+	//             valid    : eq
+	//             invalid : EQ
 	//
 	// * Filters can be combined using the and/or logical operator.
 	//
-	// 		e.g: (tags co 'SAP' or tags eq 'HP')
+	//         e.g: (tags co 'SAP' or tags eq 'HP')
 	//
 	// * When used as a query string, the filter parameter value must be URL encoded.
 	//
-	// 		e.g: ?filter=(tags%20co%20'SAP'%20or%tags%20eq%20'HP')
+	//         e.g: ?filter=(tags%20co%20'SAP'%20or%tags%20eq%20'HP')
 	//
-	// 	When using cURL, the same expression can be URL encoded as follows:
+	//     When using cURL, the same expression can be URL encoded as follows:
 	//
-	// 		$ curl -s {$BASE_URL}/msp/v1/orgs/{$ORG_ID}/customers/tags \
-	// 			-H "Authorization: Bearer $TOKEN" \
-	// 			-G --data-urlencode "filter=(tags co 'SAP' or tags eq 'HP')"
+	//         $ curl -s {$BASE_URL}/msp/v1/orgs/{$ORG_ID}/customers/tags \
+	//             -H "Authorization: Bearer $TOKEN" \
+	//             -G --data-urlencode "filter=(tags co 'SAP' or tags eq 'HP')"
 	//
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
@@ -22791,28 +24051,28 @@ type IamMSPCustomerV2IndexV2Params struct {
 	// | Filter | Description | Allowed Operator | Behavior | Example |
 	// | --- | ---| --- | --- | --- |
 	// | name | Filters on the organization name | co | Contains - The entire operator value must be a substring of the attribute value for a match. |  name co 'SAP' |
-	// |	|	| eq | Equal - The attribute and operator values must be identical for a match. | name eq 'HP'  |
-	// |	|	| ne | Not Equal - The attribute and operator values are not identical. | name ne 'SAP' |
+	// |    |    | eq | Equal - The attribute and operator values must be identical for a match. | name eq 'HP'  |
+	// |    |    | ne | Not Equal - The attribute and operator values are not identical. | name ne 'SAP' |
 	//
 	// * All operators are case-sensitive and only lowercase is allowed.
 	//
-	// 		e.g:
-	// 			valid	: eq
-	// 			invalid : EQ
+	//         e.g:
+	//             valid    : eq
+	//             invalid : EQ
 	//
 	// * Filters can be combined using the and/or logical operator.
 	//
-	// 		e.g: (name co 'SAP' or name eq 'HP')
+	//         e.g: (name co 'SAP' or name eq 'HP')
 	//
 	// * When used as a query string, the filter parameter value must be URL encoded.
 	//
-	// 		e.g: ?filter=(name%20co%20'SAP'%20or%20name%20eq%20'HP')
+	//         e.g: ?filter=(name%20co%20'SAP'%20or%20name%20eq%20'HP')
 	//
-	// 	When using cURL, the same expression can be URL encoded as follows:
+	//     When using cURL, the same expression can be URL encoded as follows:
 	//
-	// 		$ curl -s {$BASE_URL}/msp/v2/orgs/{$ORG_ID}/customers \
-	// 			-H "Authorization: Bearer $TOKEN" \
-	// 			-G --data-urlencode "filter=(name co 'SAP' or name eq 'HP')"
+	//         $ curl -s {$BASE_URL}/msp/v2/orgs/{$ORG_ID}/customers \
+	//             -H "Authorization: Bearer $TOKEN" \
+	//             -G --data-urlencode "filter=(name co 'SAP' or name eq 'HP')"
 	//
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 }
@@ -23018,13 +24278,13 @@ type PolicyPolicyAggregateIndexParams struct {
 	// - The filter is a query parameter. While it needs to be URL-encoded, examples here are provided pre-URL-encoding for clarity.
 	//
 	// ### Examples
-	// | Example 														   | Description 															  |
+	// | Example                                                            | Description                                                               |
 	// | ---------------------------------------------------------------- | ------------------------------------------------------------------------ |
-	// | name co 'Azure' 												   | Find policies with a name containing the word 'Azure' 					  |
+	// | name co 'Azure'                                                    | Find policies with a name containing the word 'Azure'                       |
 	// | name in ['policy123', 'policy124'] and project in [10017, 10134] | Retrieve policies with any of the specified names from specific projects |
-	// | status eq 'active' and createdBy not eq 1001 					   | Find policies with a status 'active' but not created by user ID 1001 	  |
+	// | status eq 'active' and createdBy not eq 1001                        | Find policies with a status 'active' but not created by user ID 1001       |
 	// | createdAt gt '2022-05-20T00:00:00Z' or schedule eq 'FREQ=DAILY'  | Retrieve policies created after 2022-05-20 or with a specific schedule   |
-	// | dryRun eq true and category eq 'security' 					   | Find policies where dryRun is set to true and category is 'security' 	  |
+	// | dryRun eq true and category eq 'security'                        | Find policies where dryRun is set to true and category is 'security'       |
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
 	// OrderBy Specifies the order to sort policy aggregates by fields such as [name, status, createdAt, updatedAt, createdBy.email, publishedTemplate.name, schedule, dryRun, category]. Ordering can be [asc] or [desc]. Default ordering is [asc] if no value is set.
@@ -23182,23 +24442,23 @@ type PolicyActionStatusShowParamsView string
 type PolicyAppliedPolicyIndexParams struct {
 	// Filter Optional filter for returning applied policies matching specific criteria.
 	// ### Supported Filter Keys
-	// | Filter         		 | Type   | Example                                			   | Description                                                     								 	|
+	// | Filter                  | Type   | Example                                               | Description                                                                                          |
 	// | ---------------------- | ------ | -------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-	// | name           		 | string | name in ['policy123', 'policy124']     			   | Returns applied policies with named either policy123 or policy124    						 	 	|
-	// | metaParentPolicyId	 | string | metaParentPolicyId eq '5b06ead5e0dacc007058c784'   | Returns applied policies with metaParentPolicyId equal to '5b06ead5e0dacc007058c784'			 	|
-	// | recommendationSetId	 | string | recommendationSetId eq '5b06ead5e0dacc007058c784'  | Returns applied policies with recommendationSetId equal to'5b06ead5e0dacc007058c784' 				|
-	// | status         		 | string | status co 'active'                    			   | Returns applied policies with 'status' containing 'active' word 								 	|
-	// | createdBy.email     	 | string | createdBy.email eq 'foouser@email.com'             | Returns applied policies created by user with email equals to 'foouser@email.com'           	 	|
-	// | createdAt     		 | time   | createdAt gt '2022-05-20T00:00:00Z'   			   | Returns applied policies created after 2022-05-20               								 	|
-	// | updatedAt     		 | time   | updatedAt lt '2020-01-01T00:00:00Z'   			   | Returns applied policies updated before 2020-01-01               								 	|
-	// | schedule      		 | string | schedule eq 'FREQ=MONTHLY'                   	   | Returns applied policies with a specific schedule             									 	|
-	// | policyTemplate.name  	 | string | policyTemplate.name co 'AWS'                	   | Returns applied policies with policy template name containing 'AWS' word  						 	|
-	// | publishedTemplate.name | string | publishedTemplate.name eq 'Demo template'          | Returns applied policies with published template name equals to 'Demo template'  				 	|
-	// | category		       	 | string | category eq 'security'                 			   | Returns applied policies with 'security' as category             								 	|
-	// | dryRun        		 | bool   | dryRun eq true                        			   | Returns applied policies with dryRun (Test mode) as true   									 	|
-	// | templateName   		 | string | templateName in ['temp1', 'pubTemp1']      		   | Returns applied policies with policy/published template name either temp1 or pubTemp1   		 	|
-	// | policyTemplate.id  	 | string | policyTemplate.id eq '5b06ead5e0baca007058c784'    | Returns applied policies with policy template id equal to '5b06ead5e0baca007058c784' 				|
-	// | publishedTemplate.id	 | string | publishedTemplate.id eq '65b1a38500aea214ee7437ed' | Returns applied policies with published template id equal to '65b1a38500aea214ee7437ed'			|
+	// | name                    | string | name in ['policy123', 'policy124']                    | Returns applied policies with named either policy123 or policy124                                      |
+	// | metaParentPolicyId     | string | metaParentPolicyId eq '5b06ead5e0dacc007058c784'   | Returns applied policies with metaParentPolicyId equal to '5b06ead5e0dacc007058c784'                 |
+	// | recommendationSetId     | string | recommendationSetId eq '5b06ead5e0dacc007058c784'  | Returns applied policies with recommendationSetId equal to'5b06ead5e0dacc007058c784'                 |
+	// | status                  | string | status co 'active'                                   | Returns applied policies with 'status' containing 'active' word                                      |
+	// | createdBy.email          | string | createdBy.email eq 'foouser@email.com'             | Returns applied policies created by user with email equals to 'foouser@email.com'                    |
+	// | createdAt              | time   | createdAt gt '2022-05-20T00:00:00Z'                  | Returns applied policies created after 2022-05-20                                                    |
+	// | updatedAt              | time   | updatedAt lt '2020-01-01T00:00:00Z'                  | Returns applied policies updated before 2020-01-01                                                    |
+	// | schedule               | string | schedule eq 'FREQ=MONTHLY'                          | Returns applied policies with a specific schedule                                                      |
+	// | policyTemplate.name       | string | policyTemplate.name co 'AWS'                       | Returns applied policies with policy template name containing 'AWS' word                               |
+	// | publishedTemplate.name | string | publishedTemplate.name eq 'Demo template'          | Returns applied policies with published template name equals to 'Demo template'                       |
+	// | category                    | string | category eq 'security'                                | Returns applied policies with 'security' as category                                                  |
+	// | dryRun                 | bool   | dryRun eq true                                       | Returns applied policies with dryRun (Test mode) as true                                            |
+	// | templateName            | string | templateName in ['temp1', 'pubTemp1']                 | Returns applied policies with policy/published template name either temp1 or pubTemp1                |
+	// | policyTemplate.id       | string | policyTemplate.id eq '5b06ead5e0baca007058c784'    | Returns applied policies with policy template id equal to '5b06ead5e0baca007058c784'                 |
+	// | publishedTemplate.id     | string | publishedTemplate.id eq '65b1a38500aea214ee7437ed' | Returns applied policies with published template id equal to '65b1a38500aea214ee7437ed'            |
 	//
 	// ### Supported Operators
 	// - **in** - Checks if the field contains a specified value within a list.
@@ -23213,36 +24473,36 @@ type PolicyAppliedPolicyIndexParams struct {
 	// - The filter is a query parameter. While it needs to be URL-encoded, examples here are provided pre-URL-encoding for clarity.
 	//
 	// ### Examples
-	// | Example 															| Description 															 	   |
+	// | Example                                                             | Description                                                                     |
 	// | ----------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-	// | name eq 'policy123' 												| Find applied policies for a specific name  							 	   |
-	// | name eq 'policy123' or name eq 'policy456' 						| Find applied policies named 'policy123' or named 'policy456' 			 	   |
-	// | metaParentPolicyId eq '5b06ead5e0dacc007058c784' 					| Find applied policies for a particular metaParentPolicyId    			 	   |
-	// | name co 'Azure' 													| Find applied policies with a name containing the word 'Azure' 	   		   |
-	// | status eq 'active' 												| Find applied policies with 'active' status 						   		   |
+	// | name eq 'policy123'                                                 | Find applied policies for a specific name                                      |
+	// | name eq 'policy123' or name eq 'policy456'                         | Find applied policies named 'policy123' or named 'policy456'                     |
+	// | metaParentPolicyId eq '5b06ead5e0dacc007058c784'                     | Find applied policies for a particular metaParentPolicyId                        |
+	// | name co 'Azure'                                                     | Find applied policies with a name containing the word 'Azure'                   |
+	// | status eq 'active'                                                 | Find applied policies with 'active' status                                       |
 	// | createdAt gt '2022-05-20T00:00:00Z' or schedule eq 'FREQ=MONTHLY' | Find applied policies created after 2022-05-20 or with a specific schedule   |
-	// | dryRun eq true and category eq 'security' 						| Find applied policies where dryRun is set to true and category is 'security' |
+	// | dryRun eq true and category eq 'security'                         | Find applied policies where dryRun is set to true and category is 'security' |
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
 	// OrderBy Optional order by for returning applied policies in a specific order.
 	// ### Supported Order by Keys
-	// | Filter         		 | Description                                                     		 							 |
+	// | Filter                  | Description                                                                                           |
 	// | ---------------------- | ------------------------------------------------------------------------------------------------- |
-	// | name           		 | Returns applied policies ordered by 'name' property    				 							 |
-	// | metaParentPolicyId     | Returns applied policies ordered by 'metaParentPolicyId' property     							 |
-	// | recommendationSetId    | Returns applied policies ordered by 'recommendationSetId' property     							 |
-	// | status         		 | Returns applied policies ordered by 'status' property      			 							 |
-	// | createdBy.email  		 | Returns applied policies ordered by 'createdBy.email' property  		 							 |
-	// | createdAt		       	 | Returns applied policies ordered by 'createdAt' property           	 							 |
-	// | updatedAt      		 | Returns applied policies ordered by 'updatedAt' property              							 |
-	// | schedule        		 | Returns applied policies ordered by 'schedule' property   			 							 |
-	// | policyTemplate.name    | Returns applied policies ordered by 'policyTemplate.name' property    							 |
-	// | publishedTemplate.name | Returns applied policies ordered by 'publishedTemplate.name' property 							 |
-	// | category        		 | Returns applied policies ordered by 'category' property   			 							 |
-	// | dryRun        		 | Returns applied policies ordered by 'dryRun' property   				 							 |
-	// | templateName   		 | Returns applied policies ordered by 'policyTemplate.name' and 'publishedTemplate.name' properties |
-	// | policyTemplate.id    	 | Returns applied policies ordered by 'policyTemplate.id' property     							 |
-	// | publishedTemplate.id	 | Returns applied policies ordered by 'publishedTemplate.id' property  							 |
+	// | name                    | Returns applied policies ordered by 'name' property                                                  |
+	// | metaParentPolicyId     | Returns applied policies ordered by 'metaParentPolicyId' property                                  |
+	// | recommendationSetId    | Returns applied policies ordered by 'recommendationSetId' property                                  |
+	// | status                  | Returns applied policies ordered by 'status' property                                                |
+	// | createdBy.email           | Returns applied policies ordered by 'createdBy.email' property                                        |
+	// | createdAt                    | Returns applied policies ordered by 'createdAt' property                                             |
+	// | updatedAt               | Returns applied policies ordered by 'updatedAt' property                                           |
+	// | schedule                 | Returns applied policies ordered by 'schedule' property                                             |
+	// | policyTemplate.name    | Returns applied policies ordered by 'policyTemplate.name' property                                 |
+	// | publishedTemplate.name | Returns applied policies ordered by 'publishedTemplate.name' property                              |
+	// | category                 | Returns applied policies ordered by 'category' property                                             |
+	// | dryRun                 | Returns applied policies ordered by 'dryRun' property                                                 |
+	// | templateName            | Returns applied policies ordered by 'policyTemplate.name' and 'publishedTemplate.name' properties |
+	// | policyTemplate.id         | Returns applied policies ordered by 'policyTemplate.id' property                                  |
+	// | publishedTemplate.id     | Returns applied policies ordered by 'publishedTemplate.id' property                               |
 	//
 	//
 	// ### Notes
@@ -23250,9 +24510,9 @@ type PolicyAppliedPolicyIndexParams struct {
 	// - All orderBy fields support two types of order: "asc" (ascending) and "desc" (descending), "asc" will be used if no one is specified.
 	//
 	// ### Examples
-	// | Example 	| Description 								|
+	// | Example     | Description                                 |
 	// | --------- | ----------------------------------------- |
-	// | name 		| Order applied policies by name ascending  |
+	// | name         | Order applied policies by name ascending  |
 	// | name asc  | Order applied policies by name ascending  |
 	// | name desc | Order applied policies by name descending |
 	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
@@ -23576,13 +24836,13 @@ type PolicyUnmanagedAppliedPoliciesIndexParams struct {
 	// - The filter is a query parameter. While it needs to be URL-encoded, examples here are provided pre-URL-encoding for clarity.
 	//
 	// ### Examples
-	// | Example 														   | Description 															  |
+	// | Example                                                            | Description                                                               |
 	// | ---------------------------------------------------------------- | ------------------------------------------------------------------------ |
-	// | name co 'Azure' 												   | Find policies with a name containing the word 'Azure' 					  |
+	// | name co 'Azure'                                                    | Find policies with a name containing the word 'Azure'                       |
 	// | name in ['policy123', 'policy124'] and project in [10017, 10134] | Retrieve policies with any of the specified names from specific projects |
-	// | status eq 'active' and createdBy not eq 1001 					   | Find policies with a status 'active' but not created by user ID 1001 	  |
+	// | status eq 'active' and createdBy not eq 1001                        | Find policies with a status 'active' but not created by user ID 1001       |
 	// | createdAt gt '2022-05-20T00:00:00Z' or schedule eq 'FREQ=DAILY'  | Retrieve policies created after 2022-05-20 or with a specific schedule   |
-	// | dryRun eq true and category eq 'security' 					   | Find policies where dryRun is set to true and category is 'security' 	  |
+	// | dryRun eq true and category eq 'security'                        | Find policies where dryRun is set to true and category is 'security'       |
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
 	// OrderBy Specifies the order to sort unmanaged items by fields such as [name, status, createdAt, updatedAt, createdBy.email, policyTemplate.name, schedule, dryRun, category]. Ordering can be [asc] or [desc]. Default ordering is [asc] if no value is set.
@@ -23742,28 +25002,28 @@ type SaasCustomerGroupIndexParams struct {
 // SaasDiscoveredApplicationUsageParams defines parameters for SaasDiscoveredApplicationUsage.
 type SaasDiscoveredApplicationUsageParams struct {
 	// Filter The filter to query discovered app usage . Supported fields in the filter are [source.managedAppId, name, category, snapshotAt]
-	// |   Attribute   	  | Description                                                 	 	  | Allowed Operators 	 |        Example            			   |
+	// |   Attribute         | Description                                                            | Allowed Operators      |        Example                           |
 	// |---------------------|-----------------------------------------------------------------------|----------------------|-----------------------------------------|
-	// | source.managedAppId | Filter summarized discovered app usage by Source Managed AppID  	  | eq                	 | source.managedAppId eq '378432'  	   |
-	// | name				  | Filter summarized discovered app usage by Name		 	 	  		  | eq, in, nin, co, ne  | name eq 'Salesforce'					   |
-	// | category			  | Filter summarized discovered app usage by Category	 	 	  		  | eq, in, nin, co, ne  | category eq 'News'					   |
-	// | snapshotAt		  | Filter summarized discovered app usage by snapshot date  		  	  | ge, le				 | snapshotAt ge '2017-05-01T00:00:00.000Z'|
+	// | source.managedAppId | Filter summarized discovered app usage by Source Managed AppID        | eq                     | source.managedAppId eq '378432'         |
+	// | name                  | Filter summarized discovered app usage by Name                              | eq, in, nin, co, ne  | name eq 'Salesforce'                       |
+	// | category              | Filter summarized discovered app usage by Category                          | eq, in, nin, co, ne  | category eq 'News'                       |
+	// | snapshotAt          | Filter summarized discovered app usage by snapshot date                  | ge, le                 | snapshotAt ge '2017-05-01T00:00:00.000Z'|
 	// * All filter values and operators are not case sensitive.
 	//
-	// 		e.g:
-	// 			valid : eq
-	// 			valid : EQ
+	//         e.g:
+	//             valid : eq
+	//             valid : EQ
 	// * Filters can be combined using the 'and/or' logical operator.
-	// 		e.g: (source.managedAppId eq '378432' or name eq 'Salesforce')
+	//         e.g: (source.managedAppId eq '378432' or name eq 'Salesforce')
 	//
 	// * When used as a query string, the filter parameter value must be URL-encoded.
 	//
-	// 	e.g: ?filter=(source.managedAppId%20eq%20'378432'%20or%20name%20eq%20'Salesforce')
-	// 	When using cURL, the same expression can be URL encoded as follows:
+	//     e.g: ?filter=(source.managedAppId%20eq%20'378432'%20or%20name%20eq%20'Salesforce')
+	//     When using cURL, the same expression can be URL encoded as follows:
 	//
-	// 		$ curl -s {$BASE_URL}/saas/v1/orgs/{$ORG_ID}/discovered-app-usage \
-	// 			-H "Authorization: Bearer $TOKEN" \
-	// 			-G --data-urlencode "filter=(source.managedAppId eq '378432' and name eq 'Salesforce')"
+	//         $ curl -s {$BASE_URL}/saas/v1/orgs/{$ORG_ID}/discovered-app-usage \
+	//             -H "Authorization: Bearer $TOKEN" \
+	//             -G --data-urlencode "filter=(source.managedAppId eq '378432' and name eq 'Salesforce')"
 	//
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
@@ -24025,20 +25285,20 @@ type SaasUsageMessageQueryIndexParams struct {
 	// | usageGroup    | Filter usage consumption by their usageGroup                | eq                | usageGroup eq 'Contacts'   |
 	// * All filter values and operators are not case sensitive.
 	//
-	// 		e.g:
-	// 			valid : eq
-	// 			valid : EQ
+	//         e.g:
+	//             valid : eq
+	//             valid : EQ
 	// * Filters can be combined using the 'and/or' logical operator.
-	// 		e.g: (managedAppId eq '378432' or sourceId eq '986435')
+	//         e.g: (managedAppId eq '378432' or sourceId eq '986435')
 	//
 	// * When used as a query string, the filter parameter value must be URL-encoded.
 	//
-	// 	e.g: ?filter=(managedAppId%20eq%20'378432'%20or%20sourceId%20eq%20'986435')
-	// 	When using cURL, the same expression can be URL encoded as follows:
+	//     e.g: ?filter=(managedAppId%20eq%20'378432'%20or%20sourceId%20eq%20'986435')
+	//     When using cURL, the same expression can be URL encoded as follows:
 	//
-	// 		$ curl -s {$BASE_URL}/ent/v1/orgs/{$ORG_ID}/contracts \
-	// 			-H "Authorization: Bearer $TOKEN" \
-	// 			-G --data-urlencode "filter=(managedAppId eq '378432' and 20sourceId eq '986435')"
+	//         $ curl -s {$BASE_URL}/ent/v1/orgs/{$ORG_ID}/contracts \
+	//             -H "Authorization: Bearer $TOKEN" \
+	//             -G --data-urlencode "filter=(managedAppId eq '378432' and 20sourceId eq '986435')"
 	//
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
@@ -24059,7 +25319,7 @@ type SaasUsageMessageQueryIndexParamsView string
 // IamSCIMGroupIndexParams defines parameters for IamSCIMGroupIndex.
 type IamSCIMGroupIndexParams struct {
 	// Filter A filter to narrow the number of groups to return. Supported
-	// 					 fields in the filter are [id, displayName]
+	//                      fields in the filter are [id, displayName]
 	// The following filters are supported:
 	// | Filter | Description | Allowed Operator | Behavior | Example |
 	// | --- | ---| --- | --- | --- |
@@ -24068,19 +25328,19 @@ type IamSCIMGroupIndexParams struct {
 	//
 	// * All operators are case-insensitive according to RFC 7644.
 	//
-	// 		e.g:
-	// 			valid  : eq
-	// 			valid  : EQ
+	//         e.g:
+	//             valid  : eq
+	//             valid  : EQ
 	//
 	// * When used as a query string, the filter parameter value must be URL encoded.
 	//
-	// 		e.g: ?filter=(id%20eq%20'586859'%20)
+	//         e.g: ?filter=(id%20eq%20'586859'%20)
 	//
-	// 	When using cURL, the same expression can be URL encoded as follows:
+	//     When using cURL, the same expression can be URL encoded as follows:
 	//
-	// 		$ curl -s {$BASE_URL}/scim/v2/orgs/{$ORG_ID}/Groups \
-	// 			-H "Authorization: Bearer $TOKEN" \
-	// 			-G --data-urlencode "filter=(id eq '586859')"
+	//         $ curl -s {$BASE_URL}/scim/v2/orgs/{$ORG_ID}/Groups \
+	//             -H "Authorization: Bearer $TOKEN" \
+	//             -G --data-urlencode "filter=(id eq '586859')"
 	//
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 }
@@ -24088,7 +25348,7 @@ type IamSCIMGroupIndexParams struct {
 // IamSCIMUserIndexParams defines parameters for IamSCIMUserIndex.
 type IamSCIMUserIndexParams struct {
 	// Filter A filter to narrow the number of users to return. Supported
-	// 					 fields in the filter are [id, UserName]
+	//                      fields in the filter are [id, UserName]
 	// The following filters are supported:
 	// | Filter | Description | Allowed Operator | Behavior | Example |
 	// | --- | ---| --- | --- | --- |
@@ -24097,25 +25357,145 @@ type IamSCIMUserIndexParams struct {
 	//
 	// * All operators are case-insensitive according to RFC 7644.
 	//
-	// 		e.g:
-	// 			valid  : eq
-	// 			valid  : EQ
+	//         e.g:
+	//             valid  : eq
+	//             valid  : EQ
 	//
 	// * When used as a query string, the filter parameter value must be URL encoded.
 	//
-	// 		e.g: ?filter=(id%20eq%20'586859'%20)
+	//         e.g: ?filter=(id%20eq%20'586859'%20)
 	//
-	// 	When using cURL, the same expression can be URL encoded as follows:
+	//     When using cURL, the same expression can be URL encoded as follows:
 	//
-	// 		$ curl -s {$BASE_URL}/scim/v2/orgs/{$ORG_ID}/users \
-	// 			-H "Authorization: Bearer $TOKEN" \
-	// 			-G --data-urlencode "filter=(id eq '586859')"
+	//         $ curl -s {$BASE_URL}/scim/v2/orgs/{$ORG_ID}/users \
+	//             -H "Authorization: Bearer $TOKEN" \
+	//             -G --data-urlencode "filter=(id eq '586859')"
 	//
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 }
 
-// VisExportParams defines parameters for VisExport.
-type VisExportParams struct {
+// UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetParams defines parameters for UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGet.
+type UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetParams struct {
+	// Limit Maximum number of results
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Offset Number of results to skip
+	Offset *int `form:"offset,omitempty" json:"offset,omitempty"`
+
+	// Filter Advanced filter expression for querying connectors.
+	//
+	// ### Supported Fields & Operators
+	//
+	// | Field           | Operators | Description                               |
+	// |-----------------|-----------|-------------------------------------------|
+	// | connectorName   | eq, co    | Exact or contains match on connector name |
+	// | accountId       | eq, co    | Exact / contains match on account ID      |
+	// | provider        | in        | Allowed values based on caller access     |
+	// | createdAt       | ge, le    | Timestamp range filtering                 |
+	// | masterAccountId | eq, co    | Match against master account ID           |
+	// | enrollmentStatus| in        | allowed: ONBOARDED, OFFBOARDED, FAILED, IN-PROGRESS|
+	// | onboardingType  | in        | Filter by type: 'Auto Discovery', 'Individual', 'Linked' |
+	// | billingAccountId| eq, co    | Exact / contains match on billing acct ID |
+	// | products        | in        | Allowed values: 'di', 'bpc', 'cco', 'oe', 'ai'  |
+	//
+	// ### Formatting Rules
+	//
+	// - Operators must be lowercase
+	// - Values must be wrapped in single quotes: `'value'`
+	// - Multiple conditions must be joined using `and`
+	// - Timestamp must use strict ISO format: `YYYY-MM-DDTHH:MM:SS.ffZ`
+	//
+	// ### Examples
+	//
+	// - `connectorName co 'aws'`
+	// - `accountId eq '123456789012'`
+	// - `accountId co '1234'`
+	// - `masterAccountId eq '987654321000'`
+	// - `masterAccountId co '9876'`
+	// - `enrollmentStatus in ['ONBOARDED','OFFBOARDED','FAILED']`
+	// - `provider in ['aws','azure']`
+	// - `createdAt ge '2025-11-01T00:00:00.00Z' and createdAt le '2025-11-30T23:59:00.59Z'`
+	// - `enrollmentStatus in ['error'] and connectorName co 'finops'`
+	// - `onboardingType in ['Auto Discovery','Individual']`
+	// - `billingAccountId eq '123456789012'`
+	// - `billingAccountId co '1234'`
+	// - `products in ['di','bpc']`
+	// - `products in ['oe']`
+	// - `products in ['ai']`
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+}
+
+// UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetParams defines parameters for UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGet.
+type UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetParams struct {
+	// ConnectorId Connector ID (required)
+	ConnectorId string `form:"connector_id" json:"connector_id"`
+
+	// AccountId Account ID (optional)
+	AccountId *string `form:"account_id,omitempty" json:"account_id,omitempty"`
+}
+
+// UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams defines parameters for UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDelete.
+type UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams struct {
+	// Provider Provider (aws/azure)
+	Provider string `form:"provider" json:"provider"`
+
+	// ConnectorId Connector ID
+	ConnectorId string `form:"connector_id" json:"connector_id"`
+}
+
+// UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetParams defines parameters for UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGet.
+type UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetParams struct {
+	// Limit Maximum number of results
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Offset Number of results to skip
+	Offset *int `form:"offset,omitempty" json:"offset,omitempty"`
+
+	// Filter Advanced filter expression for AICM connectors.
+	//
+	// | Field            | Operators | Description |
+	// |------------------|-----------|-------------|
+	// | connectorName    | eq, co    | Exact or contains match on connector name |
+	// | provider         | in        | n8n, anthropic, openAi, cursor, salesforceAgentforce, googleWorkspace |
+	// | status           | in        | enrollment status: enabled, failed, deleted, in-progress |
+	// | executionStatus  | in        | last-run status: COMPLETED, FAILED, RUNNING, QUEUED |
+	//
+	// Values must be single-quoted; join conditions with `and`.
+	//
+	// Examples:
+	// - `connectorName co 'prod'`
+	// - `provider in ['n8n','anthropic']`
+	// - `status in ['enabled']`
+	// - `executionStatus in ['FAILED']`
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// Sort Sort field, optionally with direction as `field:asc|desc` (default desc; NULLs last). Fields: connectorName, provider, enrollmentStatus, executionStatus, lastRunAt, onboardedAt, updatedAt. Example: `lastRunAt:desc`.
+	Sort *string `form:"sort,omitempty" json:"sort,omitempty"`
+}
+
+// UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetParams defines parameters for UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGet.
+type UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetParams struct {
+	// ConnectorId Connector ID (required)
+	ConnectorId string `form:"connector_id" json:"connector_id"`
+}
+
+// UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostJSONBody defines parameters for UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPost.
+type UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostJSONBody struct {
+	union json.RawMessage
+}
+
+// UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostJSONBody defines parameters for UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePost.
+type UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostJSONBody struct {
+	union json.RawMessage
+}
+
+// UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutJSONBody defines parameters for UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPut.
+type UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutJSONBody struct {
+	union json.RawMessage
+}
+
+// VisExportIndexParams defines parameters for VisExportIndex.
+type VisExportIndexParams struct {
 	// Filter Optional filter for returning requests matching specific criteria.
 	//
 	// The following filters are supported:
@@ -24131,19 +25511,19 @@ type VisExportParams struct {
 	//
 	// * All operators are case-sensitive and only lowercase is allowed.
 	//
-	// 		e.g:
-	// 			valid	: eq
-	// 			invalid : EQ
+	//         e.g:
+	//             valid    : eq
+	//             invalid : EQ
 	// * Filters can be combined using the and/or logical operator.
-	// 		e.g: (name co 'hardware' or name eq 'software_technopedia')
+	//         e.g: (name co 'hardware' or name eq 'software_technopedia')
 	//
 	// * When used as a query string, the filter parameter value must be URL encoded.
 	//
-	// 		e.g: ?filter=(name%20co%20'hardware'%20or%20name%20eq%20'software_technopedia')
-	// 	When using cURL, the same expression can be URL encoded as follows:
-	// 		$ curl -s {$BASE_URL}/vis/v2/orgs/{$ORG_ID}/exports \
-	// 			-H "Authorization: Bearer $TOKEN" \
-	// 			-G --data-urlencode "filter=(name co 'hardware' or name eq 'software_technopedia')"
+	//         e.g: ?filter=(name%20co%20'hardware'%20or%20name%20eq%20'software_technopedia')
+	//     When using cURL, the same expression can be URL encoded as follows:
+	//         $ curl -s {$BASE_URL}/vis/v2/orgs/{$ORG_ID}/exports \
+	//             -H "Authorization: Bearer $TOKEN" \
+	//             -G --data-urlencode "filter=(name co 'hardware' or name eq 'software_technopedia')"
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
 	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
@@ -24401,6 +25781,15 @@ type FinopsBillingBillingReplaceEnterpriseRuleJSONRequestBody = FinopsBillingCre
 // FinopsBillingSettingsReplaceSettingsJSONRequestBody defines body for FinopsBillingSettingsReplaceSettings for application/json ContentType.
 type FinopsBillingSettingsReplaceSettingsJSONRequestBody = FinopsBillingReplaceSettingsRequestBody
 
+// FinopsBillingBillingAuditIndexAuditResultsJSONRequestBody defines body for FinopsBillingBillingAuditIndexAuditResults for application/json ContentType.
+type FinopsBillingBillingAuditIndexAuditResultsJSONRequestBody = FinopsBillingAuditRequest
+
+// FinopsBillingBillingCreditsCreateCreditAssignmentJSONRequestBody defines body for FinopsBillingBillingCreditsCreateCreditAssignment for application/json ContentType.
+type FinopsBillingBillingCreditsCreateCreditAssignmentJSONRequestBody = FinopsBillingCreateCreditAssignmentRequestBody
+
+// FinopsBillingBillingCreditsReplaceCreditAssignmentJSONRequestBody defines body for FinopsBillingBillingCreditsReplaceCreditAssignment for application/json ContentType.
+type FinopsBillingBillingCreditsReplaceCreditAssignmentJSONRequestBody = FinopsBillingCreateCreditAssignmentRequestBody
+
 // FinopsBillingSharedCostRulesCreateJSONRequestBody defines body for FinopsBillingSharedCostRulesCreate for application/json ContentType.
 type FinopsBillingSharedCostRulesCreateJSONRequestBody = FinopsBillingCreateRequestBody
 
@@ -24565,6 +25954,12 @@ type IamServiceAccountUpdateJSONRequestBody = IamUpdateRequestBody5
 
 // IamUserCreateJSONRequestBody defines body for IamUserCreate for application/json ContentType.
 type IamUserCreateJSONRequestBody = IamCreateRequestBody12
+
+// IamUserUpdateJSONRequestBody defines body for IamUserUpdate for application/json ContentType.
+type IamUserUpdateJSONRequestBody = IamUpdateRequestBody8
+
+// IamUserProfileUpdateJSONRequestBody defines body for IamUserProfileUpdate for application/json ContentType.
+type IamUserProfileUpdateJSONRequestBody = IamUpdateRequestBody8
 
 // IamUserSettingBlobRetrivePutUrlJSONRequestBody defines body for IamUserSettingBlobRetrivePutUrl for application/json ContentType.
 type IamUserSettingBlobRetrivePutUrlJSONRequestBody = IamRetrivePutURLRequestBody
@@ -24832,6 +26227,27 @@ type IamSCIMUserUpdateJSONRequestBody = IamUpdateRequestBody4
 
 // IamSCIMUserReplaceJSONRequestBody defines body for IamSCIMUserReplace for application/json ContentType.
 type IamSCIMUserReplaceJSONRequestBody = IamReplaceRequestBody2
+
+// UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostJSONRequestBody defines body for UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPost for application/json ContentType.
+type UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostJSONRequestBody = UobsAwsOnboardingCreateRequest
+
+// UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutJSONRequestBody defines body for UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPut for application/json ContentType.
+type UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutJSONRequestBody = UobsAwsOnboardingUpdateRequest
+
+// UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostJSONRequestBody defines body for UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePost for application/json ContentType.
+type UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostJSONRequestBody = UobsAzureOnboardingCreateRequest
+
+// UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutJSONRequestBody defines body for UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPut for application/json ContentType.
+type UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutJSONRequestBody = UobsAzureOnboardingUpdateRequest
+
+// UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostJSONRequestBody defines body for UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPost for application/json ContentType.
+type UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostJSONRequestBody UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostJSONBody
+
+// UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostJSONRequestBody defines body for UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePost for application/json ContentType.
+type UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostJSONRequestBody UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostJSONBody
+
+// UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutJSONRequestBody defines body for UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPut for application/json ContentType.
+type UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutJSONRequestBody UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutJSONBody
 
 // VisDeviceEstimateDeleteJSONRequestBody defines body for VisDeviceEstimateDelete for application/json ContentType.
 type VisDeviceEstimateDeleteJSONRequestBody = VisEstimateDeleteRequestBody
@@ -25509,18 +26925,6 @@ type ClientInterface interface {
 	// CredCredentialDeleteProject request
 	CredCredentialDeleteProject(ctx context.Context, projectId int64, scheme CredCredentialDeleteProjectParamsScheme, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGet request
-	DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGet(ctx context.Context, orgId string, params *DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGet request
-	DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGet(ctx context.Context, orgId string, params *DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGet request
-	DivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGet(ctx context.Context, orgId string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// DivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGet request
-	DivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGet(ctx context.Context, orgId string, identifier string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
 	// DivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostWithBody request with any body
 	DivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -25657,6 +27061,33 @@ type ClientInterface interface {
 	FinopsBillingSettingsReplaceSettingsWithBody(ctx context.Context, orgId int, params *FinopsBillingSettingsReplaceSettingsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	FinopsBillingSettingsReplaceSettings(ctx context.Context, orgId int, params *FinopsBillingSettingsReplaceSettingsParams, body FinopsBillingSettingsReplaceSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingAuditIndexAuditResultsWithBody request with any body
+	FinopsBillingBillingAuditIndexAuditResultsWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingBillingAuditIndexAuditResults(ctx context.Context, orgId int, body FinopsBillingBillingAuditIndexAuditResultsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingCreditsIndexCreditAssignments request
+	FinopsBillingBillingCreditsIndexCreditAssignments(ctx context.Context, orgId int, params *FinopsBillingBillingCreditsIndexCreditAssignmentsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingCreditsCreateCreditAssignmentWithBody request with any body
+	FinopsBillingBillingCreditsCreateCreditAssignmentWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingBillingCreditsCreateCreditAssignment(ctx context.Context, orgId int, body FinopsBillingBillingCreditsCreateCreditAssignmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingCreditsDeleteCreditAssignment request
+	FinopsBillingBillingCreditsDeleteCreditAssignment(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingCreditsDeleteCreditAssignmentParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingCreditsShowCreditAssignment request
+	FinopsBillingBillingCreditsShowCreditAssignment(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingCreditsReplaceCreditAssignmentWithBody request with any body
+	FinopsBillingBillingCreditsReplaceCreditAssignmentWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingCreditsReplaceCreditAssignmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingBillingCreditsReplaceCreditAssignment(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingCreditsReplaceCreditAssignmentParams, body FinopsBillingBillingCreditsReplaceCreditAssignmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingCreditsIndexVendorCredits request
+	FinopsBillingBillingCreditsIndexVendorCredits(ctx context.Context, orgId int, params *FinopsBillingBillingCreditsIndexVendorCreditsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// FinopsBillingSharedCostRulesIndex request
 	FinopsBillingSharedCostRulesIndex(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -26237,6 +27668,12 @@ type ClientInterface interface {
 	// IamServiceAccountClientShow request
 	IamServiceAccountClientShow(ctx context.Context, orgId int, serviceAccountId int, clientId string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// IamServiceAccountClientDeleteOldSecret request
+	IamServiceAccountClientDeleteOldSecret(ctx context.Context, orgId int, serviceAccountId int, clientId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// IamServiceAccountClientRotate request
+	IamServiceAccountClientRotate(ctx context.Context, orgId int, serviceAccountId int, clientId string, params *IamServiceAccountClientRotateParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// IamUserIndex request
 	IamUserIndex(ctx context.Context, orgId int, params *IamUserIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -26250,6 +27687,11 @@ type ClientInterface interface {
 
 	// IamUserShow request
 	IamUserShow(ctx context.Context, orgId int, id int, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// IamUserUpdateWithBody request with any body
+	IamUserUpdateWithBody(ctx context.Context, orgId int, id int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	IamUserUpdate(ctx context.Context, orgId int, id int, body IamUserUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// IamUserUserGroups request
 	IamUserUserGroups(ctx context.Context, orgId int, id int, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -26265,6 +27707,14 @@ type ClientInterface interface {
 
 	// IamRefreshTokenShow request
 	IamRefreshTokenShow(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// IamUserProfileShow request
+	IamUserProfileShow(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// IamUserProfileUpdateWithBody request with any body
+	IamUserProfileUpdateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	IamUserProfileUpdate(ctx context.Context, body IamUserProfileUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// IamUserSettingBlobRetriveGetUrl request
 	IamUserSettingBlobRetriveGetUrl(ctx context.Context, params *IamUserSettingBlobRetriveGetUrlParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -27065,6 +28515,74 @@ type ClientInterface interface {
 
 	IamSCIMUserReplace(ctx context.Context, orgId int, id string, body IamSCIMUserReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGet request
+	UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGet(ctx context.Context, orgId string, params *UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGet request
+	UobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGet(ctx context.Context, orgId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGet request
+	UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGet(ctx context.Context, orgId string, params *UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGet request
+	UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGet(ctx context.Context, orgId string, identifier string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDelete request
+	UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDelete(ctx context.Context, orgId string, params *UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithBody request with any body
+	UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPost(ctx context.Context, orgId string, body UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithBody request with any body
+	UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithBody(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPut(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithBody request with any body
+	UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePost(ctx context.Context, orgId string, body UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithBody request with any body
+	UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithBody(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPut(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGet request
+	UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGet(ctx context.Context, orgId string, params *UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGet request
+	UobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGet(ctx context.Context, orgId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGet request
+	UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGet(ctx context.Context, orgId string, params *UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGet request
+	UobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGet(ctx context.Context, orgId string, identifier string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostWithBody request with any body
+	UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPost(ctx context.Context, orgId string, body UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostWithBody request with any body
+	UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePost(ctx context.Context, orgId string, body UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDelete request
+	UobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDelete(ctx context.Context, orgId string, connectorId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutWithBody request with any body
+	UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutWithBody(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPut(ctx context.Context, orgId string, connectorId string, body UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPost request
+	UobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPost(ctx context.Context, orgId string, connectorId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// VisDeviceEstimateDeleteWithBody request with any body
 	VisDeviceEstimateDeleteWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -27075,11 +28593,11 @@ type ClientInterface interface {
 
 	VisDeviceDelete(ctx context.Context, orgId int, body VisDeviceDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VisExport request
-	VisExport(ctx context.Context, orgId int, params *VisExportParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// VisExportIndex request
+	VisExportIndex(ctx context.Context, orgId int, params *VisExportIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// VisExport2 request
-	VisExport2(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// VisExportDownload request
+	VisExportDownload(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// VisQueryCreateWithBody request with any body
 	VisQueryCreateWithBody(ctx context.Context, orgId int, params *VisQueryCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -29162,54 +30680,6 @@ func (c *Client) CredCredentialDeleteProject(ctx context.Context, projectId int6
 	return c.Client.Do(req)
 }
 
-func (c *Client) DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGet(ctx context.Context, orgId string, params *DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetRequest(c.Server, orgId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGet(ctx context.Context, orgId string, params *DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetRequest(c.Server, orgId, params)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) DivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGet(ctx context.Context, orgId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetRequest(c.Server, orgId)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) DivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGet(ctx context.Context, orgId string, identifier string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewDivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetRequest(c.Server, orgId, identifier)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
 func (c *Client) DivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewDivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
@@ -29812,6 +31282,126 @@ func (c *Client) FinopsBillingSettingsReplaceSettingsWithBody(ctx context.Contex
 
 func (c *Client) FinopsBillingSettingsReplaceSettings(ctx context.Context, orgId int, params *FinopsBillingSettingsReplaceSettingsParams, body FinopsBillingSettingsReplaceSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewFinopsBillingSettingsReplaceSettingsRequest(c.Server, orgId, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingAuditIndexAuditResultsWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingAuditIndexAuditResultsRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingAuditIndexAuditResults(ctx context.Context, orgId int, body FinopsBillingBillingAuditIndexAuditResultsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingAuditIndexAuditResultsRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingCreditsIndexCreditAssignments(ctx context.Context, orgId int, params *FinopsBillingBillingCreditsIndexCreditAssignmentsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingCreditsIndexCreditAssignmentsRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingCreditsCreateCreditAssignmentWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingCreditsCreateCreditAssignmentRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingCreditsCreateCreditAssignment(ctx context.Context, orgId int, body FinopsBillingBillingCreditsCreateCreditAssignmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingCreditsCreateCreditAssignmentRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingCreditsDeleteCreditAssignment(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingCreditsDeleteCreditAssignmentParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingCreditsDeleteCreditAssignmentRequest(c.Server, orgId, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingCreditsShowCreditAssignment(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingCreditsShowCreditAssignmentRequest(c.Server, orgId, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingCreditsReplaceCreditAssignmentWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingCreditsReplaceCreditAssignmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingCreditsReplaceCreditAssignmentRequestWithBody(c.Server, orgId, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingCreditsReplaceCreditAssignment(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingCreditsReplaceCreditAssignmentParams, body FinopsBillingBillingCreditsReplaceCreditAssignmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingCreditsReplaceCreditAssignmentRequest(c.Server, orgId, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingCreditsIndexVendorCredits(ctx context.Context, orgId int, params *FinopsBillingBillingCreditsIndexVendorCreditsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingCreditsIndexVendorCreditsRequest(c.Server, orgId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -32354,6 +33944,30 @@ func (c *Client) IamServiceAccountClientShow(ctx context.Context, orgId int, ser
 	return c.Client.Do(req)
 }
 
+func (c *Client) IamServiceAccountClientDeleteOldSecret(ctx context.Context, orgId int, serviceAccountId int, clientId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamServiceAccountClientDeleteOldSecretRequest(c.Server, orgId, serviceAccountId, clientId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) IamServiceAccountClientRotate(ctx context.Context, orgId int, serviceAccountId int, clientId string, params *IamServiceAccountClientRotateParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamServiceAccountClientRotateRequest(c.Server, orgId, serviceAccountId, clientId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) IamUserIndex(ctx context.Context, orgId int, params *IamUserIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewIamUserIndexRequest(c.Server, orgId, params)
 	if err != nil {
@@ -32414,6 +34028,30 @@ func (c *Client) IamUserShow(ctx context.Context, orgId int, id int, reqEditors 
 	return c.Client.Do(req)
 }
 
+func (c *Client) IamUserUpdateWithBody(ctx context.Context, orgId int, id int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamUserUpdateRequestWithBody(c.Server, orgId, id, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) IamUserUpdate(ctx context.Context, orgId int, id int, body IamUserUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamUserUpdateRequest(c.Server, orgId, id, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) IamUserUserGroups(ctx context.Context, orgId int, id int, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewIamUserUserGroupsRequest(c.Server, orgId, id)
 	if err != nil {
@@ -32464,6 +34102,42 @@ func (c *Client) IamRefreshTokenRevoke(ctx context.Context, id string, params *I
 
 func (c *Client) IamRefreshTokenShow(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewIamRefreshTokenShowRequest(c.Server, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) IamUserProfileShow(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamUserProfileShowRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) IamUserProfileUpdateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamUserProfileUpdateRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) IamUserProfileUpdate(ctx context.Context, body IamUserProfileUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamUserProfileUpdateRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -36026,6 +37700,306 @@ func (c *Client) IamSCIMUserReplace(ctx context.Context, orgId int, id string, b
 	return c.Client.Do(req)
 }
 
+func (c *Client) UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGet(ctx context.Context, orgId string, params *UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGet(ctx context.Context, orgId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetRequest(c.Server, orgId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGet(ctx context.Context, orgId string, params *UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGet(ctx context.Context, orgId string, identifier string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetRequest(c.Server, orgId, identifier)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDelete(ctx context.Context, orgId string, params *UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPost(ctx context.Context, orgId string, body UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithBody(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutRequestWithBody(c.Server, orgId, connectorId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPut(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutRequest(c.Server, orgId, connectorId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePost(ctx context.Context, orgId string, body UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithBody(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutRequestWithBody(c.Server, orgId, connectorId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPut(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutRequest(c.Server, orgId, connectorId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGet(ctx context.Context, orgId string, params *UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGet(ctx context.Context, orgId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetRequest(c.Server, orgId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGet(ctx context.Context, orgId string, params *UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGet(ctx context.Context, orgId string, identifier string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetRequest(c.Server, orgId, identifier)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPost(ctx context.Context, orgId string, body UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePost(ctx context.Context, orgId string, body UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDelete(ctx context.Context, orgId string, connectorId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteRequest(c.Server, orgId, connectorId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutWithBody(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutRequestWithBody(c.Server, orgId, connectorId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPut(ctx context.Context, orgId string, connectorId string, body UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutRequest(c.Server, orgId, connectorId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPost(ctx context.Context, orgId string, connectorId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostRequest(c.Server, orgId, connectorId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) VisDeviceEstimateDeleteWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewVisDeviceEstimateDeleteRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
@@ -36074,8 +38048,8 @@ func (c *Client) VisDeviceDelete(ctx context.Context, orgId int, body VisDeviceD
 	return c.Client.Do(req)
 }
 
-func (c *Client) VisExport(ctx context.Context, orgId int, params *VisExportParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVisExportRequest(c.Server, orgId, params)
+func (c *Client) VisExportIndex(ctx context.Context, orgId int, params *VisExportIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVisExportIndexRequest(c.Server, orgId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -36086,8 +38060,8 @@ func (c *Client) VisExport(ctx context.Context, orgId int, params *VisExportPara
 	return c.Client.Do(req)
 }
 
-func (c *Client) VisExport2(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewVisExport2Request(c.Server, orgId, id)
+func (c *Client) VisExportDownload(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewVisExportDownloadRequest(c.Server, orgId, id)
 	if err != nil {
 		return nil, err
 	}
@@ -42042,237 +44016,6 @@ func NewCredCredentialDeleteProjectRequest(server string, projectId int64, schem
 	return req, nil
 }
 
-// NewDivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetRequest generates requests for DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGet
-func NewDivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetRequest(server string, orgId string, params *DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/data-inventory/v1/orgs/%s/connector-status/", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		queryValues := queryURL.Query()
-
-		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "connector_id", runtime.ParamLocationQuery, params.ConnectorId); err != nil {
-			return nil, err
-		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-			return nil, err
-		} else {
-			for k, v := range parsed {
-				for _, v2 := range v {
-					queryValues.Add(k, v2)
-				}
-			}
-		}
-
-		if params.AccountId != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "account_id", runtime.ParamLocationQuery, *params.AccountId); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		queryURL.RawQuery = queryValues.Encode()
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewDivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetRequest generates requests for DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGet
-func NewDivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetRequest(server string, orgId string, params *DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetParams) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/data-inventory/v1/orgs/%s/connectors/", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	if params != nil {
-		queryValues := queryURL.Query()
-
-		if params.Limit != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		if params.Offset != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		if params.Filter != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		queryURL.RawQuery = queryValues.Encode()
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewDivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetRequest generates requests for DivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGet
-func NewDivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetRequest(server string, orgId string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/data-inventory/v1/orgs/%s/connectors/count", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewDivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetRequest generates requests for DivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGet
-func NewDivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetRequest(server string, orgId string, identifier string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "identifier", runtime.ParamLocationPath, identifier)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/data-inventory/v1/orgs/%s/connectors/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
 // NewDivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostRequest calls the generic DivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPost builder with application/json body
 func NewDivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostRequest(server string, orgId string, body DivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -44377,6 +46120,474 @@ func NewFinopsBillingSettingsReplaceSettingsRequestWithBody(server string, orgId
 			req.Header.Set("If-Match", headerParam0)
 		}
 
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingAuditIndexAuditResultsRequest calls the generic FinopsBillingBillingAuditIndexAuditResults builder with application/json body
+func NewFinopsBillingBillingAuditIndexAuditResultsRequest(server string, orgId int, body FinopsBillingBillingAuditIndexAuditResultsJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingBillingAuditIndexAuditResultsRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewFinopsBillingBillingAuditIndexAuditResultsRequestWithBody generates requests for FinopsBillingBillingAuditIndexAuditResults with any type of body
+func NewFinopsBillingBillingAuditIndexAuditResultsRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/audit", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingCreditsIndexCreditAssignmentsRequest generates requests for FinopsBillingBillingCreditsIndexCreditAssignments
+func NewFinopsBillingBillingCreditsIndexCreditAssignmentsRequest(server string, orgId int, params *FinopsBillingBillingCreditsIndexCreditAssignmentsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/credit/assignments", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.OrderBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "orderBy", runtime.ParamLocationQuery, *params.OrderBy); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "skipToken", runtime.ParamLocationQuery, *params.SkipToken); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingCreditsCreateCreditAssignmentRequest calls the generic FinopsBillingBillingCreditsCreateCreditAssignment builder with application/json body
+func NewFinopsBillingBillingCreditsCreateCreditAssignmentRequest(server string, orgId int, body FinopsBillingBillingCreditsCreateCreditAssignmentJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingBillingCreditsCreateCreditAssignmentRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewFinopsBillingBillingCreditsCreateCreditAssignmentRequestWithBody generates requests for FinopsBillingBillingCreditsCreateCreditAssignment with any type of body
+func NewFinopsBillingBillingCreditsCreateCreditAssignmentRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/credit/assignments", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingCreditsDeleteCreditAssignmentRequest generates requests for FinopsBillingBillingCreditsDeleteCreditAssignment
+func NewFinopsBillingBillingCreditsDeleteCreditAssignmentRequest(server string, orgId int, id openapi_types.UUID, params *FinopsBillingBillingCreditsDeleteCreditAssignmentParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/credit/assignments/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingCreditsShowCreditAssignmentRequest generates requests for FinopsBillingBillingCreditsShowCreditAssignment
+func NewFinopsBillingBillingCreditsShowCreditAssignmentRequest(server string, orgId int, id openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/credit/assignments/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingCreditsReplaceCreditAssignmentRequest calls the generic FinopsBillingBillingCreditsReplaceCreditAssignment builder with application/json body
+func NewFinopsBillingBillingCreditsReplaceCreditAssignmentRequest(server string, orgId int, id openapi_types.UUID, params *FinopsBillingBillingCreditsReplaceCreditAssignmentParams, body FinopsBillingBillingCreditsReplaceCreditAssignmentJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingBillingCreditsReplaceCreditAssignmentRequestWithBody(server, orgId, id, params, "application/json", bodyReader)
+}
+
+// NewFinopsBillingBillingCreditsReplaceCreditAssignmentRequestWithBody generates requests for FinopsBillingBillingCreditsReplaceCreditAssignment with any type of body
+func NewFinopsBillingBillingCreditsReplaceCreditAssignmentRequestWithBody(server string, orgId int, id openapi_types.UUID, params *FinopsBillingBillingCreditsReplaceCreditAssignmentParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/credit/assignments/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, *params.IfMatch)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingCreditsIndexVendorCreditsRequest generates requests for FinopsBillingBillingCreditsIndexVendorCredits
+func NewFinopsBillingBillingCreditsIndexVendorCreditsRequest(server string, orgId int, params *FinopsBillingBillingCreditsIndexVendorCreditsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/credit/vendor-credits", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.OrderBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "orderBy", runtime.ParamLocationQuery, *params.OrderBy); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "skipToken", runtime.ParamLocationQuery, *params.SkipToken); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
 	}
 
 	return req, nil
@@ -52496,6 +54707,117 @@ func NewIamServiceAccountClientShowRequest(server string, orgId int, serviceAcco
 	return req, nil
 }
 
+// NewIamServiceAccountClientDeleteOldSecretRequest generates requests for IamServiceAccountClientDeleteOldSecret
+func NewIamServiceAccountClientDeleteOldSecretRequest(server string, orgId int, serviceAccountId int, clientId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "serviceAccountId", runtime.ParamLocationPath, serviceAccountId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "clientId", runtime.ParamLocationPath, clientId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/iam/v1/orgs/%s/service-accounts/%s/clients/%s/client-secret", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewIamServiceAccountClientRotateRequest generates requests for IamServiceAccountClientRotate
+func NewIamServiceAccountClientRotateRequest(server string, orgId int, serviceAccountId int, clientId string, params *IamServiceAccountClientRotateParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "serviceAccountId", runtime.ParamLocationPath, serviceAccountId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "clientId", runtime.ParamLocationPath, clientId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/iam/v1/orgs/%s/service-accounts/%s/clients/%s/client-secret", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		if params.XRecipientPublicKey != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithLocation("simple", false, "X-Recipient-Public-Key", runtime.ParamLocationHeader, *params.XRecipientPublicKey)
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("X-Recipient-Public-Key", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
 // NewIamUserIndexRequest generates requests for IamUserIndex
 func NewIamUserIndexRequest(server string, orgId int, params *IamUserIndexParams) (*http.Request, error) {
 	var err error
@@ -52709,6 +55031,60 @@ func NewIamUserShowRequest(server string, orgId int, id int) (*http.Request, err
 	if err != nil {
 		return nil, err
 	}
+
+	return req, nil
+}
+
+// NewIamUserUpdateRequest calls the generic IamUserUpdate builder with application/json body
+func NewIamUserUpdateRequest(server string, orgId int, id int, body IamUserUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewIamUserUpdateRequestWithBody(server, orgId, id, "application/json", bodyReader)
+}
+
+// NewIamUserUpdateRequestWithBody generates requests for IamUserUpdate with any type of body
+func NewIamUserUpdateRequestWithBody(server string, orgId int, id int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/iam/v1/orgs/%s/users/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -52986,6 +55362,73 @@ func NewIamRefreshTokenShowRequest(server string, id string) (*http.Request, err
 	if err != nil {
 		return nil, err
 	}
+
+	return req, nil
+}
+
+// NewIamUserProfileShowRequest generates requests for IamUserProfileShow
+func NewIamUserProfileShowRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/iam/v1/users/me")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewIamUserProfileUpdateRequest calls the generic IamUserProfileUpdate builder with application/json body
+func NewIamUserProfileUpdateRequest(server string, body IamUserProfileUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewIamUserProfileUpdateRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewIamUserProfileUpdateRequestWithBody generates requests for IamUserProfileUpdate with any type of body
+func NewIamUserProfileUpdateRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/iam/v1/users/me")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -65353,6 +67796,964 @@ func NewIamSCIMUserReplaceRequestWithBody(server string, orgId int, id string, c
 	return req, nil
 }
 
+// NewUobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetRequest generates requests for UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGet
+func NewUobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetRequest(server string, orgId string, params *UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/connectors", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetRequest generates requests for UobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGet
+func NewUobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetRequest(server string, orgId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/connectors/count", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetRequest generates requests for UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGet
+func NewUobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetRequest(server string, orgId string, params *UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/connectors/status", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "connector_id", runtime.ParamLocationQuery, params.ConnectorId); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
+				}
+			}
+		}
+
+		if params.AccountId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "account_id", runtime.ParamLocationQuery, *params.AccountId); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetRequest generates requests for UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGet
+func NewUobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetRequest(server string, orgId string, identifier string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "identifier", runtime.ParamLocationPath, identifier)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/connectors/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteRequest generates requests for UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDelete
+func NewUobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteRequest(server string, orgId string, params *UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/onboarding", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "provider", runtime.ParamLocationQuery, params.Provider); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
+				}
+			}
+		}
+
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "connector_id", runtime.ParamLocationQuery, params.ConnectorId); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
+				}
+			}
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostRequest calls the generic UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPost builder with application/json body
+func NewUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostRequest(server string, orgId string, body UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostRequestWithBody generates requests for UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPost with any type of body
+func NewUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostRequestWithBody(server string, orgId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/onboarding/aws", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutRequest calls the generic UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPut builder with application/json body
+func NewUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutRequest(server string, orgId string, connectorId string, body UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutRequestWithBody(server, orgId, connectorId, "application/json", bodyReader)
+}
+
+// NewUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutRequestWithBody generates requests for UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPut with any type of body
+func NewUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutRequestWithBody(server string, orgId string, connectorId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "connector_id", runtime.ParamLocationPath, connectorId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/onboarding/aws/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostRequest calls the generic UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePost builder with application/json body
+func NewUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostRequest(server string, orgId string, body UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostRequestWithBody generates requests for UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePost with any type of body
+func NewUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostRequestWithBody(server string, orgId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/onboarding/azure", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutRequest calls the generic UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPut builder with application/json body
+func NewUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutRequest(server string, orgId string, connectorId string, body UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutRequestWithBody(server, orgId, connectorId, "application/json", bodyReader)
+}
+
+// NewUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutRequestWithBody generates requests for UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPut with any type of body
+func NewUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutRequestWithBody(server string, orgId string, connectorId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "connector_id", runtime.ParamLocationPath, connectorId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/onboarding/azure/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewUobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetRequest generates requests for UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGet
+func NewUobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetRequest(server string, orgId string, params *UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/saas/connectors", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Sort != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "sort", runtime.ParamLocationQuery, *params.Sort); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetRequest generates requests for UobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGet
+func NewUobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetRequest(server string, orgId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/saas/connectors/count", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetRequest generates requests for UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGet
+func NewUobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetRequest(server string, orgId string, params *UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/saas/connectors/status", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "connector_id", runtime.ParamLocationQuery, params.ConnectorId); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
+				}
+			}
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetRequest generates requests for UobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGet
+func NewUobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetRequest(server string, orgId string, identifier string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "identifier", runtime.ParamLocationPath, identifier)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/saas/connectors/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostRequest calls the generic UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPost builder with application/json body
+func NewUobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostRequest(server string, orgId string, body UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewUobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostRequestWithBody generates requests for UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPost with any type of body
+func NewUobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostRequestWithBody(server string, orgId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/saas/onboarding", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewUobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostRequest calls the generic UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePost builder with application/json body
+func NewUobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostRequest(server string, orgId string, body UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewUobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostRequestWithBody generates requests for UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePost with any type of body
+func NewUobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostRequestWithBody(server string, orgId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/saas/onboarding/validate", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewUobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteRequest generates requests for UobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDelete
+func NewUobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteRequest(server string, orgId string, connectorId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "connector_id", runtime.ParamLocationPath, connectorId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/saas/onboarding/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("DELETE", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutRequest calls the generic UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPut builder with application/json body
+func NewUobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutRequest(server string, orgId string, connectorId string, body UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutRequestWithBody(server, orgId, connectorId, "application/json", bodyReader)
+}
+
+// NewUobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutRequestWithBody generates requests for UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPut with any type of body
+func NewUobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutRequestWithBody(server string, orgId string, connectorId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "connector_id", runtime.ParamLocationPath, connectorId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/saas/onboarding/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewUobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostRequest generates requests for UobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPost
+func NewUobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostRequest(server string, orgId string, connectorId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "connector_id", runtime.ParamLocationPath, connectorId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/saas/onboarding/%s/collect", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewVisDeviceEstimateDeleteRequest calls the generic VisDeviceEstimateDelete builder with application/json body
 func NewVisDeviceEstimateDeleteRequest(server string, orgId int, body VisDeviceEstimateDeleteJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -65447,8 +68848,8 @@ func NewVisDeviceDeleteRequestWithBody(server string, orgId int, contentType str
 	return req, nil
 }
 
-// NewVisExportRequest generates requests for VisExport
-func NewVisExportRequest(server string, orgId int, params *VisExportParams) (*http.Request, error) {
+// NewVisExportIndexRequest generates requests for VisExportIndex
+func NewVisExportIndexRequest(server string, orgId int, params *VisExportIndexParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -65519,8 +68920,8 @@ func NewVisExportRequest(server string, orgId int, params *VisExportParams) (*ht
 	return req, nil
 }
 
-// NewVisExport2Request generates requests for VisExport2
-func NewVisExport2Request(server string, orgId int, id string) (*http.Request, error) {
+// NewVisExportDownloadRequest generates requests for VisExportDownload
+func NewVisExportDownloadRequest(server string, orgId int, id string) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -66672,18 +70073,6 @@ type ClientWithResponsesInterface interface {
 	// CredCredentialDeleteProjectWithResponse request
 	CredCredentialDeleteProjectWithResponse(ctx context.Context, projectId int64, scheme CredCredentialDeleteProjectParamsScheme, id string, reqEditors ...RequestEditorFn) (*CredCredentialDeleteProjectResponse, error)
 
-	// DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetWithResponse request
-	DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetWithResponse(ctx context.Context, orgId string, params *DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetParams, reqEditors ...RequestEditorFn) (*DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetResponse, error)
-
-	// DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetWithResponse request
-	DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetWithResponse(ctx context.Context, orgId string, params *DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetParams, reqEditors ...RequestEditorFn) (*DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetResponse, error)
-
-	// DivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetWithResponse request
-	DivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetWithResponse(ctx context.Context, orgId string, reqEditors ...RequestEditorFn) (*DivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetResponse, error)
-
-	// DivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetWithResponse request
-	DivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetWithResponse(ctx context.Context, orgId string, identifier string, reqEditors ...RequestEditorFn) (*DivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetResponse, error)
-
 	// DivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostWithBodyWithResponse request with any body
 	DivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*DivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostResponse, error)
 
@@ -66820,6 +70209,33 @@ type ClientWithResponsesInterface interface {
 	FinopsBillingSettingsReplaceSettingsWithBodyWithResponse(ctx context.Context, orgId int, params *FinopsBillingSettingsReplaceSettingsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingSettingsReplaceSettingsResponse, error)
 
 	FinopsBillingSettingsReplaceSettingsWithResponse(ctx context.Context, orgId int, params *FinopsBillingSettingsReplaceSettingsParams, body FinopsBillingSettingsReplaceSettingsJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingSettingsReplaceSettingsResponse, error)
+
+	// FinopsBillingBillingAuditIndexAuditResultsWithBodyWithResponse request with any body
+	FinopsBillingBillingAuditIndexAuditResultsWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingAuditIndexAuditResultsResponse, error)
+
+	FinopsBillingBillingAuditIndexAuditResultsWithResponse(ctx context.Context, orgId int, body FinopsBillingBillingAuditIndexAuditResultsJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingAuditIndexAuditResultsResponse, error)
+
+	// FinopsBillingBillingCreditsIndexCreditAssignmentsWithResponse request
+	FinopsBillingBillingCreditsIndexCreditAssignmentsWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingCreditsIndexCreditAssignmentsParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsIndexCreditAssignmentsResponse, error)
+
+	// FinopsBillingBillingCreditsCreateCreditAssignmentWithBodyWithResponse request with any body
+	FinopsBillingBillingCreditsCreateCreditAssignmentWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsCreateCreditAssignmentResponse, error)
+
+	FinopsBillingBillingCreditsCreateCreditAssignmentWithResponse(ctx context.Context, orgId int, body FinopsBillingBillingCreditsCreateCreditAssignmentJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsCreateCreditAssignmentResponse, error)
+
+	// FinopsBillingBillingCreditsDeleteCreditAssignmentWithResponse request
+	FinopsBillingBillingCreditsDeleteCreditAssignmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingCreditsDeleteCreditAssignmentParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsDeleteCreditAssignmentResponse, error)
+
+	// FinopsBillingBillingCreditsShowCreditAssignmentWithResponse request
+	FinopsBillingBillingCreditsShowCreditAssignmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsShowCreditAssignmentResponse, error)
+
+	// FinopsBillingBillingCreditsReplaceCreditAssignmentWithBodyWithResponse request with any body
+	FinopsBillingBillingCreditsReplaceCreditAssignmentWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingCreditsReplaceCreditAssignmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsReplaceCreditAssignmentResponse, error)
+
+	FinopsBillingBillingCreditsReplaceCreditAssignmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingCreditsReplaceCreditAssignmentParams, body FinopsBillingBillingCreditsReplaceCreditAssignmentJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsReplaceCreditAssignmentResponse, error)
+
+	// FinopsBillingBillingCreditsIndexVendorCreditsWithResponse request
+	FinopsBillingBillingCreditsIndexVendorCreditsWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingCreditsIndexVendorCreditsParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsIndexVendorCreditsResponse, error)
 
 	// FinopsBillingSharedCostRulesIndexWithResponse request
 	FinopsBillingSharedCostRulesIndexWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesIndexResponse, error)
@@ -67400,6 +70816,12 @@ type ClientWithResponsesInterface interface {
 	// IamServiceAccountClientShowWithResponse request
 	IamServiceAccountClientShowWithResponse(ctx context.Context, orgId int, serviceAccountId int, clientId string, reqEditors ...RequestEditorFn) (*IamServiceAccountClientShowResponse, error)
 
+	// IamServiceAccountClientDeleteOldSecretWithResponse request
+	IamServiceAccountClientDeleteOldSecretWithResponse(ctx context.Context, orgId int, serviceAccountId int, clientId string, reqEditors ...RequestEditorFn) (*IamServiceAccountClientDeleteOldSecretResponse, error)
+
+	// IamServiceAccountClientRotateWithResponse request
+	IamServiceAccountClientRotateWithResponse(ctx context.Context, orgId int, serviceAccountId int, clientId string, params *IamServiceAccountClientRotateParams, reqEditors ...RequestEditorFn) (*IamServiceAccountClientRotateResponse, error)
+
 	// IamUserIndexWithResponse request
 	IamUserIndexWithResponse(ctx context.Context, orgId int, params *IamUserIndexParams, reqEditors ...RequestEditorFn) (*IamUserIndexResponse, error)
 
@@ -67413,6 +70835,11 @@ type ClientWithResponsesInterface interface {
 
 	// IamUserShowWithResponse request
 	IamUserShowWithResponse(ctx context.Context, orgId int, id int, reqEditors ...RequestEditorFn) (*IamUserShowResponse, error)
+
+	// IamUserUpdateWithBodyWithResponse request with any body
+	IamUserUpdateWithBodyWithResponse(ctx context.Context, orgId int, id int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*IamUserUpdateResponse, error)
+
+	IamUserUpdateWithResponse(ctx context.Context, orgId int, id int, body IamUserUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*IamUserUpdateResponse, error)
 
 	// IamUserUserGroupsWithResponse request
 	IamUserUserGroupsWithResponse(ctx context.Context, orgId int, id int, reqEditors ...RequestEditorFn) (*IamUserUserGroupsResponse, error)
@@ -67428,6 +70855,14 @@ type ClientWithResponsesInterface interface {
 
 	// IamRefreshTokenShowWithResponse request
 	IamRefreshTokenShowWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*IamRefreshTokenShowResponse, error)
+
+	// IamUserProfileShowWithResponse request
+	IamUserProfileShowWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*IamUserProfileShowResponse, error)
+
+	// IamUserProfileUpdateWithBodyWithResponse request with any body
+	IamUserProfileUpdateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*IamUserProfileUpdateResponse, error)
+
+	IamUserProfileUpdateWithResponse(ctx context.Context, body IamUserProfileUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*IamUserProfileUpdateResponse, error)
 
 	// IamUserSettingBlobRetriveGetUrlWithResponse request
 	IamUserSettingBlobRetriveGetUrlWithResponse(ctx context.Context, params *IamUserSettingBlobRetriveGetUrlParams, reqEditors ...RequestEditorFn) (*IamUserSettingBlobRetriveGetUrlResponse, error)
@@ -68228,6 +71663,74 @@ type ClientWithResponsesInterface interface {
 
 	IamSCIMUserReplaceWithResponse(ctx context.Context, orgId int, id string, body IamSCIMUserReplaceJSONRequestBody, reqEditors ...RequestEditorFn) (*IamSCIMUserReplaceResponse, error)
 
+	// UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetWithResponse request
+	UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetWithResponse(ctx context.Context, orgId string, params *UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetParams, reqEditors ...RequestEditorFn) (*UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetResponse, error)
+
+	// UobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetWithResponse request
+	UobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetWithResponse(ctx context.Context, orgId string, reqEditors ...RequestEditorFn) (*UobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetResponse, error)
+
+	// UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetWithResponse request
+	UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetWithResponse(ctx context.Context, orgId string, params *UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetParams, reqEditors ...RequestEditorFn) (*UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetResponse, error)
+
+	// UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetWithResponse request
+	UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetWithResponse(ctx context.Context, orgId string, identifier string, reqEditors ...RequestEditorFn) (*UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetResponse, error)
+
+	// UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteWithResponse request
+	UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteWithResponse(ctx context.Context, orgId string, params *UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse, error)
+
+	// UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithBodyWithResponse request with any body
+	UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse, error)
+
+	UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithResponse(ctx context.Context, orgId string, body UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse, error)
+
+	// UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithBodyWithResponse request with any body
+	UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithBodyWithResponse(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse, error)
+
+	UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithResponse(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse, error)
+
+	// UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithBodyWithResponse request with any body
+	UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse, error)
+
+	UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithResponse(ctx context.Context, orgId string, body UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse, error)
+
+	// UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithBodyWithResponse request with any body
+	UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithBodyWithResponse(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse, error)
+
+	UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithResponse(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse, error)
+
+	// UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetWithResponse request
+	UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetWithResponse(ctx context.Context, orgId string, params *UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetParams, reqEditors ...RequestEditorFn) (*UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetResponse, error)
+
+	// UobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetWithResponse request
+	UobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetWithResponse(ctx context.Context, orgId string, reqEditors ...RequestEditorFn) (*UobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetResponse, error)
+
+	// UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetWithResponse request
+	UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetWithResponse(ctx context.Context, orgId string, params *UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetParams, reqEditors ...RequestEditorFn) (*UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetResponse, error)
+
+	// UobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetWithResponse request
+	UobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetWithResponse(ctx context.Context, orgId string, identifier string, reqEditors ...RequestEditorFn) (*UobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetResponse, error)
+
+	// UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostWithBodyWithResponse request with any body
+	UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostResponse, error)
+
+	UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostWithResponse(ctx context.Context, orgId string, body UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostResponse, error)
+
+	// UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostWithBodyWithResponse request with any body
+	UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostResponse, error)
+
+	UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostWithResponse(ctx context.Context, orgId string, body UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostResponse, error)
+
+	// UobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteWithResponse request
+	UobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteWithResponse(ctx context.Context, orgId string, connectorId string, reqEditors ...RequestEditorFn) (*UobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteResponse, error)
+
+	// UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutWithBodyWithResponse request with any body
+	UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutWithBodyWithResponse(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutResponse, error)
+
+	UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutWithResponse(ctx context.Context, orgId string, connectorId string, body UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutResponse, error)
+
+	// UobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostWithResponse request
+	UobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostWithResponse(ctx context.Context, orgId string, connectorId string, reqEditors ...RequestEditorFn) (*UobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostResponse, error)
+
 	// VisDeviceEstimateDeleteWithBodyWithResponse request with any body
 	VisDeviceEstimateDeleteWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VisDeviceEstimateDeleteResponse, error)
 
@@ -68238,11 +71741,11 @@ type ClientWithResponsesInterface interface {
 
 	VisDeviceDeleteWithResponse(ctx context.Context, orgId int, body VisDeviceDeleteJSONRequestBody, reqEditors ...RequestEditorFn) (*VisDeviceDeleteResponse, error)
 
-	// VisExportWithResponse request
-	VisExportWithResponse(ctx context.Context, orgId int, params *VisExportParams, reqEditors ...RequestEditorFn) (*VisExportResponse, error)
+	// VisExportIndexWithResponse request
+	VisExportIndexWithResponse(ctx context.Context, orgId int, params *VisExportIndexParams, reqEditors ...RequestEditorFn) (*VisExportIndexResponse, error)
 
-	// VisExport2WithResponse request
-	VisExport2WithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*VisExport2Response, error)
+	// VisExportDownloadWithResponse request
+	VisExportDownloadWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*VisExportDownloadResponse, error)
 
 	// VisQueryCreateWithBodyWithResponse request with any body
 	VisQueryCreateWithBodyWithResponse(ctx context.Context, orgId int, params *VisQueryCreateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VisQueryCreateResponse, error)
@@ -70687,122 +74190,6 @@ func (r CredCredentialDeleteProjectResponse) StatusCode() int {
 	return 0
 }
 
-type DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *DivntOkResponseAny
-	JSON400      *DivntErrorResponse
-	JSON401      *DivntErrorResponse
-	JSON403      *DivntErrorResponse
-	JSON404      *DivntErrorResponse
-	JSON429      *DivntErrorResponse
-	JSON500      *DivntErrorResponse
-	JSON502      *DivntErrorResponse
-}
-
-// Status returns HTTPResponse.Status
-func (r DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *DivntOkResponseAny
-	JSON400      *DivntErrorResponse
-	JSON401      *DivntErrorResponse
-	JSON403      *DivntErrorResponse
-	JSON404      *DivntErrorResponse
-	JSON429      *DivntErrorResponse
-	JSON500      *DivntErrorResponse
-	JSON502      *DivntErrorResponse
-}
-
-// Status returns HTTPResponse.Status
-func (r DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type DivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *DivntOkResponseAny
-	JSON400      *DivntErrorResponse
-	JSON401      *DivntErrorResponse
-	JSON403      *DivntErrorResponse
-	JSON404      *DivntErrorResponse
-	JSON429      *DivntErrorResponse
-	JSON500      *DivntErrorResponse
-	JSON502      *DivntErrorResponse
-}
-
-// Status returns HTTPResponse.Status
-func (r DivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type DivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *DivntOkResponseAny
-	JSON400      *DivntErrorResponse
-	JSON401      *DivntErrorResponse
-	JSON403      *DivntErrorResponse
-	JSON404      *DivntErrorResponse
-	JSON429      *DivntErrorResponse
-	JSON500      *DivntErrorResponse
-	JSON502      *DivntErrorResponse
-}
-
-// Status returns HTTPResponse.Status
-func (r DivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r DivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
 type DivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -71197,7 +74584,7 @@ func (r FinopsBillingBillingIndexRulesResponse) StatusCode() int {
 type FinopsBillingBillingCreateRuleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *FinopsBillingCreateRuleResponseBody
+	JSON200      *FinopsBillingCreateCreditAssignmentResult
 }
 
 // Status returns HTTPResponse.Status
@@ -71283,7 +74670,7 @@ func (r FinopsBillingBillingIndexPostAdjustmentsResponse) StatusCode() int {
 type FinopsBillingBillingCreatePostAdjustmentResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *FinopsBillingCreateRuleResponseBody
+	JSON200      *FinopsBillingCreateCreditAssignmentResult
 }
 
 // Status returns HTTPResponse.Status
@@ -71369,7 +74756,7 @@ func (r FinopsBillingBillingIndexPreAdjustmentsResponse) StatusCode() int {
 type FinopsBillingBillingCreatePreAdjustmentResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *FinopsBillingCreateRuleResponseBody
+	JSON200      *FinopsBillingCreateCreditAssignmentResult
 }
 
 // Status returns HTTPResponse.Status
@@ -71455,7 +74842,7 @@ func (r FinopsBillingBillingIndexEnterpriseRulesResponse) StatusCode() int {
 type FinopsBillingBillingCreateEnterpriseRuleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *FinopsBillingCreateRuleResponseBody
+	JSON200      *FinopsBillingCreateCreditAssignmentResult
 }
 
 // Status returns HTTPResponse.Status
@@ -71574,6 +74961,158 @@ func (r FinopsBillingSettingsReplaceSettingsResponse) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r FinopsBillingSettingsReplaceSettingsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingAuditIndexAuditResultsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingAuditResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingAuditIndexAuditResultsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingAuditIndexAuditResultsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingCreditsIndexCreditAssignmentsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingIndexCreditAssignmentsResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingCreditsIndexCreditAssignmentsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingCreditsIndexCreditAssignmentsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingCreditsCreateCreditAssignmentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingCreateCreditAssignmentResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingCreditsCreateCreditAssignmentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingCreditsCreateCreditAssignmentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingCreditsDeleteCreditAssignmentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingCreditsDeleteCreditAssignmentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingCreditsDeleteCreditAssignmentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingCreditsShowCreditAssignmentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingCreditAssignment
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingCreditsShowCreditAssignmentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingCreditsShowCreditAssignmentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingCreditsReplaceCreditAssignmentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingCreditsReplaceCreditAssignmentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingCreditsReplaceCreditAssignmentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingBillingCreditsIndexVendorCreditsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingVendorCreditsResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingCreditsIndexVendorCreditsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingCreditsIndexVendorCreditsResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -74981,6 +78520,49 @@ func (r IamServiceAccountClientShowResponse) StatusCode() int {
 	return 0
 }
 
+type IamServiceAccountClientDeleteOldSecretResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r IamServiceAccountClientDeleteOldSecretResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r IamServiceAccountClientDeleteOldSecretResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type IamServiceAccountClientRotateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *IamFlexeraIamServiceAccountClient
+}
+
+// Status returns HTTPResponse.Status
+func (r IamServiceAccountClientRotateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r IamServiceAccountClientRotateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type IamUserIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -75062,6 +78644,28 @@ func (r IamUserShowResponse) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r IamUserShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type IamUserUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *IamFlexeraIamUser
+}
+
+// Status returns HTTPResponse.Status
+func (r IamUserUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r IamUserUpdateResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -75170,6 +78774,50 @@ func (r IamRefreshTokenShowResponse) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r IamRefreshTokenShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type IamUserProfileShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *IamUserProfile
+}
+
+// Status returns HTTPResponse.Status
+func (r IamUserProfileShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r IamUserProfileShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type IamUserProfileUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *IamUserProfile
+}
+
+// Status returns HTTPResponse.Status
+func (r IamUserProfileUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r IamUserProfileUpdateResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -80108,6 +83756,528 @@ func (r IamSCIMUserReplaceResponse) StatusCode() int {
 	return 0
 }
 
+type UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *UobsOkResponseAny
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *UobsOkResponseAny
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *UobsOkResponseAny
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *UobsOkResponseAny
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *UobsOkResponseAny
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *UobsOkResponseAny
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *UobsOkResponseAny
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *UobsOkResponseAny
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *UobsOkResponseAny
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *UobsOkResponseSaasConnectorRead
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *UobsOkResponseAny
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *UobsOkResponseAny
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *UobsOkResponseSaasConnectorRead
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON202      *UobsOkResponseAny
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *UobsOkResponseValidationResult
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON202      *UobsOkResponseAny
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON202      *UobsOkResponseAny
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON202      *UobsOkResponseAny
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type VisDeviceEstimateDeleteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -80152,14 +84322,14 @@ func (r VisDeviceDeleteResponse) StatusCode() int {
 	return 0
 }
 
-type VisExportResponse struct {
+type VisExportIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *VisExportFileList
 }
 
 // Status returns HTTPResponse.Status
-func (r VisExportResponse) Status() string {
+func (r VisExportIndexResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -80167,20 +84337,20 @@ func (r VisExportResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r VisExportResponse) StatusCode() int {
+func (r VisExportIndexResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type VisExport2Response struct {
+type VisExportDownloadResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 }
 
 // Status returns HTTPResponse.Status
-func (r VisExport2Response) Status() string {
+func (r VisExportDownloadResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -80188,7 +84358,7 @@ func (r VisExport2Response) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r VisExport2Response) StatusCode() int {
+func (r VisExportDownloadResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -81984,42 +86154,6 @@ func (c *ClientWithResponses) CredCredentialDeleteProjectWithResponse(ctx contex
 	return ParseCredCredentialDeleteProjectResponse(rsp)
 }
 
-// DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetWithResponse request returning *DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetResponse
-func (c *ClientWithResponses) DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetWithResponse(ctx context.Context, orgId string, params *DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetParams, reqEditors ...RequestEditorFn) (*DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetResponse, error) {
-	rsp, err := c.DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGet(ctx, orgId, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseDivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetResponse(rsp)
-}
-
-// DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetWithResponse request returning *DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetResponse
-func (c *ClientWithResponses) DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetWithResponse(ctx context.Context, orgId string, params *DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetParams, reqEditors ...RequestEditorFn) (*DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetResponse, error) {
-	rsp, err := c.DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGet(ctx, orgId, params, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseDivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetResponse(rsp)
-}
-
-// DivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetWithResponse request returning *DivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetResponse
-func (c *ClientWithResponses) DivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetWithResponse(ctx context.Context, orgId string, reqEditors ...RequestEditorFn) (*DivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetResponse, error) {
-	rsp, err := c.DivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGet(ctx, orgId, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseDivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetResponse(rsp)
-}
-
-// DivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetWithResponse request returning *DivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetResponse
-func (c *ClientWithResponses) DivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetWithResponse(ctx context.Context, orgId string, identifier string, reqEditors ...RequestEditorFn) (*DivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetResponse, error) {
-	rsp, err := c.DivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGet(ctx, orgId, identifier, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseDivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetResponse(rsp)
-}
-
 // DivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostWithBodyWithResponse request with arbitrary body returning *DivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostResponse
 func (c *ClientWithResponses) DivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*DivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostResponse, error) {
 	rsp, err := c.DivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostWithBody(ctx, orgId, contentType, body, reqEditors...)
@@ -82461,6 +86595,93 @@ func (c *ClientWithResponses) FinopsBillingSettingsReplaceSettingsWithResponse(c
 		return nil, err
 	}
 	return ParseFinopsBillingSettingsReplaceSettingsResponse(rsp)
+}
+
+// FinopsBillingBillingAuditIndexAuditResultsWithBodyWithResponse request with arbitrary body returning *FinopsBillingBillingAuditIndexAuditResultsResponse
+func (c *ClientWithResponses) FinopsBillingBillingAuditIndexAuditResultsWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingAuditIndexAuditResultsResponse, error) {
+	rsp, err := c.FinopsBillingBillingAuditIndexAuditResultsWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingAuditIndexAuditResultsResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingBillingAuditIndexAuditResultsWithResponse(ctx context.Context, orgId int, body FinopsBillingBillingAuditIndexAuditResultsJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingAuditIndexAuditResultsResponse, error) {
+	rsp, err := c.FinopsBillingBillingAuditIndexAuditResults(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingAuditIndexAuditResultsResponse(rsp)
+}
+
+// FinopsBillingBillingCreditsIndexCreditAssignmentsWithResponse request returning *FinopsBillingBillingCreditsIndexCreditAssignmentsResponse
+func (c *ClientWithResponses) FinopsBillingBillingCreditsIndexCreditAssignmentsWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingCreditsIndexCreditAssignmentsParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsIndexCreditAssignmentsResponse, error) {
+	rsp, err := c.FinopsBillingBillingCreditsIndexCreditAssignments(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingCreditsIndexCreditAssignmentsResponse(rsp)
+}
+
+// FinopsBillingBillingCreditsCreateCreditAssignmentWithBodyWithResponse request with arbitrary body returning *FinopsBillingBillingCreditsCreateCreditAssignmentResponse
+func (c *ClientWithResponses) FinopsBillingBillingCreditsCreateCreditAssignmentWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsCreateCreditAssignmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingCreditsCreateCreditAssignmentWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingCreditsCreateCreditAssignmentResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingBillingCreditsCreateCreditAssignmentWithResponse(ctx context.Context, orgId int, body FinopsBillingBillingCreditsCreateCreditAssignmentJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsCreateCreditAssignmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingCreditsCreateCreditAssignment(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingCreditsCreateCreditAssignmentResponse(rsp)
+}
+
+// FinopsBillingBillingCreditsDeleteCreditAssignmentWithResponse request returning *FinopsBillingBillingCreditsDeleteCreditAssignmentResponse
+func (c *ClientWithResponses) FinopsBillingBillingCreditsDeleteCreditAssignmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingCreditsDeleteCreditAssignmentParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsDeleteCreditAssignmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingCreditsDeleteCreditAssignment(ctx, orgId, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingCreditsDeleteCreditAssignmentResponse(rsp)
+}
+
+// FinopsBillingBillingCreditsShowCreditAssignmentWithResponse request returning *FinopsBillingBillingCreditsShowCreditAssignmentResponse
+func (c *ClientWithResponses) FinopsBillingBillingCreditsShowCreditAssignmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsShowCreditAssignmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingCreditsShowCreditAssignment(ctx, orgId, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingCreditsShowCreditAssignmentResponse(rsp)
+}
+
+// FinopsBillingBillingCreditsReplaceCreditAssignmentWithBodyWithResponse request with arbitrary body returning *FinopsBillingBillingCreditsReplaceCreditAssignmentResponse
+func (c *ClientWithResponses) FinopsBillingBillingCreditsReplaceCreditAssignmentWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingCreditsReplaceCreditAssignmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsReplaceCreditAssignmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingCreditsReplaceCreditAssignmentWithBody(ctx, orgId, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingCreditsReplaceCreditAssignmentResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingBillingCreditsReplaceCreditAssignmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingCreditsReplaceCreditAssignmentParams, body FinopsBillingBillingCreditsReplaceCreditAssignmentJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsReplaceCreditAssignmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingCreditsReplaceCreditAssignment(ctx, orgId, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingCreditsReplaceCreditAssignmentResponse(rsp)
+}
+
+// FinopsBillingBillingCreditsIndexVendorCreditsWithResponse request returning *FinopsBillingBillingCreditsIndexVendorCreditsResponse
+func (c *ClientWithResponses) FinopsBillingBillingCreditsIndexVendorCreditsWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingCreditsIndexVendorCreditsParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsIndexVendorCreditsResponse, error) {
+	rsp, err := c.FinopsBillingBillingCreditsIndexVendorCredits(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingCreditsIndexVendorCreditsResponse(rsp)
 }
 
 // FinopsBillingSharedCostRulesIndexWithResponse request returning *FinopsBillingSharedCostRulesIndexResponse
@@ -84308,6 +88529,24 @@ func (c *ClientWithResponses) IamServiceAccountClientShowWithResponse(ctx contex
 	return ParseIamServiceAccountClientShowResponse(rsp)
 }
 
+// IamServiceAccountClientDeleteOldSecretWithResponse request returning *IamServiceAccountClientDeleteOldSecretResponse
+func (c *ClientWithResponses) IamServiceAccountClientDeleteOldSecretWithResponse(ctx context.Context, orgId int, serviceAccountId int, clientId string, reqEditors ...RequestEditorFn) (*IamServiceAccountClientDeleteOldSecretResponse, error) {
+	rsp, err := c.IamServiceAccountClientDeleteOldSecret(ctx, orgId, serviceAccountId, clientId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamServiceAccountClientDeleteOldSecretResponse(rsp)
+}
+
+// IamServiceAccountClientRotateWithResponse request returning *IamServiceAccountClientRotateResponse
+func (c *ClientWithResponses) IamServiceAccountClientRotateWithResponse(ctx context.Context, orgId int, serviceAccountId int, clientId string, params *IamServiceAccountClientRotateParams, reqEditors ...RequestEditorFn) (*IamServiceAccountClientRotateResponse, error) {
+	rsp, err := c.IamServiceAccountClientRotate(ctx, orgId, serviceAccountId, clientId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamServiceAccountClientRotateResponse(rsp)
+}
+
 // IamUserIndexWithResponse request returning *IamUserIndexResponse
 func (c *ClientWithResponses) IamUserIndexWithResponse(ctx context.Context, orgId int, params *IamUserIndexParams, reqEditors ...RequestEditorFn) (*IamUserIndexResponse, error) {
 	rsp, err := c.IamUserIndex(ctx, orgId, params, reqEditors...)
@@ -84350,6 +88589,23 @@ func (c *ClientWithResponses) IamUserShowWithResponse(ctx context.Context, orgId
 		return nil, err
 	}
 	return ParseIamUserShowResponse(rsp)
+}
+
+// IamUserUpdateWithBodyWithResponse request with arbitrary body returning *IamUserUpdateResponse
+func (c *ClientWithResponses) IamUserUpdateWithBodyWithResponse(ctx context.Context, orgId int, id int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*IamUserUpdateResponse, error) {
+	rsp, err := c.IamUserUpdateWithBody(ctx, orgId, id, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamUserUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) IamUserUpdateWithResponse(ctx context.Context, orgId int, id int, body IamUserUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*IamUserUpdateResponse, error) {
+	rsp, err := c.IamUserUpdate(ctx, orgId, id, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamUserUpdateResponse(rsp)
 }
 
 // IamUserUserGroupsWithResponse request returning *IamUserUserGroupsResponse
@@ -84395,6 +88651,32 @@ func (c *ClientWithResponses) IamRefreshTokenShowWithResponse(ctx context.Contex
 		return nil, err
 	}
 	return ParseIamRefreshTokenShowResponse(rsp)
+}
+
+// IamUserProfileShowWithResponse request returning *IamUserProfileShowResponse
+func (c *ClientWithResponses) IamUserProfileShowWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*IamUserProfileShowResponse, error) {
+	rsp, err := c.IamUserProfileShow(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamUserProfileShowResponse(rsp)
+}
+
+// IamUserProfileUpdateWithBodyWithResponse request with arbitrary body returning *IamUserProfileUpdateResponse
+func (c *ClientWithResponses) IamUserProfileUpdateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*IamUserProfileUpdateResponse, error) {
+	rsp, err := c.IamUserProfileUpdateWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamUserProfileUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) IamUserProfileUpdateWithResponse(ctx context.Context, body IamUserProfileUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*IamUserProfileUpdateResponse, error) {
+	rsp, err := c.IamUserProfileUpdate(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamUserProfileUpdateResponse(rsp)
 }
 
 // IamUserSettingBlobRetriveGetUrlWithResponse request returning *IamUserSettingBlobRetriveGetUrlResponse
@@ -86972,6 +91254,224 @@ func (c *ClientWithResponses) IamSCIMUserReplaceWithResponse(ctx context.Context
 	return ParseIamSCIMUserReplaceResponse(rsp)
 }
 
+// UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetWithResponse request returning *UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetResponse
+func (c *ClientWithResponses) UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetWithResponse(ctx context.Context, orgId string, params *UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetParams, reqEditors ...RequestEditorFn) (*UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetResponse, error) {
+	rsp, err := c.UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGet(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetResponse(rsp)
+}
+
+// UobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetWithResponse request returning *UobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetResponse
+func (c *ClientWithResponses) UobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetWithResponse(ctx context.Context, orgId string, reqEditors ...RequestEditorFn) (*UobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetResponse, error) {
+	rsp, err := c.UobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGet(ctx, orgId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetResponse(rsp)
+}
+
+// UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetWithResponse request returning *UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetResponse
+func (c *ClientWithResponses) UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetWithResponse(ctx context.Context, orgId string, params *UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetParams, reqEditors ...RequestEditorFn) (*UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetResponse, error) {
+	rsp, err := c.UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGet(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetResponse(rsp)
+}
+
+// UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetWithResponse request returning *UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetResponse
+func (c *ClientWithResponses) UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetWithResponse(ctx context.Context, orgId string, identifier string, reqEditors ...RequestEditorFn) (*UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetResponse, error) {
+	rsp, err := c.UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGet(ctx, orgId, identifier, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetResponse(rsp)
+}
+
+// UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteWithResponse request returning *UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse
+func (c *ClientWithResponses) UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteWithResponse(ctx context.Context, orgId string, params *UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDelete(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse(rsp)
+}
+
+// UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithBodyWithResponse request with arbitrary body returning *UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse
+func (c *ClientWithResponses) UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse(rsp)
+}
+
+func (c *ClientWithResponses) UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithResponse(ctx context.Context, orgId string, body UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPost(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse(rsp)
+}
+
+// UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithBodyWithResponse request with arbitrary body returning *UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse
+func (c *ClientWithResponses) UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithBodyWithResponse(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithBody(ctx, orgId, connectorId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse(rsp)
+}
+
+func (c *ClientWithResponses) UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithResponse(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPut(ctx, orgId, connectorId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse(rsp)
+}
+
+// UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithBodyWithResponse request with arbitrary body returning *UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse
+func (c *ClientWithResponses) UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse(rsp)
+}
+
+func (c *ClientWithResponses) UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithResponse(ctx context.Context, orgId string, body UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePost(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse(rsp)
+}
+
+// UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithBodyWithResponse request with arbitrary body returning *UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse
+func (c *ClientWithResponses) UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithBodyWithResponse(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithBody(ctx, orgId, connectorId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse(rsp)
+}
+
+func (c *ClientWithResponses) UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithResponse(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPut(ctx, orgId, connectorId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse(rsp)
+}
+
+// UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetWithResponse request returning *UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetResponse
+func (c *ClientWithResponses) UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetWithResponse(ctx context.Context, orgId string, params *UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetParams, reqEditors ...RequestEditorFn) (*UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetResponse, error) {
+	rsp, err := c.UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGet(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetResponse(rsp)
+}
+
+// UobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetWithResponse request returning *UobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetResponse
+func (c *ClientWithResponses) UobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetWithResponse(ctx context.Context, orgId string, reqEditors ...RequestEditorFn) (*UobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetResponse, error) {
+	rsp, err := c.UobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGet(ctx, orgId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetResponse(rsp)
+}
+
+// UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetWithResponse request returning *UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetResponse
+func (c *ClientWithResponses) UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetWithResponse(ctx context.Context, orgId string, params *UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetParams, reqEditors ...RequestEditorFn) (*UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetResponse, error) {
+	rsp, err := c.UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGet(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetResponse(rsp)
+}
+
+// UobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetWithResponse request returning *UobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetResponse
+func (c *ClientWithResponses) UobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetWithResponse(ctx context.Context, orgId string, identifier string, reqEditors ...RequestEditorFn) (*UobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetResponse, error) {
+	rsp, err := c.UobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGet(ctx, orgId, identifier, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetResponse(rsp)
+}
+
+// UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostWithBodyWithResponse request with arbitrary body returning *UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostResponse
+func (c *ClientWithResponses) UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostResponse, error) {
+	rsp, err := c.UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostResponse(rsp)
+}
+
+func (c *ClientWithResponses) UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostWithResponse(ctx context.Context, orgId string, body UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostResponse, error) {
+	rsp, err := c.UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPost(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostResponse(rsp)
+}
+
+// UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostWithBodyWithResponse request with arbitrary body returning *UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostResponse
+func (c *ClientWithResponses) UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostResponse, error) {
+	rsp, err := c.UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostResponse(rsp)
+}
+
+func (c *ClientWithResponses) UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostWithResponse(ctx context.Context, orgId string, body UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostResponse, error) {
+	rsp, err := c.UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePost(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostResponse(rsp)
+}
+
+// UobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteWithResponse request returning *UobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteResponse
+func (c *ClientWithResponses) UobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteWithResponse(ctx context.Context, orgId string, connectorId string, reqEditors ...RequestEditorFn) (*UobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteResponse, error) {
+	rsp, err := c.UobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDelete(ctx, orgId, connectorId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteResponse(rsp)
+}
+
+// UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutWithBodyWithResponse request with arbitrary body returning *UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutResponse
+func (c *ClientWithResponses) UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutWithBodyWithResponse(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutResponse, error) {
+	rsp, err := c.UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutWithBody(ctx, orgId, connectorId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutResponse(rsp)
+}
+
+func (c *ClientWithResponses) UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutWithResponse(ctx context.Context, orgId string, connectorId string, body UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutResponse, error) {
+	rsp, err := c.UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPut(ctx, orgId, connectorId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutResponse(rsp)
+}
+
+// UobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostWithResponse request returning *UobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostResponse
+func (c *ClientWithResponses) UobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostWithResponse(ctx context.Context, orgId string, connectorId string, reqEditors ...RequestEditorFn) (*UobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostResponse, error) {
+	rsp, err := c.UobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPost(ctx, orgId, connectorId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostResponse(rsp)
+}
+
 // VisDeviceEstimateDeleteWithBodyWithResponse request with arbitrary body returning *VisDeviceEstimateDeleteResponse
 func (c *ClientWithResponses) VisDeviceEstimateDeleteWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*VisDeviceEstimateDeleteResponse, error) {
 	rsp, err := c.VisDeviceEstimateDeleteWithBody(ctx, orgId, contentType, body, reqEditors...)
@@ -87006,22 +91506,22 @@ func (c *ClientWithResponses) VisDeviceDeleteWithResponse(ctx context.Context, o
 	return ParseVisDeviceDeleteResponse(rsp)
 }
 
-// VisExportWithResponse request returning *VisExportResponse
-func (c *ClientWithResponses) VisExportWithResponse(ctx context.Context, orgId int, params *VisExportParams, reqEditors ...RequestEditorFn) (*VisExportResponse, error) {
-	rsp, err := c.VisExport(ctx, orgId, params, reqEditors...)
+// VisExportIndexWithResponse request returning *VisExportIndexResponse
+func (c *ClientWithResponses) VisExportIndexWithResponse(ctx context.Context, orgId int, params *VisExportIndexParams, reqEditors ...RequestEditorFn) (*VisExportIndexResponse, error) {
+	rsp, err := c.VisExportIndex(ctx, orgId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVisExportResponse(rsp)
+	return ParseVisExportIndexResponse(rsp)
 }
 
-// VisExport2WithResponse request returning *VisExport2Response
-func (c *ClientWithResponses) VisExport2WithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*VisExport2Response, error) {
-	rsp, err := c.VisExport2(ctx, orgId, id, reqEditors...)
+// VisExportDownloadWithResponse request returning *VisExportDownloadResponse
+func (c *ClientWithResponses) VisExportDownloadWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*VisExportDownloadResponse, error) {
+	rsp, err := c.VisExportDownload(ctx, orgId, id, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseVisExport2Response(rsp)
+	return ParseVisExportDownloadResponse(rsp)
 }
 
 // VisQueryCreateWithBodyWithResponse request with arbitrary body returning *VisQueryCreateResponse
@@ -89544,306 +94044,6 @@ func ParseCredCredentialDeleteProjectResponse(rsp *http.Response) (*CredCredenti
 	return response, nil
 }
 
-// ParseDivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetResponse parses an HTTP response from a DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetWithResponse call
-func ParseDivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetResponse(rsp *http.Response) (*DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DivntGetConnectorStatusDataInventoryV1OrgsOrgIdConnectorStatusGetResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest DivntOkResponseAny
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON502 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseDivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetResponse parses an HTTP response from a DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetWithResponse call
-func ParseDivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetResponse(rsp *http.Response) (*DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DivntListConnectorsDataInventoryV1OrgsOrgIdConnectorsGetResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest DivntOkResponseAny
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON502 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseDivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetResponse parses an HTTP response from a DivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetWithResponse call
-func ParseDivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetResponse(rsp *http.Response) (*DivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DivntGetConnectorsCountDataInventoryV1OrgsOrgIdConnectorsCountGetResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest DivntOkResponseAny
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON502 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseDivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetResponse parses an HTTP response from a DivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetWithResponse call
-func ParseDivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetResponse(rsp *http.Response) (*DivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &DivntGetConnectorDataInventoryV1OrgsOrgIdConnectorsIdentifierGetResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest DivntOkResponseAny
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
-		var dest DivntErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON502 = &dest
-
-	}
-
-	return response, nil
-}
-
 // ParseDivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostResponse parses an HTTP response from a DivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostWithResponse call
 func ParseDivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostResponse(rsp *http.Response) (*DivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -90408,7 +94608,7 @@ func ParseFinopsBillingBillingCreateRuleResponse(rsp *http.Response) (*FinopsBil
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest FinopsBillingCreateRuleResponseBody
+		var dest FinopsBillingCreateCreditAssignmentResult
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -90492,7 +94692,7 @@ func ParseFinopsBillingBillingCreatePostAdjustmentResponse(rsp *http.Response) (
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest FinopsBillingCreateRuleResponseBody
+		var dest FinopsBillingCreateCreditAssignmentResult
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -90576,7 +94776,7 @@ func ParseFinopsBillingBillingCreatePreAdjustmentResponse(rsp *http.Response) (*
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest FinopsBillingCreateRuleResponseBody
+		var dest FinopsBillingCreateCreditAssignmentResult
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -90660,7 +94860,7 @@ func ParseFinopsBillingBillingCreateEnterpriseRuleResponse(rsp *http.Response) (
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest FinopsBillingCreateRuleResponseBody
+		var dest FinopsBillingCreateCreditAssignmentResult
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -90756,6 +94956,168 @@ func ParseFinopsBillingSettingsReplaceSettingsResponse(rsp *http.Response) (*Fin
 	response := &FinopsBillingSettingsReplaceSettingsResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingAuditIndexAuditResultsResponse parses an HTTP response from a FinopsBillingBillingAuditIndexAuditResultsWithResponse call
+func ParseFinopsBillingBillingAuditIndexAuditResultsResponse(rsp *http.Response) (*FinopsBillingBillingAuditIndexAuditResultsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingAuditIndexAuditResultsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingAuditResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingCreditsIndexCreditAssignmentsResponse parses an HTTP response from a FinopsBillingBillingCreditsIndexCreditAssignmentsWithResponse call
+func ParseFinopsBillingBillingCreditsIndexCreditAssignmentsResponse(rsp *http.Response) (*FinopsBillingBillingCreditsIndexCreditAssignmentsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingCreditsIndexCreditAssignmentsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingIndexCreditAssignmentsResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingCreditsCreateCreditAssignmentResponse parses an HTTP response from a FinopsBillingBillingCreditsCreateCreditAssignmentWithResponse call
+func ParseFinopsBillingBillingCreditsCreateCreditAssignmentResponse(rsp *http.Response) (*FinopsBillingBillingCreditsCreateCreditAssignmentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingCreditsCreateCreditAssignmentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingCreateCreditAssignmentResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingCreditsDeleteCreditAssignmentResponse parses an HTTP response from a FinopsBillingBillingCreditsDeleteCreditAssignmentWithResponse call
+func ParseFinopsBillingBillingCreditsDeleteCreditAssignmentResponse(rsp *http.Response) (*FinopsBillingBillingCreditsDeleteCreditAssignmentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingCreditsDeleteCreditAssignmentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingCreditsShowCreditAssignmentResponse parses an HTTP response from a FinopsBillingBillingCreditsShowCreditAssignmentWithResponse call
+func ParseFinopsBillingBillingCreditsShowCreditAssignmentResponse(rsp *http.Response) (*FinopsBillingBillingCreditsShowCreditAssignmentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingCreditsShowCreditAssignmentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingCreditAssignment
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingCreditsReplaceCreditAssignmentResponse parses an HTTP response from a FinopsBillingBillingCreditsReplaceCreditAssignmentWithResponse call
+func ParseFinopsBillingBillingCreditsReplaceCreditAssignmentResponse(rsp *http.Response) (*FinopsBillingBillingCreditsReplaceCreditAssignmentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingCreditsReplaceCreditAssignmentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingCreditsIndexVendorCreditsResponse parses an HTTP response from a FinopsBillingBillingCreditsIndexVendorCreditsWithResponse call
+func ParseFinopsBillingBillingCreditsIndexVendorCreditsResponse(rsp *http.Response) (*FinopsBillingBillingCreditsIndexVendorCreditsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingCreditsIndexVendorCreditsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingVendorCreditsResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
 	}
 
 	return response, nil
@@ -94313,6 +98675,48 @@ func ParseIamServiceAccountClientShowResponse(rsp *http.Response) (*IamServiceAc
 	return response, nil
 }
 
+// ParseIamServiceAccountClientDeleteOldSecretResponse parses an HTTP response from a IamServiceAccountClientDeleteOldSecretWithResponse call
+func ParseIamServiceAccountClientDeleteOldSecretResponse(rsp *http.Response) (*IamServiceAccountClientDeleteOldSecretResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &IamServiceAccountClientDeleteOldSecretResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseIamServiceAccountClientRotateResponse parses an HTTP response from a IamServiceAccountClientRotateWithResponse call
+func ParseIamServiceAccountClientRotateResponse(rsp *http.Response) (*IamServiceAccountClientRotateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &IamServiceAccountClientRotateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest IamFlexeraIamServiceAccountClient
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseIamUserIndexResponse parses an HTTP response from a IamUserIndexWithResponse call
 func ParseIamUserIndexResponse(rsp *http.Response) (*IamUserIndexResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -94390,6 +98794,32 @@ func ParseIamUserShowResponse(rsp *http.Response) (*IamUserShowResponse, error) 
 	}
 
 	response := &IamUserShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest IamFlexeraIamUser
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseIamUserUpdateResponse parses an HTTP response from a IamUserUpdateWithResponse call
+func ParseIamUserUpdateResponse(rsp *http.Response) (*IamUserUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &IamUserUpdateResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -94507,6 +98937,58 @@ func ParseIamRefreshTokenShowResponse(rsp *http.Response) (*IamRefreshTokenShowR
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest IamFlexeraIamRefreshToken
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseIamUserProfileShowResponse parses an HTTP response from a IamUserProfileShowWithResponse call
+func ParseIamUserProfileShowResponse(rsp *http.Response) (*IamUserProfileShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &IamUserProfileShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest IamUserProfile
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseIamUserProfileUpdateResponse parses an HTTP response from a IamUserProfileUpdateWithResponse call
+func ParseIamUserProfileUpdateResponse(rsp *http.Response) (*IamUserProfileUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &IamUserProfileUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest IamUserProfile
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -102401,6 +106883,1356 @@ func ParseIamSCIMUserReplaceResponse(rsp *http.Response) (*IamSCIMUserReplaceRes
 	return response, nil
 }
 
+// ParseUobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetResponse parses an HTTP response from a UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetWithResponse call
+func ParseUobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetResponse(rsp *http.Response) (*UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetResponse parses an HTTP response from a UobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetWithResponse call
+func ParseUobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetResponse(rsp *http.Response) (*UobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsGetConnectorsCountUobsV1OrgsOrgIdCloudConnectorsCountGetResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetResponse parses an HTTP response from a UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetWithResponse call
+func ParseUobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetResponse(rsp *http.Response) (*UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetResponse parses an HTTP response from a UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetWithResponse call
+func ParseUobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetResponse(rsp *http.Response) (*UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse parses an HTTP response from a UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteWithResponse call
+func ParseUobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse(rsp *http.Response) (*UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse parses an HTTP response from a UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithResponse call
+func ParseUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse(rsp *http.Response) (*UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse parses an HTTP response from a UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithResponse call
+func ParseUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse(rsp *http.Response) (*UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse parses an HTTP response from a UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithResponse call
+func ParseUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse(rsp *http.Response) (*UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse parses an HTTP response from a UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithResponse call
+func ParseUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse(rsp *http.Response) (*UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetResponse parses an HTTP response from a UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetWithResponse call
+func ParseUobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetResponse(rsp *http.Response) (*UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UobsOkResponseSaasConnectorRead
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetResponse parses an HTTP response from a UobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetWithResponse call
+func ParseUobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetResponse(rsp *http.Response) (*UobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsGetConnectorsCountUobsV1OrgsOrgIdSaasConnectorsCountGetResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetResponse parses an HTTP response from a UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetWithResponse call
+func ParseUobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetResponse(rsp *http.Response) (*UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetResponse parses an HTTP response from a UobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetWithResponse call
+func ParseUobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetResponse(rsp *http.Response) (*UobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsGetConnectorUobsV1OrgsOrgIdSaasConnectorsIdentifierGetResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UobsOkResponseSaasConnectorRead
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostResponse parses an HTTP response from a UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostWithResponse call
+func ParseUobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostResponse(rsp *http.Response) (*UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostResponse parses an HTTP response from a UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostWithResponse call
+func ParseUobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostResponse(rsp *http.Response) (*UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UobsOkResponseValidationResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteResponse parses an HTTP response from a UobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteWithResponse call
+func ParseUobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteResponse(rsp *http.Response) (*UobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsDeleteSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdDeleteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutResponse parses an HTTP response from a UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutWithResponse call
+func ParseUobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutResponse(rsp *http.Response) (*UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostResponse parses an HTTP response from a UobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostWithResponse call
+func ParseUobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostResponse(rsp *http.Response) (*UobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsCollectSaasConnectorUobsV1OrgsOrgIdSaasOnboardingConnectorIdCollectPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseVisDeviceEstimateDeleteResponse parses an HTTP response from a VisDeviceEstimateDeleteWithResponse call
 func ParseVisDeviceEstimateDeleteResponse(rsp *http.Response) (*VisDeviceEstimateDeleteResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -102453,15 +108285,15 @@ func ParseVisDeviceDeleteResponse(rsp *http.Response) (*VisDeviceDeleteResponse,
 	return response, nil
 }
 
-// ParseVisExportResponse parses an HTTP response from a VisExportWithResponse call
-func ParseVisExportResponse(rsp *http.Response) (*VisExportResponse, error) {
+// ParseVisExportIndexResponse parses an HTTP response from a VisExportIndexWithResponse call
+func ParseVisExportIndexResponse(rsp *http.Response) (*VisExportIndexResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &VisExportResponse{
+	response := &VisExportIndexResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -102479,15 +108311,15 @@ func ParseVisExportResponse(rsp *http.Response) (*VisExportResponse, error) {
 	return response, nil
 }
 
-// ParseVisExport2Response parses an HTTP response from a VisExport2WithResponse call
-func ParseVisExport2Response(rsp *http.Response) (*VisExport2Response, error) {
+// ParseVisExportDownloadResponse parses an HTTP response from a VisExportDownloadWithResponse call
+func ParseVisExportDownloadResponse(rsp *http.Response) (*VisExportDownloadResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &VisExport2Response{
+	response := &VisExportDownloadResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
