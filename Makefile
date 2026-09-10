@@ -4,7 +4,7 @@
 all:
 	UPDATE_SUBMODULE=1 RUN_MERGE=1 $(MAKE) generate-client
 
-# Regenerate client_gen.go from the merged OpenAPI spec.
+# Regenerate client_gen_*.go from the merged OpenAPI spec.
 # Set UPDATE_SUBMODULE=1 to advance submodule to origin/main first.
 # Set RUN_MERGE=1 to also re-merge specs from upstream sources first.
 generate-client:

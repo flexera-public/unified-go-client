@@ -81,7 +81,14 @@ The GitHub Actions release workflow will run tests and create the GitHub Release
 
 ## Regenerating the client
 
-The client code (`client_gen.go`) is generated from the Flexera One unified OpenAPI spec. To regenerate after the spec changes:
+The client code (`client_gen_*.go`) is generated from the Flexera One unified
+OpenAPI spec. Generated declarations are split by source specification and then
+by concern (`models`, `operations`, and `responses`), while shared client
+infrastructure remains in `client_gen_core.go`. The generated
+`client_gen_manifest.json` maps each file back to its source spec and exported
+declarations.
+
+To regenerate after the spec changes:
 
 ```sh
 # Initialize the public submodule if needed:
@@ -98,6 +105,10 @@ UPDATE_SUBMODULE=1 make generate-client
 ```
 
 By default, regeneration uses the `unified-openapi` commit pinned in this repository so builds are reproducible.
+
+Generation first runs `oapi-codegen` once to preserve its normal package-wide
+behavior, then `cmd/split-client` partitions the resulting Go syntax tree.
+Running generation twice with the same inputs must produce no changes.
 
 ## License
 

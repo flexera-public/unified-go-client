@@ -1,7 +1,7 @@
 name: refresh-client
 
 # Weekly (or manually-triggered) refresh of the unified-openapi submodule and
-# regeneration of client_gen.go from its latest merged spec. Any resulting
+# regeneration of client_gen_*.go from its latest merged spec. Any resulting
 # changes are pushed to a long-lived branch and opened/updated as a pull
 # request for manual review, mirroring the upstream refresh-specs.yml
 # workflow in flexera-public/unified-openapi.
@@ -46,6 +46,9 @@ jobs:
       - name: Build change summary
         id: summary
         run: |
+          # Make newly generated service files visible to git diff without
+          # staging their contents; create-pull-request stages them later.
+          git add --intent-to-add -- 'client_gen_*.go' client_gen_manifest.json
           {
             echo "## Automated unified-openapi client refresh"
             echo ""
@@ -72,4 +75,5 @@ jobs:
           body-path: /tmp/pr-body.md
           add-paths: |
             unified-openapi
-            client_gen.go
+            client_gen_*.go
+            client_gen_manifest.json
