@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# Regenerate client_gen.go from the unified OpenAPI spec.
+# Regenerate the split client_gen_*.go files from the unified OpenAPI spec.
 # Run from the repo root (called via `go generate .` or `make generate-client`).
 #
 # Prerequisites:
 #   - The unified-openapi repo (github.com/flexera-public/unified-openapi) is a submodule and must be initialized and updated (run `git submodule update --init --recursive` if it isn't)
 #   - openapi3.json must exist at unified-openapi/openapi3.json
-#     (run `make regen` in unified-openapi if it doesn't)
+#     (run `make generate` in unified-openapi if it doesn't)
 #
 # To also regenerate the spec from upstream sources before generating the client,
 # set RUN_MERGE=1:
@@ -15,6 +15,13 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SPEC_FILE="$SCRIPT_DIR/unified-openapi/openapi3.json"
+SPEC_CONFIG="$SCRIPT_DIR/unified-openapi/generator/specs.yaml"
+TEMP_CLIENT="$SCRIPT_DIR/.client_gen.tmp.go"
+
+cleanup() {
+  rm -f "$TEMP_CLIENT"
+}
+trap cleanup EXIT
 
 if [ ! -d "$SCRIPT_DIR/unified-openapi" ]; then
   # Activate/Init the git submodule
@@ -39,12 +46,20 @@ if [ "${RUN_MERGE:-}" = "1" ]; then
 fi
 
 if [ ! -f "$SPEC_FILE" ]; then
-  echo "Error: $SPEC_FILE not found. Run 'make regen' in unified-openapi first." >&2
+  echo "Error: $SPEC_FILE not found. Run 'make generate' in unified-openapi first." >&2
   exit 1
 fi
 
 echo "→ Generating Go client from $SPEC_FILE"
-rm -f "$SCRIPT_DIR/client_gen.go"
+rm -f "$TEMP_CLIENT"
 go tool oapi-codegen -config "$SCRIPT_DIR/config.yaml" "$SPEC_FILE"
 
-echo "✓ client_gen.go regenerated"
+echo "→ Splitting generated client by source spec and concern"
+go run "$SCRIPT_DIR/cmd/split-client" \
+  --input "$TEMP_CLIENT" \
+  --output-dir "$SCRIPT_DIR" \
+  --spec "$SPEC_FILE" \
+  --spec-config "$SPEC_CONFIG"
+rm -f "$SCRIPT_DIR/client_gen.go"
+
+echo "✓ split client regenerated"

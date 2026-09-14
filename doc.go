@@ -27,7 +27,8 @@
 //	UPDATE_SUBMODULE=1 make generate-client
 //
 //	This merges the raw specs via the generator in the unified-openapi sibling repo,
-//	then re-runs oapi-codegen to update client_gen.go.
+//	then re-runs oapi-codegen and partitions the generated declarations across
+//	client_gen_*.go by source spec and concern.
 //
 // # Sub-packages
 //
