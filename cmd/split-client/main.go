@@ -78,6 +78,7 @@ type manifest struct {
 
 type manifestFile struct {
 	Path             string   `json:"path"`
+	SHA256           string   `json:"sha256"`
 	Namespace        string   `json:"namespace"`
 	SourceSpecID     string   `json:"sourceSpecId,omitempty"`
 	Concern          string   `json:"concern"`
@@ -216,7 +217,7 @@ func splitFile(path string, namespaces []namespace) ([]outputGroup, string, stri
 		if err != nil {
 			return nil, "", "", fmt.Errorf("render %s: %w", group.FileName, err)
 		}
-		parsed, err := parser.ParseFile(token.NewFileSet(), group.FileName, rendered, parser.SkipObjectResolution)
+		parsed, err := parser.ParseFile(token.NewFileSet(), group.FileName, rendered, parser.SkipObjectResolution|parser.ParseComments)
 		if err != nil {
 			return nil, "", "", fmt.Errorf("validate %s: %w", group.FileName, err)
 		}
@@ -396,6 +397,8 @@ func matchNamespace(name string, namespaces []namespace) (namespace, bool) {
 			continue
 		}
 		remainder := strings.TrimPrefix(name, entry.Name)
+		// An uppercase (or empty) remainder marks a Go identifier word boundary;
+		// a lowercase remainder means the namespace is only a textual prefix.
 		if remainder == "" || !unicode.IsLower([]rune(remainder)[0]) {
 			return entry, true
 		}
@@ -449,15 +452,16 @@ func declarationInventory(decls []ast.Decl) (map[string]string, error) {
 			}
 		case *ast.GenDecl:
 			for _, spec := range value.Specs {
-				part := &ast.GenDecl{Tok: value.Tok, Specs: []ast.Spec{spec}}
+				part := *value
+				part.Specs = []ast.Spec{spec}
 				switch typed := spec.(type) {
 				case *ast.TypeSpec:
-					if err := addFingerprint(inventory, "type:"+typed.Name.Name, part); err != nil {
+					if err := addFingerprint(inventory, "type:"+typed.Name.Name, &part); err != nil {
 						return nil, err
 					}
 				case *ast.ValueSpec:
 					for _, name := range typed.Names {
-						if err := addFingerprint(inventory, strings.ToLower(value.Tok.String())+":"+name.Name, part); err != nil {
+						if err := addFingerprint(inventory, strings.ToLower(value.Tok.String())+":"+name.Name, &part); err != nil {
 							return nil, err
 						}
 					}
@@ -486,7 +490,7 @@ func addFingerprint(inventory map[string]string, key string, node ast.Node) erro
 
 func fingerprintField(name string, value reflect.Value) bool {
 	switch name {
-	case "Doc", "Comment", "Comments", "Obj", "Scope", "Unresolved":
+	case "Obj", "Scope", "Unresolved":
 		return false
 	}
 	return value.Type() != reflect.TypeOf(token.Pos(0))
@@ -626,9 +630,11 @@ func writeOutputs(opts options, packageName, generator string, groups []outputGr
 		if err := os.WriteFile(filepath.Join(tempDir, group.FileName), rendered, 0o644); err != nil {
 			return fmt.Errorf("write %s: %w", group.FileName, err)
 		}
+		fileSum := sha256.Sum256(rendered)
 		lines := bytes.Count(rendered, []byte("\n"))
 		result.Files = append(result.Files, manifestFile{
 			Path:             group.FileName,
+			SHA256:           hex.EncodeToString(fileSum[:]),
 			Namespace:        group.Key.Namespace,
 			SourceSpecID:     group.SourceSpecID,
 			Concern:          group.Key.Concern,

@@ -1,7 +1,12 @@
 package main
 
 import (
+	"crypto/sha256"
 	"encoding/json"
+	"fmt"
+	"go/ast"
+	"go/parser"
+	"go/token"
 	"os"
 	"path/filepath"
 	"strings"
@@ -25,6 +30,7 @@ type ClientInterface interface {
 }
 type BudgetThing struct { Name string }
 type BudgetListParams struct { Limit *int }
+// BudgetListResponse documents the generated response.
 type BudgetListResponse struct { Body []byte }
 const Active BudgetThingState = "active"
 type BudgetThingState string
@@ -103,6 +109,15 @@ func TestRunSplitsByNamespaceAndConcern(t *testing.T) {
 	if got.Source != "openapi.json" {
 		t.Fatalf("manifest source is not relative: %q", got.Source)
 	}
+	for _, file := range got.Files {
+		content, err := os.ReadFile(filepath.Join(dir, file.Path))
+		if err != nil {
+			t.Fatal(err)
+		}
+		if want := fmt.Sprintf("%x", sha256.Sum256(content)); file.SHA256 != want {
+			t.Fatalf("manifest file %q has SHA-256 %q, want %q", file.Path, file.SHA256, want)
+		}
+	}
 }
 
 func TestRunIsDeterministic(t *testing.T) {
@@ -175,6 +190,32 @@ func TestVerifyDeclarationInventoryRejectsDroppedOrChangedDeclarations(t *testin
 	if err := verifyDeclarationInventory(source, map[string]string{"type:Example": "original", "func:.Extra": "new"}); err == nil || !strings.Contains(err.Error(), "introduced") {
 		t.Fatalf("expected introduced declaration error, got %v", err)
 	}
+}
+
+func TestDeclarationInventoryIncludesComments(t *testing.T) {
+	withOriginalComment := parseTestDeclarations(t, "// Example is documented.\ntype Example struct{}\n")
+	withChangedComment := parseTestDeclarations(t, "// Example has changed documentation.\ntype Example struct{}\n")
+
+	original, err := declarationInventory(withOriginalComment)
+	if err != nil {
+		t.Fatal(err)
+	}
+	changed, err := declarationInventory(withChangedComment)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := verifyDeclarationInventory(original, changed); err == nil || !strings.Contains(err.Error(), "changed") {
+		t.Fatalf("expected changed comment to fail inventory verification, got %v", err)
+	}
+}
+
+func parseTestDeclarations(t *testing.T, declarations string) []ast.Decl {
+	t.Helper()
+	file, err := parser.ParseFile(token.NewFileSet(), "fixture.go", "package fixture\n\n"+declarations, parser.ParseComments)
+	if err != nil {
+		t.Fatal(err)
+	}
+	return file.Decls
 }
 
 func writeTestFile(t *testing.T, path, content string) {

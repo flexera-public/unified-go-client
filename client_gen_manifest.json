@@ -7,6 +7,7 @@
   "files": [
     {
       "path": "client_gen_auth_models.go",
+      "sha256": "2bbc3c322fe79669023a3af21c73ba816f97f7fa0a8094b755d9a5f938779796",
       "namespace": "Auth",
       "sourceSpecId": "flexera-okta-token-service",
       "concern": "models",
@@ -19,6 +20,7 @@
     },
     {
       "path": "client_gen_auth_operations.go",
+      "sha256": "8aaff66fc96b8fc83804ea0d433f48bb47d3e8be0b7278808383544077bc2922",
       "namespace": "Auth",
       "sourceSpecId": "flexera-okta-token-service",
       "concern": "operations",
@@ -40,6 +42,7 @@
     },
     {
       "path": "client_gen_auth_responses.go",
+      "sha256": "a1458a997130fac344fafe182dfd5dcbced2c24c9dae7a2c6044130072330933",
       "namespace": "Auth",
       "sourceSpecId": "flexera-okta-token-service",
       "concern": "responses",
@@ -60,6 +63,7 @@
     },
     {
       "path": "client_gen_bill_analysis_models.go",
+      "sha256": "1d656ceccfb3ca12f6b0928ecd235b0bc6ba6d1f328797fe1118767a268b219d",
       "namespace": "BillAnalysis",
       "sourceSpecId": "rightscale-bill-analysis",
       "concern": "models",
@@ -191,6 +195,7 @@
     },
     {
       "path": "client_gen_bill_analysis_operations.go",
+      "sha256": "7ac92efe28b117945d59294b43bd4aa727c8e768217a351c70cef4416635b5d6",
       "namespace": "BillAnalysis",
       "sourceSpecId": "rightscale-bill-analysis",
       "concern": "operations",
@@ -429,6 +434,7 @@
     },
     {
       "path": "client_gen_bill_analysis_responses.go",
+      "sha256": "4ad3f2de345490b15b5532bf1d38eb18d8aed624490b8d6a2d99f3dc930c7c41",
       "namespace": "BillAnalysis",
       "sourceSpecId": "rightscale-bill-analysis",
       "concern": "responses",
@@ -687,6 +693,7 @@
     },
     {
       "path": "client_gen_billing_center_service_models.go",
+      "sha256": "836fdf23000c12eca25a14a065e77d2984bf8aa575c564082a981f7bb25bff25",
       "namespace": "BillingCenterService",
       "sourceSpecId": "rightscale-billing-center",
       "concern": "models",
@@ -752,6 +759,7 @@
     },
     {
       "path": "client_gen_billing_center_service_operations.go",
+      "sha256": "ec60b89f1c9d0418da367ac8d0ab9622f9eb0393fc94169ebebcb35c4ccbb357",
       "namespace": "BillingCenterService",
       "sourceSpecId": "rightscale-billing-center",
       "concern": "operations",
@@ -840,6 +848,7 @@
     },
     {
       "path": "client_gen_billing_center_service_responses.go",
+      "sha256": "b20174eca8e0caa0bc8b2855343b1d6b264f16c2042deaba82096b8d43e54fba",
       "namespace": "BillingCenterService",
       "sourceSpecId": "rightscale-billing-center",
       "concern": "responses",
@@ -937,6 +946,7 @@
     },
     {
       "path": "client_gen_budget_models.go",
+      "sha256": "94e0088503ed3ccbc46467c2e8836fe954258f8b8684923a85534a7cc4592174",
       "namespace": "Budget",
       "sourceSpecId": "flexera-budget-v1",
       "concern": "models",
@@ -1002,6 +1012,7 @@
     },
     {
       "path": "client_gen_budget_operations.go",
+      "sha256": "fea01324180f94f90faed2d74ed422e42abb64e10c66c26aea4d17092b088d4c",
       "namespace": "Budget",
       "sourceSpecId": "flexera-budget-v1",
       "concern": "operations",
@@ -1044,6 +1055,7 @@
     },
     {
       "path": "client_gen_budget_responses.go",
+      "sha256": "05b0e3eb86f7f4d07a469a8dbc8193d2f2f36bd31923485cb6f64afe5cd3a234",
       "namespace": "Budget",
       "sourceSpecId": "flexera-budget-v1",
       "concern": "responses",
@@ -1092,6 +1104,7 @@
     },
     {
       "path": "client_gen_core.go",
+      "sha256": "ecf2bd78d4ea5294a8cbc1c751ccfaab5d2cd25cdabeb9a7b682b17ed2779b30",
       "namespace": "core",
       "concern": "core",
       "lines": 4518,
@@ -1123,6 +1136,7 @@
     },
     {
       "path": "client_gen_cred_models.go",
+      "sha256": "9ee25329dc57e71a14809c8bbf5540bcbd4eed2742be24f78bd5ad980917ca22",
       "namespace": "Cred",
       "sourceSpecId": "flexera-cred-v2",
       "concern": "models",
@@ -1233,6 +1247,7 @@
     },
     {
       "path": "client_gen_cred_operations.go",
+      "sha256": "554331f813612eac1180729b0411875f9388f529fdb29950842ac96793d5d2b5",
       "namespace": "Cred",
       "sourceSpecId": "flexera-cred-v2",
       "concern": "operations",
@@ -1490,6 +1505,7 @@
     },
     {
       "path": "client_gen_cred_responses.go",
+      "sha256": "ace7ee0b5d8a80a51af277a6a58bfd1dedf9619a220e7689115d998b94aa0871",
       "namespace": "Cred",
       "sourceSpecId": "flexera-cred-v2",
       "concern": "responses",
@@ -1875,6 +1891,7 @@
     },
     {
       "path": "client_gen_divnt_models.go",
+      "sha256": "bebc49b5af3ed13956c023cda2163ba046c3a9727b022d1cfb285a72706cdb94",
       "namespace": "Divnt",
       "sourceSpecId": "flexera-data-inventory-v1",
       "concern": "models",
@@ -1921,6 +1938,7 @@
     },
     {
       "path": "client_gen_divnt_operations.go",
+      "sha256": "8440705641b04679691174d467fdcacc9c5a442d2627a772399f492cea277968",
       "namespace": "Divnt",
       "sourceSpecId": "flexera-data-inventory-v1",
       "concern": "operations",
@@ -1946,6 +1964,7 @@
     },
     {
       "path": "client_gen_divnt_responses.go",
+      "sha256": "50336837d5ba345b8e14e074f4bd0a44c5a15f6f2e9babf0df6a9f54e534a717",
       "namespace": "Divnt",
       "sourceSpecId": "flexera-data-inventory-v1",
       "concern": "responses",
@@ -1976,6 +1995,7 @@
     },
     {
       "path": "client_gen_finops_billing_models.go",
+      "sha256": "6571cf500022f52f65e9d10a6ba2e1c7a64c0c988556f89c50d66c6cc94eb46e",
       "namespace": "FinopsBilling",
       "sourceSpecId": "flexera-finops-billing-v1",
       "concern": "models",
@@ -2210,6 +2230,7 @@
     },
     {
       "path": "client_gen_finops_billing_operations.go",
+      "sha256": "08246160cc540e7952897eeedd0d91cfc234cff953183a95986140ea783de456",
       "namespace": "FinopsBilling",
       "sourceSpecId": "flexera-finops-billing-v1",
       "concern": "operations",
@@ -2397,6 +2418,7 @@
     },
     {
       "path": "client_gen_finops_billing_responses.go",
+      "sha256": "fda624745beb6768769a843a9f16607efdad5be6acbb5aa547caa5aec85a2f10",
       "namespace": "FinopsBilling",
       "sourceSpecId": "flexera-finops-billing-v1",
       "concern": "responses",
@@ -2626,6 +2648,7 @@
     },
     {
       "path": "client_gen_finops_customizations_models.go",
+      "sha256": "6fa52a775c3fe495f7afb5fc82c6ceb25f09770f6fb0a6b6c7deedcc0ace28a8",
       "namespace": "FinopsCustomizations",
       "sourceSpecId": "flexera-finops-customizations-v1",
       "concern": "models",
@@ -2750,6 +2773,7 @@
     },
     {
       "path": "client_gen_finops_customizations_operations.go",
+      "sha256": "329f988f6b0104269e04855e1fca9f95ad9a3e69008bfede9af4a442c1f71d23",
       "namespace": "FinopsCustomizations",
       "sourceSpecId": "flexera-finops-customizations-v1",
       "concern": "operations",
@@ -2870,6 +2894,7 @@
     },
     {
       "path": "client_gen_finops_customizations_responses.go",
+      "sha256": "94defd4d09f188c1f3f0cf971f3ec1c48efdf28221fa6201dbe183057c41859d",
       "namespace": "FinopsCustomizations",
       "sourceSpecId": "flexera-finops-customizations-v1",
       "concern": "responses",
@@ -3017,6 +3042,7 @@
     },
     {
       "path": "client_gen_finops_onboarding_models.go",
+      "sha256": "be793942a1e4de55c9577369dcd092c162b0495088010ec8b956085e96674d42",
       "namespace": "FinopsOnboarding",
       "sourceSpecId": "flexera-finops-onboarding-v1",
       "concern": "models",
@@ -3182,6 +3208,7 @@
     },
     {
       "path": "client_gen_finops_onboarding_operations.go",
+      "sha256": "4f159a38023b9e9e2acb00af762ccc6184b3e7a4f36ea7f56004b165841d623d",
       "namespace": "FinopsOnboarding",
       "sourceSpecId": "flexera-finops-onboarding-v1",
       "concern": "operations",
@@ -3373,6 +3400,7 @@
     },
     {
       "path": "client_gen_finops_onboarding_responses.go",
+      "sha256": "461a75eb3b54dc41697f6b5b9829eab86449425ae3aec2398b926d16e59cb975",
       "namespace": "FinopsOnboarding",
       "sourceSpecId": "flexera-finops-onboarding-v1",
       "concern": "responses",
@@ -3644,6 +3672,7 @@
     },
     {
       "path": "client_gen_graphql_models.go",
+      "sha256": "3705d92ee9d3db3539d9fd3e433ba5fdd6111a443e3f0e0705128ab081f86a1e",
       "namespace": "Graphql",
       "sourceSpecId": "flexera-graphql-v1",
       "concern": "models",
@@ -3656,6 +3685,7 @@
     },
     {
       "path": "client_gen_graphql_operations.go",
+      "sha256": "1c9c46d4569a712f0cd314e4169c6fc31960b7ca3e50dc3f7fc2ec3867fc24f4",
       "namespace": "Graphql",
       "sourceSpecId": "flexera-graphql-v1",
       "concern": "operations",
@@ -3677,6 +3707,7 @@
     },
     {
       "path": "client_gen_graphql_responses.go",
+      "sha256": "8f09ce0400f49b6acf495cce27194d3f45a7bfdd478ba42fe1d6d9c31dcdde25",
       "namespace": "Graphql",
       "sourceSpecId": "flexera-graphql-v1",
       "concern": "responses",
@@ -3699,6 +3730,7 @@
     },
     {
       "path": "client_gen_grs_models.go",
+      "sha256": "28b196198ec023c256adcd97cbb949be8e918b54af2d9f641b18327fa8fcc67a",
       "namespace": "Grs",
       "sourceSpecId": "flexera-grs",
       "concern": "models",
@@ -3712,6 +3744,7 @@
     },
     {
       "path": "client_gen_grs_operations.go",
+      "sha256": "33fc3caf35837e28c0faab4f8548753b4f38ab0e134d5af5ffee8442d5b1d2b0",
       "namespace": "Grs",
       "sourceSpecId": "flexera-grs",
       "concern": "operations",
@@ -3729,6 +3762,7 @@
     },
     {
       "path": "client_gen_grs_responses.go",
+      "sha256": "9c2ceceec0968d0a7f430dfd9acee496fc88b8deda4a09a80211fef0b764eab6",
       "namespace": "Grs",
       "sourceSpecId": "flexera-grs",
       "concern": "responses",
@@ -3750,6 +3784,7 @@
     },
     {
       "path": "client_gen_iam_models.go",
+      "sha256": "8a6aa315e7f0a8cb63063d0456ad6715c7a16c975a7d77fcd93001e630d0b90a",
       "namespace": "Iam",
       "sourceSpecId": "flexera-iam-v1",
       "concern": "models",
@@ -4176,6 +4211,7 @@
     },
     {
       "path": "client_gen_iam_operations.go",
+      "sha256": "25b6be563ec70689874a612198dbd44393d684a6406efb7ef5703262b6115ba9",
       "namespace": "Iam",
       "sourceSpecId": "flexera-iam-v1",
       "concern": "operations",
@@ -4668,6 +4704,7 @@
     },
     {
       "path": "client_gen_iam_responses.go",
+      "sha256": "1db6597a3ae6256c98f7741181838b0ba32ef14ff9dcc4af8e5f0ac3b4ab66e9",
       "namespace": "Iam",
       "sourceSpecId": "flexera-iam-v1",
       "concern": "responses",
@@ -5387,6 +5424,7 @@
     },
     {
       "path": "client_gen_optima_recommendations_models.go",
+      "sha256": "1b068627ee6d51113121d33edb3e2003566d7b480bbee08da3f12e1d5cdc0693",
       "namespace": "OptimaRecommendations",
       "sourceSpecId": "rightscale-optima-recommendations",
       "concern": "models",
@@ -5406,6 +5444,7 @@
     },
     {
       "path": "client_gen_optima_recommendations_operations.go",
+      "sha256": "765b9db468d9f38844963ae772eae9f922a25a667b93e8a6285548092b915b31",
       "namespace": "OptimaRecommendations",
       "sourceSpecId": "rightscale-optima-recommendations",
       "concern": "operations",
@@ -5431,6 +5470,7 @@
     },
     {
       "path": "client_gen_optima_recommendations_responses.go",
+      "sha256": "ba1a54fceabd8d90c992ee754982d52e268af8e7f0837399aff7cfa709ecc95f",
       "namespace": "OptimaRecommendations",
       "sourceSpecId": "rightscale-optima-recommendations",
       "concern": "responses",
@@ -5453,6 +5493,7 @@
     },
     {
       "path": "client_gen_policy_models.go",
+      "sha256": "00a18193d42bd48ff667a9efb7e076382e25681a3f52479b3eda6fd6c9575301",
       "namespace": "Policy",
       "sourceSpecId": "flexera-policy-v1",
       "concern": "models",
@@ -5890,6 +5931,7 @@
     },
     {
       "path": "client_gen_policy_operations.go",
+      "sha256": "5733bcdaa11c61dbafbe79d2282c4a7100582083e6e8543223de4194f8188101",
       "namespace": "Policy",
       "sourceSpecId": "flexera-policy-v1",
       "concern": "operations",
@@ -6145,6 +6187,7 @@
     },
     {
       "path": "client_gen_policy_responses.go",
+      "sha256": "c03f9d20d0d936b6ea71222c677eaaca546c0bfed0812ae0168d84c9cd56e46a",
       "namespace": "Policy",
       "sourceSpecId": "flexera-policy-v1",
       "concern": "responses",
@@ -6427,6 +6470,7 @@
     },
     {
       "path": "client_gen_risk_models.go",
+      "sha256": "107744689d7682dc4878a0b3b1b77ed6cd4b2b3b31ad281601c4eec26f651d54",
       "namespace": "Risk",
       "sourceSpecId": "flexera-risk-v1",
       "concern": "models",
@@ -6566,6 +6610,7 @@
     },
     {
       "path": "client_gen_risk_operations.go",
+      "sha256": "144bfca4b532ebbb038b4467412947bdedb2c09f19f208950a349ad9e3e73e7f",
       "namespace": "Risk",
       "sourceSpecId": "flexera-risk-v1",
       "concern": "operations",
@@ -6823,6 +6868,7 @@
     },
     {
       "path": "client_gen_risk_responses.go",
+      "sha256": "4910e8d225905edff0f227e7480f37cc3b2da5551a1335765b7192e0a9307122",
       "namespace": "Risk",
       "sourceSpecId": "flexera-risk-v1",
       "concern": "responses",
@@ -7166,6 +7212,7 @@
     },
     {
       "path": "client_gen_saas_models.go",
+      "sha256": "45c3d2d3b13571e76474eacb3d10fb30371a61053cf316c594b7f40111411361",
       "namespace": "Saas",
       "sourceSpecId": "flexera-saas-v1",
       "concern": "models",
@@ -7530,6 +7577,7 @@
     },
     {
       "path": "client_gen_saas_operations.go",
+      "sha256": "47f32a9f94fc1bf9e4ac961272c153e20074e5eac3bf6f64d9974a81f91ef96c",
       "namespace": "Saas",
       "sourceSpecId": "flexera-saas-v1",
       "concern": "operations",
@@ -7858,6 +7906,7 @@
     },
     {
       "path": "client_gen_saas_responses.go",
+      "sha256": "b7daa4e3f0e885377c5edeb27dbe31de362730c5f80562d965f6f291bd402e80",
       "namespace": "Saas",
       "sourceSpecId": "flexera-saas-v1",
       "concern": "responses",
@@ -8240,6 +8289,7 @@
     },
     {
       "path": "client_gen_uobs_models.go",
+      "sha256": "d4f364eeea942d7ad0fee6458a8935f0597fb29ed3d244a8b86cd41ed27ca765",
       "namespace": "Uobs",
       "sourceSpecId": "flexera-unified-onboarding-v1",
       "concern": "models",
@@ -8279,6 +8329,7 @@
     },
     {
       "path": "client_gen_uobs_operations.go",
+      "sha256": "7bb3af5dfe78fa88eb8f12a13ff927cf0f157aebf9c21aa967f06aa546abfcb8",
       "namespace": "Uobs",
       "sourceSpecId": "flexera-unified-onboarding-v1",
       "concern": "operations",
@@ -8352,6 +8403,7 @@
     },
     {
       "path": "client_gen_uobs_responses.go",
+      "sha256": "6bb5e6c93547e58491801b0ce7d0d054dca6c26c624373d485463efe93b2b96d",
       "namespace": "Uobs",
       "sourceSpecId": "flexera-unified-onboarding-v1",
       "concern": "responses",
@@ -8464,6 +8516,7 @@
     },
     {
       "path": "client_gen_vis_models.go",
+      "sha256": "69eb26ffd0cd200a996ef3d87e88f7ceed1725d6473b61971aa87a40716cc59b",
       "namespace": "Vis",
       "sourceSpecId": "flexera-vis-v2",
       "concern": "models",
@@ -8491,6 +8544,7 @@
     },
     {
       "path": "client_gen_vis_operations.go",
+      "sha256": "0301dd28366298de4586416bc2178dc7f823ed6c2556f62d4e9bd52c2b9c5998",
       "namespace": "Vis",
       "sourceSpecId": "flexera-vis-v2",
       "concern": "operations",
@@ -8572,6 +8626,7 @@
     },
     {
       "path": "client_gen_vis_responses.go",
+      "sha256": "1e73e3fe36668792e41e9766ffa2b19574c7aad0db958439d45bac8ce897d81a",
       "namespace": "Vis",
       "sourceSpecId": "flexera-vis-v2",
       "concern": "responses",
