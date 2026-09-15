@@ -157,7 +157,7 @@ func (r UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetResponse) Sta
 type UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *UobsOkResponseAny
+	JSON202      *UobsOkResponseAny
 	JSON400      *UobsErrorResponse
 	JSON401      *UobsErrorResponse
 	JSON403      *UobsErrorResponse
@@ -183,10 +183,10 @@ func (r UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse)
 	return 0
 }
 
-type UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse struct {
+type UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *UobsOkResponseAny
+	JSON202      *UobsOkResponseAny
 	JSON400      *UobsErrorResponse
 	JSON401      *UobsErrorResponse
 	JSON403      *UobsErrorResponse
@@ -197,7 +197,7 @@ type UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse s
 }
 
 // Status returns HTTPResponse.Status
-func (r UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse) Status() string {
+func (r UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -205,17 +205,17 @@ func (r UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostRespons
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse) StatusCode() int {
+func (r UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
 	return 0
 }
 
-type UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse struct {
+type UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *UobsOkResponseAny
+	JSON202      *UobsOkResponseAny
 	JSON400      *UobsErrorResponse
 	JSON401      *UobsErrorResponse
 	JSON403      *UobsErrorResponse
@@ -226,7 +226,7 @@ type UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutR
 }
 
 // Status returns HTTPResponse.Status
-func (r UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse) Status() string {
+func (r UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -234,65 +234,7 @@ func (r UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdP
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *UobsOkResponseAny
-	JSON400      *UobsErrorResponse
-	JSON401      *UobsErrorResponse
-	JSON403      *UobsErrorResponse
-	JSON404      *UobsErrorResponse
-	JSON429      *UobsErrorResponse
-	JSON500      *UobsErrorResponse
-	JSON502      *UobsErrorResponse
-}
-
-// Status returns HTTPResponse.Status
-func (r UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *UobsOkResponseAny
-	JSON400      *UobsErrorResponse
-	JSON401      *UobsErrorResponse
-	JSON403      *UobsErrorResponse
-	JSON404      *UobsErrorResponse
-	JSON429      *UobsErrorResponse
-	JSON500      *UobsErrorResponse
-	JSON502      *UobsErrorResponse
-}
-
-// Status returns HTTPResponse.Status
-func (r UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse) StatusCode() int {
+func (r UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -605,72 +547,38 @@ func (c *ClientWithResponses) UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnb
 	return ParseUobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse(rsp)
 }
 
-// UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithBodyWithResponse request with arbitrary body returning *UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse
-func (c *ClientWithResponses) UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse, error) {
-	rsp, err := c.UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithBody(ctx, orgId, contentType, body, reqEditors...)
+// UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostWithBodyWithResponse request with arbitrary body returning *UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostResponse
+func (c *ClientWithResponses) UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostWithBody(ctx, orgId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse(rsp)
+	return ParseUobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostResponse(rsp)
 }
 
-func (c *ClientWithResponses) UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithResponse(ctx context.Context, orgId string, body UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse, error) {
-	rsp, err := c.UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPost(ctx, orgId, body, reqEditors...)
+func (c *ClientWithResponses) UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostWithResponse(ctx context.Context, orgId string, body UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPost(ctx, orgId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse(rsp)
+	return ParseUobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostResponse(rsp)
 }
 
-// UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithBodyWithResponse request with arbitrary body returning *UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse
-func (c *ClientWithResponses) UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithBodyWithResponse(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse, error) {
-	rsp, err := c.UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithBody(ctx, orgId, connectorId, contentType, body, reqEditors...)
+// UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutWithBodyWithResponse request with arbitrary body returning *UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutResponse
+func (c *ClientWithResponses) UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutWithBodyWithResponse(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutWithBody(ctx, orgId, connectorId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse(rsp)
+	return ParseUobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutResponse(rsp)
 }
 
-func (c *ClientWithResponses) UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithResponse(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse, error) {
-	rsp, err := c.UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPut(ctx, orgId, connectorId, body, reqEditors...)
+func (c *ClientWithResponses) UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutWithResponse(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPut(ctx, orgId, connectorId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse(rsp)
-}
-
-// UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithBodyWithResponse request with arbitrary body returning *UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse
-func (c *ClientWithResponses) UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse, error) {
-	rsp, err := c.UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithBody(ctx, orgId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse(rsp)
-}
-
-func (c *ClientWithResponses) UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithResponse(ctx context.Context, orgId string, body UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse, error) {
-	rsp, err := c.UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePost(ctx, orgId, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse(rsp)
-}
-
-// UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithBodyWithResponse request with arbitrary body returning *UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse
-func (c *ClientWithResponses) UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithBodyWithResponse(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse, error) {
-	rsp, err := c.UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithBody(ctx, orgId, connectorId, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse(rsp)
-}
-
-func (c *ClientWithResponses) UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithResponse(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse, error) {
-	rsp, err := c.UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPut(ctx, orgId, connectorId, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse(rsp)
+	return ParseUobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutResponse(rsp)
 }
 
 // UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetWithResponse request returning *UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetResponse
@@ -1092,12 +1000,12 @@ func ParseUobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteRespons
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
 		var dest UobsOkResponseAny
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON202 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest UobsErrorResponse
@@ -1153,26 +1061,26 @@ func ParseUobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteRespons
 	return response, nil
 }
 
-// ParseUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse parses an HTTP response from a UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithResponse call
-func ParseUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse(rsp *http.Response) (*UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse, error) {
+// ParseUobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostResponse parses an HTTP response from a UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostWithResponse call
+func ParseUobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostResponse(rsp *http.Response) (*UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse{
+	response := &UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
 		var dest UobsOkResponseAny
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON202 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest UobsErrorResponse
@@ -1228,176 +1136,26 @@ func ParseUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostRespo
 	return response, nil
 }
 
-// ParseUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse parses an HTTP response from a UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithResponse call
-func ParseUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse(rsp *http.Response) (*UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse, error) {
+// ParseUobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutResponse parses an HTTP response from a UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutWithResponse call
+func ParseUobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutResponse(rsp *http.Response) (*UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse{
+	response := &UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
 		var dest UobsOkResponseAny
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest UobsErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest UobsErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest UobsErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest UobsErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest UobsErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest UobsErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
-		var dest UobsErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON502 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse parses an HTTP response from a UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithResponse call
-func ParseUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse(rsp *http.Response) (*UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest UobsOkResponseAny
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest UobsErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest UobsErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest UobsErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest UobsErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
-		var dest UobsErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON429 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest UobsErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON500 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
-		var dest UobsErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON502 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse parses an HTTP response from a UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithResponse call
-func ParseUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse(rsp *http.Response) (*UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest UobsOkResponseAny
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
+		response.JSON202 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest UobsErrorResponse

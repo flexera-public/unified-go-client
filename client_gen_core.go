@@ -1449,6 +1449,28 @@ type ClientInterface interface {
 
 	AuthTokenTokenWithFormdataBody(ctx context.Context, body AuthTokenTokenFormdataRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// BillUploadBillUploadIndex request
+	BillUploadBillUploadIndex(ctx context.Context, orgId int, params *BillUploadBillUploadIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillUploadBillUploadCreateWithBody request with any body
+	BillUploadBillUploadCreateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillUploadBillUploadCreate(ctx context.Context, orgId int, body BillUploadBillUploadCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillUploadBillUploadDelete request
+	BillUploadBillUploadDelete(ctx context.Context, orgId int, billUploadId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillUploadBillUploadShow request
+	BillUploadBillUploadShow(ctx context.Context, orgId int, billUploadId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillUploadBillUploadCreateFile request
+	BillUploadBillUploadCreateFile(ctx context.Context, orgId int, billUploadId openapi_types.UUID, fileId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// BillUploadBillUploadCreateOperationWithBody request with any body
+	BillUploadBillUploadCreateOperationWithBody(ctx context.Context, orgId int, billUploadId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BillUploadBillUploadCreateOperation(ctx context.Context, orgId int, billUploadId openapi_types.UUID, body BillUploadBillUploadCreateOperationJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// PolicyCustomCatalogIndex request
 	PolicyCustomCatalogIndex(ctx context.Context, orgId int64, params *PolicyCustomCatalogIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -2176,25 +2198,15 @@ type ClientInterface interface {
 	// UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDelete request
 	UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDelete(ctx context.Context, orgId string, params *UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithBody request with any body
-	UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostWithBody request with any body
+	UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPost(ctx context.Context, orgId string, body UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPost(ctx context.Context, orgId string, body UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithBody request with any body
-	UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithBody(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutWithBody request with any body
+	UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutWithBody(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPut(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithBody request with any body
-	UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePost(ctx context.Context, orgId string, body UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithBody request with any body
-	UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithBody(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPut(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPut(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGet request
 	UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGet(ctx context.Context, orgId string, params *UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -3668,6 +3680,28 @@ type ClientWithResponsesInterface interface {
 
 	AuthTokenTokenWithFormdataBodyWithResponse(ctx context.Context, body AuthTokenTokenFormdataRequestBody, reqEditors ...RequestEditorFn) (*AuthTokenTokenResponse, error)
 
+	// BillUploadBillUploadIndexWithResponse request
+	BillUploadBillUploadIndexWithResponse(ctx context.Context, orgId int, params *BillUploadBillUploadIndexParams, reqEditors ...RequestEditorFn) (*BillUploadBillUploadIndexResponse, error)
+
+	// BillUploadBillUploadCreateWithBodyWithResponse request with any body
+	BillUploadBillUploadCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillUploadBillUploadCreateResponse, error)
+
+	BillUploadBillUploadCreateWithResponse(ctx context.Context, orgId int, body BillUploadBillUploadCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*BillUploadBillUploadCreateResponse, error)
+
+	// BillUploadBillUploadDeleteWithResponse request
+	BillUploadBillUploadDeleteWithResponse(ctx context.Context, orgId int, billUploadId openapi_types.UUID, reqEditors ...RequestEditorFn) (*BillUploadBillUploadDeleteResponse, error)
+
+	// BillUploadBillUploadShowWithResponse request
+	BillUploadBillUploadShowWithResponse(ctx context.Context, orgId int, billUploadId openapi_types.UUID, reqEditors ...RequestEditorFn) (*BillUploadBillUploadShowResponse, error)
+
+	// BillUploadBillUploadCreateFileWithResponse request
+	BillUploadBillUploadCreateFileWithResponse(ctx context.Context, orgId int, billUploadId openapi_types.UUID, fileId string, reqEditors ...RequestEditorFn) (*BillUploadBillUploadCreateFileResponse, error)
+
+	// BillUploadBillUploadCreateOperationWithBodyWithResponse request with any body
+	BillUploadBillUploadCreateOperationWithBodyWithResponse(ctx context.Context, orgId int, billUploadId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillUploadBillUploadCreateOperationResponse, error)
+
+	BillUploadBillUploadCreateOperationWithResponse(ctx context.Context, orgId int, billUploadId openapi_types.UUID, body BillUploadBillUploadCreateOperationJSONRequestBody, reqEditors ...RequestEditorFn) (*BillUploadBillUploadCreateOperationResponse, error)
+
 	// PolicyCustomCatalogIndexWithResponse request
 	PolicyCustomCatalogIndexWithResponse(ctx context.Context, orgId int64, params *PolicyCustomCatalogIndexParams, reqEditors ...RequestEditorFn) (*PolicyCustomCatalogIndexResponse, error)
 
@@ -4395,25 +4429,15 @@ type ClientWithResponsesInterface interface {
 	// UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteWithResponse request
 	UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteWithResponse(ctx context.Context, orgId string, params *UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse, error)
 
-	// UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithBodyWithResponse request with any body
-	UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse, error)
+	// UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostWithBodyWithResponse request with any body
+	UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostResponse, error)
 
-	UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithResponse(ctx context.Context, orgId string, body UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostResponse, error)
+	UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostWithResponse(ctx context.Context, orgId string, body UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostResponse, error)
 
-	// UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithBodyWithResponse request with any body
-	UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithBodyWithResponse(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse, error)
+	// UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutWithBodyWithResponse request with any body
+	UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutWithBodyWithResponse(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutResponse, error)
 
-	UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithResponse(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutResponse, error)
-
-	// UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithBodyWithResponse request with any body
-	UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse, error)
-
-	UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithResponse(ctx context.Context, orgId string, body UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostResponse, error)
-
-	// UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithBodyWithResponse request with any body
-	UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithBodyWithResponse(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse, error)
-
-	UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithResponse(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutResponse, error)
+	UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutWithResponse(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutResponse, error)
 
 	// UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetWithResponse request
 	UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetWithResponse(ctx context.Context, orgId string, params *UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetParams, reqEditors ...RequestEditorFn) (*UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetResponse, error)

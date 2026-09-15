@@ -4,257 +4,89 @@ package flexera
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
-// UobsAnthropicCreateRequest defines model for Uobs_AnthropicCreateRequest.
-type UobsAnthropicCreateRequest struct {
-	// BaseUrl Anthropic API base URL (optional/Advanced).
-	BaseUrl *string `json:"baseUrl"`
+// Defines values for UobsGcpOnboardingUpdateRequestIncludeCostAndUsage.
+const (
+	False UobsGcpOnboardingUpdateRequestIncludeCostAndUsage = "false"
+	True  UobsGcpOnboardingUpdateRequestIncludeCostAndUsage = "true"
+)
 
-	// ConnectorName Human-readable connector name.
-	ConnectorName string                   `json:"connectorName"`
-	Credentials   UobsAnthropicCredentials `json:"credentials"`
-	Provider      string                   `json:"provider"`
+// UobsGcpCostAndUsageCreateRequest defines model for Uobs_GcpCostAndUsageCreateRequest.
+type UobsGcpCostAndUsageCreateRequest struct {
+	// BillingDatasetId BigQuery dataset containing the billing export.
+	BillingDatasetId string `json:"BillingDatasetId"`
+
+	// BillingProjectId GCP project used for billing queries.
+	BillingProjectId string `json:"BillingProjectId"`
+
+	// GoogleGcsExportUri GCS URI of the billing export (e.g. gs://bucket/prefix/).
+	GoogleGcsExportUri string `json:"GoogleGcsExportUri"`
 }
 
-// UobsAnthropicCredentials defines model for Uobs_AnthropicCredentials.
-type UobsAnthropicCredentials struct {
-	// AnalyticsApiKey Anthropic Analytics API key (required). Write-only.
-	AnalyticsApiKey *string `json:"analyticsApiKey,omitempty"`
+// UobsGcpCostAndUsageUpdateRequest defines model for Uobs_GcpCostAndUsageUpdateRequest.
+type UobsGcpCostAndUsageUpdateRequest struct {
+	// GoogleGcsExportUri Updated GCS export URI.
+	GoogleGcsExportUri *string `json:"GoogleGcsExportUri"`
 }
 
-// UobsAnthropicUpdateRequest defines model for Uobs_AnthropicUpdateRequest.
-type UobsAnthropicUpdateRequest struct {
-	// BaseUrl Anthropic API base URL (optional/Advanced).
-	BaseUrl *string `json:"baseUrl"`
-
-	// ConnectorName Human-readable connector name.
-	ConnectorName *string                   `json:"connectorName"`
-	Credentials   *UobsAnthropicCredentials `json:"credentials,omitempty"`
-	Provider      string                    `json:"provider"`
-}
-
-// UobsAwsOnboardingCreateRequest defines model for Uobs_AwsOnboardingCreateRequest.
-type UobsAwsOnboardingCreateRequest struct {
-	// BillingAccountId Billing Account ID
-	BillingAccountId *string `json:"BillingAccountId"`
+// UobsGcpOnboardingCreateRequest defines model for Uobs_GcpOnboardingCreateRequest.
+type UobsGcpOnboardingCreateRequest struct {
+	// BillingAccountId GCP billing account ID.
+	BillingAccountId string `json:"BillingAccountId"`
 
 	// ConnectorName Connector name.
-	ConnectorName string                 `json:"ConnectorName"`
-	CostAndUsage  *UobsCostAndUsageModel `json:"CostAndUsage,omitempty"`
+	ConnectorName string                           `json:"ConnectorName"`
+	CostAndUsage  UobsGcpCostAndUsageCreateRequest `json:"CostAndUsage"`
 
-	// ExternalId External ID.
-	ExternalId *string `json:"ExternalId"`
-
-	// IncludeBPC Include BPC flag.
-	IncludeBPC string `json:"IncludeBPC"`
-
-	// IncludeCostAndUsage Include CCO flag.
+	// IncludeCostAndUsage Must be 'true' for GCP Bill Connect.
 	IncludeCostAndUsage string `json:"IncludeCostAndUsage"`
 
-	// IncludeInventory Include inventory flag.
-	IncludeInventory string `json:"IncludeInventory"`
-
-	// RoleARN Role ARN.
-	RoleARN string `json:"RoleARN"`
+	// ServiceAccountKeyJson GCP service-account key JSON string.
+	ServiceAccountKeyJson string `json:"ServiceAccountKeyJson"`
 }
 
-// UobsAwsOnboardingUpdateRequest defines model for Uobs_AwsOnboardingUpdateRequest.
-type UobsAwsOnboardingUpdateRequest struct {
+// UobsGcpOnboardingUpdateRequest defines model for Uobs_GcpOnboardingUpdateRequest.
+type UobsGcpOnboardingUpdateRequest struct {
 	// ConnectorName Connector name.
-	ConnectorName *string                `json:"ConnectorName"`
-	CostAndUsage  *UobsCostAndUsageModel `json:"CostAndUsage,omitempty"`
-
-	// IncludeBPC Include BPC flag.
-	IncludeBPC *string `json:"IncludeBPC"`
+	ConnectorName *string                           `json:"ConnectorName"`
+	CostAndUsage  *UobsGcpCostAndUsageUpdateRequest `json:"CostAndUsage,omitempty"`
 
 	// IncludeCostAndUsage Include CCO flag.
-	IncludeCostAndUsage *string `json:"IncludeCostAndUsage"`
+	IncludeCostAndUsage *UobsGcpOnboardingUpdateRequestIncludeCostAndUsage `json:"IncludeCostAndUsage"`
 
-	// IncludeInventory Include inventory flag.
-	IncludeInventory *string `json:"IncludeInventory"`
+	// ServiceAccountKeyJson Updated GCP service-account key JSON string.
+	ServiceAccountKeyJson *string `json:"ServiceAccountKeyJson"`
 }
 
-// UobsAzureOnboardingCreateRequest defines model for Uobs_AzureOnboardingCreateRequest.
-type UobsAzureOnboardingCreateRequest struct {
-	// BillingAccountId Billing Account ID
-	BillingAccountId *string `json:"BillingAccountId"`
+// UobsGcpOnboardingUpdateRequestIncludeCostAndUsage Include CCO flag.
+type UobsGcpOnboardingUpdateRequestIncludeCostAndUsage string
 
-	// ClientId Client ID.
-	ClientId string `json:"ClientId"`
-
-	// ClientSecret Client secret.
-	ClientSecret string `json:"ClientSecret"`
-
-	// ConnectorName Connector name.
-	ConnectorName string                 `json:"ConnectorName"`
-	CostAndUsage  *UobsCostAndUsageModel `json:"CostAndUsage,omitempty"`
-
-	// IncludeBPC Include BPC flag.
-	IncludeBPC string `json:"IncludeBPC"`
-
-	// IncludeCostAndUsage Include CCO flag.
-	IncludeCostAndUsage string `json:"IncludeCostAndUsage"`
-
-	// IncludeInventory Include inventory flag.
-	IncludeInventory string `json:"IncludeInventory"`
-
-	// SubscriptionId Subscription ID.
-	SubscriptionId *string `json:"SubscriptionId"`
-
-	// TenantId Tenant ID.
-	TenantId string `json:"TenantId"`
-
-	// TokenUrl Token URL.
-	TokenUrl string `json:"TokenUrl"`
-}
-
-// UobsAzureOnboardingUpdateRequest defines model for Uobs_AzureOnboardingUpdateRequest.
-type UobsAzureOnboardingUpdateRequest struct {
-	// ConnectorName Connector name.
-	ConnectorName *string                `json:"ConnectorName"`
-	CostAndUsage  *UobsCostAndUsageModel `json:"CostAndUsage,omitempty"`
-
-	// IncludeBPC Include BPC flag.
-	IncludeBPC *string `json:"IncludeBPC"`
-
-	// IncludeCostAndUsage Include CCO flag.
-	IncludeCostAndUsage *string `json:"IncludeCostAndUsage"`
-
-	// IncludeInventory Include inventory flag.
-	IncludeInventory *string `json:"IncludeInventory"`
-
-	// SubscriptionId Subscription ID for Azure provider only.
-	SubscriptionId *string `json:"SubscriptionId"`
-
-	// TenantId Tenant ID for Azure provider only.
-	TenantId *string `json:"TenantId"`
-}
-
-// UobsCostAndUsageModel defines model for Uobs_CostAndUsageModel.
-type UobsCostAndUsageModel struct {
-	BillingAccount  *string `json:"BillingAccount"`
-	BillingS3Bucket *string `json:"BillingS3Bucket"`
-	EffectiveFrom   *string `json:"EffectiveFrom"`
-	ReportPrefix    *string `json:"ReportPrefix"`
-}
-
-// UobsCursorCreateRequest defines model for Uobs_CursorCreateRequest.
-type UobsCursorCreateRequest struct {
+// UobsOnboardingCreateRequest defines model for Uobs_OnboardingCreateRequest.
+type UobsOnboardingCreateRequest struct {
 	// ConnectorName Human-readable connector name.
-	ConnectorName string                `json:"connectorName"`
-	Credentials   UobsCursorCredentials `json:"credentials"`
-	Provider      string                `json:"provider"`
+	ConnectorName string `json:"connectorName"`
+
+	// Credentials Write-only secrets for the provider. Never returned on read.
+	Credentials *map[string]interface{} `json:"credentials,omitempty"`
+
+	// Provider Connector provider discriminator (e.g. n8n).
+	Provider             string                 `json:"provider"`
+	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
-// UobsCursorCredentials defines model for Uobs_CursorCredentials.
-type UobsCursorCredentials struct {
-	// AdminApiKey Cursor team Admin API key (required). Sent to Cursor as HTTP Basic auth with the key as username and an empty password. Write-only.
-	AdminApiKey *string `json:"adminApiKey,omitempty"`
-}
-
-// UobsCursorUpdateRequest defines model for Uobs_CursorUpdateRequest.
-type UobsCursorUpdateRequest struct {
+// UobsOnboardingUpdateRequest defines model for Uobs_OnboardingUpdateRequest.
+type UobsOnboardingUpdateRequest struct {
 	// ConnectorName Human-readable connector name.
-	ConnectorName *string                `json:"connectorName"`
-	Credentials   *UobsCursorCredentials `json:"credentials,omitempty"`
-	Provider      string                 `json:"provider"`
-}
+	ConnectorName *string `json:"connectorName"`
 
-// UobsGoogleWorkspaceCreateRequest defines model for Uobs_GoogleWorkspaceCreateRequest.
-type UobsGoogleWorkspaceCreateRequest struct {
-	// AdminSubject Admin user to impersonate via domain-wide delegation.
-	AdminSubject string `json:"adminSubject"`
+	// Credentials Provide to rotate the stored secret(s). Write-only; never returned on read.
+	Credentials *map[string]interface{} `json:"credentials"`
 
-	// ConnectorName Human-readable connector name.
-	ConnectorName string                         `json:"connectorName"`
-	Credentials   UobsGoogleWorkspaceCredentials `json:"credentials"`
-
-	// PrimaryDomain Primary Google Workspace domain.
-	PrimaryDomain string `json:"primaryDomain"`
-	Provider      string `json:"provider"`
-}
-
-// UobsGoogleWorkspaceCredentials defines model for Uobs_GoogleWorkspaceCredentials.
-type UobsGoogleWorkspaceCredentials struct {
-	// ServiceAccountKey Google service-account JSON key, base64-encoded. Write-only.
-	ServiceAccountKey *string `json:"serviceAccountKey,omitempty"`
-}
-
-// UobsGoogleWorkspaceUpdateRequest defines model for Uobs_GoogleWorkspaceUpdateRequest.
-type UobsGoogleWorkspaceUpdateRequest struct {
-	// AdminSubject Admin user to impersonate via domain-wide delegation.
-	AdminSubject *string `json:"adminSubject"`
-
-	// ConnectorName Human-readable connector name.
-	ConnectorName *string                         `json:"connectorName"`
-	Credentials   *UobsGoogleWorkspaceCredentials `json:"credentials,omitempty"`
-
-	// PrimaryDomain Primary Google Workspace domain.
-	PrimaryDomain *string `json:"primaryDomain"`
-	Provider      string  `json:"provider"`
-}
-
-// UobsN8nCreateRequest defines model for Uobs_N8nCreateRequest.
-type UobsN8nCreateRequest struct {
-	// ConnectorName Human-readable connector name.
-	ConnectorName string             `json:"connectorName"`
-	Credentials   UobsN8nCredentials `json:"credentials"`
-
-	// InstanceUrl Base URL of the n8n instance.
-	InstanceUrl string `json:"instanceUrl"`
-	Provider    string `json:"provider"`
-}
-
-// UobsN8nCredentials defines model for Uobs_N8nCredentials.
-type UobsN8nCredentials struct {
-	// ApiKey n8n personal access token (PAT). Write-only.
-	ApiKey *string `json:"apiKey,omitempty"`
-}
-
-// UobsN8nUpdateRequest defines model for Uobs_N8nUpdateRequest.
-type UobsN8nUpdateRequest struct {
-	// ConnectorName Human-readable connector name.
-	ConnectorName *string             `json:"connectorName"`
-	Credentials   *UobsN8nCredentials `json:"credentials,omitempty"`
-
-	// InstanceUrl Base URL of the n8n instance.
-	InstanceUrl *string `json:"instanceUrl"`
-	Provider    string  `json:"provider"`
-}
-
-// UobsOpenAiCreateRequest defines model for Uobs_OpenAiCreateRequest.
-type UobsOpenAiCreateRequest struct {
-	// BaseUrl OpenAI API base URL (optional/Advanced).
-	BaseUrl *string `json:"baseUrl"`
-
-	// ConnectorName Human-readable connector name.
-	ConnectorName string                `json:"connectorName"`
-	Credentials   UobsOpenAiCredentials `json:"credentials"`
-	Provider      string                `json:"provider"`
-}
-
-// UobsOpenAiCredentials defines model for Uobs_OpenAiCredentials.
-type UobsOpenAiCredentials struct {
-	// AdminApiKey OpenAI Admin API key (required). Write-only.
-	AdminApiKey *string `json:"adminApiKey,omitempty"`
-
-	// ComplianceApiKey OpenAI Compliance API key (optional/Advanced). Write-only.
-	ComplianceApiKey *string `json:"complianceApiKey"`
-
-	// ScimToken OpenAI SCIM token (optional/Advanced). Write-only.
-	ScimToken *string `json:"scimToken"`
-}
-
-// UobsOpenAiUpdateRequest defines model for Uobs_OpenAiUpdateRequest.
-type UobsOpenAiUpdateRequest struct {
-	// BaseUrl OpenAI API base URL (optional/Advanced).
-	BaseUrl *string `json:"baseUrl"`
-
-	// ConnectorName Human-readable connector name.
-	ConnectorName *string                `json:"connectorName"`
-	Credentials   *UobsOpenAiCredentials `json:"credentials,omitempty"`
-	Provider      string                 `json:"provider"`
+	// Provider Connector provider discriminator (e.g. n8n).
+	Provider             string                 `json:"provider"`
+	AdditionalProperties map[string]interface{} `json:"-"`
 }
 
 // UobsSaasConnectorRead defines model for Uobs_SaasConnectorRead.
@@ -302,41 +134,7 @@ type UobsSaasConnectorRead struct {
 	UpdatedAt *string `json:"updatedAt"`
 }
 
-// UobsSalesforceAgentforceCreateRequest defines model for Uobs_SalesforceAgentforceCreateRequest.
-type UobsSalesforceAgentforceCreateRequest struct {
-	// ClientId Salesforce connected-app client ID.
-	ClientId string `json:"clientId"`
-
-	// ConnectorName Human-readable connector name.
-	ConnectorName string                              `json:"connectorName"`
-	Credentials   UobsSalesforceAgentforceCredentials `json:"credentials"`
-
-	// InstanceUrl Salesforce instance URL.
-	InstanceUrl string `json:"instanceUrl"`
-	Provider    string `json:"provider"`
-}
-
-// UobsSalesforceAgentforceCredentials defines model for Uobs_SalesforceAgentforceCredentials.
-type UobsSalesforceAgentforceCredentials struct {
-	// ClientSecret Salesforce connected-app client secret (OAuth2 client_credentials). Write-only.
-	ClientSecret *string `json:"clientSecret,omitempty"`
-}
-
-// UobsSalesforceAgentforceUpdateRequest defines model for Uobs_SalesforceAgentforceUpdateRequest.
-type UobsSalesforceAgentforceUpdateRequest struct {
-	// ClientId Salesforce connected-app client ID.
-	ClientId *string `json:"clientId"`
-
-	// ConnectorName Human-readable connector name.
-	ConnectorName *string                              `json:"connectorName"`
-	Credentials   *UobsSalesforceAgentforceCredentials `json:"credentials,omitempty"`
-
-	// InstanceUrl Salesforce instance URL.
-	InstanceUrl *string `json:"instanceUrl"`
-	Provider    string  `json:"provider"`
-}
-
-// UobsValidationResult Verdict from the synchronous connection-test endpoint (AISM-338).
+// UobsValidationResult Verdict from the synchronous connection-test endpoint.
 //
 // Returned at HTTP 200 for every validation outcome (valid, rejected, vendor
 // unreachable, vendor timeout) — the HTTP status reflects the call to us, the
@@ -355,17 +153,192 @@ type UobsValidationResult struct {
 	Success bool `json:"success"`
 }
 
-// UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostJSONBody defines parameters for UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPost.
-type UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostJSONBody struct {
-	union json.RawMessage
+// Getter for additional properties for UobsOnboardingCreateRequest. Returns the specified
+// element and whether it was found
+func (a UobsOnboardingCreateRequest) Get(fieldName string) (value interface{}, found bool) {
+	if a.AdditionalProperties != nil {
+		value, found = a.AdditionalProperties[fieldName]
+	}
+	return
 }
 
-// UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostJSONBody defines parameters for UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePost.
-type UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostJSONBody struct {
-	union json.RawMessage
+// Setter for additional properties for UobsOnboardingCreateRequest
+func (a *UobsOnboardingCreateRequest) Set(fieldName string, value interface{}) {
+	if a.AdditionalProperties == nil {
+		a.AdditionalProperties = make(map[string]interface{})
+	}
+	a.AdditionalProperties[fieldName] = value
 }
 
-// UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutJSONBody defines parameters for UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPut.
-type UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutJSONBody struct {
-	union json.RawMessage
+// Override default JSON handling for UobsOnboardingCreateRequest to handle AdditionalProperties
+func (a *UobsOnboardingCreateRequest) UnmarshalJSON(b []byte) error {
+	object := make(map[string]json.RawMessage)
+	err := json.Unmarshal(b, &object)
+	if err != nil {
+		return err
+	}
+
+	if raw, found := object["connectorName"]; found {
+		err = json.Unmarshal(raw, &a.ConnectorName)
+		if err != nil {
+			return fmt.Errorf("error reading 'connectorName': %w", err)
+		}
+		delete(object, "connectorName")
+	}
+
+	if raw, found := object["credentials"]; found {
+		err = json.Unmarshal(raw, &a.Credentials)
+		if err != nil {
+			return fmt.Errorf("error reading 'credentials': %w", err)
+		}
+		delete(object, "credentials")
+	}
+
+	if raw, found := object["provider"]; found {
+		err = json.Unmarshal(raw, &a.Provider)
+		if err != nil {
+			return fmt.Errorf("error reading 'provider': %w", err)
+		}
+		delete(object, "provider")
+	}
+
+	if len(object) != 0 {
+		a.AdditionalProperties = make(map[string]interface{})
+		for fieldName, fieldBuf := range object {
+			var fieldVal interface{}
+			err := json.Unmarshal(fieldBuf, &fieldVal)
+			if err != nil {
+				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
+			}
+			a.AdditionalProperties[fieldName] = fieldVal
+		}
+	}
+	return nil
+}
+
+// Override default JSON handling for UobsOnboardingCreateRequest to handle AdditionalProperties
+func (a UobsOnboardingCreateRequest) MarshalJSON() ([]byte, error) {
+	var err error
+	object := make(map[string]json.RawMessage)
+
+	object["connectorName"], err = json.Marshal(a.ConnectorName)
+	if err != nil {
+		return nil, fmt.Errorf("error marshaling 'connectorName': %w", err)
+	}
+
+	if a.Credentials != nil {
+		object["credentials"], err = json.Marshal(a.Credentials)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'credentials': %w", err)
+		}
+	}
+
+	object["provider"], err = json.Marshal(a.Provider)
+	if err != nil {
+		return nil, fmt.Errorf("error marshaling 'provider': %w", err)
+	}
+
+	for fieldName, field := range a.AdditionalProperties {
+		object[fieldName], err = json.Marshal(field)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
+		}
+	}
+	return json.Marshal(object)
+}
+
+// Getter for additional properties for UobsOnboardingUpdateRequest. Returns the specified
+// element and whether it was found
+func (a UobsOnboardingUpdateRequest) Get(fieldName string) (value interface{}, found bool) {
+	if a.AdditionalProperties != nil {
+		value, found = a.AdditionalProperties[fieldName]
+	}
+	return
+}
+
+// Setter for additional properties for UobsOnboardingUpdateRequest
+func (a *UobsOnboardingUpdateRequest) Set(fieldName string, value interface{}) {
+	if a.AdditionalProperties == nil {
+		a.AdditionalProperties = make(map[string]interface{})
+	}
+	a.AdditionalProperties[fieldName] = value
+}
+
+// Override default JSON handling for UobsOnboardingUpdateRequest to handle AdditionalProperties
+func (a *UobsOnboardingUpdateRequest) UnmarshalJSON(b []byte) error {
+	object := make(map[string]json.RawMessage)
+	err := json.Unmarshal(b, &object)
+	if err != nil {
+		return err
+	}
+
+	if raw, found := object["connectorName"]; found {
+		err = json.Unmarshal(raw, &a.ConnectorName)
+		if err != nil {
+			return fmt.Errorf("error reading 'connectorName': %w", err)
+		}
+		delete(object, "connectorName")
+	}
+
+	if raw, found := object["credentials"]; found {
+		err = json.Unmarshal(raw, &a.Credentials)
+		if err != nil {
+			return fmt.Errorf("error reading 'credentials': %w", err)
+		}
+		delete(object, "credentials")
+	}
+
+	if raw, found := object["provider"]; found {
+		err = json.Unmarshal(raw, &a.Provider)
+		if err != nil {
+			return fmt.Errorf("error reading 'provider': %w", err)
+		}
+		delete(object, "provider")
+	}
+
+	if len(object) != 0 {
+		a.AdditionalProperties = make(map[string]interface{})
+		for fieldName, fieldBuf := range object {
+			var fieldVal interface{}
+			err := json.Unmarshal(fieldBuf, &fieldVal)
+			if err != nil {
+				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
+			}
+			a.AdditionalProperties[fieldName] = fieldVal
+		}
+	}
+	return nil
+}
+
+// Override default JSON handling for UobsOnboardingUpdateRequest to handle AdditionalProperties
+func (a UobsOnboardingUpdateRequest) MarshalJSON() ([]byte, error) {
+	var err error
+	object := make(map[string]json.RawMessage)
+
+	if a.ConnectorName != nil {
+		object["connectorName"], err = json.Marshal(a.ConnectorName)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'connectorName': %w", err)
+		}
+	}
+
+	if a.Credentials != nil {
+		object["credentials"], err = json.Marshal(a.Credentials)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'credentials': %w", err)
+		}
+	}
+
+	object["provider"], err = json.Marshal(a.Provider)
+	if err != nil {
+		return nil, fmt.Errorf("error marshaling 'provider': %w", err)
+	}
+
+	for fieldName, field := range a.AdditionalProperties {
+		object[fieldName], err = json.Marshal(field)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
+		}
+	}
+	return json.Marshal(object)
 }

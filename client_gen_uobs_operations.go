@@ -75,7 +75,7 @@ type UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetParams struct 
 
 // UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams defines parameters for UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDelete.
 type UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams struct {
-	// Provider Provider (aws/azure)
+	// Provider Provider (aws/azure/gcp)
 	Provider string `form:"provider" json:"provider"`
 
 	// ConnectorId Connector ID
@@ -118,26 +118,20 @@ type UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetParams struct {
 	ConnectorId string `form:"connector_id" json:"connector_id"`
 }
 
-// UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostJSONRequestBody defines body for UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPost for application/json ContentType.
-type UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostJSONRequestBody = UobsAwsOnboardingCreateRequest
+// UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostJSONRequestBody defines body for UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPost for application/json ContentType.
+type UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostJSONRequestBody = UobsGcpOnboardingCreateRequest
 
-// UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutJSONRequestBody defines body for UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPut for application/json ContentType.
-type UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutJSONRequestBody = UobsAwsOnboardingUpdateRequest
-
-// UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostJSONRequestBody defines body for UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePost for application/json ContentType.
-type UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostJSONRequestBody = UobsAzureOnboardingCreateRequest
-
-// UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutJSONRequestBody defines body for UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPut for application/json ContentType.
-type UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutJSONRequestBody = UobsAzureOnboardingUpdateRequest
+// UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutJSONRequestBody defines body for UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPut for application/json ContentType.
+type UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutJSONRequestBody = UobsGcpOnboardingUpdateRequest
 
 // UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostJSONRequestBody defines body for UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPost for application/json ContentType.
-type UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostJSONRequestBody UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostJSONBody
+type UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostJSONRequestBody = UobsOnboardingCreateRequest
 
 // UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostJSONRequestBody defines body for UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePost for application/json ContentType.
-type UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostJSONRequestBody UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostJSONBody
+type UobsValidateSaasConnectionUobsV1OrgsOrgIdSaasOnboardingValidatePostJSONRequestBody = UobsOnboardingCreateRequest
 
 // UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutJSONRequestBody defines body for UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPut for application/json ContentType.
-type UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutJSONRequestBody UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutJSONBody
+type UobsUpdateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingConnectorIdPutJSONRequestBody = UobsOnboardingUpdateRequest
 
 func (c *Client) UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGet(ctx context.Context, orgId string, params *UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetRequest(c.Server, orgId, params)
@@ -199,8 +193,8 @@ func (c *Client) UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDelete
 	return c.Client.Do(req)
 }
 
-func (c *Client) UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostRequestWithBody(c.Server, orgId, contentType, body)
+func (c *Client) UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -211,8 +205,8 @@ func (c *Client) UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPo
 	return c.Client.Do(req)
 }
 
-func (c *Client) UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPost(ctx context.Context, orgId string, body UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostRequest(c.Server, orgId, body)
+func (c *Client) UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPost(ctx context.Context, orgId string, body UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -223,8 +217,8 @@ func (c *Client) UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPo
 	return c.Client.Do(req)
 }
 
-func (c *Client) UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutWithBody(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutRequestWithBody(c.Server, orgId, connectorId, contentType, body)
+func (c *Client) UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutWithBody(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutRequestWithBody(c.Server, orgId, connectorId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -235,56 +229,8 @@ func (c *Client) UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsCon
 	return c.Client.Do(req)
 }
 
-func (c *Client) UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPut(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutRequest(c.Server, orgId, connectorId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostRequestWithBody(c.Server, orgId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePost(ctx context.Context, orgId string, body UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostRequest(c.Server, orgId, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutWithBody(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutRequestWithBody(c.Server, orgId, connectorId, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPut(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutRequest(c.Server, orgId, connectorId, body)
+func (c *Client) UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPut(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutRequest(c.Server, orgId, connectorId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -734,19 +680,19 @@ func NewUobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteRequest(s
 	return req, nil
 }
 
-// NewUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostRequest calls the generic UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPost builder with application/json body
-func NewUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostRequest(server string, orgId string, body UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostJSONRequestBody) (*http.Request, error) {
+// NewUobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostRequest calls the generic UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPost builder with application/json body
+func NewUobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostRequest(server string, orgId string, body UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostRequestWithBody(server, orgId, "application/json", bodyReader)
+	return NewUobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostRequestWithBody(server, orgId, "application/json", bodyReader)
 }
 
-// NewUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostRequestWithBody generates requests for UobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPost with any type of body
-func NewUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostRequestWithBody(server string, orgId string, contentType string, body io.Reader) (*http.Request, error) {
+// NewUobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostRequestWithBody generates requests for UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPost with any type of body
+func NewUobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostRequestWithBody(server string, orgId string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -761,7 +707,7 @@ func NewUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostRequest
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/onboarding/aws", pathParam0)
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/onboarding/gcp", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -781,19 +727,19 @@ func NewUobsTriggerOnboardingPostAwsUobsV1OrgsOrgIdCloudOnboardingAwsPostRequest
 	return req, nil
 }
 
-// NewUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutRequest calls the generic UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPut builder with application/json body
-func NewUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutRequest(server string, orgId string, connectorId string, body UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutJSONRequestBody) (*http.Request, error) {
+// NewUobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutRequest calls the generic UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPut builder with application/json body
+func NewUobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutRequest(server string, orgId string, connectorId string, body UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutRequestWithBody(server, orgId, connectorId, "application/json", bodyReader)
+	return NewUobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutRequestWithBody(server, orgId, connectorId, "application/json", bodyReader)
 }
 
-// NewUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutRequestWithBody generates requests for UobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPut with any type of body
-func NewUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdPutRequestWithBody(server string, orgId string, connectorId string, contentType string, body io.Reader) (*http.Request, error) {
+// NewUobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutRequestWithBody generates requests for UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPut with any type of body
+func NewUobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutRequestWithBody(server string, orgId string, connectorId string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -815,108 +761,7 @@ func NewUobsTriggerOnboardingPutAwsUobsV1OrgsOrgIdCloudOnboardingAwsConnectorIdP
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/onboarding/aws/%s", pathParam0, pathParam1)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("PUT", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostRequest calls the generic UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePost builder with application/json body
-func NewUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostRequest(server string, orgId string, body UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostRequestWithBody(server, orgId, "application/json", bodyReader)
-}
-
-// NewUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostRequestWithBody generates requests for UobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePost with any type of body
-func NewUobsTriggerOnboardingPostAzureUobsV1OrgsOrgIdCloudOnboardingAzurePostRequestWithBody(server string, orgId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/onboarding/azure", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("POST", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
-
-	return req, nil
-}
-
-// NewUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutRequest calls the generic UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPut builder with application/json body
-func NewUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutRequest(server string, orgId string, connectorId string, body UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutRequestWithBody(server, orgId, connectorId, "application/json", bodyReader)
-}
-
-// NewUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutRequestWithBody generates requests for UobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPut with any type of body
-func NewUobsTriggerOnboardingPutAzureUobsV1OrgsOrgIdCloudOnboardingAzureConnectorIdPutRequestWithBody(server string, orgId string, connectorId string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "connector_id", runtime.ParamLocationPath, connectorId)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/onboarding/azure/%s", pathParam0, pathParam1)
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/onboarding/gcp/%s", pathParam0, pathParam1)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}

@@ -47,6 +47,12 @@ const (
 	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiAzureMcaGenericBillConnectOnboardingOriginPlatform FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiAzureMcaGenericBillConnectOnboardingOrigin = "platform"
 )
 
+// Defines values for FinopsOnboardingApplicationVndFlexeraFinopsOnboardingGcpGenericBillConnectOnboardingOrigin.
+const (
+	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingGcpGenericBillConnectOnboardingOriginFinops   FinopsOnboardingApplicationVndFlexeraFinopsOnboardingGcpGenericBillConnectOnboardingOrigin = "finops"
+	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingGcpGenericBillConnectOnboardingOriginPlatform FinopsOnboardingApplicationVndFlexeraFinopsOnboardingGcpGenericBillConnectOnboardingOrigin = "platform"
+)
+
 // Defines values for FinopsOnboardingAzureCspBillConnectKind.
 const (
 	FinopsBillConnectCbiOiAzureCsp FinopsOnboardingAzureCspBillConnectKind = "finops:bill-connect-cbi-oi-azure-csp"
@@ -133,8 +139,8 @@ const (
 
 // Defines values for FinopsOnboardingCBIAzureCspGenericBillConnectOnboardingOrigin.
 const (
-	Finops   FinopsOnboardingCBIAzureCspGenericBillConnectOnboardingOrigin = "finops"
-	Platform FinopsOnboardingCBIAzureCspGenericBillConnectOnboardingOrigin = "platform"
+	FinopsOnboardingCBIAzureCspGenericBillConnectOnboardingOriginFinops   FinopsOnboardingCBIAzureCspGenericBillConnectOnboardingOrigin = "finops"
+	FinopsOnboardingCBIAzureCspGenericBillConnectOnboardingOriginPlatform FinopsOnboardingCBIAzureCspGenericBillConnectOnboardingOrigin = "platform"
 )
 
 // Defines values for FinopsOnboardingCBIBillConnectKind.
@@ -463,9 +469,15 @@ type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingGcpGenericBillConnect 
 	// GcsExportUri URI of the Google Cloud Storage file path where the billing data is exported
 	GcsExportUri *string `json:"gcsExportUri,omitempty"`
 
+	// OnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+	OnboardingOrigin *FinopsOnboardingApplicationVndFlexeraFinopsOnboardingGcpGenericBillConnectOnboardingOrigin `json:"onboardingOrigin,omitempty"`
+
 	// ProjectId Project ID for GCP billing access
 	ProjectId string `json:"projectId"`
 }
+
+// FinopsOnboardingApplicationVndFlexeraFinopsOnboardingGcpGenericBillConnectOnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingGcpGenericBillConnectOnboardingOrigin string
 
 // FinopsOnboardingApplicationVndFlexeraFinopsOnboardingSnowflakeGenericBillConnect SnowflakeGenericBillConnect contains the fields unique to Snowflake in a bill connect
 type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingSnowflakeGenericBillConnect struct {
