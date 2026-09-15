@@ -91,20 +91,26 @@ declarations.
 To regenerate after the spec changes:
 
 ```sh
-# Initialize the public submodule if needed:
+# Initialize the pinned public submodule if needed:
 git submodule update --init --recursive
 
-# Regenerate from the pinned submodule commit:
+# Regenerate from the committed unified-openapi/openapi3.json:
 make generate-client
-
-# To also re-merge specs from upstream sources first:
-RUN_MERGE=1 make generate-client
-
-# To advance the submodule to the latest upstream main branch first:
-UPDATE_SUBMODULE=1 make generate-client
 ```
 
-By default, regeneration uses the `unified-openapi` commit pinned in this repository so builds are reproducible.
+Regeneration does not fetch upstream specs or regenerate the
+`unified-openapi` document. Changes to that document are made and reviewed
+separately in the pinned `unified-openapi` repository.
+
+To update Go dependencies and regenerate the client together:
+
+```sh
+make all
+```
+
+The scheduled/manual `refresh-client` workflow additionally runs
+`make update-submodule` first to advance `unified-openapi` and proposes the
+submodule, dependency, and generated-client changes in a pull request.
 
 Generation first runs `oapi-codegen` once to preserve its normal package-wide
 behavior, then `cmd/split-client` partitions the resulting Go syntax tree.

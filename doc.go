@@ -20,15 +20,12 @@
 //
 // # Regenerating the client
 //
-// After changing upstream API specs run:
+// To regenerate the client from the committed unified-openapi snapshot run:
 //
 //	make generate-client
-//	RUN_MERGE=1 make generate-client
-//	UPDATE_SUBMODULE=1 make generate-client
 //
-//	This merges the raw specs via the generator in the unified-openapi sibling repo,
-//	then re-runs oapi-codegen and partitions the generated declarations across
-//	client_gen_*.go by source spec and concern.
+//	The generator reads unified-openapi/openapi3.json as committed. Updating that
+//	spec is a separate reviewed change in the unified-openapi repository.
 //
 // # Sub-packages
 //
