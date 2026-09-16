@@ -15,6 +15,7 @@ import (
 	"os"
 	"path/filepath"
 	"reflect"
+	"regexp"
 	"sort"
 	"strconv"
 	"strings"
@@ -24,8 +25,10 @@ import (
 )
 
 const (
-	generatedPrefix = "client_gen_"
-	manifestName    = "client_gen_manifest.json"
+	generatedPrefix   = "client_gen_"
+	manifestName      = "client_gen_manifest.json"
+	extensionsName    = "client_extensions_manifest.json"
+	generatedHeaderRE = `^//\s*Code generated .* DO NOT EDIT\.\s*$`
 )
 
 type options struct {
@@ -86,6 +89,36 @@ type manifestFile struct {
 	Bytes            int      `json:"bytes"`
 	Declarations     []string `json:"declarations"`
 	DeclarationCount int      `json:"declarationCount"`
+}
+
+// extensionsManifest inventories every exported, hand-written (i.e.
+// non-generated) declaration in the root package, mirroring the generated
+// client_gen_manifest.json so downstream tooling (e.g. flexera-cli's
+// client-coverage check) can diff a structured artifact instead of
+// regex-sniffing file headers. See client_extensions_manifest.json.
+//
+// Scope: root package only. Sub-packages under service/ and rightscale/
+// are not walked (see CONTRIBUTING.md for why).
+type extensionsManifest struct {
+	FormatVersion int                      `json:"formatVersion"`
+	Package       string                   `json:"package"`
+	Files         []extensionsManifestFile `json:"files"`
+	TotalFiles    int                      `json:"totalFiles"`
+	TotalDecls    int                      `json:"totalDeclarations"`
+}
+
+type extensionsManifestFile struct {
+	Path             string                  `json:"path"`
+	SHA256           string                  `json:"sha256"`
+	Declarations     []extensionsDeclaration `json:"declarations"`
+	DeclarationCount int                     `json:"declarationCount"`
+}
+
+type extensionsDeclaration struct {
+	Name     string `json:"name"`
+	Kind     string `json:"kind"` // func, method, type, var, const
+	Receiver string `json:"receiver,omitempty"`
+	Doc      string `json:"doc,omitempty"` // first line of the declaration's doc comment, if any
 }
 
 func main() {
@@ -687,6 +720,23 @@ func writeOutputs(opts options, packageName, generator string, groups []outputGr
 		return fmt.Errorf("write manifest: %w", err)
 	}
 
+	// Hand-written root-package files are untouched by this run, so they can
+	// be inventoried directly from opts.outputDir (the freshly split
+	// generated files haven't been installed there yet, but they're
+	// excluded from this inventory by their generated-code header anyway).
+	extensions, err := computeExtensionsManifest(opts.outputDir, packageName)
+	if err != nil {
+		return fmt.Errorf("compute extensions manifest: %w", err)
+	}
+	extensionsData, err := json.MarshalIndent(extensions, "", "  ")
+	if err != nil {
+		return fmt.Errorf("encode extensions manifest: %w", err)
+	}
+	extensionsData = append(extensionsData, '\n')
+	if err := os.WriteFile(filepath.Join(tempDir, extensionsName), extensionsData, 0o644); err != nil {
+		return fmt.Errorf("write extensions manifest: %w", err)
+	}
+
 	entries, err := os.ReadDir(tempDir)
 	if err != nil {
 		return fmt.Errorf("read temporary output directory: %w", err)
@@ -694,7 +744,7 @@ func writeOutputs(opts options, packageName, generator string, groups []outputGr
 	desired := make(map[string]bool, len(entries))
 	for _, entry := range entries {
 		desired[entry.Name()] = true
-		if entry.Name() == manifestName {
+		if entry.Name() == manifestName || entry.Name() == extensionsName {
 			continue
 		}
 		from := filepath.Join(tempDir, entry.Name())
@@ -720,7 +770,165 @@ func writeOutputs(opts options, packageName, generator string, groups []outputGr
 	if err := os.Rename(filepath.Join(tempDir, manifestName), filepath.Join(opts.outputDir, manifestName)); err != nil {
 		return fmt.Errorf("install %s: %w", manifestName, err)
 	}
+	if err := os.Rename(filepath.Join(tempDir, extensionsName), filepath.Join(opts.outputDir, extensionsName)); err != nil {
+		return fmt.Errorf("install %s: %w", extensionsName, err)
+	}
 	return nil
+}
+
+var generatedHeaderPattern = regexp.MustCompile(generatedHeaderRE)
+
+// hasGeneratedHeader reports whether source starts with the standard
+// "Code generated ... DO NOT EDIT." header within its first few lines,
+// per the convention documented in CONTRIBUTING.md.
+func hasGeneratedHeader(source []byte) bool {
+	lines := bytes.SplitN(source, []byte("\n"), 6)
+	for _, line := range lines {
+		if generatedHeaderPattern.MatchString(strings.TrimRight(string(line), "\r")) {
+			return true
+		}
+	}
+	return false
+}
+
+// computeExtensionsManifest inventories every exported, hand-written
+// declaration in the root Go package rooted at dir (non-recursive: it does
+// not walk service/ or rightscale/ sub-packages). A file is treated as
+// hand-written when it does not carry the generated-code header; this
+// mirrors (and double-checks) the same rule enforced by
+// generated_header_test.go.
+func computeExtensionsManifest(dir, packageName string) (extensionsManifest, error) {
+	entries, err := os.ReadDir(dir)
+	if err != nil {
+		return extensionsManifest{}, fmt.Errorf("read %s: %w", dir, err)
+	}
+
+	result := extensionsManifest{FormatVersion: 1, Package: packageName}
+	var paths []string
+	for _, entry := range entries {
+		name := entry.Name()
+		if entry.IsDir() || !strings.HasSuffix(name, ".go") {
+			continue
+		}
+		if strings.HasSuffix(name, "_test.go") {
+			continue
+		}
+		paths = append(paths, name)
+	}
+	sort.Strings(paths)
+
+	fset := token.NewFileSet()
+	for _, name := range paths {
+		path := filepath.Join(dir, name)
+		source, err := os.ReadFile(path)
+		if err != nil {
+			return extensionsManifest{}, fmt.Errorf("read %s: %w", name, err)
+		}
+		if hasGeneratedHeader(source) {
+			continue
+		}
+
+		file, err := parser.ParseFile(fset, path, source, parser.ParseComments)
+		if err != nil {
+			return extensionsManifest{}, fmt.Errorf("parse %s: %w", name, err)
+		}
+
+		var decls []extensionsDeclaration
+		for _, decl := range file.Decls {
+			decls = append(decls, exportedExtensionDeclarations(decl)...)
+		}
+		if len(decls) == 0 {
+			continue
+		}
+
+		sum := sha256.Sum256(source)
+		result.Files = append(result.Files, extensionsManifestFile{
+			Path:             name,
+			SHA256:           hex.EncodeToString(sum[:]),
+			Declarations:     decls,
+			DeclarationCount: len(decls),
+		})
+		result.TotalDecls += len(decls)
+	}
+	result.TotalFiles = len(result.Files)
+	return result, nil
+}
+
+// exportedExtensionDeclarations extracts the exported top-level
+// declarations (funcs, methods, types, vars, consts) introduced by decl,
+// along with the first line of their doc comment if present.
+func exportedExtensionDeclarations(decl ast.Decl) []extensionsDeclaration {
+	switch value := decl.(type) {
+	case *ast.FuncDecl:
+		if !value.Name.IsExported() {
+			return nil
+		}
+		kind := "func"
+		receiver := receiverName(decl)
+		if receiver != "" {
+			kind = "method"
+		}
+		return []extensionsDeclaration{{
+			Name:     value.Name.Name,
+			Kind:     kind,
+			Receiver: receiver,
+			Doc:      firstDocLine(value.Doc),
+		}}
+	case *ast.GenDecl:
+		var kind string
+		switch value.Tok {
+		case token.TYPE:
+			kind = "type"
+		case token.VAR:
+			kind = "var"
+		case token.CONST:
+			kind = "const"
+		default:
+			return nil
+		}
+		var result []extensionsDeclaration
+		for _, spec := range value.Specs {
+			switch typed := spec.(type) {
+			case *ast.TypeSpec:
+				if !typed.Name.IsExported() {
+					continue
+				}
+				doc := firstDocLine(typed.Doc)
+				if doc == "" {
+					doc = firstDocLine(value.Doc)
+				}
+				result = append(result, extensionsDeclaration{Name: typed.Name.Name, Kind: kind, Doc: doc})
+			case *ast.ValueSpec:
+				for _, name := range typed.Names {
+					if !name.IsExported() {
+						continue
+					}
+					doc := firstDocLine(typed.Doc)
+					if doc == "" {
+						doc = firstDocLine(value.Doc)
+					}
+					result = append(result, extensionsDeclaration{Name: name.Name, Kind: kind, Doc: doc})
+				}
+			}
+		}
+		return result
+	default:
+		return nil
+	}
+}
+
+func firstDocLine(doc *ast.CommentGroup) string {
+	if doc == nil {
+		return ""
+	}
+	text := strings.TrimSpace(doc.Text())
+	if text == "" {
+		return ""
+	}
+	if idx := strings.IndexByte(text, '\n'); idx >= 0 {
+		text = text[:idx]
+	}
+	return strings.TrimSpace(text)
 }
 
 func outputFileName(entry namespace, concern string) string {

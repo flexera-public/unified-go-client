@@ -1,0 +1,880 @@
+{
+  "formatVersion": 1,
+  "package": "flexera",
+  "files": [
+    {
+      "path": "auth.go",
+      "sha256": "68b76f496b9a776e980198d212b3b34f37f6f76b7c41eb69a638c6b59a444ea3",
+      "declarations": [
+        {
+          "name": "Zone",
+          "kind": "type",
+          "doc": "Zone aliases the generated server variable enum for clearer auth helper APIs."
+        },
+        {
+          "name": "ZoneNAM",
+          "kind": "const"
+        },
+        {
+          "name": "ZoneEU",
+          "kind": "const"
+        },
+        {
+          "name": "ZoneAPAC",
+          "kind": "const"
+        },
+        {
+          "name": "ZoneTest",
+          "kind": "const",
+          "doc": "ZoneTest targets the flexeratest.com staging environment. The test"
+        },
+        {
+          "name": "DefaultZone",
+          "kind": "const"
+        },
+        {
+          "name": "AuthHelperConfig",
+          "kind": "type",
+          "doc": "AuthHelperConfig configures the unified auth helper."
+        },
+        {
+          "name": "OAuthConfig",
+          "kind": "type",
+          "doc": "OAuthConfig configures OAuth-backed access token acquisition for the unified client."
+        },
+        {
+          "name": "AuthHelper",
+          "kind": "type",
+          "doc": "AuthHelper provides ergonomic constructors and token helpers for the unified client."
+        },
+        {
+          "name": "NewAuthHelper",
+          "kind": "func",
+          "doc": "NewAuthHelper creates an auth helper for the given Flexera zone."
+        },
+        {
+          "name": "APIBaseURL",
+          "kind": "method",
+          "receiver": "AuthHelper",
+          "doc": "APIBaseURL returns the resolved API base URL for the helper."
+        },
+        {
+          "name": "LoginBaseURL",
+          "kind": "method",
+          "receiver": "AuthHelper",
+          "doc": "LoginBaseURL returns the resolved login base URL for the helper."
+        },
+        {
+          "name": "APIBaseURLForZone",
+          "kind": "func",
+          "doc": "APIBaseURLForZone returns the zoned API base URL used by the unified client."
+        },
+        {
+          "name": "LoginBaseURLForZone",
+          "kind": "func",
+          "doc": "LoginBaseURLForZone returns the zoned login base URL used for token acquisition."
+        },
+        {
+          "name": "NewServerUrlFlexeraLogin",
+          "kind": "func",
+          "doc": "NewServerUrlFlexeraLogin returns the zoned login server URL."
+        },
+        {
+          "name": "BearerTokenRequestEditor",
+          "kind": "func",
+          "doc": "BearerTokenRequestEditor adds a static bearer token to outgoing requests."
+        },
+        {
+          "name": "WithBearerToken",
+          "kind": "func",
+          "doc": "WithBearerToken configures the unified client to use a static bearer token."
+        },
+        {
+          "name": "WithSharedTokenSource",
+          "kind": "func",
+          "doc": "WithSharedTokenSource returns a ClientOption that wires the unified"
+        },
+        {
+          "name": "NewTokenClient",
+          "kind": "method",
+          "receiver": "AuthHelper",
+          "doc": "NewTokenClient builds an unauthenticated client pointed at the Flexera login host."
+        },
+        {
+          "name": "NewStaticTokenClient",
+          "kind": "method",
+          "receiver": "AuthHelper",
+          "doc": "NewStaticTokenClient creates a unified API client that uses a static bearer token."
+        },
+        {
+          "name": "NewOAuth2Doer",
+          "kind": "method",
+          "receiver": "AuthHelper",
+          "doc": "NewOAuth2Doer constructs an OAuth-backed HTTP doer for the unified API client."
+        },
+        {
+          "name": "ValidateOAuth2Credentials",
+          "kind": "method",
+          "receiver": "AuthHelper",
+          "doc": "ValidateOAuth2Credentials verifies that the OAuth configuration can obtain a token."
+        },
+        {
+          "name": "NewOAuthClient",
+          "kind": "method",
+          "receiver": "AuthHelper",
+          "doc": "NewOAuthClient creates a unified API client with automatic token"
+        },
+        {
+          "name": "NewOAuthClientWithResponses",
+          "kind": "method",
+          "receiver": "AuthHelper",
+          "doc": "NewOAuthClientWithResponses creates a response-aware unified API client"
+        },
+        {
+          "name": "NewProjectResolverWithOAuth",
+          "kind": "method",
+          "receiver": "AuthHelper",
+          "doc": "NewProjectResolverWithOAuth constructs a ProjectResolver backed by an"
+        },
+        {
+          "name": "NewProjectResolverWithStaticToken",
+          "kind": "method",
+          "receiver": "AuthHelper",
+          "doc": "NewProjectResolverWithStaticToken constructs a ProjectResolver backed by a"
+        },
+        {
+          "name": "TokenWithClientCredentials",
+          "kind": "method",
+          "receiver": "AuthHelper",
+          "doc": "TokenWithClientCredentials calls POST /oidc/token using the client_credentials grant."
+        },
+        {
+          "name": "TokenWithRefreshToken",
+          "kind": "method",
+          "receiver": "AuthHelper",
+          "doc": "TokenWithRefreshToken calls POST /oidc/token using the refresh_token grant."
+        }
+      ],
+      "declarationCount": 28
+    },
+    {
+      "path": "bill_upload.go",
+      "sha256": "65bf77ec110bbabab2b03f42cf424ce5c8bf03a38de02a128659f5954ef9c553",
+      "declarations": [
+        {
+          "name": "MaxBillUploadFiles",
+          "kind": "const",
+          "doc": "MaxBillUploadFiles is the maximum number of files accepted by a bill upload."
+        },
+        {
+          "name": "BillUploadPushClient",
+          "kind": "type",
+          "doc": "BillUploadPushClient is the subset of the generated client used by"
+        },
+        {
+          "name": "BillUploadPushInput",
+          "kind": "type",
+          "doc": "BillUploadPushInput describes a complete bill-upload submission."
+        },
+        {
+          "name": "BillUploadPushOutput",
+          "kind": "type",
+          "doc": "BillUploadPushOutput identifies the committed bill upload and uploaded files."
+        },
+        {
+          "name": "BillUploadPushTool",
+          "kind": "type",
+          "doc": "BillUploadPushTool creates a bill upload, uploads local files, then commits"
+        },
+        {
+          "name": "NewBillUploadPushTool",
+          "kind": "func",
+          "doc": "NewBillUploadPushTool constructs the bill-upload push workflow."
+        },
+        {
+          "name": "Name",
+          "kind": "method",
+          "receiver": "BillUploadPushTool"
+        },
+        {
+          "name": "Description",
+          "kind": "method",
+          "receiver": "BillUploadPushTool"
+        },
+        {
+          "name": "Invoke",
+          "kind": "method",
+          "receiver": "BillUploadPushTool",
+          "doc": "Invoke executes the create, upload, and commit sequence."
+        }
+      ],
+      "declarationCount": 9
+    },
+    {
+      "path": "billing_centers.go",
+      "sha256": "1343be19cdad1c25560be33e7b8c020def544691b7e2e98f798a2b8a19776fbd",
+      "declarations": [
+        {
+          "name": "BillingCenterClient",
+          "kind": "type",
+          "doc": "BillingCenterClient is the subset of the generated billing_center_service"
+        },
+        {
+          "name": "BillingCenterResolver",
+          "kind": "type",
+          "doc": "BillingCenterResolver caches the top-level billing-center IDs for each"
+        },
+        {
+          "name": "NewBillingCenterResolver",
+          "kind": "func",
+          "doc": "NewBillingCenterResolver constructs a resolver backed by the given client."
+        },
+        {
+          "name": "TopLevelIDs",
+          "kind": "method",
+          "receiver": "BillingCenterResolver",
+          "doc": "TopLevelIDs returns every top-level billing-center ID (parent_id empty) for"
+        },
+        {
+          "name": "ResolveOrUse",
+          "kind": "method",
+          "receiver": "BillingCenterResolver",
+          "doc": "ResolveOrUse returns ids unchanged when non-empty; otherwise calls"
+        }
+      ],
+      "declarationCount": 5
+    },
+    {
+      "path": "clientauth.go",
+      "sha256": "5d1630869e56a00de272179b63bd0678a3fd66016926335bf82935687356bf30",
+      "declarations": [
+        {
+          "name": "ClientAuth",
+          "kind": "type",
+          "doc": "ClientAuth describes everything needed to build an authenticated unified"
+        },
+        {
+          "name": "Validate",
+          "kind": "method",
+          "receiver": "ClientAuth",
+          "doc": "Validate ensures a usable authentication method was provided."
+        },
+        {
+          "name": "NewClientWithResponsesForAuth",
+          "kind": "func",
+          "doc": "NewClientWithResponsesForAuth builds an authenticated *ClientWithResponses"
+        }
+      ],
+      "declarationCount": 3
+    },
+    {
+      "path": "cost.go",
+      "sha256": "6b97bb73ba5ea96cd92f27b4f0bdfc50f3a408882f1e08d464f4e60190dc5953",
+      "declarations": [
+        {
+          "name": "CostClient",
+          "kind": "type",
+          "doc": "CostClient is the subset of the bill_analysis client the helper depends on."
+        },
+        {
+          "name": "Endpoint",
+          "kind": "type",
+          "doc": "Endpoint selects which underlying cost endpoint to use."
+        },
+        {
+          "name": "EndpointAuto",
+          "kind": "const"
+        },
+        {
+          "name": "EndpointAggregated",
+          "kind": "const"
+        },
+        {
+          "name": "EndpointSelect",
+          "kind": "const"
+        },
+        {
+          "name": "Granularity",
+          "kind": "type",
+          "doc": "Granularity is \"month\" or \"day\"."
+        },
+        {
+          "name": "GranularityMonth",
+          "kind": "const"
+        },
+        {
+          "name": "GranularityDay",
+          "kind": "const"
+        },
+        {
+          "name": "MaxPeriodMonths",
+          "kind": "const",
+          "doc": "MaxPeriodMonths is the upstream API limit on a single cost request window."
+        },
+        {
+          "name": "Request",
+          "kind": "type",
+          "doc": "Request describes a logical cost query. It is converted into one or more"
+        },
+        {
+          "name": "CostResponse",
+          "kind": "type",
+          "doc": "CostResponse is the merged result of one or more API calls."
+        },
+        {
+          "name": "Helper",
+          "kind": "type",
+          "doc": "Helper bundles the cost client + billing-center resolver for repeated use."
+        },
+        {
+          "name": "New",
+          "kind": "func",
+          "doc": "New constructs a Helper."
+        },
+        {
+          "name": "GetCost",
+          "kind": "method",
+          "receiver": "Helper",
+          "doc": "GetCost executes the request, resolving billing centers and chunking the"
+        }
+      ],
+      "declarationCount": 14
+    },
+    {
+      "path": "debug.go",
+      "sha256": "a743d9caf4216bcaebcc186df995d3e540b608d08b6cad5fc4218f98d4944c07",
+      "declarations": [
+        {
+          "name": "DebugOptions",
+          "kind": "type",
+          "doc": "DebugOptions configures HTTP request/response tracing produced by"
+        },
+        {
+          "name": "NewDebugDoer",
+          "kind": "func",
+          "doc": "NewDebugDoer wraps inner with an HttpRequestDoer that writes each"
+        },
+        {
+          "name": "WithHTTPDebug",
+          "kind": "func",
+          "doc": "WithHTTPDebug returns a ClientOption that wraps the unified client's"
+        },
+        {
+          "name": "Do",
+          "kind": "method",
+          "receiver": "debugDoer"
+        }
+      ],
+      "declarationCount": 4
+    },
+    {
+      "path": "errors.go",
+      "sha256": "49e3fcf52d52a16a30e5bde263e681603e03ae65878f314e209e4d1a919cad31",
+      "declarations": [
+        {
+          "name": "GoaErrorMediaType",
+          "kind": "const",
+          "doc": "GoaErrorMediaType is the Content-Type returned by Goa services for"
+        },
+        {
+          "name": "APIError",
+          "kind": "type",
+          "doc": "APIError represents the structured error envelope returned by Flexera"
+        },
+        {
+          "name": "ParseAPIError",
+          "kind": "func",
+          "doc": "ParseAPIError decodes a Goa-style error envelope from a response body."
+        },
+        {
+          "name": "Error",
+          "kind": "method",
+          "receiver": "APIError",
+          "doc": "Error formats an APIError into a status-prefixed message suitable for"
+        },
+        {
+          "name": "ResponseError",
+          "kind": "func",
+          "doc": "ResponseError builds an error describing a failed API response. It prefers"
+        },
+        {
+          "name": "ExpectStatus",
+          "kind": "func",
+          "doc": "ExpectStatus returns nil when statusCode is one of allowed, otherwise an"
+        }
+      ],
+      "declarationCount": 6
+    },
+    {
+      "path": "graphql.go",
+      "sha256": "b9de3eb331ac2adbb95439a84ca36938d1fb7b075df030d1472bd6cc4f547999",
+      "declarations": [
+        {
+          "name": "GraphQLRequest",
+          "kind": "type",
+          "doc": "GraphQLRequest describes a raw POST to the unified GraphQL endpoint. The"
+        },
+        {
+          "name": "GraphQLResponse",
+          "kind": "type",
+          "doc": "GraphQLResponse captures the raw HTTP response from a GraphQL call."
+        },
+        {
+          "name": "GraphQL",
+          "kind": "method",
+          "receiver": "Client",
+          "doc": "GraphQL POSTs req to the unified GraphQL endpoint using c's base server,"
+        }
+      ],
+      "declarationCount": 3
+    },
+    {
+      "path": "identity.go",
+      "sha256": "2f3fffa2f0421059332bbfec8606c87c32f6567408fb07402712573dbd73081a",
+      "declarations": [
+        {
+          "name": "UserIDFromToken",
+          "kind": "func",
+          "doc": "UserIDFromToken decodes a Flexera JWT access token (without verifying its"
+        }
+      ],
+      "declarationCount": 1
+    },
+    {
+      "path": "oauth2.go",
+      "sha256": "60c47a1e85d43a5fd0cd5b2ce2043ff47c957a1906923e1bcedc8489928f2900",
+      "declarations": [
+        {
+          "name": "TokenResponse",
+          "kind": "type",
+          "doc": "TokenResponse represents the response from the OAuth2 token endpoint"
+        },
+        {
+          "name": "OAuth2Doer",
+          "kind": "type",
+          "doc": "OAuth2Doer implements HttpRequestDoer with OAuth2 authentication."
+        },
+        {
+          "name": "NewOAuth2Doer",
+          "kind": "func",
+          "doc": "NewOAuth2Doer creates a new OAuth2Doer."
+        },
+        {
+          "name": "Do",
+          "kind": "method",
+          "receiver": "OAuth2Doer",
+          "doc": "Do performs the HTTP request with OAuth2 authentication."
+        },
+        {
+          "name": "Refresh",
+          "kind": "method",
+          "receiver": "OAuth2Doer",
+          "doc": "Refresh forces a /oidc/token round trip using the configured grant"
+        },
+        {
+          "name": "Invalidate",
+          "kind": "method",
+          "receiver": "OAuth2Doer",
+          "doc": "Invalidate clears the cached access token so the next Do (or Refresh)"
+        },
+        {
+          "name": "ValidateCredentials",
+          "kind": "method",
+          "receiver": "OAuth2Doer",
+          "doc": "ValidateCredentials tests the OAuth2 credentials by attempting to obtain an access token."
+        },
+        {
+          "name": "AccessToken",
+          "kind": "method",
+          "receiver": "OAuth2Doer",
+          "doc": "AccessToken returns the current access token."
+        },
+        {
+          "name": "TokenExpiry",
+          "kind": "method",
+          "receiver": "OAuth2Doer",
+          "doc": "TokenExpiry returns the token expiry time."
+        }
+      ],
+      "declarationCount": 9
+    },
+    {
+      "path": "optima_routing.go",
+      "sha256": "a5d34a4e7306db880b03b2a06464f5e93e4cad3251a99e8c260f1813b9e55415",
+      "declarations": [
+        {
+          "name": "Do",
+          "kind": "method",
+          "receiver": "optimaRoutingDoer"
+        },
+        {
+          "name": "WithOptimaRouting",
+          "kind": "func",
+          "doc": "WithOptimaRouting returns a ClientOption that transparently reroutes"
+        }
+      ],
+      "declarationCount": 2
+    },
+    {
+      "path": "pagination.go",
+      "sha256": "cbc7b0db38c106e5918fdb71e38dce534cda3ab74f2c1b2c53c9c0cd189e1898",
+      "declarations": [
+        {
+          "name": "Page",
+          "kind": "type",
+          "doc": "Page represents a single page of paginated results"
+        },
+        {
+          "name": "PageDetail",
+          "kind": "type"
+        },
+        {
+          "name": "FetchAll",
+          "kind": "func",
+          "doc": "FetchAll fetches all pages by repeatedly calling fetchPage until no more pages"
+        },
+        {
+          "name": "ProgressCallback",
+          "kind": "type",
+          "doc": "ProgressCallback is called after each page is fetched"
+        },
+        {
+          "name": "FetchAllWithProgress",
+          "kind": "func",
+          "doc": "FetchAllWithProgress fetches all pages with optional progress reporting"
+        },
+        {
+          "name": "ExtractSkipToken",
+          "kind": "func",
+          "doc": "ExtractSkipToken extracts the skipToken from a NextPage URL"
+        }
+      ],
+      "declarationCount": 6
+    },
+    {
+      "path": "pagination_unified.go",
+      "sha256": "11f5b6726dd339987584028a61c6135528e206ad2cd78db3b3d993c7ad59b4d4",
+      "declarations": [
+        {
+          "name": "PageFetcher",
+          "kind": "type",
+          "doc": "PageFetcher fetches one page of results. skipToken is nil on the first"
+        },
+        {
+          "name": "PartialError",
+          "kind": "type",
+          "doc": "PartialError reports a pagination failure mid-walk, carrying the"
+        },
+        {
+          "name": "Error",
+          "kind": "method",
+          "receiver": "PartialError"
+        },
+        {
+          "name": "Unwrap",
+          "kind": "method",
+          "receiver": "PartialError"
+        },
+        {
+          "name": "CollectPages",
+          "kind": "func",
+          "doc": "CollectPages invokes fetch until no nextPage is present, aggregating the"
+        },
+        {
+          "name": "SkipTokenFromURL",
+          "kind": "func",
+          "doc": "SkipTokenFromURL extracts the skipToken query parameter from a nextPage URL."
+        }
+      ],
+      "declarationCount": 6
+    },
+    {
+      "path": "projects.go",
+      "sha256": "80012b2ce144fede95b2b3c1f8ce5e23ad2660d84c627caa6ebeaa02a653ca36",
+      "declarations": [
+        {
+          "name": "Project",
+          "kind": "type",
+          "doc": "Project is the resolver-facing project view. It is a lightweight subset of"
+        },
+        {
+          "name": "ProjectResolverOption",
+          "kind": "type",
+          "doc": "ProjectResolverOption configures a ProjectResolver."
+        },
+        {
+          "name": "WithProjectsCacheTTL",
+          "kind": "func",
+          "doc": "WithProjectsCacheTTL sets the cache time-to-live. A zero or negative value"
+        },
+        {
+          "name": "WithProjectsAPIVersion",
+          "kind": "func",
+          "doc": "WithProjectsAPIVersion overrides the X-Api-Version header sent to the GRS"
+        },
+        {
+          "name": "ErrNoProjects",
+          "kind": "var",
+          "doc": "ErrNoProjects is returned when the caller's org has no projects."
+        },
+        {
+          "name": "ErrAmbiguousProject",
+          "kind": "var",
+          "doc": "ErrAmbiguousProject is returned by ResolveSingleProjectID when more than one"
+        },
+        {
+          "name": "ErrProjectNotFound",
+          "kind": "var",
+          "doc": "ErrProjectNotFound is returned by lookup helpers when no matching project is found."
+        },
+        {
+          "name": "ProjectResolver",
+          "kind": "type",
+          "doc": "ProjectResolver resolves Flexera One project IDs for a given organization"
+        },
+        {
+          "name": "NewProjectResolver",
+          "kind": "func",
+          "doc": "NewProjectResolver constructs a ProjectResolver bound to a generated"
+        },
+        {
+          "name": "ListProjects",
+          "kind": "method",
+          "receiver": "ProjectResolver",
+          "doc": "ListProjects returns the projects for the given organization. Results are"
+        },
+        {
+          "name": "GetProjectByID",
+          "kind": "method",
+          "receiver": "ProjectResolver",
+          "doc": "GetProjectByID returns the project with the matching ID for the org."
+        },
+        {
+          "name": "GetProjectByName",
+          "kind": "method",
+          "receiver": "ProjectResolver",
+          "doc": "GetProjectByName returns the first project whose name matches (case-insensitive)."
+        },
+        {
+          "name": "ResolveSingleProjectID",
+          "kind": "method",
+          "receiver": "ProjectResolver",
+          "doc": "ResolveSingleProjectID returns the only project's ID for the org, or an"
+        },
+        {
+          "name": "AutoDetectProjectID",
+          "kind": "method",
+          "receiver": "ProjectResolver",
+          "doc": "AutoDetectProjectID returns the first project's ID. The second return"
+        },
+        {
+          "name": "Invalidate",
+          "kind": "method",
+          "receiver": "ProjectResolver",
+          "doc": "Invalidate clears the cached entry for an org."
+        },
+        {
+          "name": "InvalidateAll",
+          "kind": "method",
+          "receiver": "ProjectResolver",
+          "doc": "InvalidateAll clears the entire cache."
+        }
+      ],
+      "declarationCount": 16
+    },
+    {
+      "path": "recommendations.go",
+      "sha256": "c5724b66336e58c716f756cc12a772794d9f85cbd23892f80510bc3f5ff1f425",
+      "declarations": [
+        {
+          "name": "FilterRecommendationsByCategory",
+          "kind": "func",
+          "doc": "FilterRecommendationsByCategory returns a re-marshaled JSON array containing"
+        }
+      ],
+      "declarationCount": 1
+    },
+    {
+      "path": "render_json.go",
+      "sha256": "1904b71d1d4f30eea73c8db34e64cb4391a22e5b14a9df846919069eb221e700",
+      "declarations": [
+        {
+          "name": "Write",
+          "kind": "func"
+        },
+        {
+          "name": "WriteJSON",
+          "kind": "func"
+        },
+        {
+          "name": "WriteErrorJSON",
+          "kind": "func"
+        }
+      ],
+      "declarationCount": 3
+    },
+    {
+      "path": "render_table.go",
+      "sha256": "d6205a88f847ccc1ef6189377623491794614f3423d21c86a0b85f39c1f2f504",
+      "declarations": [
+        {
+          "name": "WriteTable",
+          "kind": "func"
+        }
+      ],
+      "declarationCount": 1
+    },
+    {
+      "path": "tokensource.go",
+      "sha256": "9adc366768b8806c5c49ae966384a34a454ed00215936f1fbc7cb183ac500207",
+      "declarations": [
+        {
+          "name": "SharedTokenSource",
+          "kind": "type",
+          "doc": "SharedTokenSource is a single-flight, refresh-aware bearer-token source"
+        },
+        {
+          "name": "NewSharedTokenSource",
+          "kind": "func",
+          "doc": "NewSharedTokenSource wraps doer. The doer is the single source of"
+        },
+        {
+          "name": "Doer",
+          "kind": "method",
+          "receiver": "SharedTokenSource",
+          "doc": "Doer returns the underlying *oauth2.OAuth2Doer for clients that wire"
+        },
+        {
+          "name": "Token",
+          "kind": "method",
+          "receiver": "SharedTokenSource",
+          "doc": "Token returns a current bearer access token, triggering a refresh if"
+        },
+        {
+          "name": "Invalidate",
+          "kind": "method",
+          "receiver": "SharedTokenSource",
+          "doc": "Invalidate clears the cached token on the underlying doer so the next"
+        }
+      ],
+      "declarationCount": 5
+    },
+    {
+      "path": "tool.go",
+      "sha256": "204deb51f140c310241b1ba2d49090233214bb42d595d171d017c4f0163de652",
+      "declarations": [
+        {
+          "name": "Tool",
+          "kind": "type",
+          "doc": "Tool is the generic contract for a curated workflow. I and O are the"
+        },
+        {
+          "name": "JSONHandler",
+          "kind": "type",
+          "doc": "JSONHandler is the type-erased entry point a dispatcher invokes. It"
+        },
+        {
+          "name": "Wrap",
+          "kind": "func",
+          "doc": "Wrap converts a typed Tool[I,O] into a JSONHandler. The returned"
+        },
+        {
+          "name": "Entry",
+          "kind": "type",
+          "doc": "Entry is a registry record describing one curated tool. It pairs the"
+        },
+        {
+          "name": "Registry",
+          "kind": "type",
+          "doc": "Registry is a name-indexed collection of curated tools. Dispatchers"
+        },
+        {
+          "name": "Register",
+          "kind": "method",
+          "receiver": "Registry",
+          "doc": "Register adds an entry. Re-registering an existing name overwrites it"
+        },
+        {
+          "name": "MustRegister",
+          "kind": "method",
+          "receiver": "Registry",
+          "doc": "MustRegister panics on error; convenient for init-time registration."
+        },
+        {
+          "name": "Lookup",
+          "kind": "method",
+          "receiver": "Registry",
+          "doc": "Lookup returns the entry for name, or false if not registered."
+        },
+        {
+          "name": "List",
+          "kind": "method",
+          "receiver": "Registry",
+          "doc": "List returns all entries sorted by name. Safe to call concurrently."
+        }
+      ],
+      "declarationCount": 9
+    },
+    {
+      "path": "transport.go",
+      "sha256": "c90a92d46606553c31c4915beeb74609eca9699078a56f6c2a84091f1e1b2786",
+      "declarations": [
+        {
+          "name": "RetryConfig",
+          "kind": "type",
+          "doc": "RetryConfig configures the retry behavior of the wrapping HttpRequestDoer"
+        },
+        {
+          "name": "DefaultRetryConfig",
+          "kind": "func",
+          "doc": "DefaultRetryConfig returns defaults suitable for the Flexera unified API"
+        },
+        {
+          "name": "NewRetryingHTTPClient",
+          "kind": "func",
+          "doc": "NewRetryingHTTPClient wraps doer with retry-on-429/5xx behavior using cfg."
+        },
+        {
+          "name": "WithRetryingHTTPClient",
+          "kind": "func",
+          "doc": "WithRetryingHTTPClient returns a ClientOption that wraps the unified"
+        },
+        {
+          "name": "Do",
+          "kind": "method",
+          "receiver": "retryingDoer"
+        }
+      ],
+      "declarationCount": 5
+    },
+    {
+      "path": "zones.go",
+      "sha256": "e3c9bc86f6fbcbc573f80e278ffa72d0d57d2119cd04b2b036dbe8d586f4606f",
+      "declarations": [
+        {
+          "name": "IsCanonicalZone",
+          "kind": "func",
+          "doc": "IsCanonicalZone reports whether zone is a member of the in-Go"
+        },
+        {
+          "name": "ParseZone",
+          "kind": "func",
+          "doc": "ParseZone resolves a user-friendly zone string (accepting common aliases:"
+        },
+        {
+          "name": "GrsBaseURLForZone",
+          "kind": "func",
+          "doc": "GrsBaseURLForZone returns the dedicated GRS (Governance / Resource Service)"
+        },
+        {
+          "name": "OptimaBaseURL",
+          "kind": "func",
+          "doc": "OptimaBaseURL returns the Optima (api.optima*.flexeraeng.com) base URL for"
+        }
+      ],
+      "declarationCount": 4
+    }
+  ],
+  "totalFiles": 21,
+  "totalDeclarations": 140
+}
