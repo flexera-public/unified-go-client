@@ -7,24 +7,18 @@ import (
 	"strings"
 )
 
-// optimaHostedPathPrefixes are the top-level path prefixes (relative to
-// Server) whose operations are served from a dedicated Optima backend
-// (api.optima*.flexeraeng.com), not the unified API gateway, even though
-// their OpenAPI operations are merged into the same document as
-// everything else:
-//
-//   - /bill-analysis  — bill_analysis (adjustments, bill-months, custom
-//     dimensions, billing settings, cloud vendor accounts, ...)
-//   - /analytics       — billing_center_service (billing centers,
-//     allocation tables, access rules)
-//   - /recommendations — optima_recommendations
-//
-// NOTE: /recommendation (singular) is the unrelated Flexera risk
-// misconfiguration API and stays on the regular gateway host.
-var optimaHostedPathPrefixes = []string{"/bill-analysis", "/analytics", "/recommendations"}
-
 // isOptimaHostedPath reports whether path belongs to one of the merged
-// spec's Optima-hosted services (see optimaHostedPathPrefixes).
+// spec's Optima-hosted services. The optimaHostedPathPrefixes it checks
+// against is generated (see client_gen_optima_routing.go) directly from
+// the merged spec's path-item-level "servers" overrides by
+// cmd/split-client's computeOptimaHostedPrefixes, so it can never drift
+// out of sync with unified-openapi/openapi3.json the way a hand-maintained
+// list could: any spec whose merge_servers config changes automatically
+// updates this list the next time `make generate` runs.
+//
+// NOTE: "/recommendation" (singular) is the unrelated Flexera risk
+// misconfiguration API and correctly stays on the regular gateway host,
+// since it is a distinct top-level prefix from "/recommendations".
 func isOptimaHostedPath(path string) bool {
 	for _, prefix := range optimaHostedPathPrefixes {
 		if strings.HasPrefix(path, prefix) {

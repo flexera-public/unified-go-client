@@ -6,6 +6,18 @@
   "package": "flexera",
   "files": [
     {
+      "path": "client_gen_optima_routing.go",
+      "sha256": "edde49284c4d6dedbc678bcac168d94d0059cc8fa71f6970ee810c7a6aeef007",
+      "namespace": "meta",
+      "concern": "routing",
+      "lines": 16,
+      "bytes": 693,
+      "declarations": [
+        "optimaHostedPathPrefixes"
+      ],
+      "declarationCount": 1
+    },
+    {
       "path": "client_gen_auth_models.go",
       "sha256": "2bbc3c322fe79669023a3af21c73ba816f97f7fa0a8094b755d9a5f938779796",
       "namespace": "Auth",
@@ -8728,8 +8740,8 @@
       "declarationCount": 39
     }
   ],
-  "totalFiles": 57,
-  "totalLines": 110007,
-  "totalBytes": 4271081,
-  "totalDeclarations": 8039
+  "totalFiles": 58,
+  "totalLines": 110023,
+  "totalBytes": 4271774,
+  "totalDeclarations": 8040
 }

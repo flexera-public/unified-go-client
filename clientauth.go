@@ -17,9 +17,10 @@ type ClientAuth struct {
 	LoginBaseURL string
 
 	// OptimaBaseURL overrides the host that Optima-hosted operations
-	// (bill_analysis, billing_center_service, optima_recommendations —
-	// see optimaHostedPathPrefixes) are automatically rerouted to. When
-	// empty, it is derived from Zone via OptimaBaseURL(Zone).
+	// (bill_analysis, billing_center_service, optima_recommendations,
+	// bill_upload — see optimaHostedPathPrefixes) are automatically
+	// rerouted to. When empty, it is derived from Zone via
+	// OptimaBaseURL(Zone).
 	OptimaBaseURL string
 
 	AccessToken  string
