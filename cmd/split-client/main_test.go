@@ -51,7 +51,7 @@ func TestRunSplitsByNamespaceAndConcern(t *testing.T) {
 	spec := filepath.Join(dir, "openapi.json")
 	config := filepath.Join(dir, "specs.yaml")
 	writeTestFile(t, input, generatedFixture)
-	writeTestFile(t, spec, `{"openapi":"3.0.3"}`)
+	writeTestFile(t, spec, `{"openapi":"3.0.3","servers":[{"url":"https://api.flexera.{zone}"}]}`)
 	writeTestFile(t, config, "specs:\n  - id: flexera-budget-v1\n    vendor: flexera\n    service: budget\n")
 	writeTestFile(t, filepath.Join(dir, "client_gen_stale.go"), "package flexera\n")
 
@@ -64,6 +64,7 @@ func TestRunSplitsByNamespaceAndConcern(t *testing.T) {
 		"client_gen_budget_models.go",
 		"client_gen_budget_operations.go",
 		"client_gen_budget_responses.go",
+		"client_gen_optima_routing.go",
 		manifestName,
 	} {
 		if _, err := os.Stat(filepath.Join(dir, name)); err != nil {
@@ -94,6 +95,10 @@ func TestRunSplitsByNamespaceAndConcern(t *testing.T) {
 	if strings.Contains(core, "BudgetThingState") {
 		t.Fatalf("service-specific declaration leaked into core:\n%s", core)
 	}
+	routing := readTestFile(t, filepath.Join(dir, "client_gen_optima_routing.go"))
+	if !strings.Contains(routing, "var optimaHostedPathPrefixes = []string{}") {
+		t.Fatalf("expected no Optima-hosted prefixes for a spec with no servers overrides:\n%s", routing)
+	}
 
 	var got manifest
 	data, err := os.ReadFile(filepath.Join(dir, manifestName))
@@ -103,7 +108,7 @@ func TestRunSplitsByNamespaceAndConcern(t *testing.T) {
 	if err := json.Unmarshal(data, &got); err != nil {
 		t.Fatal(err)
 	}
-	if got.Generator != "test-generator v1.2.3" || got.TotalFiles != 4 {
+	if got.Generator != "test-generator v1.2.3" || got.TotalFiles != 5 {
 		t.Fatalf("unexpected manifest: %#v", got)
 	}
 	if got.Source != "openapi.json" {
@@ -126,7 +131,7 @@ func TestRunIsDeterministic(t *testing.T) {
 	spec := filepath.Join(dir, "openapi.json")
 	config := filepath.Join(dir, "specs.yaml")
 	writeTestFile(t, input, generatedFixture)
-	writeTestFile(t, spec, `{}`)
+	writeTestFile(t, spec, `{"servers":[{"url":"https://api.flexera.{zone}"}]}`)
 	writeTestFile(t, config, "specs:\n  - id: flexera-budget-v1\n    vendor: flexera\n    service: budget\n")
 
 	opts := options{input: input, outputDir: dir, spec: spec, specConfig: config}
@@ -250,4 +255,92 @@ func snapshotOutputs(t *testing.T, dir string) string {
 		result.Write(data)
 	}
 	return result.String()
+}
+
+func TestComputeOptimaHostedPrefixes_DerivesConsistentOverrides(t *testing.T) {
+	spec := []byte(`{
+		"servers": [{"url": "https://api.flexera.{zone}"}],
+		"paths": {
+			"/bill-analysis/orgs/{orgId}/adjustments": {
+				"servers": [{"url": "https://api.optima{zone}.flexeraeng.com/bill-analysis"}]
+			},
+			"/bill-analysis/orgs/{orgId}/bill-months": {
+				"servers": [{"url": "https://api.optima{zone}.flexeraeng.com/bill-analysis"}]
+			},
+			"/optima/orgs/{orgId}/billUploads": {
+				"servers": [{"url": "https://api.optima{zone}.flexeraeng.com"}]
+			},
+			"/iam/v1/orgs/{orgId}": {},
+			"/recommendation/v1/orgs/{orgId}/misconfiguration/list": {}
+		}
+	}`)
+	got, err := computeOptimaHostedPrefixes(spec)
+	if err != nil {
+		t.Fatal(err)
+	}
+	want := []string{"/bill-analysis", "/optima"}
+	if len(got) != len(want) {
+		t.Fatalf("got %v, want %v", got, want)
+	}
+	for i := range want {
+		if got[i] != want[i] {
+			t.Fatalf("got %v, want %v", got, want)
+		}
+	}
+}
+
+func TestComputeOptimaHostedPrefixes_ErrorsOnPartialCoverage(t *testing.T) {
+	spec := []byte(`{
+		"servers": [{"url": "https://api.flexera.{zone}"}],
+		"paths": {
+			"/bill-analysis/orgs/{orgId}/adjustments": {
+				"servers": [{"url": "https://api.optima{zone}.flexeraeng.com/bill-analysis"}]
+			},
+			"/bill-analysis/orgs/{orgId}/bill-months": {}
+		}
+	}`)
+	if _, err := computeOptimaHostedPrefixes(spec); err == nil {
+		t.Fatal("expected an error for inconsistent (partial) servers-override coverage under one prefix")
+	}
+}
+
+func TestComputeOptimaHostedPrefixes_ErrorsOnConflictingHosts(t *testing.T) {
+	spec := []byte(`{
+		"servers": [{"url": "https://api.flexera.{zone}"}],
+		"paths": {
+			"/bill-analysis/orgs/{orgId}/adjustments": {
+				"servers": [{"url": "https://api.optima{zone}.flexeraeng.com"}]
+			},
+			"/bill-analysis/orgs/{orgId}/bill-months": {
+				"servers": [{"url": "https://api.other-host.flexeraeng.com"}]
+			}
+		}
+	}`)
+	if _, err := computeOptimaHostedPrefixes(spec); err == nil {
+		t.Fatal("expected an error for a prefix whose paths disagree on override host")
+	}
+}
+
+func TestComputeOptimaHostedPrefixes_IgnoresOperationLevelOverrides(t *testing.T) {
+	// The /oidc/token login override is operation-level, not path-item
+	// level, and must NOT be picked up here: it's handled separately by
+	// AuthHelper, which never goes through the generated *Client's HTTP
+	// doer.
+	spec := []byte(`{
+		"servers": [{"url": "https://api.flexera.{zone}"}],
+		"paths": {
+			"/oidc/token": {
+				"post": {
+					"servers": [{"url": "https://login.flexera.{zone}"}]
+				}
+			}
+		}
+	}`)
+	got, err := computeOptimaHostedPrefixes(spec)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(got) != 0 {
+		t.Fatalf("expected no prefixes derived from an operation-level override, got %v", got)
+	}
 }

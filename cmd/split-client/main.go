@@ -619,11 +619,40 @@ func writeOutputs(opts options, packageName, generator string, groups []outputGr
 		Package:       packageName,
 	}
 
+	optimaPrefixes, err := computeOptimaHostedPrefixes(specData)
+	if err != nil {
+		return fmt.Errorf("derive Optima-hosted path prefixes: %w", err)
+	}
+	optimaRoutingSource, err := renderOptimaRoutingFile(packageName, generator, optimaPrefixes)
+	if err != nil {
+		return fmt.Errorf("render optima routing file: %w", err)
+	}
+
 	tempDir, err := os.MkdirTemp(opts.outputDir, ".split-client-")
 	if err != nil {
 		return fmt.Errorf("create temporary output directory: %w", err)
 	}
 	defer os.RemoveAll(tempDir)
+
+	const optimaRoutingFileName = generatedPrefix + "optima_routing.go"
+	if err := os.WriteFile(filepath.Join(tempDir, optimaRoutingFileName), optimaRoutingSource, 0o644); err != nil {
+		return fmt.Errorf("write %s: %w", optimaRoutingFileName, err)
+	}
+	optimaSum := sha256.Sum256(optimaRoutingSource)
+	optimaLines := bytes.Count(optimaRoutingSource, []byte("\n"))
+	result.Files = append(result.Files, manifestFile{
+		Path:             optimaRoutingFileName,
+		SHA256:           hex.EncodeToString(optimaSum[:]),
+		Namespace:        "meta",
+		Concern:          "routing",
+		Lines:            optimaLines,
+		Bytes:            len(optimaRoutingSource),
+		Declarations:     []string{"optimaHostedPathPrefixes"},
+		DeclarationCount: 1,
+	})
+	result.TotalLines += optimaLines
+	result.TotalBytes += len(optimaRoutingSource)
+	result.TotalDecls++
 
 	for _, group := range groups {
 		rendered := group.Decls[0].(*renderedDecl).content
@@ -713,6 +742,165 @@ func detectGenerator(source []byte) string {
 		return strings.TrimSpace(strings.TrimSuffix(value, "DO NOT EDIT."))
 	}
 	return "oapi-codegen"
+}
+
+// openAPIDoc is the minimal shape needed to derive Optima-hosted routing
+// prefixes: the document-level default servers plus, per path, any
+// path-item-level "servers" override (which OpenAPI 3 defines as taking
+// precedence over the document-level default for that path's operations).
+//
+// Operation-level "servers" overrides (e.g. the login/token endpoint's
+// override to login.flexera.{zone}) are intentionally NOT modeled here:
+// those are handled by dedicated code (see auth.go's AuthHelper) that
+// never goes through the generated *Client's HTTP doer, so they don't need
+// runtime request rerouting the way path-hosted operations do.
+type openAPIDoc struct {
+	Servers []struct {
+		URL string `json:"url"`
+	} `json:"servers"`
+	Paths map[string]struct {
+		Servers []struct {
+			URL string `json:"url"`
+		} `json:"servers"`
+	} `json:"paths"`
+}
+
+// computeOptimaHostedPrefixes derives the top-level path prefixes (e.g.
+// "/bill-analysis") whose operations must be rerouted to a non-default
+// backend host at runtime (see optima_routing.go's optimaRoutingDoer),
+// by inspecting the merged spec's path-item-level "servers" overrides
+// directly rather than relying on a hand-maintained list.
+//
+// A prefix is only emitted when EVERY path under it carries an override
+// to the SAME non-default host; any partial or inconsistent coverage is
+// treated as an error so an ambiguous or unexpected spec shape fails
+// generation loudly instead of producing silently-wrong routing.
+func computeOptimaHostedPrefixes(specData []byte) ([]string, error) {
+	var doc openAPIDoc
+	if err := json.Unmarshal(specData, &doc); err != nil {
+		return nil, fmt.Errorf("parse spec: %w", err)
+	}
+	if len(doc.Servers) == 0 || strings.TrimSpace(doc.Servers[0].URL) == "" {
+		return nil, errors.New("spec has no document-level default server")
+	}
+	defaultHost := serverHost(doc.Servers[0].URL)
+
+	type prefixInfo struct {
+		total      int
+		overridden int
+		hosts      map[string]bool
+	}
+	prefixes := map[string]*prefixInfo{}
+	for path, item := range doc.Paths {
+		prefix := firstPathSegment(path)
+		info := prefixes[prefix]
+		if info == nil {
+			info = &prefixInfo{hosts: map[string]bool{}}
+			prefixes[prefix] = info
+		}
+		info.total++
+		if len(item.Servers) == 0 {
+			continue
+		}
+		info.overridden++
+		for _, server := range item.Servers {
+			if host := serverHost(server.URL); host != defaultHost {
+				info.hosts[host] = true
+			}
+		}
+	}
+
+	var result []string
+	var problems []string
+	for prefix, info := range prefixes {
+		if len(info.hosts) == 0 {
+			continue // no non-default override under this prefix; nothing to do
+		}
+		switch {
+		case info.overridden != info.total:
+			problems = append(problems, fmt.Sprintf(
+				"%s: only %d/%d paths carry a non-default servers override (expected all-or-nothing)",
+				prefix, info.overridden, info.total))
+		case len(info.hosts) > 1:
+			problems = append(problems, fmt.Sprintf(
+				"%s: paths disagree on override host: %s", prefix, strings.Join(sortedKeys(info.hosts), ", ")))
+		default:
+			result = append(result, prefix)
+		}
+	}
+	if len(problems) > 0 {
+		return nil, fmt.Errorf("cannot safely auto-derive Optima routing prefixes; fix the spec/merge_servers "+
+			"config or handle these prefixes manually:\n  %s", strings.Join(problems, "\n  "))
+	}
+	sort.Strings(result)
+	return result, nil
+}
+
+// serverHost extracts just the scheme-less host (with any port/template
+// variables like "{zone}" left intact, e.g. "api.optima{zone}.flexeraeng.com")
+// from a server URL, discarding any base path. optimaRoutingDoer only ever
+// rewrites scheme+host (the merged spec's operation paths already contain
+// the full path shape), so a difference in base path alone does not
+// indicate a distinct routing target.
+func serverHost(rawURL string) string {
+	value := rawURL
+	if idx := strings.Index(value, "://"); idx >= 0 {
+		value = value[idx+3:]
+	}
+	if idx := strings.Index(value, "/"); idx >= 0 {
+		value = value[:idx]
+	}
+	return value
+}
+
+// firstPathSegment returns the leading "/segment" of an OpenAPI path
+// template, e.g. "/bill-analysis" for "/bill-analysis/orgs/{orgId}/...".
+func firstPathSegment(path string) string {
+	trimmed := strings.TrimPrefix(path, "/")
+	if idx := strings.Index(trimmed, "/"); idx >= 0 {
+		trimmed = trimmed[:idx]
+	}
+	return "/" + trimmed
+}
+
+func sortedKeys(set map[string]bool) []string {
+	keys := make([]string, 0, len(set))
+	for key := range set {
+		keys = append(keys, key)
+	}
+	sort.Strings(keys)
+	return keys
+}
+
+// renderOptimaRoutingFile renders the generated optimaHostedPathPrefixes
+// file consumed by optima_routing.go's isOptimaHostedPath. Regenerated by
+// cmd/split-client on every `make generate` run, so it can never drift out
+// of sync with the committed unified-openapi/openapi3.json the way a
+// hand-maintained list could.
+func renderOptimaRoutingFile(packageName, generator string, prefixes []string) ([]byte, error) {
+	var buf bytes.Buffer
+	fmt.Fprintf(&buf, "// Code generated by cmd/split-client from unified-openapi/openapi3.json using %s. DO NOT EDIT.\n", generator)
+	fmt.Fprintf(&buf, "// Regenerate via `make generate` (see generate_client.sh).\n\n")
+	fmt.Fprintf(&buf, "package %s\n\n", packageName)
+	buf.WriteString("// optimaHostedPathPrefixes lists the top-level path prefixes whose\n")
+	buf.WriteString("// operations carry a path-item \"servers\" override in the merged OpenAPI\n")
+	buf.WriteString("// document pointing at a host other than the default gateway server. See\n")
+	buf.WriteString("// optima_routing.go's isOptimaHostedPath/optimaRoutingDoer for how this is\n")
+	buf.WriteString("// used to reroute matching requests to OptimaBaseURL at runtime.\n")
+	if len(prefixes) == 0 {
+		buf.WriteString("var optimaHostedPathPrefixes = []string{}\n")
+	} else {
+		buf.WriteString("var optimaHostedPathPrefixes = []string{\n")
+		for _, prefix := range prefixes {
+			fmt.Fprintf(&buf, "\t%q,\n", prefix)
+		}
+		buf.WriteString("}\n")
+	}
+	formatted, err := format.Source(buf.Bytes())
+	if err != nil {
+		return nil, fmt.Errorf("gofmt generated optima routing file: %w", err)
+	}
+	return formatted, nil
 }
 
 func componentNamespace(service string) string {
