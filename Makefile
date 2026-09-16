@@ -1,9 +1,9 @@
-.PHONY: all update-submodule update-deps generate generate-client test build vet tidy
+.PHONY: all update-unified-openapi update-deps generate generate-client test build vet tidy
 
-# Update the unified-openapi submodule to the latest commit on its configured
-# upstream branch. This is intended for the automated refresh workflow.
-update-submodule:
-	git submodule update --init --remote --merge unified-openapi
+# Resolve the requested upstream branch (main by default), download its
+# immutable OpenAPI snapshot, and record the resolved commit/hash.
+update-unified-openapi:
+	./scripts/update-unified-openapi $(REF)
 
 # Update all Go module dependencies to their latest versions and tidy
 # go.mod/go.sum.

@@ -1,7 +1,8 @@
 name: refresh-client
 
-# Periodically update the unified-openapi submodule, Go dependencies, and
-# generated client artifacts. The resulting changes are proposed for review.
+# Periodically pin the latest unified-openapi main snapshot, update Go
+# dependencies, and regenerate client artifacts. The resulting changes are
+# proposed for review.
 
 on:
   schedule:
@@ -21,16 +22,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-        with:
-          submodules: recursive
 
       - uses: actions/setup-go@v5
         with:
           go-version-file: go.mod
           cache: true
 
-      - name: Update unified-openapi submodule
-        run: make update-submodule
+      - name: Pin latest unified-openapi main snapshot
+        run: make update-unified-openapi
 
       - name: Update dependencies and regenerate client
         run: make all
@@ -60,13 +59,14 @@ jobs:
       - name: Create or update pull request
         uses: peter-evans/create-pull-request@v7
         with:
-          commit-message: "chore: refresh unified-openapi and regenerate client"
+          commit-message: "chore: refresh unified-openapi snapshot and regenerate client"
           branch: automated/refresh-client
           delete-branch: false
           title: "chore: automated dependency and client refresh"
           body-path: /tmp/pr-body.md
           add-paths: |
             unified-openapi
+            scripts/update-unified-openapi
             go.mod
             go.sum
             client_gen_*.go

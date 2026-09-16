@@ -88,19 +88,23 @@ infrastructure remains in `client_gen_core.go`. The generated
 `client_gen_manifest.json` maps each file back to its source spec and exported
 declarations.
 
-To regenerate after the spec changes:
+The client uses a tracked, immutable `unified-openapi/openapi3.json` snapshot.
+Its `PIN` file records the upstream `main` commit and the snapshot SHA-256;
+the adjacent `specs.yaml` preserves the namespace metadata needed for client
+generation.
+
+To regenerate after the snapshot changes:
 
 ```sh
-# Initialize the pinned public submodule if needed:
-git submodule update --init --recursive
-
 # Regenerate from the committed unified-openapi/openapi3.json:
 make generate-client
 ```
 
-Regeneration does not fetch upstream specs or regenerate the
-`unified-openapi` document. Changes to that document are made and reviewed
-separately in the pinned `unified-openapi` repository.
+Regeneration does not fetch upstream specs. To update the pinned snapshot to
+the current upstream `main`, run `make update-unified-openapi`; use
+`make update-unified-openapi REF=<branch>` to review another upstream branch.
+The target resolves the branch to a commit before downloading, so every
+committed snapshot remains reproducible.
 
 To update Go dependencies and regenerate the client together:
 
@@ -108,9 +112,9 @@ To update Go dependencies and regenerate the client together:
 make all
 ```
 
-The scheduled/manual `refresh-client` workflow additionally runs
-`make update-submodule` first to advance `unified-openapi` and proposes the
-submodule, dependency, and generated-client changes in a pull request.
+The scheduled/manual `refresh-client` workflow first pins the latest upstream
+`main` snapshot, then proposes the snapshot, dependency, and generated-client
+changes in a pull request.
 
 Generation first runs `oapi-codegen` once to preserve its normal package-wide
 behavior, then `cmd/split-client` partitions the resulting Go syntax tree.

@@ -1,11 +1,10 @@
 // Package billanalysis provides a Go client for the Flexera Optima Bill Analysis API.
-// The client is generated from the curated bill_analysis spec in the unified-openapi submodule.
-// To regenerate: go generate ./rightscale/bill_analysis/...
+// The client is generated from a separately maintained curated bill_analysis spec.
 //
 // This file provides backward-compatible type aliases so that existing callers
 // (cost.go, anomaly/*, service/optima, flexera-cli) require zero import-path or
 // type-name changes. The aliases map the old oapi-codegen name conventions to
-// the names produced by the unified-openapi curated spec.
+// the names produced by the curated spec.
 //
 // New code should prefer the generated names directly.
 package billanalysis

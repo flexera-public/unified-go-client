@@ -24,8 +24,8 @@
 //
 //	make generate-client
 //
-//	The generator reads unified-openapi/openapi3.json as committed. Updating that
-//	spec is a separate reviewed change in the unified-openapi repository.
+//	The generator reads unified-openapi/openapi3.json as committed. The
+//	unified-openapi/PIN file records the upstream revision used for the snapshot.
 //
 // # Sub-packages
 //

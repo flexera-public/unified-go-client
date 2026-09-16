@@ -1,0 +1,46 @@
+#!/bin/sh
+set -eu
+
+repository='https://github.com/flexera-public/unified-openapi.git'
+ref="${1:-main}"
+snapshot_dir='unified-openapi'
+snapshot="$snapshot_dir/openapi3.json"
+spec_config="$snapshot_dir/specs.yaml"
+pin="$snapshot_dir/PIN"
+
+commit="$(git ls-remote "$repository" "refs/heads/$ref" | awk 'NR == 1 { print $1 }')"
+if [ -z "$commit" ]; then
+	printf 'Unable to resolve branch %q from %s\n' "$ref" "$repository" >&2
+	exit 1
+fi
+
+temporary_snapshot="$(mktemp "${TMPDIR:-/tmp}/unified-openapi.XXXXXX")"
+temporary_config="$(mktemp "${TMPDIR:-/tmp}/unified-openapi.XXXXXX")"
+trap 'rm -f "$temporary_snapshot" "$temporary_config"' EXIT HUP INT TERM
+
+base_url="https://raw.githubusercontent.com/flexera-public/unified-openapi/$commit"
+curl --fail --silent --show-error --location "$base_url/openapi3.json" --output "$temporary_snapshot"
+curl --fail --silent --show-error --location "$base_url/generator/specs.yaml" --output "$temporary_config"
+
+if [ ! -s "$temporary_snapshot" ]; then
+	printf 'Downloaded OpenAPI snapshot is empty: %s/openapi3.json\n' "$base_url" >&2
+	exit 1
+fi
+if [ ! -s "$temporary_config" ]; then
+	printf 'Downloaded OpenAPI source configuration is empty: %s/generator/specs.yaml\n' "$base_url" >&2
+	exit 1
+fi
+
+mkdir -p "$snapshot_dir"
+mv "$temporary_snapshot" "$snapshot"
+mv "$temporary_config" "$spec_config"
+
+sha256="$(shasum -a 256 "$snapshot" | awk '{ print $1 }')"
+cat >"$pin" <<EOF
+repository=$repository
+branch=$ref
+commit=$commit
+sha256=$sha256
+EOF
+
+printf 'Pinned unified-openapi %s at %s\n' "$ref" "$commit"
