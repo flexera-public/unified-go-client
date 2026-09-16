@@ -50,7 +50,7 @@ type FinopsOnboardingCreateIAMRoleRequestBody struct {
 	// BucketPath Path to the bill files from the AWS S3 bucket root
 	BucketPath string `json:"bucketPath"`
 
-	// EffectiveFrom The earliest billing year-month from when to start processing data.
+	// EffectiveFrom The earliest billing month (UTC) from which to start processing data, formatted YYYY-MM. If omitted when creating an AWS bill connect, the current UTC month is used. If omitted when updating, the existing value is unchanged.
 	EffectiveFrom *string `json:"effectiveFrom,omitempty"`
 
 	// StsExternalId Unique identifier used when assuming a role in the customers account. This defaults to the customers org_id
@@ -77,7 +77,7 @@ type FinopsOnboardingCreateIAMUserRequestBody struct {
 	// BucketPath Path to the bill files from the AWS S3 bucket root
 	BucketPath string `json:"bucketPath"`
 
-	// EffectiveFrom The earliest billing year-month from when to start processing data.
+	// EffectiveFrom The earliest billing month (UTC) from which to start processing data, formatted YYYY-MM. If omitted when creating an AWS bill connect, the current UTC month is used. If omitted when updating, the existing value is unchanged.
 	EffectiveFrom *string `json:"effectiveFrom,omitempty"`
 
 	// Partition Indicates the partition in which the resource is located. A partition is a group of AWS Regions.
@@ -321,7 +321,7 @@ type FinopsOnboardingUpdateIAMRoleRequestBody struct {
 	// BucketPath Path to the bill files from the AWS S3 bucket root
 	BucketPath *string `json:"bucketPath,omitempty"`
 
-	// EffectiveFrom The earliest billing year-month from when to start processing data.
+	// EffectiveFrom The earliest billing month (UTC) from which to start processing data, formatted YYYY-MM. If omitted when creating an AWS bill connect, the current UTC month is used. If omitted when updating, the existing value is unchanged.
 	EffectiveFrom *string `json:"effectiveFrom,omitempty"`
 
 	// StsExternalId Unique identifier used when assuming a role in the customers account. This defaults to the customers org_id
@@ -345,7 +345,7 @@ type FinopsOnboardingUpdateIAMUserRequestBody struct {
 	// BucketPath Path to the bill files from the AWS S3 bucket root
 	BucketPath *string `json:"bucketPath,omitempty"`
 
-	// EffectiveFrom The earliest billing year-month from when to start processing data.
+	// EffectiveFrom The earliest billing month (UTC) from which to start processing data, formatted YYYY-MM. If omitted when creating an AWS bill connect, the current UTC month is used. If omitted when updating, the existing value is unchanged.
 	EffectiveFrom *string `json:"effectiveFrom,omitempty"`
 
 	// SecretAccessKey The AWS IAM user's secret access key, to access the billAccountId

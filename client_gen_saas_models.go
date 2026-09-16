@@ -213,8 +213,8 @@ const (
 
 // Defines values for SaasFlexeraFsmRelatedappRelation.
 const (
-	Child  SaasFlexeraFsmRelatedappRelation = "child"
-	Parent SaasFlexeraFsmRelatedappRelation = "parent"
+	SaasFlexeraFsmRelatedappRelationChild  SaasFlexeraFsmRelatedappRelation = "child"
+	SaasFlexeraFsmRelatedappRelationParent SaasFlexeraFsmRelatedappRelation = "parent"
 )
 
 // Defines values for SaasFlexeraSaasMetricsActivitycountbyrangeRange.
@@ -402,8 +402,8 @@ const (
 
 // Defines values for SaasUsageMessageQueryIndexParamsView.
 const (
-	Default  SaasUsageMessageQueryIndexParamsView = "default"
-	Extended SaasUsageMessageQueryIndexParamsView = "extended"
+	SaasUsageMessageQueryIndexParamsViewDefault  SaasUsageMessageQueryIndexParamsView = "default"
+	SaasUsageMessageQueryIndexParamsViewExtended SaasUsageMessageQueryIndexParamsView = "extended"
 )
 
 // SaasActivityCountByRangeCollection defines model for Saas_ActivityCountByRangeCollection.
@@ -2291,6 +2291,9 @@ type SaasManagedApplicationShowParamsView string
 
 // SaasManagedApplicationIndexUsersParamsView defines parameters for SaasManagedApplicationIndexUsers.
 type SaasManagedApplicationIndexUsersParamsView string
+
+// SaasSaaSDataUploadJSONBody defines parameters for SaasSaaSDataUpload.
+type SaasSaaSDataUploadJSONBody = string
 
 // SaasSaaSDataUploadParamsContentType defines parameters for SaasSaaSDataUpload.
 type SaasSaaSDataUploadParamsContentType string

@@ -22,12 +22,6 @@ const (
 	DivntOnboardingCreateRequestAccountTypeMCA DivntOnboardingCreateRequestAccountType = "MCA"
 )
 
-// Defines values for DivntOnboardingCreateRequestOnboardingType.
-const (
-	DivntOnboardingCreateRequestOnboardingTypeAutoDiscovery DivntOnboardingCreateRequestOnboardingType = "AutoDiscovery"
-	DivntOnboardingCreateRequestOnboardingTypeIndividual    DivntOnboardingCreateRequestOnboardingType = "Individual"
-)
-
 // Defines values for DivntOnboardingCreateRequestProvider.
 const (
 	DivntOnboardingCreateRequestProviderAws   DivntOnboardingCreateRequestProvider = "aws"
@@ -39,12 +33,6 @@ const (
 	DivntOnboardingUpdateRequestAccountTypeCSP DivntOnboardingUpdateRequestAccountType = "CSP"
 	DivntOnboardingUpdateRequestAccountTypeEA  DivntOnboardingUpdateRequestAccountType = "EA"
 	DivntOnboardingUpdateRequestAccountTypeMCA DivntOnboardingUpdateRequestAccountType = "MCA"
-)
-
-// Defines values for DivntOnboardingUpdateRequestOnboardingType.
-const (
-	DivntOnboardingUpdateRequestOnboardingTypeAutoDiscovery DivntOnboardingUpdateRequestOnboardingType = "AutoDiscovery"
-	DivntOnboardingUpdateRequestOnboardingTypeIndividual    DivntOnboardingUpdateRequestOnboardingType = "Individual"
 )
 
 // DivntAwsCostAndUsageModel defines model for Divnt_AwsCostAndUsageModel.
@@ -136,9 +124,6 @@ type DivntOnboardingCreateRequest struct {
 	// IncludeInventory Include inventory flag.
 	IncludeInventory string `json:"IncludeInventory"`
 
-	// OnboardingType Onboarding type.
-	OnboardingType *DivntOnboardingCreateRequestOnboardingType `json:"OnboardingType"`
-
 	// PartnerTenantId Partner Tenant ID (CSP only). If provided and TenantId is omitted, it is used as TenantId.
 	PartnerTenantId *string `json:"PartnerTenantId"`
 
@@ -165,9 +150,6 @@ type DivntOnboardingCreateRequestAccountType string
 type DivntOnboardingCreateRequest_CostAndUsage struct {
 	union json.RawMessage
 }
-
-// DivntOnboardingCreateRequestOnboardingType Onboarding type.
-type DivntOnboardingCreateRequestOnboardingType string
 
 // DivntOnboardingCreateRequestProvider Provider.
 type DivntOnboardingCreateRequestProvider string
@@ -207,9 +189,6 @@ type DivntOnboardingUpdateRequest struct {
 	// IncludeInventory Include inventory flag.
 	IncludeInventory *string `json:"IncludeInventory"`
 
-	// OnboardingType Onboarding type.
-	OnboardingType *DivntOnboardingUpdateRequestOnboardingType `json:"OnboardingType"`
-
 	// PartnerTenantId Partner Tenant ID (CSP only).
 	PartnerTenantId *string `json:"PartnerTenantId"`
 
@@ -228,9 +207,6 @@ type DivntOnboardingUpdateRequest struct {
 
 // DivntOnboardingUpdateRequestAccountType Azure account type. Required for Azure BPC and CCO.
 type DivntOnboardingUpdateRequestAccountType string
-
-// DivntOnboardingUpdateRequestOnboardingType Onboarding type.
-type DivntOnboardingUpdateRequestOnboardingType string
 
 // AsDivntAwsCostAndUsageModel returns the union data inside the DivntOnboardingCreateRequest_CostAndUsage as a DivntAwsCostAndUsageModel
 func (t DivntOnboardingCreateRequest_CostAndUsage) AsDivntAwsCostAndUsageModel() (DivntAwsCostAndUsageModel, error) {

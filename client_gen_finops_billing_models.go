@@ -17,8 +17,9 @@ const (
 
 // Defines values for FinopsBillingAllocationPayloadType.
 const (
-	EqualSplit           FinopsBillingAllocationPayloadType = "equalSplit"
-	FixedPercentageSplit FinopsBillingAllocationPayloadType = "fixedPercentageSplit"
+	EqualSplit                  FinopsBillingAllocationPayloadType = "equalSplit"
+	FixedPercentageSplit        FinopsBillingAllocationPayloadType = "fixedPercentageSplit"
+	UsageBasedProportionalSplit FinopsBillingAllocationPayloadType = "usageBasedProportionalSplit"
 )
 
 // Defines values for FinopsBillingAuditFilterDimension.
@@ -391,7 +392,7 @@ type FinopsBillingAllocation struct {
 	// Destinations The destinations that receive the reallocated costs.
 	Destinations []FinopsBillingAllocationDestination `json:"destinations"`
 
-	// Type The allocation strategy.
+	// Type The allocation strategy, and the discriminator for which of a destination's fields carry meaning. equalSplit distributes the pooled cost equally across the destinations. fixedPercentageSplit uses the percentage supplied for each destination, and those percentages must sum to 100. usageBasedProportionalSplit derives each destination's share from that destination's own usage when the bill runs, so the shares are not known at the time a rule is read or written. Further strategies may be added, so consumers must tolerate a value they do not recognize.
 	Type string `json:"type"`
 }
 
@@ -403,8 +404,8 @@ type FinopsBillingAllocationDestination struct {
 	// DimensionName Human-readable display name of the destination dimension.
 	DimensionName *string `json:"dimensionName,omitempty"`
 
-	// Percentage The effective percentage of costs allocated to this destination. For equalSplit, this is computed by the server as 100/N (where N is the number of destinations). For fixedPercentageSplit, this is the client-supplied value. All percentages sum to 100.
-	Percentage float32 `json:"percentage"`
+	// Percentage The effective percentage of costs allocated to this destination. For equalSplit this is computed by the server as 100/N (where N is the number of destinations) and for fixedPercentageSplit it is the client-supplied value; in both cases all percentages sum to 100. For usageBasedProportionalSplit this field is omitted because the effective share is derived from usage at bill run time and is not known when the rule is read.
+	Percentage *float32 `json:"percentage,omitempty"`
 
 	// Value The specific dimension value that receives costs.
 	Value string `json:"value"`
@@ -415,7 +416,7 @@ type FinopsBillingAllocationDestinationPayload struct {
 	// DimensionId Unique identifier of the destination dimension.
 	DimensionId string `json:"dimensionId"`
 
-	// Percentage The percentage of costs allocated to this destination. Required for fixedPercentageSplit (all percentages must sum to 100). Ignored for equalSplit (the server computes equal shares automatically).
+	// Percentage The percentage of costs allocated to this destination. Required for fixedPercentageSplit (all percentages must sum to 100). Ignored for equalSplit (the server computes equal shares automatically) and for usageBasedProportionalSplit (shares are derived from usage at bill run time).
 	Percentage *float32 `json:"percentage,omitempty"`
 
 	// Value The specific dimension value that receives costs.
@@ -427,11 +428,11 @@ type FinopsBillingAllocationPayload struct {
 	// Destinations The destination inputs that receive the reallocated costs.
 	Destinations []FinopsBillingAllocationDestinationPayload `json:"destinations"`
 
-	// Type The allocation strategy.
+	// Type The allocation strategy, and the discriminator for which of a destination's fields are required. equalSplit distributes the pooled cost equally across the destinations. fixedPercentageSplit uses the percentage supplied for each destination, and those percentages must sum to 100. usageBasedProportionalSplit derives each destination's share from that destination's own usage when the bill runs, so the shares are not known at the time a rule is read or written.
 	Type FinopsBillingAllocationPayloadType `json:"type"`
 }
 
-// FinopsBillingAllocationPayloadType The allocation strategy.
+// FinopsBillingAllocationPayloadType The allocation strategy, and the discriminator for which of a destination's fields are required. equalSplit distributes the pooled cost equally across the destinations. fixedPercentageSplit uses the percentage supplied for each destination, and those percentages must sum to 100. usageBasedProportionalSplit derives each destination's share from that destination's own usage when the bill runs, so the shares are not known at the time a rule is read or written.
 type FinopsBillingAllocationPayloadType string
 
 // FinopsBillingAuditFilter A single node of the audit filter tree. The "type" field
@@ -1483,6 +1484,9 @@ type FinopsBillingFlexeraFinopsBillingSharedCostRuleSummary struct {
 	// Allocation Defines the allocation strategy and the destinations that receive the reallocated costs.
 	Allocation FinopsBillingAllocation `json:"allocation"`
 
+	// AnalyzeSpendQuery URL query string that opens the Analyze tabular view filtered to this rule. Append it to the tabular view URL as-is; it is already percent-encoded. Rebuilt on every read, so treat it as opaque rather than storing it.
+	AnalyzeSpendQuery string `json:"analyzeSpendQuery"`
+
 	// CreatedAt timestamp when the shared cost rule was created
 	CreatedAt time.Time `json:"createdAt"`
 
@@ -2097,6 +2101,9 @@ type FinopsBillingShowCustomerStatusResultKind string
 type FinopsBillingShowSharedCostRuleResult struct {
 	// Allocation Defines the allocation strategy and the destinations that receive the reallocated costs.
 	Allocation FinopsBillingAllocation `json:"allocation"`
+
+	// AnalyzeSpendQuery URL query string that opens the Analyze tabular view filtered to this rule. Append it to the tabular view URL as-is; it is already percent-encoded. Rebuilt on every read, so treat it as opaque rather than storing it.
+	AnalyzeSpendQuery string `json:"analyzeSpendQuery"`
 
 	// CreatedAt timestamp when the shared cost rule was created
 	CreatedAt time.Time `json:"createdAt"`

@@ -916,6 +916,12 @@ type IamOrganizationInvitationShowParams struct {
 	View *IamOrganizationInvitationShowParamsView `form:"view,omitempty" json:"view,omitempty"`
 }
 
+// IamProjectIndexParams defines parameters for IamProjectIndex.
+type IamProjectIndexParams struct {
+	// View View used to render projects
+	View *IamProjectIndexParamsView `form:"view,omitempty" json:"view,omitempty"`
+}
+
 // IamRoleIndexParams defines parameters for IamRoleIndex.
 type IamRoleIndexParams struct {
 	// View View used to render list of Roles
@@ -2354,8 +2360,8 @@ func (c *Client) IamOrganizationShowMsp(ctx context.Context, orgId int, targetOr
 	return c.Client.Do(req)
 }
 
-func (c *Client) IamProjectIndex(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewIamProjectIndexRequest(c.Server, orgId)
+func (c *Client) IamProjectIndex(ctx context.Context, orgId int, params *IamProjectIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamProjectIndexRequest(c.Server, orgId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -2536,6 +2542,18 @@ func (c *Client) IamServiceAccountClientDeleteOldSecret(ctx context.Context, org
 
 func (c *Client) IamServiceAccountClientRotate(ctx context.Context, orgId int, serviceAccountId int, clientId string, params *IamServiceAccountClientRotateParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewIamServiceAccountClientRotateRequest(c.Server, orgId, serviceAccountId, clientId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) IamServiceAccountClientIndexClientSecrets(ctx context.Context, orgId int, serviceAccountId int, clientId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamServiceAccountClientIndexClientSecretsRequest(c.Server, orgId, serviceAccountId, clientId)
 	if err != nil {
 		return nil, err
 	}
@@ -6764,7 +6782,7 @@ func NewIamOrganizationShowMspRequest(server string, orgId int, targetOrgId int)
 }
 
 // NewIamProjectIndexRequest generates requests for IamProjectIndex
-func NewIamProjectIndexRequest(server string, orgId int) (*http.Request, error) {
+func NewIamProjectIndexRequest(server string, orgId int, params *IamProjectIndexParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -6787,6 +6805,28 @@ func NewIamProjectIndexRequest(server string, orgId int) (*http.Request, error) 
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.View != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "view", runtime.ParamLocationQuery, *params.View); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
 	}
 
 	req, err := http.NewRequest("GET", queryURL.String(), nil)
@@ -7476,6 +7516,54 @@ func NewIamServiceAccountClientRotateRequest(server string, orgId int, serviceAc
 			req.Header.Set("X-Recipient-Public-Key", headerParam0)
 		}
 
+	}
+
+	return req, nil
+}
+
+// NewIamServiceAccountClientIndexClientSecretsRequest generates requests for IamServiceAccountClientIndexClientSecrets
+func NewIamServiceAccountClientIndexClientSecretsRequest(server string, orgId int, serviceAccountId int, clientId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "serviceAccountId", runtime.ParamLocationPath, serviceAccountId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "clientId", runtime.ParamLocationPath, clientId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/iam/v1/orgs/%s/service-accounts/%s/clients/%s/client-secrets", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
 	}
 
 	return req, nil

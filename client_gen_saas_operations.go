@@ -907,6 +907,9 @@ type SaasManagedApplicationUpdateJSONRequestBody = SaasUpdateRequestBody2
 // SaasSaaSDataCreateJSONRequestBody defines body for SaasSaaSDataCreate for application/json ContentType.
 type SaasSaaSDataCreateJSONRequestBody = SaasCreateRequestBody2
 
+// SaasSaaSDataUploadJSONRequestBody defines body for SaasSaaSDataUpload for application/json ContentType.
+type SaasSaaSDataUploadJSONRequestBody = SaasSaaSDataUploadJSONBody
+
 // SaasMetricQueryQueryJSONRequestBody defines body for SaasMetricQueryQuery for application/json ContentType.
 type SaasMetricQueryQueryJSONRequestBody = SaasQueryRequestBody
 
@@ -1774,8 +1777,20 @@ func (c *Client) SaasSaaSDataShow(ctx context.Context, orgId int, id string, req
 	return c.Client.Do(req)
 }
 
-func (c *Client) SaasSaaSDataUpload(ctx context.Context, orgId int, id string, params *SaasSaaSDataUploadParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewSaasSaaSDataUploadRequest(c.Server, orgId, id, params)
+func (c *Client) SaasSaaSDataUploadWithBody(ctx context.Context, orgId int, id string, params *SaasSaaSDataUploadParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewSaasSaaSDataUploadRequestWithBody(c.Server, orgId, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) SaasSaaSDataUpload(ctx context.Context, orgId int, id string, params *SaasSaaSDataUploadParams, body SaasSaaSDataUploadJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewSaasSaaSDataUploadRequest(c.Server, orgId, id, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -5460,8 +5475,19 @@ func NewSaasSaaSDataShowRequest(server string, orgId int, id string) (*http.Requ
 	return req, nil
 }
 
-// NewSaasSaaSDataUploadRequest generates requests for SaasSaaSDataUpload
-func NewSaasSaaSDataUploadRequest(server string, orgId int, id string, params *SaasSaaSDataUploadParams) (*http.Request, error) {
+// NewSaasSaaSDataUploadRequest calls the generic SaasSaaSDataUpload builder with application/json body
+func NewSaasSaaSDataUploadRequest(server string, orgId int, id string, params *SaasSaaSDataUploadParams, body SaasSaaSDataUploadJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewSaasSaaSDataUploadRequestWithBody(server, orgId, id, params, "application/json", bodyReader)
+}
+
+// NewSaasSaaSDataUploadRequestWithBody generates requests for SaasSaaSDataUpload with any type of body
+func NewSaasSaaSDataUploadRequestWithBody(server string, orgId int, id string, params *SaasSaaSDataUploadParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -5493,10 +5519,12 @@ func NewSaasSaaSDataUploadRequest(server string, orgId int, id string, params *S
 		return nil, err
 	}
 
-	req, err := http.NewRequest("PATCH", queryURL.String(), nil)
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	if params != nil {
 

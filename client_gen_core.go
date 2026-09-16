@@ -1275,7 +1275,7 @@ type ClientInterface interface {
 	IamOrganizationShowMsp(ctx context.Context, orgId int, targetOrgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// IamProjectIndex request
-	IamProjectIndex(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
+	IamProjectIndex(ctx context.Context, orgId int, params *IamProjectIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// IamRoleIndex request
 	IamRoleIndex(ctx context.Context, orgId int, params *IamRoleIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -1319,6 +1319,9 @@ type ClientInterface interface {
 
 	// IamServiceAccountClientRotate request
 	IamServiceAccountClientRotate(ctx context.Context, orgId int, serviceAccountId int, clientId string, params *IamServiceAccountClientRotateParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// IamServiceAccountClientIndexClientSecrets request
+	IamServiceAccountClientIndexClientSecrets(ctx context.Context, orgId int, serviceAccountId int, clientId string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// IamUserIndex request
 	IamUserIndex(ctx context.Context, orgId int, params *IamUserIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -1463,8 +1466,8 @@ type ClientInterface interface {
 	// BillUploadBillUploadShow request
 	BillUploadBillUploadShow(ctx context.Context, orgId int, billUploadId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// BillUploadBillUploadCreateFile request
-	BillUploadBillUploadCreateFile(ctx context.Context, orgId int, billUploadId openapi_types.UUID, fileId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BillUploadBillUploadCreateFileWithBody request with any body
+	BillUploadBillUploadCreateFileWithBody(ctx context.Context, orgId int, billUploadId openapi_types.UUID, fileId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BillUploadBillUploadCreateOperationWithBody request with any body
 	BillUploadBillUploadCreateOperationWithBody(ctx context.Context, orgId int, billUploadId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -2065,8 +2068,10 @@ type ClientInterface interface {
 	// SaasSaaSDataShow request
 	SaasSaaSDataShow(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// SaasSaaSDataUpload request
-	SaasSaaSDataUpload(ctx context.Context, orgId int, id string, params *SaasSaaSDataUploadParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// SaasSaaSDataUploadWithBody request with any body
+	SaasSaaSDataUploadWithBody(ctx context.Context, orgId int, id string, params *SaasSaaSDataUploadParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	SaasSaaSDataUpload(ctx context.Context, orgId int, id string, params *SaasSaaSDataUploadParams, body SaasSaaSDataUploadJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// SaasMetricQueryEventCountsByType request
 	SaasMetricQueryEventCountsByType(ctx context.Context, orgId int, params *SaasMetricQueryEventCountsByTypeParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -3506,7 +3511,7 @@ type ClientWithResponsesInterface interface {
 	IamOrganizationShowMspWithResponse(ctx context.Context, orgId int, targetOrgId int, reqEditors ...RequestEditorFn) (*IamOrganizationShowMspResponse, error)
 
 	// IamProjectIndexWithResponse request
-	IamProjectIndexWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*IamProjectIndexResponse, error)
+	IamProjectIndexWithResponse(ctx context.Context, orgId int, params *IamProjectIndexParams, reqEditors ...RequestEditorFn) (*IamProjectIndexResponse, error)
 
 	// IamRoleIndexWithResponse request
 	IamRoleIndexWithResponse(ctx context.Context, orgId int, params *IamRoleIndexParams, reqEditors ...RequestEditorFn) (*IamRoleIndexResponse, error)
@@ -3550,6 +3555,9 @@ type ClientWithResponsesInterface interface {
 
 	// IamServiceAccountClientRotateWithResponse request
 	IamServiceAccountClientRotateWithResponse(ctx context.Context, orgId int, serviceAccountId int, clientId string, params *IamServiceAccountClientRotateParams, reqEditors ...RequestEditorFn) (*IamServiceAccountClientRotateResponse, error)
+
+	// IamServiceAccountClientIndexClientSecretsWithResponse request
+	IamServiceAccountClientIndexClientSecretsWithResponse(ctx context.Context, orgId int, serviceAccountId int, clientId string, reqEditors ...RequestEditorFn) (*IamServiceAccountClientIndexClientSecretsResponse, error)
 
 	// IamUserIndexWithResponse request
 	IamUserIndexWithResponse(ctx context.Context, orgId int, params *IamUserIndexParams, reqEditors ...RequestEditorFn) (*IamUserIndexResponse, error)
@@ -3694,8 +3702,8 @@ type ClientWithResponsesInterface interface {
 	// BillUploadBillUploadShowWithResponse request
 	BillUploadBillUploadShowWithResponse(ctx context.Context, orgId int, billUploadId openapi_types.UUID, reqEditors ...RequestEditorFn) (*BillUploadBillUploadShowResponse, error)
 
-	// BillUploadBillUploadCreateFileWithResponse request
-	BillUploadBillUploadCreateFileWithResponse(ctx context.Context, orgId int, billUploadId openapi_types.UUID, fileId string, reqEditors ...RequestEditorFn) (*BillUploadBillUploadCreateFileResponse, error)
+	// BillUploadBillUploadCreateFileWithBodyWithResponse request with any body
+	BillUploadBillUploadCreateFileWithBodyWithResponse(ctx context.Context, orgId int, billUploadId openapi_types.UUID, fileId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillUploadBillUploadCreateFileResponse, error)
 
 	// BillUploadBillUploadCreateOperationWithBodyWithResponse request with any body
 	BillUploadBillUploadCreateOperationWithBodyWithResponse(ctx context.Context, orgId int, billUploadId openapi_types.UUID, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillUploadBillUploadCreateOperationResponse, error)
@@ -4296,8 +4304,10 @@ type ClientWithResponsesInterface interface {
 	// SaasSaaSDataShowWithResponse request
 	SaasSaaSDataShowWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*SaasSaaSDataShowResponse, error)
 
-	// SaasSaaSDataUploadWithResponse request
-	SaasSaaSDataUploadWithResponse(ctx context.Context, orgId int, id string, params *SaasSaaSDataUploadParams, reqEditors ...RequestEditorFn) (*SaasSaaSDataUploadResponse, error)
+	// SaasSaaSDataUploadWithBodyWithResponse request with any body
+	SaasSaaSDataUploadWithBodyWithResponse(ctx context.Context, orgId int, id string, params *SaasSaaSDataUploadParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SaasSaaSDataUploadResponse, error)
+
+	SaasSaaSDataUploadWithResponse(ctx context.Context, orgId int, id string, params *SaasSaaSDataUploadParams, body SaasSaaSDataUploadJSONRequestBody, reqEditors ...RequestEditorFn) (*SaasSaaSDataUploadResponse, error)
 
 	// SaasMetricQueryEventCountsByTypeWithResponse request
 	SaasMetricQueryEventCountsByTypeWithResponse(ctx context.Context, orgId int, params *SaasMetricQueryEventCountsByTypeParams, reqEditors ...RequestEditorFn) (*SaasMetricQueryEventCountsByTypeResponse, error)

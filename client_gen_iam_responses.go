@@ -1855,6 +1855,28 @@ func (r IamServiceAccountClientRotateResponse) StatusCode() int {
 	return 0
 }
 
+type IamServiceAccountClientIndexClientSecretsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *IamServiceAccountClientSecretList
+}
+
+// Status returns HTTPResponse.Status
+func (r IamServiceAccountClientIndexClientSecretsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r IamServiceAccountClientIndexClientSecretsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type IamUserIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -3808,8 +3830,8 @@ func (c *ClientWithResponses) IamOrganizationShowMspWithResponse(ctx context.Con
 }
 
 // IamProjectIndexWithResponse request returning *IamProjectIndexResponse
-func (c *ClientWithResponses) IamProjectIndexWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*IamProjectIndexResponse, error) {
-	rsp, err := c.IamProjectIndex(ctx, orgId, reqEditors...)
+func (c *ClientWithResponses) IamProjectIndexWithResponse(ctx context.Context, orgId int, params *IamProjectIndexParams, reqEditors ...RequestEditorFn) (*IamProjectIndexResponse, error) {
+	rsp, err := c.IamProjectIndex(ctx, orgId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -3947,6 +3969,15 @@ func (c *ClientWithResponses) IamServiceAccountClientRotateWithResponse(ctx cont
 		return nil, err
 	}
 	return ParseIamServiceAccountClientRotateResponse(rsp)
+}
+
+// IamServiceAccountClientIndexClientSecretsWithResponse request returning *IamServiceAccountClientIndexClientSecretsResponse
+func (c *ClientWithResponses) IamServiceAccountClientIndexClientSecretsWithResponse(ctx context.Context, orgId int, serviceAccountId int, clientId string, reqEditors ...RequestEditorFn) (*IamServiceAccountClientIndexClientSecretsResponse, error) {
+	rsp, err := c.IamServiceAccountClientIndexClientSecrets(ctx, orgId, serviceAccountId, clientId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseIamServiceAccountClientIndexClientSecretsResponse(rsp)
 }
 
 // IamUserIndexWithResponse request returning *IamUserIndexResponse
@@ -6276,6 +6307,32 @@ func ParseIamServiceAccountClientRotateResponse(rsp *http.Response) (*IamService
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest IamFlexeraIamServiceAccountClient
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseIamServiceAccountClientIndexClientSecretsResponse parses an HTTP response from a IamServiceAccountClientIndexClientSecretsWithResponse call
+func ParseIamServiceAccountClientIndexClientSecretsResponse(rsp *http.Response) (*IamServiceAccountClientIndexClientSecretsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &IamServiceAccountClientIndexClientSecretsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest IamServiceAccountClientSecretList
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

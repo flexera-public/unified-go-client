@@ -90,6 +90,12 @@ const (
 	IamCustomization IamFlexeraIamCustomizationKind = "iam#customization"
 )
 
+// Defines values for IamFlexeraIamCustomizationSource.
+const (
+	IamFlexeraIamCustomizationSourceChild  IamFlexeraIamCustomizationSource = "child"
+	IamFlexeraIamCustomizationSourceParent IamFlexeraIamCustomizationSource = "parent"
+)
+
 // Defines values for IamFlexeraIamCustomizationTypeKind.
 const (
 	IamCustomizationType IamFlexeraIamCustomizationTypeKind = "iam#customization-type"
@@ -243,6 +249,11 @@ const (
 	IamServiceAccountClient IamFlexeraIamServiceAccountClientKind = "iam#service-account-client"
 )
 
+// Defines values for IamFlexeraIamServiceAccountClientSecretKind.
+const (
+	IamServiceAccountClientSecret IamFlexeraIamServiceAccountClientSecretKind = "iam:service-account-client-secret"
+)
+
 // Defines values for IamFlexeraIamSubdomainKind.
 const (
 	IamSubdomain IamFlexeraIamSubdomainKind = "iam#subdomain"
@@ -324,13 +335,23 @@ const (
 
 // Defines values for IamOrganizationKind.
 const (
-	IamOrg IamOrganizationKind = "iam#org"
+	IamOrganizationKindIamOrg IamOrganizationKind = "iam#org"
+)
+
+// Defines values for IamProjectOrgKind.
+const (
+	IamProjectOrgKindIamOrg IamProjectOrgKind = "iam:org"
 )
 
 // Defines values for IamRoleScopeName.
 const (
 	IamRoleScopeNameOrg    IamRoleScopeName = "org"
 	IamRoleScopeNameReport IamRoleScopeName = "report"
+)
+
+// Defines values for IamServiceAccountClientSecretListKind.
+const (
+	IamServiceAccountClientSecretListKindIamServiceAccountClientSecretList IamServiceAccountClientSecretListKind = "iam:service-account-client-secret-list"
 )
 
 // Defines values for IamUserAccessPoliciesResultKind.
@@ -346,11 +367,6 @@ const (
 // Defines values for IamUserListKind.
 const (
 	IamOrgUserList IamUserListKind = "iam#org-user-list"
-)
-
-// Defines values for IamUserOrgKind.
-const (
-	IamUserOrgKindIamUserOrg IamUserOrgKind = "iam:user-org"
 )
 
 // Defines values for IamUserOrgListKind.
@@ -533,6 +549,12 @@ const (
 const (
 	IamOrganizationInvitationShowParamsViewDefault IamOrganizationInvitationShowParamsView = "default"
 	IamOrganizationInvitationShowParamsViewTiny    IamOrganizationInvitationShowParamsView = "tiny"
+)
+
+// Defines values for IamProjectIndexParamsView.
+const (
+	IamProjectIndexParamsViewDefault  IamProjectIndexParamsView = "default"
+	IamProjectIndexParamsViewExtended IamProjectIndexParamsView = "extended"
 )
 
 // Defines values for IamRoleIndexParamsView.
@@ -863,8 +885,7 @@ type IamCustomizationTypeList struct {
 // IamCustomizationTypeListKind The resource's type
 type IamCustomizationTypeListKind string
 
-// IamCustomizationUpdate A payload used to remove a customization or update a customization value. If no value is provided in an
-// update to a customization, the customization will be removed.
+// IamCustomizationUpdate A payload used to remove a customization or update a customization value. A customization value is one of: urlValue, stringValue, integerValue, or booleanValue. If none of these value fields are provided and shouldInherit is omitted, the customization is removed. The shouldInherit field must be provided together with one of the value fields; setting it without a value field is rejected and the customization is not modified.
 type IamCustomizationUpdate struct {
 	// BooleanValue The boolean value used for the customization, if the customization type's
 	// value type is 'Boolean'.
@@ -877,6 +898,9 @@ type IamCustomizationUpdate struct {
 	// IntegerValue The integer value used for the customization, if the customization type's value
 	// type is 'Integer'.
 	IntegerValue *int64 `json:"integerValue,omitempty"`
+
+	// ShouldInherit Optional. Controls whether this org's own customization is inheritable by its child organizations. When true or omitted, child orgs inherit this value; when false, child orgs fall back to the system default. This field reflects the inheritance setting of the org that created the customization (source: "child" or "parent"). Can only be modified together with a value field (urlValue, stringValue, integerValue, or booleanValue).
+	ShouldInherit *bool `json:"shouldInherit,omitempty"`
 
 	// StringValue The string value used for the customization, if the customization type's value
 	// type is 'String'.
@@ -1176,6 +1200,15 @@ type IamFlexeraIamCustomization struct {
 	// LastUpdatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
 	LastUpdatedBy *IamFlexeraIamPrincipal `json:"lastUpdatedBy,omitempty"`
 
+	// ShouldInherit Optional. Controls whether this org's own customization is inheritable by its child organizations. When true or omitted, child orgs inherit this value; when false, child orgs fall back to the system default. This field reflects the inheritance setting of the org that created the customization (source: "child" or "parent"). Can only be modified together with a value field (urlValue, stringValue, integerValue, or booleanValue).
+	ShouldInherit *bool `json:"shouldInherit,omitempty"`
+
+	// Source Origin of the effective value returned.
+	// "child" — the value is this org's own customization.
+	// "parent" — the value is inherited from the parent org (shouldInherit=true or unset).
+	// If no effective customization exists for the org (no child override and no inheritable parent value), the resource is not returned (404 on show, omitted from index).
+	Source *IamFlexeraIamCustomizationSource `json:"source,omitempty"`
+
 	// StringValue The string value used for the customization, if the customization type's value
 	// type is 'String'.
 	StringValue *string `json:"stringValue,omitempty"`
@@ -1190,6 +1223,12 @@ type IamFlexeraIamCustomization struct {
 
 // IamFlexeraIamCustomizationKind The resource's type
 type IamFlexeraIamCustomizationKind string
+
+// IamFlexeraIamCustomizationSource Origin of the effective value returned.
+// "child" — the value is this org's own customization.
+// "parent" — the value is inherited from the parent org (shouldInherit=true or unset).
+// If no effective customization exists for the org (no child override and no inheritable parent value), the resource is not returned (404 on show, omitted from index).
+type IamFlexeraIamCustomizationSource string
 
 // IamFlexeraIamCustomizationType A customization type describes a kind of customization that may be applied to an org. Customizations
 // applied to an org may affect visual or behavioral changes.
@@ -1578,6 +1617,9 @@ type IamFlexeraIamProject struct {
 	// Name Friendly name for the project
 	Name string `json:"name"`
 
+	// Org Organization information for the project.
+	Org *IamProjectOrg `json:"org,omitempty"`
+
 	// Ref A reference to the project
 	Ref string `json:"ref"`
 
@@ -1811,6 +1853,24 @@ type IamFlexeraIamServiceAccountClient struct {
 // IamFlexeraIamServiceAccountClientKind The resource's type
 type IamFlexeraIamServiceAccountClientKind string
 
+// IamFlexeraIamServiceAccountClientSecret Masked metadata for a service account client secret.
+type IamFlexeraIamServiceAccountClientSecret struct {
+	// CreatedAt Creation timestamp
+	CreatedAt time.Time `json:"createdAt"`
+
+	// Kind The resource's type
+	Kind IamFlexeraIamServiceAccountClientSecretKind `json:"kind"`
+
+	// MaskedClientSecret Masked client secret
+	MaskedClientSecret string `json:"maskedClientSecret"`
+
+	// Status Current secret status
+	Status string `json:"status"`
+}
+
+// IamFlexeraIamServiceAccountClientSecretKind The resource's type
+type IamFlexeraIamServiceAccountClientSecretKind string
+
 // IamFlexeraIamSubdomain A subdomain is a customer-specific segment prepended to Flexera's base domain. For example, a customer
 //
 //	with the subdomain "xxx" in the NA zone can access Flexera One at "https://xxx.app.flexera.com".
@@ -1939,8 +1999,8 @@ type IamFlexeraIamUserProject struct {
 	// Name Project name
 	Name string `json:"name"`
 
-	// Org A simplified organization containing only basic information for user org lists.
-	Org *IamUserOrg `json:"org,omitempty"`
+	// Org Organization information for the project.
+	Org *IamProjectOrg `json:"org,omitempty"`
 
 	// Ref A reference to the project
 	Ref string `json:"ref"`
@@ -2546,6 +2606,24 @@ type IamProjectInvitationParameters struct {
 	RoleIds []int `json:"roleIds"`
 }
 
+// IamProjectOrg Organization information for the project.
+type IamProjectOrg struct {
+	// Id Organization ID
+	Id int `json:"id"`
+
+	// Kind The resource's type
+	Kind IamProjectOrgKind `json:"kind"`
+
+	// Name Organization name
+	Name string `json:"name"`
+
+	// Ref A reference to the organization
+	Ref string `json:"ref"`
+}
+
+// IamProjectOrgKind The resource's type
+type IamProjectOrgKind string
+
 // IamResourceTypeCollection defines model for Iam_ResourceTypeCollection.
 type IamResourceTypeCollection = []IamFlexeraScimResourceType
 
@@ -2738,6 +2816,19 @@ type IamSelectedScope struct {
 // IamServiceAccountClientCollection defines model for Iam_ServiceAccountClientCollection.
 type IamServiceAccountClientCollection = []IamFlexeraIamServiceAccountClient
 
+// IamServiceAccountClientSecretCollection defines model for Iam_ServiceAccountClientSecretCollection.
+type IamServiceAccountClientSecretCollection = []IamFlexeraIamServiceAccountClientSecret
+
+// IamServiceAccountClientSecretList defines model for Iam_ServiceAccountClientSecretList.
+type IamServiceAccountClientSecretList struct {
+	// Kind The resource's type
+	Kind   IamServiceAccountClientSecretListKind   `json:"kind"`
+	Values IamServiceAccountClientSecretCollection `json:"values"`
+}
+
+// IamServiceAccountClientSecretListKind The resource's type
+type IamServiceAccountClientSecretListKind string
+
 // IamServiceAccountCollection defines model for Iam_ServiceAccountCollection.
 type IamServiceAccountCollection = []IamFlexeraIamServiceAccount
 
@@ -2813,31 +2904,13 @@ type IamUserList struct {
 // IamUserListKind The resource's type
 type IamUserListKind string
 
-// IamUserOrg A simplified organization containing only basic information for user org lists.
-type IamUserOrg struct {
-	// Id Organization ID
-	Id int `json:"id"`
-
-	// Kind The resource's type
-	Kind IamUserOrgKind `json:"kind"`
-
-	// Name Organization name
-	Name string `json:"name"`
-
-	// Ref A reference to the organization
-	Ref string `json:"ref"`
-}
-
-// IamUserOrgKind The resource's type
-type IamUserOrgKind string
-
 // IamUserOrgList defines model for Iam_UserOrgList.
 type IamUserOrgList struct {
 	// Kind The resource's type
 	Kind IamUserOrgListKind `json:"kind"`
 
 	// Values The list of user's organizations.
-	Values []IamUserOrg `json:"values"`
+	Values []IamProjectOrg `json:"values"`
 }
 
 // IamUserOrgListKind The resource's type
@@ -3024,6 +3097,9 @@ type IamOrganizationInvitationIndexParamsView string
 
 // IamOrganizationInvitationShowParamsView defines parameters for IamOrganizationInvitationShow.
 type IamOrganizationInvitationShowParamsView string
+
+// IamProjectIndexParamsView defines parameters for IamProjectIndex.
+type IamProjectIndexParamsView string
 
 // IamRoleIndexParamsView defines parameters for IamRoleIndex.
 type IamRoleIndexParamsView string

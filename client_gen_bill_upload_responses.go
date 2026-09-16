@@ -179,9 +179,9 @@ func (c *ClientWithResponses) BillUploadBillUploadShowWithResponse(ctx context.C
 	return ParseBillUploadBillUploadShowResponse(rsp)
 }
 
-// BillUploadBillUploadCreateFileWithResponse request returning *BillUploadBillUploadCreateFileResponse
-func (c *ClientWithResponses) BillUploadBillUploadCreateFileWithResponse(ctx context.Context, orgId int, billUploadId openapi_types.UUID, fileId string, reqEditors ...RequestEditorFn) (*BillUploadBillUploadCreateFileResponse, error) {
-	rsp, err := c.BillUploadBillUploadCreateFile(ctx, orgId, billUploadId, fileId, reqEditors...)
+// BillUploadBillUploadCreateFileWithBodyWithResponse request with arbitrary body returning *BillUploadBillUploadCreateFileResponse
+func (c *ClientWithResponses) BillUploadBillUploadCreateFileWithBodyWithResponse(ctx context.Context, orgId int, billUploadId openapi_types.UUID, fileId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BillUploadBillUploadCreateFileResponse, error) {
+	rsp, err := c.BillUploadBillUploadCreateFileWithBody(ctx, orgId, billUploadId, fileId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}

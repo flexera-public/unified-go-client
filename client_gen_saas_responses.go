@@ -2152,9 +2152,17 @@ func (c *ClientWithResponses) SaasSaaSDataShowWithResponse(ctx context.Context, 
 	return ParseSaasSaaSDataShowResponse(rsp)
 }
 
-// SaasSaaSDataUploadWithResponse request returning *SaasSaaSDataUploadResponse
-func (c *ClientWithResponses) SaasSaaSDataUploadWithResponse(ctx context.Context, orgId int, id string, params *SaasSaaSDataUploadParams, reqEditors ...RequestEditorFn) (*SaasSaaSDataUploadResponse, error) {
-	rsp, err := c.SaasSaaSDataUpload(ctx, orgId, id, params, reqEditors...)
+// SaasSaaSDataUploadWithBodyWithResponse request with arbitrary body returning *SaasSaaSDataUploadResponse
+func (c *ClientWithResponses) SaasSaaSDataUploadWithBodyWithResponse(ctx context.Context, orgId int, id string, params *SaasSaaSDataUploadParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SaasSaaSDataUploadResponse, error) {
+	rsp, err := c.SaasSaaSDataUploadWithBody(ctx, orgId, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSaasSaaSDataUploadResponse(rsp)
+}
+
+func (c *ClientWithResponses) SaasSaaSDataUploadWithResponse(ctx context.Context, orgId int, id string, params *SaasSaaSDataUploadParams, body SaasSaaSDataUploadJSONRequestBody, reqEditors ...RequestEditorFn) (*SaasSaaSDataUploadResponse, error) {
+	rsp, err := c.SaasSaaSDataUpload(ctx, orgId, id, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}

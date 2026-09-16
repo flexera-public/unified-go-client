@@ -113,8 +113,8 @@ func (c *Client) BillUploadBillUploadShow(ctx context.Context, orgId int, billUp
 	return c.Client.Do(req)
 }
 
-func (c *Client) BillUploadBillUploadCreateFile(ctx context.Context, orgId int, billUploadId openapi_types.UUID, fileId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBillUploadBillUploadCreateFileRequest(c.Server, orgId, billUploadId, fileId)
+func (c *Client) BillUploadBillUploadCreateFileWithBody(ctx context.Context, orgId int, billUploadId openapi_types.UUID, fileId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBillUploadBillUploadCreateFileRequestWithBody(c.Server, orgId, billUploadId, fileId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -350,8 +350,8 @@ func NewBillUploadBillUploadShowRequest(server string, orgId int, billUploadId o
 	return req, nil
 }
 
-// NewBillUploadBillUploadCreateFileRequest generates requests for BillUploadBillUploadCreateFile
-func NewBillUploadBillUploadCreateFileRequest(server string, orgId int, billUploadId openapi_types.UUID, fileId string) (*http.Request, error) {
+// NewBillUploadBillUploadCreateFileRequestWithBody generates requests for BillUploadBillUploadCreateFile with any type of body
+func NewBillUploadBillUploadCreateFileRequestWithBody(server string, orgId int, billUploadId openapi_types.UUID, fileId string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -390,10 +390,12 @@ func NewBillUploadBillUploadCreateFileRequest(server string, orgId int, billUplo
 		return nil, err
 	}
 
-	req, err := http.NewRequest("POST", queryURL.String(), nil)
+	req, err := http.NewRequest("POST", queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }

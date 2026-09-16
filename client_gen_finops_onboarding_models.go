@@ -249,7 +249,7 @@ type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnect 
 	// BucketRegion Region that the bucket is in
 	BucketRegion string `json:"bucketRegion"`
 
-	// EffectiveFrom The earliest billing year-month from when to start processing data.
+	// EffectiveFrom The earliest billing month (UTC) from which to start processing data, formatted YYYY-MM.
 	EffectiveFrom *string `json:"effectiveFrom,omitempty"`
 
 	// IamRole AWSIAMRoleBillConnect contain IAM role specific attributes
