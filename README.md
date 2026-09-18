@@ -154,22 +154,6 @@ This is a **contract**, not an accident of `oapi-codegen`'s defaults:
   the whole repo (root and all sub-packages) — it fails if any generated
   file is missing the header or any hand-written file has one.
 
-## `client_extensions_manifest.json`
-
-`client_extensions_manifest.json` inventories every exported, hand-written
-declaration (func, method, type, var, const) in the **root package**,
-mirroring `client_gen_manifest.json`'s coverage of generated declarations.
-It's produced by `cmd/split-client` as part of `make generate-client` /
-`go generate .`, by walking every root-package `.go` file that lacks the
-generated header.
-
-Scope note: this currently covers the root package only, not
-`service/*`/`rightscale/*` sub-packages — those aren't split by
-`cmd/split-client` and have no equivalent manifest (generated or
-hand-written) today. Extending coverage to sub-packages is tracked as a
-follow-up; only pursue it if a downstream consumer actually needs
-sub-package-level granularity.
-
 Whenever you add, rename, or remove an exported root-package declaration
 in a hand-written file, run `make generate-client` and commit the resulting
 diff to `client_extensions_manifest.json` along with your change.
