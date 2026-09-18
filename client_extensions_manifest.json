@@ -211,6 +211,48 @@
       "declarationCount": 9
     },
     {
+      "path": "bill_upload_verify.go",
+      "sha256": "801b20403608d9a0cb0ff2e2406ba67ee0e22bf5d66b17df379cb47e9cbfbe61",
+      "declarations": [
+        {
+          "name": "CBIBillUploadRequiredHeaders",
+          "kind": "var",
+          "doc": "CBIBillUploadRequiredHeaders are the CSV headers that must be present, and"
+        },
+        {
+          "name": "CBIBillUploadValidHeaders",
+          "kind": "var",
+          "doc": "CBIBillUploadValidHeaders are the complete set of CSV headers accepted in a"
+        },
+        {
+          "name": "BillUploadVerifyIssue",
+          "kind": "type",
+          "doc": "BillUploadVerifyIssue is a single warning or error found while verifying a"
+        },
+        {
+          "name": "String",
+          "kind": "method",
+          "receiver": "BillUploadVerifyIssue"
+        },
+        {
+          "name": "BillUploadVerifyResult",
+          "kind": "type",
+          "doc": "BillUploadVerifyResult reports the outcome of verifying a bill-upload CSV"
+        },
+        {
+          "name": "VerifyCBIBillUploadCSVFile",
+          "kind": "func",
+          "doc": "VerifyCBIBillUploadCSVFile opens the file at path and verifies it as a CBI"
+        },
+        {
+          "name": "VerifyCBIBillUploadCSV",
+          "kind": "func",
+          "doc": "VerifyCBIBillUploadCSV verifies a CBI (\"cbi-oi-optima\") bill-upload CSV"
+        }
+      ],
+      "declarationCount": 7
+    },
+    {
       "path": "billing_centers.go",
       "sha256": "1343be19cdad1c25560be33e7b8c020def544691b7e2e98f798a2b8a19776fbd",
       "declarations": [
@@ -869,6 +911,48 @@
       "declarationCount": 10
     },
     {
+      "path": "rulebaseddimension_csv.go",
+      "sha256": "2fe53b53277f005e7b8fbb50c6ca8e369fde63636e25cb9be46d4a6f9405f1cf",
+      "declarations": [
+        {
+          "name": "RuleBasedDimensionCSVDescriptionColumnPrefix",
+          "kind": "const",
+          "doc": "RuleBasedDimensionCSVDescriptionColumnPrefix marks a CSV column as"
+        },
+        {
+          "name": "RuleBasedDimensionCSVColumnOverride",
+          "kind": "type",
+          "doc": "RuleBasedDimensionCSVColumnOverride lets a caller pin an exact ID/Name for"
+        },
+        {
+          "name": "RuleBasedDimensionCSVTemplateData",
+          "kind": "type",
+          "doc": "RuleBasedDimensionCSVTemplateData is the data available to"
+        },
+        {
+          "name": "RuleBasedDimensionCSVOptions",
+          "kind": "type",
+          "doc": "RuleBasedDimensionCSVOptions configures GenerateRuleBasedDimensionsFromCSV."
+        },
+        {
+          "name": "DefaultRuleBasedDimensionCSVOptions",
+          "kind": "func",
+          "doc": "DefaultRuleBasedDimensionCSVOptions returns the conventional defaults used"
+        },
+        {
+          "name": "GenerateRuleBasedDimensionsFromCSVFile",
+          "kind": "func",
+          "doc": "GenerateRuleBasedDimensionsFromCSVFile opens path and delegates to"
+        },
+        {
+          "name": "GenerateRuleBasedDimensionsFromCSV",
+          "kind": "func",
+          "doc": "GenerateRuleBasedDimensionsFromCSV converts a CSV document into one"
+        }
+      ],
+      "declarationCount": 7
+    },
+    {
       "path": "tokensource.go",
       "sha256": "9adc366768b8806c5c49ae966384a34a454ed00215936f1fbc7cb183ac500207",
       "declarations": [
@@ -1019,6 +1103,6 @@
       "declarationCount": 4
     }
   ],
-  "totalFiles": 23,
-  "totalDeclarations": 165
+  "totalFiles": 25,
+  "totalDeclarations": 179
 }
