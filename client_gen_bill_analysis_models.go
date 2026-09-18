@@ -830,7 +830,7 @@ type BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboard struct {
 	Area string `json:"area"`
 
 	// Config A json blob used by the UI
-	Config openapi_types.File `json:"config"`
+	Config map[string]interface{} `json:"config"`
 
 	// CreatedAt Creation timestamp
 	CreatedAt time.Time `json:"created_at"`

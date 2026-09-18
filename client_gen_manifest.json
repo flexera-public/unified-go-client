@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "source": "unified-openapi/openapi3.json",
-  "sourceSha256": "47dedc7f6285d3b18b9e235f45d65c1388b94a3c2fa4e977ae2b0eed4b08d37a",
+  "sourceSha256": "8eca04c52fc48768fae9328f62417fd940dfe14f7aa5010a96312ef2a880f227",
   "generator": "github.com/oapi-codegen/oapi-codegen/v2 version v2.5.0",
   "package": "flexera",
   "files": [
@@ -75,12 +75,12 @@
     },
     {
       "path": "client_gen_bill_analysis_models.go",
-      "sha256": "1d656ceccfb3ca12f6b0928ecd235b0bc6ba6d1f328797fe1118767a268b219d",
+      "sha256": "7e2878b0dc4f64957708deef567cc52d7d61c38b8c20cf33f6555b5dc16c5761",
       "namespace": "BillAnalysis",
       "sourceSpecId": "rightscale-bill-analysis",
       "concern": "models",
       "lines": 1085,
-      "bytes": 47212,
+      "bytes": 47216,
       "declarations": [
         "AwsReservedInstance",
         "AwsSavingsPlan",
@@ -8763,6 +8763,6 @@
   ],
   "totalFiles": 58,
   "totalLines": 110278,
-  "totalBytes": 4286308,
+  "totalBytes": 4286312,
   "totalDeclarations": 8061
 }

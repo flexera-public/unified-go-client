@@ -590,7 +590,7 @@
     },
     {
       "path": "policy_meta.go",
-      "sha256": "5e843858832a3a6bd220dd106b04ca04ce9ee6887c01f1714a34c9194a35c413",
+      "sha256": "039757d8a0a64cba42a4795b544d104dfce6e78b32cf03a24491ad72a69508de",
       "declarations": [
         {
           "name": "PolicyMetaWorkflowClient",
@@ -641,19 +641,19 @@
           "name": "Discover",
           "kind": "method",
           "receiver": "PolicyMetaWorkflow",
-          "doc": "Discover lists all applied policies in a project and resolves their"
+          "doc": "Discover lists all applied policies in a project and classifies them as"
         },
         {
           "name": "TerminateChildren",
           "kind": "method",
           "receiver": "PolicyMetaWorkflow",
-          "doc": "TerminateChildren deletes all unambiguous children of ParentID. In DryRun"
+          "doc": "TerminateChildren deletes all meta children of ParentID. In DryRun mode it"
         },
         {
           "name": "TerminateOrphaned",
           "kind": "method",
           "receiver": "PolicyMetaWorkflow",
-          "doc": "TerminateOrphaned deletes children whose parent reference is present but"
+          "doc": "TerminateOrphaned deletes meta children whose parent ID is absent from the"
         },
         {
           "name": "Audit",
@@ -666,7 +666,7 @@
     },
     {
       "path": "projects.go",
-      "sha256": "80012b2ce144fede95b2b3c1f8ce5e23ad2660d84c627caa6ebeaa02a653ca36",
+      "sha256": "8fb50e45ede35904c6c957b98e123d473bd7c038aac92907947b7afa08c66c96",
       "declarations": [
         {
           "name": "Project",
@@ -677,6 +677,16 @@
           "name": "ProjectResolverOption",
           "kind": "type",
           "doc": "ProjectResolverOption configures a ProjectResolver."
+        },
+        {
+          "name": "WithProjectResolverTokenSource",
+          "kind": "func",
+          "doc": "WithProjectResolverTokenSource supplies the access token used by the GRS"
+        },
+        {
+          "name": "WithProjectResolverStaticToken",
+          "kind": "func",
+          "doc": "WithProjectResolverStaticToken supplies a static access token used by the"
         },
         {
           "name": "WithProjectsCacheTTL",
@@ -756,7 +766,7 @@
           "doc": "InvalidateAll clears the entire cache."
         }
       ],
-      "declarationCount": 16
+      "declarationCount": 18
     },
     {
       "path": "recommendations.go",
@@ -799,6 +809,64 @@
         }
       ],
       "declarationCount": 1
+    },
+    {
+      "path": "rulebaseddimension_bulk.go",
+      "sha256": "232160f553730f9443661621190fd69602ab570fc8b1f3957e06f31053d8e266",
+      "declarations": [
+        {
+          "name": "RuleBasedDimensionBulkClient",
+          "kind": "type",
+          "doc": "RuleBasedDimensionBulkClient is the generated-client surface used by the"
+        },
+        {
+          "name": "RuleBasedDimensionSpec",
+          "kind": "type",
+          "doc": "RuleBasedDimensionSpec describes one rule-based dimension to create or"
+        },
+        {
+          "name": "RuleBasedDimensionBulkInput",
+          "kind": "type",
+          "doc": "RuleBasedDimensionBulkInput is the input to the bulk create/update"
+        },
+        {
+          "name": "RuleBasedDimensionBulkResult",
+          "kind": "type",
+          "doc": "RuleBasedDimensionBulkResult is the per-dimension outcome of a bulk run."
+        },
+        {
+          "name": "RuleBasedDimensionBulkOutput",
+          "kind": "type",
+          "doc": "RuleBasedDimensionBulkOutput is the result of a bulk create/update run."
+        },
+        {
+          "name": "RuleBasedDimensionBulkTool",
+          "kind": "type",
+          "doc": "RuleBasedDimensionBulkTool creates or updates many rule-based dimensions"
+        },
+        {
+          "name": "NewRuleBasedDimensionBulkTool",
+          "kind": "func",
+          "doc": "NewRuleBasedDimensionBulkTool constructs the rule-based-dimension bulk"
+        },
+        {
+          "name": "Name",
+          "kind": "method",
+          "receiver": "RuleBasedDimensionBulkTool"
+        },
+        {
+          "name": "Description",
+          "kind": "method",
+          "receiver": "RuleBasedDimensionBulkTool"
+        },
+        {
+          "name": "Invoke",
+          "kind": "method",
+          "receiver": "RuleBasedDimensionBulkTool",
+          "doc": "Invoke validates the entire batch before making any API calls. Once"
+        }
+      ],
+      "declarationCount": 10
     },
     {
       "path": "tokensource.go",
@@ -951,6 +1019,6 @@
       "declarationCount": 4
     }
   ],
-  "totalFiles": 22,
-  "totalDeclarations": 153
+  "totalFiles": 23,
+  "totalDeclarations": 165
 }
