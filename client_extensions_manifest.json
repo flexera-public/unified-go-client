@@ -589,6 +589,82 @@
       "declarationCount": 6
     },
     {
+      "path": "policy_meta.go",
+      "sha256": "5e843858832a3a6bd220dd106b04ca04ce9ee6887c01f1714a34c9194a35c413",
+      "declarations": [
+        {
+          "name": "PolicyMetaWorkflowClient",
+          "kind": "type",
+          "doc": "PolicyMetaWorkflowClient is the generated-client surface used by the"
+        },
+        {
+          "name": "AppliedPolicyRelationship",
+          "kind": "type",
+          "doc": "AppliedPolicyRelationship describes a child policy's resolved parent."
+        },
+        {
+          "name": "PolicyMetaSnapshot",
+          "kind": "type",
+          "doc": "PolicyMetaSnapshot is the relationship-aware view used by meta-policy"
+        },
+        {
+          "name": "PolicyMetaTerminationInput",
+          "kind": "type",
+          "doc": "PolicyMetaTerminationInput controls a destructive meta-policy workflow."
+        },
+        {
+          "name": "PolicyMetaTerminationOutput",
+          "kind": "type",
+          "doc": "PolicyMetaTerminationOutput summarizes a termination workflow."
+        },
+        {
+          "name": "PolicyMetaStatus",
+          "kind": "type",
+          "doc": "PolicyMetaStatus is the status of one applied policy in an audit."
+        },
+        {
+          "name": "PolicyMetaAuditOutput",
+          "kind": "type",
+          "doc": "PolicyMetaAuditOutput contains status details for a policy group."
+        },
+        {
+          "name": "PolicyMetaWorkflow",
+          "kind": "type",
+          "doc": "PolicyMetaWorkflow provides curated, relationship-aware applied-policy"
+        },
+        {
+          "name": "NewPolicyMetaWorkflow",
+          "kind": "func",
+          "doc": "NewPolicyMetaWorkflow constructs a policy meta workflow."
+        },
+        {
+          "name": "Discover",
+          "kind": "method",
+          "receiver": "PolicyMetaWorkflow",
+          "doc": "Discover lists all applied policies in a project and resolves their"
+        },
+        {
+          "name": "TerminateChildren",
+          "kind": "method",
+          "receiver": "PolicyMetaWorkflow",
+          "doc": "TerminateChildren deletes all unambiguous children of ParentID. In DryRun"
+        },
+        {
+          "name": "TerminateOrphaned",
+          "kind": "method",
+          "receiver": "PolicyMetaWorkflow",
+          "doc": "TerminateOrphaned deletes children whose parent reference is present but"
+        },
+        {
+          "name": "Audit",
+          "kind": "method",
+          "receiver": "PolicyMetaWorkflow",
+          "doc": "Audit returns status details for every applied policy in a project."
+        }
+      ],
+      "declarationCount": 13
+    },
+    {
       "path": "projects.go",
       "sha256": "80012b2ce144fede95b2b3c1f8ce5e23ad2660d84c627caa6ebeaa02a653ca36",
       "declarations": [
@@ -875,6 +951,6 @@
       "declarationCount": 4
     }
   ],
-  "totalFiles": 21,
-  "totalDeclarations": 140
+  "totalFiles": 22,
+  "totalDeclarations": 153
 }
