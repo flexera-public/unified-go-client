@@ -97,6 +97,44 @@ func TestListProjects_PerCallEditorCanOverrideAPIVersion(t *testing.T) {
 	}
 }
 
+func TestListProjects_UsesConfiguredTokenSource(t *testing.T) {
+	var gotAuth string
+	resolver, _ := newTestProjectResolver(t, func(w http.ResponseWriter, r *http.Request) {
+		gotAuth = r.Header.Get("Authorization")
+		_, _ = io.WriteString(w, `[]`)
+	})
+	resolver, err := NewProjectResolver(resolver.client, WithProjectResolverTokenSource(func(context.Context) (string, error) {
+		return testUserJWT(42), nil
+	}))
+	if err != nil {
+		t.Fatalf("NewProjectResolver: %v", err)
+	}
+
+	if _, err := resolver.ListProjects(context.Background(), 1); err != nil {
+		t.Fatalf("ListProjects: %v", err)
+	}
+	if gotAuth != "Bearer "+testUserJWT(42) {
+		t.Fatalf("expected bearer header from configured token source, got %q", gotAuth)
+	}
+}
+
+func TestListProjects_RejectsEmptyConfiguredToken(t *testing.T) {
+	resolver, _ := newTestProjectResolver(t, func(w http.ResponseWriter, _ *http.Request) {
+		_, _ = io.WriteString(w, `[]`)
+	})
+	resolver, err := NewProjectResolver(resolver.client, WithProjectResolverTokenSource(func(context.Context) (string, error) {
+		return "", nil
+	}))
+	if err != nil {
+		t.Fatalf("NewProjectResolver: %v", err)
+	}
+
+	_, err = resolver.ListProjects(context.Background(), 1)
+	if err == nil || !strings.Contains(err.Error(), "empty access token") {
+		t.Fatalf("expected empty token error, got %v", err)
+	}
+}
+
 func TestListProjects_NonOKError(t *testing.T) {
 	resolver, _ := newTestProjectResolver(t, func(w http.ResponseWriter, _ *http.Request) {
 		w.WriteHeader(http.StatusForbidden)

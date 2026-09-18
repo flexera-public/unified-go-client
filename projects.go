@@ -23,6 +23,28 @@ type Project struct {
 // ProjectResolverOption configures a ProjectResolver.
 type ProjectResolverOption func(*ProjectResolver)
 
+// WithProjectResolverTokenSource supplies the access token used by the GRS
+// lookup. This is useful when authentication is provided by a custom HTTP
+// transport that does not expose its bearer token through request editors or
+// the built-in OAuth2Doer.
+func WithProjectResolverTokenSource(source func(context.Context) (string, error)) ProjectResolverOption {
+	return func(r *ProjectResolver) {
+		r.tokenSource = source
+	}
+}
+
+// WithProjectResolverStaticToken supplies a static access token used by the
+// GRS lookup.
+func WithProjectResolverStaticToken(accessToken string) ProjectResolverOption {
+	return WithProjectResolverTokenSource(func(context.Context) (string, error) {
+		token := strings.TrimSpace(accessToken)
+		if token == "" {
+			return "", errors.New("project resolver access token is required")
+		}
+		return token, nil
+	})
+}
+
 // WithProjectsCacheTTL sets the cache time-to-live. A zero or negative value
 // disables expiry (entries are cached for the lifetime of the resolver).
 func WithProjectsCacheTTL(ttl time.Duration) ProjectResolverOption {
@@ -59,9 +81,10 @@ var ErrProjectNotFound = errors.New("project not found")
 //
 // Lookups are cached per-org with an optional TTL.
 type ProjectResolver struct {
-	client     *ClientWithResponses
-	cacheTTL   time.Duration
-	apiVersion string
+	client      *ClientWithResponses
+	cacheTTL    time.Duration
+	apiVersion  string
+	tokenSource func(context.Context) (string, error)
 
 	mu    sync.RWMutex
 	cache map[int64]projectCacheEntry
@@ -241,7 +264,7 @@ func (r *ProjectResolver) fetch(ctx context.Context, orgID int64, editors []Requ
 		}
 	}
 
-	token, err := accessTokenFromClient(ctx, baseClient, editors)
+	token, err := r.accessToken(ctx, baseClient, editors)
 	if err != nil {
 		return nil, err
 	}
@@ -259,6 +282,7 @@ func (r *ProjectResolver) fetch(ctx context.Context, orgID int64, editors []Requ
 	if err != nil {
 		return nil, fmt.Errorf("build user projects request: %w", err)
 	}
+	req.Header.Set("Authorization", "Bearer "+token)
 	req.Header.Set("X-Api-Version", r.apiVersion)
 
 	if err := applyRequestEditors(ctx, req, baseClient.RequestEditors, editors); err != nil {
@@ -307,6 +331,20 @@ func (r *ProjectResolver) fetch(ctx context.Context, orgID int64, editors []Requ
 		out = append(out, Project{ID: projectID, Name: p.Name})
 	}
 	return out, nil
+}
+
+func (r *ProjectResolver) accessToken(ctx context.Context, client *Client, editors []RequestEditorFn) (string, error) {
+	if r.tokenSource != nil {
+		token, err := r.tokenSource(ctx)
+		if err != nil {
+			return "", fmt.Errorf("resolve project lookup access token: %w", err)
+		}
+		if token = strings.TrimSpace(token); token != "" {
+			return token, nil
+		}
+		return "", errors.New("project resolver token source returned an empty access token")
+	}
+	return accessTokenFromClient(ctx, client, editors)
 }
 
 func accessTokenFromClient(ctx context.Context, client *Client, additionalEditors []RequestEditorFn) (string, error) {

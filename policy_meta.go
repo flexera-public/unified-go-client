@@ -23,13 +23,14 @@ type AppliedPolicyRelationship struct {
 }
 
 // PolicyMetaSnapshot is the relationship-aware view used by meta-policy
-// commands. Orphans and ambiguous relationships are never deletion targets
-// unless a caller resolves them explicitly.
+// commands. A meta parent is an applied policy referenced by one or more
+// children. A regular policy has no parent and is not referenced by a child.
 type PolicyMetaSnapshot struct {
-	Policies  []PolicyFlexeraPolicyAppliedPolicy
-	Children  []AppliedPolicyRelationship
-	Orphans   []PolicyFlexeraPolicyAppliedPolicy
-	Ambiguous []PolicyFlexeraPolicyAppliedPolicy
+	Policies    []PolicyFlexeraPolicyAppliedPolicy
+	Regular     []PolicyFlexeraPolicyAppliedPolicy
+	MetaParents []PolicyFlexeraPolicyAppliedPolicy
+	Children    []AppliedPolicyRelationship
+	Orphans     []PolicyFlexeraPolicyAppliedPolicy
 }
 
 // PolicyMetaTerminationInput controls a destructive meta-policy workflow.
@@ -68,9 +69,10 @@ func NewPolicyMetaWorkflow(client PolicyMetaWorkflowClient) *PolicyMetaWorkflow 
 	return &PolicyMetaWorkflow{client: client}
 }
 
-// Discover lists all applied policies in a project and resolves their
-// parent/child relationships from both the current parent reference and the
-// deprecated metaParentPolicyId field.
+// Discover lists all applied policies in a project and classifies them as
+// regular policies, meta parents, meta children, or orphaned meta children.
+// Parent IDs are read from metaParentPolicyId first, with Parent.Ref retained
+// as compatibility with the current representation.
 func (w *PolicyMetaWorkflow) Discover(ctx context.Context, orgID, projectID int64) (PolicyMetaSnapshot, error) {
 	if w == nil || w.client == nil {
 		return PolicyMetaSnapshot{}, fmt.Errorf("policy meta workflow: client is required")
@@ -90,15 +92,13 @@ func (w *PolicyMetaWorkflow) Discover(ctx context.Context, orgID, projectID int6
 	}
 
 	snapshot := PolicyMetaSnapshot{Policies: policies}
+	referencedParents := make(map[string]struct{})
 	for _, policy := range policies {
-		parentID, ambiguous := appliedPolicyParentID(policy)
-		if ambiguous {
-			snapshot.Ambiguous = append(snapshot.Ambiguous, policy)
-			continue
-		}
+		parentID := appliedPolicyParentID(policy)
 		if parentID == "" {
 			continue
 		}
+		referencedParents[parentID] = struct{}{}
 		snapshot.Children = append(snapshot.Children, AppliedPolicyRelationship{
 			Child:    policy,
 			ParentID: parentID,
@@ -107,11 +107,20 @@ func (w *PolicyMetaWorkflow) Discover(ctx context.Context, orgID, projectID int6
 			snapshot.Orphans = append(snapshot.Orphans, policy)
 		}
 	}
+	for _, policy := range policies {
+		if _, referenced := referencedParents[policy.Id]; referenced {
+			snapshot.MetaParents = append(snapshot.MetaParents, policy)
+			continue
+		}
+		if appliedPolicyParentID(policy) == "" {
+			snapshot.Regular = append(snapshot.Regular, policy)
+		}
+	}
 	return snapshot, nil
 }
 
-// TerminateChildren deletes all unambiguous children of ParentID. In DryRun
-// mode it only discovers and returns the matched policies.
+// TerminateChildren deletes all meta children of ParentID. In DryRun mode it
+// only discovers and returns the matched policies.
 func (w *PolicyMetaWorkflow) TerminateChildren(ctx context.Context, in PolicyMetaTerminationInput) (PolicyMetaTerminationOutput, error) {
 	parentID := strings.TrimSpace(in.ParentID)
 	if parentID == "" {
@@ -121,10 +130,6 @@ func (w *PolicyMetaWorkflow) TerminateChildren(ctx context.Context, in PolicyMet
 	if err != nil {
 		return PolicyMetaTerminationOutput{}, err
 	}
-	if len(snapshot.Ambiguous) > 0 {
-		return PolicyMetaTerminationOutput{}, fmt.Errorf("meta-terminate-children: refusing to act with %d ambiguous relationship(s)", len(snapshot.Ambiguous))
-	}
-
 	out := PolicyMetaTerminationOutput{}
 	for _, relationship := range snapshot.Children {
 		if relationship.ParentID == parentID {
@@ -150,18 +155,13 @@ func (w *PolicyMetaWorkflow) TerminateChildren(ctx context.Context, in PolicyMet
 	return out, nil
 }
 
-// TerminateOrphaned deletes children whose parent reference is present but
-// whose parent is absent from the project. Ambiguous relationships always
-// fail closed. In DryRun mode it only returns the candidates.
+// TerminateOrphaned deletes meta children whose parent ID is absent from the
+// project. In DryRun mode it only returns the candidates.
 func (w *PolicyMetaWorkflow) TerminateOrphaned(ctx context.Context, in PolicyMetaTerminationInput) (PolicyMetaTerminationOutput, error) {
 	snapshot, err := w.Discover(ctx, in.OrgID, in.ProjectID)
 	if err != nil {
 		return PolicyMetaTerminationOutput{}, err
 	}
-	if len(snapshot.Ambiguous) > 0 {
-		return PolicyMetaTerminationOutput{}, fmt.Errorf("meta-terminate-orphaned: refusing to act with %d ambiguous relationship(s)", len(snapshot.Ambiguous))
-	}
-
 	out := PolicyMetaTerminationOutput{Matched: append([]PolicyFlexeraPolicyAppliedPolicy(nil), snapshot.Orphans...)}
 	if in.DryRun {
 		return out, nil
@@ -248,19 +248,16 @@ func (w *PolicyMetaWorkflow) listAppliedPolicies(ctx context.Context, orgID, pro
 	}
 }
 
-func appliedPolicyParentID(policy PolicyFlexeraPolicyAppliedPolicy) (string, bool) {
+func appliedPolicyParentID(policy PolicyFlexeraPolicyAppliedPolicy) string {
 	legacyID := strings.TrimSpace(valueOrEmpty(policy.MetaParentPolicyId))
 	refID, refOK := policyMetaParentID(policy.Parent)
-	if legacyID != "" && refOK && legacyID != refID {
-		return "", true
+	if legacyID != "" {
+		return legacyID
 	}
 	if refOK {
-		return refID, false
+		return refID
 	}
-	if policy.Parent != nil && policy.Parent.Ref != nil && strings.TrimSpace(*policy.Parent.Ref) != "" {
-		return "", true
-	}
-	return legacyID, false
+	return ""
 }
 
 func policyMetaParentID(parent *PolicyParent) (string, bool) {

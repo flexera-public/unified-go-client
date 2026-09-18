@@ -43,14 +43,13 @@ func policyMetaPage(values []PolicyFlexeraPolicyAppliedPolicy, next string) *Pol
 }
 
 func TestPolicyMetaWorkflowDiscoverResolvesRelationshipsAndPagination(t *testing.T) {
-	parentRef := "ref:nam:1::policy:meta-parent-policy:other"
 	fake := &policyMetaWorkflowFake{
 		pages: []*PolicyAppliedPolicyIndexResponse{
 			policyMetaPage([]PolicyFlexeraPolicyAppliedPolicy{{Id: "parent", Name: "parent"}}, "https://api.example.test/applied?skipToken=next"),
 			policyMetaPage([]PolicyFlexeraPolicyAppliedPolicy{
 				{Id: "child", MetaParentPolicyId: stringPointer("parent")},
 				{Id: "orphan", MetaParentPolicyId: stringPointer("missing")},
-				{Id: "ambiguous", MetaParentPolicyId: stringPointer("parent"), Parent: &PolicyParent{Ref: &parentRef}},
+				{Id: "regular"},
 			}, ""),
 		},
 	}
@@ -68,8 +67,11 @@ func TestPolicyMetaWorkflowDiscoverResolvesRelationshipsAndPagination(t *testing
 	if got := len(snapshot.Orphans); got != 1 || snapshot.Orphans[0].Id != "orphan" {
 		t.Fatalf("orphans = %#v, want orphan", snapshot.Orphans)
 	}
-	if got := len(snapshot.Ambiguous); got != 1 || snapshot.Ambiguous[0].Id != "ambiguous" {
-		t.Fatalf("ambiguous = %#v, want ambiguous", snapshot.Ambiguous)
+	if got := len(snapshot.MetaParents); got != 1 || snapshot.MetaParents[0].Id != "parent" {
+		t.Fatalf("meta parents = %#v, want parent", snapshot.MetaParents)
+	}
+	if got := len(snapshot.Regular); got != 1 {
+		t.Fatalf("regular policies = %d, want 1", got)
 	}
 }
 
@@ -95,23 +97,22 @@ func TestPolicyMetaWorkflowTerminateChildrenDryRunDoesNotDelete(t *testing.T) {
 	}
 }
 
-func TestPolicyMetaWorkflowTerminateOrphanedFailsClosedOnAmbiguousRelationship(t *testing.T) {
-	ref := "ref:nam:1::policy:meta-parent-policy:other"
+func TestPolicyMetaWorkflowTerminateOrphanedDeletesMissingParents(t *testing.T) {
 	fake := &policyMetaWorkflowFake{
 		pages: []*PolicyAppliedPolicyIndexResponse{policyMetaPage([]PolicyFlexeraPolicyAppliedPolicy{
 			{Id: "parent"},
-			{Id: "child", MetaParentPolicyId: stringPointer("parent"), Parent: &PolicyParent{Ref: &ref}},
+			{Id: "orphan", MetaParentPolicyId: stringPointer("missing")},
 		}, "")},
 	}
 
-	_, err := NewPolicyMetaWorkflow(fake).TerminateOrphaned(context.Background(), PolicyMetaTerminationInput{
+	out, err := NewPolicyMetaWorkflow(fake).TerminateOrphaned(context.Background(), PolicyMetaTerminationInput{
 		OrgID: 1, ProjectID: 2,
 	})
-	if err == nil {
-		t.Fatal("TerminateOrphaned() error = nil, want ambiguous relationship error")
+	if err != nil {
+		t.Fatalf("TerminateOrphaned() error = %v", err)
 	}
-	if len(fake.deleteCalls) != 0 {
-		t.Fatalf("delete calls = %#v, want none", fake.deleteCalls)
+	if len(out.Deleted) != 1 || out.Deleted[0] != "orphan" {
+		t.Fatalf("deleted = %#v, want orphan", out.Deleted)
 	}
 }
 
