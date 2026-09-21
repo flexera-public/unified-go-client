@@ -164,11 +164,6 @@ const (
 	FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryKindFinopsBillingSharedCostRule FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryKind = "finops:billing-shared-cost-rule"
 )
 
-// Defines values for FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryStatus.
-const (
-	FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryStatusActive FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryStatus = "active"
-)
-
 // Defines values for FinopsBillingFlexeraIamPrincipalKind.
 const (
 	FinopsBillingFlexeraIamPrincipalKindIamServiceAccount FinopsBillingFlexeraIamPrincipalKind = "iam:service-account"
@@ -252,11 +247,6 @@ const (
 	FinopsBillingShowSharedCostRuleResultKindFinopsBillingSharedCostRule FinopsBillingShowSharedCostRuleResultKind = "finops:billing-shared-cost-rule"
 )
 
-// Defines values for FinopsBillingShowSharedCostRuleResultStatus.
-const (
-	FinopsBillingShowSharedCostRuleResultStatusActive FinopsBillingShowSharedCostRuleResultStatus = "active"
-)
-
 // Defines values for FinopsBillingSupportChargeSettingsApplyBy.
 const (
 	FinopsBillingSupportChargeSettingsApplyByCustomer   FinopsBillingSupportChargeSettingsApplyBy = "customer"
@@ -305,7 +295,7 @@ const (
 // {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 // ```
 //
-// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
 // For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 // For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 // [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -347,7 +337,7 @@ type FinopsBillingAdjustmentCondition struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -938,7 +928,7 @@ type FinopsBillingCreditMemoSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -1024,7 +1014,7 @@ type FinopsBillingCustomUsageRateSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -1109,7 +1099,7 @@ type FinopsBillingFixedAmountSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -1484,7 +1474,7 @@ type FinopsBillingFlexeraFinopsBillingSharedCostRuleSummary struct {
 	// Allocation Defines the allocation strategy and the destinations that receive the reallocated costs.
 	Allocation FinopsBillingAllocation `json:"allocation"`
 
-	// AnalyzeSpendQuery URL query string that opens the Analyze tabular view filtered to this rule. Append it to the tabular view URL as-is; it is already percent-encoded. Rebuilt on every read, so treat it as opaque rather than storing it.
+	// AnalyzeSpendQuery URL query string that opens the Analyze tabular view filtered to this rule. Use it as the query component of the tabular view URL, after the "?", without decoding or re-encoding it; it is already percent-encoded. Rebuilt on every read, so treat it as opaque rather than storing it.
 	AnalyzeSpendQuery string `json:"analyzeSpendQuery"`
 
 	// CreatedAt timestamp when the shared cost rule was created
@@ -1512,7 +1502,7 @@ type FinopsBillingFlexeraFinopsBillingSharedCostRuleSummary struct {
 	Priority int `json:"priority"`
 
 	// Status Current lifecycle status of the rule.
-	Status FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryStatus `json:"status"`
+	Status string `json:"status"`
 
 	// UpdatedAt timestamp when the shared cost rule was updated
 	UpdatedAt time.Time `json:"updatedAt"`
@@ -1523,9 +1513,6 @@ type FinopsBillingFlexeraFinopsBillingSharedCostRuleSummary struct {
 
 // FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryKind The resource's type
 type FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryKind string
-
-// FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryStatus Current lifecycle status of the rule.
-type FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryStatus string
 
 // FinopsBillingFlexeraIamPrincipal A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
 type FinopsBillingFlexeraIamPrincipal struct {
@@ -1560,7 +1547,7 @@ type FinopsBillingGenerateTaxSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -1596,8 +1583,48 @@ type FinopsBillingGenerateTaxSettingsBaseOn string
 
 // FinopsBillingHideCreditsSettings Configure how vendor credits are, or are not, applied.
 type FinopsBillingHideCreditsSettings struct {
-	// CreditTypes CreditTypes lists the credits that will be hidden.
-	CreditTypes *[]FinopsBillingHideCreditsSettingsCreditTypes `json:"creditTypes,omitempty"`
+	// Condition An adjustment condition, used by adjustment rules and adjustment plan rules.
+	//
+	// A rule's condition may be omitted or null, which will match unconditionally.
+	//
+	// Otherwise the **"type"** field is required and controls which other fields are required.
+	// The following types are supported in billing adjustment rules:
+	//
+	// Type **"dimension_equals"** evaluates whether the specified **"dimension"** contains exactly the specified **"value"**.
+	//
+	// ```
+	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
+	// ```
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
+	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
+	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
+	// defined within your organization (names starting with **rbd\_**),
+	// [Tag Dimensions](https://docs.flexera.com/flexera/EN/Administration/TagDimensions.htm)
+	// defined within your organization (names starting with **tag\_**),
+	// or a few dimensions Flexera populates for you.
+	//
+	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	//
+	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
+	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
+	//
+	// ```
+	// {"type":"and", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"or", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"not", "expression":{...}}
+	// ```
+	//
+	// Together types **"and"**, **"or"**, and **"not"** enable complex combinations of other conditions.
+	Condition *FinopsBillingAdjustmentCondition `json:"condition,omitempty"`
+
+	// CreditTypes CreditTypes lists the credits that will be hidden. As a special case, an empty list will hide all credits.
+	CreditTypes []FinopsBillingHideCreditsSettingsCreditTypes `json:"creditTypes"`
 }
 
 // FinopsBillingHideCreditsSettingsCreditTypes defines model for FinopsBillingHideCreditsSettings.CreditTypes.
@@ -1708,7 +1735,7 @@ type FinopsBillingMarkupMarkdownSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -1766,7 +1793,7 @@ type FinopsBillingRemoveAzureLicenseCostsSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -1993,7 +2020,7 @@ type FinopsBillingReservationReallocationSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -2042,7 +2069,7 @@ type FinopsBillingSavingsPlanReallocationSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -2102,7 +2129,7 @@ type FinopsBillingShowSharedCostRuleResult struct {
 	// Allocation Defines the allocation strategy and the destinations that receive the reallocated costs.
 	Allocation FinopsBillingAllocation `json:"allocation"`
 
-	// AnalyzeSpendQuery URL query string that opens the Analyze tabular view filtered to this rule. Append it to the tabular view URL as-is; it is already percent-encoded. Rebuilt on every read, so treat it as opaque rather than storing it.
+	// AnalyzeSpendQuery URL query string that opens the Analyze tabular view filtered to this rule. Use it as the query component of the tabular view URL, after the "?", without decoding or re-encoding it; it is already percent-encoded. Rebuilt on every read, so treat it as opaque rather than storing it.
 	AnalyzeSpendQuery string `json:"analyzeSpendQuery"`
 
 	// CreatedAt timestamp when the shared cost rule was created
@@ -2133,7 +2160,7 @@ type FinopsBillingShowSharedCostRuleResult struct {
 	Source []FinopsBillingSourceDimension `json:"source"`
 
 	// Status Current lifecycle status of the rule.
-	Status FinopsBillingShowSharedCostRuleResultStatus `json:"status"`
+	Status string `json:"status"`
 
 	// UpdatedAt timestamp when the shared cost rule was updated
 	UpdatedAt time.Time `json:"updatedAt"`
@@ -2144,9 +2171,6 @@ type FinopsBillingShowSharedCostRuleResult struct {
 
 // FinopsBillingShowSharedCostRuleResultKind The resource's type
 type FinopsBillingShowSharedCostRuleResultKind string
-
-// FinopsBillingShowSharedCostRuleResultStatus Current lifecycle status of the rule.
-type FinopsBillingShowSharedCostRuleResultStatus string
 
 // FinopsBillingSourceDimension A dimension that identifies a subset of costs to reallocate. Exactly one condition field must be present, matching the dimension type: valueListCondition for dimension-based dimensions (focusDimension, customDimension).
 type FinopsBillingSourceDimension struct {
@@ -2190,7 +2214,7 @@ type FinopsBillingSupportChargeSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -2256,7 +2280,7 @@ type FinopsBillingUpchargeDiscountSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)

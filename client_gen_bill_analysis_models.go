@@ -271,10 +271,19 @@ type BillAnalysisBillLockingProviderSetting struct {
 // BillAnalysisBillLockingProviderSettingType Locking type strategy for this provider
 type BillAnalysisBillLockingProviderSettingType string
 
-// BillAnalysisBillLockingProviders Per-provider locking overrides (currently AWS only)
+// BillAnalysisBillLockingProviders Per-provider locking overrides
 type BillAnalysisBillLockingProviders struct {
 	// Aws Provider-specific locking configuration override
 	Aws *BillAnalysisBillLockingProviderSetting `json:"aws,omitempty"`
+
+	// AzureCsp Provider-specific locking configuration override
+	AzureCsp *BillAnalysisBillLockingProviderSetting `json:"azure_csp,omitempty"`
+
+	// AzureEa Provider-specific locking configuration override
+	AzureEa *BillAnalysisBillLockingProviderSetting `json:"azure_ea,omitempty"`
+
+	// AzureMca Provider-specific locking configuration override
+	AzureMca *BillAnalysisBillLockingProviderSetting `json:"azure_mca,omitempty"`
 }
 
 // BillAnalysisBillLockingSettings Configuration settings for automatic bill locking
@@ -285,7 +294,7 @@ type BillAnalysisBillLockingSettings struct {
 		Date string `json:"date"`
 	} `json:"options,omitempty"`
 
-	// Providers Per-provider locking overrides (currently AWS only)
+	// Providers Per-provider locking overrides
 	Providers *BillAnalysisBillLockingProviders `json:"providers,omitempty"`
 
 	// Type Locking type strategy
