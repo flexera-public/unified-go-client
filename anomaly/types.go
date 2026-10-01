@@ -3,7 +3,7 @@ package anomaly
 import (
 	"time"
 
-	billanalysis "github.com/flexera-public/unified-go-client/rightscale/bill_analysis"
+	flexera "github.com/flexera-public/unified-go-client"
 )
 
 // Input describes the parameters accepted by the anomaly investigator.
@@ -78,7 +78,7 @@ type DimensionAnomaly struct {
 // the investigator. Each entry produces an independent API call.
 type dimensionConfig struct {
 	Dimensions    []string
-	Filter        *billanalysis.FilterV1
+	Filter        *flexera.BillAnalysisFilterV1
 	Category      string
 	Description   string
 	FinOpsContext string

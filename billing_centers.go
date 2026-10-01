@@ -6,20 +6,18 @@ import (
 	"fmt"
 	"net/http"
 	"sync"
-
-	bcs "github.com/flexera-public/unified-go-client/rightscale/billing_center_service"
 )
 
 // BillingCenterClient is the subset of the generated billing_center_service
 // client used by the resolver. It is defined as an interface so tests can
 // stub the index call.
 type BillingCenterClient interface {
-	BillingCentersIndexWithResponse(
+	BillingCenterServiceBillingCentersIndexWithResponse(
 		ctx context.Context,
 		orgID int,
-		params *bcs.BillingCentersIndexParams,
-		reqEditors ...bcs.RequestEditorFn,
-	) (*bcs.BillingCentersIndexResponse, error)
+		params *BillingCenterServiceBillingCentersIndexParams,
+		reqEditors ...RequestEditorFn,
+	) (*BillingCenterServiceBillingCentersIndexResponse, error)
 }
 
 // billingCenter is the minimal shape returned by /billing-centers index that
@@ -59,7 +57,7 @@ func (r *BillingCenterResolver) TopLevelIDs(ctx context.Context, orgID int) ([]s
 	}
 	r.mu.Unlock()
 
-	resp, err := r.client.BillingCentersIndexWithResponse(ctx, orgID, nil)
+	resp, err := r.client.BillingCenterServiceBillingCentersIndexWithResponse(ctx, orgID, nil)
 	if err != nil {
 		return nil, fmt.Errorf("billing-centers index: %w", err)
 	}

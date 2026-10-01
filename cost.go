@@ -2,30 +2,27 @@ package flexera
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"strings"
 	"time"
-
-	ba "github.com/flexera-public/unified-go-client/rightscale/bill_analysis"
 )
 
-// CostClient is the subset of the bill_analysis client the helper depends on.
+// CostClient is the subset of the unified client the helper depends on.
 type CostClient interface {
-	CostsAggregatedWithResponse(
+	BillAnalysisCostsAggregatedWithResponse(
 		ctx context.Context,
-		org int,
-		params *ba.CostsAggregatedParams,
-		body ba.CostsAggregatedJSONRequestBody,
-		reqEditors ...ba.RequestEditorFn,
-	) (*ba.CostsAggregatedResponse, error)
-	CostsSelectWithResponse(
+		org int64,
+		body BillAnalysisCostsAggregatedJSONRequestBody,
+		reqEditors ...RequestEditorFn,
+	) (*BillAnalysisCostsAggregatedResponse, error)
+	BillAnalysisCostsSelectWithResponse(
 		ctx context.Context,
-		org int,
-		params *ba.CostsSelectParams,
-		body ba.CostsSelectJSONRequestBody,
-		reqEditors ...ba.RequestEditorFn,
-	) (*ba.CostsSelectResponse, error)
+		org int64,
+		body BillAnalysisCostsSelectJSONRequestBody,
+		reqEditors ...RequestEditorFn,
+	) (*BillAnalysisCostsSelectResponse, error)
 }
 
 // Endpoint selects which underlying cost endpoint to use.
@@ -60,7 +57,7 @@ type Request struct {
 
 	Dimensions []string
 	Metrics    []string // empty → ["cost_amortized_unblended_adj"]
-	Filter     *ba.FilterV1
+	Filter     *BillAnalysisFilterV1
 	Summarized *bool
 
 	// Endpoint selects /aggregated, /select, or auto (default). Auto picks
@@ -74,7 +71,7 @@ type Request struct {
 
 // CostResponse is the merged result of one or more API calls.
 type CostResponse struct {
-	Rows            []ba.Row
+	Rows            []BillAnalysisRow
 	RowsTruncated   bool
 	EndpointUsed    Endpoint
 	ChunksRequested int
@@ -171,12 +168,12 @@ func (h *Helper) callOnce(
 	bcIDs []string,
 	metrics []string,
 	start, end string,
-) ([]ba.Row, bool, error) {
-	gran := ba.AggregatedRequestBodyGranularity(req.Granularity)
+) ([]BillAnalysisRow, bool, error) {
+	gran := BillAnalysisAggregatedRequestBodyGranularity(req.Granularity)
 
 	switch ep {
 	case EndpointAggregated:
-		body := ba.AggregatedRequestBody{
+		body := BillAnalysisAggregatedRequestBody{
 			BillingCenterIds: bcIDs,
 			StartAt:          start,
 			EndAt:            end,
@@ -189,16 +186,16 @@ func (h *Helper) callOnce(
 			d := append([]string{}, req.Dimensions...)
 			body.Dimensions = &d
 		}
-		resp, err := h.Cost.CostsAggregatedWithResponse(ctx, int(req.OrgID), nil, body)
+		resp, err := h.Cost.BillAnalysisCostsAggregatedWithResponse(ctx, int64(req.OrgID), body)
 		if err != nil {
 			return nil, false, err
 		}
 		return unpackResult(resp.HTTPResponse, resp.Body)
 
 	case EndpointSelect:
-		sgran := ba.SelectRequestBodyGranularity(req.Granularity)
+		sgran := BillAnalysisSelectRequestBodyGranularity(req.Granularity)
 		dims := append([]string{}, req.Dimensions...)
-		body := ba.SelectRequestBody{
+		body := BillAnalysisSelectRequestBody{
 			BillingCenterIds: bcIDs,
 			StartAt:          start,
 			EndAt:            end,
@@ -207,7 +204,7 @@ func (h *Helper) callOnce(
 			Filter:           req.Filter,
 			Dimensions:       dims,
 		}
-		resp, err := h.Cost.CostsSelectWithResponse(ctx, int(req.OrgID), nil, body)
+		resp, err := h.Cost.BillAnalysisCostsSelectWithResponse(ctx, int64(req.OrgID), body)
 		if err != nil {
 			return nil, false, err
 		}
@@ -218,17 +215,18 @@ func (h *Helper) callOnce(
 	}
 }
 
-func unpackResult(httpResp *http.Response, body []byte) ([]ba.Row, bool, error) {
+func unpackResult(httpResp *http.Response, body []byte) ([]BillAnalysisRow, bool, error) {
 	status := 0
 	if httpResp != nil {
 		status = httpResp.StatusCode
 	}
-	result, err := ba.ParseAnalyticsQueryResult(body, status)
+	if status != http.StatusOK && status != http.StatusAccepted {
+		return nil, false, fmt.Errorf("cost API returned status %d: %s", status, string(body))
+	}
+	var result BillAnalysisAnalyticsQueryResult
+	err := json.Unmarshal(body, &result)
 	if err != nil {
 		return nil, false, fmt.Errorf("cost API: unmarshal: %w", err)
-	}
-	if result == nil {
-		return nil, false, fmt.Errorf("cost API returned status %d: %s", status, string(body))
 	}
 	truncated := false
 	if result.RowsTruncated != nil {

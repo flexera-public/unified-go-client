@@ -8,7 +8,7 @@ import (
 	"sort"
 	"time"
 
-	billanalysis "github.com/flexera-public/unified-go-client/rightscale/bill_analysis"
+	flexera "github.com/flexera-public/unified-go-client"
 )
 
 // BillingCenterResolver returns the top-level billing-center IDs for an
@@ -31,7 +31,7 @@ type DebugLogger func(ctx context.Context, format string, args ...any)
 // Investigator runs the cost-anomaly investigation workflow. Construct
 // one with New and call Invoke to execute.
 type Investigator struct {
-	Client   *billanalysis.ClientWithResponses
+	Client   *flexera.ClientWithResponses
 	Resolver BillingCenterResolver
 	Debug    DebugLogger
 }
@@ -39,7 +39,7 @@ type Investigator struct {
 // New constructs an Investigator. Resolver and debug may be nil; if
 // resolver is nil and the input does not pin a billing-center ID, Invoke
 // returns an error.
-func New(client *billanalysis.ClientWithResponses, resolver BillingCenterResolver, debug DebugLogger) *Investigator {
+func New(client *flexera.ClientWithResponses, resolver BillingCenterResolver, debug DebugLogger) *Investigator {
 	return &Investigator{Client: client, Resolver: resolver, Debug: debug}
 }
 
@@ -196,21 +196,21 @@ func (i *Investigator) Invoke(ctx context.Context, in Input) (Output, error) {
 
 func (i *Investigator) calcDynamicThreshold(ctx context.Context, orgID int, bcIDs []string, startAt, endAt, granularity string) (float64, error) {
 	summarized := true
-	body := billanalysis.AggregatedRequestBody{
+	body := flexera.BillAnalysisAggregatedRequestBody{
 		BillingCenterIds: bcIDs,
 		StartAt:          startAt,
 		EndAt:            endAt,
 		Metrics:          []string{"cost_amortized_unblended_adj"},
 		Summarized:       &summarized,
 	}
-	gran := billanalysis.AggregatedRequestBodyGranularity(granularity)
+	gran := flexera.BillAnalysisAggregatedRequestBodyGranularity(granularity)
 	body.Granularity = &gran
-	body.Filter = &billanalysis.FilterV1{
-		Type:      billanalysis.FilterV1TypeEqual,
+	body.Filter = &flexera.BillAnalysisFilterV1{
+		Type:      flexera.BillAnalysisFilterV1TypeEqual,
 		Dimension: strPtr("capability"),
 		Value:     strPtr("csm"),
 	}
-	resp, err := i.Client.CostsAggregatedWithResponse(ctx, int(orgID), nil, body)
+	resp, err := i.Client.BillAnalysisCostsAggregatedWithResponse(ctx, int64(orgID), body)
 	if err != nil {
 		return 0, fmt.Errorf("aggregated cost: %w", err)
 	}
@@ -252,7 +252,7 @@ func (i *Investigator) calcDynamicThreshold(ctx context.Context, orgID int, bcID
 
 func (i *Investigator) detectForDimension(ctx context.Context, orgID int, bcIDs []string, startAt, endAt, granularity string, windowSize int64, cfg dimensionConfig, costThreshold float64, increaseOnly bool) ([]DimensionAnomaly, string, error) {
 	detectionMethod := "ai_model"
-	body := billanalysis.ReportRequestBody{
+	body := flexera.BillAnalysisReportRequestBody{
 		BillingCenterIds:   bcIDs,
 		StartAt:            startAt,
 		EndAt:              endAt,
@@ -261,24 +261,24 @@ func (i *Investigator) detectForDimension(ctx context.Context, orgID int, bcIDs 
 		StandardDeviations: 2.0,
 		Dimensions:         &cfg.Dimensions,
 	}
-	gran := billanalysis.ReportRequestBodyGranularity(granularity)
+	gran := flexera.BillAnalysisReportRequestBodyGranularity(granularity)
 	body.Granularity = &gran
-	method := billanalysis.ReportRequestBodyDetectionMethod("ai_model")
+	method := flexera.BillAnalysisReportRequestBodyDetectionMethod("ai_model")
 	body.DetectionMethod = &method
 	if cfg.Filter != nil {
 		body.Filter = cfg.Filter
 	}
 
 	i.logf(ctx, "AI model detection for %s", cfg.Category)
-	resp, err := i.Client.AnomaliesReportWithResponse(ctx, int(orgID), nil, body)
+	resp, err := i.Client.BillAnalysisAnomaliesReportWithResponse(ctx, int64(orgID), body)
 	if err != nil || resp.StatusCode() != http.StatusOK {
 		i.logf(ctx, "AI model failed for %s, falling back to Bollinger: %v", cfg.Category, err)
 		detectionMethod = "bollinger_band"
-		bollinger := billanalysis.ReportRequestBodyDetectionMethod("bollinger_band")
+		bollinger := flexera.BillAnalysisReportRequestBodyDetectionMethod("bollinger_band")
 		body.DetectionMethod = &bollinger
 		body.WindowSize = 1
 		body.StandardDeviations = 2.0
-		resp, err = i.Client.AnomaliesReportWithResponse(ctx, int(orgID), nil, body)
+		resp, err = i.Client.BillAnalysisAnomaliesReportWithResponse(ctx, int64(orgID), body)
 		if err != nil {
 			return nil, detectionMethod, fmt.Errorf("anomaly detection: %w", err)
 		}

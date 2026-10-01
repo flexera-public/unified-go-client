@@ -1,7 +1,7 @@
 package anomaly
 
 import (
-	billanalysis "github.com/flexera-public/unified-go-client/rightscale/bill_analysis"
+	flexera "github.com/flexera-public/unified-go-client"
 )
 
 func strPtr(s string) *string { return &s }
@@ -10,24 +10,24 @@ func strPtr(s string) *string { return &s }
 // driving the investigator. Each entry produces an independent
 // anomaly-detection API call.
 func getDimensionConfigs() []dimensionConfig {
-	excludeMarketplace := billanalysis.FilterV1{
-		Type: billanalysis.FilterV1TypeNot,
-		Expression: &billanalysis.FilterV1{
-			Type:      billanalysis.FilterV1TypeSubstring,
+	excludeMarketplace := flexera.BillAnalysisFilterV1{
+		Type: flexera.BillAnalysisFilterV1TypeNot,
+		Expression: &flexera.BillAnalysisFilterV1{
+			Type:      flexera.BillAnalysisFilterV1TypeSubstring,
 			Dimension: strPtr("bill_entity"),
 			Substring: strPtr("Marketplace"),
 		},
 	}
-	excludeRegionNone := billanalysis.FilterV1{
-		Type: billanalysis.FilterV1TypeNot,
-		Expression: &billanalysis.FilterV1{
-			Type:      billanalysis.FilterV1TypeEqual,
+	excludeRegionNone := flexera.BillAnalysisFilterV1{
+		Type: flexera.BillAnalysisFilterV1TypeNot,
+		Expression: &flexera.BillAnalysisFilterV1{
+			Type:      flexera.BillAnalysisFilterV1TypeEqual,
 			Dimension: strPtr("region"),
 			Value:     strPtr("None"),
 		},
 	}
-	includeCompute := billanalysis.FilterV1{
-		Type:      billanalysis.FilterV1TypeEqual,
+	includeCompute := flexera.BillAnalysisFilterV1{
+		Type:      flexera.BillAnalysisFilterV1TypeEqual,
 		Dimension: strPtr("category"),
 		Value:     strPtr("Compute"),
 	}
@@ -35,8 +35,8 @@ func getDimensionConfigs() []dimensionConfig {
 	return []dimensionConfig{
 		{
 			Dimensions: []string{"service"},
-			Filter: &billanalysis.FilterV1{
-				Type:      billanalysis.FilterV1TypeEqual,
+			Filter: &flexera.BillAnalysisFilterV1{
+				Type:      flexera.BillAnalysisFilterV1TypeEqual,
 				Dimension: strPtr("capability"),
 				Value:     strPtr("csm"),
 			},
@@ -52,9 +52,9 @@ func getDimensionConfigs() []dimensionConfig {
 			FinOpsContext: "Sudden changes in service costs often indicate new deployments, scaling events, or usage pattern changes.",
 		},
 		{
-			Filter: &billanalysis.FilterV1{
-				Type: billanalysis.FilterV1TypeAnd,
-				Expressions: &[]billanalysis.FilterV1{
+			Filter: &flexera.BillAnalysisFilterV1{
+				Type: flexera.BillAnalysisFilterV1TypeAnd,
+				Expressions: &[]flexera.BillAnalysisFilterV1{
 					excludeMarketplace,
 					excludeRegionNone,
 				},
@@ -65,9 +65,9 @@ func getDimensionConfigs() []dimensionConfig {
 			FinOpsContext: "Regional cost shifts may indicate geo-expansion, or unplanned multi-region deployments.",
 		},
 		{
-			Filter: &billanalysis.FilterV1{
-				Type: billanalysis.FilterV1TypeAnd,
-				Expressions: &[]billanalysis.FilterV1{
+			Filter: &flexera.BillAnalysisFilterV1{
+				Type: flexera.BillAnalysisFilterV1TypeAnd,
+				Expressions: &[]flexera.BillAnalysisFilterV1{
 					excludeMarketplace,
 					includeCompute,
 				},

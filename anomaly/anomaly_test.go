@@ -2,9 +2,43 @@ package anomaly
 
 import (
 	"context"
+	"encoding/json"
+	"net/http"
+	"net/http/httptest"
 	"testing"
 	"time"
+
+	flexera "github.com/flexera-public/unified-go-client"
 )
+
+func TestDynamicThresholdUsesMergedBillAnalysisClient(t *testing.T) {
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost || r.URL.Path != "/bill-analysis/orgs/42/costs/aggregated" {
+			t.Errorf("unexpected request: %s %s", r.Method, r.URL.Path)
+		}
+		var body flexera.BillAnalysisAggregatedRequestBody
+		if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+			t.Errorf("decode request: %v", err)
+		}
+		if body.Filter == nil || body.Filter.Type != flexera.BillAnalysisFilterV1TypeEqual {
+			t.Errorf("unexpected filter: %+v", body.Filter)
+		}
+		w.Header().Set("Content-Type", "application/json")
+		_, _ = w.Write([]byte(`{"rows":[{"metrics":{"cost_amortized_unblended_adj":200000}}]}`))
+	}))
+	defer server.Close()
+	client, err := flexera.NewClientWithResponses(server.URL, flexera.WithOptimaRouting(server.URL))
+	if err != nil {
+		t.Fatal(err)
+	}
+	threshold, err := New(client, nil, nil).calcDynamicThreshold(context.Background(), 42, []string{"bc-1"}, "2026-01", "2026-02", "month")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if threshold != 200 {
+		t.Fatalf("unexpected threshold: %v", threshold)
+	}
+}
 
 func mockNow(t *testing.T, fixed time.Time) {
 	t.Helper()

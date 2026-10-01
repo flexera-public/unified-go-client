@@ -46,8 +46,7 @@ func (d *optimaRoutingDoer) Do(req *http.Request) (*http.Response, error) {
 	rerouted.URL.Host = d.optimaHost.Host
 	rerouted.Host = d.optimaHost.Host
 	// The Optima backends (unlike the unified gateway) reject requests
-	// missing this header; service/optima.NewClients defaults its own
-	// three rightscale clients to the same value.
+	// missing this header.
 	if rerouted.Header.Get("Api-Version") == "" {
 		rerouted.Header.Set("Api-Version", "1.0")
 	}

@@ -254,7 +254,7 @@
     },
     {
       "path": "billing_centers.go",
-      "sha256": "1343be19cdad1c25560be33e7b8c020def544691b7e2e98f798a2b8a19776fbd",
+      "sha256": "416df8c256f848c07b91503f5fd44238cd0dbe2bfc5fac54fd9cdf5c8bcee90c",
       "declarations": [
         {
           "name": "BillingCenterClient",
@@ -311,12 +311,12 @@
     },
     {
       "path": "cost.go",
-      "sha256": "6b97bb73ba5ea96cd92f27b4f0bdfc50f3a408882f1e08d464f4e60190dc5953",
+      "sha256": "e0487e95b4a38df0a6817fb80b6f6ed38b46cad8d6383b0c178c1ec25000b663",
       "declarations": [
         {
           "name": "CostClient",
           "kind": "type",
-          "doc": "CostClient is the subset of the bill_analysis client the helper depends on."
+          "doc": "CostClient is the subset of the unified client the helper depends on."
         },
         {
           "name": "Endpoint",
@@ -471,6 +471,35 @@
       "declarationCount": 3
     },
     {
+      "path": "graphql_generate.go",
+      "sha256": "a085ce1150edcf16ecee7dc4103a410cac5fcf64760e0dbb2cd4908356554458",
+      "declarations": [
+        {
+          "name": "GenerateQueryRequestBody",
+          "kind": "type",
+          "doc": "GenerateQueryRequestBody describes a natural-language GraphQL query request."
+        },
+        {
+          "name": "GenerateQueryResponse",
+          "kind": "type",
+          "doc": "GenerateQueryResponse contains a generated GraphQL query."
+        },
+        {
+          "name": "GenerateQuery",
+          "kind": "method",
+          "receiver": "Client",
+          "doc": "GenerateQuery calls the GraphQL query-generation endpoint, which is not yet"
+        },
+        {
+          "name": "GenerateQuery",
+          "kind": "method",
+          "receiver": "ClientWithResponses",
+          "doc": "GenerateQuery calls the GraphQL query-generation endpoint through the"
+        }
+      ],
+      "declarationCount": 4
+    },
+    {
       "path": "identity.go",
       "sha256": "2f3fffa2f0421059332bbfec8606c87c32f6567408fb07402712573dbd73081a",
       "declarations": [
@@ -542,7 +571,7 @@
     },
     {
       "path": "optima_routing.go",
-      "sha256": "a5d34a4e7306db880b03b2a06464f5e93e4cad3251a99e8c260f1813b9e55415",
+      "sha256": "7e0f5d8b625c4e2a32c07642e6c7d6742a44e5ec4758df5658010a247a4977fe",
       "declarations": [
         {
           "name": "Do",
@@ -1103,6 +1132,6 @@
       "declarationCount": 4
     }
   ],
-  "totalFiles": 25,
-  "totalDeclarations": 179
+  "totalFiles": 26,
+  "totalDeclarations": 183
 }

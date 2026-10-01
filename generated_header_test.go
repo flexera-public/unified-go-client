@@ -9,7 +9,7 @@ import (
 )
 
 // This test enforces the generated-file-header contract documented in
-// CONTRIBUTING.md: every generated file (root package and every
+// README.md: every generated file (root package and every
 // service/*, rightscale/* sub-package) must start with the standard
 // "Code generated ... DO NOT EDIT." header, and every hand-written file
 // must not. Downstream tooling (flexera-cli's make check-client-coverage)
@@ -65,7 +65,25 @@ func TestGeneratedFileHeaderContract(t *testing.T) {
 		t.Fatalf("walking repository: %v", err)
 	}
 	if len(offenders) > 0 {
-		t.Fatalf("generated-file-header contract violated (see CONTRIBUTING.md):\n%s", strings.Join(offenders, "\n"))
+		t.Fatalf("generated-file-header contract violated (see README.md):\n%s", strings.Join(offenders, "\n"))
+	}
+}
+
+func TestOnlyUnmergedServiceHasStandaloneGeneratedClient(t *testing.T) {
+	err := filepath.WalkDir(".", func(path string, d os.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+		if d.IsDir() || d.Name() != "client.gen.go" {
+			return nil
+		}
+		if path != filepath.Join("rightscale", "governance", "client.gen.go") {
+			t.Errorf("standalone generated client %s should use the merged unified-openapi artifact", path)
+		}
+		return nil
+	})
+	if err != nil {
+		t.Fatal(err)
 	}
 }
 

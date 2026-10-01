@@ -87,9 +87,8 @@ by concern (`models`, `operations`, and `responses`), while shared client
 infrastructure remains in `client_gen_core.go`. The generated
 `client_gen_manifest.json` maps each file back to its source spec and exported
 declarations. `client_extensions_manifest.json` provides the equivalent
-inventory for hand-written root-package declarations. See
-[`CONTRIBUTING.md`](CONTRIBUTING.md) for the generated-vs-hand-written file
-contract these manifests depend on.
+inventory for hand-written root-package declarations. The generated-vs-
+hand-written file contract these manifests depend on is described below.
 
 The client uses a tracked, immutable `unified-openapi/openapi3.json` snapshot.
 Its `PIN` file records the upstream `main` commit and the snapshot SHA-256;
@@ -122,6 +121,60 @@ changes in a pull request.
 Generation first runs `oapi-codegen` once to preserve its normal package-wide
 behavior, then `cmd/split-client` partitions the resulting Go syntax tree.
 Running generation twice with the same inputs must produce no changes.
+
+## Service inventory and migration
+
+The official upstream `main` snapshot pinned at
+`383e60c23f0b38fc14bc06faab4cf6b3231b6207` contains 365 paths and
+570 operations. The following inventory counts paths/operations in
+`unified-openapi/openapi3.json`; all listed methods are generated in the
+root `flexera` package (`client_gen_*.go`).
+
+| Service (source ID) | Paths | Operations | Generated method prefix |
+|---|---:|---:|---|
+| Authentication (Okta token) | 1 | 1 | `Auth` |
+| Bill Analysis (`rightscale-bill-analysis`) | 26 | 43 | `BillAnalysis` |
+| Bill Upload (`rightscale-bill-upload`) | 4 | 6 | `BillUpload` |
+| Billing Center (`rightscale-billing-center`) | 11 | 16 | `BillingCenterService` |
+| Budget (`flexera-budget-v1`) | 4 | 7 | `Budget` |
+| Credentials (`flexera-cred-v2`) | 20 | 52 | `Cred` |
+| Data Inventory (`flexera-data-inventory-v1`) | 2 | 3 | `Divnt` |
+| FinOps Billing (`flexera-finops-billing-v1`) | 19 | 38 | `FinopsBilling` |
+| FinOps Customizations (`flexera-finops-customizations-v1`) | 10 | 25 | `FinopsCustomizations` |
+| FinOps Onboarding (`flexera-finops-onboarding-v1`) | 31 | 47 | `FinopsOnboarding` |
+| GraphQL (`flexera-graphql-v1`) | 2 | 2 | `Graphql` |
+| Global Resource Service (`flexera-grs`) | 2 | 2 | `Grs` |
+| IAM (`flexera-iam-v1`) | 80 | 129 | `Iam` |
+| Optima Recommendations (`rightscale-optima-recommendations`) | 2 | 2 | `OptimaRecommendations` |
+| Policy (`flexera-policy-v1`) | 33 | 51 | `Policy` |
+| Risk (`flexera-risk-v1`) | 53 | 53 | `Risk` |
+| SaaS (`flexera-saas-v1`) | 43 | 70 | `Saas` |
+| Unified Onboarding (`flexera-unified-onboarding-v1`) | 15 | 16 | `Uobs` |
+| IT Visibility (`flexera-vis-v2`) | 7 | 7 | `Vis` |
+
+The old separately generated `service/{budget,cred,finops_customizations,
+finops_onboarding,graphql,policy,saas}/v*` and
+`rightscale/{bill_analysis,billing_center_service,global_resource_service,
+optima_recommendations}` packages have been removed. Migrate imports to the
+root package and use its prefixed request methods and model types, e.g.
+`OptimaRecommendationsRecommendationsIndexWithResponse`,
+`BillAnalysisCostsAggregatedWithResponse`, and
+`BillingCenterServiceBillingCentersIndexWithResponse`. The
+`service/optima` bundle is also removed: use one root
+`ClientWithResponses` instead. Construct it with
+`NewClientWithResponsesForAuth` or supply `WithOptimaRouting` when using
+`NewClientWithResponses`, so Optima paths reach the correct host.
+`anomaly.New` now accepts the root client. The undocumented GraphQL
+`GenerateQuery` extension has moved to the root client; it is still
+hand-written because the upstream artifact does not describe that endpoint.
+
+**Upstream gaps:** `rightscale-governance` is configured in upstream
+`generator/specs.yaml` but is excluded from its merge (35 paths / 47
+operations in the separate Swagger source). Its standalone
+`rightscale/governance` client remains until upstream includes it. The GRS
+and Bill Analysis entries above are generated from the official merged
+artifact, but their *upstream sources* are manually curated subsets rather
+than published service specifications.
 
 ## Generated vs. hand-written files
 

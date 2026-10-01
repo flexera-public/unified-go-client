@@ -29,17 +29,14 @@
 //
 // # Sub-packages
 //
-// Legacy per-service RightScale/Optima clients (used via service/optima bundle):
+// Governance is not yet included in the merged OpenAPI artifact and remains
+// available as a standalone client:
 //
-//	github.com/flexera-public/unified-go-client/rightscale/bill_analysis
-//	github.com/flexera-public/unified-go-client/rightscale/billing_center_service
-//	... (see rightscale/)
+//	github.com/flexera-public/unified-go-client/rightscale/governance
 //
-// The rightscale/bill_analysis package is generated from a hand-curated minimal
-// OpenAPI subset in unified-openapi, covering only Bill Analysis endpoints not yet
-// migrated to Flexera API Gateway. It exposes backward-compatible type aliases
-// (compat.go) so existing callers require no import-path changes. New code should
-// prefer the root BillAnalysis* methods on *ClientWithResponses directly.
+// Bill Analysis and other Optima operations are generated from the merged
+// upstream artifact in the root package; use BillAnalysis*, BillingCenterService*,
+// and OptimaRecommendations* methods on *ClientWithResponses.
 //
 // Anomaly investigation workflow:
 //
