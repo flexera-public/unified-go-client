@@ -590,8 +590,8 @@ const (
 
 // Defines values for IamUserSettingBlobRetriveGetUrlParamsType.
 const (
-	IamUserSettingBlobRetriveGetUrlParamsTypeGlobal IamUserSettingBlobRetriveGetUrlParamsType = "global"
-	IamUserSettingBlobRetriveGetUrlParamsTypeOrg    IamUserSettingBlobRetriveGetUrlParamsType = "org"
+	Global IamUserSettingBlobRetriveGetUrlParamsType = "global"
+	Org    IamUserSettingBlobRetriveGetUrlParamsType = "org"
 )
 
 // Defines values for IamUserMembershipsShowPrivilegesReportParamsView.

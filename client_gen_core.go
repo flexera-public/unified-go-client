@@ -1689,12 +1689,12 @@ type ClientInterface interface {
 	RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPost(ctx context.Context, orgId string, body RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// OptimaRecommendationsRecommendationsIndex request
-	OptimaRecommendationsRecommendationsIndex(ctx context.Context, orgID int, params *OptimaRecommendationsRecommendationsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	OptimaRecommendationsRecommendationsIndex(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// OptimaRecommendationsRecommendationsUpdateStatusWithBody request with any body
-	OptimaRecommendationsRecommendationsUpdateStatusWithBody(ctx context.Context, orgID int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	OptimaRecommendationsRecommendationsUpdateStatusWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	OptimaRecommendationsRecommendationsUpdateStatus(ctx context.Context, orgID int, body OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	OptimaRecommendationsRecommendationsUpdateStatus(ctx context.Context, orgId int, body OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostWithBody request with any body
 	RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -3925,12 +3925,12 @@ type ClientWithResponsesInterface interface {
 	RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostWithResponse(ctx context.Context, orgId string, body RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostResponse, error)
 
 	// OptimaRecommendationsRecommendationsIndexWithResponse request
-	OptimaRecommendationsRecommendationsIndexWithResponse(ctx context.Context, orgID int, params *OptimaRecommendationsRecommendationsIndexParams, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsIndexResponse, error)
+	OptimaRecommendationsRecommendationsIndexWithResponse(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsIndexParams, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsIndexResponse, error)
 
 	// OptimaRecommendationsRecommendationsUpdateStatusWithBodyWithResponse request with any body
-	OptimaRecommendationsRecommendationsUpdateStatusWithBodyWithResponse(ctx context.Context, orgID int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsUpdateStatusResponse, error)
+	OptimaRecommendationsRecommendationsUpdateStatusWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsUpdateStatusResponse, error)
 
-	OptimaRecommendationsRecommendationsUpdateStatusWithResponse(ctx context.Context, orgID int, body OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsUpdateStatusResponse, error)
+	OptimaRecommendationsRecommendationsUpdateStatusWithResponse(ctx context.Context, orgId int, body OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsUpdateStatusResponse, error)
 
 	// RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostWithBodyWithResponse request with any body
 	RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetCisBenchmarkDetailsRiskV1OrgsOrgIdComplianceCisPostResponse, error)

@@ -4,14 +4,1226 @@ package flexera
 
 import (
 	"context"
+	"encoding/json"
 	openapi_types "github.com/oapi-codegen/runtime/types"
 	"io"
 	"net/http"
+	"strings"
+	"time"
 )
+
+// Defines values for BillUploadBillUploadCreateFileResponseBodyStatus.
+const (
+	BillUploadBillUploadCreateFileResponseBodyStatusFailed    BillUploadBillUploadCreateFileResponseBodyStatus = "failed"
+	BillUploadBillUploadCreateFileResponseBodyStatusUploaded  BillUploadBillUploadCreateFileResponseBodyStatus = "uploaded"
+	BillUploadBillUploadCreateFileResponseBodyStatusUploading BillUploadBillUploadCreateFileResponseBodyStatus = "uploading"
+)
+
+// Defines values for BillUploadBillUploadCreateOperationResponseBodyStatus.
+const (
+	BillUploadBillUploadCreateOperationResponseBodyStatusAborted    BillUploadBillUploadCreateOperationResponseBodyStatus = "aborted"
+	BillUploadBillUploadCreateOperationResponseBodyStatusComplete   BillUploadBillUploadCreateOperationResponseBodyStatus = "complete"
+	BillUploadBillUploadCreateOperationResponseBodyStatusInProgress BillUploadBillUploadCreateOperationResponseBodyStatus = "in-progress"
+)
+
+// Defines values for BillUploadBillUploadCreateResponseBodyStatus.
+const (
+	BillUploadBillUploadCreateResponseBodyStatusAborted    BillUploadBillUploadCreateResponseBodyStatus = "aborted"
+	BillUploadBillUploadCreateResponseBodyStatusComplete   BillUploadBillUploadCreateResponseBodyStatus = "complete"
+	BillUploadBillUploadCreateResponseBodyStatusInProgress BillUploadBillUploadCreateResponseBodyStatus = "in-progress"
+)
+
+// Defines values for BillUploadBillUploadResponseStatus.
+const (
+	BillUploadBillUploadResponseStatusAborted    BillUploadBillUploadResponseStatus = "aborted"
+	BillUploadBillUploadResponseStatusComplete   BillUploadBillUploadResponseStatus = "complete"
+	BillUploadBillUploadResponseStatusInProgress BillUploadBillUploadResponseStatus = "in-progress"
+)
+
+// Defines values for BillUploadBillUploadShowResponseBodyStatus.
+const (
+	BillUploadBillUploadShowResponseBodyStatusAborted    BillUploadBillUploadShowResponseBodyStatus = "aborted"
+	BillUploadBillUploadShowResponseBodyStatusComplete   BillUploadBillUploadShowResponseBodyStatus = "complete"
+	BillUploadBillUploadShowResponseBodyStatusInProgress BillUploadBillUploadShowResponseBodyStatus = "in-progress"
+)
+
+// Defines values for BillUploadFileResponseStatus.
+const (
+	BillUploadFileResponseStatusFailed    BillUploadFileResponseStatus = "failed"
+	BillUploadFileResponseStatusUploaded  BillUploadFileResponseStatus = "uploaded"
+	BillUploadFileResponseStatusUploading BillUploadFileResponseStatus = "uploading"
+)
+
+// Defines values for BillUploadFileResponseBodyStatus.
+const (
+	BillUploadFileResponseBodyStatusFailed    BillUploadFileResponseBodyStatus = "failed"
+	BillUploadFileResponseBodyStatusUploaded  BillUploadFileResponseBodyStatus = "uploaded"
+	BillUploadFileResponseBodyStatusUploading BillUploadFileResponseBodyStatus = "uploading"
+)
+
+// BillUploadBillUploadBillUploadResponseCollection IndexResponseBody is the result type for an array of BillUploadResponse (default view)
+type BillUploadBillUploadBillUploadResponseCollection = []BillUploadBillUploadResponse
+
+// BillUploadBillUploadCreateBadGatewayResponseBody create_bad_gateway_response_body result type (default view)
+type BillUploadBillUploadCreateBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateBadRequestResponseBody create_bad_request_response_body result type (default view)
+type BillUploadBillUploadCreateBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateConflictResponseBody create_conflict_response_body result type (default view)
+type BillUploadBillUploadCreateConflictResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateFileBadGatewayResponseBody createFile_bad_gateway_response_body result type (default view)
+type BillUploadBillUploadCreateFileBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateFileBadRequestResponseBody createFile_bad_request_response_body result type (default view)
+type BillUploadBillUploadCreateFileBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateFileConflictResponseBody createFile_conflict_response_body result type (default view)
+type BillUploadBillUploadCreateFileConflictResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateFileForbiddenResponseBody createFile_forbidden_response_body result type (default view)
+type BillUploadBillUploadCreateFileForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateFileInternalErrorResponseBody createFile_internal_error_response_body result type (default view)
+type BillUploadBillUploadCreateFileInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateFileNotFoundResponseBody createFile_not_found_response_body result type (default view)
+type BillUploadBillUploadCreateFileNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateFileRequestEntityTooLargeResponseBody createFile_request_entity_too_large_response_body result type (default view)
+type BillUploadBillUploadCreateFileRequestEntityTooLargeResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateFileResponseBody CreateFileResponseBody result type (default view)
+type BillUploadBillUploadCreateFileResponseBody struct {
+	// BillUploadId The ID of the bill upload that the file belongs to
+	BillUploadId openapi_types.UUID `json:"billUploadId"`
+
+	// CreatedAt The time when the file was created.
+	CreatedAt time.Time `json:"createdAt"`
+
+	// Id The ID of the file
+	Id string `json:"id"`
+
+	// Length The length of an uploaded file in bytes
+	Length int64 `json:"length"`
+
+	// Md5 The file signature generated using MD5 message-digest
+	Md5 string `json:"md5"`
+
+	// Status The current status of the file upload
+	Status BillUploadBillUploadCreateFileResponseBodyStatus `json:"status"`
+
+	// UpdatedAt The time when the file last updated.
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// BillUploadBillUploadCreateFileResponseBodyStatus The current status of the file upload
+type BillUploadBillUploadCreateFileResponseBodyStatus string
+
+// BillUploadBillUploadCreateFileTooManyRequestsResponseBody createFile_too_many_requests_response_body result type (default view)
+type BillUploadBillUploadCreateFileTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateFileUnauthorizedResponseBody createFile_unauthorized_response_body result type (default view)
+type BillUploadBillUploadCreateFileUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateForbiddenResponseBody create_forbidden_response_body result type (default view)
+type BillUploadBillUploadCreateForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateInternalErrorResponseBody create_internal_error_response_body result type (default view)
+type BillUploadBillUploadCreateInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateNotFoundResponseBody create_not_found_response_body result type (default view)
+type BillUploadBillUploadCreateNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateOperationBadGatewayResponseBody createOperation_bad_gateway_response_body result type (default view)
+type BillUploadBillUploadCreateOperationBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateOperationBadRequestResponseBody createOperation_bad_request_response_body result type (default view)
+type BillUploadBillUploadCreateOperationBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateOperationForbiddenResponseBody createOperation_forbidden_response_body result type (default view)
+type BillUploadBillUploadCreateOperationForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateOperationInternalErrorResponseBody createOperation_internal_error_response_body result type (default view)
+type BillUploadBillUploadCreateOperationInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateOperationNotFoundResponseBody createOperation_not_found_response_body result type (default view)
+type BillUploadBillUploadCreateOperationNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateOperationResponseBody CreateOperationResponseBody result type (default view)
+type BillUploadBillUploadCreateOperationResponseBody struct {
+	// BillConnectId The bill connect that the bill upload belongs to
+	BillConnectId string `json:"billConnectId"`
+
+	// BillingPeriod The billing period of the bill upload
+	BillingPeriod string `json:"billingPeriod"`
+
+	// CreatedAt The time when the bill upload was created.
+	CreatedAt time.Time `json:"createdAt"`
+
+	// Files FileCollectionResponseBody is the result type for an array of FileResponseBody (default view)
+	Files BillUploadFileResponseBodyCollection `json:"files"`
+
+	// Id The ID of the bill upload
+	Id openapi_types.UUID `json:"id"`
+
+	// Status The current status of the bill upload
+	Status BillUploadBillUploadCreateOperationResponseBodyStatus `json:"status"`
+
+	// UpdatedAt The time when the bill upload last updated.
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// BillUploadBillUploadCreateOperationResponseBodyStatus The current status of the bill upload
+type BillUploadBillUploadCreateOperationResponseBodyStatus string
+
+// BillUploadBillUploadCreateOperationTooManyRequestsResponseBody createOperation_too_many_requests_response_body result type (default view)
+type BillUploadBillUploadCreateOperationTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateOperationUnauthorizedResponseBody createOperation_unauthorized_response_body result type (default view)
+type BillUploadBillUploadCreateOperationUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateResponseBody CreateResponseBody result type (default view)
+type BillUploadBillUploadCreateResponseBody struct {
+	// BillConnectId The bill connect that the bill upload belongs to
+	BillConnectId string `json:"billConnectId"`
+
+	// BillingPeriod The billing period of the bill upload
+	BillingPeriod string `json:"billingPeriod"`
+
+	// CreatedAt The time when the bill upload was created.
+	CreatedAt time.Time `json:"createdAt"`
+
+	// Files FileCollectionResponseBody is the result type for an array of FileResponseBody (default view)
+	Files BillUploadFileResponseBodyCollection `json:"files"`
+
+	// Id The ID of the bill upload
+	Id openapi_types.UUID `json:"id"`
+
+	// Status The current status of the bill upload
+	Status BillUploadBillUploadCreateResponseBodyStatus `json:"status"`
+
+	// UpdatedAt The time when the bill upload last updated.
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// BillUploadBillUploadCreateResponseBodyStatus The current status of the bill upload
+type BillUploadBillUploadCreateResponseBodyStatus string
+
+// BillUploadBillUploadCreateTooManyRequestsResponseBody create_too_many_requests_response_body result type (default view)
+type BillUploadBillUploadCreateTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadCreateUnauthorizedResponseBody create_unauthorized_response_body result type (default view)
+type BillUploadBillUploadCreateUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadDeleteBadGatewayResponseBody delete_bad_gateway_response_body result type (default view)
+type BillUploadBillUploadDeleteBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadDeleteBadRequestResponseBody delete_bad_request_response_body result type (default view)
+type BillUploadBillUploadDeleteBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadDeleteForbiddenResponseBody delete_forbidden_response_body result type (default view)
+type BillUploadBillUploadDeleteForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadDeleteInternalErrorResponseBody delete_internal_error_response_body result type (default view)
+type BillUploadBillUploadDeleteInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadDeleteNotFoundResponseBody delete_not_found_response_body result type (default view)
+type BillUploadBillUploadDeleteNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadDeleteTooManyRequestsResponseBody delete_too_many_requests_response_body result type (default view)
+type BillUploadBillUploadDeleteTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadDeleteUnauthorizedResponseBody delete_unauthorized_response_body result type (default view)
+type BillUploadBillUploadDeleteUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadIndexBadGatewayResponseBody index_bad_gateway_response_body result type (default view)
+type BillUploadBillUploadIndexBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadIndexBadRequestResponseBody index_bad_request_response_body result type (default view)
+type BillUploadBillUploadIndexBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadIndexForbiddenResponseBody index_forbidden_response_body result type (default view)
+type BillUploadBillUploadIndexForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadIndexInternalErrorResponseBody index_internal_error_response_body result type (default view)
+type BillUploadBillUploadIndexInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadIndexNotFoundResponseBody index_not_found_response_body result type (default view)
+type BillUploadBillUploadIndexNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadIndexTooManyRequestsResponseBody index_too_many_requests_response_body result type (default view)
+type BillUploadBillUploadIndexTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadIndexUnauthorizedResponseBody index_unauthorized_response_body result type (default view)
+type BillUploadBillUploadIndexUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadResponse The bill upload resource groups a set of related billing files for a particular
+//
+//	billing period (single month) and adds a transaction semantic for uploading multiple related files,
+//	allowing the client to signal when it has finished uploading all billing data for a single billing period (default view)
+type BillUploadBillUploadResponse struct {
+	// BillConnectId The bill connect that the bill upload belongs to
+	BillConnectId string `json:"billConnectId"`
+
+	// BillingPeriod The billing period of the bill upload
+	BillingPeriod string `json:"billingPeriod"`
+
+	// CreatedAt The time when the bill upload was created.
+	CreatedAt time.Time `json:"createdAt"`
+
+	// Files FileCollectionResponse is the result type for an array of FileResponse (default view)
+	Files BillUploadFileResponseCollection `json:"files"`
+
+	// Id The ID of the bill upload
+	Id openapi_types.UUID `json:"id"`
+
+	// Status The current status of the bill upload
+	Status BillUploadBillUploadResponseStatus `json:"status"`
+
+	// UpdatedAt The time when the bill upload last updated.
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// BillUploadBillUploadResponseStatus The current status of the bill upload
+type BillUploadBillUploadResponseStatus string
+
+// BillUploadBillUploadShowBadGatewayResponseBody show_bad_gateway_response_body result type (default view)
+type BillUploadBillUploadShowBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadShowBadRequestResponseBody show_bad_request_response_body result type (default view)
+type BillUploadBillUploadShowBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadShowForbiddenResponseBody show_forbidden_response_body result type (default view)
+type BillUploadBillUploadShowForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadShowInternalErrorResponseBody show_internal_error_response_body result type (default view)
+type BillUploadBillUploadShowInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadShowNotFoundResponseBody show_not_found_response_body result type (default view)
+type BillUploadBillUploadShowNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadShowResponseBody ShowResponseBody result type (default view)
+type BillUploadBillUploadShowResponseBody struct {
+	// BillConnectId The bill connect that the bill upload belongs to
+	BillConnectId string `json:"billConnectId"`
+
+	// BillingPeriod The billing period of the bill upload
+	BillingPeriod string `json:"billingPeriod"`
+
+	// CreatedAt The time when the bill upload was created.
+	CreatedAt time.Time `json:"createdAt"`
+
+	// Files FileCollectionResponseBody is the result type for an array of FileResponseBody (default view)
+	Files BillUploadFileResponseBodyCollection `json:"files"`
+
+	// Id The ID of the bill upload
+	Id openapi_types.UUID `json:"id"`
+
+	// Status The current status of the bill upload
+	Status BillUploadBillUploadShowResponseBodyStatus `json:"status"`
+
+	// UpdatedAt The time when the bill upload last updated.
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// BillUploadBillUploadShowResponseBodyStatus The current status of the bill upload
+type BillUploadBillUploadShowResponseBodyStatus string
+
+// BillUploadBillUploadShowTooManyRequestsResponseBody show_too_many_requests_response_body result type (default view)
+type BillUploadBillUploadShowTooManyRequestsResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadBillUploadShowUnauthorizedResponseBody show_unauthorized_response_body result type (default view)
+type BillUploadBillUploadShowUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillUploadFileResponse The file resource is a sub resource of bill uploads and represents a single billing file that has been uploaded for a bill upload.
+//
+//	 The resource tracks the success of each upload as well as the file signature of the uploaded file,
+//	allowing the client to validate that an upload was successful. (default view)
+type BillUploadFileResponse struct {
+	// BillUploadId The ID of the bill upload that the file belongs to
+	BillUploadId openapi_types.UUID `json:"billUploadId"`
+
+	// CreatedAt The time when the file was created.
+	CreatedAt time.Time `json:"createdAt"`
+
+	// Id The ID of the file
+	Id string `json:"id"`
+
+	// Length The length of an uploaded file in bytes
+	Length int64 `json:"length"`
+
+	// Md5 The file signature generated using MD5 message-digest
+	Md5 string `json:"md5"`
+
+	// Status The current status of the file upload
+	Status BillUploadFileResponseStatus `json:"status"`
+
+	// UpdatedAt The time when the file last updated.
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// BillUploadFileResponseStatus The current status of the file upload
+type BillUploadFileResponseStatus string
+
+// BillUploadFileResponseBody The file resource is a sub resource of bill uploads and represents a single billing file that has been uploaded for a bill upload.
+//
+//	 The resource tracks the success of each upload as well as the file signature of the uploaded file,
+//	allowing the client to validate that an upload was successful. (default view)
+type BillUploadFileResponseBody struct {
+	// BillUploadId The ID of the bill upload that the file belongs to
+	BillUploadId openapi_types.UUID `json:"billUploadId"`
+
+	// CreatedAt The time when the file was created.
+	CreatedAt time.Time `json:"createdAt"`
+
+	// Id The ID of the file
+	Id string `json:"id"`
+
+	// Length The length of an uploaded file in bytes
+	Length int64 `json:"length"`
+
+	// Md5 The file signature generated using MD5 message-digest
+	Md5 string `json:"md5"`
+
+	// Status The current status of the file upload
+	Status BillUploadFileResponseBodyStatus `json:"status"`
+
+	// UpdatedAt The time when the file last updated.
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// BillUploadFileResponseBodyStatus The current status of the file upload
+type BillUploadFileResponseBodyStatus string
+
+// BillUploadFileResponseBodyCollection FileCollectionResponseBody is the result type for an array of FileResponseBody (default view)
+type BillUploadFileResponseBodyCollection = []BillUploadFileResponseBody
+
+// BillUploadFileResponseCollection FileCollectionResponse is the result type for an array of FileResponse (default view)
+type BillUploadFileResponseCollection = []BillUploadFileResponse
 
 type BillUploadBillUploadIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *BillUploadBillUploadBillUploadResponseCollection
+	JSON400      *BillUploadBillUploadIndexBadRequestResponseBody
+	JSON401      *BillUploadBillUploadIndexUnauthorizedResponseBody
+	JSON403      *BillUploadBillUploadIndexForbiddenResponseBody
+	JSON404      *BillUploadBillUploadIndexNotFoundResponseBody
+	JSON429      *BillUploadBillUploadIndexTooManyRequestsResponseBody
+	JSON500      *BillUploadBillUploadIndexInternalErrorResponseBody
+	JSON502      *BillUploadBillUploadIndexBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -33,6 +1245,15 @@ func (r BillUploadBillUploadIndexResponse) StatusCode() int {
 type BillUploadBillUploadCreateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON201      *BillUploadBillUploadCreateResponseBody
+	JSON400      *BillUploadBillUploadCreateBadRequestResponseBody
+	JSON401      *BillUploadBillUploadCreateUnauthorizedResponseBody
+	JSON403      *BillUploadBillUploadCreateForbiddenResponseBody
+	JSON404      *BillUploadBillUploadCreateNotFoundResponseBody
+	JSON409      *BillUploadBillUploadCreateConflictResponseBody
+	JSON429      *BillUploadBillUploadCreateTooManyRequestsResponseBody
+	JSON500      *BillUploadBillUploadCreateInternalErrorResponseBody
+	JSON502      *BillUploadBillUploadCreateBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -54,6 +1275,13 @@ func (r BillUploadBillUploadCreateResponse) StatusCode() int {
 type BillUploadBillUploadDeleteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *BillUploadBillUploadDeleteBadRequestResponseBody
+	JSON401      *BillUploadBillUploadDeleteUnauthorizedResponseBody
+	JSON403      *BillUploadBillUploadDeleteForbiddenResponseBody
+	JSON404      *BillUploadBillUploadDeleteNotFoundResponseBody
+	JSON429      *BillUploadBillUploadDeleteTooManyRequestsResponseBody
+	JSON500      *BillUploadBillUploadDeleteInternalErrorResponseBody
+	JSON502      *BillUploadBillUploadDeleteBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -75,6 +1303,14 @@ func (r BillUploadBillUploadDeleteResponse) StatusCode() int {
 type BillUploadBillUploadShowResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *BillUploadBillUploadShowResponseBody
+	JSON400      *BillUploadBillUploadShowBadRequestResponseBody
+	JSON401      *BillUploadBillUploadShowUnauthorizedResponseBody
+	JSON403      *BillUploadBillUploadShowForbiddenResponseBody
+	JSON404      *BillUploadBillUploadShowNotFoundResponseBody
+	JSON429      *BillUploadBillUploadShowTooManyRequestsResponseBody
+	JSON500      *BillUploadBillUploadShowInternalErrorResponseBody
+	JSON502      *BillUploadBillUploadShowBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -96,6 +1332,16 @@ func (r BillUploadBillUploadShowResponse) StatusCode() int {
 type BillUploadBillUploadCreateFileResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON201      *BillUploadBillUploadCreateFileResponseBody
+	JSON400      *BillUploadBillUploadCreateFileBadRequestResponseBody
+	JSON401      *BillUploadBillUploadCreateFileUnauthorizedResponseBody
+	JSON403      *BillUploadBillUploadCreateFileForbiddenResponseBody
+	JSON404      *BillUploadBillUploadCreateFileNotFoundResponseBody
+	JSON409      *BillUploadBillUploadCreateFileConflictResponseBody
+	JSON413      *BillUploadBillUploadCreateFileRequestEntityTooLargeResponseBody
+	JSON429      *BillUploadBillUploadCreateFileTooManyRequestsResponseBody
+	JSON500      *BillUploadBillUploadCreateFileInternalErrorResponseBody
+	JSON502      *BillUploadBillUploadCreateFileBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -117,6 +1363,14 @@ func (r BillUploadBillUploadCreateFileResponse) StatusCode() int {
 type BillUploadBillUploadCreateOperationResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *BillUploadBillUploadCreateOperationResponseBody
+	JSON400      *BillUploadBillUploadCreateOperationBadRequestResponseBody
+	JSON401      *BillUploadBillUploadCreateOperationUnauthorizedResponseBody
+	JSON403      *BillUploadBillUploadCreateOperationForbiddenResponseBody
+	JSON404      *BillUploadBillUploadCreateOperationNotFoundResponseBody
+	JSON429      *BillUploadBillUploadCreateOperationTooManyRequestsResponseBody
+	JSON500      *BillUploadBillUploadCreateOperationInternalErrorResponseBody
+	JSON502      *BillUploadBillUploadCreateOperationBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -218,6 +1472,65 @@ func ParseBillUploadBillUploadIndexResponse(rsp *http.Response) (*BillUploadBill
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillUploadBillUploadBillUploadResponseCollection
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BillUploadBillUploadIndexBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BillUploadBillUploadIndexUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillUploadBillUploadIndexForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillUploadBillUploadIndexNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest BillUploadBillUploadIndexTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillUploadBillUploadIndexInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillUploadBillUploadIndexBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -232,6 +1545,72 @@ func ParseBillUploadBillUploadCreateResponse(rsp *http.Response) (*BillUploadBil
 	response := &BillUploadBillUploadCreateResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest BillUploadBillUploadCreateResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BillUploadBillUploadCreateBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BillUploadBillUploadCreateUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillUploadBillUploadCreateForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillUploadBillUploadCreateNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest BillUploadBillUploadCreateConflictResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest BillUploadBillUploadCreateTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillUploadBillUploadCreateInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillUploadBillUploadCreateBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
 	}
 
 	return response, nil
@@ -250,6 +1629,58 @@ func ParseBillUploadBillUploadDeleteResponse(rsp *http.Response) (*BillUploadBil
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BillUploadBillUploadDeleteBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BillUploadBillUploadDeleteUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillUploadBillUploadDeleteForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillUploadBillUploadDeleteNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest BillUploadBillUploadDeleteTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillUploadBillUploadDeleteInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillUploadBillUploadDeleteBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -264,6 +1695,65 @@ func ParseBillUploadBillUploadShowResponse(rsp *http.Response) (*BillUploadBillU
 	response := &BillUploadBillUploadShowResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillUploadBillUploadShowResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BillUploadBillUploadShowBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BillUploadBillUploadShowUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillUploadBillUploadShowForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillUploadBillUploadShowNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest BillUploadBillUploadShowTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillUploadBillUploadShowInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillUploadBillUploadShowBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
 	}
 
 	return response, nil
@@ -282,6 +1772,79 @@ func ParseBillUploadBillUploadCreateFileResponse(rsp *http.Response) (*BillUploa
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest BillUploadBillUploadCreateFileResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BillUploadBillUploadCreateFileBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BillUploadBillUploadCreateFileUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillUploadBillUploadCreateFileForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillUploadBillUploadCreateFileNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest BillUploadBillUploadCreateFileConflictResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 413:
+		var dest BillUploadBillUploadCreateFileRequestEntityTooLargeResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON413 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest BillUploadBillUploadCreateFileTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillUploadBillUploadCreateFileInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillUploadBillUploadCreateFileBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -296,6 +1859,65 @@ func ParseBillUploadBillUploadCreateOperationResponse(rsp *http.Response) (*Bill
 	response := &BillUploadBillUploadCreateOperationResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillUploadBillUploadCreateOperationResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BillUploadBillUploadCreateOperationBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BillUploadBillUploadCreateOperationUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillUploadBillUploadCreateOperationForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillUploadBillUploadCreateOperationNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest BillUploadBillUploadCreateOperationTooManyRequestsResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillUploadBillUploadCreateOperationInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillUploadBillUploadCreateOperationBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
 	}
 
 	return response, nil

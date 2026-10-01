@@ -233,7 +233,7 @@ type FinopsBillingCreateRequestBody struct {
 	// EffectiveTo The month (exclusive) before which the rule applies, formatted YYYY-MM. Must be > effectiveFrom. Omit this field for no end date; the rule applies indefinitely. This is applicable on ChargePeriod only.
 	EffectiveTo *string `json:"effectiveTo,omitempty"`
 
-	// Name Display name for the shared cost rule. Must be unique within the organization.
+	// Name Display name for the shared cost rule. Must be unique within the organization. Must not contain "(", ")" or ">".
 	Name string `json:"name"`
 
 	// Source Dimensions that identify the costs to be reallocated. Multiple dimensions are combined using AND logic; only costs that satisfy every dimension are included. At least one dimension is required.
@@ -390,7 +390,7 @@ type FinopsBillingUpdateRequestBody struct {
 	// EffectiveTo Updated month (exclusive) before which the rule applies, formatted YYYY-MM. Must be > effectiveFrom. Omit this field for no end date; the rule applies indefinitely. This is applicable on ChargePeriod only.
 	EffectiveTo *string `json:"effectiveTo,omitempty"`
 
-	// Name Updated display name for the shared cost rule.
+	// Name Updated display name for the shared cost rule. Must not contain "(", ")" or ">".
 	Name *string `json:"name,omitempty"`
 
 	// Source Updated dimensions that identify the costs to be reallocated. Multiple dimensions are combined using AND logic; only costs that satisfy every dimension are included.
@@ -692,7 +692,7 @@ type FinopsBillingBillingCreditsIndexCreditAssignmentsParams struct {
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
 	// OrderBy Optional orderBy query allows to specify an expression for determining what values are used to order the entities.
-	//             Multiple expressions can be specified using comma separated values.
+	// Multiple expressions can be specified using comma separated values.
 	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
 
 	// Limit Return no more than limit values per page
@@ -746,7 +746,7 @@ type FinopsBillingBillingCreditsIndexVendorCreditsParams struct {
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
 	// OrderBy Optional orderBy query allows to specify an expression for determining what values are used to order the entities.
-	//             Multiple expressions can be specified using comma separated values.
+	// Multiple expressions can be specified using comma separated values.
 	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
 
 	// Limit Return no more than limit values per page

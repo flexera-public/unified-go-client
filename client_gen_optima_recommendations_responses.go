@@ -4,13 +4,355 @@ package flexera
 
 import (
 	"context"
+	"encoding/json"
+	openapi_types "github.com/oapi-codegen/runtime/types"
 	"io"
 	"net/http"
+	"strings"
+	"time"
 )
+
+// Defines values for OptimaRecommendationsRecommendationResultResponseKind.
+const (
+	OptimaRecommendation OptimaRecommendationsRecommendationResultResponseKind = "optima#recommendation"
+)
+
+// Defines values for OptimaRecommendationsRecommendationResultResponseType.
+const (
+	RateReduction  OptimaRecommendationsRecommendationResultResponseType = "Rate Reduction"
+	UsageReduction OptimaRecommendationsRecommendationResultResponseType = "Usage Reduction"
+)
+
+// OptimaRecommendationsDataFieldResponse Extended details data field
+type OptimaRecommendationsDataFieldResponse struct {
+	// Label Field Label
+	Label string `json:"label"`
+
+	// Value Field Value
+	Value interface{} `json:"value"`
+}
+
+// OptimaRecommendationsRecommendationResultResponse A cost-saving recommendation. (default view)
+type OptimaRecommendationsRecommendationResultResponse struct {
+	// AccountID The account ID
+	AccountID string `json:"accountID"`
+
+	// AccountName The account name
+	AccountName string `json:"accountName"`
+
+	// BillingCenterID The ID of the top-level billing center this recommendation is assigned to
+	BillingCenterID string `json:"billingCenterID"`
+
+	// BillingCenterName The name of the top-level billing center this recommendation is assigned to
+	BillingCenterName string `json:"billingCenterName"`
+
+	// CreatedAt Timestamp when the recommendation was created.
+	CreatedAt time.Time `json:"createdAt"`
+
+	// CustomTagDimensions The custom tag dimensions that could be populated by the raw tags of the recommendation.
+	CustomTagDimensions *map[string]string `json:"customTagDimensions,omitempty"`
+
+	// DatabaseEngine The database engine to purchase
+	DatabaseEngine string `json:"databaseEngine"`
+
+	// Details Additional details about the recommendation.
+	Details *map[string]interface{} `json:"details,omitempty"`
+
+	// DetailsExtended Extended details about the recommendation.
+	DetailsExtended *map[string]OptimaRecommendationsDataFieldResponse `json:"detailsExtended,omitempty"`
+
+	// Id The ID of the recommendation
+	Id string `json:"id"`
+
+	// IncidentID ID of the incident that recommendation belongs to
+	IncidentID string `json:"incidentID"`
+
+	// Kind The kind of object
+	Kind OptimaRecommendationsRecommendationResultResponseKind `json:"kind"`
+
+	// PolicySet The policy set, as a way to group similar policies together
+	PolicySet string `json:"policySet"`
+
+	// QuantityToPurchase Quantity to purchase (e.g. number of reserved instances)
+	QuantityToPurchase float64 `json:"quantityToPurchase"`
+
+	// Recommendation This is the name or category of recommendation
+	Recommendation string `json:"recommendation"`
+
+	// Region The region in which to purchase
+	Region string `json:"region"`
+
+	// ResourceGroup Azure Resource Group
+	ResourceGroup *string `json:"resourceGroup,omitempty"`
+
+	// ResourceID The ID of a resource identified in the recommendation
+	ResourceID string `json:"resourceID"`
+
+	// ResourceType The resource type, which might be an instance type or volume type, etc.
+	ResourceType string `json:"resourceType"`
+
+	// RuleBasedDimensions The rule based dimensions that are populated in recommendation once rules execute.
+	RuleBasedDimensions *map[string]string `json:"ruleBasedDimensions,omitempty"`
+
+	// Savings Expected dollar savings
+	Savings float64 `json:"savings"`
+
+	// Service The relevant service in which to purchase
+	Service string `json:"service"`
+
+	// SnoozedTargetDate Target date to move recommendation from snoozed to active again
+	SnoozedTargetDate *openapi_types.Date `json:"snoozedTargetDate,omitempty"`
+
+	// Status Current status of the recommendation
+	Status string `json:"status"`
+
+	// StatusReason Extra field to put extra reason once we change “status” value
+	StatusReason *string `json:"statusReason,omitempty"`
+
+	// StatusUpdatedAt Date when status was updated
+	StatusUpdatedAt *time.Time `json:"statusUpdatedAt,omitempty"`
+
+	// Tags The tags found on the resource
+	Tags []string `json:"tags"`
+
+	// Type Categorizes the type of recommendation
+	Type OptimaRecommendationsRecommendationResultResponseType `json:"type"`
+
+	// UpdatedAt Timestamp when the recommendation was updated.
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// Vendor The name of the cloud vendor
+	Vendor string `json:"vendor"`
+}
+
+// OptimaRecommendationsRecommendationResultResponseKind The kind of object
+type OptimaRecommendationsRecommendationResultResponseKind string
+
+// OptimaRecommendationsRecommendationResultResponseType Categorizes the type of recommendation
+type OptimaRecommendationsRecommendationResultResponseType string
+
+// OptimaRecommendationsRecommendationsIndexBadGatewayResponseBody index_bad_gateway_response_body result type (default view)
+type OptimaRecommendationsRecommendationsIndexBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsIndexBadRequestResponseBody index_bad_request_response_body result type (default view)
+type OptimaRecommendationsRecommendationsIndexBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsIndexConflictResponseBody index_conflict_response_body result type (default view)
+type OptimaRecommendationsRecommendationsIndexConflictResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsIndexForbiddenResponseBody index_forbidden_response_body result type (default view)
+type OptimaRecommendationsRecommendationsIndexForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsIndexNotFoundResponseBody index_not_found_response_body result type (default view)
+type OptimaRecommendationsRecommendationsIndexNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsRecommendationResultResponseCollection IndexResponseBody is the result type for an array of RecommendationResultResponse (default view)
+type OptimaRecommendationsRecommendationsRecommendationResultResponseCollection = []OptimaRecommendationsRecommendationResultResponse
+
+// OptimaRecommendationsRecommendationsUpdateStatusBadGatewayResponseBody updateStatus_bad_gateway_response_body result type (default view)
+type OptimaRecommendationsRecommendationsUpdateStatusBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsUpdateStatusBadRequestResponseBody updateStatus_bad_request_response_body result type (default view)
+type OptimaRecommendationsRecommendationsUpdateStatusBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsUpdateStatusConflictResponseBody updateStatus_conflict_response_body result type (default view)
+type OptimaRecommendationsRecommendationsUpdateStatusConflictResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsUpdateStatusForbiddenResponseBody updateStatus_forbidden_response_body result type (default view)
+type OptimaRecommendationsRecommendationsUpdateStatusForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsUpdateStatusNotFoundResponseBody updateStatus_not_found_response_body result type (default view)
+type OptimaRecommendationsRecommendationsUpdateStatusNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
 
 type OptimaRecommendationsRecommendationsIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *OptimaRecommendationsRecommendationsRecommendationResultResponseCollection
+	JSON400      *OptimaRecommendationsRecommendationsIndexBadRequestResponseBody
+	JSON403      *OptimaRecommendationsRecommendationsIndexForbiddenResponseBody
+	JSON404      *OptimaRecommendationsRecommendationsIndexNotFoundResponseBody
+	JSON409      *OptimaRecommendationsRecommendationsIndexConflictResponseBody
+	JSON502      *OptimaRecommendationsRecommendationsIndexBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -32,6 +374,11 @@ func (r OptimaRecommendationsRecommendationsIndexResponse) StatusCode() int {
 type OptimaRecommendationsRecommendationsUpdateStatusResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *OptimaRecommendationsRecommendationsUpdateStatusBadRequestResponseBody
+	JSON403      *OptimaRecommendationsRecommendationsUpdateStatusForbiddenResponseBody
+	JSON404      *OptimaRecommendationsRecommendationsUpdateStatusNotFoundResponseBody
+	JSON409      *OptimaRecommendationsRecommendationsUpdateStatusConflictResponseBody
+	JSON502      *OptimaRecommendationsRecommendationsUpdateStatusBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -51,8 +398,8 @@ func (r OptimaRecommendationsRecommendationsUpdateStatusResponse) StatusCode() i
 }
 
 // OptimaRecommendationsRecommendationsIndexWithResponse request returning *OptimaRecommendationsRecommendationsIndexResponse
-func (c *ClientWithResponses) OptimaRecommendationsRecommendationsIndexWithResponse(ctx context.Context, orgID int, params *OptimaRecommendationsRecommendationsIndexParams, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsIndexResponse, error) {
-	rsp, err := c.OptimaRecommendationsRecommendationsIndex(ctx, orgID, params, reqEditors...)
+func (c *ClientWithResponses) OptimaRecommendationsRecommendationsIndexWithResponse(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsIndexParams, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsIndexResponse, error) {
+	rsp, err := c.OptimaRecommendationsRecommendationsIndex(ctx, orgId, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -60,16 +407,16 @@ func (c *ClientWithResponses) OptimaRecommendationsRecommendationsIndexWithRespo
 }
 
 // OptimaRecommendationsRecommendationsUpdateStatusWithBodyWithResponse request with arbitrary body returning *OptimaRecommendationsRecommendationsUpdateStatusResponse
-func (c *ClientWithResponses) OptimaRecommendationsRecommendationsUpdateStatusWithBodyWithResponse(ctx context.Context, orgID int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsUpdateStatusResponse, error) {
-	rsp, err := c.OptimaRecommendationsRecommendationsUpdateStatusWithBody(ctx, orgID, contentType, body, reqEditors...)
+func (c *ClientWithResponses) OptimaRecommendationsRecommendationsUpdateStatusWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsUpdateStatusResponse, error) {
+	rsp, err := c.OptimaRecommendationsRecommendationsUpdateStatusWithBody(ctx, orgId, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseOptimaRecommendationsRecommendationsUpdateStatusResponse(rsp)
 }
 
-func (c *ClientWithResponses) OptimaRecommendationsRecommendationsUpdateStatusWithResponse(ctx context.Context, orgID int, body OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsUpdateStatusResponse, error) {
-	rsp, err := c.OptimaRecommendationsRecommendationsUpdateStatus(ctx, orgID, body, reqEditors...)
+func (c *ClientWithResponses) OptimaRecommendationsRecommendationsUpdateStatusWithResponse(ctx context.Context, orgId int, body OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsUpdateStatusResponse, error) {
+	rsp, err := c.OptimaRecommendationsRecommendationsUpdateStatus(ctx, orgId, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -89,6 +436,51 @@ func ParseOptimaRecommendationsRecommendationsIndexResponse(rsp *http.Response) 
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest OptimaRecommendationsRecommendationsRecommendationResultResponseCollection
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest OptimaRecommendationsRecommendationsIndexBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest OptimaRecommendationsRecommendationsIndexForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest OptimaRecommendationsRecommendationsIndexNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest OptimaRecommendationsRecommendationsIndexConflictResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest OptimaRecommendationsRecommendationsIndexBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -103,6 +495,44 @@ func ParseOptimaRecommendationsRecommendationsUpdateStatusResponse(rsp *http.Res
 	response := &OptimaRecommendationsRecommendationsUpdateStatusResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest OptimaRecommendationsRecommendationsUpdateStatusBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest OptimaRecommendationsRecommendationsUpdateStatusForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest OptimaRecommendationsRecommendationsUpdateStatusNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest OptimaRecommendationsRecommendationsUpdateStatusConflictResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest OptimaRecommendationsRecommendationsUpdateStatusBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
 	}
 
 	return response, nil

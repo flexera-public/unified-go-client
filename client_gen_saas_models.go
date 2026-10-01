@@ -230,8 +230,8 @@ const (
 
 // Defines values for SaasImportSettingsLoadType.
 const (
-	SaasImportSettingsLoadTypeFull        SaasImportSettingsLoadType = "full"
-	SaasImportSettingsLoadTypeIncremental SaasImportSettingsLoadType = "incremental"
+	Full        SaasImportSettingsLoadType = "full"
+	Incremental SaasImportSettingsLoadType = "incremental"
 )
 
 // Defines values for SaasImportSettingsTaskName.

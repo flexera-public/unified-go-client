@@ -4,13 +4,2456 @@ package flexera
 
 import (
 	"context"
+	"encoding/json"
 	"io"
 	"net/http"
+	"strings"
+	"time"
 )
+
+// Defines values for BillingCenterServiceAllocationTableResponseBodyKind.
+const (
+	BillingCenterServiceAllocationTableResponseBodyKindOptimaAllocationTable BillingCenterServiceAllocationTableResponseBodyKind = "optima#allocation_table"
+)
+
+// Defines values for BillingCenterServiceAllocationTableShowResponseBodyKind.
+const (
+	BillingCenterServiceAllocationTableShowResponseBodyKindOptimaAllocationTable BillingCenterServiceAllocationTableShowResponseBodyKind = "optima#allocation_table"
+)
+
+// Defines values for BillingCenterServiceBillingCenterResponseKind.
+const (
+	BillingCenterServiceBillingCenterResponseKindOptimaBillingCenter BillingCenterServiceBillingCenterResponseKind = "optima#billing_center"
+)
+
+// Defines values for BillingCenterServiceBillingCenterResponseTinyKind.
+const (
+	BillingCenterServiceBillingCenterResponseTinyKindOptimaBillingCenter BillingCenterServiceBillingCenterResponseTinyKind = "optima#billing_center"
+)
+
+// Defines values for BillingCenterServiceBillingCentersCreateResponseBodyKind.
+const (
+	BillingCenterServiceBillingCentersCreateResponseBodyKindOptimaBillingCenter BillingCenterServiceBillingCentersCreateResponseBodyKind = "optima#billing_center"
+)
+
+// Defines values for BillingCenterServiceBillingCentersShowAllocationTableResponseBodyKind.
+const (
+	OptimaAllocationTable BillingCenterServiceBillingCentersShowAllocationTableResponseBodyKind = "optima#allocation_table"
+)
+
+// Defines values for BillingCenterServiceBillingCentersShowResponseBodyKind.
+const (
+	BillingCenterServiceBillingCentersShowResponseBodyKindOptimaBillingCenter BillingCenterServiceBillingCentersShowResponseBodyKind = "optima#billing_center"
+)
+
+// Defines values for BillingCenterServiceSubjectInfoResponseKind.
+const (
+	BillingCenterServiceSubjectInfoResponseKindGroup          BillingCenterServiceSubjectInfoResponseKind = "group"
+	BillingCenterServiceSubjectInfoResponseKindServiceAccount BillingCenterServiceSubjectInfoResponseKind = "service-account"
+	BillingCenterServiceSubjectInfoResponseKindUser           BillingCenterServiceSubjectInfoResponseKind = "user"
+)
+
+// Defines values for BillingCenterServiceUserBillingCenterResponseKind.
+const (
+	BillingCenterServiceUserBillingCenterResponseKindOptimaUserBillingCenter BillingCenterServiceUserBillingCenterResponseKind = "optima#user_billing_center"
+)
+
+// Defines values for BillingCenterServiceUserBillingCentersShowResponseBodyKind.
+const (
+	BillingCenterServiceUserBillingCentersShowResponseBodyKindOptimaUserBillingCenter BillingCenterServiceUserBillingCentersShowResponseBodyKind = "optima#user_billing_center"
+)
+
+// BillingCenterServiceAccessRuleTinyResponse defines model for BillingCenterService_AccessRuleTinyResponse.
+type BillingCenterServiceAccessRuleTinyResponse struct {
+	CreatedAt time.Time                           `json:"created_at"`
+	ExpiresAt time.Time                           `json:"expires_at"`
+	Inherited bool                                `json:"inherited"`
+	Role      BillingCenterServiceRoleRefResponse `json:"role"`
+}
+
+// BillingCenterServiceAccessRulesGroupReportBadGatewayResponseBody group_report_bad_gateway_response_body result type (default view)
+type BillingCenterServiceAccessRulesGroupReportBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAccessRulesGroupReportForbiddenResponseBody group_report_forbidden_response_body result type (default view)
+type BillingCenterServiceAccessRulesGroupReportForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAccessRulesGroupReportInternalErrorResponseBody group_report_internal_error_response_body result type (default view)
+type BillingCenterServiceAccessRulesGroupReportInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAccessRulesGroupReportNotFoundResponseBody group_report_not_found_response_body result type (default view)
+type BillingCenterServiceAccessRulesGroupReportNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAccessRulesGroupReportUnauthorizedResponseBody group_report_unauthorized_response_body result type (default view)
+type BillingCenterServiceAccessRulesGroupReportUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAccessRulesScopeRoleReportResponseCollection user_report_response_body is the result type for an array of ScopeRoleReportResponse (default view)
+type BillingCenterServiceAccessRulesScopeRoleReportResponseCollection = []BillingCenterServiceScopeRoleReportResponse
+
+// BillingCenterServiceAccessRulesUserReportBadGatewayResponseBody user_report_bad_gateway_response_body result type (default view)
+type BillingCenterServiceAccessRulesUserReportBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAccessRulesUserReportForbiddenResponseBody user_report_forbidden_response_body result type (default view)
+type BillingCenterServiceAccessRulesUserReportForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAccessRulesUserReportInternalErrorResponseBody user_report_internal_error_response_body result type (default view)
+type BillingCenterServiceAccessRulesUserReportInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAccessRulesUserReportNotFoundResponseBody user_report_not_found_response_body result type (default view)
+type BillingCenterServiceAccessRulesUserReportNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAccessRulesUserReportUnauthorizedResponseBody user_report_unauthorized_response_body result type (default view)
+type BillingCenterServiceAccessRulesUserReportUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAllocationRuleResourceGroupResponse An Azure Resource Group name, combined with a Cloud Vendor Account, that is associated with an
+// Allocation Rule.
+type BillingCenterServiceAllocationRuleResourceGroupResponse struct {
+	// CloudVendorAccountId The Cloud Vendor Account (i.e. Azure Subscription Identifier) with which the Resource Group is associated.
+	CloudVendorAccountId string `json:"cloud_vendor_account_id"`
+
+	// Name The Azure Resource Group Name
+	Name string `json:"name"`
+}
+
+// BillingCenterServiceAllocationRuleResourceGroupResponseBody An Azure Resource Group name, combined with a Cloud Vendor Account, that is associated with an
+// Allocation Rule.
+type BillingCenterServiceAllocationRuleResourceGroupResponseBody struct {
+	// CloudVendorAccountId The Cloud Vendor Account (i.e. Azure Subscription Identifier) with which the Resource Group is associated.
+	CloudVendorAccountId string `json:"cloud_vendor_account_id"`
+
+	// Name The Azure Resource Group Name
+	Name string `json:"name"`
+}
+
+// BillingCenterServiceAllocationRuleResponse AllocationRule maps a tag, cloud vendor account, or Azure resource group to a specific BillingCenter.
+// One and only one of "tag", "cloud_vendor_account_ids" or "resource_groups" must be specified.
+type BillingCenterServiceAllocationRuleResponse struct {
+	BillingCenter BillingCenterServiceBillingCenterRefResponse `json:"billing_center"`
+
+	// CloudVendorAccountIds CloudVendorAccountIDs (for example ["aws:<AwsAccountNumber>"])
+	CloudVendorAccountIds *[]string `json:"cloud_vendor_account_ids,omitempty"`
+
+	// ResourceGroups Collection of Allocation Rule Resource Groups
+	ResourceGroups *[]BillingCenterServiceAllocationRuleResourceGroupResponse `json:"resource_groups,omitempty"`
+
+	// Tag full tag
+	Tag *string `json:"tag,omitempty"`
+}
+
+// BillingCenterServiceAllocationRuleResponseBody AllocationRule maps a tag, cloud vendor account, or Azure resource group to a specific BillingCenter.
+// One and only one of "tag", "cloud_vendor_account_ids" or "resource_groups" must be specified.
+type BillingCenterServiceAllocationRuleResponseBody struct {
+	BillingCenter BillingCenterServiceBillingCenterRefResponseBody `json:"billing_center"`
+
+	// CloudVendorAccountIds CloudVendorAccountIDs (for example ["aws:<AwsAccountNumber>"])
+	CloudVendorAccountIds *[]string `json:"cloud_vendor_account_ids,omitempty"`
+
+	// ResourceGroups Collection of Allocation Rule Resource Groups
+	ResourceGroups *[]BillingCenterServiceAllocationRuleResourceGroupResponseBody `json:"resource_groups,omitempty"`
+
+	// Tag full tag
+	Tag *string `json:"tag,omitempty"`
+}
+
+// BillingCenterServiceAllocationTableResponseBody An AllocationTable consists of an ordered list of allocationRules. (default view)
+type BillingCenterServiceAllocationTableResponseBody struct {
+	// AllocationRules Ordered list of AllocationRules mapping tags/payerAccounts to BillingCenters
+	AllocationRules []BillingCenterServiceAllocationRuleResponseBody `json:"allocation_rules"`
+
+	// CreatedAt The date and time of creation of this Allocation Table
+	CreatedAt time.Time `json:"created_at"`
+
+	// Href The href for this resource
+	Href string `json:"href"`
+
+	// Kind The kind of object
+	Kind BillingCenterServiceAllocationTableResponseBodyKind `json:"kind"`
+
+	// SequenceNumber The version sequence number
+	SequenceNumber *int64 `json:"sequence_number,omitempty"`
+
+	// UpdatedAt The date and time of this Allocation Table's last update
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// BillingCenterServiceAllocationTableResponseBodyKind The kind of object
+type BillingCenterServiceAllocationTableResponseBodyKind string
+
+// BillingCenterServiceAllocationTableShowBadGatewayResponseBody show_bad_gateway_response_body result type (default view)
+type BillingCenterServiceAllocationTableShowBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAllocationTableShowForbiddenResponseBody show_forbidden_response_body result type (default view)
+type BillingCenterServiceAllocationTableShowForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAllocationTableShowInternalErrorResponseBody show_internal_error_response_body result type (default view)
+type BillingCenterServiceAllocationTableShowInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAllocationTableShowNotFoundResponseBody show_not_found_response_body result type (default view)
+type BillingCenterServiceAllocationTableShowNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAllocationTableShowResponseBody ShowResponseBody result type (default view)
+type BillingCenterServiceAllocationTableShowResponseBody struct {
+	// AllocationRules Ordered list of AllocationRules mapping tags/payerAccounts to BillingCenters
+	AllocationRules []BillingCenterServiceAllocationRuleResponseBody `json:"allocation_rules"`
+
+	// CreatedAt The date and time of creation of this Allocation Table
+	CreatedAt time.Time `json:"created_at"`
+
+	// Href The href for this resource
+	Href string `json:"href"`
+
+	// Kind The kind of object
+	Kind BillingCenterServiceAllocationTableShowResponseBodyKind `json:"kind"`
+
+	// SequenceNumber The version sequence number
+	SequenceNumber *int64 `json:"sequence_number,omitempty"`
+
+	// UpdatedAt The date and time of this Allocation Table's last update
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// BillingCenterServiceAllocationTableShowResponseBodyKind The kind of object
+type BillingCenterServiceAllocationTableShowResponseBodyKind string
+
+// BillingCenterServiceAllocationTableUpsertBadGatewayResponseBody upsert_bad_gateway_response_body result type (default view)
+type BillingCenterServiceAllocationTableUpsertBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAllocationTableUpsertBadRequestResponseBody upsert_bad_request_response_body result type (default view)
+type BillingCenterServiceAllocationTableUpsertBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAllocationTableUpsertConflictResponseBody upsert_conflict_response_body result type (default view)
+type BillingCenterServiceAllocationTableUpsertConflictResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAllocationTableUpsertForbiddenResponseBody upsert_forbidden_response_body result type (default view)
+type BillingCenterServiceAllocationTableUpsertForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAllocationTableUpsertInternalErrorResponseBody upsert_internal_error_response_body result type (default view)
+type BillingCenterServiceAllocationTableUpsertInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceAllocationTableUpsertNotFoundResponseBody upsert_not_found_response_body result type (default view)
+type BillingCenterServiceAllocationTableUpsertNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCenterAccessRulesGrantBadGatewayResponseBody grant_bad_gateway_response_body result type (default view)
+type BillingCenterServiceBillingCenterAccessRulesGrantBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCenterAccessRulesGrantBadRequestResponseBody grant_bad_request_response_body result type (default view)
+type BillingCenterServiceBillingCenterAccessRulesGrantBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCenterAccessRulesGrantForbiddenResponseBody grant_forbidden_response_body result type (default view)
+type BillingCenterServiceBillingCenterAccessRulesGrantForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCenterAccessRulesGrantInternalErrorResponseBody grant_internal_error_response_body result type (default view)
+type BillingCenterServiceBillingCenterAccessRulesGrantInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCenterAccessRulesReportBadGatewayResponseBody report_bad_gateway_response_body result type (default view)
+type BillingCenterServiceBillingCenterAccessRulesReportBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCenterAccessRulesReportForbiddenResponseBody report_forbidden_response_body result type (default view)
+type BillingCenterServiceBillingCenterAccessRulesReportForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCenterAccessRulesReportInternalErrorResponseBody report_internal_error_response_body result type (default view)
+type BillingCenterServiceBillingCenterAccessRulesReportInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCenterAccessRulesReportNotFoundResponseBody report_not_found_response_body result type (default view)
+type BillingCenterServiceBillingCenterAccessRulesReportNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCenterAccessRulesRevokeBadGatewayResponseBody revoke_bad_gateway_response_body result type (default view)
+type BillingCenterServiceBillingCenterAccessRulesRevokeBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCenterAccessRulesRevokeBadRequestResponseBody revoke_bad_request_response_body result type (default view)
+type BillingCenterServiceBillingCenterAccessRulesRevokeBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCenterAccessRulesRevokeForbiddenResponseBody revoke_forbidden_response_body result type (default view)
+type BillingCenterServiceBillingCenterAccessRulesRevokeForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCenterAccessRulesRevokeInternalErrorResponseBody revoke_internal_error_response_body result type (default view)
+type BillingCenterServiceBillingCenterAccessRulesRevokeInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCenterAccessRulesSubjectRoleReportResponseCollection ReportResponseBody is the result type for an array of SubjectRoleReportResponse (default view)
+type BillingCenterServiceBillingCenterAccessRulesSubjectRoleReportResponseCollection = []BillingCenterServiceSubjectRoleReportResponse
+
+// BillingCenterServiceBillingCenterNodeResponse defines model for BillingCenterService_BillingCenterNodeResponse.
+type BillingCenterServiceBillingCenterNodeResponse struct {
+	// CreatedAt The timestamp the BillingCenter was created
+	CreatedAt time.Time `json:"created_at"`
+
+	// Id Unique ID of the BillingCenter
+	Id string `json:"id"`
+
+	// Name Name of the BillingCenter
+	Name string `json:"name"`
+}
+
+// BillingCenterServiceBillingCenterNodeResponseBody defines model for BillingCenterService_BillingCenterNodeResponseBody.
+type BillingCenterServiceBillingCenterNodeResponseBody struct {
+	// CreatedAt The timestamp the BillingCenter was created
+	CreatedAt time.Time `json:"created_at"`
+
+	// Id Unique ID of the BillingCenter
+	Id string `json:"id"`
+
+	// Name Name of the BillingCenter
+	Name string `json:"name"`
+}
+
+// BillingCenterServiceBillingCenterRefResponse defines model for BillingCenterService_BillingCenterRefResponse.
+type BillingCenterServiceBillingCenterRefResponse struct {
+	// Href API reference of billing center
+	Href string `json:"href"`
+}
+
+// BillingCenterServiceBillingCenterRefResponseBody defines model for BillingCenterService_BillingCenterRefResponseBody.
+type BillingCenterServiceBillingCenterRefResponseBody struct {
+	// Href API reference of billing center
+	Href string `json:"href"`
+}
+
+// BillingCenterServiceBillingCenterResponse Resource for tracking and reporting on billing information (default view)
+type BillingCenterServiceBillingCenterResponse struct {
+	// AncestorIds Ancestor Billing Center IDs
+	AncestorIds *[]string `json:"ancestor_ids,omitempty"`
+
+	// CreatedAt The date and time of creation of the BillingCenter
+	CreatedAt time.Time `json:"created_at"`
+
+	// Description Description of the BillingCenter
+	Description string `json:"description"`
+
+	// Href The href for this resource
+	Href string `json:"href"`
+
+	// Id Unique ID for the BillingCenter
+	Id string `json:"id"`
+
+	// Kind The kind of object
+	Kind BillingCenterServiceBillingCenterResponseKind `json:"kind"`
+
+	// Name Name of the BillingCenter
+	Name string `json:"name"`
+
+	// ParentId ID of parent
+	ParentId *string `json:"parent_id,omitempty"`
+
+	// UpdatedAt The date and time of the BillingCenter's last update
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// BillingCenterServiceBillingCenterResponseKind The kind of object
+type BillingCenterServiceBillingCenterResponseKind string
+
+// BillingCenterServiceBillingCenterResponseTiny Resource for tracking and reporting on billing information (tiny view) (default view)
+type BillingCenterServiceBillingCenterResponseTiny struct {
+	// Href The href for this resource
+	Href string `json:"href"`
+
+	// Id Unique ID for the BillingCenter
+	Id string `json:"id"`
+
+	// Kind The kind of object
+	Kind BillingCenterServiceBillingCenterResponseTinyKind `json:"kind"`
+
+	// Name Name of the BillingCenter
+	Name string `json:"name"`
+}
+
+// BillingCenterServiceBillingCenterResponseTinyKind The kind of object
+type BillingCenterServiceBillingCenterResponseTinyKind string
+
+// BillingCenterServiceBillingCentersBillingCenterResponseCollection IndexResponseBody is the result type for an array of BillingCenterResponse (default view)
+type BillingCenterServiceBillingCentersBillingCenterResponseCollection = []BillingCenterServiceBillingCenterResponse
+
+// BillingCenterServiceBillingCentersCreateBadGatewayResponseBody create_bad_gateway_response_body result type (default view)
+type BillingCenterServiceBillingCentersCreateBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersCreateBadRequestResponseBody create_bad_request_response_body result type (default view)
+type BillingCenterServiceBillingCentersCreateBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersCreateConflictResponseBody create_conflict_response_body result type (default view)
+type BillingCenterServiceBillingCentersCreateConflictResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersCreateForbiddenResponseBody create_forbidden_response_body result type (default view)
+type BillingCenterServiceBillingCentersCreateForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersCreateInternalErrorResponseBody create_internal_error_response_body result type (default view)
+type BillingCenterServiceBillingCentersCreateInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersCreateNotFoundResponseBody create_not_found_response_body result type (default view)
+type BillingCenterServiceBillingCentersCreateNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersCreateResponseBody defines model for BillingCenterService_BillingCentersCreateResponseBody.
+type BillingCenterServiceBillingCentersCreateResponseBody struct {
+	// AllocationTable An AllocationTable consists of an ordered list of allocationRules. (default view)
+	AllocationTable *BillingCenterServiceAllocationTableResponseBody `json:"allocation_table,omitempty"`
+
+	// AncestorIds Ancestor Billing Center IDs
+	AncestorIds *[]string                                            `json:"ancestor_ids,omitempty"`
+	Ancestors   *[]BillingCenterServiceBillingCenterNodeResponseBody `json:"ancestors,omitempty"`
+	Children    *[]BillingCenterServiceBillingCenterNodeResponseBody `json:"children,omitempty"`
+
+	// CreatedAt The date and time of creation of the BillingCenter
+	CreatedAt time.Time `json:"created_at"`
+
+	// Description Description of the BillingCenter
+	Description string `json:"description"`
+
+	// Href The href for this resource
+	Href string `json:"href"`
+
+	// Id Unique ID for the BillingCenter
+	Id string `json:"id"`
+
+	// Kind The kind of object
+	Kind BillingCenterServiceBillingCentersCreateResponseBodyKind `json:"kind"`
+
+	// Name Name of the BillingCenter
+	Name   string                                             `json:"name"`
+	Parent *BillingCenterServiceBillingCenterNodeResponseBody `json:"parent,omitempty"`
+
+	// ParentId ID of parent
+	ParentId *string `json:"parent_id,omitempty"`
+
+	// UpdatedAt The date and time of the BillingCenter's last update
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// BillingCenterServiceBillingCentersCreateResponseBodyKind The kind of object
+type BillingCenterServiceBillingCentersCreateResponseBodyKind string
+
+// BillingCenterServiceBillingCentersCreateServiceUnavailableResponseBody create_service_unavailable_response_body result type (default view)
+type BillingCenterServiceBillingCentersCreateServiceUnavailableResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersCreateUnauthorizedResponseBody create_unauthorized_response_body result type (default view)
+type BillingCenterServiceBillingCentersCreateUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersCreateUnprocessableEntityResponseBody create_unprocessable_entity_response_body result type (default view)
+type BillingCenterServiceBillingCentersCreateUnprocessableEntityResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersDeleteBadGatewayResponseBody delete_bad_gateway_response_body result type (default view)
+type BillingCenterServiceBillingCentersDeleteBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersDeleteForbiddenResponseBody delete_forbidden_response_body result type (default view)
+type BillingCenterServiceBillingCentersDeleteForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersDeleteInternalErrorResponseBody delete_internal_error_response_body result type (default view)
+type BillingCenterServiceBillingCentersDeleteInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersDeleteMethodNotAllowedResponseBody delete_method_not_allowed_response_body result type (default view)
+type BillingCenterServiceBillingCentersDeleteMethodNotAllowedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersDeleteNotFoundResponseBody delete_not_found_response_body result type (default view)
+type BillingCenterServiceBillingCentersDeleteNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersDeleteServiceUnavailableResponseBody delete_service_unavailable_response_body result type (default view)
+type BillingCenterServiceBillingCentersDeleteServiceUnavailableResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersDeleteUnauthorizedResponseBody delete_unauthorized_response_body result type (default view)
+type BillingCenterServiceBillingCentersDeleteUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersIndexBadGatewayResponseBody index_bad_gateway_response_body result type (default view)
+type BillingCenterServiceBillingCentersIndexBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersIndexForbiddenResponseBody index_forbidden_response_body result type (default view)
+type BillingCenterServiceBillingCentersIndexForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersIndexInternalErrorResponseBody index_internal_error_response_body result type (default view)
+type BillingCenterServiceBillingCentersIndexInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersIndexNotFoundResponseBody index_not_found_response_body result type (default view)
+type BillingCenterServiceBillingCentersIndexNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersIndexServiceUnavailableResponseBody index_service_unavailable_response_body result type (default view)
+type BillingCenterServiceBillingCentersIndexServiceUnavailableResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersIndexUnauthorizedResponseBody index_unauthorized_response_body result type (default view)
+type BillingCenterServiceBillingCentersIndexUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersShowAllocationTableBadGatewayResponseBody show_allocation_table_bad_gateway_response_body result type (default view)
+type BillingCenterServiceBillingCentersShowAllocationTableBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersShowAllocationTableForbiddenResponseBody show_allocation_table_forbidden_response_body result type (default view)
+type BillingCenterServiceBillingCentersShowAllocationTableForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersShowAllocationTableInternalErrorResponseBody show_allocation_table_internal_error_response_body result type (default view)
+type BillingCenterServiceBillingCentersShowAllocationTableInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersShowAllocationTableNotFoundResponseBody show_allocation_table_not_found_response_body result type (default view)
+type BillingCenterServiceBillingCentersShowAllocationTableNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersShowAllocationTableResponseBody show_allocation_table_response_body result type (default view)
+type BillingCenterServiceBillingCentersShowAllocationTableResponseBody struct {
+	// AllocationRules Ordered list of AllocationRules mapping tags/payerAccounts to BillingCenters
+	AllocationRules []BillingCenterServiceAllocationRuleResponseBody `json:"allocation_rules"`
+
+	// CreatedAt The date and time of creation of this Allocation Table
+	CreatedAt time.Time `json:"created_at"`
+
+	// Href The href for this resource
+	Href string `json:"href"`
+
+	// Kind The kind of object
+	Kind BillingCenterServiceBillingCentersShowAllocationTableResponseBodyKind `json:"kind"`
+
+	// SequenceNumber The version sequence number
+	SequenceNumber *int64 `json:"sequence_number,omitempty"`
+
+	// UpdatedAt The date and time of this Allocation Table's last update
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// BillingCenterServiceBillingCentersShowAllocationTableResponseBodyKind The kind of object
+type BillingCenterServiceBillingCentersShowAllocationTableResponseBodyKind string
+
+// BillingCenterServiceBillingCentersShowAllocationTableServiceUnavailableResponseBody show_allocation_table_service_unavailable_response_body result type (default view)
+type BillingCenterServiceBillingCentersShowAllocationTableServiceUnavailableResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersShowAllocationTableUnauthorizedResponseBody show_allocation_table_unauthorized_response_body result type (default view)
+type BillingCenterServiceBillingCentersShowAllocationTableUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersShowBadGatewayResponseBody show_bad_gateway_response_body result type (default view)
+type BillingCenterServiceBillingCentersShowBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersShowForbiddenResponseBody show_forbidden_response_body result type (default view)
+type BillingCenterServiceBillingCentersShowForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersShowInternalErrorResponseBody show_internal_error_response_body result type (default view)
+type BillingCenterServiceBillingCentersShowInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersShowNotFoundResponseBody show_not_found_response_body result type (default view)
+type BillingCenterServiceBillingCentersShowNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersShowResponseBody children (default view)
+type BillingCenterServiceBillingCentersShowResponseBody struct {
+	// AncestorIds Ancestor Billing Center IDs
+	AncestorIds *[]string `json:"ancestor_ids,omitempty"`
+
+	// CreatedAt The date and time of creation of the BillingCenter
+	CreatedAt time.Time `json:"created_at"`
+
+	// Description Description of the BillingCenter
+	Description string `json:"description"`
+
+	// Href The href for this resource
+	Href string `json:"href"`
+
+	// Id Unique ID for the BillingCenter
+	Id string `json:"id"`
+
+	// Kind The kind of object
+	Kind BillingCenterServiceBillingCentersShowResponseBodyKind `json:"kind"`
+
+	// Name Name of the BillingCenter
+	Name string `json:"name"`
+
+	// ParentId ID of parent
+	ParentId *string `json:"parent_id,omitempty"`
+
+	// UpdatedAt The date and time of the BillingCenter's last update
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// BillingCenterServiceBillingCentersShowResponseBodyKind The kind of object
+type BillingCenterServiceBillingCentersShowResponseBodyKind string
+
+// BillingCenterServiceBillingCentersShowServiceUnavailableResponseBody show_service_unavailable_response_body result type (default view)
+type BillingCenterServiceBillingCentersShowServiceUnavailableResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersShowUnauthorizedResponseBody show_unauthorized_response_body result type (default view)
+type BillingCenterServiceBillingCentersShowUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersUpdateBadGatewayResponseBody update_bad_gateway_response_body result type (default view)
+type BillingCenterServiceBillingCentersUpdateBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersUpdateBadRequestResponseBody update_bad_request_response_body result type (default view)
+type BillingCenterServiceBillingCentersUpdateBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersUpdateConflictResponseBody update_conflict_response_body result type (default view)
+type BillingCenterServiceBillingCentersUpdateConflictResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersUpdateForbiddenResponseBody update_forbidden_response_body result type (default view)
+type BillingCenterServiceBillingCentersUpdateForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersUpdateInternalErrorResponseBody update_internal_error_response_body result type (default view)
+type BillingCenterServiceBillingCentersUpdateInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersUpdateMethodNotAllowedResponseBody update_method_not_allowed_response_body result type (default view)
+type BillingCenterServiceBillingCentersUpdateMethodNotAllowedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersUpdateNotFoundResponseBody update_not_found_response_body result type (default view)
+type BillingCenterServiceBillingCentersUpdateNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersUpdateServiceUnavailableResponseBody update_service_unavailable_response_body result type (default view)
+type BillingCenterServiceBillingCentersUpdateServiceUnavailableResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersUpdateUnauthorizedResponseBody update_unauthorized_response_body result type (default view)
+type BillingCenterServiceBillingCentersUpdateUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersUpsertAllocationTableBadGatewayResponseBody upsert_allocation_table_bad_gateway_response_body result type (default view)
+type BillingCenterServiceBillingCentersUpsertAllocationTableBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersUpsertAllocationTableBadRequestResponseBody upsert_allocation_table_bad_request_response_body result type (default view)
+type BillingCenterServiceBillingCentersUpsertAllocationTableBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersUpsertAllocationTableConflictResponseBody upsert_allocation_table_conflict_response_body result type (default view)
+type BillingCenterServiceBillingCentersUpsertAllocationTableConflictResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersUpsertAllocationTableForbiddenResponseBody upsert_allocation_table_forbidden_response_body result type (default view)
+type BillingCenterServiceBillingCentersUpsertAllocationTableForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersUpsertAllocationTableInternalErrorResponseBody upsert_allocation_table_internal_error_response_body result type (default view)
+type BillingCenterServiceBillingCentersUpsertAllocationTableInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersUpsertAllocationTableNotFoundResponseBody upsert_allocation_table_not_found_response_body result type (default view)
+type BillingCenterServiceBillingCentersUpsertAllocationTableNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersUpsertAllocationTableServiceUnavailableResponseBody upsert_allocation_table_service_unavailable_response_body result type (default view)
+type BillingCenterServiceBillingCentersUpsertAllocationTableServiceUnavailableResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceBillingCentersUpsertAllocationTableUnauthorizedResponseBody upsert_allocation_table_unauthorized_response_body result type (default view)
+type BillingCenterServiceBillingCentersUpsertAllocationTableUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceInvalidAllocationTableRuleErrorResponse Invalid AllocationTableRule error describes why a rule is invalid
+type BillingCenterServiceInvalidAllocationTableRuleErrorResponse struct {
+	// AllocationRule AllocationRule maps a tag, cloud vendor account, or Azure resource group to a specific BillingCenter.
+	// One and only one of "tag", "cloud_vendor_account_ids" or "resource_groups" must be specified.
+	AllocationRule BillingCenterServiceAllocationRuleResponse `json:"allocation_rule"`
+
+	// ErrorMessage The description why this AllocationTable Rule is invalid
+	ErrorMessage string `json:"error_message"`
+
+	// RuleIndex The index of this rule within the allocation table rules.
+	RuleIndex int64 `json:"rule_index"`
+}
+
+// BillingCenterServiceRoleRefResponse defines model for BillingCenterService_RoleRefResponse.
+type BillingCenterServiceRoleRefResponse struct {
+	// Href API reference of role
+	Href string `json:"href"`
+}
+
+// BillingCenterServiceScopeRoleReportResponse Information about the roles available to some unspecified user/group in
+// a scope.
+//
+// Contains basic information about the scope (its name and href), a list of roles
+// granted to the subject, and for each role, information about its inheritance
+// status and creation/expiration timestamps.
+//
+//	(default view)
+type BillingCenterServiceScopeRoleReportResponse struct {
+	AccessRules []BillingCenterServiceAccessRuleTinyResponse `json:"access_rules"`
+
+	// Scope Resource for tracking and reporting on billing information (tiny view) (default view)
+	Scope BillingCenterServiceBillingCenterResponseTiny `json:"scope"`
+}
+
+// BillingCenterServiceSubjectInfoResponse defines model for BillingCenterService_SubjectInfoResponse.
+type BillingCenterServiceSubjectInfoResponse struct {
+	// Email Email of subject (if kind user)
+	Email *string `json:"email,omitempty"`
+
+	// Href The API reference for a subject, which can be a user, group or service account.
+	Href string `json:"href"`
+
+	// Kind The string "user", "group", "service-account"
+	Kind BillingCenterServiceSubjectInfoResponseKind `json:"kind"`
+
+	// Name Name of the subject
+	Name string `json:"name"`
+}
+
+// BillingCenterServiceSubjectInfoResponseKind The string "user", "group", "service-account"
+type BillingCenterServiceSubjectInfoResponseKind string
+
+// BillingCenterServiceSubjectRoleReportResponse Information about the roles granted to one user, group or service account in some unspecified
+// scope.
+//
+// Contains basic information about the subject (e.g. name and email), a list of
+// roles they hold in this scope, and for each role, information about its
+// inheritance status and creation/expiration timestamps.
+//
+//	(default view)
+type BillingCenterServiceSubjectRoleReportResponse struct {
+	AccessRules []BillingCenterServiceAccessRuleTinyResponse `json:"access_rules"`
+	Subject     BillingCenterServiceSubjectInfoResponse      `json:"subject"`
+}
+
+// BillingCenterServiceUserBillingCenterResponse BillingCenter annotated with privileges of a specific user (default view)
+type BillingCenterServiceUserBillingCenterResponse struct {
+	Ancestors *[]BillingCenterServiceBillingCenterNodeResponse `json:"ancestors,omitempty"`
+
+	// CreatedAt The date and time of creation of the BillingCenter
+	CreatedAt time.Time `json:"created_at"`
+
+	// Description Description of the BillingCenter
+	Description string `json:"description"`
+
+	// Href Canonical href of this resource
+	Href string `json:"href"`
+
+	// Id Unique ID of the BillingCenter
+	Id string `json:"id"`
+
+	// Kind The kind of object
+	Kind BillingCenterServiceUserBillingCenterResponseKind `json:"kind"`
+
+	// Name Name of the BillingCenter
+	Name string `json:"name"`
+
+	// Privileges Current user's privileges with respect to the BillingCenter
+	Privileges []string `json:"privileges"`
+
+	// UpdatedAt The date and time of the BillingCenter's last update
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// BillingCenterServiceUserBillingCenterResponseKind The kind of object
+type BillingCenterServiceUserBillingCenterResponseKind string
+
+// BillingCenterServiceUserBillingCentersIndexBadGatewayResponseBody index_bad_gateway_response_body result type (default view)
+type BillingCenterServiceUserBillingCentersIndexBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceUserBillingCentersIndexForbiddenResponseBody index_forbidden_response_body result type (default view)
+type BillingCenterServiceUserBillingCentersIndexForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceUserBillingCentersIndexInternalErrorResponseBody index_internal_error_response_body result type (default view)
+type BillingCenterServiceUserBillingCentersIndexInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceUserBillingCentersIndexNotFoundResponseBody index_not_found_response_body result type (default view)
+type BillingCenterServiceUserBillingCentersIndexNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceUserBillingCentersIndexUnauthorizedResponseBody index_unauthorized_response_body result type (default view)
+type BillingCenterServiceUserBillingCentersIndexUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceUserBillingCentersShowBadGatewayResponseBody show_bad_gateway_response_body result type (default view)
+type BillingCenterServiceUserBillingCentersShowBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceUserBillingCentersShowForbiddenResponseBody show_forbidden_response_body result type (default view)
+type BillingCenterServiceUserBillingCentersShowForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceUserBillingCentersShowInternalErrorResponseBody show_internal_error_response_body result type (default view)
+type BillingCenterServiceUserBillingCentersShowInternalErrorResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceUserBillingCentersShowNotFoundResponseBody show_not_found_response_body result type (default view)
+type BillingCenterServiceUserBillingCentersShowNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceUserBillingCentersShowResponseBody ShowResponseBody result type (default view)
+type BillingCenterServiceUserBillingCentersShowResponseBody struct {
+	Ancestors *[]BillingCenterServiceBillingCenterNodeResponseBody `json:"ancestors,omitempty"`
+
+	// CreatedAt The date and time of creation of the BillingCenter
+	CreatedAt time.Time `json:"created_at"`
+
+	// Description Description of the BillingCenter
+	Description string `json:"description"`
+
+	// Href Canonical href of this resource
+	Href string `json:"href"`
+
+	// Id Unique ID of the BillingCenter
+	Id string `json:"id"`
+
+	// Kind The kind of object
+	Kind BillingCenterServiceUserBillingCentersShowResponseBodyKind `json:"kind"`
+
+	// Name Name of the BillingCenter
+	Name string `json:"name"`
+
+	// Privileges Current user's privileges with respect to the BillingCenter
+	Privileges []string `json:"privileges"`
+
+	// UpdatedAt The date and time of the BillingCenter's last update
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// BillingCenterServiceUserBillingCentersShowResponseBodyKind The kind of object
+type BillingCenterServiceUserBillingCentersShowResponseBodyKind string
+
+// BillingCenterServiceUserBillingCentersShowUnauthorizedResponseBody show_unauthorized_response_body result type (default view)
+type BillingCenterServiceUserBillingCentersShowUnauthorizedResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// BillingCenterServiceUserBillingCentersUserBillingCenterResponseCollection IndexResponseBody is the result type for an array of UserBillingCenterResponse (default view)
+type BillingCenterServiceUserBillingCentersUserBillingCenterResponseCollection = []BillingCenterServiceUserBillingCenterResponse
 
 type BillingCenterServiceAllocationTableShowResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *BillingCenterServiceAllocationTableShowResponseBody
+	JSON403      *BillingCenterServiceAllocationTableShowForbiddenResponseBody
+	JSON404      *BillingCenterServiceAllocationTableShowNotFoundResponseBody
+	JSON500      *BillingCenterServiceAllocationTableShowInternalErrorResponseBody
+	JSON502      *BillingCenterServiceAllocationTableShowBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -32,6 +2475,13 @@ func (r BillingCenterServiceAllocationTableShowResponse) StatusCode() int {
 type BillingCenterServiceAllocationTableUpsertResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *BillingCenterServiceAllocationTableUpsertBadRequestResponseBody
+	JSON403      *BillingCenterServiceAllocationTableUpsertForbiddenResponseBody
+	JSON404      *BillingCenterServiceAllocationTableUpsertNotFoundResponseBody
+	JSON409      *BillingCenterServiceAllocationTableUpsertConflictResponseBody
+	JSON422      *[]BillingCenterServiceInvalidAllocationTableRuleErrorResponse
+	JSON500      *BillingCenterServiceAllocationTableUpsertInternalErrorResponseBody
+	JSON502      *BillingCenterServiceAllocationTableUpsertBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -53,6 +2503,13 @@ func (r BillingCenterServiceAllocationTableUpsertResponse) StatusCode() int {
 type BillingCenterServiceBillingCentersIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *BillingCenterServiceBillingCentersBillingCenterResponseCollection
+	JSON401      *BillingCenterServiceBillingCentersIndexUnauthorizedResponseBody
+	JSON403      *BillingCenterServiceBillingCentersIndexForbiddenResponseBody
+	JSON404      *BillingCenterServiceBillingCentersIndexNotFoundResponseBody
+	JSON500      *BillingCenterServiceBillingCentersIndexInternalErrorResponseBody
+	JSON502      *BillingCenterServiceBillingCentersIndexBadGatewayResponseBody
+	JSON503      *BillingCenterServiceBillingCentersIndexServiceUnavailableResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -74,6 +2531,16 @@ func (r BillingCenterServiceBillingCentersIndexResponse) StatusCode() int {
 type BillingCenterServiceBillingCentersCreateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON201      *BillingCenterServiceBillingCentersCreateResponseBody
+	JSON400      *BillingCenterServiceBillingCentersCreateBadRequestResponseBody
+	JSON401      *BillingCenterServiceBillingCentersCreateUnauthorizedResponseBody
+	JSON403      *BillingCenterServiceBillingCentersCreateForbiddenResponseBody
+	JSON404      *BillingCenterServiceBillingCentersCreateNotFoundResponseBody
+	JSON409      *BillingCenterServiceBillingCentersCreateConflictResponseBody
+	JSON422      *BillingCenterServiceBillingCentersCreateUnprocessableEntityResponseBody
+	JSON500      *BillingCenterServiceBillingCentersCreateInternalErrorResponseBody
+	JSON502      *BillingCenterServiceBillingCentersCreateBadGatewayResponseBody
+	JSON503      *BillingCenterServiceBillingCentersCreateServiceUnavailableResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -95,6 +2562,13 @@ func (r BillingCenterServiceBillingCentersCreateResponse) StatusCode() int {
 type BillingCenterServiceBillingCentersDeleteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON401      *BillingCenterServiceBillingCentersDeleteUnauthorizedResponseBody
+	JSON403      *BillingCenterServiceBillingCentersDeleteForbiddenResponseBody
+	JSON404      *BillingCenterServiceBillingCentersDeleteNotFoundResponseBody
+	JSON405      *BillingCenterServiceBillingCentersDeleteMethodNotAllowedResponseBody
+	JSON500      *BillingCenterServiceBillingCentersDeleteInternalErrorResponseBody
+	JSON502      *BillingCenterServiceBillingCentersDeleteBadGatewayResponseBody
+	JSON503      *BillingCenterServiceBillingCentersDeleteServiceUnavailableResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -116,6 +2590,13 @@ func (r BillingCenterServiceBillingCentersDeleteResponse) StatusCode() int {
 type BillingCenterServiceBillingCentersShowResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *BillingCenterServiceBillingCentersShowResponseBody
+	JSON401      *BillingCenterServiceBillingCentersShowUnauthorizedResponseBody
+	JSON403      *BillingCenterServiceBillingCentersShowForbiddenResponseBody
+	JSON404      *BillingCenterServiceBillingCentersShowNotFoundResponseBody
+	JSON500      *BillingCenterServiceBillingCentersShowInternalErrorResponseBody
+	JSON502      *BillingCenterServiceBillingCentersShowBadGatewayResponseBody
+	JSON503      *BillingCenterServiceBillingCentersShowServiceUnavailableResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -137,6 +2618,15 @@ func (r BillingCenterServiceBillingCentersShowResponse) StatusCode() int {
 type BillingCenterServiceBillingCentersUpdateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *BillingCenterServiceBillingCentersUpdateBadRequestResponseBody
+	JSON401      *BillingCenterServiceBillingCentersUpdateUnauthorizedResponseBody
+	JSON403      *BillingCenterServiceBillingCentersUpdateForbiddenResponseBody
+	JSON404      *BillingCenterServiceBillingCentersUpdateNotFoundResponseBody
+	JSON405      *BillingCenterServiceBillingCentersUpdateMethodNotAllowedResponseBody
+	JSON409      *BillingCenterServiceBillingCentersUpdateConflictResponseBody
+	JSON500      *BillingCenterServiceBillingCentersUpdateInternalErrorResponseBody
+	JSON502      *BillingCenterServiceBillingCentersUpdateBadGatewayResponseBody
+	JSON503      *BillingCenterServiceBillingCentersUpdateServiceUnavailableResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -158,6 +2648,10 @@ func (r BillingCenterServiceBillingCentersUpdateResponse) StatusCode() int {
 type BillingCenterServiceBillingCenterAccessRulesGrantResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *BillingCenterServiceBillingCenterAccessRulesGrantBadRequestResponseBody
+	JSON403      *BillingCenterServiceBillingCenterAccessRulesGrantForbiddenResponseBody
+	JSON500      *BillingCenterServiceBillingCenterAccessRulesGrantInternalErrorResponseBody
+	JSON502      *BillingCenterServiceBillingCenterAccessRulesGrantBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -179,6 +2673,11 @@ func (r BillingCenterServiceBillingCenterAccessRulesGrantResponse) StatusCode() 
 type BillingCenterServiceBillingCenterAccessRulesReportResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *BillingCenterServiceBillingCenterAccessRulesSubjectRoleReportResponseCollection
+	JSON403      *BillingCenterServiceBillingCenterAccessRulesReportForbiddenResponseBody
+	JSON404      *BillingCenterServiceBillingCenterAccessRulesReportNotFoundResponseBody
+	JSON500      *BillingCenterServiceBillingCenterAccessRulesReportInternalErrorResponseBody
+	JSON502      *BillingCenterServiceBillingCenterAccessRulesReportBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -200,6 +2699,10 @@ func (r BillingCenterServiceBillingCenterAccessRulesReportResponse) StatusCode()
 type BillingCenterServiceBillingCenterAccessRulesRevokeResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *BillingCenterServiceBillingCenterAccessRulesRevokeBadRequestResponseBody
+	JSON403      *BillingCenterServiceBillingCenterAccessRulesRevokeForbiddenResponseBody
+	JSON500      *BillingCenterServiceBillingCenterAccessRulesRevokeInternalErrorResponseBody
+	JSON502      *BillingCenterServiceBillingCenterAccessRulesRevokeBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -221,6 +2724,13 @@ func (r BillingCenterServiceBillingCenterAccessRulesRevokeResponse) StatusCode()
 type BillingCenterServiceBillingCentersShowAllocationTableResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *BillingCenterServiceBillingCentersShowAllocationTableResponseBody
+	JSON401      *BillingCenterServiceBillingCentersShowAllocationTableUnauthorizedResponseBody
+	JSON403      *BillingCenterServiceBillingCentersShowAllocationTableForbiddenResponseBody
+	JSON404      *BillingCenterServiceBillingCentersShowAllocationTableNotFoundResponseBody
+	JSON500      *BillingCenterServiceBillingCentersShowAllocationTableInternalErrorResponseBody
+	JSON502      *BillingCenterServiceBillingCentersShowAllocationTableBadGatewayResponseBody
+	JSON503      *BillingCenterServiceBillingCentersShowAllocationTableServiceUnavailableResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -242,6 +2752,15 @@ func (r BillingCenterServiceBillingCentersShowAllocationTableResponse) StatusCod
 type BillingCenterServiceBillingCentersUpsertAllocationTableResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON400      *BillingCenterServiceBillingCentersUpsertAllocationTableBadRequestResponseBody
+	JSON401      *BillingCenterServiceBillingCentersUpsertAllocationTableUnauthorizedResponseBody
+	JSON403      *BillingCenterServiceBillingCentersUpsertAllocationTableForbiddenResponseBody
+	JSON404      *BillingCenterServiceBillingCentersUpsertAllocationTableNotFoundResponseBody
+	JSON409      *BillingCenterServiceBillingCentersUpsertAllocationTableConflictResponseBody
+	JSON422      *[]BillingCenterServiceInvalidAllocationTableRuleErrorResponse
+	JSON500      *BillingCenterServiceBillingCentersUpsertAllocationTableInternalErrorResponseBody
+	JSON502      *BillingCenterServiceBillingCentersUpsertAllocationTableBadGatewayResponseBody
+	JSON503      *BillingCenterServiceBillingCentersUpsertAllocationTableServiceUnavailableResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -263,6 +2782,12 @@ func (r BillingCenterServiceBillingCentersUpsertAllocationTableResponse) StatusC
 type BillingCenterServiceAccessRulesGroupReportResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *BillingCenterServiceAccessRulesScopeRoleReportResponseCollection
+	JSON401      *BillingCenterServiceAccessRulesGroupReportUnauthorizedResponseBody
+	JSON403      *BillingCenterServiceAccessRulesGroupReportForbiddenResponseBody
+	JSON404      *BillingCenterServiceAccessRulesGroupReportNotFoundResponseBody
+	JSON500      *BillingCenterServiceAccessRulesGroupReportInternalErrorResponseBody
+	JSON502      *BillingCenterServiceAccessRulesGroupReportBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -284,6 +2809,12 @@ func (r BillingCenterServiceAccessRulesGroupReportResponse) StatusCode() int {
 type BillingCenterServiceAccessRulesUserReportResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *BillingCenterServiceAccessRulesScopeRoleReportResponseCollection
+	JSON401      *BillingCenterServiceAccessRulesUserReportUnauthorizedResponseBody
+	JSON403      *BillingCenterServiceAccessRulesUserReportForbiddenResponseBody
+	JSON404      *BillingCenterServiceAccessRulesUserReportNotFoundResponseBody
+	JSON500      *BillingCenterServiceAccessRulesUserReportInternalErrorResponseBody
+	JSON502      *BillingCenterServiceAccessRulesUserReportBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -305,6 +2836,12 @@ func (r BillingCenterServiceAccessRulesUserReportResponse) StatusCode() int {
 type BillingCenterServiceUserBillingCentersIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *BillingCenterServiceUserBillingCentersUserBillingCenterResponseCollection
+	JSON401      *BillingCenterServiceUserBillingCentersIndexUnauthorizedResponseBody
+	JSON403      *BillingCenterServiceUserBillingCentersIndexForbiddenResponseBody
+	JSON404      *BillingCenterServiceUserBillingCentersIndexNotFoundResponseBody
+	JSON500      *BillingCenterServiceUserBillingCentersIndexInternalErrorResponseBody
+	JSON502      *BillingCenterServiceUserBillingCentersIndexBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -326,6 +2863,12 @@ func (r BillingCenterServiceUserBillingCentersIndexResponse) StatusCode() int {
 type BillingCenterServiceUserBillingCentersShowResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *BillingCenterServiceUserBillingCentersShowResponseBody
+	JSON401      *BillingCenterServiceUserBillingCentersShowUnauthorizedResponseBody
+	JSON403      *BillingCenterServiceUserBillingCentersShowForbiddenResponseBody
+	JSON404      *BillingCenterServiceUserBillingCentersShowNotFoundResponseBody
+	JSON500      *BillingCenterServiceUserBillingCentersShowInternalErrorResponseBody
+	JSON502      *BillingCenterServiceUserBillingCentersShowBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -549,6 +3092,44 @@ func ParseBillingCenterServiceAllocationTableShowResponse(rsp *http.Response) (*
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillingCenterServiceAllocationTableShowResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceAllocationTableShowForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceAllocationTableShowNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceAllocationTableShowInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceAllocationTableShowBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -563,6 +3144,58 @@ func ParseBillingCenterServiceAllocationTableUpsertResponse(rsp *http.Response) 
 	response := &BillingCenterServiceAllocationTableUpsertResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BillingCenterServiceAllocationTableUpsertBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceAllocationTableUpsertForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceAllocationTableUpsertNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest BillingCenterServiceAllocationTableUpsertConflictResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest []BillingCenterServiceInvalidAllocationTableRuleErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceAllocationTableUpsertInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceAllocationTableUpsertBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
 	}
 
 	return response, nil
@@ -581,6 +3214,58 @@ func ParseBillingCenterServiceBillingCentersIndexResponse(rsp *http.Response) (*
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillingCenterServiceBillingCentersBillingCenterResponseCollection
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceBillingCentersIndexUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCentersIndexForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceBillingCentersIndexNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCentersIndexInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCentersIndexBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest BillingCenterServiceBillingCentersIndexServiceUnavailableResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON503 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -595,6 +3280,79 @@ func ParseBillingCenterServiceBillingCentersCreateResponse(rsp *http.Response) (
 	response := &BillingCenterServiceBillingCentersCreateResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest BillingCenterServiceBillingCentersCreateResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BillingCenterServiceBillingCentersCreateBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceBillingCentersCreateUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCentersCreateForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceBillingCentersCreateNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest BillingCenterServiceBillingCentersCreateConflictResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest BillingCenterServiceBillingCentersCreateUnprocessableEntityResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCentersCreateInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCentersCreateBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest BillingCenterServiceBillingCentersCreateServiceUnavailableResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON503 = &dest
+
 	}
 
 	return response, nil
@@ -613,6 +3371,58 @@ func ParseBillingCenterServiceBillingCentersDeleteResponse(rsp *http.Response) (
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceBillingCentersDeleteUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCentersDeleteForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceBillingCentersDeleteNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest BillingCenterServiceBillingCentersDeleteMethodNotAllowedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCentersDeleteInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCentersDeleteBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest BillingCenterServiceBillingCentersDeleteServiceUnavailableResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON503 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -627,6 +3437,58 @@ func ParseBillingCenterServiceBillingCentersShowResponse(rsp *http.Response) (*B
 	response := &BillingCenterServiceBillingCentersShowResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillingCenterServiceBillingCentersShowResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceBillingCentersShowUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCentersShowForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceBillingCentersShowNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCentersShowInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCentersShowBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest BillingCenterServiceBillingCentersShowServiceUnavailableResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON503 = &dest
+
 	}
 
 	return response, nil
@@ -645,6 +3507,72 @@ func ParseBillingCenterServiceBillingCentersUpdateResponse(rsp *http.Response) (
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BillingCenterServiceBillingCentersUpdateBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceBillingCentersUpdateUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCentersUpdateForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceBillingCentersUpdateNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest BillingCenterServiceBillingCentersUpdateMethodNotAllowedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest BillingCenterServiceBillingCentersUpdateConflictResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCentersUpdateInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCentersUpdateBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest BillingCenterServiceBillingCentersUpdateServiceUnavailableResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON503 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -659,6 +3587,37 @@ func ParseBillingCenterServiceBillingCenterAccessRulesGrantResponse(rsp *http.Re
 	response := &BillingCenterServiceBillingCenterAccessRulesGrantResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BillingCenterServiceBillingCenterAccessRulesGrantBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCenterAccessRulesGrantForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCenterAccessRulesGrantInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCenterAccessRulesGrantBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
 	}
 
 	return response, nil
@@ -677,6 +3636,44 @@ func ParseBillingCenterServiceBillingCenterAccessRulesReportResponse(rsp *http.R
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillingCenterServiceBillingCenterAccessRulesSubjectRoleReportResponseCollection
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCenterAccessRulesReportForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceBillingCenterAccessRulesReportNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCenterAccessRulesReportInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCenterAccessRulesReportBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -691,6 +3688,37 @@ func ParseBillingCenterServiceBillingCenterAccessRulesRevokeResponse(rsp *http.R
 	response := &BillingCenterServiceBillingCenterAccessRulesRevokeResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BillingCenterServiceBillingCenterAccessRulesRevokeBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCenterAccessRulesRevokeForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCenterAccessRulesRevokeInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCenterAccessRulesRevokeBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
 	}
 
 	return response, nil
@@ -709,6 +3737,58 @@ func ParseBillingCenterServiceBillingCentersShowAllocationTableResponse(rsp *htt
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillingCenterServiceBillingCentersShowAllocationTableResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceBillingCentersShowAllocationTableUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCentersShowAllocationTableForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceBillingCentersShowAllocationTableNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCentersShowAllocationTableInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCentersShowAllocationTableBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest BillingCenterServiceBillingCentersShowAllocationTableServiceUnavailableResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON503 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -723,6 +3803,72 @@ func ParseBillingCenterServiceBillingCentersUpsertAllocationTableResponse(rsp *h
 	response := &BillingCenterServiceBillingCentersUpsertAllocationTableResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest BillingCenterServiceBillingCentersUpsertAllocationTableBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceBillingCentersUpsertAllocationTableUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCentersUpsertAllocationTableForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceBillingCentersUpsertAllocationTableNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest BillingCenterServiceBillingCentersUpsertAllocationTableConflictResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest []BillingCenterServiceInvalidAllocationTableRuleErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCentersUpsertAllocationTableInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCentersUpsertAllocationTableBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest BillingCenterServiceBillingCentersUpsertAllocationTableServiceUnavailableResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON503 = &dest
+
 	}
 
 	return response, nil
@@ -741,6 +3887,51 @@ func ParseBillingCenterServiceAccessRulesGroupReportResponse(rsp *http.Response)
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillingCenterServiceAccessRulesScopeRoleReportResponseCollection
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceAccessRulesGroupReportUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceAccessRulesGroupReportForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceAccessRulesGroupReportNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceAccessRulesGroupReportInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceAccessRulesGroupReportBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -755,6 +3946,51 @@ func ParseBillingCenterServiceAccessRulesUserReportResponse(rsp *http.Response) 
 	response := &BillingCenterServiceAccessRulesUserReportResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillingCenterServiceAccessRulesScopeRoleReportResponseCollection
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceAccessRulesUserReportUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceAccessRulesUserReportForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceAccessRulesUserReportNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceAccessRulesUserReportInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceAccessRulesUserReportBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
 	}
 
 	return response, nil
@@ -773,6 +4009,51 @@ func ParseBillingCenterServiceUserBillingCentersIndexResponse(rsp *http.Response
 		HTTPResponse: rsp,
 	}
 
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillingCenterServiceUserBillingCentersUserBillingCenterResponseCollection
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceUserBillingCentersIndexUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceUserBillingCentersIndexForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceUserBillingCentersIndexNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceUserBillingCentersIndexInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceUserBillingCentersIndexBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
 	return response, nil
 }
 
@@ -787,6 +4068,51 @@ func ParseBillingCenterServiceUserBillingCentersShowResponse(rsp *http.Response)
 	response := &BillingCenterServiceUserBillingCentersShowResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BillingCenterServiceUserBillingCentersShowResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceUserBillingCentersShowUnauthorizedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceUserBillingCentersShowForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceUserBillingCentersShowNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceUserBillingCentersShowInternalErrorResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceUserBillingCentersShowBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
 	}
 
 	return response, nil

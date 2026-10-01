@@ -54,8 +54,8 @@ type OptimaRecommendationsRecommendationsIndexParams struct {
 // OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody defines body for OptimaRecommendationsRecommendationsUpdateStatus for application/json ContentType.
 type OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody = OptimaRecommendationsRecommendationsUpdateStatusRequestBody
 
-func (c *Client) OptimaRecommendationsRecommendationsIndex(ctx context.Context, orgID int, params *OptimaRecommendationsRecommendationsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewOptimaRecommendationsRecommendationsIndexRequest(c.Server, orgID, params)
+func (c *Client) OptimaRecommendationsRecommendationsIndex(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewOptimaRecommendationsRecommendationsIndexRequest(c.Server, orgId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -66,8 +66,8 @@ func (c *Client) OptimaRecommendationsRecommendationsIndex(ctx context.Context, 
 	return c.Client.Do(req)
 }
 
-func (c *Client) OptimaRecommendationsRecommendationsUpdateStatusWithBody(ctx context.Context, orgID int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewOptimaRecommendationsRecommendationsUpdateStatusRequestWithBody(c.Server, orgID, contentType, body)
+func (c *Client) OptimaRecommendationsRecommendationsUpdateStatusWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewOptimaRecommendationsRecommendationsUpdateStatusRequestWithBody(c.Server, orgId, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -78,8 +78,8 @@ func (c *Client) OptimaRecommendationsRecommendationsUpdateStatusWithBody(ctx co
 	return c.Client.Do(req)
 }
 
-func (c *Client) OptimaRecommendationsRecommendationsUpdateStatus(ctx context.Context, orgID int, body OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewOptimaRecommendationsRecommendationsUpdateStatusRequest(c.Server, orgID, body)
+func (c *Client) OptimaRecommendationsRecommendationsUpdateStatus(ctx context.Context, orgId int, body OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewOptimaRecommendationsRecommendationsUpdateStatusRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -91,12 +91,12 @@ func (c *Client) OptimaRecommendationsRecommendationsUpdateStatus(ctx context.Co
 }
 
 // NewOptimaRecommendationsRecommendationsIndexRequest generates requests for OptimaRecommendationsRecommendationsIndex
-func NewOptimaRecommendationsRecommendationsIndexRequest(server string, orgID int, params *OptimaRecommendationsRecommendationsIndexParams) (*http.Request, error) {
+func NewOptimaRecommendationsRecommendationsIndexRequest(server string, orgId int, params *OptimaRecommendationsRecommendationsIndexParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgID", runtime.ParamLocationPath, orgID)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
@@ -179,23 +179,23 @@ func NewOptimaRecommendationsRecommendationsIndexRequest(server string, orgID in
 }
 
 // NewOptimaRecommendationsRecommendationsUpdateStatusRequest calls the generic OptimaRecommendationsRecommendationsUpdateStatus builder with application/json body
-func NewOptimaRecommendationsRecommendationsUpdateStatusRequest(server string, orgID int, body OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody) (*http.Request, error) {
+func NewOptimaRecommendationsRecommendationsUpdateStatusRequest(server string, orgId int, body OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewOptimaRecommendationsRecommendationsUpdateStatusRequestWithBody(server, orgID, "application/json", bodyReader)
+	return NewOptimaRecommendationsRecommendationsUpdateStatusRequestWithBody(server, orgId, "application/json", bodyReader)
 }
 
 // NewOptimaRecommendationsRecommendationsUpdateStatusRequestWithBody generates requests for OptimaRecommendationsRecommendationsUpdateStatus with any type of body
-func NewOptimaRecommendationsRecommendationsUpdateStatusRequestWithBody(server string, orgID int, contentType string, body io.Reader) (*http.Request, error) {
+func NewOptimaRecommendationsRecommendationsUpdateStatusRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgID", runtime.ParamLocationPath, orgID)
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
 	if err != nil {
 		return nil, err
 	}
