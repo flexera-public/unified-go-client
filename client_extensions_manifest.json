@@ -624,7 +624,7 @@
     },
     {
       "path": "pagination_unified.go",
-      "sha256": "11f5b6726dd339987584028a61c6135528e206ad2cd78db3b3d993c7ad59b4d4",
+      "sha256": "86891dbe3a338b019b439a97ff9d1753c633683f65e6f305172e013e8913605a",
       "declarations": [
         {
           "name": "PageFetcher",

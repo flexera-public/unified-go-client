@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "source": "unified-openapi/openapi3.json",
-  "sourceSha256": "3522c1fa21b1c9f2c1e7b5d91a7a65d744e38fb930b8a54d9cfcf27e2da52c99",
+  "sourceSha256": "88d73c987b7879bf8fef8603ccb847bc2410be12eda92a90096f2f871e36c00b",
   "generator": "github.com/oapi-codegen/oapi-codegen/v2 version v2.5.0",
   "package": "flexera",
   "files": [
