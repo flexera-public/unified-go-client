@@ -16,9 +16,11 @@
 package flexera
 
 import (
+	"bytes"
 	"context"
 	"encoding/json"
 	"fmt"
+	"math/big"
 	"net/url"
 )
 
@@ -65,6 +67,10 @@ func (e *PartialError) Unwrap() error { return e.Err }
 // true only the first page is returned (unchanged). When initialSkipToken
 // is non-nil the first fetch receives that token (useful for resume-from
 // workflows AND for resuming from a PartialError).
+// Numbers in merged envelopes are json.Number values, preserving their
+// JSON representation. Integer counts are summed without precision loss or
+// overflow. Fetchers must preserve numbers when decoding wire responses;
+// precision already lost to float64 before fetching cannot be recovered.
 //
 // Error semantics:
 //
@@ -185,10 +191,17 @@ func appendValues(dst, src map[string]any) {
 }
 
 func accumulateCount(dst, src map[string]any) {
-	dc, dOK := dst["count"].(float64)
-	sc, sOK := src["count"].(float64)
-	if dOK && sOK {
-		dst["count"] = dc + sc
+	dc, dOK := dst["count"].(json.Number)
+	sc, sOK := src["count"].(json.Number)
+	if !dOK || !sOK {
+		return
+	}
+	// Counts are integers, but JSON may encode them as decimals or with an
+	// exponent. Parse exactly and leave non-integer metadata unchanged.
+	d, dOK := new(big.Rat).SetString(dc.String())
+	s, sOK := new(big.Rat).SetString(sc.String())
+	if dOK && sOK && d.IsInt() && s.IsInt() {
+		dst["count"] = json.Number(new(big.Int).Add(d.Num(), s.Num()).String())
 	}
 }
 
@@ -198,7 +211,9 @@ func toMap(v any) (map[string]any, error) {
 		return nil, err
 	}
 	var m map[string]any
-	if err := json.Unmarshal(b, &m); err != nil {
+	decoder := json.NewDecoder(bytes.NewReader(b))
+	decoder.UseNumber()
+	if err := decoder.Decode(&m); err != nil {
 		return nil, err
 	}
 	return m, nil

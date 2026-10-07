@@ -2,10 +2,58 @@ package flexera
 
 import (
 	"context"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"testing"
 )
+
+func TestToMap_PreservesTypedNumbers(t *testing.T) {
+	page := struct {
+		Values []int64 `json:"values"`
+		Count  uint64  `json:"count"`
+		Total  uint64  `json:"total"`
+	}{[]int64{9007199254740993, -9007199254740993}, 9007199254740993, 18446744073709551615}
+	got, err := toMap(page)
+	if err != nil {
+		t.Fatal(err)
+	}
+	wire, err := json.Marshal(got)
+	if err != nil {
+		t.Fatal(err)
+	}
+	want := `{"count":9007199254740993,"total":18446744073709551615,"values":[9007199254740993,-9007199254740993]}`
+	if string(wire) != want {
+		t.Fatalf("numeric values changed: got %s, want %s", wire, want)
+	}
+}
+
+func TestAccumulateCount_Exact(t *testing.T) {
+	for _, tc := range []struct {
+		name, first, second, want string
+	}{
+		{"ordinary", "2", "3", "5"},
+		{"above float precision", "9007199254740993", "2", "9007199254740995"},
+		{"above uint64", "18446744073709551615", "1", "18446744073709551616"},
+		{"integer exponent", "9.007199254740993e15", "2.0", "9007199254740995"},
+		{"fraction left unchanged", "1.25", "2", "1.25"},
+	} {
+		t.Run(tc.name, func(t *testing.T) {
+			dst := map[string]any{"count": json.Number(tc.first)}
+			accumulateCount(dst, map[string]any{"count": json.Number(tc.second)})
+			if got := dst["count"]; got != json.Number(tc.want) {
+				t.Fatalf("count = %v, want %s", got, tc.want)
+			}
+		})
+	}
+	for _, src := range []map[string]any{{}, {"count": nil}, {"count": "2"}} {
+		dst := map[string]any{"count": json.Number("9007199254740993")}
+		accumulateCount(dst, src)
+		if dst["count"] != json.Number("9007199254740993") {
+			t.Fatalf("missing/non-numeric count changed metadata: %v", dst)
+		}
+	}
+}
 
 func TestCollectPages_MergesAllPages(t *testing.T) {
 	ctx := context.Background()
