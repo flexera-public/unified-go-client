@@ -316,19 +316,19 @@ type BillAnalysisBillMonth struct {
 	IsHistoricalMonth *bool `json:"is_historical_month,omitempty"`
 
 	// LastProcessEndAt Timestamp when processing last ended
-	LastProcessEndAt *time.Time `json:"last_process_end_at,omitempty"`
+	LastProcessEndAt *string `json:"last_process_end_at,omitempty"`
 
 	// LastProcessStartAt Timestamp when processing last started
-	LastProcessStartAt *time.Time `json:"last_process_start_at,omitempty"`
+	LastProcessStartAt *string `json:"last_process_start_at,omitempty"`
 
 	// LastUnlockedAndProcessedAt Timestamp when last unlocked and processed
-	LastUnlockedAndProcessedAt *time.Time `json:"last_unlocked_and_processed_at,omitempty"`
+	LastUnlockedAndProcessedAt *string `json:"last_unlocked_and_processed_at,omitempty"`
 
 	// LockedAt Timestamp when the bill month was locked
-	LockedAt *time.Time `json:"locked_at,omitempty"`
+	LockedAt *string `json:"locked_at,omitempty"`
 
 	// NewVendorDataAvailableAt Timestamp when new vendor data became available, or 'No' if none
-	NewVendorDataAvailableAt *time.Time `json:"new_vendor_data_available_at,omitempty"`
+	NewVendorDataAvailableAt *string `json:"new_vendor_data_available_at,omitempty"`
 
 	// Status Current processing status of the bill month
 	Status BillAnalysisBillMonthStatus `json:"status"`
@@ -839,7 +839,7 @@ type BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboard struct {
 	Area string `json:"area"`
 
 	// Config A json blob used by the UI
-	Config map[string]interface{} `json:"config"`
+	Config openapi_types.File `json:"config"`
 
 	// CreatedAt Creation timestamp
 	CreatedAt time.Time `json:"created_at"`

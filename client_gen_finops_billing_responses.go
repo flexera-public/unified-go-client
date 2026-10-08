@@ -769,6 +769,358 @@ func (r FinopsBillingBillingCreditsIndexVendorCreditsResponse) StatusCode() int 
 	return 0
 }
 
+type FinopsBillingInvoiceSchedulesIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingBillingInvoiceScheduleList
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingInvoiceSchedulesIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingInvoiceSchedulesIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingInvoiceSchedulesCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *FinopsBillingBillingInvoiceScheduleResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingInvoiceSchedulesCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingInvoiceSchedulesCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingInvoiceSchedulesShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingBillingInvoiceScheduleResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingInvoiceSchedulesShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingInvoiceSchedulesShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingInvoiceSchedulesUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingBillingInvoiceScheduleResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingInvoiceSchedulesUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingInvoiceSchedulesUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingInvoiceSchedulesActivateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingBillingInvoiceScheduleResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingInvoiceSchedulesActivateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingInvoiceSchedulesActivateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingInvoiceSchedulesDeactivateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingBillingInvoiceScheduleResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingInvoiceSchedulesDeactivateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingInvoiceSchedulesDeactivateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingInvoiceScheduleInvoicesIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingBillingInvoiceScheduleInvoiceList
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingInvoiceScheduleInvoicesIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingInvoiceScheduleInvoicesIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingInvoiceScheduleInvoicesShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoice
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingInvoiceScheduleInvoicesShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingInvoiceScheduleInvoicesShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingInvoiceTemplatesIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingBillingInvoiceTemplateList
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingInvoiceTemplatesIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingInvoiceTemplatesIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingInvoiceTemplatesCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *FinopsBillingBillingInvoiceTemplateResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingInvoiceTemplatesCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingInvoiceTemplatesCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingInvoiceTemplatesShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingBillingInvoiceTemplateResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingInvoiceTemplatesShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingInvoiceTemplatesShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingInvoiceTemplatesUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingBillingInvoiceTemplateResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingInvoiceTemplatesUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingInvoiceTemplatesUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingInvoicesIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingBillingInvoiceList
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingInvoicesIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingInvoicesIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingInvoicesCreateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *FinopsBillingBillingInvoiceList
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingInvoicesCreateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingInvoicesCreateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingInvoicesShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingFlexeraFinopsBillingInvoice
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingInvoicesShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingInvoicesShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingInvoicesRetryResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingBillingInvoiceList
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingInvoicesRetryResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingInvoicesRetryResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type FinopsBillingSharedCostRulesIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -1305,6 +1657,190 @@ func (c *ClientWithResponses) FinopsBillingBillingCreditsIndexVendorCreditsWithR
 		return nil, err
 	}
 	return ParseFinopsBillingBillingCreditsIndexVendorCreditsResponse(rsp)
+}
+
+// FinopsBillingInvoiceSchedulesIndexWithResponse request returning *FinopsBillingInvoiceSchedulesIndexResponse
+func (c *ClientWithResponses) FinopsBillingInvoiceSchedulesIndexWithResponse(ctx context.Context, orgId int, params *FinopsBillingInvoiceSchedulesIndexParams, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceSchedulesIndexResponse, error) {
+	rsp, err := c.FinopsBillingInvoiceSchedulesIndex(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoiceSchedulesIndexResponse(rsp)
+}
+
+// FinopsBillingInvoiceSchedulesCreateWithBodyWithResponse request with arbitrary body returning *FinopsBillingInvoiceSchedulesCreateResponse
+func (c *ClientWithResponses) FinopsBillingInvoiceSchedulesCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceSchedulesCreateResponse, error) {
+	rsp, err := c.FinopsBillingInvoiceSchedulesCreateWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoiceSchedulesCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingInvoiceSchedulesCreateWithResponse(ctx context.Context, orgId int, body FinopsBillingInvoiceSchedulesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceSchedulesCreateResponse, error) {
+	rsp, err := c.FinopsBillingInvoiceSchedulesCreate(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoiceSchedulesCreateResponse(rsp)
+}
+
+// FinopsBillingInvoiceSchedulesShowWithResponse request returning *FinopsBillingInvoiceSchedulesShowResponse
+func (c *ClientWithResponses) FinopsBillingInvoiceSchedulesShowWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceSchedulesShowResponse, error) {
+	rsp, err := c.FinopsBillingInvoiceSchedulesShow(ctx, orgId, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoiceSchedulesShowResponse(rsp)
+}
+
+// FinopsBillingInvoiceSchedulesUpdateWithBodyWithResponse request with arbitrary body returning *FinopsBillingInvoiceSchedulesUpdateResponse
+func (c *ClientWithResponses) FinopsBillingInvoiceSchedulesUpdateWithBodyWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceSchedulesUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceSchedulesUpdateResponse, error) {
+	rsp, err := c.FinopsBillingInvoiceSchedulesUpdateWithBody(ctx, orgId, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoiceSchedulesUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingInvoiceSchedulesUpdateWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceSchedulesUpdateParams, body FinopsBillingInvoiceSchedulesUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceSchedulesUpdateResponse, error) {
+	rsp, err := c.FinopsBillingInvoiceSchedulesUpdate(ctx, orgId, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoiceSchedulesUpdateResponse(rsp)
+}
+
+// FinopsBillingInvoiceSchedulesActivateWithResponse request returning *FinopsBillingInvoiceSchedulesActivateResponse
+func (c *ClientWithResponses) FinopsBillingInvoiceSchedulesActivateWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceSchedulesActivateParams, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceSchedulesActivateResponse, error) {
+	rsp, err := c.FinopsBillingInvoiceSchedulesActivate(ctx, orgId, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoiceSchedulesActivateResponse(rsp)
+}
+
+// FinopsBillingInvoiceSchedulesDeactivateWithResponse request returning *FinopsBillingInvoiceSchedulesDeactivateResponse
+func (c *ClientWithResponses) FinopsBillingInvoiceSchedulesDeactivateWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceSchedulesDeactivateParams, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceSchedulesDeactivateResponse, error) {
+	rsp, err := c.FinopsBillingInvoiceSchedulesDeactivate(ctx, orgId, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoiceSchedulesDeactivateResponse(rsp)
+}
+
+// FinopsBillingInvoiceScheduleInvoicesIndexWithResponse request returning *FinopsBillingInvoiceScheduleInvoicesIndexResponse
+func (c *ClientWithResponses) FinopsBillingInvoiceScheduleInvoicesIndexWithResponse(ctx context.Context, orgId int, scheduleId string, params *FinopsBillingInvoiceScheduleInvoicesIndexParams, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceScheduleInvoicesIndexResponse, error) {
+	rsp, err := c.FinopsBillingInvoiceScheduleInvoicesIndex(ctx, orgId, scheduleId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoiceScheduleInvoicesIndexResponse(rsp)
+}
+
+// FinopsBillingInvoiceScheduleInvoicesShowWithResponse request returning *FinopsBillingInvoiceScheduleInvoicesShowResponse
+func (c *ClientWithResponses) FinopsBillingInvoiceScheduleInvoicesShowWithResponse(ctx context.Context, orgId int, scheduleId string, id string, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceScheduleInvoicesShowResponse, error) {
+	rsp, err := c.FinopsBillingInvoiceScheduleInvoicesShow(ctx, orgId, scheduleId, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoiceScheduleInvoicesShowResponse(rsp)
+}
+
+// FinopsBillingInvoiceTemplatesIndexWithResponse request returning *FinopsBillingInvoiceTemplatesIndexResponse
+func (c *ClientWithResponses) FinopsBillingInvoiceTemplatesIndexWithResponse(ctx context.Context, orgId int, params *FinopsBillingInvoiceTemplatesIndexParams, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceTemplatesIndexResponse, error) {
+	rsp, err := c.FinopsBillingInvoiceTemplatesIndex(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoiceTemplatesIndexResponse(rsp)
+}
+
+// FinopsBillingInvoiceTemplatesCreateWithBodyWithResponse request with arbitrary body returning *FinopsBillingInvoiceTemplatesCreateResponse
+func (c *ClientWithResponses) FinopsBillingInvoiceTemplatesCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceTemplatesCreateResponse, error) {
+	rsp, err := c.FinopsBillingInvoiceTemplatesCreateWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoiceTemplatesCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingInvoiceTemplatesCreateWithResponse(ctx context.Context, orgId int, body FinopsBillingInvoiceTemplatesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceTemplatesCreateResponse, error) {
+	rsp, err := c.FinopsBillingInvoiceTemplatesCreate(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoiceTemplatesCreateResponse(rsp)
+}
+
+// FinopsBillingInvoiceTemplatesShowWithResponse request returning *FinopsBillingInvoiceTemplatesShowResponse
+func (c *ClientWithResponses) FinopsBillingInvoiceTemplatesShowWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceTemplatesShowResponse, error) {
+	rsp, err := c.FinopsBillingInvoiceTemplatesShow(ctx, orgId, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoiceTemplatesShowResponse(rsp)
+}
+
+// FinopsBillingInvoiceTemplatesUpdateWithBodyWithResponse request with arbitrary body returning *FinopsBillingInvoiceTemplatesUpdateResponse
+func (c *ClientWithResponses) FinopsBillingInvoiceTemplatesUpdateWithBodyWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceTemplatesUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceTemplatesUpdateResponse, error) {
+	rsp, err := c.FinopsBillingInvoiceTemplatesUpdateWithBody(ctx, orgId, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoiceTemplatesUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingInvoiceTemplatesUpdateWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceTemplatesUpdateParams, body FinopsBillingInvoiceTemplatesUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceTemplatesUpdateResponse, error) {
+	rsp, err := c.FinopsBillingInvoiceTemplatesUpdate(ctx, orgId, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoiceTemplatesUpdateResponse(rsp)
+}
+
+// FinopsBillingInvoicesIndexWithResponse request returning *FinopsBillingInvoicesIndexResponse
+func (c *ClientWithResponses) FinopsBillingInvoicesIndexWithResponse(ctx context.Context, orgId int, params *FinopsBillingInvoicesIndexParams, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesIndexResponse, error) {
+	rsp, err := c.FinopsBillingInvoicesIndex(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoicesIndexResponse(rsp)
+}
+
+// FinopsBillingInvoicesCreateWithBodyWithResponse request with arbitrary body returning *FinopsBillingInvoicesCreateResponse
+func (c *ClientWithResponses) FinopsBillingInvoicesCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesCreateResponse, error) {
+	rsp, err := c.FinopsBillingInvoicesCreateWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoicesCreateResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingInvoicesCreateWithResponse(ctx context.Context, orgId int, body FinopsBillingInvoicesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesCreateResponse, error) {
+	rsp, err := c.FinopsBillingInvoicesCreate(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoicesCreateResponse(rsp)
+}
+
+// FinopsBillingInvoicesShowWithResponse request returning *FinopsBillingInvoicesShowResponse
+func (c *ClientWithResponses) FinopsBillingInvoicesShowWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesShowResponse, error) {
+	rsp, err := c.FinopsBillingInvoicesShow(ctx, orgId, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoicesShowResponse(rsp)
+}
+
+// FinopsBillingInvoicesRetryWithResponse request returning *FinopsBillingInvoicesRetryResponse
+func (c *ClientWithResponses) FinopsBillingInvoicesRetryWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesRetryResponse, error) {
+	rsp, err := c.FinopsBillingInvoicesRetry(ctx, orgId, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoicesRetryResponse(rsp)
 }
 
 // FinopsBillingSharedCostRulesIndexWithResponse request returning *FinopsBillingSharedCostRulesIndexResponse
@@ -2067,6 +2603,422 @@ func ParseFinopsBillingBillingCreditsIndexVendorCreditsResponse(rsp *http.Respon
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest FinopsBillingVendorCreditsResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingInvoiceSchedulesIndexResponse parses an HTTP response from a FinopsBillingInvoiceSchedulesIndexWithResponse call
+func ParseFinopsBillingInvoiceSchedulesIndexResponse(rsp *http.Response) (*FinopsBillingInvoiceSchedulesIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingInvoiceSchedulesIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingBillingInvoiceScheduleList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingInvoiceSchedulesCreateResponse parses an HTTP response from a FinopsBillingInvoiceSchedulesCreateWithResponse call
+func ParseFinopsBillingInvoiceSchedulesCreateResponse(rsp *http.Response) (*FinopsBillingInvoiceSchedulesCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingInvoiceSchedulesCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest FinopsBillingBillingInvoiceScheduleResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingInvoiceSchedulesShowResponse parses an HTTP response from a FinopsBillingInvoiceSchedulesShowWithResponse call
+func ParseFinopsBillingInvoiceSchedulesShowResponse(rsp *http.Response) (*FinopsBillingInvoiceSchedulesShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingInvoiceSchedulesShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingBillingInvoiceScheduleResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingInvoiceSchedulesUpdateResponse parses an HTTP response from a FinopsBillingInvoiceSchedulesUpdateWithResponse call
+func ParseFinopsBillingInvoiceSchedulesUpdateResponse(rsp *http.Response) (*FinopsBillingInvoiceSchedulesUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingInvoiceSchedulesUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingBillingInvoiceScheduleResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingInvoiceSchedulesActivateResponse parses an HTTP response from a FinopsBillingInvoiceSchedulesActivateWithResponse call
+func ParseFinopsBillingInvoiceSchedulesActivateResponse(rsp *http.Response) (*FinopsBillingInvoiceSchedulesActivateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingInvoiceSchedulesActivateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingBillingInvoiceScheduleResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingInvoiceSchedulesDeactivateResponse parses an HTTP response from a FinopsBillingInvoiceSchedulesDeactivateWithResponse call
+func ParseFinopsBillingInvoiceSchedulesDeactivateResponse(rsp *http.Response) (*FinopsBillingInvoiceSchedulesDeactivateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingInvoiceSchedulesDeactivateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingBillingInvoiceScheduleResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingInvoiceScheduleInvoicesIndexResponse parses an HTTP response from a FinopsBillingInvoiceScheduleInvoicesIndexWithResponse call
+func ParseFinopsBillingInvoiceScheduleInvoicesIndexResponse(rsp *http.Response) (*FinopsBillingInvoiceScheduleInvoicesIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingInvoiceScheduleInvoicesIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingBillingInvoiceScheduleInvoiceList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingInvoiceScheduleInvoicesShowResponse parses an HTTP response from a FinopsBillingInvoiceScheduleInvoicesShowWithResponse call
+func ParseFinopsBillingInvoiceScheduleInvoicesShowResponse(rsp *http.Response) (*FinopsBillingInvoiceScheduleInvoicesShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingInvoiceScheduleInvoicesShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoice
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingInvoiceTemplatesIndexResponse parses an HTTP response from a FinopsBillingInvoiceTemplatesIndexWithResponse call
+func ParseFinopsBillingInvoiceTemplatesIndexResponse(rsp *http.Response) (*FinopsBillingInvoiceTemplatesIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingInvoiceTemplatesIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingBillingInvoiceTemplateList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingInvoiceTemplatesCreateResponse parses an HTTP response from a FinopsBillingInvoiceTemplatesCreateWithResponse call
+func ParseFinopsBillingInvoiceTemplatesCreateResponse(rsp *http.Response) (*FinopsBillingInvoiceTemplatesCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingInvoiceTemplatesCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest FinopsBillingBillingInvoiceTemplateResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingInvoiceTemplatesShowResponse parses an HTTP response from a FinopsBillingInvoiceTemplatesShowWithResponse call
+func ParseFinopsBillingInvoiceTemplatesShowResponse(rsp *http.Response) (*FinopsBillingInvoiceTemplatesShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingInvoiceTemplatesShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingBillingInvoiceTemplateResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingInvoiceTemplatesUpdateResponse parses an HTTP response from a FinopsBillingInvoiceTemplatesUpdateWithResponse call
+func ParseFinopsBillingInvoiceTemplatesUpdateResponse(rsp *http.Response) (*FinopsBillingInvoiceTemplatesUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingInvoiceTemplatesUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingBillingInvoiceTemplateResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingInvoicesIndexResponse parses an HTTP response from a FinopsBillingInvoicesIndexWithResponse call
+func ParseFinopsBillingInvoicesIndexResponse(rsp *http.Response) (*FinopsBillingInvoicesIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingInvoicesIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingBillingInvoiceList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingInvoicesCreateResponse parses an HTTP response from a FinopsBillingInvoicesCreateWithResponse call
+func ParseFinopsBillingInvoicesCreateResponse(rsp *http.Response) (*FinopsBillingInvoicesCreateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingInvoicesCreateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest FinopsBillingBillingInvoiceList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingInvoicesShowResponse parses an HTTP response from a FinopsBillingInvoicesShowWithResponse call
+func ParseFinopsBillingInvoicesShowResponse(rsp *http.Response) (*FinopsBillingInvoicesShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingInvoicesShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingFlexeraFinopsBillingInvoice
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingInvoicesRetryResponse parses an HTTP response from a FinopsBillingInvoicesRetryWithResponse call
+func ParseFinopsBillingInvoicesRetryResponse(rsp *http.Response) (*FinopsBillingInvoicesRetryResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingInvoicesRetryResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingBillingInvoiceList
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

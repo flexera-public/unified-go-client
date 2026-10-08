@@ -259,6 +259,12 @@ const (
 	IamSubdomain IamFlexeraIamSubdomainKind = "iam#subdomain"
 )
 
+// Defines values for IamFlexeraIamSubdomainSource.
+const (
+	IamFlexeraIamSubdomainSourceChild  IamFlexeraIamSubdomainSource = "child"
+	IamFlexeraIamSubdomainSourceParent IamFlexeraIamSubdomainSource = "parent"
+)
+
 // Defines values for IamFlexeraIamUserAccessSource.
 const (
 	IamFlexeraIamUserAccessSourceExternalAccessPolicy IamFlexeraIamUserAccessSource = "external_access_policy"
@@ -533,10 +539,10 @@ const (
 
 // Defines values for IamOrganizationInvitationIndexParamsStatus.
 const (
-	Accepted IamOrganizationInvitationIndexParamsStatus = "accepted"
-	Declined IamOrganizationInvitationIndexParamsStatus = "declined"
-	Expired  IamOrganizationInvitationIndexParamsStatus = "expired"
-	Pending  IamOrganizationInvitationIndexParamsStatus = "pending"
+	IamOrganizationInvitationIndexParamsStatusAccepted IamOrganizationInvitationIndexParamsStatus = "accepted"
+	IamOrganizationInvitationIndexParamsStatusDeclined IamOrganizationInvitationIndexParamsStatus = "declined"
+	IamOrganizationInvitationIndexParamsStatusExpired  IamOrganizationInvitationIndexParamsStatus = "expired"
+	IamOrganizationInvitationIndexParamsStatusPending  IamOrganizationInvitationIndexParamsStatus = "pending"
 )
 
 // Defines values for IamOrganizationInvitationIndexParamsView.
@@ -586,6 +592,12 @@ const (
 const (
 	IamUserIndexParamsAccessSourceExternalAccessPolicy IamUserIndexParamsAccessSource = "external_access_policy"
 	IamUserIndexParamsAccessSourceOrgMember            IamUserIndexParamsAccessSource = "org_member"
+)
+
+// Defines values for IamUserProfileShowParamsView.
+const (
+	IamUserProfileShowParamsViewDefault  IamUserProfileShowParamsView = "default"
+	IamUserProfileShowParamsViewExtended IamUserProfileShowParamsView = "extended"
 )
 
 // Defines values for IamUserSettingBlobRetriveGetUrlParamsType.
@@ -1880,10 +1892,19 @@ type IamFlexeraIamSubdomain struct {
 
 	// Name The unique name of the subdomain.
 	Name *string `json:"name,omitempty"`
+
+	// ShouldInherit Whether this subdomain should be inherited by child orgs (omitted/true=inherit, false=do not inherit)
+	ShouldInherit *bool `json:"shouldInherit,omitempty"`
+
+	// Source Origin of the subdomain in the effective result: "child" means defined by the current organization; "parent" means inherited from the parent organization.
+	Source *IamFlexeraIamSubdomainSource `json:"source,omitempty"`
 }
 
 // IamFlexeraIamSubdomainKind The resource's type
 type IamFlexeraIamSubdomainKind string
+
+// IamFlexeraIamSubdomainSource Origin of the subdomain in the effective result: "child" means defined by the current organization; "parent" means inherited from the parent organization.
+type IamFlexeraIamSubdomainSource string
 
 // IamFlexeraIamSubject A registered entity in Flexera One that may be granted permission.
 type IamFlexeraIamSubject struct {
@@ -2948,6 +2969,12 @@ type IamUserPrivilegesReportKind string
 
 // IamUserProfile defines model for Iam_UserProfile.
 type IamUserProfile struct {
+	// Company Company name of the user
+	Company *string `json:"company,omitempty"`
+
+	// CreatedAt Creation timestamp in UTC
+	CreatedAt *time.Time `json:"createdAt,omitempty"`
+
 	// Email Email address of the user
 	Email string `json:"email"`
 
@@ -2972,6 +2999,15 @@ type IamUserProfile struct {
 
 	// LastName Last name of the user
 	LastName *string `json:"lastName,omitempty"`
+
+	// PhoneNumber Phone number of the user
+	PhoneNumber *string `json:"phoneNumber,omitempty"`
+
+	// Timezone Timezone of the user
+	Timezone *string `json:"timezone,omitempty"`
+
+	// UpdatedAt Last update timestamp in UTC
+	UpdatedAt *time.Time `json:"updatedAt,omitempty"`
 }
 
 // IamUserProfileKind The resource's type
@@ -3115,6 +3151,9 @@ type IamServiceAccountShowParamsView string
 
 // IamUserIndexParamsAccessSource defines parameters for IamUserIndex.
 type IamUserIndexParamsAccessSource string
+
+// IamUserProfileShowParamsView defines parameters for IamUserProfileShow.
+type IamUserProfileShowParamsView string
 
 // IamUserSettingBlobRetriveGetUrlParamsType defines parameters for IamUserSettingBlobRetriveGetUrl.
 type IamUserSettingBlobRetriveGetUrlParamsType string

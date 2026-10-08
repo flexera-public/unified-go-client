@@ -5,7 +5,6 @@ package flexera
 import (
 	"context"
 	"encoding/json"
-	openapi_types "github.com/oapi-codegen/runtime/types"
 	"io"
 	"net/http"
 	"strings"
@@ -39,7 +38,7 @@ type BillAnalysisBillMonthSearchResponse struct {
 	PreviousPage *string `json:"previousPage,omitempty"`
 
 	// UpdatedAt Date when the data was last updated
-	UpdatedAt openapi_types.Date `json:"updated_at"`
+	UpdatedAt string `json:"updated_at"`
 
 	// Values Array of bill month records
 	Values []BillAnalysisBillMonth `json:"values"`

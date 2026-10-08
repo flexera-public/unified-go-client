@@ -941,7 +941,7 @@
     },
     {
       "path": "rulebaseddimension_csv.go",
-      "sha256": "2fe53b53277f005e7b8fbb50c6ca8e369fde63636e25cb9be46d4a6f9405f1cf",
+      "sha256": "882969def26703f9d161fe370f9beb4a9fe461252273e68c89f2e29937ef348f",
       "declarations": [
         {
           "name": "RuleBasedDimensionCSVDescriptionColumnPrefix",
@@ -980,6 +980,38 @@
         }
       ],
       "declarationCount": 7
+    },
+    {
+      "path": "services.go",
+      "sha256": "a7cc9e29c2cd450be83fe5343aaa4d91d1dc2db7aef5c0b6b0a85b2dfd64303b",
+      "declarations": [
+        {
+          "name": "Service",
+          "kind": "type",
+          "doc": "Service identifies the Flexera One API service that owns an operation, as"
+        },
+        {
+          "name": "ServiceInfo",
+          "kind": "type",
+          "doc": "ServiceInfo describes one API service from the unified spec's"
+        },
+        {
+          "name": "Services",
+          "kind": "func",
+          "doc": "Services returns every service in the unified spec, sorted by ID."
+        },
+        {
+          "name": "LookupService",
+          "kind": "func",
+          "doc": "LookupService returns the registry entry for id."
+        },
+        {
+          "name": "ServiceOf",
+          "kind": "func",
+          "doc": "ServiceOf returns the service that owns operationID (e.g."
+        }
+      ],
+      "declarationCount": 5
     },
     {
       "path": "tokensource.go",
@@ -1132,6 +1164,6 @@
       "declarationCount": 4
     }
   ],
-  "totalFiles": 26,
-  "totalDeclarations": 183
+  "totalFiles": 27,
+  "totalDeclarations": 188
 }

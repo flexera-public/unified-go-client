@@ -152,6 +152,22 @@ root `flexera` package (`client_gen_*.go`).
 | Unified Onboarding (`flexera-unified-onboarding-v1`) | 15 | 16 | `Uobs` |
 | IT Visibility (`flexera-vis-v2`) | 7 | 7 | `Vis` |
 
+### Service lookup
+
+The unified spec records the owning service of every operation
+(`x-flexera-service`) and a service registry (`x-flexera-services`).
+`client_gen_services.go` is generated from them:
+
+```go
+svc, ok := flexera.ServiceOf("BillAnalysis_costs_aggregated") // flexera.ServiceBillAnalysis, true
+info, _ := flexera.LookupService(svc)                          // info.Title == "Bill Analysis"
+for _, s := range flexera.Services() { fmt.Println(s.ID, s.Title, s.Tags) }
+```
+
+To test unpublished upstream spec changes, import a local unified-openapi
+worktree with `./scripts/update-unified-openapi --local ../unified-openapi`
+(the PIN records `source=local-working-tree`), then `make generate`.
+
 The old separately generated `service/{budget,cred,finops_customizations,
 finops_onboarding,graphql,policy,saas}/v*` and
 `rightscale/{bill_analysis,billing_center_service,global_resource_service,

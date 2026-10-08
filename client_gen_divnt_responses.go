@@ -29,7 +29,7 @@ type DivntOkResponseAny struct {
 type DivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *DivntOkResponseAny
+	JSON202      *DivntOkResponseAny
 	JSON400      *DivntErrorResponse
 	JSON401      *DivntErrorResponse
 	JSON403      *DivntErrorResponse
@@ -58,7 +58,7 @@ func (r DivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostResponse
 type DivntTriggerOnboardingDeleteDataInventoryV1OrgsOrgIdOnboardingConnectorIdDeleteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *DivntOkResponseAny
+	JSON202      *DivntOkResponseAny
 	JSON400      *DivntErrorResponse
 	JSON401      *DivntErrorResponse
 	JSON403      *DivntErrorResponse
@@ -87,7 +87,7 @@ func (r DivntTriggerOnboardingDeleteDataInventoryV1OrgsOrgIdOnboardingConnectorI
 type DivntTriggerOnboardingPutDataInventoryV1OrgsOrgIdOnboardingConnectorIdPutResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *DivntOkResponseAny
+	JSON202      *DivntOkResponseAny
 	JSON400      *DivntErrorResponse
 	JSON401      *DivntErrorResponse
 	JSON403      *DivntErrorResponse
@@ -170,12 +170,12 @@ func ParseDivntTriggerOnboardingPostDataInventoryV1OrgsOrgIdOnboardingPostRespon
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
 		var dest DivntOkResponseAny
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON202 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest DivntErrorResponse
@@ -245,12 +245,12 @@ func ParseDivntTriggerOnboardingDeleteDataInventoryV1OrgsOrgIdOnboardingConnecto
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
 		var dest DivntOkResponseAny
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON202 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest DivntErrorResponse
@@ -320,12 +320,12 @@ func ParseDivntTriggerOnboardingPutDataInventoryV1OrgsOrgIdOnboardingConnectorId
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
 		var dest DivntOkResponseAny
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON202 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest DivntErrorResponse

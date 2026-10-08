@@ -142,14 +142,14 @@ const (
 
 // Defines values for CredCredentialDeleteProjectParamsScheme.
 const (
-	CredCredentialDeleteProjectParamsSchemeApiKey CredCredentialDeleteProjectParamsScheme = "api-key"
-	CredCredentialDeleteProjectParamsSchemeAws    CredCredentialDeleteProjectParamsScheme = "aws"
-	CredCredentialDeleteProjectParamsSchemeAwsSts CredCredentialDeleteProjectParamsScheme = "aws-sts"
-	CredCredentialDeleteProjectParamsSchemeBasic  CredCredentialDeleteProjectParamsScheme = "basic"
-	CredCredentialDeleteProjectParamsSchemeDigest CredCredentialDeleteProjectParamsScheme = "digest"
-	CredCredentialDeleteProjectParamsSchemeNtlm   CredCredentialDeleteProjectParamsScheme = "ntlm"
-	CredCredentialDeleteProjectParamsSchemeOauth2 CredCredentialDeleteProjectParamsScheme = "oauth2"
-	CredCredentialDeleteProjectParamsSchemeOracle CredCredentialDeleteProjectParamsScheme = "oracle"
+	ApiKey CredCredentialDeleteProjectParamsScheme = "api-key"
+	Aws    CredCredentialDeleteProjectParamsScheme = "aws"
+	AwsSts CredCredentialDeleteProjectParamsScheme = "aws-sts"
+	Basic  CredCredentialDeleteProjectParamsScheme = "basic"
+	Digest CredCredentialDeleteProjectParamsScheme = "digest"
+	Ntlm   CredCredentialDeleteProjectParamsScheme = "ntlm"
+	Oauth2 CredCredentialDeleteProjectParamsScheme = "oauth2"
+	Oracle CredCredentialDeleteProjectParamsScheme = "oracle"
 )
 
 // CredClientAssertionCreateParamsAssertionType Client assertion type of client credential oauth2 signer.

@@ -115,6 +115,9 @@ type DivntOnboardingCreateRequest struct {
 	// ExternalId External ID.
 	ExternalId *string `json:"ExternalId"`
 
+	// HaveBillingAccess Indicates if the service principal has billing access.
+	HaveBillingAccess *string `json:"HaveBillingAccess"`
+
 	// IncludeBPC Include BPC flag.
 	IncludeBPC string `json:"IncludeBPC"`
 
@@ -179,6 +182,9 @@ type DivntOnboardingUpdateRequest struct {
 
 	// ExternalId External ID.
 	ExternalId *string `json:"ExternalId"`
+
+	// HaveBillingAccess Indicates if the service principal has billing access.
+	HaveBillingAccess *string `json:"HaveBillingAccess"`
 
 	// IncludeBPC Include BPC flag.
 	IncludeBPC *string `json:"IncludeBPC"`

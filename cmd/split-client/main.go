@@ -687,6 +687,33 @@ func writeOutputs(opts options, packageName, generator string, groups []outputGr
 	result.TotalBytes += len(optimaRoutingSource)
 	result.TotalDecls++
 
+	serviceMeta, err := computeServiceMetadata(specData)
+	if err != nil {
+		return fmt.Errorf("derive service metadata: %w", err)
+	}
+	servicesSource, servicesDecls, err := renderServicesFile(packageName, generator, serviceMeta)
+	if err != nil {
+		return fmt.Errorf("render services file: %w", err)
+	}
+	if err := os.WriteFile(filepath.Join(tempDir, servicesFileName), servicesSource, 0o644); err != nil {
+		return fmt.Errorf("write %s: %w", servicesFileName, err)
+	}
+	servicesSum := sha256.Sum256(servicesSource)
+	servicesLines := bytes.Count(servicesSource, []byte("\n"))
+	result.Files = append(result.Files, manifestFile{
+		Path:             servicesFileName,
+		SHA256:           hex.EncodeToString(servicesSum[:]),
+		Namespace:        "meta",
+		Concern:          "services",
+		Lines:            servicesLines,
+		Bytes:            len(servicesSource),
+		Declarations:     servicesDecls,
+		DeclarationCount: len(servicesDecls),
+	})
+	result.TotalLines += servicesLines
+	result.TotalBytes += len(servicesSource)
+	result.TotalDecls += len(servicesDecls)
+
 	for _, group := range groups {
 		rendered := group.Decls[0].(*renderedDecl).content
 		if err := os.WriteFile(filepath.Join(tempDir, group.FileName), rendered, 0o644); err != nil {

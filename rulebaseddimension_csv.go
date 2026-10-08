@@ -107,7 +107,7 @@ func parseRuleBasedDimensionCondition(value, dimension string, caseInsensitive b
 			return ruleBasedDimensionEqualsCondition(dimension, value, caseInsensitive)
 		}
 		expr := parseRuleBasedDimensionConditionWithoutNot(inner, dimension, caseInsensitive)
-		return FinopsCustomizationsRuleBasedDimensionCondition{Type: Not, Expression: &expr}
+		return FinopsCustomizationsRuleBasedDimensionCondition{Type: FinopsCustomizationsRuleBasedDimensionConditionTypeNot, Expression: &expr}
 	}
 	return parseRuleBasedDimensionConditionWithoutNot(value, dimension, caseInsensitive)
 }
@@ -118,7 +118,7 @@ func parseRuleBasedDimensionConditionWithoutNot(value, dimension string, caseIns
 			return ruleBasedDimensionEqualsCondition(dimension, value, caseInsensitive)
 		}
 		condition := FinopsCustomizationsRuleBasedDimensionCondition{
-			Type:      DimensionContains,
+			Type:      FinopsCustomizationsRuleBasedDimensionConditionTypeDimensionContains,
 			Dimension: &dimension,
 			Substring: &inner,
 		}
@@ -145,7 +145,7 @@ func ruleBasedDimensionUnwrap(value, prefix string) (string, bool) {
 
 func ruleBasedDimensionEqualsCondition(dimension, value string, caseInsensitive bool) FinopsCustomizationsRuleBasedDimensionCondition {
 	condition := FinopsCustomizationsRuleBasedDimensionCondition{
-		Type:      DimensionEquals,
+		Type:      FinopsCustomizationsRuleBasedDimensionConditionTypeDimensionEquals,
 		Dimension: &dimension,
 		Value:     &value,
 	}
@@ -299,7 +299,7 @@ func GenerateRuleBasedDimensionsFromCSV(r io.Reader, opts RuleBasedDimensionCSVO
 		if len(expressions) == 1 {
 			condition = expressions[0]
 		} else {
-			condition = FinopsCustomizationsRuleBasedDimensionCondition{Type: And, Expressions: &expressions}
+			condition = FinopsCustomizationsRuleBasedDimensionCondition{Type: FinopsCustomizationsRuleBasedDimensionConditionTypeAnd, Expressions: &expressions}
 		}
 
 		for i, csvIdx := range outputIndices {

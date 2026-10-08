@@ -14,6 +14,50 @@ import (
 // FinopsCustomizationsSavedFiltersshowResponseBody defines model for FinopsCustomizations_SavedFiltersshowResponseBody.
 type FinopsCustomizationsSavedFiltersshowResponseBody = FinopsCustomizationsSavedFilterHTTPBody
 
+type FinopsCustomizationsCurrencyShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsCustomizationsCurrency
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsCustomizationsCurrencyShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsCustomizationsCurrencyShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsCustomizationsCurrencyUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsCustomizationsCurrency
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsCustomizationsCurrencyUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsCustomizationsCurrencyUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type FinopsCustomizationsReportSubscriptionsIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -556,6 +600,54 @@ func (r FinopsCustomizationsTagDimensionUpdateResponse) StatusCode() int {
 	return 0
 }
 
+type FinopsCustomizationsTagObservationIndexResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsCustomizationsTagObservationList
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsCustomizationsTagObservationIndexResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsCustomizationsTagObservationIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// FinopsCustomizationsCurrencyShowWithResponse request returning *FinopsCustomizationsCurrencyShowResponse
+func (c *ClientWithResponses) FinopsCustomizationsCurrencyShowWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsCustomizationsCurrencyShowResponse, error) {
+	rsp, err := c.FinopsCustomizationsCurrencyShow(ctx, orgId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsCurrencyShowResponse(rsp)
+}
+
+// FinopsCustomizationsCurrencyUpdateWithBodyWithResponse request with arbitrary body returning *FinopsCustomizationsCurrencyUpdateResponse
+func (c *ClientWithResponses) FinopsCustomizationsCurrencyUpdateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsCustomizationsCurrencyUpdateResponse, error) {
+	rsp, err := c.FinopsCustomizationsCurrencyUpdateWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsCurrencyUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsCustomizationsCurrencyUpdateWithResponse(ctx context.Context, orgId int, body FinopsCustomizationsCurrencyUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsCustomizationsCurrencyUpdateResponse, error) {
+	rsp, err := c.FinopsCustomizationsCurrencyUpdate(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsCurrencyUpdateResponse(rsp)
+}
+
 // FinopsCustomizationsReportSubscriptionsIndexWithResponse request returning *FinopsCustomizationsReportSubscriptionsIndexResponse
 func (c *ClientWithResponses) FinopsCustomizationsReportSubscriptionsIndexWithResponse(ctx context.Context, orgId int, params *FinopsCustomizationsReportSubscriptionsIndexParams, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsIndexResponse, error) {
 	rsp, err := c.FinopsCustomizationsReportSubscriptionsIndex(ctx, orgId, params, reqEditors...)
@@ -859,6 +951,67 @@ func (c *ClientWithResponses) FinopsCustomizationsTagDimensionUpdateWithResponse
 		return nil, err
 	}
 	return ParseFinopsCustomizationsTagDimensionUpdateResponse(rsp)
+}
+
+// FinopsCustomizationsTagObservationIndexWithResponse request returning *FinopsCustomizationsTagObservationIndexResponse
+func (c *ClientWithResponses) FinopsCustomizationsTagObservationIndexWithResponse(ctx context.Context, orgId int, params *FinopsCustomizationsTagObservationIndexParams, reqEditors ...RequestEditorFn) (*FinopsCustomizationsTagObservationIndexResponse, error) {
+	rsp, err := c.FinopsCustomizationsTagObservationIndex(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsTagObservationIndexResponse(rsp)
+}
+
+// ParseFinopsCustomizationsCurrencyShowResponse parses an HTTP response from a FinopsCustomizationsCurrencyShowWithResponse call
+func ParseFinopsCustomizationsCurrencyShowResponse(rsp *http.Response) (*FinopsCustomizationsCurrencyShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsCustomizationsCurrencyShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsCustomizationsCurrency
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsCustomizationsCurrencyUpdateResponse parses an HTTP response from a FinopsCustomizationsCurrencyUpdateWithResponse call
+func ParseFinopsCustomizationsCurrencyUpdateResponse(rsp *http.Response) (*FinopsCustomizationsCurrencyUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsCustomizationsCurrencyUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsCustomizationsCurrency
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
 }
 
 // ParseFinopsCustomizationsReportSubscriptionsIndexResponse parses an HTTP response from a FinopsCustomizationsReportSubscriptionsIndexWithResponse call
@@ -1421,6 +1574,32 @@ func ParseFinopsCustomizationsTagDimensionUpdateResponse(rsp *http.Response) (*F
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest FinopsCustomizationsFlexeraFinopsCustomizationsTagDimension
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsCustomizationsTagObservationIndexResponse parses an HTTP response from a FinopsCustomizationsTagObservationIndexWithResponse call
+func ParseFinopsCustomizationsTagObservationIndexResponse(rsp *http.Response) (*FinopsCustomizationsTagObservationIndexResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsCustomizationsTagObservationIndexResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsCustomizationsTagObservationList
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

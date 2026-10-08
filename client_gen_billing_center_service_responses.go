@@ -5,6 +5,7 @@ package flexera
 import (
 	"context"
 	"encoding/json"
+	"encoding/xml"
 	"io"
 	"net/http"
 	"strings"
@@ -2450,10 +2451,15 @@ type BillingCenterServiceAllocationTableShowResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *BillingCenterServiceAllocationTableShowResponseBody
+	XML200       *BillingCenterServiceAllocationTableShowResponseBody
 	JSON403      *BillingCenterServiceAllocationTableShowForbiddenResponseBody
+	XML403       *BillingCenterServiceAllocationTableShowForbiddenResponseBody
 	JSON404      *BillingCenterServiceAllocationTableShowNotFoundResponseBody
+	XML404       *BillingCenterServiceAllocationTableShowNotFoundResponseBody
 	JSON500      *BillingCenterServiceAllocationTableShowInternalErrorResponseBody
+	XML500       *BillingCenterServiceAllocationTableShowInternalErrorResponseBody
 	JSON502      *BillingCenterServiceAllocationTableShowBadGatewayResponseBody
+	XML502       *BillingCenterServiceAllocationTableShowBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -2476,12 +2482,19 @@ type BillingCenterServiceAllocationTableUpsertResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *BillingCenterServiceAllocationTableUpsertBadRequestResponseBody
+	XML400       *BillingCenterServiceAllocationTableUpsertBadRequestResponseBody
 	JSON403      *BillingCenterServiceAllocationTableUpsertForbiddenResponseBody
+	XML403       *BillingCenterServiceAllocationTableUpsertForbiddenResponseBody
 	JSON404      *BillingCenterServiceAllocationTableUpsertNotFoundResponseBody
+	XML404       *BillingCenterServiceAllocationTableUpsertNotFoundResponseBody
 	JSON409      *BillingCenterServiceAllocationTableUpsertConflictResponseBody
+	XML409       *BillingCenterServiceAllocationTableUpsertConflictResponseBody
 	JSON422      *[]BillingCenterServiceInvalidAllocationTableRuleErrorResponse
+	XML422       *[]BillingCenterServiceInvalidAllocationTableRuleErrorResponse
 	JSON500      *BillingCenterServiceAllocationTableUpsertInternalErrorResponseBody
+	XML500       *BillingCenterServiceAllocationTableUpsertInternalErrorResponseBody
 	JSON502      *BillingCenterServiceAllocationTableUpsertBadGatewayResponseBody
+	XML502       *BillingCenterServiceAllocationTableUpsertBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -2504,12 +2517,19 @@ type BillingCenterServiceBillingCentersIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *BillingCenterServiceBillingCentersBillingCenterResponseCollection
+	XML200       *BillingCenterServiceBillingCentersBillingCenterResponseCollection
 	JSON401      *BillingCenterServiceBillingCentersIndexUnauthorizedResponseBody
+	XML401       *BillingCenterServiceBillingCentersIndexUnauthorizedResponseBody
 	JSON403      *BillingCenterServiceBillingCentersIndexForbiddenResponseBody
+	XML403       *BillingCenterServiceBillingCentersIndexForbiddenResponseBody
 	JSON404      *BillingCenterServiceBillingCentersIndexNotFoundResponseBody
+	XML404       *BillingCenterServiceBillingCentersIndexNotFoundResponseBody
 	JSON500      *BillingCenterServiceBillingCentersIndexInternalErrorResponseBody
+	XML500       *BillingCenterServiceBillingCentersIndexInternalErrorResponseBody
 	JSON502      *BillingCenterServiceBillingCentersIndexBadGatewayResponseBody
+	XML502       *BillingCenterServiceBillingCentersIndexBadGatewayResponseBody
 	JSON503      *BillingCenterServiceBillingCentersIndexServiceUnavailableResponseBody
+	XML503       *BillingCenterServiceBillingCentersIndexServiceUnavailableResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -2532,15 +2552,25 @@ type BillingCenterServiceBillingCentersCreateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON201      *BillingCenterServiceBillingCentersCreateResponseBody
+	XML201       *BillingCenterServiceBillingCentersCreateResponseBody
 	JSON400      *BillingCenterServiceBillingCentersCreateBadRequestResponseBody
+	XML400       *BillingCenterServiceBillingCentersCreateBadRequestResponseBody
 	JSON401      *BillingCenterServiceBillingCentersCreateUnauthorizedResponseBody
+	XML401       *BillingCenterServiceBillingCentersCreateUnauthorizedResponseBody
 	JSON403      *BillingCenterServiceBillingCentersCreateForbiddenResponseBody
+	XML403       *BillingCenterServiceBillingCentersCreateForbiddenResponseBody
 	JSON404      *BillingCenterServiceBillingCentersCreateNotFoundResponseBody
+	XML404       *BillingCenterServiceBillingCentersCreateNotFoundResponseBody
 	JSON409      *BillingCenterServiceBillingCentersCreateConflictResponseBody
+	XML409       *BillingCenterServiceBillingCentersCreateConflictResponseBody
 	JSON422      *BillingCenterServiceBillingCentersCreateUnprocessableEntityResponseBody
+	XML422       *BillingCenterServiceBillingCentersCreateUnprocessableEntityResponseBody
 	JSON500      *BillingCenterServiceBillingCentersCreateInternalErrorResponseBody
+	XML500       *BillingCenterServiceBillingCentersCreateInternalErrorResponseBody
 	JSON502      *BillingCenterServiceBillingCentersCreateBadGatewayResponseBody
+	XML502       *BillingCenterServiceBillingCentersCreateBadGatewayResponseBody
 	JSON503      *BillingCenterServiceBillingCentersCreateServiceUnavailableResponseBody
+	XML503       *BillingCenterServiceBillingCentersCreateServiceUnavailableResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -2563,12 +2593,19 @@ type BillingCenterServiceBillingCentersDeleteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON401      *BillingCenterServiceBillingCentersDeleteUnauthorizedResponseBody
+	XML401       *BillingCenterServiceBillingCentersDeleteUnauthorizedResponseBody
 	JSON403      *BillingCenterServiceBillingCentersDeleteForbiddenResponseBody
+	XML403       *BillingCenterServiceBillingCentersDeleteForbiddenResponseBody
 	JSON404      *BillingCenterServiceBillingCentersDeleteNotFoundResponseBody
+	XML404       *BillingCenterServiceBillingCentersDeleteNotFoundResponseBody
 	JSON405      *BillingCenterServiceBillingCentersDeleteMethodNotAllowedResponseBody
+	XML405       *BillingCenterServiceBillingCentersDeleteMethodNotAllowedResponseBody
 	JSON500      *BillingCenterServiceBillingCentersDeleteInternalErrorResponseBody
+	XML500       *BillingCenterServiceBillingCentersDeleteInternalErrorResponseBody
 	JSON502      *BillingCenterServiceBillingCentersDeleteBadGatewayResponseBody
+	XML502       *BillingCenterServiceBillingCentersDeleteBadGatewayResponseBody
 	JSON503      *BillingCenterServiceBillingCentersDeleteServiceUnavailableResponseBody
+	XML503       *BillingCenterServiceBillingCentersDeleteServiceUnavailableResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -2591,12 +2628,19 @@ type BillingCenterServiceBillingCentersShowResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *BillingCenterServiceBillingCentersShowResponseBody
+	XML200       *BillingCenterServiceBillingCentersShowResponseBody
 	JSON401      *BillingCenterServiceBillingCentersShowUnauthorizedResponseBody
+	XML401       *BillingCenterServiceBillingCentersShowUnauthorizedResponseBody
 	JSON403      *BillingCenterServiceBillingCentersShowForbiddenResponseBody
+	XML403       *BillingCenterServiceBillingCentersShowForbiddenResponseBody
 	JSON404      *BillingCenterServiceBillingCentersShowNotFoundResponseBody
+	XML404       *BillingCenterServiceBillingCentersShowNotFoundResponseBody
 	JSON500      *BillingCenterServiceBillingCentersShowInternalErrorResponseBody
+	XML500       *BillingCenterServiceBillingCentersShowInternalErrorResponseBody
 	JSON502      *BillingCenterServiceBillingCentersShowBadGatewayResponseBody
+	XML502       *BillingCenterServiceBillingCentersShowBadGatewayResponseBody
 	JSON503      *BillingCenterServiceBillingCentersShowServiceUnavailableResponseBody
+	XML503       *BillingCenterServiceBillingCentersShowServiceUnavailableResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -2619,14 +2663,23 @@ type BillingCenterServiceBillingCentersUpdateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *BillingCenterServiceBillingCentersUpdateBadRequestResponseBody
+	XML400       *BillingCenterServiceBillingCentersUpdateBadRequestResponseBody
 	JSON401      *BillingCenterServiceBillingCentersUpdateUnauthorizedResponseBody
+	XML401       *BillingCenterServiceBillingCentersUpdateUnauthorizedResponseBody
 	JSON403      *BillingCenterServiceBillingCentersUpdateForbiddenResponseBody
+	XML403       *BillingCenterServiceBillingCentersUpdateForbiddenResponseBody
 	JSON404      *BillingCenterServiceBillingCentersUpdateNotFoundResponseBody
+	XML404       *BillingCenterServiceBillingCentersUpdateNotFoundResponseBody
 	JSON405      *BillingCenterServiceBillingCentersUpdateMethodNotAllowedResponseBody
+	XML405       *BillingCenterServiceBillingCentersUpdateMethodNotAllowedResponseBody
 	JSON409      *BillingCenterServiceBillingCentersUpdateConflictResponseBody
+	XML409       *BillingCenterServiceBillingCentersUpdateConflictResponseBody
 	JSON500      *BillingCenterServiceBillingCentersUpdateInternalErrorResponseBody
+	XML500       *BillingCenterServiceBillingCentersUpdateInternalErrorResponseBody
 	JSON502      *BillingCenterServiceBillingCentersUpdateBadGatewayResponseBody
+	XML502       *BillingCenterServiceBillingCentersUpdateBadGatewayResponseBody
 	JSON503      *BillingCenterServiceBillingCentersUpdateServiceUnavailableResponseBody
+	XML503       *BillingCenterServiceBillingCentersUpdateServiceUnavailableResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -2649,9 +2702,13 @@ type BillingCenterServiceBillingCenterAccessRulesGrantResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *BillingCenterServiceBillingCenterAccessRulesGrantBadRequestResponseBody
+	XML400       *BillingCenterServiceBillingCenterAccessRulesGrantBadRequestResponseBody
 	JSON403      *BillingCenterServiceBillingCenterAccessRulesGrantForbiddenResponseBody
+	XML403       *BillingCenterServiceBillingCenterAccessRulesGrantForbiddenResponseBody
 	JSON500      *BillingCenterServiceBillingCenterAccessRulesGrantInternalErrorResponseBody
+	XML500       *BillingCenterServiceBillingCenterAccessRulesGrantInternalErrorResponseBody
 	JSON502      *BillingCenterServiceBillingCenterAccessRulesGrantBadGatewayResponseBody
+	XML502       *BillingCenterServiceBillingCenterAccessRulesGrantBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -2674,10 +2731,15 @@ type BillingCenterServiceBillingCenterAccessRulesReportResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *BillingCenterServiceBillingCenterAccessRulesSubjectRoleReportResponseCollection
+	XML200       *BillingCenterServiceBillingCenterAccessRulesSubjectRoleReportResponseCollection
 	JSON403      *BillingCenterServiceBillingCenterAccessRulesReportForbiddenResponseBody
+	XML403       *BillingCenterServiceBillingCenterAccessRulesReportForbiddenResponseBody
 	JSON404      *BillingCenterServiceBillingCenterAccessRulesReportNotFoundResponseBody
+	XML404       *BillingCenterServiceBillingCenterAccessRulesReportNotFoundResponseBody
 	JSON500      *BillingCenterServiceBillingCenterAccessRulesReportInternalErrorResponseBody
+	XML500       *BillingCenterServiceBillingCenterAccessRulesReportInternalErrorResponseBody
 	JSON502      *BillingCenterServiceBillingCenterAccessRulesReportBadGatewayResponseBody
+	XML502       *BillingCenterServiceBillingCenterAccessRulesReportBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -2700,9 +2762,13 @@ type BillingCenterServiceBillingCenterAccessRulesRevokeResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *BillingCenterServiceBillingCenterAccessRulesRevokeBadRequestResponseBody
+	XML400       *BillingCenterServiceBillingCenterAccessRulesRevokeBadRequestResponseBody
 	JSON403      *BillingCenterServiceBillingCenterAccessRulesRevokeForbiddenResponseBody
+	XML403       *BillingCenterServiceBillingCenterAccessRulesRevokeForbiddenResponseBody
 	JSON500      *BillingCenterServiceBillingCenterAccessRulesRevokeInternalErrorResponseBody
+	XML500       *BillingCenterServiceBillingCenterAccessRulesRevokeInternalErrorResponseBody
 	JSON502      *BillingCenterServiceBillingCenterAccessRulesRevokeBadGatewayResponseBody
+	XML502       *BillingCenterServiceBillingCenterAccessRulesRevokeBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -2725,12 +2791,19 @@ type BillingCenterServiceBillingCentersShowAllocationTableResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *BillingCenterServiceBillingCentersShowAllocationTableResponseBody
+	XML200       *BillingCenterServiceBillingCentersShowAllocationTableResponseBody
 	JSON401      *BillingCenterServiceBillingCentersShowAllocationTableUnauthorizedResponseBody
+	XML401       *BillingCenterServiceBillingCentersShowAllocationTableUnauthorizedResponseBody
 	JSON403      *BillingCenterServiceBillingCentersShowAllocationTableForbiddenResponseBody
+	XML403       *BillingCenterServiceBillingCentersShowAllocationTableForbiddenResponseBody
 	JSON404      *BillingCenterServiceBillingCentersShowAllocationTableNotFoundResponseBody
+	XML404       *BillingCenterServiceBillingCentersShowAllocationTableNotFoundResponseBody
 	JSON500      *BillingCenterServiceBillingCentersShowAllocationTableInternalErrorResponseBody
+	XML500       *BillingCenterServiceBillingCentersShowAllocationTableInternalErrorResponseBody
 	JSON502      *BillingCenterServiceBillingCentersShowAllocationTableBadGatewayResponseBody
+	XML502       *BillingCenterServiceBillingCentersShowAllocationTableBadGatewayResponseBody
 	JSON503      *BillingCenterServiceBillingCentersShowAllocationTableServiceUnavailableResponseBody
+	XML503       *BillingCenterServiceBillingCentersShowAllocationTableServiceUnavailableResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -2753,14 +2826,23 @@ type BillingCenterServiceBillingCentersUpsertAllocationTableResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *BillingCenterServiceBillingCentersUpsertAllocationTableBadRequestResponseBody
+	XML400       *BillingCenterServiceBillingCentersUpsertAllocationTableBadRequestResponseBody
 	JSON401      *BillingCenterServiceBillingCentersUpsertAllocationTableUnauthorizedResponseBody
+	XML401       *BillingCenterServiceBillingCentersUpsertAllocationTableUnauthorizedResponseBody
 	JSON403      *BillingCenterServiceBillingCentersUpsertAllocationTableForbiddenResponseBody
+	XML403       *BillingCenterServiceBillingCentersUpsertAllocationTableForbiddenResponseBody
 	JSON404      *BillingCenterServiceBillingCentersUpsertAllocationTableNotFoundResponseBody
+	XML404       *BillingCenterServiceBillingCentersUpsertAllocationTableNotFoundResponseBody
 	JSON409      *BillingCenterServiceBillingCentersUpsertAllocationTableConflictResponseBody
+	XML409       *BillingCenterServiceBillingCentersUpsertAllocationTableConflictResponseBody
 	JSON422      *[]BillingCenterServiceInvalidAllocationTableRuleErrorResponse
+	XML422       *[]BillingCenterServiceInvalidAllocationTableRuleErrorResponse
 	JSON500      *BillingCenterServiceBillingCentersUpsertAllocationTableInternalErrorResponseBody
+	XML500       *BillingCenterServiceBillingCentersUpsertAllocationTableInternalErrorResponseBody
 	JSON502      *BillingCenterServiceBillingCentersUpsertAllocationTableBadGatewayResponseBody
+	XML502       *BillingCenterServiceBillingCentersUpsertAllocationTableBadGatewayResponseBody
 	JSON503      *BillingCenterServiceBillingCentersUpsertAllocationTableServiceUnavailableResponseBody
+	XML503       *BillingCenterServiceBillingCentersUpsertAllocationTableServiceUnavailableResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -2783,11 +2865,17 @@ type BillingCenterServiceAccessRulesGroupReportResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *BillingCenterServiceAccessRulesScopeRoleReportResponseCollection
+	XML200       *BillingCenterServiceAccessRulesScopeRoleReportResponseCollection
 	JSON401      *BillingCenterServiceAccessRulesGroupReportUnauthorizedResponseBody
+	XML401       *BillingCenterServiceAccessRulesGroupReportUnauthorizedResponseBody
 	JSON403      *BillingCenterServiceAccessRulesGroupReportForbiddenResponseBody
+	XML403       *BillingCenterServiceAccessRulesGroupReportForbiddenResponseBody
 	JSON404      *BillingCenterServiceAccessRulesGroupReportNotFoundResponseBody
+	XML404       *BillingCenterServiceAccessRulesGroupReportNotFoundResponseBody
 	JSON500      *BillingCenterServiceAccessRulesGroupReportInternalErrorResponseBody
+	XML500       *BillingCenterServiceAccessRulesGroupReportInternalErrorResponseBody
 	JSON502      *BillingCenterServiceAccessRulesGroupReportBadGatewayResponseBody
+	XML502       *BillingCenterServiceAccessRulesGroupReportBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -2810,11 +2898,17 @@ type BillingCenterServiceAccessRulesUserReportResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *BillingCenterServiceAccessRulesScopeRoleReportResponseCollection
+	XML200       *BillingCenterServiceAccessRulesScopeRoleReportResponseCollection
 	JSON401      *BillingCenterServiceAccessRulesUserReportUnauthorizedResponseBody
+	XML401       *BillingCenterServiceAccessRulesUserReportUnauthorizedResponseBody
 	JSON403      *BillingCenterServiceAccessRulesUserReportForbiddenResponseBody
+	XML403       *BillingCenterServiceAccessRulesUserReportForbiddenResponseBody
 	JSON404      *BillingCenterServiceAccessRulesUserReportNotFoundResponseBody
+	XML404       *BillingCenterServiceAccessRulesUserReportNotFoundResponseBody
 	JSON500      *BillingCenterServiceAccessRulesUserReportInternalErrorResponseBody
+	XML500       *BillingCenterServiceAccessRulesUserReportInternalErrorResponseBody
 	JSON502      *BillingCenterServiceAccessRulesUserReportBadGatewayResponseBody
+	XML502       *BillingCenterServiceAccessRulesUserReportBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -2837,11 +2931,17 @@ type BillingCenterServiceUserBillingCentersIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *BillingCenterServiceUserBillingCentersUserBillingCenterResponseCollection
+	XML200       *BillingCenterServiceUserBillingCentersUserBillingCenterResponseCollection
 	JSON401      *BillingCenterServiceUserBillingCentersIndexUnauthorizedResponseBody
+	XML401       *BillingCenterServiceUserBillingCentersIndexUnauthorizedResponseBody
 	JSON403      *BillingCenterServiceUserBillingCentersIndexForbiddenResponseBody
+	XML403       *BillingCenterServiceUserBillingCentersIndexForbiddenResponseBody
 	JSON404      *BillingCenterServiceUserBillingCentersIndexNotFoundResponseBody
+	XML404       *BillingCenterServiceUserBillingCentersIndexNotFoundResponseBody
 	JSON500      *BillingCenterServiceUserBillingCentersIndexInternalErrorResponseBody
+	XML500       *BillingCenterServiceUserBillingCentersIndexInternalErrorResponseBody
 	JSON502      *BillingCenterServiceUserBillingCentersIndexBadGatewayResponseBody
+	XML502       *BillingCenterServiceUserBillingCentersIndexBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -2864,11 +2964,17 @@ type BillingCenterServiceUserBillingCentersShowResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *BillingCenterServiceUserBillingCentersShowResponseBody
+	XML200       *BillingCenterServiceUserBillingCentersShowResponseBody
 	JSON401      *BillingCenterServiceUserBillingCentersShowUnauthorizedResponseBody
+	XML401       *BillingCenterServiceUserBillingCentersShowUnauthorizedResponseBody
 	JSON403      *BillingCenterServiceUserBillingCentersShowForbiddenResponseBody
+	XML403       *BillingCenterServiceUserBillingCentersShowForbiddenResponseBody
 	JSON404      *BillingCenterServiceUserBillingCentersShowNotFoundResponseBody
+	XML404       *BillingCenterServiceUserBillingCentersShowNotFoundResponseBody
 	JSON500      *BillingCenterServiceUserBillingCentersShowInternalErrorResponseBody
+	XML500       *BillingCenterServiceUserBillingCentersShowInternalErrorResponseBody
 	JSON502      *BillingCenterServiceUserBillingCentersShowBadGatewayResponseBody
+	XML502       *BillingCenterServiceUserBillingCentersShowBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -3128,6 +3234,56 @@ func ParseBillingCenterServiceAllocationTableShowResponse(rsp *http.Response) (*
 		}
 		response.JSON502 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 200:
+		var dest BillingCenterServiceAllocationTableShowResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceAllocationTableShowForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceAllocationTableShowNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceAllocationTableShowInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceAllocationTableShowBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case rsp.StatusCode == 200:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+		// Content-type (application/gob) unsupported
+
 	}
 
 	return response, nil
@@ -3196,6 +3352,76 @@ func ParseBillingCenterServiceAllocationTableUpsertResponse(rsp *http.Response) 
 		}
 		response.JSON502 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 400:
+		var dest BillingCenterServiceAllocationTableUpsertBadRequestResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceAllocationTableUpsertForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceAllocationTableUpsertNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 409:
+		var dest BillingCenterServiceAllocationTableUpsertConflictResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 422:
+		var dest []BillingCenterServiceInvalidAllocationTableRuleErrorResponse
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceAllocationTableUpsertInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceAllocationTableUpsertBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case rsp.StatusCode == 400:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 409:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 422:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+		// Content-type (application/gob) unsupported
+
 	}
 
 	return response, nil
@@ -3263,6 +3489,76 @@ func ParseBillingCenterServiceBillingCentersIndexResponse(rsp *http.Response) (*
 			return nil, err
 		}
 		response.JSON503 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 200:
+		var dest BillingCenterServiceBillingCentersBillingCenterResponseCollection
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceBillingCentersIndexUnauthorizedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCentersIndexForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceBillingCentersIndexNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCentersIndexInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCentersIndexBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 503:
+		var dest BillingCenterServiceBillingCentersIndexServiceUnavailableResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML503 = &dest
+
+	case rsp.StatusCode == 200:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 401:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 503:
+		// Content-type (application/gob) unsupported
 
 	}
 
@@ -3353,6 +3649,106 @@ func ParseBillingCenterServiceBillingCentersCreateResponse(rsp *http.Response) (
 		}
 		response.JSON503 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 201:
+		var dest BillingCenterServiceBillingCentersCreateResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 400:
+		var dest BillingCenterServiceBillingCentersCreateBadRequestResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceBillingCentersCreateUnauthorizedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCentersCreateForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceBillingCentersCreateNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 409:
+		var dest BillingCenterServiceBillingCentersCreateConflictResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 422:
+		var dest BillingCenterServiceBillingCentersCreateUnprocessableEntityResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCentersCreateInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCentersCreateBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 503:
+		var dest BillingCenterServiceBillingCentersCreateServiceUnavailableResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML503 = &dest
+
+	case rsp.StatusCode == 201:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 400:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 401:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 409:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 422:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 503:
+		// Content-type (application/gob) unsupported
+
 	}
 
 	return response, nil
@@ -3421,6 +3817,76 @@ func ParseBillingCenterServiceBillingCentersDeleteResponse(rsp *http.Response) (
 		}
 		response.JSON503 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceBillingCentersDeleteUnauthorizedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCentersDeleteForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceBillingCentersDeleteNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 405:
+		var dest BillingCenterServiceBillingCentersDeleteMethodNotAllowedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCentersDeleteInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCentersDeleteBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 503:
+		var dest BillingCenterServiceBillingCentersDeleteServiceUnavailableResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML503 = &dest
+
+	case rsp.StatusCode == 401:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 405:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 503:
+		// Content-type (application/gob) unsupported
+
 	}
 
 	return response, nil
@@ -3488,6 +3954,76 @@ func ParseBillingCenterServiceBillingCentersShowResponse(rsp *http.Response) (*B
 			return nil, err
 		}
 		response.JSON503 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 200:
+		var dest BillingCenterServiceBillingCentersShowResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceBillingCentersShowUnauthorizedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCentersShowForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceBillingCentersShowNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCentersShowInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCentersShowBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 503:
+		var dest BillingCenterServiceBillingCentersShowServiceUnavailableResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML503 = &dest
+
+	case rsp.StatusCode == 200:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 401:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 503:
+		// Content-type (application/gob) unsupported
 
 	}
 
@@ -3571,6 +4107,96 @@ func ParseBillingCenterServiceBillingCentersUpdateResponse(rsp *http.Response) (
 		}
 		response.JSON503 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 400:
+		var dest BillingCenterServiceBillingCentersUpdateBadRequestResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceBillingCentersUpdateUnauthorizedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCentersUpdateForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceBillingCentersUpdateNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 405:
+		var dest BillingCenterServiceBillingCentersUpdateMethodNotAllowedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 409:
+		var dest BillingCenterServiceBillingCentersUpdateConflictResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCentersUpdateInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCentersUpdateBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 503:
+		var dest BillingCenterServiceBillingCentersUpdateServiceUnavailableResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML503 = &dest
+
+	case rsp.StatusCode == 400:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 401:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 405:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 409:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 503:
+		// Content-type (application/gob) unsupported
+
 	}
 
 	return response, nil
@@ -3617,6 +4243,46 @@ func ParseBillingCenterServiceBillingCenterAccessRulesGrantResponse(rsp *http.Re
 			return nil, err
 		}
 		response.JSON502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 400:
+		var dest BillingCenterServiceBillingCenterAccessRulesGrantBadRequestResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCenterAccessRulesGrantForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCenterAccessRulesGrantInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCenterAccessRulesGrantBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case rsp.StatusCode == 400:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+		// Content-type (application/gob) unsupported
 
 	}
 
@@ -3672,6 +4338,56 @@ func ParseBillingCenterServiceBillingCenterAccessRulesReportResponse(rsp *http.R
 		}
 		response.JSON502 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 200:
+		var dest BillingCenterServiceBillingCenterAccessRulesSubjectRoleReportResponseCollection
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCenterAccessRulesReportForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceBillingCenterAccessRulesReportNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCenterAccessRulesReportInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCenterAccessRulesReportBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case rsp.StatusCode == 200:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+		// Content-type (application/gob) unsupported
+
 	}
 
 	return response, nil
@@ -3718,6 +4434,46 @@ func ParseBillingCenterServiceBillingCenterAccessRulesRevokeResponse(rsp *http.R
 			return nil, err
 		}
 		response.JSON502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 400:
+		var dest BillingCenterServiceBillingCenterAccessRulesRevokeBadRequestResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCenterAccessRulesRevokeForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCenterAccessRulesRevokeInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCenterAccessRulesRevokeBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case rsp.StatusCode == 400:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+		// Content-type (application/gob) unsupported
 
 	}
 
@@ -3786,6 +4542,76 @@ func ParseBillingCenterServiceBillingCentersShowAllocationTableResponse(rsp *htt
 			return nil, err
 		}
 		response.JSON503 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 200:
+		var dest BillingCenterServiceBillingCentersShowAllocationTableResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceBillingCentersShowAllocationTableUnauthorizedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCentersShowAllocationTableForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceBillingCentersShowAllocationTableNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCentersShowAllocationTableInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCentersShowAllocationTableBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 503:
+		var dest BillingCenterServiceBillingCentersShowAllocationTableServiceUnavailableResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML503 = &dest
+
+	case rsp.StatusCode == 200:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 401:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 503:
+		// Content-type (application/gob) unsupported
 
 	}
 
@@ -3869,6 +4695,96 @@ func ParseBillingCenterServiceBillingCentersUpsertAllocationTableResponse(rsp *h
 		}
 		response.JSON503 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 400:
+		var dest BillingCenterServiceBillingCentersUpsertAllocationTableBadRequestResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceBillingCentersUpsertAllocationTableUnauthorizedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceBillingCentersUpsertAllocationTableForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceBillingCentersUpsertAllocationTableNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 409:
+		var dest BillingCenterServiceBillingCentersUpsertAllocationTableConflictResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 422:
+		var dest []BillingCenterServiceInvalidAllocationTableRuleErrorResponse
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceBillingCentersUpsertAllocationTableInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceBillingCentersUpsertAllocationTableBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 503:
+		var dest BillingCenterServiceBillingCentersUpsertAllocationTableServiceUnavailableResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML503 = &dest
+
+	case rsp.StatusCode == 400:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 401:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 409:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 422:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 503:
+		// Content-type (application/gob) unsupported
+
 	}
 
 	return response, nil
@@ -3929,6 +4845,66 @@ func ParseBillingCenterServiceAccessRulesGroupReportResponse(rsp *http.Response)
 			return nil, err
 		}
 		response.JSON502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 200:
+		var dest BillingCenterServiceAccessRulesScopeRoleReportResponseCollection
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceAccessRulesGroupReportUnauthorizedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceAccessRulesGroupReportForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceAccessRulesGroupReportNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceAccessRulesGroupReportInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceAccessRulesGroupReportBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case rsp.StatusCode == 200:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 401:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+		// Content-type (application/gob) unsupported
 
 	}
 
@@ -3991,6 +4967,66 @@ func ParseBillingCenterServiceAccessRulesUserReportResponse(rsp *http.Response) 
 		}
 		response.JSON502 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 200:
+		var dest BillingCenterServiceAccessRulesScopeRoleReportResponseCollection
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceAccessRulesUserReportUnauthorizedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceAccessRulesUserReportForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceAccessRulesUserReportNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceAccessRulesUserReportInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceAccessRulesUserReportBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case rsp.StatusCode == 200:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 401:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+		// Content-type (application/gob) unsupported
+
 	}
 
 	return response, nil
@@ -4052,6 +5088,66 @@ func ParseBillingCenterServiceUserBillingCentersIndexResponse(rsp *http.Response
 		}
 		response.JSON502 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 200:
+		var dest BillingCenterServiceUserBillingCentersUserBillingCenterResponseCollection
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceUserBillingCentersIndexUnauthorizedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceUserBillingCentersIndexForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceUserBillingCentersIndexNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceUserBillingCentersIndexInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceUserBillingCentersIndexBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case rsp.StatusCode == 200:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 401:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+		// Content-type (application/gob) unsupported
+
 	}
 
 	return response, nil
@@ -4112,6 +5208,66 @@ func ParseBillingCenterServiceUserBillingCentersShowResponse(rsp *http.Response)
 			return nil, err
 		}
 		response.JSON502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 200:
+		var dest BillingCenterServiceUserBillingCentersShowResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 401:
+		var dest BillingCenterServiceUserBillingCentersShowUnauthorizedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillingCenterServiceUserBillingCentersShowForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillingCenterServiceUserBillingCentersShowNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillingCenterServiceUserBillingCentersShowInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillingCenterServiceUserBillingCentersShowBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case rsp.StatusCode == 200:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 401:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+		// Content-type (application/gob) unsupported
 
 	}
 

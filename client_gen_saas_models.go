@@ -213,8 +213,8 @@ const (
 
 // Defines values for SaasFlexeraFsmRelatedappRelation.
 const (
-	SaasFlexeraFsmRelatedappRelationChild  SaasFlexeraFsmRelatedappRelation = "child"
-	SaasFlexeraFsmRelatedappRelationParent SaasFlexeraFsmRelatedappRelation = "parent"
+	Child  SaasFlexeraFsmRelatedappRelation = "child"
+	Parent SaasFlexeraFsmRelatedappRelation = "parent"
 )
 
 // Defines values for SaasFlexeraSaasMetricsActivitycountbyrangeRange.
@@ -230,8 +230,8 @@ const (
 
 // Defines values for SaasImportSettingsLoadType.
 const (
-	Full        SaasImportSettingsLoadType = "full"
-	Incremental SaasImportSettingsLoadType = "incremental"
+	SaasImportSettingsLoadTypeFull        SaasImportSettingsLoadType = "full"
+	SaasImportSettingsLoadTypeIncremental SaasImportSettingsLoadType = "incremental"
 )
 
 // Defines values for SaasImportSettingsTaskName.
@@ -349,8 +349,8 @@ const (
 
 // Defines values for SaasMetricQueryEventCountsByTypeParamsResolution.
 const (
-	Monthly SaasMetricQueryEventCountsByTypeParamsResolution = "monthly"
-	None    SaasMetricQueryEventCountsByTypeParamsResolution = "none"
+	SaasMetricQueryEventCountsByTypeParamsResolutionMonthly SaasMetricQueryEventCountsByTypeParamsResolution = "monthly"
+	SaasMetricQueryEventCountsByTypeParamsResolutionNone    SaasMetricQueryEventCountsByTypeParamsResolution = "none"
 )
 
 // Defines values for SaasMetricQueryTotalEventCountsParamsDaysSince.
@@ -402,8 +402,8 @@ const (
 
 // Defines values for SaasUsageMessageQueryIndexParamsView.
 const (
-	SaasUsageMessageQueryIndexParamsViewDefault  SaasUsageMessageQueryIndexParamsView = "default"
-	SaasUsageMessageQueryIndexParamsViewExtended SaasUsageMessageQueryIndexParamsView = "extended"
+	Default  SaasUsageMessageQueryIndexParamsView = "default"
+	Extended SaasUsageMessageQueryIndexParamsView = "extended"
 )
 
 // SaasActivityCountByRangeCollection defines model for Saas_ActivityCountByRangeCollection.

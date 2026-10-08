@@ -21,6 +21,48 @@ const (
 	Show     FinopsBillingCreateCreditAssignmentRequestBodyAction = "show"
 )
 
+// Defines values for FinopsBillingCreateRequestBody2CostMetric.
+const (
+	FinopsBillingCreateRequestBody2CostMetricBilledCost            FinopsBillingCreateRequestBody2CostMetric = "billedCost"
+	FinopsBillingCreateRequestBody2CostMetricEffectiveCost         FinopsBillingCreateRequestBody2CostMetric = "effectiveCost"
+	FinopsBillingCreateRequestBody2CostMetricModifiedBilledCost    FinopsBillingCreateRequestBody2CostMetric = "modifiedBilledCost"
+	FinopsBillingCreateRequestBody2CostMetricModifiedEffectiveCost FinopsBillingCreateRequestBody2CostMetric = "modifiedEffectiveCost"
+)
+
+// Defines values for FinopsBillingCreateRequestBody2ExportType.
+const (
+	FinopsBillingCreateRequestBody2ExportTypeCsv FinopsBillingCreateRequestBody2ExportType = "csv"
+	FinopsBillingCreateRequestBody2ExportTypePdf FinopsBillingCreateRequestBody2ExportType = "pdf"
+)
+
+// Defines values for FinopsBillingCreateRequestBody2PeriodType.
+const (
+	FinopsBillingCreateRequestBody2PeriodTypeBillPeriod    FinopsBillingCreateRequestBody2PeriodType = "billPeriod"
+	FinopsBillingCreateRequestBody2PeriodTypeBillingPeriod FinopsBillingCreateRequestBody2PeriodType = "billingPeriod"
+	FinopsBillingCreateRequestBody2PeriodTypeChargePeriod  FinopsBillingCreateRequestBody2PeriodType = "chargePeriod"
+)
+
+// Defines values for FinopsBillingCreateRequestBody3CostMetric.
+const (
+	FinopsBillingCreateRequestBody3CostMetricBilledCost            FinopsBillingCreateRequestBody3CostMetric = "billedCost"
+	FinopsBillingCreateRequestBody3CostMetricEffectiveCost         FinopsBillingCreateRequestBody3CostMetric = "effectiveCost"
+	FinopsBillingCreateRequestBody3CostMetricModifiedBilledCost    FinopsBillingCreateRequestBody3CostMetric = "modifiedBilledCost"
+	FinopsBillingCreateRequestBody3CostMetricModifiedEffectiveCost FinopsBillingCreateRequestBody3CostMetric = "modifiedEffectiveCost"
+)
+
+// Defines values for FinopsBillingCreateRequestBody3ExportType.
+const (
+	FinopsBillingCreateRequestBody3ExportTypeCsv FinopsBillingCreateRequestBody3ExportType = "csv"
+	FinopsBillingCreateRequestBody3ExportTypePdf FinopsBillingCreateRequestBody3ExportType = "pdf"
+)
+
+// Defines values for FinopsBillingCreateRequestBody3PeriodType.
+const (
+	FinopsBillingCreateRequestBody3PeriodTypeBillPeriod    FinopsBillingCreateRequestBody3PeriodType = "billPeriod"
+	FinopsBillingCreateRequestBody3PeriodTypeBillingPeriod FinopsBillingCreateRequestBody3PeriodType = "billingPeriod"
+	FinopsBillingCreateRequestBody3PeriodTypeChargePeriod  FinopsBillingCreateRequestBody3PeriodType = "chargePeriod"
+)
+
 // Defines values for FinopsBillingReplaceSettingsRequestBodyBaseCostsOn.
 const (
 	FinopsBillingReplaceSettingsRequestBodyBaseCostsOnBilledCost    FinopsBillingReplaceSettingsRequestBodyBaseCostsOn = "billedCost"
@@ -29,9 +71,30 @@ const (
 	FinopsBillingReplaceSettingsRequestBodyBaseCostsOnObservedCosts FinopsBillingReplaceSettingsRequestBodyBaseCostsOn = "observedCosts"
 )
 
-// Defines values for FinopsBillingUpdateRequestBodyStatus.
+// Defines values for FinopsBillingUpdateRequestBody2CostMetric.
 const (
-	FinopsBillingUpdateRequestBodyStatusActive FinopsBillingUpdateRequestBodyStatus = "active"
+	FinopsBillingUpdateRequestBody2CostMetricBilledCost            FinopsBillingUpdateRequestBody2CostMetric = "billedCost"
+	FinopsBillingUpdateRequestBody2CostMetricEffectiveCost         FinopsBillingUpdateRequestBody2CostMetric = "effectiveCost"
+	FinopsBillingUpdateRequestBody2CostMetricModifiedBilledCost    FinopsBillingUpdateRequestBody2CostMetric = "modifiedBilledCost"
+	FinopsBillingUpdateRequestBody2CostMetricModifiedEffectiveCost FinopsBillingUpdateRequestBody2CostMetric = "modifiedEffectiveCost"
+)
+
+// Defines values for FinopsBillingUpdateRequestBody2ExportType.
+const (
+	FinopsBillingUpdateRequestBody2ExportTypeCsv FinopsBillingUpdateRequestBody2ExportType = "csv"
+	FinopsBillingUpdateRequestBody2ExportTypePdf FinopsBillingUpdateRequestBody2ExportType = "pdf"
+)
+
+// Defines values for FinopsBillingUpdateRequestBody2PeriodType.
+const (
+	FinopsBillingUpdateRequestBody2PeriodTypeBillPeriod    FinopsBillingUpdateRequestBody2PeriodType = "billPeriod"
+	FinopsBillingUpdateRequestBody2PeriodTypeBillingPeriod FinopsBillingUpdateRequestBody2PeriodType = "billingPeriod"
+	FinopsBillingUpdateRequestBody2PeriodTypeChargePeriod  FinopsBillingUpdateRequestBody2PeriodType = "chargePeriod"
+)
+
+// Defines values for FinopsBillingUpdateRequestBody3Status.
+const (
+	FinopsBillingUpdateRequestBody3StatusActive FinopsBillingUpdateRequestBody3Status = "active"
 )
 
 // FinopsBillingCreateCreditAssignmentRequestBody defines model for FinopsBilling_CreateCreditAssignmentRequestBody.
@@ -107,7 +170,7 @@ type FinopsBillingCreateEnterpriseRuleRequestBody struct {
 	HideCredits *FinopsBillingHideCreditsSettings `json:"hideCredits,omitempty"`
 
 	// MarkupMarkdown Configure the modification of existing costs by a percentage.
-	MarkupMarkdown *FinopsBillingMarkupMarkdownSettings `json:"markupMarkdown,omitempty"`
+	MarkupMarkdown *FinopsBillingMarkupMarkdownSettingsScoped `json:"markupMarkdown,omitempty"`
 
 	// Name Name of the rule.
 	Name string `json:"name"`
@@ -224,6 +287,132 @@ type FinopsBillingCreatePreAdjustmentRequestBody struct {
 
 // FinopsBillingCreateRequestBody defines model for FinopsBilling_CreateRequestBody.
 type FinopsBillingCreateRequestBody struct {
+	// Customers Customers this schedule invoices (at least one).
+	Customers []FinopsBillingBillingInvoiceScheduleCustomer `json:"customers"`
+
+	// InvoiceDueDateRule How each generated invoice's issue date is derived from the day its run fires.
+	InvoiceDueDateRule *FinopsBillingBillingInvoiceIssueDateRule `json:"invoiceDueDateRule,omitempty"`
+
+	// InvoiceIssueDateRule How each generated invoice's issue date is derived from the day its run fires.
+	InvoiceIssueDateRule FinopsBillingBillingInvoiceIssueDateRule `json:"invoiceIssueDateRule"`
+
+	// InvoiceTemplateId Identifier of an existing invoice template to share across every customer on this schedule. Omit both this and template to create a schedule with no template.
+	InvoiceTemplateId *string `json:"invoiceTemplateId,omitempty"`
+
+	// IsCreateTemplate Whether to create a new invoice template from the template properties in this request, rather than link an existing one.
+	IsCreateTemplate *bool `json:"isCreateTemplate,omitempty"`
+
+	// Schedule When a scheduled invoice fires. Deliberately not RFC-5545 RRULE, mirroring the finops/customizations Invoice Schedules resource this exposes.
+	Schedule FinopsBillingBillingInvoiceScheduleCadence `json:"schedule"`
+
+	// ScheduleName Human-readable name for the schedule.
+	ScheduleName string `json:"scheduleName"`
+
+	// Template Invoice properties for a schedule: the template to create, or the schedule's own configuration when it has no template.
+	Template *FinopsBillingBillingInvoiceScheduleTemplateInput `json:"template,omitempty"`
+}
+
+// FinopsBillingCreateRequestBody2 defines model for FinopsBilling_CreateRequestBody2.
+type FinopsBillingCreateRequestBody2 struct {
+	// CostMetric Configured cost metric.
+	CostMetric FinopsBillingCreateRequestBody2CostMetric `json:"costMetric"`
+
+	// Dimensions Optional grouping dimensions.
+	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// DisplayLogoWithinPdf Whether the logo is rendered within PDF exports.
+	DisplayLogoWithinPdf bool `json:"displayLogoWithinPdf"`
+
+	// ExportType Invoice export type.
+	ExportType FinopsBillingCreateRequestBody2ExportType `json:"exportType"`
+
+	// Filter A single filter node: a leaf test (equal, substring) or a boolean combinator (and, or, not).
+	Filter *FinopsBillingFilterV1 `json:"filter,omitempty"`
+
+	// FreeText Optional free-text company/address block.
+	FreeText *string `json:"freeText,omitempty"`
+
+	// Logo Optional logo payload. Ignored when exportType=csv.
+	Logo *string `json:"logo,omitempty"`
+
+	// PeriodType Configured period type.
+	PeriodType FinopsBillingCreateRequestBody2PeriodType `json:"periodType"`
+
+	// TemplateName Human-readable template name.
+	TemplateName string `json:"templateName"`
+}
+
+// FinopsBillingCreateRequestBody2CostMetric Configured cost metric.
+type FinopsBillingCreateRequestBody2CostMetric string
+
+// FinopsBillingCreateRequestBody2ExportType Invoice export type.
+type FinopsBillingCreateRequestBody2ExportType string
+
+// FinopsBillingCreateRequestBody2PeriodType Configured period type.
+type FinopsBillingCreateRequestBody2PeriodType string
+
+// FinopsBillingCreateRequestBody3 defines model for FinopsBilling_CreateRequestBody3.
+type FinopsBillingCreateRequestBody3 struct {
+	// CostMetric Cost metric to use for export. Required only when neither invoiceTemplateId nor template is supplied.
+	CostMetric *FinopsBillingCreateRequestBody3CostMetric `json:"costMetric,omitempty"`
+
+	// Customers Customers to create invoice exports for.
+	Customers []FinopsBillingBillingInvoiceCustomer `json:"customers"`
+
+	// Dimensions Dimensions to include in export.
+	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// DisplayLogoWithinPdf Whether to show logo in PDF export. Required only when neither invoiceTemplateId nor template is supplied.
+	DisplayLogoWithinPdf *bool `json:"displayLogoWithinPdf,omitempty"`
+
+	// DueDate Invoice due date.
+	DueDate *openapi_types.Date `json:"dueDate,omitempty"`
+
+	// EndDate Invoice range end date.
+	EndDate openapi_types.Date `json:"endDate"`
+
+	// ExportType Export type. Required only when neither invoiceTemplateId nor template is supplied.
+	ExportType *FinopsBillingCreateRequestBody3ExportType `json:"exportType,omitempty"`
+
+	// Filter A single filter node: a leaf test (equal, substring) or a boolean combinator (and, or, not).
+	Filter *FinopsBillingFilterV1 `json:"filter,omitempty"`
+
+	// FreeText Optional free text.
+	FreeText *string `json:"freeText,omitempty"`
+
+	// InvoiceTemplateId Optional saved invoice template to source default field values from. Cannot be combined with template. Opaque ID; resolved server-side and snapshotted into the invoice.
+	InvoiceTemplateId *string `json:"invoiceTemplateId,omitempty"`
+
+	// IsCreateTemplate Whether to create and use a reusable invoice template from template properties.
+	IsCreateTemplate *bool `json:"isCreateTemplate,omitempty"`
+
+	// IssueDate Invoice issue date.
+	IssueDate *openapi_types.Date `json:"issueDate,omitempty"`
+
+	// Logo Optional logo payload.
+	Logo *string `json:"logo,omitempty"`
+
+	// PeriodType Configured period type. Required only when neither invoiceTemplateId nor template is supplied.
+	PeriodType *FinopsBillingCreateRequestBody3PeriodType `json:"periodType,omitempty"`
+
+	// StartDate Invoice range start date.
+	StartDate openapi_types.Date `json:"startDate"`
+
+	// Template Invoice properties for a schedule: the template to create, or the schedule's own configuration when it has no template.
+	Template *FinopsBillingBillingInvoiceScheduleTemplateInput `json:"template,omitempty"`
+}
+
+// FinopsBillingCreateRequestBody3CostMetric Cost metric to use for export. Required only when neither invoiceTemplateId nor template is supplied.
+type FinopsBillingCreateRequestBody3CostMetric string
+
+// FinopsBillingCreateRequestBody3ExportType Export type. Required only when neither invoiceTemplateId nor template is supplied.
+type FinopsBillingCreateRequestBody3ExportType string
+
+// FinopsBillingCreateRequestBody3PeriodType Configured period type. Required only when neither invoiceTemplateId nor template is supplied.
+type FinopsBillingCreateRequestBody3PeriodType string
+
+// FinopsBillingCreateRequestBody4 defines model for FinopsBilling_CreateRequestBody4.
+type FinopsBillingCreateRequestBody4 struct {
 	// Allocation Defines the allocation strategy and destination inputs for create/update operations.
 	Allocation FinopsBillingAllocationPayload `json:"allocation"`
 
@@ -283,7 +472,7 @@ type FinopsBillingCreateRuleRequestBody struct {
 	HideCredits *FinopsBillingHideCreditsSettings `json:"hideCredits,omitempty"`
 
 	// MarkupMarkdown Configure the modification of existing costs by a percentage.
-	MarkupMarkdown *FinopsBillingMarkupMarkdownSettings `json:"markupMarkdown,omitempty"`
+	MarkupMarkdown *FinopsBillingMarkupMarkdownSettingsScoped `json:"markupMarkdown,omitempty"`
 
 	// Name Name of the rule.
 	Name string `json:"name"`
@@ -381,6 +570,72 @@ type FinopsBillingReplaceSettingsRequestBodyBaseCostsOn string
 
 // FinopsBillingUpdateRequestBody defines model for FinopsBilling_UpdateRequestBody.
 type FinopsBillingUpdateRequestBody struct {
+	// Customers Replacement customer list (must remain non-empty if provided).
+	Customers *[]FinopsBillingBillingInvoiceScheduleCustomer `json:"customers,omitempty"`
+
+	// InvoiceDueDateRule How each generated invoice's issue date is derived from the day its run fires.
+	InvoiceDueDateRule *FinopsBillingBillingInvoiceIssueDateRule `json:"invoiceDueDateRule,omitempty"`
+
+	// InvoiceIssueDateRule How each generated invoice's issue date is derived from the day its run fires.
+	InvoiceIssueDateRule *FinopsBillingBillingInvoiceIssueDateRule `json:"invoiceIssueDateRule,omitempty"`
+
+	// InvoiceTemplateId Existing invoice template to point the schedule at. Send isCreateTemplate=false with this field omitted to detach the schedule's template.
+	InvoiceTemplateId *string `json:"invoiceTemplateId,omitempty"`
+
+	// IsCreateTemplate Whether to create a new invoice template from the template properties in this request, rather than link an existing one.
+	IsCreateTemplate *bool `json:"isCreateTemplate,omitempty"`
+
+	// Schedule When a scheduled invoice fires. Deliberately not RFC-5545 RRULE, mirroring the finops/customizations Invoice Schedules resource this exposes.
+	Schedule *FinopsBillingBillingInvoiceScheduleCadence `json:"schedule,omitempty"`
+
+	// ScheduleName Updated name.
+	ScheduleName *string `json:"scheduleName,omitempty"`
+
+	// Template Invoice properties for a schedule: the template to create, or the schedule's own configuration when it has no template.
+	Template *FinopsBillingBillingInvoiceScheduleTemplateInput `json:"template,omitempty"`
+}
+
+// FinopsBillingUpdateRequestBody2 defines model for FinopsBilling_UpdateRequestBody2.
+type FinopsBillingUpdateRequestBody2 struct {
+	// CostMetric Updated cost metric.
+	CostMetric *FinopsBillingUpdateRequestBody2CostMetric `json:"costMetric,omitempty"`
+
+	// Dimensions Updated grouping dimensions.
+	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// DisplayLogoWithinPdf Updated PDF logo display flag.
+	DisplayLogoWithinPdf *bool `json:"displayLogoWithinPdf,omitempty"`
+
+	// ExportType Updated export type.
+	ExportType *FinopsBillingUpdateRequestBody2ExportType `json:"exportType,omitempty"`
+
+	// Filter A single filter node: a leaf test (equal, substring) or a boolean combinator (and, or, not).
+	Filter *FinopsBillingFilterV1 `json:"filter,omitempty"`
+
+	// FreeText Updated free-text company/address block.
+	FreeText *string `json:"freeText,omitempty"`
+
+	// Logo Updated logo payload.
+	Logo *string `json:"logo,omitempty"`
+
+	// PeriodType Updated period type.
+	PeriodType *FinopsBillingUpdateRequestBody2PeriodType `json:"periodType,omitempty"`
+
+	// TemplateName Updated template name.
+	TemplateName *string `json:"templateName,omitempty"`
+}
+
+// FinopsBillingUpdateRequestBody2CostMetric Updated cost metric.
+type FinopsBillingUpdateRequestBody2CostMetric string
+
+// FinopsBillingUpdateRequestBody2ExportType Updated export type.
+type FinopsBillingUpdateRequestBody2ExportType string
+
+// FinopsBillingUpdateRequestBody2PeriodType Updated period type.
+type FinopsBillingUpdateRequestBody2PeriodType string
+
+// FinopsBillingUpdateRequestBody3 defines model for FinopsBilling_UpdateRequestBody3.
+type FinopsBillingUpdateRequestBody3 struct {
 	// Allocation Defines the allocation strategy and destination inputs for create/update operations.
 	Allocation *FinopsBillingAllocationPayload `json:"allocation,omitempty"`
 
@@ -397,11 +652,11 @@ type FinopsBillingUpdateRequestBody struct {
 	Source *[]FinopsBillingSourceDimensionPayload `json:"source,omitempty"`
 
 	// Status Updated lifecycle status.
-	Status *FinopsBillingUpdateRequestBodyStatus `json:"status,omitempty"`
+	Status *FinopsBillingUpdateRequestBody3Status `json:"status,omitempty"`
 }
 
-// FinopsBillingUpdateRequestBodyStatus Updated lifecycle status.
-type FinopsBillingUpdateRequestBodyStatus string
+// FinopsBillingUpdateRequestBody3Status Updated lifecycle status.
+type FinopsBillingUpdateRequestBody3Status string
 
 // FinopsBillingBillingIndexPlansParams defines parameters for FinopsBillingBillingIndexPlans.
 type FinopsBillingBillingIndexPlansParams struct {
@@ -757,6 +1012,158 @@ type FinopsBillingBillingCreditsIndexVendorCreditsParams struct {
 	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
 }
 
+// FinopsBillingInvoiceSchedulesIndexParams defines parameters for FinopsBillingInvoiceSchedulesIndex.
+type FinopsBillingInvoiceSchedulesIndexParams struct {
+	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
+	// Partial responses will include a "nextPage" attribute in their response body, which contains the URL of the next page including the appropriate skipToken.
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
+
+	// Limit Page size (default 50, max 200)
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// OrderBy Optional orderBy query allows to specify an expression for determining what values are used to order the entities.
+	// Multiple expressions can be specified using comma separated values.
+	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
+
+	// CustomerId Optional filter: only schedules covering this customer.
+	CustomerId *int `form:"customerId,omitempty" json:"customerId,omitempty"`
+
+	// Status Optional status filter.
+	Status *FinopsBillingInvoiceSchedulesIndexParamsStatus `form:"status,omitempty" json:"status,omitempty"`
+
+	// ScheduleName Optional exact-match filter on schedule name.
+	ScheduleName *string `form:"scheduleName,omitempty" json:"scheduleName,omitempty"`
+
+	// Filter OData-style expression evaluated against each returned resource. Attribute names are case-sensitive and operators are case-insensitive. String eq, ne, and in comparisons are case-sensitive; co performs case-insensitive substring matching. Date values use YYYY-MM-DD; date-time values use ISO-8601 and are normalized to UTC; billMonth uses YYYY-MM. Missing fields are treated as null; only eq null and ne null support null operands. Literal values must be on the right side of an operator.
+	//
+	// Supported comparison operators are eq, ne, co, in, gt, ge, lt, and le, subject to the field type. String fields support eq, ne, in, and co; numeric and date fields support eq, ne, in, gt, ge, lt, and le. Boolean operators are and, or, and not. Parentheses group expressions. Expressions are limited to depth 10 and 100 predicates. Malformed syntax, unsupported fields or operators, and limit violations return invalid_filter with HTTP 400.
+	//
+	// Filterable fields: scheduleName, status, customerName, customerBillingPlan, invoiceTemplateId (string); customerId (integer); createdAt and updatedAt (date-time). Customer fields match any customer on the schedule. Combined with discrete filters using AND.
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+}
+
+// FinopsBillingInvoiceSchedulesUpdateParams defines parameters for FinopsBillingInvoiceSchedulesUpdate.
+type FinopsBillingInvoiceSchedulesUpdateParams struct {
+	// IfMatch Only modify the invoice schedule if this tag is still current.
+	IfMatch string `json:"If-Match"`
+}
+
+// FinopsBillingInvoiceSchedulesActivateParams defines parameters for FinopsBillingInvoiceSchedulesActivate.
+type FinopsBillingInvoiceSchedulesActivateParams struct {
+	// EndMonthYear Optional last active billing month for the reactivated schedule (YYYY-MM). Omit it to reactivate indefinitely.
+	EndMonthYear *string `form:"endMonthYear,omitempty" json:"endMonthYear,omitempty"`
+
+	// IfMatch Only modify the invoice schedule if this tag is still current.
+	IfMatch string `json:"If-Match"`
+}
+
+// FinopsBillingInvoiceSchedulesDeactivateParams defines parameters for FinopsBillingInvoiceSchedulesDeactivate.
+type FinopsBillingInvoiceSchedulesDeactivateParams struct {
+	// IfMatch Only modify the invoice schedule if this tag is still current.
+	IfMatch string `json:"If-Match"`
+}
+
+// FinopsBillingInvoiceScheduleInvoicesIndexParams defines parameters for FinopsBillingInvoiceScheduleInvoicesIndex.
+type FinopsBillingInvoiceScheduleInvoicesIndexParams struct {
+	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
+	// Partial responses will include a "nextPage" attribute in their response body, which contains the URL of the next page including the appropriate skipToken.
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
+
+	// Limit Page size (default 10, max 200).
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Status Optional generation status filter.
+	Status *string `form:"status,omitempty" json:"status,omitempty"`
+
+	// OrderBy Optional orderBy query allows to specify an expression for determining what values are used to order the entities.
+	// Multiple expressions can be specified using comma separated values.
+	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
+
+	// BillMonth Optional bill month filter.
+	BillMonth *string `form:"billMonth,omitempty" json:"billMonth,omitempty"`
+
+	// ExportType Optional export type filter.
+	ExportType *FinopsBillingInvoiceScheduleInvoicesIndexParamsExportType `form:"exportType,omitempty" json:"exportType,omitempty"`
+
+	// CustomerName Optional customer name filter.
+	CustomerName *string `form:"customerName,omitempty" json:"customerName,omitempty"`
+
+	// CostMetric Optional cost metric filter.
+	CostMetric *string `form:"costMetric,omitempty" json:"costMetric,omitempty"`
+
+	// CustomerBillingPlan Optional billing plan filter.
+	CustomerBillingPlan *string `form:"customerBillingPlan,omitempty" json:"customerBillingPlan,omitempty"`
+
+	// Filter OData-style expression evaluated against each returned resource. Attribute names are case-sensitive and operators are case-insensitive. String eq, ne, and in comparisons are case-sensitive; co performs case-insensitive substring matching. Date values use YYYY-MM-DD; date-time values use ISO-8601 and are normalized to UTC; billMonth uses YYYY-MM. Missing fields are treated as null; only eq null and ne null support null operands. Literal values must be on the right side of an operator.
+	//
+	// Supported comparison operators are eq, ne, co, in, gt, ge, lt, and le, subject to the field type. String fields support eq, ne, in, and co; numeric and date fields support eq, ne, in, gt, ge, lt, and le. Boolean operators are and, or, and not. Parentheses group expressions. Expressions are limited to depth 10 and 100 predicates. Malformed syntax, unsupported fields or operators, and limit violations return invalid_filter with HTTP 400.
+	//
+	// Filterable fields: scheduleId, customerName, customerBillingPlan, costMetric, status, deliveryStatus, currency, periodType, exportType, invoiceAmount (string); customerId, attempts, filterCount, groupByCount (integer); billMonth (YYYY-MM); issueDate and dueDate (date); createdAt and updatedAt (date-time). Combined with discrete filters using AND.
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+}
+
+// FinopsBillingInvoiceTemplatesIndexParams defines parameters for FinopsBillingInvoiceTemplatesIndex.
+type FinopsBillingInvoiceTemplatesIndexParams struct {
+	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
+	// Partial responses will include a "nextPage" attribute in their response body, which contains the URL of the next page including the appropriate skipToken.
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
+
+	// Limit Page size (default 50, max 200)
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// OrderBy Optional orderBy query allows to specify an expression for determining what values are used to order the entities.
+	// Multiple expressions can be specified using comma separated values.
+	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
+
+	// Filter OData-style filter expression used to filter invoice templates.
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+}
+
+// FinopsBillingInvoiceTemplatesUpdateParams defines parameters for FinopsBillingInvoiceTemplatesUpdate.
+type FinopsBillingInvoiceTemplatesUpdateParams struct {
+	// IfMatch Only modify the invoice template if this tag is still current.
+	IfMatch string `json:"If-Match"`
+}
+
+// FinopsBillingInvoicesIndexParams defines parameters for FinopsBillingInvoicesIndex.
+type FinopsBillingInvoicesIndexParams struct {
+	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
+	// Partial responses will include a "nextPage" attribute in their response body, which contains the URL of the next page including the appropriate skipToken.
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
+
+	// Limit Page size (default 10, max 200)
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Status Optional status filter.
+	Status *string `form:"status,omitempty" json:"status,omitempty"`
+
+	// OrderBy Optional orderBy query allows to specify an expression for determining what values are used to order the entities.
+	// Multiple expressions can be specified using comma separated values.
+	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
+
+	// BillMonth Optional bill month filter.
+	BillMonth *string `form:"billMonth,omitempty" json:"billMonth,omitempty"`
+
+	// ExportType Optional export type filter.
+	ExportType *FinopsBillingInvoicesIndexParamsExportType `form:"exportType,omitempty" json:"exportType,omitempty"`
+
+	// CustomerName Optional customer name filter.
+	CustomerName *string `form:"customerName,omitempty" json:"customerName,omitempty"`
+
+	// Filter Legacy substring search of the stored invoice generation filter JSON. This parameter does not accept OData expressions.
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// ExpressionFilter OData-style expression evaluated against each returned resource. Attribute names are case-sensitive and operators are case-insensitive. String eq, ne, and in comparisons are case-sensitive; co performs case-insensitive substring matching. Date values use YYYY-MM-DD; date-time values use ISO-8601 and are normalized to UTC; billMonth uses YYYY-MM. Missing fields are treated as null; only eq null and ne null support null operands. Literal values must be on the right side of an operator.
+	//
+	// Supported comparison operators are eq, ne, co, in, gt, ge, lt, and le, subject to the field type. String fields support eq, ne, in, and co; numeric and date fields support eq, ne, in, gt, ge, lt, and le. Boolean operators are and, or, and not. Parentheses group expressions. Expressions are limited to depth 10 and 100 predicates. Malformed syntax, unsupported fields or operators, and limit violations return invalid_filter with HTTP 400.
+	//
+	// Filterable fields: customerId, attempts, filterCount, and groupByCount (integer); customerName, customerBillingPlan, currency, invoiceAmount, status, costMetric, periodType, and exportType (string); billMonth (YYYY-MM); issueDate and dueDate (date); createdAt and updatedAt (date-time). Combined with the legacy filter and discrete filters using AND.
+	ExpressionFilter *string `form:"expressionFilter,omitempty" json:"expressionFilter,omitempty"`
+
+	// GroupByCount Optional group-by dimension count filter.
+	GroupByCount *int `form:"groupByCount,omitempty" json:"groupByCount,omitempty"`
+}
+
 // FinopsBillingSharedCostRulesReorderParams defines parameters for FinopsBillingSharedCostRulesReorder.
 type FinopsBillingSharedCostRulesReorderParams struct {
 	// IfMatch Only modify the collection if this tag is still current. Provide the ETag from a prior GET request for the collection (GET /shared-cost-rules) to ensure the collection state hasn't changed since you viewed it.
@@ -820,14 +1227,29 @@ type FinopsBillingBillingCreditsCreateCreditAssignmentJSONRequestBody = FinopsBi
 // FinopsBillingBillingCreditsReplaceCreditAssignmentJSONRequestBody defines body for FinopsBillingBillingCreditsReplaceCreditAssignment for application/json ContentType.
 type FinopsBillingBillingCreditsReplaceCreditAssignmentJSONRequestBody = FinopsBillingCreateCreditAssignmentRequestBody
 
+// FinopsBillingInvoiceSchedulesCreateJSONRequestBody defines body for FinopsBillingInvoiceSchedulesCreate for application/json ContentType.
+type FinopsBillingInvoiceSchedulesCreateJSONRequestBody = FinopsBillingCreateRequestBody
+
+// FinopsBillingInvoiceSchedulesUpdateJSONRequestBody defines body for FinopsBillingInvoiceSchedulesUpdate for application/json ContentType.
+type FinopsBillingInvoiceSchedulesUpdateJSONRequestBody = FinopsBillingUpdateRequestBody
+
+// FinopsBillingInvoiceTemplatesCreateJSONRequestBody defines body for FinopsBillingInvoiceTemplatesCreate for application/json ContentType.
+type FinopsBillingInvoiceTemplatesCreateJSONRequestBody = FinopsBillingCreateRequestBody2
+
+// FinopsBillingInvoiceTemplatesUpdateJSONRequestBody defines body for FinopsBillingInvoiceTemplatesUpdate for application/json ContentType.
+type FinopsBillingInvoiceTemplatesUpdateJSONRequestBody = FinopsBillingUpdateRequestBody2
+
+// FinopsBillingInvoicesCreateJSONRequestBody defines body for FinopsBillingInvoicesCreate for application/json ContentType.
+type FinopsBillingInvoicesCreateJSONRequestBody = FinopsBillingCreateRequestBody3
+
 // FinopsBillingSharedCostRulesCreateJSONRequestBody defines body for FinopsBillingSharedCostRulesCreate for application/json ContentType.
-type FinopsBillingSharedCostRulesCreateJSONRequestBody = FinopsBillingCreateRequestBody
+type FinopsBillingSharedCostRulesCreateJSONRequestBody = FinopsBillingCreateRequestBody4
 
 // FinopsBillingSharedCostRulesReorderJSONRequestBody defines body for FinopsBillingSharedCostRulesReorder for application/json ContentType.
 type FinopsBillingSharedCostRulesReorderJSONRequestBody = FinopsBillingReorderRequestBody
 
 // FinopsBillingSharedCostRulesUpdateJSONRequestBody defines body for FinopsBillingSharedCostRulesUpdate for application/json ContentType.
-type FinopsBillingSharedCostRulesUpdateJSONRequestBody = FinopsBillingUpdateRequestBody
+type FinopsBillingSharedCostRulesUpdateJSONRequestBody = FinopsBillingUpdateRequestBody3
 
 func (c *Client) FinopsBillingBillingShowCustomerStatus(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewFinopsBillingBillingShowCustomerStatusRequest(c.Server, orgId)
@@ -1383,6 +1805,258 @@ func (c *Client) FinopsBillingBillingCreditsReplaceCreditAssignment(ctx context.
 
 func (c *Client) FinopsBillingBillingCreditsIndexVendorCredits(ctx context.Context, orgId int, params *FinopsBillingBillingCreditsIndexVendorCreditsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewFinopsBillingBillingCreditsIndexVendorCreditsRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoiceSchedulesIndex(ctx context.Context, orgId int, params *FinopsBillingInvoiceSchedulesIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoiceSchedulesIndexRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoiceSchedulesCreateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoiceSchedulesCreateRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoiceSchedulesCreate(ctx context.Context, orgId int, body FinopsBillingInvoiceSchedulesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoiceSchedulesCreateRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoiceSchedulesShow(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoiceSchedulesShowRequest(c.Server, orgId, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoiceSchedulesUpdateWithBody(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceSchedulesUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoiceSchedulesUpdateRequestWithBody(c.Server, orgId, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoiceSchedulesUpdate(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceSchedulesUpdateParams, body FinopsBillingInvoiceSchedulesUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoiceSchedulesUpdateRequest(c.Server, orgId, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoiceSchedulesActivate(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceSchedulesActivateParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoiceSchedulesActivateRequest(c.Server, orgId, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoiceSchedulesDeactivate(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceSchedulesDeactivateParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoiceSchedulesDeactivateRequest(c.Server, orgId, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoiceScheduleInvoicesIndex(ctx context.Context, orgId int, scheduleId string, params *FinopsBillingInvoiceScheduleInvoicesIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoiceScheduleInvoicesIndexRequest(c.Server, orgId, scheduleId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoiceScheduleInvoicesShow(ctx context.Context, orgId int, scheduleId string, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoiceScheduleInvoicesShowRequest(c.Server, orgId, scheduleId, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoiceTemplatesIndex(ctx context.Context, orgId int, params *FinopsBillingInvoiceTemplatesIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoiceTemplatesIndexRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoiceTemplatesCreateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoiceTemplatesCreateRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoiceTemplatesCreate(ctx context.Context, orgId int, body FinopsBillingInvoiceTemplatesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoiceTemplatesCreateRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoiceTemplatesShow(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoiceTemplatesShowRequest(c.Server, orgId, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoiceTemplatesUpdateWithBody(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceTemplatesUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoiceTemplatesUpdateRequestWithBody(c.Server, orgId, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoiceTemplatesUpdate(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceTemplatesUpdateParams, body FinopsBillingInvoiceTemplatesUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoiceTemplatesUpdateRequest(c.Server, orgId, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoicesIndex(ctx context.Context, orgId int, params *FinopsBillingInvoicesIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoicesIndexRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoicesCreateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoicesCreateRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoicesCreate(ctx context.Context, orgId int, body FinopsBillingInvoicesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoicesCreateRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoicesShow(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoicesShowRequest(c.Server, orgId, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoicesRetry(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoicesRetryRequest(c.Server, orgId, id)
 	if err != nil {
 		return nil, err
 	}
@@ -3523,6 +4197,1286 @@ func NewFinopsBillingBillingCreditsIndexVendorCreditsRequest(server string, orgI
 	}
 
 	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingInvoiceSchedulesIndexRequest generates requests for FinopsBillingInvoiceSchedulesIndex
+func NewFinopsBillingInvoiceSchedulesIndexRequest(server string, orgId int, params *FinopsBillingInvoiceSchedulesIndexParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/invoice-schedules", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "skipToken", runtime.ParamLocationQuery, *params.SkipToken); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.OrderBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "orderBy", runtime.ParamLocationQuery, *params.OrderBy); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.CustomerId != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "customerId", runtime.ParamLocationQuery, *params.CustomerId); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Status != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "status", runtime.ParamLocationQuery, *params.Status); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.ScheduleName != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "scheduleName", runtime.ParamLocationQuery, *params.ScheduleName); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingInvoiceSchedulesCreateRequest calls the generic FinopsBillingInvoiceSchedulesCreate builder with application/json body
+func NewFinopsBillingInvoiceSchedulesCreateRequest(server string, orgId int, body FinopsBillingInvoiceSchedulesCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingInvoiceSchedulesCreateRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewFinopsBillingInvoiceSchedulesCreateRequestWithBody generates requests for FinopsBillingInvoiceSchedulesCreate with any type of body
+func NewFinopsBillingInvoiceSchedulesCreateRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/invoice-schedules", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsBillingInvoiceSchedulesShowRequest generates requests for FinopsBillingInvoiceSchedulesShow
+func NewFinopsBillingInvoiceSchedulesShowRequest(server string, orgId int, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/invoice-schedules/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingInvoiceSchedulesUpdateRequest calls the generic FinopsBillingInvoiceSchedulesUpdate builder with application/json body
+func NewFinopsBillingInvoiceSchedulesUpdateRequest(server string, orgId int, id string, params *FinopsBillingInvoiceSchedulesUpdateParams, body FinopsBillingInvoiceSchedulesUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingInvoiceSchedulesUpdateRequestWithBody(server, orgId, id, params, "application/json", bodyReader)
+}
+
+// NewFinopsBillingInvoiceSchedulesUpdateRequestWithBody generates requests for FinopsBillingInvoiceSchedulesUpdate with any type of body
+func NewFinopsBillingInvoiceSchedulesUpdateRequestWithBody(server string, orgId int, id string, params *FinopsBillingInvoiceSchedulesUpdateParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/invoice-schedules/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, params.IfMatch)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("If-Match", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingInvoiceSchedulesActivateRequest generates requests for FinopsBillingInvoiceSchedulesActivate
+func NewFinopsBillingInvoiceSchedulesActivateRequest(server string, orgId int, id string, params *FinopsBillingInvoiceSchedulesActivateParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/invoice-schedules/%s/activate", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.EndMonthYear != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "endMonthYear", runtime.ParamLocationQuery, *params.EndMonthYear); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, params.IfMatch)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("If-Match", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingInvoiceSchedulesDeactivateRequest generates requests for FinopsBillingInvoiceSchedulesDeactivate
+func NewFinopsBillingInvoiceSchedulesDeactivateRequest(server string, orgId int, id string, params *FinopsBillingInvoiceSchedulesDeactivateParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/invoice-schedules/%s/deactivate", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, params.IfMatch)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("If-Match", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingInvoiceScheduleInvoicesIndexRequest generates requests for FinopsBillingInvoiceScheduleInvoicesIndex
+func NewFinopsBillingInvoiceScheduleInvoicesIndexRequest(server string, orgId int, scheduleId string, params *FinopsBillingInvoiceScheduleInvoicesIndexParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "scheduleId", runtime.ParamLocationPath, scheduleId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/invoice-schedules/%s/invoices", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "skipToken", runtime.ParamLocationQuery, *params.SkipToken); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Status != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "status", runtime.ParamLocationQuery, *params.Status); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.OrderBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "orderBy", runtime.ParamLocationQuery, *params.OrderBy); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.BillMonth != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "billMonth", runtime.ParamLocationQuery, *params.BillMonth); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.ExportType != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "exportType", runtime.ParamLocationQuery, *params.ExportType); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.CustomerName != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "customerName", runtime.ParamLocationQuery, *params.CustomerName); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.CostMetric != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "costMetric", runtime.ParamLocationQuery, *params.CostMetric); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.CustomerBillingPlan != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "customerBillingPlan", runtime.ParamLocationQuery, *params.CustomerBillingPlan); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingInvoiceScheduleInvoicesShowRequest generates requests for FinopsBillingInvoiceScheduleInvoicesShow
+func NewFinopsBillingInvoiceScheduleInvoicesShowRequest(server string, orgId int, scheduleId string, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "scheduleId", runtime.ParamLocationPath, scheduleId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/invoice-schedules/%s/invoices/%s", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingInvoiceTemplatesIndexRequest generates requests for FinopsBillingInvoiceTemplatesIndex
+func NewFinopsBillingInvoiceTemplatesIndexRequest(server string, orgId int, params *FinopsBillingInvoiceTemplatesIndexParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/invoice-templates", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "skipToken", runtime.ParamLocationQuery, *params.SkipToken); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.OrderBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "orderBy", runtime.ParamLocationQuery, *params.OrderBy); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingInvoiceTemplatesCreateRequest calls the generic FinopsBillingInvoiceTemplatesCreate builder with application/json body
+func NewFinopsBillingInvoiceTemplatesCreateRequest(server string, orgId int, body FinopsBillingInvoiceTemplatesCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingInvoiceTemplatesCreateRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewFinopsBillingInvoiceTemplatesCreateRequestWithBody generates requests for FinopsBillingInvoiceTemplatesCreate with any type of body
+func NewFinopsBillingInvoiceTemplatesCreateRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/invoice-templates", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsBillingInvoiceTemplatesShowRequest generates requests for FinopsBillingInvoiceTemplatesShow
+func NewFinopsBillingInvoiceTemplatesShowRequest(server string, orgId int, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/invoice-templates/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingInvoiceTemplatesUpdateRequest calls the generic FinopsBillingInvoiceTemplatesUpdate builder with application/json body
+func NewFinopsBillingInvoiceTemplatesUpdateRequest(server string, orgId int, id string, params *FinopsBillingInvoiceTemplatesUpdateParams, body FinopsBillingInvoiceTemplatesUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingInvoiceTemplatesUpdateRequestWithBody(server, orgId, id, params, "application/json", bodyReader)
+}
+
+// NewFinopsBillingInvoiceTemplatesUpdateRequestWithBody generates requests for FinopsBillingInvoiceTemplatesUpdate with any type of body
+func NewFinopsBillingInvoiceTemplatesUpdateRequestWithBody(server string, orgId int, id string, params *FinopsBillingInvoiceTemplatesUpdateParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/invoice-templates/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PATCH", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithLocation("simple", false, "If-Match", runtime.ParamLocationHeader, params.IfMatch)
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("If-Match", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingInvoicesIndexRequest generates requests for FinopsBillingInvoicesIndex
+func NewFinopsBillingInvoicesIndexRequest(server string, orgId int, params *FinopsBillingInvoicesIndexParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/invoices", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "skipToken", runtime.ParamLocationQuery, *params.SkipToken); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Status != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "status", runtime.ParamLocationQuery, *params.Status); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.OrderBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "orderBy", runtime.ParamLocationQuery, *params.OrderBy); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.BillMonth != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "billMonth", runtime.ParamLocationQuery, *params.BillMonth); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.ExportType != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "exportType", runtime.ParamLocationQuery, *params.ExportType); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.CustomerName != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "customerName", runtime.ParamLocationQuery, *params.CustomerName); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.ExpressionFilter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expressionFilter", runtime.ParamLocationQuery, *params.ExpressionFilter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.GroupByCount != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "groupByCount", runtime.ParamLocationQuery, *params.GroupByCount); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingInvoicesCreateRequest calls the generic FinopsBillingInvoicesCreate builder with application/json body
+func NewFinopsBillingInvoicesCreateRequest(server string, orgId int, body FinopsBillingInvoicesCreateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingInvoicesCreateRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewFinopsBillingInvoicesCreateRequestWithBody generates requests for FinopsBillingInvoicesCreate with any type of body
+func NewFinopsBillingInvoicesCreateRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/invoices", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsBillingInvoicesShowRequest generates requests for FinopsBillingInvoicesShow
+func NewFinopsBillingInvoicesShowRequest(server string, orgId int, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/invoices/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingInvoicesRetryRequest generates requests for FinopsBillingInvoicesRetry
+func NewFinopsBillingInvoicesRetryRequest(server string, orgId int, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/invoices/%s/retry", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), nil)
 	if err != nil {
 		return nil, err
 	}

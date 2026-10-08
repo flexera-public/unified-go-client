@@ -4087,8 +4087,8 @@ func (c *ClientWithResponses) IamRefreshTokenShowWithResponse(ctx context.Contex
 }
 
 // IamUserProfileShowWithResponse request returning *IamUserProfileShowResponse
-func (c *ClientWithResponses) IamUserProfileShowWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*IamUserProfileShowResponse, error) {
-	rsp, err := c.IamUserProfileShow(ctx, reqEditors...)
+func (c *ClientWithResponses) IamUserProfileShowWithResponse(ctx context.Context, params *IamUserProfileShowParams, reqEditors ...RequestEditorFn) (*IamUserProfileShowResponse, error) {
+	rsp, err := c.IamUserProfileShow(ctx, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}

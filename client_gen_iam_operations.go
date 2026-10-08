@@ -1041,6 +1041,12 @@ type IamRefreshTokenRevokeParams struct {
 	UserId *int `form:"userId,omitempty" json:"userId,omitempty"`
 }
 
+// IamUserProfileShowParams defines parameters for IamUserProfileShow.
+type IamUserProfileShowParams struct {
+	// View View used to render the user's profile
+	View *IamUserProfileShowParamsView `form:"view,omitempty" json:"view,omitempty"`
+}
+
 // IamUserSettingBlobRetriveGetUrlParams defines parameters for IamUserSettingBlobRetriveGetUrl.
 type IamUserSettingBlobRetriveGetUrlParams struct {
 	// Id The key may be a combination of a Page ID and a Prefix ID. For example: page-settings:optima/cloud-dashboards/82783782372230, where page-settings:optima/cloud-dashboards represents the Page ID and 82783782372230 is the Prefix ID.
@@ -2708,8 +2714,8 @@ func (c *Client) IamRefreshTokenShow(ctx context.Context, id string, reqEditors 
 	return c.Client.Do(req)
 }
 
-func (c *Client) IamUserProfileShow(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewIamUserProfileShowRequest(c.Server)
+func (c *Client) IamUserProfileShow(ctx context.Context, params *IamUserProfileShowParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewIamUserProfileShowRequest(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
@@ -8118,7 +8124,7 @@ func NewIamRefreshTokenShowRequest(server string, id string) (*http.Request, err
 }
 
 // NewIamUserProfileShowRequest generates requests for IamUserProfileShow
-func NewIamUserProfileShowRequest(server string) (*http.Request, error) {
+func NewIamUserProfileShowRequest(server string, params *IamUserProfileShowParams) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -8134,6 +8140,28 @@ func NewIamUserProfileShowRequest(server string) (*http.Request, error) {
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.View != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "view", runtime.ParamLocationQuery, *params.View); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
 	}
 
 	req, err := http.NewRequest("GET", queryURL.String(), nil)

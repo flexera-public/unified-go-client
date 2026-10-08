@@ -7,6 +7,11 @@ import (
 	"time"
 )
 
+// Defines values for FinopsCustomizationsCurrencyKind.
+const (
+	FinopsCurrency FinopsCustomizationsCurrencyKind = "finops:currency"
+)
+
 // Defines values for FinopsCustomizationsFilterV1Type.
 const (
 	FinopsCustomizationsFilterV1TypeAnd       FinopsCustomizationsFilterV1Type = "and"
@@ -58,6 +63,26 @@ const (
 // Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsTagDimensionKind.
 const (
 	FinopsTagDimension FinopsCustomizationsFlexeraFinopsCustomizationsTagDimensionKind = "finops:tag-dimension"
+)
+
+// Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationKind.
+const (
+	FinopsTagObservation FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationKind = "finops:tag-observation"
+)
+
+// Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationProvider.
+const (
+	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationProviderAws   FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationProvider = "aws"
+	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationProviderAzure FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationProvider = "azure"
+	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationProviderGcp   FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationProvider = "gcp"
+)
+
+// Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType.
+const (
+	AwsCostAllocationTag FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "awsCostAllocationTag"
+	AwsResourceTag       FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "awsResourceTag"
+	AzureResourceTag     FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "azureResourceTag"
+	GcpResourceLabel     FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "gcpResourceLabel"
 )
 
 // Defines values for FinopsCustomizationsIndexSavedFiltersResultKind.
@@ -120,11 +145,11 @@ const (
 
 // Defines values for FinopsCustomizationsRuleBasedDimensionConditionType.
 const (
-	And               FinopsCustomizationsRuleBasedDimensionConditionType = "and"
-	DimensionContains FinopsCustomizationsRuleBasedDimensionConditionType = "dimension_contains"
-	DimensionEquals   FinopsCustomizationsRuleBasedDimensionConditionType = "dimension_equals"
-	Not               FinopsCustomizationsRuleBasedDimensionConditionType = "not"
-	Or                FinopsCustomizationsRuleBasedDimensionConditionType = "or"
+	FinopsCustomizationsRuleBasedDimensionConditionTypeAnd               FinopsCustomizationsRuleBasedDimensionConditionType = "and"
+	FinopsCustomizationsRuleBasedDimensionConditionTypeDimensionContains FinopsCustomizationsRuleBasedDimensionConditionType = "dimension_contains"
+	FinopsCustomizationsRuleBasedDimensionConditionTypeDimensionEquals   FinopsCustomizationsRuleBasedDimensionConditionType = "dimension_equals"
+	FinopsCustomizationsRuleBasedDimensionConditionTypeNot               FinopsCustomizationsRuleBasedDimensionConditionType = "not"
+	FinopsCustomizationsRuleBasedDimensionConditionTypeOr                FinopsCustomizationsRuleBasedDimensionConditionType = "or"
 )
 
 // Defines values for FinopsCustomizationsRuleBasedDimensionListKind.
@@ -152,6 +177,18 @@ const (
 	FinopsRuleBasedDimensionSummary FinopsCustomizationsRuleBasedDimensionSummaryKind = "finops:rule-based-dimension-summary"
 )
 
+// Defines values for FinopsCustomizationsSavedFilterDisplayOptionsPeriodType.
+const (
+	FinopsCustomizationsSavedFilterDisplayOptionsPeriodTypeBillPeriod   FinopsCustomizationsSavedFilterDisplayOptionsPeriodType = "billPeriod"
+	FinopsCustomizationsSavedFilterDisplayOptionsPeriodTypeChargePeriod FinopsCustomizationsSavedFilterDisplayOptionsPeriodType = "chargePeriod"
+)
+
+// Defines values for FinopsCustomizationsSavedFilterDisplayOptionsPatchPeriodType.
+const (
+	BillPeriod   FinopsCustomizationsSavedFilterDisplayOptionsPatchPeriodType = "billPeriod"
+	ChargePeriod FinopsCustomizationsSavedFilterDisplayOptionsPatchPeriodType = "chargePeriod"
+)
+
 // Defines values for FinopsCustomizationsSavedFilterHTTPBodyKind.
 const (
 	FinopsCustomizationsSavedFilterHTTPBodyKindFinopsSavedFilter FinopsCustomizationsSavedFilterHTTPBodyKind = "finops:saved-filter"
@@ -168,13 +205,39 @@ const (
 	FinopsTagDimensionList FinopsCustomizationsTagDimensionListKind = "finops:tag-dimension-list"
 )
 
+// Defines values for FinopsCustomizationsTagObservationListKind.
+const (
+	FinopsTagObservationList FinopsCustomizationsTagObservationListKind = "finops:tag-observation-list"
+)
+
 // Defines values for FinopsCustomizationsSavedFiltersIndexParamsVisibility.
 const (
 	FinopsCustomizationsSavedFiltersIndexParamsVisibilityPrivate FinopsCustomizationsSavedFiltersIndexParamsVisibility = "private"
 	FinopsCustomizationsSavedFiltersIndexParamsVisibilityShared  FinopsCustomizationsSavedFiltersIndexParamsVisibility = "shared"
 )
 
-// FinopsCustomizationsError invalid skiptoken received
+// FinopsCustomizationsCurrency defines model for FinopsCustomizations_Currency.
+type FinopsCustomizationsCurrency struct {
+	// CurrencyConversion Controls whether FinOps converts costs using the organization's configured platform currency settings. It does not modify those settings.
+	CurrencyConversion FinopsCustomizationsCurrencyConversion `json:"currencyConversion"`
+
+	// Kind The resource's type
+	Kind FinopsCustomizationsCurrencyKind `json:"kind"`
+
+	// OrgId The unique identifier for the organization
+	OrgId int `json:"orgId"`
+}
+
+// FinopsCustomizationsCurrencyKind The resource's type
+type FinopsCustomizationsCurrencyKind string
+
+// FinopsCustomizationsCurrencyConversion Controls whether FinOps converts costs using the organization's configured platform currency settings. It does not modify those settings.
+type FinopsCustomizationsCurrencyConversion struct {
+	// Enabled Whether costs are converted using the organization's configured platform currency settings.
+	Enabled bool `json:"enabled"`
+}
+
+// FinopsCustomizationsError defines model for FinopsCustomizations_Error.
 type FinopsCustomizationsError struct {
 	// Fault Is the error a server-side fault?
 	Fault bool `json:"fault"`
@@ -347,16 +410,19 @@ type FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummary struct {
 	// Dimensions Optional list of dimensions for GROUP BY (max 10)
 	Dimensions *[]string `json:"dimensions,omitempty"`
 
+	// DisplayOptions Display preferences restored when a saved filter is applied to a cost-analysis view.
+	DisplayOptions FinopsCustomizationsSavedFilterDisplayOptions `json:"displayOptions"`
+
 	// DowngradedAt Read-only, nullable timestamp of the most recent administrator downgrade from shared to private.
 	DowngradedAt *time.Time `json:"downgradedAt,omitempty"`
 
 	// DowngradedByUserId Read-only, nullable user ID of the administrator who most recently downgraded the saved filter from shared to private.
 	DowngradedByUserId *int `json:"downgradedByUserId,omitempty"`
 
-	// FilterExpressionCount Number of filter expressions (leaf predicates) used by the filter
+	// FilterExpressionCount Number of filter expressions (leaf predicates) the caller is entitled to see, after Billing Center entitlement filtering
 	FilterExpressionCount int `json:"filterExpressionCount"`
 
-	// GroupByExpressionCount Number of GROUP BY expressions (dimensions)
+	// GroupByExpressionCount Number of GROUP BY expressions (dimensions) the caller is entitled to see, after Billing Center entitlement filtering
 	GroupByExpressionCount int `json:"groupByExpressionCount"`
 
 	// Id UUID v4 identifier
@@ -414,6 +480,51 @@ type FinopsCustomizationsFlexeraFinopsCustomizationsTagDimension struct {
 // FinopsCustomizationsFlexeraFinopsCustomizationsTagDimensionKind The resource's type
 type FinopsCustomizationsFlexeraFinopsCustomizationsTagDimensionKind string
 
+// FinopsCustomizationsFlexeraFinopsCustomizationsTagObservation A resource tag key observed in an organization's cloud cost and usage data.
+type FinopsCustomizationsFlexeraFinopsCustomizationsTagObservation struct {
+	// DistinctResourceCount Number of distinct billing resources on which the tag key was observed.
+	DistinctResourceCount int `json:"distinctResourceCount"`
+
+	// DistinctValueCount Number of distinct values observed for the tag key.
+	DistinctValueCount int `json:"distinctValueCount"`
+
+	// Id Stable identifier for the observed tag key.
+	Id string `json:"id"`
+
+	// Key Tag key as reported by the provider, excluding its namespace.
+	Key string `json:"key"`
+
+	// Kind The resource's type
+	Kind FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationKind `json:"kind"`
+
+	// Namespace Namespace parsed from the qualified tag key, or an empty string when none is present.
+	Namespace string `json:"namespace"`
+
+	// NormalizedKey Comparison-only normalized form of the tag key.
+	NormalizedKey string `json:"normalizedKey"`
+
+	// OrgId The unique identifier for the organization
+	OrgId int `json:"orgId"`
+
+	// Provider Cloud provider that reported the tag key.
+	Provider FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationProvider `json:"provider"`
+
+	// QualifiedKey Tag key as reported by the provider, including its namespace when present.
+	QualifiedKey string `json:"qualifiedKey"`
+
+	// SourceType Provider-specific source of the observed tag.
+	SourceType FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType `json:"sourceType"`
+}
+
+// FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationKind The resource's type
+type FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationKind string
+
+// FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationProvider Cloud provider that reported the tag key.
+type FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationProvider string
+
+// FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType Provider-specific source of the observed tag.
+type FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType string
+
 // FinopsCustomizationsIndexSavedFiltersResult defines model for FinopsCustomizations_IndexSavedFiltersResult.
 type FinopsCustomizationsIndexSavedFiltersResult struct {
 	// Count Number of items in the current page.
@@ -439,11 +550,17 @@ type FinopsCustomizationsIndexSavedFiltersResultKind string
 
 // FinopsCustomizationsPatchSavedFilterRequest defines model for FinopsCustomizations_PatchSavedFilterRequest.
 type FinopsCustomizationsPatchSavedFilterRequest struct {
+	// BillingCenterIds Updated list of Billing Center IDs stored with the filter (max 100). Use null to clear the Billing Center IDs the caller is entitled to see; stored IDs the caller is not entitled to see are preserved. IDs of Billing Centers the caller is not entitled to see are dropped from the request silently. The filter stores at most 100 Billing Centers in total, including preserved ones the caller cannot see: if preserved IDs cause the resulting list to exceed 100, the request is rejected with 422; a request containing more than 100 submitted IDs is invalid and rejected with 400.
+	BillingCenterIds *[]string `json:"billingCenterIds,omitempty"`
+
 	// Description Updated description. Use null to clear the description.
 	Description *string `json:"description,omitempty"`
 
 	// Dimensions Updated list of dimensions for GROUP BY. Use null to clear dimensions.
 	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// DisplayOptions Display preference fields to update. Omitted fields remain unchanged.
+	DisplayOptions *FinopsCustomizationsSavedFilterDisplayOptionsPatch `json:"displayOptions,omitempty"`
 
 	// Filter A single filter node: a leaf test (equal, substring) or a boolean combinator (and, or, not).
 	Filter *FinopsCustomizationsFilterV1 `json:"filter,omitempty"`
@@ -864,11 +981,74 @@ type FinopsCustomizationsRuleBasedDimensionValueExpression struct {
 	Text *string `json:"text,omitempty"`
 }
 
+// FinopsCustomizationsSavedFilterDisplayOptions Display preferences restored when a saved filter is applied to a cost-analysis view.
+type FinopsCustomizationsSavedFilterDisplayOptions struct {
+	// PeriodType Period used to group costs: `chargePeriod` groups costs by charge date and `billPeriod` groups costs by invoice billing date.
+	PeriodType FinopsCustomizationsSavedFilterDisplayOptionsPeriodType `json:"periodType"`
+
+	// ShowCost Whether the Cost metric is displayed.
+	ShowCost bool `json:"showCost"`
+
+	// ShowDimensionNames Whether dimension names are displayed in the table.
+	ShowDimensionNames bool `json:"showDimensionNames"`
+
+	// ShowListPrice Whether the List Price metric is displayed.
+	ShowListPrice bool `json:"showListPrice"`
+
+	// ShowPercentChange Whether percent change is displayed in the table.
+	ShowPercentChange bool `json:"showPercentChange"`
+
+	// ShowSavings Whether the Savings metric is displayed.
+	ShowSavings bool `json:"showSavings"`
+
+	// ShowSavingsPercent Whether the Savings Percent metric is displayed.
+	ShowSavingsPercent bool `json:"showSavingsPercent"`
+
+	// ShowUsage Whether the Usage metric is displayed.
+	ShowUsage bool `json:"showUsage"`
+}
+
+// FinopsCustomizationsSavedFilterDisplayOptionsPeriodType Period used to group costs: `chargePeriod` groups costs by charge date and `billPeriod` groups costs by invoice billing date.
+type FinopsCustomizationsSavedFilterDisplayOptionsPeriodType string
+
+// FinopsCustomizationsSavedFilterDisplayOptionsPatch Display preference fields to update. Omitted fields remain unchanged.
+type FinopsCustomizationsSavedFilterDisplayOptionsPatch struct {
+	// PeriodType Period used to group costs: `chargePeriod` groups costs by charge date and `billPeriod` groups costs by invoice billing date.
+	PeriodType *FinopsCustomizationsSavedFilterDisplayOptionsPatchPeriodType `json:"periodType,omitempty"`
+
+	// ShowCost Whether the Cost metric is displayed.
+	ShowCost *bool `json:"showCost,omitempty"`
+
+	// ShowDimensionNames Whether dimension names are displayed in the table.
+	ShowDimensionNames *bool `json:"showDimensionNames,omitempty"`
+
+	// ShowListPrice Whether the List Price metric is displayed.
+	ShowListPrice *bool `json:"showListPrice,omitempty"`
+
+	// ShowPercentChange Whether percent change is displayed in the table.
+	ShowPercentChange *bool `json:"showPercentChange,omitempty"`
+
+	// ShowSavings Whether the Savings metric is displayed.
+	ShowSavings *bool `json:"showSavings,omitempty"`
+
+	// ShowSavingsPercent Whether the Savings Percent metric is displayed.
+	ShowSavingsPercent *bool `json:"showSavingsPercent,omitempty"`
+
+	// ShowUsage Whether the Usage metric is displayed.
+	ShowUsage *bool `json:"showUsage,omitempty"`
+}
+
+// FinopsCustomizationsSavedFilterDisplayOptionsPatchPeriodType Period used to group costs: `chargePeriod` groups costs by charge date and `billPeriod` groups costs by invoice billing date.
+type FinopsCustomizationsSavedFilterDisplayOptionsPatchPeriodType string
+
 // FinopsCustomizationsSavedFilterErrorCollection defines model for FinopsCustomizations_SavedFilterErrorCollection.
 type FinopsCustomizationsSavedFilterErrorCollection = []FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterError
 
 // FinopsCustomizationsSavedFilterHTTPBody defines model for FinopsCustomizations_SavedFilterHTTPBody.
 type FinopsCustomizationsSavedFilterHTTPBody struct {
+	// BillingCenterIds Billing Center IDs stored with the filter (at most 100 in total, including Billing Centers the caller cannot see). Only Billing Centers the caller is entitled to see are returned; the rest are omitted with no indication.
+	BillingCenterIds *[]string `json:"billingCenterIds,omitempty"`
+
 	// CreatedAt ISO-8601 creation timestamp
 	CreatedAt time.Time `json:"createdAt"`
 
@@ -877,6 +1057,9 @@ type FinopsCustomizationsSavedFilterHTTPBody struct {
 
 	// Dimensions Optional list of dimensions for GROUP BY (max 10)
 	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// DisplayOptions Display preferences restored when a saved filter is applied to a cost-analysis view.
+	DisplayOptions FinopsCustomizationsSavedFilterDisplayOptions `json:"displayOptions"`
 
 	// DowngradedAt Read-only, nullable timestamp of the most recent administrator downgrade from shared to private.
 	DowngradedAt *time.Time `json:"downgradedAt,omitempty"`
@@ -936,6 +1119,34 @@ type FinopsCustomizationsTagDimensionTag struct {
 	// Key Key (the part of the tag before the "=" character).
 	Key string `json:"key"`
 }
+
+// FinopsCustomizationsTagObservationCollection defines model for FinopsCustomizations_TagObservationCollection.
+type FinopsCustomizationsTagObservationCollection = []FinopsCustomizationsFlexeraFinopsCustomizationsTagObservation
+
+// FinopsCustomizationsTagObservationList defines model for FinopsCustomizations_TagObservationList.
+type FinopsCustomizationsTagObservationList struct {
+	// Count Number of items in the current page.
+	Count *int `json:"count,omitempty"`
+
+	// Kind The resource's type
+	Kind FinopsCustomizationsTagObservationListKind `json:"kind"`
+
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	NextPage *string `json:"nextPage,omitempty"`
+
+	// OrgId The unique identifier for the organization
+	OrgId int `json:"orgId"`
+
+	// PrevPage URL to the previous page of data. The first page of data will not return a prevPage value.
+	PrevPage *string `json:"prevPage,omitempty"`
+
+	// Total Total number of items matching the current filter.
+	Total  *int                                         `json:"total,omitempty"`
+	Values FinopsCustomizationsTagObservationCollection `json:"values"`
+}
+
+// FinopsCustomizationsTagObservationListKind The resource's type
+type FinopsCustomizationsTagObservationListKind string
 
 // FinopsCustomizationsSavedFiltersIndexParamsVisibility defines parameters for FinopsCustomizationsSavedFiltersIndex.
 type FinopsCustomizationsSavedFiltersIndexParamsVisibility string

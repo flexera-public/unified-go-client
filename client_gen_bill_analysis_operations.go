@@ -49,6 +49,12 @@ const (
 	BillAnalysisExportSelectRequestBodyGranularityMonth BillAnalysisExportSelectRequestBodyGranularity = "month"
 )
 
+// Defines values for BillAnalysisExportSelectRequestBodyPeriodType.
+const (
+	BillAnalysisExportSelectRequestBodyPeriodTypeBillingPeriod BillAnalysisExportSelectRequestBodyPeriodType = "billing_period"
+	BillAnalysisExportSelectRequestBodyPeriodTypeChargePeriod  BillAnalysisExportSelectRequestBodyPeriodType = "charge_period"
+)
+
 // Defines values for BillAnalysisIndexRequestBodyMetric.
 const (
 	BillAnalysisIndexRequestBodyMetricBilledCost    BillAnalysisIndexRequestBodyMetric = "BilledCost"
@@ -356,6 +362,13 @@ type BillAnalysisExportSelectRequestBody struct {
 	// in the dimensions parameter.
 	Metrics []string `json:"metrics"`
 
+	// PeriodType Determines which date column to use for filtering.
+	//  - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
+	//  - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
+	//
+	// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
+	PeriodType *BillAnalysisExportSelectRequestBodyPeriodType `json:"period_type,omitempty"`
+
 	// StartAt Earliest timestamp (inclusive) of the returned costs.
 	// For month granularity: consists of a year and month in YYYY-MM format.
 	// For day granularity: consists of a year, month, and day in YYYY-MM-DD format.
@@ -371,6 +384,13 @@ type BillAnalysisExportSelectRequestBodyAdjDimensionGranularity string
 // BillAnalysisExportSelectRequestBodyGranularity Indicates which data source to query, having costs already aggregated up to this granularity.
 // Choosing this granularity wisely can improve performance, as choosing to fetch 1 month of costs with 'month' granularity will be faster than fetching the same 31 days at 'day' granularity.
 type BillAnalysisExportSelectRequestBodyGranularity string
+
+// BillAnalysisExportSelectRequestBodyPeriodType Determines which date column to use for filtering.
+//   - 'charge_period' (default) filters by ChargePeriodStart/ChargePeriodMonth.
+//   - 'billing_period' filters by BillingPeriodStart/BillingPeriodMonth.
+//
+// For V1 orgs, only 'charge_period' is supported. V2 orgs support both 'charge_period' and 'billing_period'. If 'billing_period' is selected but the billing data does not contain Billing Period information, the system will fall back to using ChargePeriod for filtering.
+type BillAnalysisExportSelectRequestBodyPeriodType string
 
 // BillAnalysisIndexRequestBody defines model for BillAnalysis_IndexRequestBody.
 type BillAnalysisIndexRequestBody struct {

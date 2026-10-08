@@ -2,8 +2,12 @@
 
 # Resolve the requested upstream branch (main by default), download its
 # immutable OpenAPI snapshot, and record the resolved commit/hash.
+
 update-unified-openapi:
 	./scripts/update-unified-openapi $(REF)
+
+# Alias to align with unified-openapi and flexera-cli make task names
+refresh: update-unified-openapi
 
 # Update all Go module dependencies to their latest versions and tidy
 # go.mod/go.sum.

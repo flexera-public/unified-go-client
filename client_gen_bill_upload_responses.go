@@ -5,6 +5,7 @@ package flexera
 import (
 	"context"
 	"encoding/json"
+	"encoding/xml"
 	openapi_types "github.com/oapi-codegen/runtime/types"
 	"io"
 	"net/http"
@@ -1217,13 +1218,21 @@ type BillUploadBillUploadIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *BillUploadBillUploadBillUploadResponseCollection
+	XML200       *BillUploadBillUploadBillUploadResponseCollection
 	JSON400      *BillUploadBillUploadIndexBadRequestResponseBody
+	XML400       *BillUploadBillUploadIndexBadRequestResponseBody
 	JSON401      *BillUploadBillUploadIndexUnauthorizedResponseBody
+	XML401       *BillUploadBillUploadIndexUnauthorizedResponseBody
 	JSON403      *BillUploadBillUploadIndexForbiddenResponseBody
+	XML403       *BillUploadBillUploadIndexForbiddenResponseBody
 	JSON404      *BillUploadBillUploadIndexNotFoundResponseBody
+	XML404       *BillUploadBillUploadIndexNotFoundResponseBody
 	JSON429      *BillUploadBillUploadIndexTooManyRequestsResponseBody
+	XML429       *BillUploadBillUploadIndexTooManyRequestsResponseBody
 	JSON500      *BillUploadBillUploadIndexInternalErrorResponseBody
+	XML500       *BillUploadBillUploadIndexInternalErrorResponseBody
 	JSON502      *BillUploadBillUploadIndexBadGatewayResponseBody
+	XML502       *BillUploadBillUploadIndexBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -1246,14 +1255,23 @@ type BillUploadBillUploadCreateResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON201      *BillUploadBillUploadCreateResponseBody
+	XML201       *BillUploadBillUploadCreateResponseBody
 	JSON400      *BillUploadBillUploadCreateBadRequestResponseBody
+	XML400       *BillUploadBillUploadCreateBadRequestResponseBody
 	JSON401      *BillUploadBillUploadCreateUnauthorizedResponseBody
+	XML401       *BillUploadBillUploadCreateUnauthorizedResponseBody
 	JSON403      *BillUploadBillUploadCreateForbiddenResponseBody
+	XML403       *BillUploadBillUploadCreateForbiddenResponseBody
 	JSON404      *BillUploadBillUploadCreateNotFoundResponseBody
+	XML404       *BillUploadBillUploadCreateNotFoundResponseBody
 	JSON409      *BillUploadBillUploadCreateConflictResponseBody
+	XML409       *BillUploadBillUploadCreateConflictResponseBody
 	JSON429      *BillUploadBillUploadCreateTooManyRequestsResponseBody
+	XML429       *BillUploadBillUploadCreateTooManyRequestsResponseBody
 	JSON500      *BillUploadBillUploadCreateInternalErrorResponseBody
+	XML500       *BillUploadBillUploadCreateInternalErrorResponseBody
 	JSON502      *BillUploadBillUploadCreateBadGatewayResponseBody
+	XML502       *BillUploadBillUploadCreateBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -1276,12 +1294,19 @@ type BillUploadBillUploadDeleteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *BillUploadBillUploadDeleteBadRequestResponseBody
+	XML400       *BillUploadBillUploadDeleteBadRequestResponseBody
 	JSON401      *BillUploadBillUploadDeleteUnauthorizedResponseBody
+	XML401       *BillUploadBillUploadDeleteUnauthorizedResponseBody
 	JSON403      *BillUploadBillUploadDeleteForbiddenResponseBody
+	XML403       *BillUploadBillUploadDeleteForbiddenResponseBody
 	JSON404      *BillUploadBillUploadDeleteNotFoundResponseBody
+	XML404       *BillUploadBillUploadDeleteNotFoundResponseBody
 	JSON429      *BillUploadBillUploadDeleteTooManyRequestsResponseBody
+	XML429       *BillUploadBillUploadDeleteTooManyRequestsResponseBody
 	JSON500      *BillUploadBillUploadDeleteInternalErrorResponseBody
+	XML500       *BillUploadBillUploadDeleteInternalErrorResponseBody
 	JSON502      *BillUploadBillUploadDeleteBadGatewayResponseBody
+	XML502       *BillUploadBillUploadDeleteBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -1304,13 +1329,21 @@ type BillUploadBillUploadShowResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *BillUploadBillUploadShowResponseBody
+	XML200       *BillUploadBillUploadShowResponseBody
 	JSON400      *BillUploadBillUploadShowBadRequestResponseBody
+	XML400       *BillUploadBillUploadShowBadRequestResponseBody
 	JSON401      *BillUploadBillUploadShowUnauthorizedResponseBody
+	XML401       *BillUploadBillUploadShowUnauthorizedResponseBody
 	JSON403      *BillUploadBillUploadShowForbiddenResponseBody
+	XML403       *BillUploadBillUploadShowForbiddenResponseBody
 	JSON404      *BillUploadBillUploadShowNotFoundResponseBody
+	XML404       *BillUploadBillUploadShowNotFoundResponseBody
 	JSON429      *BillUploadBillUploadShowTooManyRequestsResponseBody
+	XML429       *BillUploadBillUploadShowTooManyRequestsResponseBody
 	JSON500      *BillUploadBillUploadShowInternalErrorResponseBody
+	XML500       *BillUploadBillUploadShowInternalErrorResponseBody
 	JSON502      *BillUploadBillUploadShowBadGatewayResponseBody
+	XML502       *BillUploadBillUploadShowBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -1333,15 +1366,25 @@ type BillUploadBillUploadCreateFileResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON201      *BillUploadBillUploadCreateFileResponseBody
+	XML201       *BillUploadBillUploadCreateFileResponseBody
 	JSON400      *BillUploadBillUploadCreateFileBadRequestResponseBody
+	XML400       *BillUploadBillUploadCreateFileBadRequestResponseBody
 	JSON401      *BillUploadBillUploadCreateFileUnauthorizedResponseBody
+	XML401       *BillUploadBillUploadCreateFileUnauthorizedResponseBody
 	JSON403      *BillUploadBillUploadCreateFileForbiddenResponseBody
+	XML403       *BillUploadBillUploadCreateFileForbiddenResponseBody
 	JSON404      *BillUploadBillUploadCreateFileNotFoundResponseBody
+	XML404       *BillUploadBillUploadCreateFileNotFoundResponseBody
 	JSON409      *BillUploadBillUploadCreateFileConflictResponseBody
+	XML409       *BillUploadBillUploadCreateFileConflictResponseBody
 	JSON413      *BillUploadBillUploadCreateFileRequestEntityTooLargeResponseBody
+	XML413       *BillUploadBillUploadCreateFileRequestEntityTooLargeResponseBody
 	JSON429      *BillUploadBillUploadCreateFileTooManyRequestsResponseBody
+	XML429       *BillUploadBillUploadCreateFileTooManyRequestsResponseBody
 	JSON500      *BillUploadBillUploadCreateFileInternalErrorResponseBody
+	XML500       *BillUploadBillUploadCreateFileInternalErrorResponseBody
 	JSON502      *BillUploadBillUploadCreateFileBadGatewayResponseBody
+	XML502       *BillUploadBillUploadCreateFileBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -1364,13 +1407,21 @@ type BillUploadBillUploadCreateOperationResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *BillUploadBillUploadCreateOperationResponseBody
+	XML200       *BillUploadBillUploadCreateOperationResponseBody
 	JSON400      *BillUploadBillUploadCreateOperationBadRequestResponseBody
+	XML400       *BillUploadBillUploadCreateOperationBadRequestResponseBody
 	JSON401      *BillUploadBillUploadCreateOperationUnauthorizedResponseBody
+	XML401       *BillUploadBillUploadCreateOperationUnauthorizedResponseBody
 	JSON403      *BillUploadBillUploadCreateOperationForbiddenResponseBody
+	XML403       *BillUploadBillUploadCreateOperationForbiddenResponseBody
 	JSON404      *BillUploadBillUploadCreateOperationNotFoundResponseBody
+	XML404       *BillUploadBillUploadCreateOperationNotFoundResponseBody
 	JSON429      *BillUploadBillUploadCreateOperationTooManyRequestsResponseBody
+	XML429       *BillUploadBillUploadCreateOperationTooManyRequestsResponseBody
 	JSON500      *BillUploadBillUploadCreateOperationInternalErrorResponseBody
+	XML500       *BillUploadBillUploadCreateOperationInternalErrorResponseBody
 	JSON502      *BillUploadBillUploadCreateOperationBadGatewayResponseBody
+	XML502       *BillUploadBillUploadCreateOperationBadGatewayResponseBody
 }
 
 // Status returns HTTPResponse.Status
@@ -1529,6 +1580,86 @@ func ParseBillUploadBillUploadIndexResponse(rsp *http.Response) (*BillUploadBill
 		}
 		response.JSON502 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 200:
+		var dest BillUploadBillUploadBillUploadResponseCollection
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 400:
+		var dest BillUploadBillUploadIndexBadRequestResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 401:
+		var dest BillUploadBillUploadIndexUnauthorizedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillUploadBillUploadIndexForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillUploadBillUploadIndexNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 429:
+		var dest BillUploadBillUploadIndexTooManyRequestsResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillUploadBillUploadIndexInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillUploadBillUploadIndexBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case rsp.StatusCode == 200:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 400:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 401:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 429:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+		// Content-type (application/gob) unsupported
+
 	}
 
 	return response, nil
@@ -1611,6 +1742,96 @@ func ParseBillUploadBillUploadCreateResponse(rsp *http.Response) (*BillUploadBil
 		}
 		response.JSON502 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 201:
+		var dest BillUploadBillUploadCreateResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 400:
+		var dest BillUploadBillUploadCreateBadRequestResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 401:
+		var dest BillUploadBillUploadCreateUnauthorizedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillUploadBillUploadCreateForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillUploadBillUploadCreateNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 409:
+		var dest BillUploadBillUploadCreateConflictResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 429:
+		var dest BillUploadBillUploadCreateTooManyRequestsResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillUploadBillUploadCreateInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillUploadBillUploadCreateBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case rsp.StatusCode == 201:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 400:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 401:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 409:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 429:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+		// Content-type (application/gob) unsupported
+
 	}
 
 	return response, nil
@@ -1678,6 +1899,76 @@ func ParseBillUploadBillUploadDeleteResponse(rsp *http.Response) (*BillUploadBil
 			return nil, err
 		}
 		response.JSON502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 400:
+		var dest BillUploadBillUploadDeleteBadRequestResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 401:
+		var dest BillUploadBillUploadDeleteUnauthorizedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillUploadBillUploadDeleteForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillUploadBillUploadDeleteNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 429:
+		var dest BillUploadBillUploadDeleteTooManyRequestsResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillUploadBillUploadDeleteInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillUploadBillUploadDeleteBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case rsp.StatusCode == 400:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 401:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 429:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+		// Content-type (application/gob) unsupported
 
 	}
 
@@ -1753,6 +2044,86 @@ func ParseBillUploadBillUploadShowResponse(rsp *http.Response) (*BillUploadBillU
 			return nil, err
 		}
 		response.JSON502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 200:
+		var dest BillUploadBillUploadShowResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 400:
+		var dest BillUploadBillUploadShowBadRequestResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 401:
+		var dest BillUploadBillUploadShowUnauthorizedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillUploadBillUploadShowForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillUploadBillUploadShowNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 429:
+		var dest BillUploadBillUploadShowTooManyRequestsResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillUploadBillUploadShowInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillUploadBillUploadShowBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case rsp.StatusCode == 200:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 400:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 401:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 429:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+		// Content-type (application/gob) unsupported
 
 	}
 
@@ -1843,6 +2214,106 @@ func ParseBillUploadBillUploadCreateFileResponse(rsp *http.Response) (*BillUploa
 		}
 		response.JSON502 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 201:
+		var dest BillUploadBillUploadCreateFileResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML201 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 400:
+		var dest BillUploadBillUploadCreateFileBadRequestResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 401:
+		var dest BillUploadBillUploadCreateFileUnauthorizedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillUploadBillUploadCreateFileForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillUploadBillUploadCreateFileNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 409:
+		var dest BillUploadBillUploadCreateFileConflictResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 413:
+		var dest BillUploadBillUploadCreateFileRequestEntityTooLargeResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML413 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 429:
+		var dest BillUploadBillUploadCreateFileTooManyRequestsResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillUploadBillUploadCreateFileInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillUploadBillUploadCreateFileBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case rsp.StatusCode == 201:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 400:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 401:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 409:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 413:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 429:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+		// Content-type (application/gob) unsupported
+
 	}
 
 	return response, nil
@@ -1917,6 +2388,86 @@ func ParseBillUploadBillUploadCreateOperationResponse(rsp *http.Response) (*Bill
 			return nil, err
 		}
 		response.JSON502 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 200:
+		var dest BillUploadBillUploadCreateOperationResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 400:
+		var dest BillUploadBillUploadCreateOperationBadRequestResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 401:
+		var dest BillUploadBillUploadCreateOperationUnauthorizedResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 403:
+		var dest BillUploadBillUploadCreateOperationForbiddenResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 404:
+		var dest BillUploadBillUploadCreateOperationNotFoundResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 429:
+		var dest BillUploadBillUploadCreateOperationTooManyRequestsResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 500:
+		var dest BillUploadBillUploadCreateOperationInternalErrorResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "xml") && rsp.StatusCode == 502:
+		var dest BillUploadBillUploadCreateOperationBadGatewayResponseBody
+		if err := xml.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.XML502 = &dest
+
+	case rsp.StatusCode == 200:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 400:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 401:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 403:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 404:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 429:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 500:
+	// Content-type (application/gob) unsupported
+
+	case rsp.StatusCode == 502:
+		// Content-type (application/gob) unsupported
 
 	}
 

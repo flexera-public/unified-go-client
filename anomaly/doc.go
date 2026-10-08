@@ -8,6 +8,6 @@
 // This is a port of the original implementation in
 // cli/go-flexera-mcp/server/curated_cost_anomaly.go, restructured around
 // the [curated.Tool] contract so the same workflow can be invoked from
-// the CLI (flexera-cli curated anomaly-investigation), the MCP server,
+// the CLI (flexera-cli bill-analysis anomalies investigate), the MCP server,
 // or any library consumer.
 package anomaly

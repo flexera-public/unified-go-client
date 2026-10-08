@@ -9,10 +9,11 @@ import (
 
 // Defines values for FinopsBillingAdjustmentConditionType.
 const (
-	FinopsBillingAdjustmentConditionTypeAnd             FinopsBillingAdjustmentConditionType = "and"
-	FinopsBillingAdjustmentConditionTypeDimensionEquals FinopsBillingAdjustmentConditionType = "dimension_equals"
-	FinopsBillingAdjustmentConditionTypeNot             FinopsBillingAdjustmentConditionType = "not"
-	FinopsBillingAdjustmentConditionTypeOr              FinopsBillingAdjustmentConditionType = "or"
+	FinopsBillingAdjustmentConditionTypeAnd               FinopsBillingAdjustmentConditionType = "and"
+	FinopsBillingAdjustmentConditionTypeDimensionContains FinopsBillingAdjustmentConditionType = "dimension_contains"
+	FinopsBillingAdjustmentConditionTypeDimensionEquals   FinopsBillingAdjustmentConditionType = "dimension_equals"
+	FinopsBillingAdjustmentConditionTypeNot               FinopsBillingAdjustmentConditionType = "not"
+	FinopsBillingAdjustmentConditionTypeOr                FinopsBillingAdjustmentConditionType = "or"
 )
 
 // Defines values for FinopsBillingAllocationPayloadType.
@@ -123,6 +124,95 @@ const (
 	FinopsBillingAuditResultPeriodTypeChargePeriod FinopsBillingAuditResultPeriodType = "chargePeriod"
 )
 
+// Defines values for FinopsBillingBillingInvoiceIssueDateRuleType.
+const (
+	DayGenerated FinopsBillingBillingInvoiceIssueDateRuleType = "dayGenerated"
+	Exact        FinopsBillingBillingInvoiceIssueDateRuleType = "exact"
+)
+
+// Defines values for FinopsBillingBillingInvoiceListKind.
+const (
+	FinopsInvoiceList FinopsBillingBillingInvoiceListKind = "finops:invoice-list"
+)
+
+// Defines values for FinopsBillingBillingInvoiceScheduleCadenceFrequency.
+const (
+	FinopsBillingBillingInvoiceScheduleCadenceFrequencyMonthly FinopsBillingBillingInvoiceScheduleCadenceFrequency = "monthly"
+)
+
+// Defines values for FinopsBillingBillingInvoiceScheduleInvoiceListKind.
+const (
+	FinopsInvoiceScheduleInvoiceList FinopsBillingBillingInvoiceScheduleInvoiceListKind = "finops:invoice-schedule-invoice-list"
+)
+
+// Defines values for FinopsBillingBillingInvoiceScheduleListKind.
+const (
+	FinopsInvoiceScheduleList FinopsBillingBillingInvoiceScheduleListKind = "finops:invoice-schedule-list"
+)
+
+// Defines values for FinopsBillingBillingInvoiceScheduleResultKind.
+const (
+	FinopsBillingBillingInvoiceScheduleResultKindFinopsInvoiceSchedule FinopsBillingBillingInvoiceScheduleResultKind = "finops:invoice-schedule"
+)
+
+// Defines values for FinopsBillingBillingInvoiceScheduleResultStatus.
+const (
+	FinopsBillingBillingInvoiceScheduleResultStatusActive   FinopsBillingBillingInvoiceScheduleResultStatus = "active"
+	FinopsBillingBillingInvoiceScheduleResultStatusInactive FinopsBillingBillingInvoiceScheduleResultStatus = "inactive"
+)
+
+// Defines values for FinopsBillingBillingInvoiceScheduleTemplateInputCostMetric.
+const (
+	FinopsBillingBillingInvoiceScheduleTemplateInputCostMetricBilledCost            FinopsBillingBillingInvoiceScheduleTemplateInputCostMetric = "billedCost"
+	FinopsBillingBillingInvoiceScheduleTemplateInputCostMetricEffectiveCost         FinopsBillingBillingInvoiceScheduleTemplateInputCostMetric = "effectiveCost"
+	FinopsBillingBillingInvoiceScheduleTemplateInputCostMetricModifiedBilledCost    FinopsBillingBillingInvoiceScheduleTemplateInputCostMetric = "modifiedBilledCost"
+	FinopsBillingBillingInvoiceScheduleTemplateInputCostMetricModifiedEffectiveCost FinopsBillingBillingInvoiceScheduleTemplateInputCostMetric = "modifiedEffectiveCost"
+)
+
+// Defines values for FinopsBillingBillingInvoiceScheduleTemplateInputExportType.
+const (
+	FinopsBillingBillingInvoiceScheduleTemplateInputExportTypeCsv FinopsBillingBillingInvoiceScheduleTemplateInputExportType = "csv"
+	FinopsBillingBillingInvoiceScheduleTemplateInputExportTypePdf FinopsBillingBillingInvoiceScheduleTemplateInputExportType = "pdf"
+)
+
+// Defines values for FinopsBillingBillingInvoiceScheduleTemplateInputPeriodType.
+const (
+	FinopsBillingBillingInvoiceScheduleTemplateInputPeriodTypeBillPeriod    FinopsBillingBillingInvoiceScheduleTemplateInputPeriodType = "billPeriod"
+	FinopsBillingBillingInvoiceScheduleTemplateInputPeriodTypeBillingPeriod FinopsBillingBillingInvoiceScheduleTemplateInputPeriodType = "billingPeriod"
+	FinopsBillingBillingInvoiceScheduleTemplateInputPeriodTypeChargePeriod  FinopsBillingBillingInvoiceScheduleTemplateInputPeriodType = "chargePeriod"
+)
+
+// Defines values for FinopsBillingBillingInvoiceTemplateListKind.
+const (
+	FinopsInvoiceTemplateList FinopsBillingBillingInvoiceTemplateListKind = "finops:invoice-template-list"
+)
+
+// Defines values for FinopsBillingBillingInvoiceTemplateResultCostMetric.
+const (
+	FinopsBillingBillingInvoiceTemplateResultCostMetricBilledCost            FinopsBillingBillingInvoiceTemplateResultCostMetric = "billedCost"
+	FinopsBillingBillingInvoiceTemplateResultCostMetricEffectiveCost         FinopsBillingBillingInvoiceTemplateResultCostMetric = "effectiveCost"
+	FinopsBillingBillingInvoiceTemplateResultCostMetricModifiedBilledCost    FinopsBillingBillingInvoiceTemplateResultCostMetric = "modifiedBilledCost"
+	FinopsBillingBillingInvoiceTemplateResultCostMetricModifiedEffectiveCost FinopsBillingBillingInvoiceTemplateResultCostMetric = "modifiedEffectiveCost"
+)
+
+// Defines values for FinopsBillingBillingInvoiceTemplateResultExportType.
+const (
+	FinopsBillingBillingInvoiceTemplateResultExportTypeCsv FinopsBillingBillingInvoiceTemplateResultExportType = "csv"
+	FinopsBillingBillingInvoiceTemplateResultExportTypePdf FinopsBillingBillingInvoiceTemplateResultExportType = "pdf"
+)
+
+// Defines values for FinopsBillingBillingInvoiceTemplateResultKind.
+const (
+	FinopsBillingBillingInvoiceTemplateResultKindFinopsInvoiceTemplate FinopsBillingBillingInvoiceTemplateResultKind = "finops:invoice-template"
+)
+
+// Defines values for FinopsBillingBillingInvoiceTemplateResultPeriodType.
+const (
+	FinopsBillingBillingInvoiceTemplateResultPeriodTypeBillPeriod    FinopsBillingBillingInvoiceTemplateResultPeriodType = "billPeriod"
+	FinopsBillingBillingInvoiceTemplateResultPeriodTypeBillingPeriod FinopsBillingBillingInvoiceTemplateResultPeriodType = "billingPeriod"
+	FinopsBillingBillingInvoiceTemplateResultPeriodTypeChargePeriod  FinopsBillingBillingInvoiceTemplateResultPeriodType = "chargePeriod"
+)
+
 // Defines values for FinopsBillingCreditAssignmentKind.
 const (
 	FinopsBillingCreditAssignmentKindFinopsBillingCreditAssignment FinopsBillingCreditAssignmentKind = "finops:billing-credit-assignment"
@@ -137,6 +227,15 @@ const (
 const (
 	Actual   FinopsBillingFeeShareDistributed = "actual"
 	Estimate FinopsBillingFeeShareDistributed = "estimate"
+)
+
+// Defines values for FinopsBillingFilterV1Type.
+const (
+	FinopsBillingFilterV1TypeAnd       FinopsBillingFilterV1Type = "and"
+	FinopsBillingFilterV1TypeEqual     FinopsBillingFilterV1Type = "equal"
+	FinopsBillingFilterV1TypeNot       FinopsBillingFilterV1Type = "not"
+	FinopsBillingFilterV1TypeOr        FinopsBillingFilterV1Type = "or"
+	FinopsBillingFilterV1TypeSubstring FinopsBillingFilterV1Type = "substring"
 )
 
 // Defines values for FinopsBillingFlexeraFinopsBillingAdjustmentPlanKind.
@@ -157,6 +256,85 @@ const (
 // Defines values for FinopsBillingFlexeraFinopsBillingEnterpriseRuleKind.
 const (
 	FinopsBillingEnterpriseRule FinopsBillingFlexeraFinopsBillingEnterpriseRuleKind = "finops:billing-enterprise-rule"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingInvoiceExportType.
+const (
+	FinopsBillingFlexeraFinopsBillingInvoiceExportTypeCsv FinopsBillingFlexeraFinopsBillingInvoiceExportType = "csv"
+	FinopsBillingFlexeraFinopsBillingInvoiceExportTypePdf FinopsBillingFlexeraFinopsBillingInvoiceExportType = "pdf"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingInvoiceKind.
+const (
+	FinopsInvoice FinopsBillingFlexeraFinopsBillingInvoiceKind = "finops:invoice"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingInvoicePeriodType.
+const (
+	FinopsBillingFlexeraFinopsBillingInvoicePeriodTypeBillPeriod    FinopsBillingFlexeraFinopsBillingInvoicePeriodType = "billPeriod"
+	FinopsBillingFlexeraFinopsBillingInvoicePeriodTypeBillingPeriod FinopsBillingFlexeraFinopsBillingInvoicePeriodType = "billingPeriod"
+	FinopsBillingFlexeraFinopsBillingInvoicePeriodTypeChargePeriod  FinopsBillingFlexeraFinopsBillingInvoicePeriodType = "chargePeriod"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingInvoiceScheduleKind.
+const (
+	FinopsBillingFlexeraFinopsBillingInvoiceScheduleKindFinopsInvoiceSchedule FinopsBillingFlexeraFinopsBillingInvoiceScheduleKind = "finops:invoice-schedule"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingInvoiceScheduleStatus.
+const (
+	FinopsBillingFlexeraFinopsBillingInvoiceScheduleStatusActive   FinopsBillingFlexeraFinopsBillingInvoiceScheduleStatus = "active"
+	FinopsBillingFlexeraFinopsBillingInvoiceScheduleStatusInactive FinopsBillingFlexeraFinopsBillingInvoiceScheduleStatus = "inactive"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceDeliveryStatus.
+const (
+	FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceDeliveryStatusFailed  FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceDeliveryStatus = "failed"
+	FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceDeliveryStatusSuccess FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceDeliveryStatus = "success"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportType.
+const (
+	FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportTypeCsv FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportType = "csv"
+	FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportTypePdf FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportType = "pdf"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceKind.
+const (
+	FinopsInvoiceScheduleInvoice FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceKind = "finops:invoice-schedule-invoice"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoicePeriodType.
+const (
+	FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoicePeriodTypeBillPeriod    FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoicePeriodType = "billPeriod"
+	FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoicePeriodTypeBillingPeriod FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoicePeriodType = "billingPeriod"
+	FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoicePeriodTypeChargePeriod  FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoicePeriodType = "chargePeriod"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetric.
+const (
+	FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetricBilledCost            FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetric = "billedCost"
+	FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetricEffectiveCost         FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetric = "effectiveCost"
+	FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetricModifiedBilledCost    FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetric = "modifiedBilledCost"
+	FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetricModifiedEffectiveCost FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetric = "modifiedEffectiveCost"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportType.
+const (
+	FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportTypeCsv FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportType = "csv"
+	FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportTypePdf FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportType = "pdf"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingInvoiceTemplateKind.
+const (
+	FinopsBillingFlexeraFinopsBillingInvoiceTemplateKindFinopsInvoiceTemplate FinopsBillingFlexeraFinopsBillingInvoiceTemplateKind = "finops:invoice-template"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingInvoiceTemplatePeriodType.
+const (
+	FinopsBillingFlexeraFinopsBillingInvoiceTemplatePeriodTypeBillPeriod    FinopsBillingFlexeraFinopsBillingInvoiceTemplatePeriodType = "billPeriod"
+	FinopsBillingFlexeraFinopsBillingInvoiceTemplatePeriodTypeBillingPeriod FinopsBillingFlexeraFinopsBillingInvoiceTemplatePeriodType = "billingPeriod"
+	FinopsBillingFlexeraFinopsBillingInvoiceTemplatePeriodTypeChargePeriod  FinopsBillingFlexeraFinopsBillingInvoiceTemplatePeriodType = "chargePeriod"
 )
 
 // Defines values for FinopsBillingFlexeraFinopsBillingSharedCostRuleSummaryKind.
@@ -225,6 +403,14 @@ const (
 	FinopsBillingMarkupMarkdownSettingsBaseOnModifiedCost FinopsBillingMarkupMarkdownSettingsBaseOn = "modifiedCost"
 )
 
+// Defines values for FinopsBillingMarkupMarkdownSettingsScopedBaseOn.
+const (
+	FinopsBillingMarkupMarkdownSettingsScopedBaseOnBilledCost   FinopsBillingMarkupMarkdownSettingsScopedBaseOn = "billedCost"
+	FinopsBillingMarkupMarkdownSettingsScopedBaseOnListCost     FinopsBillingMarkupMarkdownSettingsScopedBaseOn = "listCost"
+	FinopsBillingMarkupMarkdownSettingsScopedBaseOnModifiedCost FinopsBillingMarkupMarkdownSettingsScopedBaseOn = "modifiedCost"
+	FinopsBillingMarkupMarkdownSettingsScopedBaseOnScopedCost   FinopsBillingMarkupMarkdownSettingsScopedBaseOn = "scopedCost"
+)
+
 // Defines values for FinopsBillingReservationReallocationSettingsRevertReservation.
 const (
 	FinopsBillingReservationReallocationSettingsRevertReservationAllUsage     FinopsBillingReservationReallocationSettingsRevertReservation = "allUsage"
@@ -266,10 +452,10 @@ const (
 
 // Defines values for FinopsBillingUpchargeDiscountSettingsBaseOn.
 const (
-	BilledCost    FinopsBillingUpchargeDiscountSettingsBaseOn = "billedCost"
-	ListCost      FinopsBillingUpchargeDiscountSettingsBaseOn = "listCost"
-	ModifiedCost  FinopsBillingUpchargeDiscountSettingsBaseOn = "modifiedCost"
-	ObservedCosts FinopsBillingUpchargeDiscountSettingsBaseOn = "observedCosts"
+	FinopsBillingUpchargeDiscountSettingsBaseOnBilledCost    FinopsBillingUpchargeDiscountSettingsBaseOn = "billedCost"
+	FinopsBillingUpchargeDiscountSettingsBaseOnListCost      FinopsBillingUpchargeDiscountSettingsBaseOn = "listCost"
+	FinopsBillingUpchargeDiscountSettingsBaseOnModifiedCost  FinopsBillingUpchargeDiscountSettingsBaseOn = "modifiedCost"
+	FinopsBillingUpchargeDiscountSettingsBaseOnObservedCosts FinopsBillingUpchargeDiscountSettingsBaseOn = "observedCosts"
 )
 
 // Defines values for FinopsBillingVendorCreditRowKind.
@@ -280,6 +466,24 @@ const (
 // Defines values for FinopsBillingVendorCreditsResultKind.
 const (
 	FinopsBillingVendorCreditList FinopsBillingVendorCreditsResultKind = "finops:billing-vendor-credit-list"
+)
+
+// Defines values for FinopsBillingInvoiceSchedulesIndexParamsStatus.
+const (
+	FinopsBillingInvoiceSchedulesIndexParamsStatusActive   FinopsBillingInvoiceSchedulesIndexParamsStatus = "active"
+	FinopsBillingInvoiceSchedulesIndexParamsStatusInactive FinopsBillingInvoiceSchedulesIndexParamsStatus = "inactive"
+)
+
+// Defines values for FinopsBillingInvoiceScheduleInvoicesIndexParamsExportType.
+const (
+	FinopsBillingInvoiceScheduleInvoicesIndexParamsExportTypeCsv FinopsBillingInvoiceScheduleInvoicesIndexParamsExportType = "csv"
+	FinopsBillingInvoiceScheduleInvoicesIndexParamsExportTypePdf FinopsBillingInvoiceScheduleInvoicesIndexParamsExportType = "pdf"
+)
+
+// Defines values for FinopsBillingInvoicesIndexParamsExportType.
+const (
+	FinopsBillingInvoicesIndexParamsExportTypeCsv FinopsBillingInvoicesIndexParamsExportType = "csv"
+	FinopsBillingInvoicesIndexParamsExportTypePdf FinopsBillingInvoicesIndexParamsExportType = "pdf"
 )
 
 // FinopsBillingAdjustmentCondition An adjustment condition, used by adjustment rules and adjustment plan rules.
@@ -295,7 +499,19 @@ const (
 // {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 // ```
 //
-// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+// Type **"dimension_contains"** evaluates whether the specified **"dimension"** contains the specified **"value"**
+// anywhere within it. The match is a case-sensitive literal substring match — **"value"** is matched exactly as
+// given.
+//
+// ```
+// {"type":"dimension_contains", "dimension":"ProviderName", "value":"AW"}
+// ```
+//
+// Both **"dimension_equals"** and **"dimension_contains"** accept the same **"dimension"** values and are subject
+// to the same per-rule-type restrictions described below.
+//
+// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+// For rule type _supportCharge_, **"dimension"** may be **"bill_source"**, **"SubAccountId"**, or **"SubAccountName"**.
 // For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 // For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 // [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -304,7 +520,8 @@ const (
 // defined within your organization (names starting with **tag\_**),
 // or a few dimensions Flexera populates for you.
 //
-// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+// An empty **"value"** for **"dimension_equals"** matches dimensions with either a null or an empty string value.
+// **"dimension_contains"** requires a non-empty **"value"**.
 //
 // Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
 // Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
@@ -321,7 +538,7 @@ const (
 //
 // Together types **"and"**, **"or"**, and **"not"** enable complex combinations of other conditions.
 type FinopsBillingAdjustmentCondition struct {
-	// Dimension The dimension to check the value of. Required for the 'dimension_equals' type.
+	// Dimension The dimension to check the value of. Required for the 'dimension_equals' and 'dimension_contains' types.
 	Dimension *string `json:"dimension,omitempty"`
 
 	// Expression An adjustment condition, used by adjustment rules and adjustment plan rules.
@@ -337,7 +554,19 @@ type FinopsBillingAdjustmentCondition struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// Type **"dimension_contains"** evaluates whether the specified **"dimension"** contains the specified **"value"**
+	// anywhere within it. The match is a case-sensitive literal substring match — **"value"** is matched exactly as
+	// given.
+	//
+	// ```
+	// {"type":"dimension_contains", "dimension":"ProviderName", "value":"AW"}
+	// ```
+	//
+	// Both **"dimension_equals"** and **"dimension_contains"** accept the same **"dimension"** values and are subject
+	// to the same per-rule-type restrictions described below.
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule type _supportCharge_, **"dimension"** may be **"bill_source"**, **"SubAccountId"**, or **"SubAccountName"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -346,7 +575,8 @@ type FinopsBillingAdjustmentCondition struct {
 	// defined within your organization (names starting with **tag\_**),
 	// or a few dimensions Flexera populates for you.
 	//
-	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	// An empty **"value"** for **"dimension_equals"** matches dimensions with either a null or an empty string value.
+	// **"dimension_contains"** requires a non-empty **"value"**.
 	//
 	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
 	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
@@ -370,7 +600,7 @@ type FinopsBillingAdjustmentCondition struct {
 	// Type Specifies the condition type, depending on which type is selected, other field(s) will be required.
 	Type FinopsBillingAdjustmentConditionType `json:"type"`
 
-	// Value The value that the dimension must match. Required for the 'dimension_equals' type.
+	// Value The value that the dimension must match. Required for the 'dimension_equals' and 'dimension_contains' types.
 	Value *string `json:"value,omitempty"`
 }
 
@@ -660,6 +890,373 @@ type FinopsBillingAuditRow struct {
 	SubAccountName *string `json:"subAccountName,omitempty"`
 }
 
+// FinopsBillingBillingInvoiceCollection defines model for FinopsBilling_BillingInvoiceCollection.
+type FinopsBillingBillingInvoiceCollection = []FinopsBillingFlexeraFinopsBillingInvoice
+
+// FinopsBillingBillingInvoiceCustomer Customer recipient for invoice export creation.
+type FinopsBillingBillingInvoiceCustomer struct {
+	// CustomerBillingPlan Billing plan for the customer
+	CustomerBillingPlan *string `json:"customerBillingPlan,omitempty"`
+
+	// CustomerId Customer identifier
+	CustomerId int `json:"customerId"`
+
+	// CustomerName Customer display name
+	CustomerName string `json:"customerName"`
+}
+
+// FinopsBillingBillingInvoiceDeliveryFailure Email delivery failure details for an invoice.
+type FinopsBillingBillingInvoiceDeliveryFailure struct {
+	// Code Failure code
+	Code *string `json:"code,omitempty"`
+
+	// Message Failure message
+	Message *string `json:"message,omitempty"`
+}
+
+// FinopsBillingBillingInvoiceExportArtifact Download artifact details for an invoice export.
+type FinopsBillingBillingInvoiceExportArtifact struct {
+	// ExpiresAt Artifact expiration timestamp
+	ExpiresAt *time.Time `json:"expiresAt,omitempty"`
+
+	// Url Pre-signed download URL
+	Url *string `json:"url,omitempty"`
+}
+
+// FinopsBillingBillingInvoiceIssueDateRule How each generated invoice's issue date is derived from the day its run fires.
+type FinopsBillingBillingInvoiceIssueDateRule struct {
+	// Days Days after the run to issue the invoice. Must be 0 when type is exact, and 1 to 31 when type is dayGenerated.
+	Days int `json:"days"`
+
+	// Type Rule type. exact issues the invoice on the day the run fires; dayGenerated issues it a number of days later.
+	Type FinopsBillingBillingInvoiceIssueDateRuleType `json:"type"`
+}
+
+// FinopsBillingBillingInvoiceIssueDateRuleType Rule type. exact issues the invoice on the day the run fires; dayGenerated issues it a number of days later.
+type FinopsBillingBillingInvoiceIssueDateRuleType string
+
+// FinopsBillingBillingInvoiceList defines model for FinopsBilling_BillingInvoiceList.
+type FinopsBillingBillingInvoiceList struct {
+	// Kind The resource's type
+	Kind FinopsBillingBillingInvoiceListKind `json:"kind"`
+
+	// Limit Page size that was requested.
+	Limit *int `json:"limit,omitempty"`
+
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	NextPage *string `json:"nextPage,omitempty"`
+
+	// PrevPage URL to the previous page of data. The first page of data will not return a prevPage value.
+	PrevPage *string `json:"prevPage,omitempty"`
+
+	// Total Total number of items matching the current filter.
+	Total  *int                                  `json:"total,omitempty"`
+	Values FinopsBillingBillingInvoiceCollection `json:"values"`
+}
+
+// FinopsBillingBillingInvoiceListKind The resource's type
+type FinopsBillingBillingInvoiceListKind string
+
+// FinopsBillingBillingInvoiceScheduleCadence When a scheduled invoice fires. Deliberately not RFC-5545 RRULE, mirroring the finops/customizations Invoice Schedules resource this exposes.
+type FinopsBillingBillingInvoiceScheduleCadence struct {
+	// DayOfMonth Day of month 1-31; days beyond a month's length clamp to its last day. Each run invoices the preceding billing month.
+	DayOfMonth int `json:"dayOfMonth"`
+
+	// EndMonthYear Last billing month-year this schedule is active (YYYY-MM). Omit it for a schedule that recurs indefinitely.
+	EndMonthYear *string `json:"endMonthYear,omitempty"`
+
+	// Frequency How often the invoice fires.
+	Frequency FinopsBillingBillingInvoiceScheduleCadenceFrequency `json:"frequency"`
+
+	// StartMonthYear First billing month-year this schedule is active (YYYY-MM).
+	StartMonthYear string `json:"startMonthYear"`
+
+	// TimeOfDay 24-hour local wall-clock time, zero-padded "HH:mm".
+	TimeOfDay string `json:"timeOfDay"`
+
+	// Timezone IANA tz database id; timeOfDay is interpreted in this zone.
+	Timezone string `json:"timezone"`
+}
+
+// FinopsBillingBillingInvoiceScheduleCadenceFrequency How often the invoice fires.
+type FinopsBillingBillingInvoiceScheduleCadenceFrequency string
+
+// FinopsBillingBillingInvoiceScheduleCollection defines model for FinopsBilling_BillingInvoiceScheduleCollection.
+type FinopsBillingBillingInvoiceScheduleCollection = []FinopsBillingFlexeraFinopsBillingInvoiceSchedule
+
+// FinopsBillingBillingInvoiceScheduleCustomer A customer receiving invoices from a schedule, and the addresses its invoices are delivered to.
+type FinopsBillingBillingInvoiceScheduleCustomer struct {
+	// CustomerBillingPlan Billing plan for the customer. Informational only — not used by scheduling or execution.
+	CustomerBillingPlan *string `json:"customerBillingPlan,omitempty"`
+
+	// CustomerId Customer identifier.
+	CustomerId int `json:"customerId"`
+
+	// CustomerName Denormalized customer display name.
+	CustomerName string `json:"customerName"`
+
+	// Recipients Addresses this customer's invoices are delivered to (at least one).
+	Recipients []FinopsBillingBillingInvoiceScheduleRecipient `json:"recipients"`
+}
+
+// FinopsBillingBillingInvoiceScheduleInvoiceCollection defines model for FinopsBilling_BillingInvoiceScheduleInvoiceCollection.
+type FinopsBillingBillingInvoiceScheduleInvoiceCollection = []FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoice
+
+// FinopsBillingBillingInvoiceScheduleInvoiceList defines model for FinopsBilling_BillingInvoiceScheduleInvoiceList.
+type FinopsBillingBillingInvoiceScheduleInvoiceList struct {
+	// Kind The resource's type
+	Kind FinopsBillingBillingInvoiceScheduleInvoiceListKind `json:"kind"`
+
+	// Limit Page size that was requested.
+	Limit *int `json:"limit,omitempty"`
+
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	NextPage *string `json:"nextPage,omitempty"`
+
+	// PrevPage URL to the previous page of data. The first page of data will not return a prevPage value.
+	PrevPage *string `json:"prevPage,omitempty"`
+
+	// Total Total number of matching items.
+	Total  *int                                                 `json:"total,omitempty"`
+	Values FinopsBillingBillingInvoiceScheduleInvoiceCollection `json:"values"`
+}
+
+// FinopsBillingBillingInvoiceScheduleInvoiceListKind The resource's type
+type FinopsBillingBillingInvoiceScheduleInvoiceListKind string
+
+// FinopsBillingBillingInvoiceScheduleList defines model for FinopsBilling_BillingInvoiceScheduleList.
+type FinopsBillingBillingInvoiceScheduleList struct {
+	// Kind The resource's type
+	Kind FinopsBillingBillingInvoiceScheduleListKind `json:"kind"`
+
+	// Limit Page size that was requested.
+	Limit *int `json:"limit,omitempty"`
+
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	NextPage *string `json:"nextPage,omitempty"`
+
+	// PrevPage URL to the previous page of data. The first page of data will not return a prevPage value.
+	PrevPage *string `json:"prevPage,omitempty"`
+
+	// Total Total number of items matching the current filter.
+	Total  *int                                          `json:"total,omitempty"`
+	Values FinopsBillingBillingInvoiceScheduleCollection `json:"values"`
+}
+
+// FinopsBillingBillingInvoiceScheduleListKind The resource's type
+type FinopsBillingBillingInvoiceScheduleListKind string
+
+// FinopsBillingBillingInvoiceScheduleRecipient An address a customer's invoices are delivered to, with optional display names.
+type FinopsBillingBillingInvoiceScheduleRecipient struct {
+	// Email Address the invoice is delivered to.
+	Email openapi_types.Email `json:"email"`
+
+	// FirstName Recipient's first name, when known.
+	FirstName *string `json:"firstName,omitempty"`
+
+	// LastName Recipient's last name, when known.
+	LastName *string `json:"lastName,omitempty"`
+}
+
+// FinopsBillingBillingInvoiceScheduleResult defines model for FinopsBilling_BillingInvoiceScheduleResult.
+type FinopsBillingBillingInvoiceScheduleResult struct {
+	// CreatedAt ISO-8601 creation timestamp
+	CreatedAt time.Time `json:"createdAt"`
+
+	// CreatedBy User ID of the caller who created the schedule.
+	CreatedBy int `json:"createdBy"`
+
+	// Customers Customers this schedule invoices. Persisted as an array on this one record.
+	Customers []FinopsBillingBillingInvoiceScheduleCustomer `json:"customers"`
+
+	// Id Identifier of the invoice schedule
+	Id string `json:"id"`
+
+	// InvoiceDueDateRule How each generated invoice's issue date is derived from the day its run fires.
+	InvoiceDueDateRule *FinopsBillingBillingInvoiceIssueDateRule `json:"invoiceDueDateRule,omitempty"`
+
+	// InvoiceIssueDateRule How each generated invoice's issue date is derived from the day its run fires.
+	InvoiceIssueDateRule FinopsBillingBillingInvoiceIssueDateRule `json:"invoiceIssueDateRule"`
+
+	// InvoiceTemplateId Identifier of the invoice template shared by every customer on this schedule. Absent when the schedule was created without a template.
+	InvoiceTemplateId *string `json:"invoiceTemplateId,omitempty"`
+
+	// Kind The resource's type
+	Kind FinopsBillingBillingInvoiceScheduleResultKind `json:"kind"`
+
+	// NextInvoiceDate Date of the next run, in the schedule's timezone. Absent once the schedule's active window has passed.
+	NextInvoiceDate *openapi_types.Date `json:"nextInvoiceDate,omitempty"`
+
+	// OrgId The unique identifier for the organization
+	OrgId int `json:"orgId"`
+
+	// Schedule When a scheduled invoice fires. Deliberately not RFC-5545 RRULE, mirroring the finops/customizations Invoice Schedules resource this exposes.
+	Schedule FinopsBillingBillingInvoiceScheduleCadence `json:"schedule"`
+
+	// ScheduleName Human-readable name for the schedule.
+	ScheduleName string `json:"scheduleName"`
+
+	// Status Current state of the schedule.
+	Status FinopsBillingBillingInvoiceScheduleResultStatus `json:"status"`
+
+	// Template Invoice properties for a schedule: the template to create, or the schedule's own configuration when it has no template.
+	Template *FinopsBillingBillingInvoiceScheduleTemplateInput `json:"template,omitempty"`
+
+	// UpdatedAt ISO-8601 last-update timestamp
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// UpdatedBy User ID of the caller who last updated the schedule.
+	UpdatedBy int `json:"updatedBy"`
+}
+
+// FinopsBillingBillingInvoiceScheduleResultKind The resource's type
+type FinopsBillingBillingInvoiceScheduleResultKind string
+
+// FinopsBillingBillingInvoiceScheduleResultStatus Current state of the schedule.
+type FinopsBillingBillingInvoiceScheduleResultStatus string
+
+// FinopsBillingBillingInvoiceScheduleTemplateInput Invoice properties for a schedule: the template to create, or the schedule's own configuration when it has no template.
+type FinopsBillingBillingInvoiceScheduleTemplateInput struct {
+	// CostMetric Configured cost metric.
+	CostMetric FinopsBillingBillingInvoiceScheduleTemplateInputCostMetric `json:"costMetric"`
+
+	// Dimensions Optional grouping dimensions.
+	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// DisplayLogoWithinPdf Whether the logo is rendered within PDF exports.
+	DisplayLogoWithinPdf bool `json:"displayLogoWithinPdf"`
+
+	// ExportType Invoice export type.
+	ExportType FinopsBillingBillingInvoiceScheduleTemplateInputExportType `json:"exportType"`
+
+	// Filter A single filter node: a leaf test (equal, substring) or a boolean combinator (and, or, not).
+	Filter *FinopsBillingFilterV1 `json:"filter,omitempty"`
+
+	// FreeText Optional free-text company/address block.
+	FreeText *string `json:"freeText,omitempty"`
+
+	// Logo Optional logo payload. Ignored when exportType=csv.
+	Logo *string `json:"logo,omitempty"`
+
+	// PeriodType Configured period type.
+	PeriodType FinopsBillingBillingInvoiceScheduleTemplateInputPeriodType `json:"periodType"`
+
+	// TemplateName Human-readable template name, unique within the organization. Required when isCreateTemplate is true; omit it when the schedule has no template.
+	TemplateName *string `json:"templateName,omitempty"`
+}
+
+// FinopsBillingBillingInvoiceScheduleTemplateInputCostMetric Configured cost metric.
+type FinopsBillingBillingInvoiceScheduleTemplateInputCostMetric string
+
+// FinopsBillingBillingInvoiceScheduleTemplateInputExportType Invoice export type.
+type FinopsBillingBillingInvoiceScheduleTemplateInputExportType string
+
+// FinopsBillingBillingInvoiceScheduleTemplateInputPeriodType Configured period type.
+type FinopsBillingBillingInvoiceScheduleTemplateInputPeriodType string
+
+// FinopsBillingBillingInvoiceTemplateCollection defines model for FinopsBilling_BillingInvoiceTemplateCollection.
+type FinopsBillingBillingInvoiceTemplateCollection = []FinopsBillingFlexeraFinopsBillingInvoiceTemplate
+
+// FinopsBillingBillingInvoiceTemplateList defines model for FinopsBilling_BillingInvoiceTemplateList.
+type FinopsBillingBillingInvoiceTemplateList struct {
+	// Kind The resource's type
+	Kind FinopsBillingBillingInvoiceTemplateListKind `json:"kind"`
+
+	// Limit Page size that was requested.
+	Limit *int `json:"limit,omitempty"`
+
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	NextPage *string `json:"nextPage,omitempty"`
+
+	// PrevPage URL to the previous page of data. The first page of data will not return a prevPage value.
+	PrevPage *string `json:"prevPage,omitempty"`
+
+	// Total Total number of items matching the current filter.
+	Total  *int                                          `json:"total,omitempty"`
+	Values FinopsBillingBillingInvoiceTemplateCollection `json:"values"`
+}
+
+// FinopsBillingBillingInvoiceTemplateListKind The resource's type
+type FinopsBillingBillingInvoiceTemplateListKind string
+
+// FinopsBillingBillingInvoiceTemplateResult defines model for FinopsBilling_BillingInvoiceTemplateResult.
+type FinopsBillingBillingInvoiceTemplateResult struct {
+	// ActiveScheduleCount Count of invoice schedules with status:active that currently reference this template.
+	ActiveScheduleCount int `json:"activeScheduleCount"`
+
+	// ActiveScheduleIds IDs of invoice schedules with status:active that currently reference this template.
+	ActiveScheduleIds []string `json:"activeScheduleIds"`
+
+	// CostMetric Configured cost metric.
+	CostMetric FinopsBillingBillingInvoiceTemplateResultCostMetric `json:"costMetric"`
+
+	// CreatedAt ISO-8601 creation timestamp
+	CreatedAt time.Time `json:"createdAt"`
+
+	// CreatedBy User ID of the caller who created the template.
+	CreatedBy int `json:"createdBy"`
+
+	// Dimensions Optional grouping dimensions included in the export.
+	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// DisplayLogoWithinPdf Whether the logo is rendered within PDF exports.
+	DisplayLogoWithinPdf bool `json:"displayLogoWithinPdf"`
+
+	// ExportType Invoice export type
+	ExportType FinopsBillingBillingInvoiceTemplateResultExportType `json:"exportType"`
+
+	// Filter A single filter node: a leaf test (equal, substring) or a boolean combinator (and, or, not).
+	Filter *FinopsBillingFilterV1 `json:"filter,omitempty"`
+
+	// FilterCount Number of filter expressions
+	FilterCount *int `json:"filterCount,omitempty"`
+
+	// FreeText Optional free-text company/address block rendered in the invoice.
+	FreeText *string `json:"freeText,omitempty"`
+
+	// GroupByCount Number of group-by dimensions
+	GroupByCount *int `json:"groupByCount,omitempty"`
+
+	// Id Invoice template identifier
+	Id string `json:"id"`
+
+	// Kind The resource's type
+	Kind FinopsBillingBillingInvoiceTemplateResultKind `json:"kind"`
+
+	// Logo Optional logo payload stored with the template.
+	Logo *string `json:"logo,omitempty"`
+
+	// NextInvoiceDate Optional next invoice date
+	NextInvoiceDate *openapi_types.Date `json:"nextInvoiceDate,omitempty"`
+
+	// OrgId The unique identifier for the organization
+	OrgId int `json:"orgId"`
+
+	// PeriodType Configured period type.
+	PeriodType FinopsBillingBillingInvoiceTemplateResultPeriodType `json:"periodType"`
+
+	// TemplateName Human-readable template name
+	TemplateName string `json:"templateName"`
+
+	// UpdatedAt ISO-8601 last-update timestamp
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// UpdatedBy User ID of the caller who last updated the template.
+	UpdatedBy int `json:"updatedBy"`
+}
+
+// FinopsBillingBillingInvoiceTemplateResultCostMetric Configured cost metric.
+type FinopsBillingBillingInvoiceTemplateResultCostMetric string
+
+// FinopsBillingBillingInvoiceTemplateResultExportType Invoice export type
+type FinopsBillingBillingInvoiceTemplateResultExportType string
+
+// FinopsBillingBillingInvoiceTemplateResultKind The resource's type
+type FinopsBillingBillingInvoiceTemplateResultKind string
+
+// FinopsBillingBillingInvoiceTemplateResultPeriodType Configured period type.
+type FinopsBillingBillingInvoiceTemplateResultPeriodType string
+
 // FinopsBillingCreateAdjustmentPlanRule Defines a new adjustment plan rule.
 type FinopsBillingCreateAdjustmentPlanRule struct {
 	// AzureReservationReallocation Configure reallocation of AWS reserved instance or Azure reservation benefits across customer accounts.
@@ -703,7 +1300,7 @@ type FinopsBillingCreateAdjustmentPlanRule struct {
 	HideCredits *FinopsBillingHideCreditsSettings `json:"hideCredits,omitempty"`
 
 	// MarkupMarkdown Configure the modification of existing costs by a percentage.
-	MarkupMarkdown *FinopsBillingMarkupMarkdownSettings `json:"markupMarkdown,omitempty"`
+	MarkupMarkdown *FinopsBillingMarkupMarkdownSettingsScoped `json:"markupMarkdown,omitempty"`
 
 	// Name Name of the rule.
 	Name string `json:"name"`
@@ -928,7 +1525,19 @@ type FinopsBillingCreditMemoSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// Type **"dimension_contains"** evaluates whether the specified **"dimension"** contains the specified **"value"**
+	// anywhere within it. The match is a case-sensitive literal substring match — **"value"** is matched exactly as
+	// given.
+	//
+	// ```
+	// {"type":"dimension_contains", "dimension":"ProviderName", "value":"AW"}
+	// ```
+	//
+	// Both **"dimension_equals"** and **"dimension_contains"** accept the same **"dimension"** values and are subject
+	// to the same per-rule-type restrictions described below.
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule type _supportCharge_, **"dimension"** may be **"bill_source"**, **"SubAccountId"**, or **"SubAccountName"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -937,7 +1546,8 @@ type FinopsBillingCreditMemoSettings struct {
 	// defined within your organization (names starting with **tag\_**),
 	// or a few dimensions Flexera populates for you.
 	//
-	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	// An empty **"value"** for **"dimension_equals"** matches dimensions with either a null or an empty string value.
+	// **"dimension_contains"** requires a non-empty **"value"**.
 	//
 	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
 	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
@@ -1014,7 +1624,19 @@ type FinopsBillingCustomUsageRateSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// Type **"dimension_contains"** evaluates whether the specified **"dimension"** contains the specified **"value"**
+	// anywhere within it. The match is a case-sensitive literal substring match — **"value"** is matched exactly as
+	// given.
+	//
+	// ```
+	// {"type":"dimension_contains", "dimension":"ProviderName", "value":"AW"}
+	// ```
+	//
+	// Both **"dimension_equals"** and **"dimension_contains"** accept the same **"dimension"** values and are subject
+	// to the same per-rule-type restrictions described below.
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule type _supportCharge_, **"dimension"** may be **"bill_source"**, **"SubAccountId"**, or **"SubAccountName"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -1023,7 +1645,8 @@ type FinopsBillingCustomUsageRateSettings struct {
 	// defined within your organization (names starting with **tag\_**),
 	// or a few dimensions Flexera populates for you.
 	//
-	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	// An empty **"value"** for **"dimension_equals"** matches dimensions with either a null or an empty string value.
+	// **"dimension_contains"** requires a non-empty **"value"**.
 	//
 	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
 	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
@@ -1084,6 +1707,30 @@ type FinopsBillingFeeShare struct {
 // FinopsBillingFeeShareDistributed Share a distribution.
 type FinopsBillingFeeShareDistributed string
 
+// FinopsBillingFilterV1 A single filter node: a leaf test (equal, substring) or a boolean combinator (and, or, not).
+type FinopsBillingFilterV1 struct {
+	// Dimension Column/dimension name; used by leaf nodes (equal, substring)
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression A single filter node: a leaf test (equal, substring) or a boolean combinator (and, or, not).
+	Expression *FinopsBillingFilterV1 `json:"expression,omitempty"`
+
+	// Expressions Child expressions; used by and/or nodes
+	Expressions *[]FinopsBillingFilterV1 `json:"expressions,omitempty"`
+
+	// Substring Substring match value; used by substring nodes
+	Substring *string `json:"substring,omitempty"`
+
+	// Type Filter node type
+	Type *FinopsBillingFilterV1Type `json:"type,omitempty"`
+
+	// Value Exact match value; used by equal nodes
+	Value *string `json:"value,omitempty"`
+}
+
+// FinopsBillingFilterV1Type Filter node type
+type FinopsBillingFilterV1Type string
+
 // FinopsBillingFixedAmountSettings Configure a fixed-value charge as a new line item.
 type FinopsBillingFixedAmountSettings struct {
 	// Condition An adjustment condition, used by adjustment rules and adjustment plan rules.
@@ -1099,7 +1746,19 @@ type FinopsBillingFixedAmountSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// Type **"dimension_contains"** evaluates whether the specified **"dimension"** contains the specified **"value"**
+	// anywhere within it. The match is a case-sensitive literal substring match — **"value"** is matched exactly as
+	// given.
+	//
+	// ```
+	// {"type":"dimension_contains", "dimension":"ProviderName", "value":"AW"}
+	// ```
+	//
+	// Both **"dimension_equals"** and **"dimension_contains"** accept the same **"dimension"** values and are subject
+	// to the same per-rule-type restrictions described below.
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule type _supportCharge_, **"dimension"** may be **"bill_source"**, **"SubAccountId"**, or **"SubAccountName"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -1108,7 +1767,8 @@ type FinopsBillingFixedAmountSettings struct {
 	// defined within your organization (names starting with **tag\_**),
 	// or a few dimensions Flexera populates for you.
 	//
-	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	// An empty **"value"** for **"dimension_equals"** matches dimensions with either a null or an empty string value.
+	// **"dimension_contains"** requires a non-empty **"value"**.
 	//
 	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
 	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
@@ -1218,7 +1878,7 @@ type FinopsBillingFlexeraFinopsBillingAdjustmentPlanRule struct {
 	Kind FinopsBillingFlexeraFinopsBillingAdjustmentPlanRuleKind `json:"kind"`
 
 	// MarkupMarkdown Configure the modification of existing costs by a percentage.
-	MarkupMarkdown *FinopsBillingMarkupMarkdownSettings `json:"markupMarkdown,omitempty"`
+	MarkupMarkdown *FinopsBillingMarkupMarkdownSettingsScoped `json:"markupMarkdown,omitempty"`
 
 	// Name Name of the rule.
 	Name string `json:"name"`
@@ -1422,7 +2082,7 @@ type FinopsBillingFlexeraFinopsBillingEnterpriseRule struct {
 	Kind FinopsBillingFlexeraFinopsBillingEnterpriseRuleKind `json:"kind"`
 
 	// MarkupMarkdown Configure the modification of existing costs by a percentage.
-	MarkupMarkdown *FinopsBillingMarkupMarkdownSettings `json:"markupMarkdown,omitempty"`
+	MarkupMarkdown *FinopsBillingMarkupMarkdownSettingsScoped `json:"markupMarkdown,omitempty"`
 
 	// Name Name of the enterprise adjustment rule displayed.
 	Name string `json:"name"`
@@ -1468,6 +2128,351 @@ type FinopsBillingFlexeraFinopsBillingEnterpriseRule struct {
 
 // FinopsBillingFlexeraFinopsBillingEnterpriseRuleKind The resource's type
 type FinopsBillingFlexeraFinopsBillingEnterpriseRuleKind string
+
+// FinopsBillingFlexeraFinopsBillingInvoice An invoice export lifecycle record.
+type FinopsBillingFlexeraFinopsBillingInvoice struct {
+	// Artifact Download artifact details for an invoice export.
+	Artifact *FinopsBillingBillingInvoiceExportArtifact `json:"artifact,omitempty"`
+
+	// Attempts Retry attempts
+	Attempts int `json:"attempts"`
+
+	// BillMonth Billing month (YYYY-MM format)
+	BillMonth *string `json:"billMonth,omitempty"`
+
+	// CostMetric Cost metric
+	CostMetric *string `json:"costMetric,omitempty"`
+
+	// CreatedAt ISO-8601 creation timestamp
+	CreatedAt time.Time `json:"createdAt"`
+
+	// Currency ISO 4217 currency code (three uppercase letters) that the invoice amount is denominated in.
+	Currency *string `json:"currency,omitempty"`
+
+	// CustomerBillingPlan Customer billing plan
+	CustomerBillingPlan *string `json:"customerBillingPlan,omitempty"`
+
+	// CustomerId Customer identifier
+	CustomerId int `json:"customerId"`
+
+	// CustomerName Customer display name
+	CustomerName *string `json:"customerName,omitempty"`
+
+	// Dimensions Stored group-by dimensions
+	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// DisplayLogoWithinPdf Whether to display the logo within the PDF
+	DisplayLogoWithinPdf *bool `json:"displayLogoWithinPdf,omitempty"`
+
+	// DueDate Invoice due date
+	DueDate *openapi_types.Date `json:"dueDate,omitempty"`
+
+	// ExportType Invoice export type
+	ExportType FinopsBillingFlexeraFinopsBillingInvoiceExportType `json:"exportType"`
+
+	// Failure Email delivery failure details for an invoice.
+	Failure *FinopsBillingBillingInvoiceDeliveryFailure `json:"failure,omitempty"`
+
+	// Filter A single filter node: a leaf test (equal, substring) or a boolean combinator (and, or, not).
+	Filter *FinopsBillingFilterV1 `json:"filter,omitempty"`
+
+	// FilterCount Number of filter expressions
+	FilterCount *int `json:"filterCount,omitempty"`
+
+	// FreeText Optional free text included in the invoice
+	FreeText *string `json:"freeText,omitempty"`
+
+	// GroupByCount Number of group-by dimensions
+	GroupByCount *int `json:"groupByCount,omitempty"`
+
+	// Id Invoice export identifier
+	Id string `json:"id"`
+
+	// InvoiceAmount Invoice amount rendered as string
+	InvoiceAmount string `json:"invoiceAmount"`
+
+	// InvoiceTemplateId Identifier of the saved template selected when this invoice was created. Empty when no saved template was used.
+	InvoiceTemplateId string `json:"invoiceTemplateId"`
+
+	// IsCreateTemplate Whether this invoice created its saved template as part of the request.
+	IsCreateTemplate bool `json:"isCreateTemplate"`
+
+	// IssueDate Invoice issue date
+	IssueDate *openapi_types.Date `json:"issueDate,omitempty"`
+
+	// Kind The resource's type
+	Kind FinopsBillingFlexeraFinopsBillingInvoiceKind `json:"kind"`
+
+	// Logo Optional logo payload
+	Logo *string `json:"logo,omitempty"`
+
+	// OrgId The unique identifier for the organization
+	OrgId int `json:"orgId"`
+
+	// PeriodType Cost period type
+	PeriodType *FinopsBillingFlexeraFinopsBillingInvoicePeriodType `json:"periodType,omitempty"`
+
+	// Status Export status
+	Status string `json:"status"`
+
+	// Template Invoice properties for a schedule: the template to create, or the schedule's own configuration when it has no template.
+	Template FinopsBillingBillingInvoiceScheduleTemplateInput `json:"template"`
+
+	// UpdatedAt ISO-8601 update timestamp
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// FinopsBillingFlexeraFinopsBillingInvoiceExportType Invoice export type
+type FinopsBillingFlexeraFinopsBillingInvoiceExportType string
+
+// FinopsBillingFlexeraFinopsBillingInvoiceKind The resource's type
+type FinopsBillingFlexeraFinopsBillingInvoiceKind string
+
+// FinopsBillingFlexeraFinopsBillingInvoicePeriodType Cost period type
+type FinopsBillingFlexeraFinopsBillingInvoicePeriodType string
+
+// FinopsBillingFlexeraFinopsBillingInvoiceSchedule A recurring schedule that generates and emails invoices for one or more customers.
+type FinopsBillingFlexeraFinopsBillingInvoiceSchedule struct {
+	// CreatedAt ISO-8601 creation timestamp
+	CreatedAt time.Time `json:"createdAt"`
+
+	// CreatedBy User ID of the caller who created the schedule.
+	CreatedBy int `json:"createdBy"`
+
+	// Customers Customers this schedule invoices. Persisted as an array on this one record.
+	Customers []FinopsBillingBillingInvoiceScheduleCustomer `json:"customers"`
+
+	// Id Identifier of the invoice schedule
+	Id string `json:"id"`
+
+	// InvoiceDueDateRule How each generated invoice's issue date is derived from the day its run fires.
+	InvoiceDueDateRule *FinopsBillingBillingInvoiceIssueDateRule `json:"invoiceDueDateRule,omitempty"`
+
+	// InvoiceIssueDateRule How each generated invoice's issue date is derived from the day its run fires.
+	InvoiceIssueDateRule FinopsBillingBillingInvoiceIssueDateRule `json:"invoiceIssueDateRule"`
+
+	// InvoiceTemplateId Identifier of the invoice template shared by every customer on this schedule. Absent when the schedule was created without a template.
+	InvoiceTemplateId *string `json:"invoiceTemplateId,omitempty"`
+
+	// Kind The resource's type
+	Kind FinopsBillingFlexeraFinopsBillingInvoiceScheduleKind `json:"kind"`
+
+	// NextInvoiceDate Date of the next run, in the schedule's timezone. Absent once the schedule's active window has passed.
+	NextInvoiceDate *openapi_types.Date `json:"nextInvoiceDate,omitempty"`
+
+	// OrgId The unique identifier for the organization
+	OrgId int `json:"orgId"`
+
+	// Schedule When a scheduled invoice fires. Deliberately not RFC-5545 RRULE, mirroring the finops/customizations Invoice Schedules resource this exposes.
+	Schedule FinopsBillingBillingInvoiceScheduleCadence `json:"schedule"`
+
+	// ScheduleName Human-readable name for the schedule.
+	ScheduleName string `json:"scheduleName"`
+
+	// Status Current state of the schedule.
+	Status FinopsBillingFlexeraFinopsBillingInvoiceScheduleStatus `json:"status"`
+
+	// Template Invoice properties for a schedule: the template to create, or the schedule's own configuration when it has no template.
+	Template *FinopsBillingBillingInvoiceScheduleTemplateInput `json:"template,omitempty"`
+
+	// UpdatedAt ISO-8601 last-update timestamp
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// UpdatedBy User ID of the caller who last updated the schedule.
+	UpdatedBy int `json:"updatedBy"`
+}
+
+// FinopsBillingFlexeraFinopsBillingInvoiceScheduleKind The resource's type
+type FinopsBillingFlexeraFinopsBillingInvoiceScheduleKind string
+
+// FinopsBillingFlexeraFinopsBillingInvoiceScheduleStatus Current state of the schedule.
+type FinopsBillingFlexeraFinopsBillingInvoiceScheduleStatus string
+
+// FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoice An invoice generated by an invoice schedule.
+type FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoice struct {
+	// Artifact Download artifact details for an invoice export.
+	Artifact *FinopsBillingBillingInvoiceExportArtifact `json:"artifact,omitempty"`
+
+	// Attempts Retry attempts
+	Attempts int `json:"attempts"`
+
+	// BillMonth Billing month (YYYY-MM format)
+	BillMonth *string `json:"billMonth,omitempty"`
+
+	// CostMetric Cost metric
+	CostMetric *string `json:"costMetric,omitempty"`
+
+	// CreatedAt ISO-8601 creation timestamp
+	CreatedAt time.Time `json:"createdAt"`
+
+	// Currency ISO 4217 currency code (three uppercase letters) that the invoice amount is denominated in.
+	Currency *string `json:"currency,omitempty"`
+
+	// CustomerBillingPlan Customer billing plan
+	CustomerBillingPlan *string `json:"customerBillingPlan,omitempty"`
+
+	// CustomerId Customer identifier
+	CustomerId int `json:"customerId"`
+
+	// CustomerName Customer display name
+	CustomerName *string `json:"customerName,omitempty"`
+
+	// DeliveryFailure Email delivery failure details for an invoice.
+	DeliveryFailure *FinopsBillingBillingInvoiceDeliveryFailure `json:"deliveryFailure,omitempty"`
+
+	// DeliveryStatus Email delivery outcome.
+	DeliveryStatus *FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceDeliveryStatus `json:"deliveryStatus,omitempty"`
+
+	// Dimensions Stored group-by dimensions
+	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// DisplayLogoWithinPdf Whether to display the logo within the PDF
+	DisplayLogoWithinPdf *bool `json:"displayLogoWithinPdf,omitempty"`
+
+	// DueDate Invoice due date
+	DueDate *openapi_types.Date `json:"dueDate,omitempty"`
+
+	// ExportType Invoice export type
+	ExportType FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportType `json:"exportType"`
+
+	// Failure Email delivery failure details for an invoice.
+	Failure *FinopsBillingBillingInvoiceDeliveryFailure `json:"failure,omitempty"`
+
+	// Filter A single filter node: a leaf test (equal, substring) or a boolean combinator (and, or, not).
+	Filter *FinopsBillingFilterV1 `json:"filter,omitempty"`
+
+	// FilterCount Number of filter expressions
+	FilterCount *int `json:"filterCount,omitempty"`
+
+	// FreeText Optional free text included in the invoice
+	FreeText *string `json:"freeText,omitempty"`
+
+	// GroupByCount Number of group-by dimensions
+	GroupByCount *int `json:"groupByCount,omitempty"`
+
+	// Id Invoice export identifier
+	Id string `json:"id"`
+
+	// InvoiceAmount Invoice amount rendered as string
+	InvoiceAmount string `json:"invoiceAmount"`
+
+	// IssueDate Invoice issue date
+	IssueDate *openapi_types.Date `json:"issueDate,omitempty"`
+
+	// Kind The resource's type
+	Kind FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceKind `json:"kind"`
+
+	// Logo Optional logo payload
+	Logo *string `json:"logo,omitempty"`
+
+	// MessageId Identifier returned by the notification service.
+	MessageId *string `json:"messageId,omitempty"`
+
+	// OrgId The unique identifier for the organization
+	OrgId int `json:"orgId"`
+
+	// PeriodType Cost period type
+	PeriodType *FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoicePeriodType `json:"periodType,omitempty"`
+
+	// ScheduleId Identifier of the invoice schedule.
+	ScheduleId string `json:"scheduleId"`
+
+	// Status Export status
+	Status string `json:"status"`
+
+	// UpdatedAt ISO-8601 update timestamp
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceDeliveryStatus Email delivery outcome.
+type FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceDeliveryStatus string
+
+// FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportType Invoice export type
+type FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportType string
+
+// FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceKind The resource's type
+type FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceKind string
+
+// FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoicePeriodType Cost period type
+type FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoicePeriodType string
+
+// FinopsBillingFlexeraFinopsBillingInvoiceTemplate A reusable invoice template for ad hoc and scheduled invoice generation.
+type FinopsBillingFlexeraFinopsBillingInvoiceTemplate struct {
+	// ActiveScheduleCount Count of invoice schedules with status:active that currently reference this template.
+	ActiveScheduleCount int `json:"activeScheduleCount"`
+
+	// ActiveScheduleIds IDs of invoice schedules with status:active that currently reference this template.
+	ActiveScheduleIds []string `json:"activeScheduleIds"`
+
+	// CostMetric Configured cost metric.
+	CostMetric FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetric `json:"costMetric"`
+
+	// CreatedAt ISO-8601 creation timestamp
+	CreatedAt time.Time `json:"createdAt"`
+
+	// CreatedBy User ID of the caller who created the template.
+	CreatedBy int `json:"createdBy"`
+
+	// Dimensions Optional grouping dimensions included in the export.
+	Dimensions *[]string `json:"dimensions,omitempty"`
+
+	// DisplayLogoWithinPdf Whether the logo is rendered within PDF exports.
+	DisplayLogoWithinPdf bool `json:"displayLogoWithinPdf"`
+
+	// ExportType Invoice export type
+	ExportType FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportType `json:"exportType"`
+
+	// Filter A single filter node: a leaf test (equal, substring) or a boolean combinator (and, or, not).
+	Filter *FinopsBillingFilterV1 `json:"filter,omitempty"`
+
+	// FilterCount Number of filter expressions
+	FilterCount *int `json:"filterCount,omitempty"`
+
+	// FreeText Optional free-text company/address block rendered in the invoice.
+	FreeText *string `json:"freeText,omitempty"`
+
+	// GroupByCount Number of group-by dimensions
+	GroupByCount *int `json:"groupByCount,omitempty"`
+
+	// Id Invoice template identifier
+	Id string `json:"id"`
+
+	// Kind The resource's type
+	Kind FinopsBillingFlexeraFinopsBillingInvoiceTemplateKind `json:"kind"`
+
+	// Logo Optional logo payload stored with the template.
+	Logo *string `json:"logo,omitempty"`
+
+	// NextInvoiceDate Optional next invoice date
+	NextInvoiceDate *openapi_types.Date `json:"nextInvoiceDate,omitempty"`
+
+	// OrgId The unique identifier for the organization
+	OrgId int `json:"orgId"`
+
+	// PeriodType Configured period type.
+	PeriodType FinopsBillingFlexeraFinopsBillingInvoiceTemplatePeriodType `json:"periodType"`
+
+	// TemplateName Human-readable template name
+	TemplateName string `json:"templateName"`
+
+	// UpdatedAt ISO-8601 last-update timestamp
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// UpdatedBy User ID of the caller who last updated the template.
+	UpdatedBy int `json:"updatedBy"`
+}
+
+// FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetric Configured cost metric.
+type FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetric string
+
+// FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportType Invoice export type
+type FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportType string
+
+// FinopsBillingFlexeraFinopsBillingInvoiceTemplateKind The resource's type
+type FinopsBillingFlexeraFinopsBillingInvoiceTemplateKind string
+
+// FinopsBillingFlexeraFinopsBillingInvoiceTemplatePeriodType Configured period type.
+type FinopsBillingFlexeraFinopsBillingInvoiceTemplatePeriodType string
 
 // FinopsBillingFlexeraFinopsBillingSharedCostRuleSummary A summary of a shared cost rule suitable for listing pages.
 type FinopsBillingFlexeraFinopsBillingSharedCostRuleSummary struct {
@@ -1547,7 +2552,19 @@ type FinopsBillingGenerateTaxSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// Type **"dimension_contains"** evaluates whether the specified **"dimension"** contains the specified **"value"**
+	// anywhere within it. The match is a case-sensitive literal substring match — **"value"** is matched exactly as
+	// given.
+	//
+	// ```
+	// {"type":"dimension_contains", "dimension":"ProviderName", "value":"AW"}
+	// ```
+	//
+	// Both **"dimension_equals"** and **"dimension_contains"** accept the same **"dimension"** values and are subject
+	// to the same per-rule-type restrictions described below.
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule type _supportCharge_, **"dimension"** may be **"bill_source"**, **"SubAccountId"**, or **"SubAccountName"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -1556,7 +2573,8 @@ type FinopsBillingGenerateTaxSettings struct {
 	// defined within your organization (names starting with **tag\_**),
 	// or a few dimensions Flexera populates for you.
 	//
-	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	// An empty **"value"** for **"dimension_equals"** matches dimensions with either a null or an empty string value.
+	// **"dimension_contains"** requires a non-empty **"value"**.
 	//
 	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
 	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
@@ -1596,7 +2614,19 @@ type FinopsBillingHideCreditsSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// Type **"dimension_contains"** evaluates whether the specified **"dimension"** contains the specified **"value"**
+	// anywhere within it. The match is a case-sensitive literal substring match — **"value"** is matched exactly as
+	// given.
+	//
+	// ```
+	// {"type":"dimension_contains", "dimension":"ProviderName", "value":"AW"}
+	// ```
+	//
+	// Both **"dimension_equals"** and **"dimension_contains"** accept the same **"dimension"** values and are subject
+	// to the same per-rule-type restrictions described below.
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule type _supportCharge_, **"dimension"** may be **"bill_source"**, **"SubAccountId"**, or **"SubAccountName"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -1605,7 +2635,8 @@ type FinopsBillingHideCreditsSettings struct {
 	// defined within your organization (names starting with **tag\_**),
 	// or a few dimensions Flexera populates for you.
 	//
-	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	// An empty **"value"** for **"dimension_equals"** matches dimensions with either a null or an empty string value.
+	// **"dimension_contains"** requires a non-empty **"value"**.
 	//
 	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
 	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
@@ -1735,7 +2766,19 @@ type FinopsBillingMarkupMarkdownSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// Type **"dimension_contains"** evaluates whether the specified **"dimension"** contains the specified **"value"**
+	// anywhere within it. The match is a case-sensitive literal substring match — **"value"** is matched exactly as
+	// given.
+	//
+	// ```
+	// {"type":"dimension_contains", "dimension":"ProviderName", "value":"AW"}
+	// ```
+	//
+	// Both **"dimension_equals"** and **"dimension_contains"** accept the same **"dimension"** values and are subject
+	// to the same per-rule-type restrictions described below.
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule type _supportCharge_, **"dimension"** may be **"bill_source"**, **"SubAccountId"**, or **"SubAccountName"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -1744,7 +2787,8 @@ type FinopsBillingMarkupMarkdownSettings struct {
 	// defined within your organization (names starting with **tag\_**),
 	// or a few dimensions Flexera populates for you.
 	//
-	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	// An empty **"value"** for **"dimension_equals"** matches dimensions with either a null or an empty string value.
+	// **"dimension_contains"** requires a non-empty **"value"**.
 	//
 	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
 	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
@@ -1768,6 +2812,74 @@ type FinopsBillingMarkupMarkdownSettings struct {
 
 // FinopsBillingMarkupMarkdownSettingsBaseOn BaseOn selects which cost column the markup is applied to. When omitted, the organization's baseCostsOn setting is used. BaseOn does not accept the legacy observedCosts value explicitly; legacy baseCostsOn values are normalized before use.
 type FinopsBillingMarkupMarkdownSettingsBaseOn string
+
+// FinopsBillingMarkupMarkdownSettingsScoped Configure the modification of existing costs by a percentage.
+type FinopsBillingMarkupMarkdownSettingsScoped struct {
+	// BaseOn BaseOn selects which cost column the markup is applied to. When omitted, the organization's baseCostsOn setting is used. BaseOn does not accept the legacy observedCosts value explicitly; legacy baseCostsOn values are normalized before use. ScopedCost is only available if your organization has them enabled.
+	BaseOn *FinopsBillingMarkupMarkdownSettingsScopedBaseOn `json:"baseOn,omitempty"`
+
+	// Condition An adjustment condition, used by adjustment rules and adjustment plan rules.
+	//
+	// A rule's condition may be omitted or null, which will match unconditionally.
+	//
+	// Otherwise the **"type"** field is required and controls which other fields are required.
+	// The following types are supported in billing adjustment rules:
+	//
+	// Type **"dimension_equals"** evaluates whether the specified **"dimension"** contains exactly the specified **"value"**.
+	//
+	// ```
+	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
+	// ```
+	//
+	// Type **"dimension_contains"** evaluates whether the specified **"dimension"** contains the specified **"value"**
+	// anywhere within it. The match is a case-sensitive literal substring match — **"value"** is matched exactly as
+	// given.
+	//
+	// ```
+	// {"type":"dimension_contains", "dimension":"ProviderName", "value":"AW"}
+	// ```
+	//
+	// Both **"dimension_equals"** and **"dimension_contains"** accept the same **"dimension"** values and are subject
+	// to the same per-rule-type restrictions described below.
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule type _supportCharge_, **"dimension"** may be **"bill_source"**, **"SubAccountId"**, or **"SubAccountName"**.
+	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
+	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
+	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
+	// defined within your organization (names starting with **rbd\_**),
+	// [Tag Dimensions](https://docs.flexera.com/flexera/EN/Administration/TagDimensions.htm)
+	// defined within your organization (names starting with **tag\_**),
+	// or a few dimensions Flexera populates for you.
+	//
+	// An empty **"value"** for **"dimension_equals"** matches dimensions with either a null or an empty string value.
+	// **"dimension_contains"** requires a non-empty **"value"**.
+	//
+	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
+	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
+	//
+	// ```
+	// {"type":"and", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"or", "expressions":[{...}]}
+	// ```
+	// ```
+	// {"type":"not", "expression":{...}}
+	// ```
+	//
+	// Together types **"and"**, **"or"**, and **"not"** enable complex combinations of other conditions.
+	Condition *FinopsBillingAdjustmentCondition `json:"condition,omitempty"`
+
+	// Markup Markup is the percentage added into the existing value. Negative numbers subtract.
+	Markup *string `json:"markup,omitempty"`
+
+	// ScopedRuleIds ScopedRuleIds lists the IDs of the scoped rules that this adjustment applies to. ScopedRuleIds must not be empty for rules using scopedCost, and must be omitted otherwise.
+	ScopedRuleIds *[]string `json:"scopedRuleIds,omitempty"`
+}
+
+// FinopsBillingMarkupMarkdownSettingsScopedBaseOn BaseOn selects which cost column the markup is applied to. When omitted, the organization's baseCostsOn setting is used. BaseOn does not accept the legacy observedCosts value explicitly; legacy baseCostsOn values are normalized before use. ScopedCost is only available if your organization has them enabled.
+type FinopsBillingMarkupMarkdownSettingsScopedBaseOn string
 
 // FinopsBillingOrderEntry Maps a shared cost rule to its new priority position.
 type FinopsBillingOrderEntry struct {
@@ -1793,7 +2905,19 @@ type FinopsBillingRemoveAzureLicenseCostsSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// Type **"dimension_contains"** evaluates whether the specified **"dimension"** contains the specified **"value"**
+	// anywhere within it. The match is a case-sensitive literal substring match — **"value"** is matched exactly as
+	// given.
+	//
+	// ```
+	// {"type":"dimension_contains", "dimension":"ProviderName", "value":"AW"}
+	// ```
+	//
+	// Both **"dimension_equals"** and **"dimension_contains"** accept the same **"dimension"** values and are subject
+	// to the same per-rule-type restrictions described below.
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule type _supportCharge_, **"dimension"** may be **"bill_source"**, **"SubAccountId"**, or **"SubAccountName"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -1802,7 +2926,8 @@ type FinopsBillingRemoveAzureLicenseCostsSettings struct {
 	// defined within your organization (names starting with **tag\_**),
 	// or a few dimensions Flexera populates for you.
 	//
-	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	// An empty **"value"** for **"dimension_equals"** matches dimensions with either a null or an empty string value.
+	// **"dimension_contains"** requires a non-empty **"value"**.
 	//
 	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
 	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
@@ -1867,7 +2992,7 @@ type FinopsBillingReplaceAdjustmentPlanRuleInPlan struct {
 	Id openapi_types.UUID `json:"id"`
 
 	// MarkupMarkdown Configure the modification of existing costs by a percentage.
-	MarkupMarkdown *FinopsBillingMarkupMarkdownSettings `json:"markupMarkdown,omitempty"`
+	MarkupMarkdown *FinopsBillingMarkupMarkdownSettingsScoped `json:"markupMarkdown,omitempty"`
 
 	// Name Name of the rule.
 	Name string `json:"name"`
@@ -1967,7 +3092,7 @@ type FinopsBillingReplaceEnterpriseRuleInRuleset struct {
 	Id openapi_types.UUID `json:"id"`
 
 	// MarkupMarkdown Configure the modification of existing costs by a percentage.
-	MarkupMarkdown *FinopsBillingMarkupMarkdownSettings `json:"markupMarkdown,omitempty"`
+	MarkupMarkdown *FinopsBillingMarkupMarkdownSettingsScoped `json:"markupMarkdown,omitempty"`
 
 	// Name Name of the rule.
 	Name string `json:"name"`
@@ -2020,7 +3145,19 @@ type FinopsBillingReservationReallocationSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// Type **"dimension_contains"** evaluates whether the specified **"dimension"** contains the specified **"value"**
+	// anywhere within it. The match is a case-sensitive literal substring match — **"value"** is matched exactly as
+	// given.
+	//
+	// ```
+	// {"type":"dimension_contains", "dimension":"ProviderName", "value":"AW"}
+	// ```
+	//
+	// Both **"dimension_equals"** and **"dimension_contains"** accept the same **"dimension"** values and are subject
+	// to the same per-rule-type restrictions described below.
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule type _supportCharge_, **"dimension"** may be **"bill_source"**, **"SubAccountId"**, or **"SubAccountName"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -2029,7 +3166,8 @@ type FinopsBillingReservationReallocationSettings struct {
 	// defined within your organization (names starting with **tag\_**),
 	// or a few dimensions Flexera populates for you.
 	//
-	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	// An empty **"value"** for **"dimension_equals"** matches dimensions with either a null or an empty string value.
+	// **"dimension_contains"** requires a non-empty **"value"**.
 	//
 	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
 	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
@@ -2069,7 +3207,19 @@ type FinopsBillingSavingsPlanReallocationSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// Type **"dimension_contains"** evaluates whether the specified **"dimension"** contains the specified **"value"**
+	// anywhere within it. The match is a case-sensitive literal substring match — **"value"** is matched exactly as
+	// given.
+	//
+	// ```
+	// {"type":"dimension_contains", "dimension":"ProviderName", "value":"AW"}
+	// ```
+	//
+	// Both **"dimension_equals"** and **"dimension_contains"** accept the same **"dimension"** values and are subject
+	// to the same per-rule-type restrictions described below.
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule type _supportCharge_, **"dimension"** may be **"bill_source"**, **"SubAccountId"**, or **"SubAccountName"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -2078,7 +3228,8 @@ type FinopsBillingSavingsPlanReallocationSettings struct {
 	// defined within your organization (names starting with **tag\_**),
 	// or a few dimensions Flexera populates for you.
 	//
-	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	// An empty **"value"** for **"dimension_equals"** matches dimensions with either a null or an empty string value.
+	// **"dimension_contains"** requires a non-empty **"value"**.
 	//
 	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
 	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
@@ -2214,7 +3365,19 @@ type FinopsBillingSupportChargeSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// Type **"dimension_contains"** evaluates whether the specified **"dimension"** contains the specified **"value"**
+	// anywhere within it. The match is a case-sensitive literal substring match — **"value"** is matched exactly as
+	// given.
+	//
+	// ```
+	// {"type":"dimension_contains", "dimension":"ProviderName", "value":"AW"}
+	// ```
+	//
+	// Both **"dimension_equals"** and **"dimension_contains"** accept the same **"dimension"** values and are subject
+	// to the same per-rule-type restrictions described below.
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule type _supportCharge_, **"dimension"** may be **"bill_source"**, **"SubAccountId"**, or **"SubAccountName"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -2223,7 +3386,8 @@ type FinopsBillingSupportChargeSettings struct {
 	// defined within your organization (names starting with **tag\_**),
 	// or a few dimensions Flexera populates for you.
 	//
-	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	// An empty **"value"** for **"dimension_equals"** matches dimensions with either a null or an empty string value.
+	// **"dimension_contains"** requires a non-empty **"value"**.
 	//
 	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
 	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
@@ -2280,7 +3444,19 @@ type FinopsBillingUpchargeDiscountSettings struct {
 	// {"type":"dimension_equals", "dimension":"ProviderName", "value":"AWS"}
 	// ```
 	//
-	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _supportCharge_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// Type **"dimension_contains"** evaluates whether the specified **"dimension"** contains the specified **"value"**
+	// anywhere within it. The match is a case-sensitive literal substring match — **"value"** is matched exactly as
+	// given.
+	//
+	// ```
+	// {"type":"dimension_contains", "dimension":"ProviderName", "value":"AW"}
+	// ```
+	//
+	// Both **"dimension_equals"** and **"dimension_contains"** accept the same **"dimension"** values and are subject
+	// to the same per-rule-type restrictions described below.
+	//
+	// For rule types _azureReservationReallocation_, _azureSavingsPlanReallocation_, _hideCredits_, _removeAzureLicenseCosts_, _removeTax_, _reservationReallocation_, _savingsPlanReallocation_, _uncompressPricingTiers_, and _volumeDiscounts_, **"dimension"** may only be **"bill_source"**.
+	// For rule type _supportCharge_, **"dimension"** may be **"bill_source"**, **"SubAccountId"**, or **"SubAccountName"**.
 	// For rule types _creditMemo_ and _fixedAmount_, **"dimension"** may be **"SubAccountId"** or **"SubAccountName"**.
 	// For other rule types, **"dimension"** may be any of most [FOCUS columns](https://focus.finops.org/focus-columns),
 	// [Rule-Based Dimensions](https://docs.flexera.com/flexera/EN/Administration/CreatingRule-BasedDimensions.htm)
@@ -2289,7 +3465,8 @@ type FinopsBillingUpchargeDiscountSettings struct {
 	// defined within your organization (names starting with **tag\_**),
 	// or a few dimensions Flexera populates for you.
 	//
-	// A 'value' specified as an empty string ("") matches dimensions with either a null or an empty string value.
+	// An empty **"value"** for **"dimension_equals"** matches dimensions with either a null or an empty string value.
+	// **"dimension_contains"** requires a non-empty **"value"**.
 	//
 	// Types **"and"** and **"or"** evaluate whether all or any of the conditions specified in the array **"expressions"** are true.
 	// Type **"not"** evaluates to the opposite of the single condition specified in **"expression"**.
@@ -2406,3 +3583,12 @@ type FinopsBillingVendorCreditsResult struct {
 
 // FinopsBillingVendorCreditsResultKind The resource's type
 type FinopsBillingVendorCreditsResultKind string
+
+// FinopsBillingInvoiceSchedulesIndexParamsStatus defines parameters for FinopsBillingInvoiceSchedulesIndex.
+type FinopsBillingInvoiceSchedulesIndexParamsStatus string
+
+// FinopsBillingInvoiceScheduleInvoicesIndexParamsExportType defines parameters for FinopsBillingInvoiceScheduleInvoicesIndex.
+type FinopsBillingInvoiceScheduleInvoicesIndexParamsExportType string
+
+// FinopsBillingInvoicesIndexParamsExportType defines parameters for FinopsBillingInvoicesIndex.
+type FinopsBillingInvoicesIndexParamsExportType string

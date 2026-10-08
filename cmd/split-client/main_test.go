@@ -84,6 +84,7 @@ func TestRunSplitsByNamespaceAndConcern(t *testing.T) {
 		"client_gen_budget_operations.go",
 		"client_gen_budget_responses.go",
 		"client_gen_optima_routing.go",
+		"client_gen_services.go",
 		manifestName,
 		extensionsName,
 	} {
@@ -128,7 +129,7 @@ func TestRunSplitsByNamespaceAndConcern(t *testing.T) {
 	if err := json.Unmarshal(data, &got); err != nil {
 		t.Fatal(err)
 	}
-	if got.Generator != "test-generator v1.2.3" || got.TotalFiles != 5 {
+	if got.Generator != "test-generator v1.2.3" || got.TotalFiles != 6 {
 		t.Fatalf("unexpected manifest: %#v", got)
 	}
 	if got.Source != "openapi.json" {
@@ -437,5 +438,63 @@ func TestComputeOptimaHostedPrefixes_IgnoresOperationLevelOverrides(t *testing.T
 	}
 	if len(got) != 0 {
 		t.Fatalf("expected no prefixes derived from an operation-level override, got %v", got)
+	}
+}
+
+func TestComputeServiceMetadata(t *testing.T) {
+	spec := []byte(`{
+		"x-flexera-services": {
+			"bill_analysis": {"title": "Bill Analysis", "name": "RightScale Bill Analysis API", "vendor": "rightscale", "specId": "rightscale-bill-analysis", "operationIdPrefix": "BillAnalysis", "tags": ["Costs"]},
+			"iam": {"title": "Identity and Access Management", "vendor": "flexera", "version": "v1", "operationIdPrefix": "Iam", "tags": ["Project"]}
+		},
+		"paths": {
+			"/bill-analysis/orgs/{orgId}/costs/aggregated": {
+				"servers": [{"url": "https://example"}],
+				"post": {"operationId": "BillAnalysis_costs_aggregated", "x-flexera-service": "bill_analysis"}
+			},
+			"/iam/v1/orgs/{orgId}/projects": {"get": {"operationId": "Iam_Project_Index", "x-flexera-service": "iam"}}
+		}
+	}`)
+	meta, err := computeServiceMetadata(spec)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(meta.Services) != 2 || meta.Services[0].ID != "bill_analysis" || meta.Services[1].Title != "Identity and Access Management" {
+		t.Fatalf("services = %#v", meta.Services)
+	}
+	if meta.Operations["Iam_Project_Index"] != "iam" {
+		t.Fatalf("operations = %#v", meta.Operations)
+	}
+
+	source, decls, err := renderServicesFile("flexera", "test", meta)
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, want := range []string{
+		`ServiceBillAnalysis Service = "bill_analysis"`,
+		`"BillAnalysis_costs_aggregated": ServiceBillAnalysis,`,
+		`Title: "Bill Analysis"`,
+	} {
+		if !strings.Contains(string(source), want) {
+			t.Errorf("generated services file missing %q:\n%s", want, source)
+		}
+	}
+	if strings.Join(decls, ",") != "ServiceBillAnalysis,ServiceIam,operationServices,serviceRegistry" {
+		t.Errorf("declarations = %v", decls)
+	}
+}
+
+func TestComputeServiceMetadataRejectsPartialAnnotation(t *testing.T) {
+	for name, spec := range map[string]string{
+		"missing":      `{"x-flexera-services":{"iam":{}},"paths":{"/a":{"get":{"operationId":"A"}}}}`,
+		"unregistered": `{"x-flexera-services":{"iam":{}},"paths":{"/a":{"get":{"operationId":"A","x-flexera-service":"grs"}}}}`,
+	} {
+		if _, err := computeServiceMetadata([]byte(spec)); err == nil {
+			t.Errorf("%s: expected error", name)
+		}
+	}
+	meta, err := computeServiceMetadata([]byte(`{"paths":{"/a":{"get":{"operationId":"A"}}}}`))
+	if err != nil || len(meta.Services) != 0 {
+		t.Errorf("unannotated spec: meta=%#v err=%v, want empty", meta, err)
 	}
 }

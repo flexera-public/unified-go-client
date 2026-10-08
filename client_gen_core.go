@@ -735,6 +735,64 @@ type ClientInterface interface {
 	// FinopsBillingBillingCreditsIndexVendorCredits request
 	FinopsBillingBillingCreditsIndexVendorCredits(ctx context.Context, orgId int, params *FinopsBillingBillingCreditsIndexVendorCreditsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// FinopsBillingInvoiceSchedulesIndex request
+	FinopsBillingInvoiceSchedulesIndex(ctx context.Context, orgId int, params *FinopsBillingInvoiceSchedulesIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingInvoiceSchedulesCreateWithBody request with any body
+	FinopsBillingInvoiceSchedulesCreateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingInvoiceSchedulesCreate(ctx context.Context, orgId int, body FinopsBillingInvoiceSchedulesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingInvoiceSchedulesShow request
+	FinopsBillingInvoiceSchedulesShow(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingInvoiceSchedulesUpdateWithBody request with any body
+	FinopsBillingInvoiceSchedulesUpdateWithBody(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceSchedulesUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingInvoiceSchedulesUpdate(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceSchedulesUpdateParams, body FinopsBillingInvoiceSchedulesUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingInvoiceSchedulesActivate request
+	FinopsBillingInvoiceSchedulesActivate(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceSchedulesActivateParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingInvoiceSchedulesDeactivate request
+	FinopsBillingInvoiceSchedulesDeactivate(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceSchedulesDeactivateParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingInvoiceScheduleInvoicesIndex request
+	FinopsBillingInvoiceScheduleInvoicesIndex(ctx context.Context, orgId int, scheduleId string, params *FinopsBillingInvoiceScheduleInvoicesIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingInvoiceScheduleInvoicesShow request
+	FinopsBillingInvoiceScheduleInvoicesShow(ctx context.Context, orgId int, scheduleId string, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingInvoiceTemplatesIndex request
+	FinopsBillingInvoiceTemplatesIndex(ctx context.Context, orgId int, params *FinopsBillingInvoiceTemplatesIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingInvoiceTemplatesCreateWithBody request with any body
+	FinopsBillingInvoiceTemplatesCreateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingInvoiceTemplatesCreate(ctx context.Context, orgId int, body FinopsBillingInvoiceTemplatesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingInvoiceTemplatesShow request
+	FinopsBillingInvoiceTemplatesShow(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingInvoiceTemplatesUpdateWithBody request with any body
+	FinopsBillingInvoiceTemplatesUpdateWithBody(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceTemplatesUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingInvoiceTemplatesUpdate(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceTemplatesUpdateParams, body FinopsBillingInvoiceTemplatesUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingInvoicesIndex request
+	FinopsBillingInvoicesIndex(ctx context.Context, orgId int, params *FinopsBillingInvoicesIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingInvoicesCreateWithBody request with any body
+	FinopsBillingInvoicesCreateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingInvoicesCreate(ctx context.Context, orgId int, body FinopsBillingInvoicesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingInvoicesShow request
+	FinopsBillingInvoicesShow(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingInvoicesRetry request
+	FinopsBillingInvoicesRetry(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// FinopsBillingSharedCostRulesIndex request
 	FinopsBillingSharedCostRulesIndex(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -758,6 +816,14 @@ type ClientInterface interface {
 	FinopsBillingSharedCostRulesUpdateWithBody(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	FinopsBillingSharedCostRulesUpdate(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, body FinopsBillingSharedCostRulesUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsCustomizationsCurrencyShow request
+	FinopsCustomizationsCurrencyShow(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsCustomizationsCurrencyUpdateWithBody request with any body
+	FinopsCustomizationsCurrencyUpdateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsCustomizationsCurrencyUpdate(ctx context.Context, orgId int, body FinopsCustomizationsCurrencyUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// FinopsCustomizationsReportSubscriptionsIndex request
 	FinopsCustomizationsReportSubscriptionsIndex(ctx context.Context, orgId int, params *FinopsCustomizationsReportSubscriptionsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -853,6 +919,9 @@ type ClientInterface interface {
 	FinopsCustomizationsTagDimensionUpdateWithBody(ctx context.Context, orgId int, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	FinopsCustomizationsTagDimensionUpdate(ctx context.Context, orgId int, id string, body FinopsCustomizationsTagDimensionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsCustomizationsTagObservationIndex request
+	FinopsCustomizationsTagObservationIndex(ctx context.Context, orgId int, params *FinopsCustomizationsTagObservationIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// FinopsOnboardingBillConnectIndex request
 	FinopsOnboardingBillConnectIndex(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -1358,7 +1427,7 @@ type ClientInterface interface {
 	IamRefreshTokenShow(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// IamUserProfileShow request
-	IamUserProfileShow(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+	IamUserProfileShow(ctx context.Context, params *IamUserProfileShowParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// IamUserProfileUpdateWithBody request with any body
 	IamUserProfileUpdateWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -1656,37 +1725,6 @@ type ClientInterface interface {
 
 	// PolicyUnmanagedAppliedPoliciesIndex request
 	PolicyUnmanagedAppliedPoliciesIndex(ctx context.Context, orgId int64, params *PolicyUnmanagedAppliedPoliciesIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RiskGetFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetPostWithBody request with any body
-	RiskGetFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	RiskGetFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetPost(ctx context.Context, orgId string, body RiskGetFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RiskExportFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetExportPostWithBody request with any body
-	RiskExportFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetExportPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	RiskExportFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetExportPost(ctx context.Context, orgId string, body RiskExportFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetExportPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RiskGetMisconfigRulesRecommendationV1OrgsOrgIdMisconfigurationListPostWithBody request with any body
-	RiskGetMisconfigRulesRecommendationV1OrgsOrgIdMisconfigurationListPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	RiskGetMisconfigRulesRecommendationV1OrgsOrgIdMisconfigurationListPost(ctx context.Context, orgId string, body RiskGetMisconfigRulesRecommendationV1OrgsOrgIdMisconfigurationListPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RiskGetMisconfigOverviewRecommendationV1OrgsOrgIdMisconfigurationOverviewPostWithBody request with any body
-	RiskGetMisconfigOverviewRecommendationV1OrgsOrgIdMisconfigurationOverviewPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	RiskGetMisconfigOverviewRecommendationV1OrgsOrgIdMisconfigurationOverviewPost(ctx context.Context, orgId string, body RiskGetMisconfigOverviewRecommendationV1OrgsOrgIdMisconfigurationOverviewPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RiskGetRemediationStepsRecommendationV1OrgsOrgIdMisconfigurationRemediationStepsRiskIdRemediationMethodGet request
-	RiskGetRemediationStepsRecommendationV1OrgsOrgIdMisconfigurationRemediationStepsRiskIdRemediationMethodGet(ctx context.Context, orgId string, riskId string, remediationMethod string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RiskGetRiskDetailsRecommendationV1OrgsOrgIdMisconfigurationRiskRiskIdDetailsGet request
-	RiskGetRiskDetailsRecommendationV1OrgsOrgIdMisconfigurationRiskRiskIdDetailsGet(ctx context.Context, orgId string, riskId string, params *RiskGetRiskDetailsRecommendationV1OrgsOrgIdMisconfigurationRiskRiskIdDetailsGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostWithBody request with any body
-	RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPost(ctx context.Context, orgId string, body RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// OptimaRecommendationsRecommendationsIndex request
 	OptimaRecommendationsRecommendationsIndex(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -2971,6 +3009,64 @@ type ClientWithResponsesInterface interface {
 	// FinopsBillingBillingCreditsIndexVendorCreditsWithResponse request
 	FinopsBillingBillingCreditsIndexVendorCreditsWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingCreditsIndexVendorCreditsParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsIndexVendorCreditsResponse, error)
 
+	// FinopsBillingInvoiceSchedulesIndexWithResponse request
+	FinopsBillingInvoiceSchedulesIndexWithResponse(ctx context.Context, orgId int, params *FinopsBillingInvoiceSchedulesIndexParams, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceSchedulesIndexResponse, error)
+
+	// FinopsBillingInvoiceSchedulesCreateWithBodyWithResponse request with any body
+	FinopsBillingInvoiceSchedulesCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceSchedulesCreateResponse, error)
+
+	FinopsBillingInvoiceSchedulesCreateWithResponse(ctx context.Context, orgId int, body FinopsBillingInvoiceSchedulesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceSchedulesCreateResponse, error)
+
+	// FinopsBillingInvoiceSchedulesShowWithResponse request
+	FinopsBillingInvoiceSchedulesShowWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceSchedulesShowResponse, error)
+
+	// FinopsBillingInvoiceSchedulesUpdateWithBodyWithResponse request with any body
+	FinopsBillingInvoiceSchedulesUpdateWithBodyWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceSchedulesUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceSchedulesUpdateResponse, error)
+
+	FinopsBillingInvoiceSchedulesUpdateWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceSchedulesUpdateParams, body FinopsBillingInvoiceSchedulesUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceSchedulesUpdateResponse, error)
+
+	// FinopsBillingInvoiceSchedulesActivateWithResponse request
+	FinopsBillingInvoiceSchedulesActivateWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceSchedulesActivateParams, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceSchedulesActivateResponse, error)
+
+	// FinopsBillingInvoiceSchedulesDeactivateWithResponse request
+	FinopsBillingInvoiceSchedulesDeactivateWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceSchedulesDeactivateParams, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceSchedulesDeactivateResponse, error)
+
+	// FinopsBillingInvoiceScheduleInvoicesIndexWithResponse request
+	FinopsBillingInvoiceScheduleInvoicesIndexWithResponse(ctx context.Context, orgId int, scheduleId string, params *FinopsBillingInvoiceScheduleInvoicesIndexParams, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceScheduleInvoicesIndexResponse, error)
+
+	// FinopsBillingInvoiceScheduleInvoicesShowWithResponse request
+	FinopsBillingInvoiceScheduleInvoicesShowWithResponse(ctx context.Context, orgId int, scheduleId string, id string, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceScheduleInvoicesShowResponse, error)
+
+	// FinopsBillingInvoiceTemplatesIndexWithResponse request
+	FinopsBillingInvoiceTemplatesIndexWithResponse(ctx context.Context, orgId int, params *FinopsBillingInvoiceTemplatesIndexParams, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceTemplatesIndexResponse, error)
+
+	// FinopsBillingInvoiceTemplatesCreateWithBodyWithResponse request with any body
+	FinopsBillingInvoiceTemplatesCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceTemplatesCreateResponse, error)
+
+	FinopsBillingInvoiceTemplatesCreateWithResponse(ctx context.Context, orgId int, body FinopsBillingInvoiceTemplatesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceTemplatesCreateResponse, error)
+
+	// FinopsBillingInvoiceTemplatesShowWithResponse request
+	FinopsBillingInvoiceTemplatesShowWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceTemplatesShowResponse, error)
+
+	// FinopsBillingInvoiceTemplatesUpdateWithBodyWithResponse request with any body
+	FinopsBillingInvoiceTemplatesUpdateWithBodyWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceTemplatesUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceTemplatesUpdateResponse, error)
+
+	FinopsBillingInvoiceTemplatesUpdateWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingInvoiceTemplatesUpdateParams, body FinopsBillingInvoiceTemplatesUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingInvoiceTemplatesUpdateResponse, error)
+
+	// FinopsBillingInvoicesIndexWithResponse request
+	FinopsBillingInvoicesIndexWithResponse(ctx context.Context, orgId int, params *FinopsBillingInvoicesIndexParams, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesIndexResponse, error)
+
+	// FinopsBillingInvoicesCreateWithBodyWithResponse request with any body
+	FinopsBillingInvoicesCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesCreateResponse, error)
+
+	FinopsBillingInvoicesCreateWithResponse(ctx context.Context, orgId int, body FinopsBillingInvoicesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesCreateResponse, error)
+
+	// FinopsBillingInvoicesShowWithResponse request
+	FinopsBillingInvoicesShowWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesShowResponse, error)
+
+	// FinopsBillingInvoicesRetryWithResponse request
+	FinopsBillingInvoicesRetryWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesRetryResponse, error)
+
 	// FinopsBillingSharedCostRulesIndexWithResponse request
 	FinopsBillingSharedCostRulesIndexWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesIndexResponse, error)
 
@@ -2994,6 +3090,14 @@ type ClientWithResponsesInterface interface {
 	FinopsBillingSharedCostRulesUpdateWithBodyWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesUpdateResponse, error)
 
 	FinopsBillingSharedCostRulesUpdateWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, body FinopsBillingSharedCostRulesUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesUpdateResponse, error)
+
+	// FinopsCustomizationsCurrencyShowWithResponse request
+	FinopsCustomizationsCurrencyShowWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsCustomizationsCurrencyShowResponse, error)
+
+	// FinopsCustomizationsCurrencyUpdateWithBodyWithResponse request with any body
+	FinopsCustomizationsCurrencyUpdateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsCustomizationsCurrencyUpdateResponse, error)
+
+	FinopsCustomizationsCurrencyUpdateWithResponse(ctx context.Context, orgId int, body FinopsCustomizationsCurrencyUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsCustomizationsCurrencyUpdateResponse, error)
 
 	// FinopsCustomizationsReportSubscriptionsIndexWithResponse request
 	FinopsCustomizationsReportSubscriptionsIndexWithResponse(ctx context.Context, orgId int, params *FinopsCustomizationsReportSubscriptionsIndexParams, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsIndexResponse, error)
@@ -3089,6 +3193,9 @@ type ClientWithResponsesInterface interface {
 	FinopsCustomizationsTagDimensionUpdateWithBodyWithResponse(ctx context.Context, orgId int, id string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsCustomizationsTagDimensionUpdateResponse, error)
 
 	FinopsCustomizationsTagDimensionUpdateWithResponse(ctx context.Context, orgId int, id string, body FinopsCustomizationsTagDimensionUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsCustomizationsTagDimensionUpdateResponse, error)
+
+	// FinopsCustomizationsTagObservationIndexWithResponse request
+	FinopsCustomizationsTagObservationIndexWithResponse(ctx context.Context, orgId int, params *FinopsCustomizationsTagObservationIndexParams, reqEditors ...RequestEditorFn) (*FinopsCustomizationsTagObservationIndexResponse, error)
 
 	// FinopsOnboardingBillConnectIndexWithResponse request
 	FinopsOnboardingBillConnectIndexWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectIndexResponse, error)
@@ -3594,7 +3701,7 @@ type ClientWithResponsesInterface interface {
 	IamRefreshTokenShowWithResponse(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*IamRefreshTokenShowResponse, error)
 
 	// IamUserProfileShowWithResponse request
-	IamUserProfileShowWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*IamUserProfileShowResponse, error)
+	IamUserProfileShowWithResponse(ctx context.Context, params *IamUserProfileShowParams, reqEditors ...RequestEditorFn) (*IamUserProfileShowResponse, error)
 
 	// IamUserProfileUpdateWithBodyWithResponse request with any body
 	IamUserProfileUpdateWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*IamUserProfileUpdateResponse, error)
@@ -3892,37 +3999,6 @@ type ClientWithResponsesInterface interface {
 
 	// PolicyUnmanagedAppliedPoliciesIndexWithResponse request
 	PolicyUnmanagedAppliedPoliciesIndexWithResponse(ctx context.Context, orgId int64, params *PolicyUnmanagedAppliedPoliciesIndexParams, reqEditors ...RequestEditorFn) (*PolicyUnmanagedAppliedPoliciesIndexResponse, error)
-
-	// RiskGetFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetPostWithBodyWithResponse request with any body
-	RiskGetFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetPostResponse, error)
-
-	RiskGetFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetPostWithResponse(ctx context.Context, orgId string, body RiskGetFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskGetFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetPostResponse, error)
-
-	// RiskExportFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetExportPostWithBodyWithResponse request with any body
-	RiskExportFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetExportPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskExportFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetExportPostResponse, error)
-
-	RiskExportFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetExportPostWithResponse(ctx context.Context, orgId string, body RiskExportFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetExportPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskExportFailedAssetsRecommendationV1OrgsOrgIdMisconfigurationFailedAssetExportPostResponse, error)
-
-	// RiskGetMisconfigRulesRecommendationV1OrgsOrgIdMisconfigurationListPostWithBodyWithResponse request with any body
-	RiskGetMisconfigRulesRecommendationV1OrgsOrgIdMisconfigurationListPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetMisconfigRulesRecommendationV1OrgsOrgIdMisconfigurationListPostResponse, error)
-
-	RiskGetMisconfigRulesRecommendationV1OrgsOrgIdMisconfigurationListPostWithResponse(ctx context.Context, orgId string, body RiskGetMisconfigRulesRecommendationV1OrgsOrgIdMisconfigurationListPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskGetMisconfigRulesRecommendationV1OrgsOrgIdMisconfigurationListPostResponse, error)
-
-	// RiskGetMisconfigOverviewRecommendationV1OrgsOrgIdMisconfigurationOverviewPostWithBodyWithResponse request with any body
-	RiskGetMisconfigOverviewRecommendationV1OrgsOrgIdMisconfigurationOverviewPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskGetMisconfigOverviewRecommendationV1OrgsOrgIdMisconfigurationOverviewPostResponse, error)
-
-	RiskGetMisconfigOverviewRecommendationV1OrgsOrgIdMisconfigurationOverviewPostWithResponse(ctx context.Context, orgId string, body RiskGetMisconfigOverviewRecommendationV1OrgsOrgIdMisconfigurationOverviewPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskGetMisconfigOverviewRecommendationV1OrgsOrgIdMisconfigurationOverviewPostResponse, error)
-
-	// RiskGetRemediationStepsRecommendationV1OrgsOrgIdMisconfigurationRemediationStepsRiskIdRemediationMethodGetWithResponse request
-	RiskGetRemediationStepsRecommendationV1OrgsOrgIdMisconfigurationRemediationStepsRiskIdRemediationMethodGetWithResponse(ctx context.Context, orgId string, riskId string, remediationMethod string, reqEditors ...RequestEditorFn) (*RiskGetRemediationStepsRecommendationV1OrgsOrgIdMisconfigurationRemediationStepsRiskIdRemediationMethodGetResponse, error)
-
-	// RiskGetRiskDetailsRecommendationV1OrgsOrgIdMisconfigurationRiskRiskIdDetailsGetWithResponse request
-	RiskGetRiskDetailsRecommendationV1OrgsOrgIdMisconfigurationRiskRiskIdDetailsGetWithResponse(ctx context.Context, orgId string, riskId string, params *RiskGetRiskDetailsRecommendationV1OrgsOrgIdMisconfigurationRiskRiskIdDetailsGetParams, reqEditors ...RequestEditorFn) (*RiskGetRiskDetailsRecommendationV1OrgsOrgIdMisconfigurationRiskRiskIdDetailsGetResponse, error)
-
-	// RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostWithBodyWithResponse request with any body
-	RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostResponse, error)
-
-	RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostWithResponse(ctx context.Context, orgId string, body RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostJSONRequestBody, reqEditors ...RequestEditorFn) (*RiskSuppressRuleOrAssetRecommendationV1OrgsOrgIdMisconfigurationRuleSuppressPostResponse, error)
 
 	// OptimaRecommendationsRecommendationsIndexWithResponse request
 	OptimaRecommendationsRecommendationsIndexWithResponse(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsIndexParams, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsIndexResponse, error)

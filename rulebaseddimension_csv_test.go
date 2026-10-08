@@ -29,7 +29,7 @@ Azure,,,Sales,
 	}
 	// First rule for rbd_department should AND vendor+region conditions.
 	cond := specs[0].Rules[0].Condition
-	if cond == nil || cond.Type != And || cond.Expressions == nil || len(*cond.Expressions) != 2 {
+	if cond == nil || cond.Type != FinopsCustomizationsRuleBasedDimensionConditionTypeAnd || cond.Expressions == nil || len(*cond.Expressions) != 2 {
 		t.Fatalf("expected AND of 2 expressions, got %+v", cond)
 	}
 }
@@ -52,13 +52,13 @@ PlainAWS,,PlainMatch
 	if len(rules) != 3 {
 		t.Fatalf("expected 3 rules, got %d", len(rules))
 	}
-	if rules[0].Condition.Type != DimensionContains || rules[0].Condition.Substring == nil || *rules[0].Condition.Substring != "comp" {
+	if rules[0].Condition.Type != FinopsCustomizationsRuleBasedDimensionConditionTypeDimensionContains || rules[0].Condition.Substring == nil || *rules[0].Condition.Substring != "comp" {
 		t.Fatalf("unexpected DIMENSION_CONTAINS condition: %+v", rules[0].Condition)
 	}
-	if rules[1].Condition.Type != Not || rules[1].Condition.Expression == nil || rules[1].Condition.Expression.Type != DimensionEquals {
+	if rules[1].Condition.Type != FinopsCustomizationsRuleBasedDimensionConditionTypeNot || rules[1].Condition.Expression == nil || rules[1].Condition.Expression.Type != FinopsCustomizationsRuleBasedDimensionConditionTypeDimensionEquals {
 		t.Fatalf("unexpected NOT condition: %+v", rules[1].Condition)
 	}
-	if rules[2].Condition.Type != DimensionEquals || rules[2].Condition.Value == nil || *rules[2].Condition.Value != "PlainAWS" {
+	if rules[2].Condition.Type != FinopsCustomizationsRuleBasedDimensionConditionTypeDimensionEquals || rules[2].Condition.Value == nil || *rules[2].Condition.Value != "PlainAWS" {
 		t.Fatalf("unexpected plain-value condition: %+v", rules[2].Condition)
 	}
 }
