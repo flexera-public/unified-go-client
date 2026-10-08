@@ -58,6 +58,35 @@ Common environment variables used in examples:
 - `FLEXERA_CLIENT_ID`
 - `FLEXERA_CLIENT_SECRET`
 
+## Offline API metadata
+
+Use `OperationIDs()`, `OperationMetadata(operationID)`, and
+`ComponentMetadata("#/components/schemas/Name")` to inspect the API contract
+without constructing a client, authenticating, or accessing the network.
+
+```go
+operation, found, err := flexera.OperationMetadata("Saas_Usage_Message_Query_index")
+if err != nil {
+    panic(err)
+}
+if !found {
+    panic("operation not present in the pinned specification")
+}
+// Definition is the original OpenAPI operation JSON, including descriptions,
+// requestBody, responses, named examples, deprecation, and extensions.
+// Parameters includes inherited parameters with operation-level overrides.
+_ = operation.Definition
+_ = operation.Parameters
+```
+
+The registry embeds the same committed `unified-openapi/openapi3.json` used for
+client generation; it requires no second generated metadata artifact. Returned
+JSON is copied and retains numeric precision. Component references stay local
+and unexpanded; resolve them explicitly with `ComponentMetadata`. These are
+raw upstream annotations, **not sanitized or validated executable requests**.
+Consumers displaying examples must apply their own sensitive-value policy.
+CLI flag names and configuration sources are intentionally not SDK metadata.
+
 ## Development
 
 Run the standard validation checks:

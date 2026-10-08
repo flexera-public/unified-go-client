@@ -1,6 +1,4 @@
 repository=https://github.com/flexera-public/unified-openapi.git
 branch=main
-commit=a70778d4af3c938580b833cbedfb701c98ffb076
+commit=6a683791bfef4198bf388543bbf6702c528837fc
 sha256=79996a9e0e05e3ba5bec850ce3e4960ebc922cbcc34a9aefa979098320d98c02
-source=local-working-tree
-config_sha256=2e61e3f7053062049e332f01d842c2ae09c8f50c6e5eec7e8571cc351d9b6741

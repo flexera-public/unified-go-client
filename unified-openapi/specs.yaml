@@ -387,9 +387,9 @@ specs:
     source:
       type: manual
       description: "Hand-curated minimal OpenAPI subset for the Bill Analysis API. This file documents only the Bill Analysis endpoints that have not been migrated to Flexera API Gateway. Add new endpoints only when a downstream consumer requires them; remove this spec once Bill Analysis is fully deprecated."
-
       url: "https://github.com/flexera/bill_analysis/blob/master/front_service/gen/http/openapi3.json"
     # Bill Analysis Public-URL source
+    # We are using manual exports until Cost Export endpoint docs are published or new cost API endpoints supercede these.
     # source:
     #   type: url
     #   url: "https://reference.rightscale.com/bill_analysis/swagger.json"

@@ -512,6 +512,33 @@
       "declarationCount": 1
     },
     {
+      "path": "metadata.go",
+      "sha256": "2979861a749493744f85e6e70a0a82014d1c1acd40203782c8d5aece3b9fc922",
+      "declarations": [
+        {
+          "name": "APIOperation",
+          "kind": "type",
+          "doc": "APIOperation describes an operation independently of any CLI flag names."
+        },
+        {
+          "name": "OperationMetadata",
+          "kind": "func",
+          "doc": "OperationMetadata returns a copy of the pinned OpenAPI metadata for an ID."
+        },
+        {
+          "name": "OperationIDs",
+          "kind": "func",
+          "doc": "OperationIDs lists the pinned operation IDs in deterministic order."
+        },
+        {
+          "name": "ComponentMetadata",
+          "kind": "func",
+          "doc": "ComponentMetadata returns a copy of a local component (schema, example,"
+        }
+      ],
+      "declarationCount": 4
+    },
+    {
       "path": "oauth2.go",
       "sha256": "60c47a1e85d43a5fd0cd5b2ce2043ff47c957a1906923e1bcedc8489928f2900",
       "declarations": [
@@ -1164,6 +1191,6 @@
       "declarationCount": 4
     }
   ],
-  "totalFiles": 27,
-  "totalDeclarations": 188
+  "totalFiles": 28,
+  "totalDeclarations": 192
 }
