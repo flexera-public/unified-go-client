@@ -69,12 +69,13 @@ type Request struct {
 	NoChunk bool
 }
 
-// CostResponse is the merged result of one or more API calls.
-type CostResponse struct {
-	Rows            []BillAnalysisRow
-	RowsTruncated   bool
-	EndpointUsed    Endpoint
-	ChunksRequested int
+// CostQueryResponse is the merged result of `bill-analysis costs query`
+// Can be a result of one or more API calls
+type CostQueryResponse struct {
+	Rows            []BillAnalysisRow `json:"rows"`
+	RowsTruncated   bool              `json:"rows_truncated"`
+	EndpointUsed    Endpoint          `json:"endpoint_used"`
+	ChunksRequested int               `json:"chunks_requested"`
 }
 
 // Helper bundles the cost client + billing-center resolver for repeated use.
@@ -90,7 +91,7 @@ func New(cost CostClient, resolver *BillingCenterResolver) *Helper {
 
 // GetCost executes the request, resolving billing centers and chunking the
 // period if needed, and returns merged rows.
-func (h *Helper) GetCost(ctx context.Context, req Request) (*CostResponse, error) {
+func (h *Helper) GetCost(ctx context.Context, req Request) (*CostQueryResponse, error) {
 	if h == nil || h.Cost == nil {
 		return nil, fmt.Errorf("finopscost.Helper not initialised")
 	}
@@ -142,7 +143,7 @@ func (h *Helper) GetCost(ctx context.Context, req Request) (*CostResponse, error
 		return nil, err
 	}
 
-	out := &CostResponse{
+	out := &CostQueryResponse{
 		EndpointUsed:    ep,
 		ChunksRequested: len(chunks),
 		Rows:            nil,
