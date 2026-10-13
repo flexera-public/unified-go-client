@@ -158,6 +158,110 @@
       "declarationCount": 28
     },
     {
+      "path": "bill_analysis_costs_query.go",
+      "sha256": "0e32108dd24be9505ff5242ec8b0e9f4b15bc7dede92c64a7b700193791d6a2d",
+      "declarations": [
+        {
+          "name": "BillAnalysisCostsQueryClient",
+          "kind": "type",
+          "doc": "BillAnalysisCostsQueryClient is the subset of the unified client the helper depends on."
+        },
+        {
+          "name": "BillAnalysisCostsEndpoint",
+          "kind": "type",
+          "doc": "BillAnalysisCostsEndpoint selects which underlying cost endpoint to use."
+        },
+        {
+          "name": "CostsEndpointAuto",
+          "kind": "const"
+        },
+        {
+          "name": "CostsEndpointAggregated",
+          "kind": "const"
+        },
+        {
+          "name": "CostsEndpointSelect",
+          "kind": "const"
+        },
+        {
+          "name": "CostsEndpointExport",
+          "kind": "const",
+          "doc": "CostsEndpointExport is the async export endpoint (limited to 1/day per org)."
+        },
+        {
+          "name": "CostsMaxPeriodMonths",
+          "kind": "const",
+          "doc": "CostsMaxPeriodMonths is the upstream API limit on a single cost request window."
+        },
+        {
+          "name": "CostsMaxAggregatedDimensions",
+          "kind": "const",
+          "doc": "CostsMaxAggregatedDimensions is the largest dimension count routed to /aggregated."
+        },
+        {
+          "name": "CostsMaxSelectRows",
+          "kind": "const",
+          "doc": "CostsMaxSelectRows is the /select row cap; a response this size is treated as truncated."
+        },
+        {
+          "name": "CostsDefaultProgressInterval",
+          "kind": "const",
+          "doc": "CostsDefaultProgressInterval is how often auto-pagination progress is reported."
+        },
+        {
+          "name": "CostsDefaultExportPollInterval",
+          "kind": "const",
+          "doc": "CostsDefaultExportPollInterval is how often an export's status is polled."
+        },
+        {
+          "name": "BillAnalysisCostsGranularity",
+          "kind": "type",
+          "doc": "BillAnalysisCostsGranularity is \"month\" or \"day\"."
+        },
+        {
+          "name": "CostsGranularityMonth",
+          "kind": "const"
+        },
+        {
+          "name": "CostsGranularityDay",
+          "kind": "const"
+        },
+        {
+          "name": "BillAnalysisCostsQueryRequest",
+          "kind": "type",
+          "doc": "BillAnalysisCostsQueryRequest describes a logical cost query. It is converted into one or more"
+        },
+        {
+          "name": "BillAnalysisCostsQueryResponse",
+          "kind": "type",
+          "doc": "BillAnalysisCostsQueryResponse is the merged result of `bill-analysis costs query`"
+        },
+        {
+          "name": "BillAnalysisCostsQuery",
+          "kind": "type",
+          "doc": "BillAnalysisCostsQuery is the curated extension of the generated Bill Analysis"
+        },
+        {
+          "name": "NewBillAnalysisCostsQuery",
+          "kind": "func",
+          "doc": "NewBillAnalysisCostsQuery constructs a BillAnalysisCostsQuery."
+        },
+        {
+          "name": "Query",
+          "kind": "method",
+          "receiver": "BillAnalysisCostsQuery",
+          "doc": "Query executes the request, resolving billing centers and chunking the"
+        },
+        {
+          "name": "QueryWithBody",
+          "kind": "method",
+          "receiver": "BillAnalysisCostsQuery",
+          "doc": "QueryWithBody is the raw-body variant of Query. The JSON body uses the"
+        }
+      ],
+      "declarationCount": 20
+    },
+    {
       "path": "bill_upload.go",
       "sha256": "65bf77ec110bbabab2b03f42cf424ce5c8bf03a38de02a128659f5954ef9c553",
       "declarations": [
@@ -308,79 +412,6 @@
         }
       ],
       "declarationCount": 3
-    },
-    {
-      "path": "cost.go",
-      "sha256": "e0487e95b4a38df0a6817fb80b6f6ed38b46cad8d6383b0c178c1ec25000b663",
-      "declarations": [
-        {
-          "name": "CostClient",
-          "kind": "type",
-          "doc": "CostClient is the subset of the unified client the helper depends on."
-        },
-        {
-          "name": "Endpoint",
-          "kind": "type",
-          "doc": "Endpoint selects which underlying cost endpoint to use."
-        },
-        {
-          "name": "EndpointAuto",
-          "kind": "const"
-        },
-        {
-          "name": "EndpointAggregated",
-          "kind": "const"
-        },
-        {
-          "name": "EndpointSelect",
-          "kind": "const"
-        },
-        {
-          "name": "Granularity",
-          "kind": "type",
-          "doc": "Granularity is \"month\" or \"day\"."
-        },
-        {
-          "name": "GranularityMonth",
-          "kind": "const"
-        },
-        {
-          "name": "GranularityDay",
-          "kind": "const"
-        },
-        {
-          "name": "MaxPeriodMonths",
-          "kind": "const",
-          "doc": "MaxPeriodMonths is the upstream API limit on a single cost request window."
-        },
-        {
-          "name": "Request",
-          "kind": "type",
-          "doc": "Request describes a logical cost query. It is converted into one or more"
-        },
-        {
-          "name": "CostResponse",
-          "kind": "type",
-          "doc": "CostResponse is the merged result of one or more API calls."
-        },
-        {
-          "name": "Helper",
-          "kind": "type",
-          "doc": "Helper bundles the cost client + billing-center resolver for repeated use."
-        },
-        {
-          "name": "New",
-          "kind": "func",
-          "doc": "New constructs a Helper."
-        },
-        {
-          "name": "GetCost",
-          "kind": "method",
-          "receiver": "Helper",
-          "doc": "GetCost executes the request, resolving billing centers and chunking the"
-        }
-      ],
-      "declarationCount": 14
     },
     {
       "path": "debug.go",
@@ -1192,5 +1223,5 @@
     }
   ],
   "totalFiles": 28,
-  "totalDeclarations": 192
+  "totalDeclarations": 198
 }

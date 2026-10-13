@@ -12,7 +12,7 @@ import (
 )
 
 // BillingCenterResolver returns the top-level billing-center IDs for an
-// org. The finopscost.BillingCenterResolver satisfies this interface;
+// org. The flexera.BillingCenterResolver satisfies this interface;
 // callers may also inject a static slice via StaticResolver.
 type BillingCenterResolver interface {
 	TopLevelIDs(ctx context.Context, orgID int) ([]string, error)

@@ -30,7 +30,7 @@ func TestCostHelperUsesMergedBillAnalysisClient(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	result, err := New(client, nil).GetCost(context.Background(), Request{
+	result, err := NewBillAnalysisCostsQuery(client, nil).Query(context.Background(), BillAnalysisCostsQueryRequest{
 		OrgID: 42, BillingCenterIDs: []string{"bc-1"}, StartAt: "2026-01", EndAt: "2026-02",
 	})
 	if err != nil {
