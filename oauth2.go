@@ -53,6 +53,8 @@ func NewOAuth2Doer(clientID, clientSecret, refreshToken, tokenURL string, underl
 	if underlying == nil {
 		underlying = &http.Client{}
 	}
+	// Tags both token-endpoint and API requests, which flow through underlying.
+	underlying = NewUserAgentDoer(underlying, "")
 	return &OAuth2Doer{
 		ClientID:     clientID,
 		ClientSecret: clientSecret,

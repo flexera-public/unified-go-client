@@ -310,11 +310,11 @@ func (h *AuthHelper) TokenWithRefreshToken(ctx context.Context, refreshToken str
 }
 
 func (h *AuthHelper) baseClientOptions(opts ...ClientOption) []ClientOption {
-	if h.httpClient == nil {
-		return append([]ClientOption{}, opts...)
+	base := []ClientOption{}
+	if h.httpClient != nil {
+		base = append(base, WithHTTPClient(h.httpClient))
 	}
-
-	base := []ClientOption{WithHTTPClient(h.httpClient)}
+	base = append(base, WithDefaultUserAgent())
 	return append(base, opts...)
 }
 

@@ -58,6 +58,16 @@ Common environment variables used in examples:
 - `FLEXERA_CLIENT_ID`
 - `FLEXERA_CLIENT_SECRET`
 
+## User-Agent
+
+Clients built with `NewClientWithResponsesForAuth` or `AuthHelper` (including OAuth token requests) send
+`flexera-unified-go-client/<version> (<git rev>; [dirty;] <go version>; <os>/<arch>)` by default. The version comes
+from `-ldflags "-X github.com/flexera-public/unified-go-client.Version=..."`, else the Go build info (module version / VCS stamp), else `devel`.
+
+Override it with `WithUserAgent("my-app/1.0")`, or keep the default and identify your app with
+`WithUserAgentProduct("flexera-cli", "1.2.3")`. A `User-Agent` set on an individual request always wins.
+Bare `NewClient`/`NewClientWithResponses` users can add `WithDefaultUserAgent()`.
+
 ## Offline API metadata
 
 Use `OperationIDs()`, `OperationMetadata(operationID)`, and
