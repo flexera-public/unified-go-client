@@ -264,3 +264,150 @@ func TestSliceValueListIgnoresUserLimit(t *testing.T) {
 		t.Fatal(err)
 	}
 }
+
+func TestSliceValueListUsesOnlyCostMetric(t *testing.T) {
+	f := &fakeCost{}
+	f.aggFn = func(b BillAnalysisAggregatedRequestBody) []BillAnalysisRow {
+		if len(b.Metrics) != 1 || b.Metrics[0] != CostsSliceListMetric {
+			t.Errorf("value-listing metrics = %v", b.Metrics)
+		}
+		return []BillAnalysisRow{{Dimensions: map[string]string{"vendor": "a"}}, {Dimensions: map[string]string{"vendor": "b"}}}
+	}
+	f.selFn = func(BillAnalysisSelectRequestBody) []BillAnalysisRow {
+		if len(f.sel) == 1 {
+			return make([]BillAnalysisRow, CostsMaxSelectRows)
+		}
+		return nil
+	}
+	r := baseReq("resource_id", "usage_unit")
+	r.Metrics = []string{"usage_amount"}
+	if _, err := NewBillAnalysisCostsQuery(f, nil).Query(context.Background(), r); err != nil {
+		t.Fatal(err)
+	}
+	if f.sel[1].Metrics[0] != "usage_amount" {
+		t.Fatalf("slice select lost user metrics: %v", f.sel[1].Metrics)
+	}
+}
+
+func TestSliceSplitsByPeriodFirst(t *testing.T) {
+	f := &fakeCost{}
+	f.selFn = func(b BillAnalysisSelectRequestBody) []BillAnalysisRow {
+		if b.StartAt == "2026-01" && b.EndAt == "2026-03" {
+			return make([]BillAnalysisRow, CostsMaxSelectRows)
+		}
+		return make([]BillAnalysisRow, 3)
+	}
+	r := baseReq("resource_id")
+	r.EndAt = "2026-03"
+	out, err := NewBillAnalysisCostsQuery(f, nil).Query(context.Background(), r)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(f.agg) != 0 || len(f.sel) != 3 || len(out.Rows) != 6 || out.RowsTruncated {
+		t.Fatalf("agg=%d sel=%d rows=%d trunc=%v", len(f.agg), len(f.sel), len(out.Rows), out.RowsTruncated)
+	}
+}
+
+func TestSliceFallsBackToQueryDimensions(t *testing.T) {
+	f := &fakeCost{}
+	var listed []string
+	f.aggFn = func(b BillAnalysisAggregatedRequestBody) []BillAnalysisRow {
+		d := (*b.Dimensions)[0]
+		listed = append(listed, d)
+		if b.Summarized == nil || !*b.Summarized {
+			t.Errorf("value listing must be summarized")
+		}
+		if d == "instance_type" {
+			return []BillAnalysisRow{{Dimensions: map[string]string{d: "a"}}, {Dimensions: map[string]string{d: "b"}}}
+		}
+		return []BillAnalysisRow{{Dimensions: map[string]string{d: "only"}}}
+	}
+	f.selFn = func(BillAnalysisSelectRequestBody) []BillAnalysisRow {
+		if len(f.sel) == 1 {
+			return make([]BillAnalysisRow, CostsMaxSelectRows)
+		}
+		return nil
+	}
+	if _, err := NewBillAnalysisCostsQuery(f, nil).Query(context.Background(), baseReq("resource_id", "billing_center_id", "instance_type")); err != nil {
+		t.Fatal(err)
+	}
+	if listed[len(listed)-1] != "instance_type" {
+		t.Fatalf("listed = %v", listed)
+	}
+	for _, d := range listed {
+		if d == "resource_id" || d == "billing_center_id" {
+			t.Fatalf("sliced on excluded dimension %s", d)
+		}
+	}
+}
+
+func TestSliceRecursesWhenSliceHitsLimit(t *testing.T) {
+	f := &fakeCost{}
+	f.aggFn = func(b BillAnalysisAggregatedRequestBody) []BillAnalysisRow {
+		d := (*b.Dimensions)[0]
+		return []BillAnalysisRow{{Dimensions: map[string]string{d: "x"}}, {Dimensions: map[string]string{d: "y"}}}
+	}
+	// Full at the top level and for any slice filtered only by vendor; small once region is also filtered.
+	f.selFn = func(b BillAnalysisSelectRequestBody) []BillAnalysisRow {
+		dims := filterDimensions(b.Filter, map[string]bool{})
+		if !dims["region"] {
+			return make([]BillAnalysisRow, CostsMaxSelectRows)
+		}
+		return make([]BillAnalysisRow, 2)
+	}
+	out, err := NewBillAnalysisCostsQuery(f, nil).Query(context.Background(), baseReq("resource_id"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	// vendor -> vendor_account -> region: 1+2+4+8 selects, 8 leaves of 2 rows
+	if len(out.Rows) != 16 || out.RowsTruncated || len(f.sel) != 15 {
+		t.Fatalf("rows=%d trunc=%v sel=%d", len(out.Rows), out.RowsTruncated, len(f.sel))
+	}
+}
+
+func TestSliceReportsTruncationWhenNothingSplits(t *testing.T) {
+	f := &fakeCost{}
+	f.aggFn = func(b BillAnalysisAggregatedRequestBody) []BillAnalysisRow {
+		return []BillAnalysisRow{{Dimensions: map[string]string{(*b.Dimensions)[0]: "only"}}}
+	}
+	f.selFn = func(BillAnalysisSelectRequestBody) []BillAnalysisRow {
+		return make([]BillAnalysisRow, CostsMaxSelectRows)
+	}
+	out, err := NewBillAnalysisCostsQuery(f, nil).Query(context.Background(), baseReq("resource_id"))
+	if err != nil || !out.RowsTruncated {
+		t.Fatalf("err=%v out=%+v", err, out)
+	}
+}
+
+func TestSliceLastResortResourceIDBisects(t *testing.T) {
+	f := &fakeCost{}
+	f.aggFn = func(b BillAnalysisAggregatedRequestBody) []BillAnalysisRow {
+		d := (*b.Dimensions)[0]
+		if d != "resource_id" {
+			return []BillAnalysisRow{{Dimensions: map[string]string{d: "only"}}}
+		}
+		rows := make([]BillAnalysisRow, 8)
+		for i := range rows {
+			rows[i] = BillAnalysisRow{Dimensions: map[string]string{d: fmt.Sprintf("r%d", i)}}
+		}
+		return rows
+	}
+	// A request is full when its filter ORs more than 2 resource ids.
+	f.selFn = func(b BillAnalysisSelectRequestBody) []BillAnalysisRow {
+		n := 0
+		if b.Filter != nil && b.Filter.Expressions != nil {
+			n = len(*b.Filter.Expressions)
+		}
+		if b.Filter == nil || n > 2 {
+			return make([]BillAnalysisRow, CostsMaxSelectRows)
+		}
+		return make([]BillAnalysisRow, n)
+	}
+	out, err := NewBillAnalysisCostsQuery(f, nil).Query(context.Background(), baseReq("resource_id"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if out.RowsTruncated || len(out.Rows) != 8 {
+		t.Fatalf("rows=%d trunc=%v", len(out.Rows), out.RowsTruncated)
+	}
+}

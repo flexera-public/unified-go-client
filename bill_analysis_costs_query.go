@@ -131,6 +131,9 @@ type BillAnalysisCostsQueryRequest struct {
 	Progress         func(msg string)
 	ProgressInterval time.Duration
 
+	// Debug emits extra auto-pagination diagnostics through Progress.
+	Debug bool
+
 	// RequestEditors are applied to every underlying API call.
 	RequestEditors []RequestEditorFn
 }
@@ -369,14 +372,14 @@ func (r *costRun) startProgress(ctx context.Context) func() {
 func (r *costRun) query(ctx context.Context, ep BillAnalysisCostsEndpoint, start, end string) ([]BillAnalysisRow, bool, error) {
 	switch ep {
 	case CostsEndpointAggregated:
-		return r.aggregated(ctx, start, end, r.req.Dimensions, r.req.Filter, r.req.Limit)
+		return r.aggregated(ctx, start, end, r.req.Dimensions, r.req.Filter, r.req.Limit, r.metrics, r.req.Summarized)
 	case CostsEndpointSelect:
 		rows, truncated, err := r.selectRows(ctx, start, end, r.req.Filter)
 		if err != nil || !truncated || r.req.NoSlice || r.userLimited() {
 			return rows, truncated, err
 		}
-		r.progress(fmt.Sprintf("cost query %s..%s hit the %d row limit; auto-paginating by slicing on dimension values", start, end, r.selectLimit()))
-		return r.slice(ctx, start, end, r.req.Filter, rows)
+		r.progress(fmt.Sprintf("cost query %s..%s hit the %d row limit; auto-paginating", start, end, r.selectLimit()))
+		return r.paginate(ctx, start, end, r.req.Filter, rows)
 	default:
 		return nil, false, fmt.Errorf("unsupported endpoint %q", ep)
 	}
@@ -395,15 +398,15 @@ func (r *costRun) selectLimit() int64 {
 	return CostsMaxSelectRows
 }
 
-func (r *costRun) aggregated(ctx context.Context, start, end string, dims []string, filter *BillAnalysisFilterV1, limit *int64) ([]BillAnalysisRow, bool, error) {
+func (r *costRun) aggregated(ctx context.Context, start, end string, dims []string, filter *BillAnalysisFilterV1, limit *int64, metrics []string, summarized *bool) ([]BillAnalysisRow, bool, error) {
 	gran := BillAnalysisAggregatedRequestBodyGranularity(r.req.Granularity)
 	body := BillAnalysisAggregatedRequestBody{
 		BillingCenterIds: r.bcIDs,
 		StartAt:          start,
 		EndAt:            end,
 		Granularity:      &gran,
-		Metrics:          r.metrics,
-		Summarized:       r.req.Summarized,
+		Metrics:          metrics,
+		Summarized:       summarized,
 		Filter:           filter,
 		Limit:            limit,
 	}
@@ -453,73 +456,233 @@ func (r *costRun) selectRows(ctx context.Context, start, end string, filter *Bil
 	return rows, truncated || int64(len(rows)) >= limit, nil
 }
 
-// slice re-runs a truncated /select query as one request per value of a
-// slicing dimension (not already used in the filter). A slice that is itself
-// truncated is sliced again on the next dimension. If no dimension can split
-// the data, the partial rows are returned with truncated=true.
-func (r *costRun) slice(ctx context.Context, start, end string, filter *BillAnalysisFilterV1, partial []BillAnalysisRow) ([]BillAnalysisRow, bool, error) {
-	used := filterDimensions(filter, map[string]bool{})
-	for _, dim := range sliceDimensions {
-		if used[strings.ToLower(dim)] {
+// paginate re-runs a truncated /select query. A window spanning several
+// granularity units (months or days) is first split into one request per unit;
+// a unit that is still truncated, or a single-unit window, is sliced by
+// dimension values.
+func (r *costRun) paginate(ctx context.Context, start, end string, filter *BillAnalysisFilterV1, partial []BillAnalysisRow) ([]BillAnalysisRow, bool, error) {
+	units := timeUnits(start, end, r.req.Granularity)
+	if len(units) < 2 {
+		return r.slice(ctx, start, end, filter, partial)
+	}
+	var all []BillAnalysisRow
+	truncated := false
+	for i, u := range units {
+		r.setStatus(fmt.Sprintf("slicing by period: %d/%d periods done, %d rows so far", i, len(units), len(all)))
+		rows, trunc, err := r.selectRows(ctx, u.start, u.end, filter)
+		if err != nil {
+			return nil, false, fmt.Errorf("period %s..%s: %w", u.start, u.end, err)
+		}
+		if trunc && !r.req.NoSlice {
+			rows, trunc, err = r.slice(ctx, u.start, u.end, filter, rows)
+			if err != nil {
+				return nil, false, err
+			}
+		}
+		all = append(all, rows...)
+		truncated = truncated || trunc
+	}
+	r.setStatus("")
+	return all, truncated, nil
+}
+
+// timeUnits splits [start, end) into single month or day windows. It returns
+// nil when the window cannot be parsed or is already a single unit.
+func timeUnits(start, end string, g BillAnalysisCostsGranularity) []chunk {
+	st, en, layout, err := parsePeriod(start, end, g)
+	if err != nil {
+		return nil
+	}
+	var out []chunk
+	for cur := st; cur.Before(en); {
+		next := cur.AddDate(0, 1, 0)
+		if g == CostsGranularityDay {
+			next = cur.AddDate(0, 0, 1)
+		}
+		out = append(out, chunk{start: cur.Format(layout), end: next.Format(layout)})
+		cur = next
+	}
+	if len(out) < 2 {
+		return nil
+	}
+	return out
+}
+
+// candidateSliceDimensions returns the preferred slice dimensions followed by
+// the query's own dimensions, skipping any already used in the filter.
+func (r *costRun) candidateSliceDimensions(used map[string]bool) []string {
+	seen := map[string]bool{}
+	var out []string
+	for _, d := range append(append([]string{}, sliceDimensions...), r.req.Dimensions...) {
+		l := strings.ToLower(d)
+		if seen[l] || used[l] || l == "resource_id" || l == "billing_center_id" || strings.HasPrefix(l, "adjustment_") {
 			continue
 		}
-		values, hasEmpty, err := r.distinctValues(ctx, start, end, dim, filter)
+		seen[l] = true
+		out = append(out, d)
+	}
+	return out
+}
+
+// lastResortSliceDimension is only used when no other dimension can split a
+// truncated result. It is high-cardinality, so its values are queried in
+// batches that are bisected while still truncated.
+const lastResortSliceDimension = "resource_id"
+
+// resourceBatchSize is the number of values OR'd together per last-resort request.
+const resourceBatchSize = 500
+
+// slice re-runs a truncated /select query once per value of a slicing
+// dimension (not already used in the filter). A slice that is itself truncated
+// is sliced again on the next dimension. If no dimension can split the data,
+// the partial rows are returned with truncated=true.
+func (r *costRun) slice(ctx context.Context, start, end string, filter *BillAnalysisFilterV1, partial []BillAnalysisRow) ([]BillAnalysisRow, bool, error) {
+	used := filterDimensions(filter, map[string]bool{})
+	candidates := r.candidateSliceDimensions(used)
+	if dimensionsContain(r.req.Dimensions, lastResortSliceDimension) && !used[lastResortSliceDimension] {
+		candidates = append(candidates, lastResortSliceDimension)
+	}
+	for _, dim := range candidates {
+		values, hasEmpty, listTruncated, err := r.distinctValues(ctx, start, end, dim, filter)
 		if err != nil {
 			return nil, false, err
 		}
+		r.debugf("slice candidate %s: %d values (empty=%v, listTruncated=%v)", dim, len(values), hasEmpty, listTruncated)
 		if len(values)+boolInt(hasEmpty) < 2 {
 			continue
 		}
 
-		slices := make([]*BillAnalysisFilterV1, 0, len(values)+1)
-		for _, v := range values {
-			slices = append(slices, andFilter(filter, equalFilter(dim, v)))
+		size := 1
+		if dim == lastResortSliceDimension {
+			size = resourceBatchSize
 		}
-		if hasEmpty {
-			// Rows with no value for the dimension: everything that matches none of the values.
-			eqs := make([]BillAnalysisFilterV1, len(values))
-			for i, v := range values {
-				eqs[i] = *equalFilter(dim, v)
-			}
-			slices = append(slices, andFilter(filter, &BillAnalysisFilterV1{
-				Type: BillAnalysisFilterV1TypeNot,
-				Expression: &BillAnalysisFilterV1{
-					Type:        BillAnalysisFilterV1TypeOr,
-					Expressions: &eqs,
-				},
-			}))
+		var groups [][]string
+		for i := 0; i < len(values); i += size {
+			groups = append(groups, values[i:min(i+size, len(values))])
 		}
+		total := len(groups) + boolInt(hasEmpty)
 
 		var all []BillAnalysisRow
-		truncated := false
-		for i, f := range slices {
-			r.setStatus(fmt.Sprintf("slicing by %s: %d/%d slices done, %d rows so far", dim, i, len(slices), len(all)))
-			rows, trunc, err := r.selectRows(ctx, start, end, f)
+		truncated := listTruncated
+		for i, g := range groups {
+			r.setStatus(fmt.Sprintf("slicing by %s: %d/%d slices done, %d rows so far", dim, i, total, len(all)))
+			rows, trunc, err := r.sliceGroup(ctx, start, end, filter, dim, g)
 			if err != nil {
-				return nil, false, fmt.Errorf("slice %s (%d/%d): %w", dim, i+1, len(slices), err)
-			}
-			if trunc {
-				rows, trunc, err = r.slice(ctx, start, end, f, rows)
-				if err != nil {
-					return nil, false, err
-				}
+				return nil, false, fmt.Errorf("slice %s (%d/%d): %w", dim, i+1, total, err)
 			}
 			all = append(all, rows...)
 			truncated = truncated || trunc
 		}
+		if hasEmpty {
+			// Rows with no value for the dimension: everything that matches none of the values.
+			if len(values) > resourceBatchSize {
+				r.progress(fmt.Sprintf("WARNING: rows with an empty %s were not fetched (too many values to exclude)", dim))
+				truncated = true
+			} else {
+				rows, trunc, err := r.sliceEmpty(ctx, start, end, filter, dim, values)
+				if err != nil {
+					return nil, false, err
+				}
+				all = append(all, rows...)
+				truncated = truncated || trunc
+			}
+		}
 		r.setStatus("")
-		r.progress(fmt.Sprintf("cost auto-pagination by %s complete: %d slices, %d rows", dim, len(slices), len(all)))
+		r.progress(fmt.Sprintf("cost auto-pagination by %s complete: %d slices, %d rows", dim, total, len(all)))
 		return all, truncated, nil
 	}
+	r.progress(fmt.Sprintf("WARNING: %d-row result for %s..%s could not be split further; data is incomplete (filter: %s)", len(partial), start, end, describeFilter(filter)))
 	return partial, true, nil
 }
 
+// sliceGroup queries one batch of values of dim. A truncated multi-value batch
+// is bisected; a truncated single value is sliced on the next dimension.
+func (r *costRun) sliceGroup(ctx context.Context, start, end string, filter *BillAnalysisFilterV1, dim string, group []string) ([]BillAnalysisRow, bool, error) {
+	var f *BillAnalysisFilterV1
+	if len(group) == 1 {
+		f = andFilter(filter, equalFilter(dim, group[0]))
+	} else {
+		f = andFilter(filter, orEqualFilter(dim, group))
+	}
+	rows, trunc, err := r.selectRows(ctx, start, end, f)
+	if err != nil || !trunc {
+		return rows, trunc, err
+	}
+	if len(group) > 1 {
+		mid := len(group) / 2
+		left, lt, err := r.sliceGroup(ctx, start, end, filter, dim, group[:mid])
+		if err != nil {
+			return nil, false, err
+		}
+		right, rt, err := r.sliceGroup(ctx, start, end, filter, dim, group[mid:])
+		if err != nil {
+			return nil, false, err
+		}
+		return append(left, right...), lt || rt, nil
+	}
+	return r.slice(ctx, start, end, f, rows)
+}
+
+func (r *costRun) sliceEmpty(ctx context.Context, start, end string, filter *BillAnalysisFilterV1, dim string, values []string) ([]BillAnalysisRow, bool, error) {
+	f := andFilter(filter, &BillAnalysisFilterV1{
+		Type:       BillAnalysisFilterV1TypeNot,
+		Expression: orEqualFilter(dim, values),
+	})
+	rows, trunc, err := r.selectRows(ctx, start, end, f)
+	if err != nil || !trunc {
+		return rows, trunc, err
+	}
+	return r.slice(ctx, start, end, f, rows)
+}
+
+func orEqualFilter(dim string, values []string) *BillAnalysisFilterV1 {
+	eqs := make([]BillAnalysisFilterV1, len(values))
+	for i, v := range values {
+		eqs[i] = *equalFilter(dim, v)
+	}
+	return &BillAnalysisFilterV1{Type: BillAnalysisFilterV1TypeOr, Expressions: &eqs}
+}
+
+// describeFilter renders the dimensions of a filter for diagnostics.
+func describeFilter(f *BillAnalysisFilterV1) string {
+	if f == nil {
+		return "none"
+	}
+	b, err := json.Marshal(f)
+	if err != nil || len(b) > 300 {
+		return fmt.Sprintf("dimensions %v", sortedKeys(filterDimensions(f, map[string]bool{})))
+	}
+	return string(b)
+}
+
+func sortedKeys(m map[string]bool) []string {
+	out := make([]string, 0, len(m))
+	for k := range m {
+		out = append(out, k)
+	}
+	sort.Strings(out)
+	return out
+}
+
+// debugf emits a message only when Request.Debug is set.
+func (r *costRun) debugf(format string, args ...any) {
+	if r.req.Debug {
+		r.progress("debug: " + fmt.Sprintf(format, args...))
+	}
+}
+
+// CostsSliceListMetric is the only metric requested when listing slice values.
+// User metrics are not reused: some (e.g. usage_amount) require extra
+// dimensions such as usage_unit that the listing request does not include.
+const CostsSliceListMetric = "cost_amortized_unblended_adj"
+
 // distinctValues lists the values of dim under filter using the cheap
 // aggregated endpoint.
-func (r *costRun) distinctValues(ctx context.Context, start, end, dim string, filter *BillAnalysisFilterV1) ([]string, bool, error) {
-	rows, _, err := r.aggregated(ctx, start, end, []string{dim}, filter, nil)
+func (r *costRun) distinctValues(ctx context.Context, start, end, dim string, filter *BillAnalysisFilterV1) ([]string, bool, bool, error) {
+	summarized := true // one row per value rather than per time bucket
+	rows, listTruncated, err := r.aggregated(ctx, start, end, []string{dim}, filter, nil, []string{CostsSliceListMetric}, &summarized)
 	if err != nil {
-		return nil, false, fmt.Errorf("list %s values: %w", dim, err)
+		return nil, false, false, fmt.Errorf("list %s values: %w", dim, err)
 	}
 	seen := map[string]bool{}
 	var values []string
@@ -536,7 +699,7 @@ func (r *costRun) distinctValues(ctx context.Context, start, end, dim string, fi
 		}
 	}
 	sort.Strings(values)
-	return values, hasEmpty, nil
+	return values, hasEmpty, listTruncated, nil
 }
 
 func (r *costRun) export(ctx context.Context, start, end string) error {
