@@ -29,6 +29,12 @@ const (
 	FinopsBillingCreateRequestBody2CostMetricModifiedEffectiveCost FinopsBillingCreateRequestBody2CostMetric = "modifiedEffectiveCost"
 )
 
+// Defines values for FinopsBillingCreateRequestBody2ExportLayout.
+const (
+	FinopsBillingCreateRequestBody2ExportLayoutFlatten FinopsBillingCreateRequestBody2ExportLayout = "flatten"
+	FinopsBillingCreateRequestBody2ExportLayoutNested  FinopsBillingCreateRequestBody2ExportLayout = "nested"
+)
+
 // Defines values for FinopsBillingCreateRequestBody2ExportType.
 const (
 	FinopsBillingCreateRequestBody2ExportTypeCsv FinopsBillingCreateRequestBody2ExportType = "csv"
@@ -48,6 +54,12 @@ const (
 	FinopsBillingCreateRequestBody3CostMetricEffectiveCost         FinopsBillingCreateRequestBody3CostMetric = "effectiveCost"
 	FinopsBillingCreateRequestBody3CostMetricModifiedBilledCost    FinopsBillingCreateRequestBody3CostMetric = "modifiedBilledCost"
 	FinopsBillingCreateRequestBody3CostMetricModifiedEffectiveCost FinopsBillingCreateRequestBody3CostMetric = "modifiedEffectiveCost"
+)
+
+// Defines values for FinopsBillingCreateRequestBody3ExportLayout.
+const (
+	FinopsBillingCreateRequestBody3ExportLayoutFlatten FinopsBillingCreateRequestBody3ExportLayout = "flatten"
+	FinopsBillingCreateRequestBody3ExportLayoutNested  FinopsBillingCreateRequestBody3ExportLayout = "nested"
 )
 
 // Defines values for FinopsBillingCreateRequestBody3ExportType.
@@ -77,6 +89,12 @@ const (
 	FinopsBillingUpdateRequestBody2CostMetricEffectiveCost         FinopsBillingUpdateRequestBody2CostMetric = "effectiveCost"
 	FinopsBillingUpdateRequestBody2CostMetricModifiedBilledCost    FinopsBillingUpdateRequestBody2CostMetric = "modifiedBilledCost"
 	FinopsBillingUpdateRequestBody2CostMetricModifiedEffectiveCost FinopsBillingUpdateRequestBody2CostMetric = "modifiedEffectiveCost"
+)
+
+// Defines values for FinopsBillingUpdateRequestBody2ExportLayout.
+const (
+	FinopsBillingUpdateRequestBody2ExportLayoutFlatten FinopsBillingUpdateRequestBody2ExportLayout = "flatten"
+	FinopsBillingUpdateRequestBody2ExportLayoutNested  FinopsBillingUpdateRequestBody2ExportLayout = "nested"
 )
 
 // Defines values for FinopsBillingUpdateRequestBody2ExportType.
@@ -323,6 +341,9 @@ type FinopsBillingCreateRequestBody2 struct {
 	// DisplayLogoWithinPdf Whether the logo is rendered within PDF exports.
 	DisplayLogoWithinPdf bool `json:"displayLogoWithinPdf"`
 
+	// ExportLayout PDF layout format. Exact lowercase flatten or nested; omitted PDF exports default to flatten. Must be omitted for CSV exports.
+	ExportLayout *FinopsBillingCreateRequestBody2ExportLayout `json:"exportLayout,omitempty"`
+
 	// ExportType Invoice export type.
 	ExportType FinopsBillingCreateRequestBody2ExportType `json:"exportType"`
 
@@ -344,6 +365,9 @@ type FinopsBillingCreateRequestBody2 struct {
 
 // FinopsBillingCreateRequestBody2CostMetric Configured cost metric.
 type FinopsBillingCreateRequestBody2CostMetric string
+
+// FinopsBillingCreateRequestBody2ExportLayout PDF layout format. Exact lowercase flatten or nested; omitted PDF exports default to flatten. Must be omitted for CSV exports.
+type FinopsBillingCreateRequestBody2ExportLayout string
 
 // FinopsBillingCreateRequestBody2ExportType Invoice export type.
 type FinopsBillingCreateRequestBody2ExportType string
@@ -370,6 +394,9 @@ type FinopsBillingCreateRequestBody3 struct {
 
 	// EndDate Invoice range end date.
 	EndDate openapi_types.Date `json:"endDate"`
+
+	// ExportLayout PDF layout format. Exact lowercase flatten or nested; omitted PDF exports default to flatten. Must be omitted for CSV exports.
+	ExportLayout *FinopsBillingCreateRequestBody3ExportLayout `json:"exportLayout,omitempty"`
 
 	// ExportType Export type. Required only when neither invoiceTemplateId nor template is supplied.
 	ExportType *FinopsBillingCreateRequestBody3ExportType `json:"exportType,omitempty"`
@@ -404,6 +431,9 @@ type FinopsBillingCreateRequestBody3 struct {
 
 // FinopsBillingCreateRequestBody3CostMetric Cost metric to use for export. Required only when neither invoiceTemplateId nor template is supplied.
 type FinopsBillingCreateRequestBody3CostMetric string
+
+// FinopsBillingCreateRequestBody3ExportLayout PDF layout format. Exact lowercase flatten or nested; omitted PDF exports default to flatten. Must be omitted for CSV exports.
+type FinopsBillingCreateRequestBody3ExportLayout string
 
 // FinopsBillingCreateRequestBody3ExportType Export type. Required only when neither invoiceTemplateId nor template is supplied.
 type FinopsBillingCreateRequestBody3ExportType string
@@ -561,6 +591,9 @@ type FinopsBillingReplacePlanRequestBody struct {
 
 // FinopsBillingReplaceSettingsRequestBody defines model for FinopsBilling_ReplaceSettingsRequestBody.
 type FinopsBillingReplaceSettingsRequestBody struct {
+	// AutomatedEdpProfiles Automated EDP settings by AWS bill source. Providing an empty list or omitting this field replaces existing profiles with an empty list and disables Automated EDP for all bill sources.
+	AutomatedEdpProfiles *[]FinopsBillingAutomatedEdpProfile `json:"automatedEdpProfiles,omitempty"`
+
 	// BaseCostsOn The base cost value used for adjustments. Note that using 'listCost' may reduce the utility of some adjustment rules. The 'observedCosts' value is deprecated; use 'billedCost' or 'modifiedCost' instead. The 'observedCosts' value is retained for legacy compatibility.
 	BaseCostsOn *FinopsBillingReplaceSettingsRequestBodyBaseCostsOn `json:"baseCostsOn,omitempty"`
 }
@@ -606,6 +639,9 @@ type FinopsBillingUpdateRequestBody2 struct {
 	// DisplayLogoWithinPdf Updated PDF logo display flag.
 	DisplayLogoWithinPdf *bool `json:"displayLogoWithinPdf,omitempty"`
 
+	// ExportLayout Updated PDF layout format. Exact lowercase flatten or nested; omitted PDF exports default to flatten. Must be omitted for CSV exports.
+	ExportLayout *FinopsBillingUpdateRequestBody2ExportLayout `json:"exportLayout,omitempty"`
+
 	// ExportType Updated export type.
 	ExportType *FinopsBillingUpdateRequestBody2ExportType `json:"exportType,omitempty"`
 
@@ -627,6 +663,9 @@ type FinopsBillingUpdateRequestBody2 struct {
 
 // FinopsBillingUpdateRequestBody2CostMetric Updated cost metric.
 type FinopsBillingUpdateRequestBody2CostMetric string
+
+// FinopsBillingUpdateRequestBody2ExportLayout Updated PDF layout format. Exact lowercase flatten or nested; omitted PDF exports default to flatten. Must be omitted for CSV exports.
+type FinopsBillingUpdateRequestBody2ExportLayout string
 
 // FinopsBillingUpdateRequestBody2ExportType Updated export type.
 type FinopsBillingUpdateRequestBody2ExportType string
@@ -1033,13 +1072,6 @@ type FinopsBillingInvoiceSchedulesIndexParams struct {
 
 	// ScheduleName Optional exact-match filter on schedule name.
 	ScheduleName *string `form:"scheduleName,omitempty" json:"scheduleName,omitempty"`
-
-	// Filter OData-style expression evaluated against each returned resource. Attribute names are case-sensitive and operators are case-insensitive. String eq, ne, and in comparisons are case-sensitive; co performs case-insensitive substring matching. Date values use YYYY-MM-DD; date-time values use ISO-8601 and are normalized to UTC; billMonth uses YYYY-MM. Missing fields are treated as null; only eq null and ne null support null operands. Literal values must be on the right side of an operator.
-	//
-	// Supported comparison operators are eq, ne, co, in, gt, ge, lt, and le, subject to the field type. String fields support eq, ne, in, and co; numeric and date fields support eq, ne, in, gt, ge, lt, and le. Boolean operators are and, or, and not. Parentheses group expressions. Expressions are limited to depth 10 and 100 predicates. Malformed syntax, unsupported fields or operators, and limit violations return invalid_filter with HTTP 400.
-	//
-	// Filterable fields: scheduleName, status, customerName, customerBillingPlan, invoiceTemplateId (string); customerId (integer); createdAt and updatedAt (date-time). Customer fields match any customer on the schedule. Combined with discrete filters using AND.
-	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 }
 
 // FinopsBillingInvoiceSchedulesUpdateParams defines parameters for FinopsBillingInvoiceSchedulesUpdate.
@@ -1093,13 +1125,6 @@ type FinopsBillingInvoiceScheduleInvoicesIndexParams struct {
 
 	// CustomerBillingPlan Optional billing plan filter.
 	CustomerBillingPlan *string `form:"customerBillingPlan,omitempty" json:"customerBillingPlan,omitempty"`
-
-	// Filter OData-style expression evaluated against each returned resource. Attribute names are case-sensitive and operators are case-insensitive. String eq, ne, and in comparisons are case-sensitive; co performs case-insensitive substring matching. Date values use YYYY-MM-DD; date-time values use ISO-8601 and are normalized to UTC; billMonth uses YYYY-MM. Missing fields are treated as null; only eq null and ne null support null operands. Literal values must be on the right side of an operator.
-	//
-	// Supported comparison operators are eq, ne, co, in, gt, ge, lt, and le, subject to the field type. String fields support eq, ne, in, and co; numeric and date fields support eq, ne, in, gt, ge, lt, and le. Boolean operators are and, or, and not. Parentheses group expressions. Expressions are limited to depth 10 and 100 predicates. Malformed syntax, unsupported fields or operators, and limit violations return invalid_filter with HTTP 400.
-	//
-	// Filterable fields: scheduleId, customerName, customerBillingPlan, costMetric, status, deliveryStatus, currency, periodType, exportType, invoiceAmount (string); customerId, attempts, filterCount, groupByCount (integer); billMonth (YYYY-MM); issueDate and dueDate (date); createdAt and updatedAt (date-time). Combined with discrete filters using AND.
-	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 }
 
 // FinopsBillingInvoiceTemplatesIndexParams defines parameters for FinopsBillingInvoiceTemplatesIndex.
@@ -1150,15 +1175,8 @@ type FinopsBillingInvoicesIndexParams struct {
 	// CustomerName Optional customer name filter.
 	CustomerName *string `form:"customerName,omitempty" json:"customerName,omitempty"`
 
-	// Filter Legacy substring search of the stored invoice generation filter JSON. This parameter does not accept OData expressions.
+	// Filter Optional filter text.
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
-
-	// ExpressionFilter OData-style expression evaluated against each returned resource. Attribute names are case-sensitive and operators are case-insensitive. String eq, ne, and in comparisons are case-sensitive; co performs case-insensitive substring matching. Date values use YYYY-MM-DD; date-time values use ISO-8601 and are normalized to UTC; billMonth uses YYYY-MM. Missing fields are treated as null; only eq null and ne null support null operands. Literal values must be on the right side of an operator.
-	//
-	// Supported comparison operators are eq, ne, co, in, gt, ge, lt, and le, subject to the field type. String fields support eq, ne, in, and co; numeric and date fields support eq, ne, in, gt, ge, lt, and le. Boolean operators are and, or, and not. Parentheses group expressions. Expressions are limited to depth 10 and 100 predicates. Malformed syntax, unsupported fields or operators, and limit violations return invalid_filter with HTTP 400.
-	//
-	// Filterable fields: customerId, attempts, filterCount, and groupByCount (integer); customerName, customerBillingPlan, currency, invoiceAmount, status, costMetric, periodType, and exportType (string); billMonth (YYYY-MM); issueDate and dueDate (date); createdAt and updatedAt (date-time). Combined with the legacy filter and discrete filters using AND.
-	ExpressionFilter *string `form:"expressionFilter,omitempty" json:"expressionFilter,omitempty"`
 
 	// GroupByCount Optional group-by dimension count filter.
 	GroupByCount *int `form:"groupByCount,omitempty" json:"groupByCount,omitempty"`
@@ -4329,22 +4347,6 @@ func NewFinopsBillingInvoiceSchedulesIndexRequest(server string, orgId int, para
 
 		}
 
-		if params.Filter != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		queryURL.RawQuery = queryValues.Encode()
 	}
 
@@ -4821,22 +4823,6 @@ func NewFinopsBillingInvoiceScheduleInvoicesIndexRequest(server string, orgId in
 
 		}
 
-		if params.Filter != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
 		queryURL.RawQuery = queryValues.Encode()
 	}
 
@@ -5299,22 +5285,6 @@ func NewFinopsBillingInvoicesIndexRequest(server string, orgId int, params *Fino
 		if params.Filter != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
-				return nil, err
-			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
-				return nil, err
-			} else {
-				for k, v := range parsed {
-					for _, v2 := range v {
-						queryValues.Add(k, v2)
-					}
-				}
-			}
-
-		}
-
-		if params.ExpressionFilter != nil {
-
-			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "expressionFilter", runtime.ParamLocationQuery, *params.ExpressionFilter); err != nil {
 				return nil, err
 			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
 				return nil, err

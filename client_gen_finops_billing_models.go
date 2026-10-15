@@ -169,6 +169,12 @@ const (
 	FinopsBillingBillingInvoiceScheduleTemplateInputCostMetricModifiedEffectiveCost FinopsBillingBillingInvoiceScheduleTemplateInputCostMetric = "modifiedEffectiveCost"
 )
 
+// Defines values for FinopsBillingBillingInvoiceScheduleTemplateInputExportLayout.
+const (
+	FinopsBillingBillingInvoiceScheduleTemplateInputExportLayoutFlatten FinopsBillingBillingInvoiceScheduleTemplateInputExportLayout = "flatten"
+	FinopsBillingBillingInvoiceScheduleTemplateInputExportLayoutNested  FinopsBillingBillingInvoiceScheduleTemplateInputExportLayout = "nested"
+)
+
 // Defines values for FinopsBillingBillingInvoiceScheduleTemplateInputExportType.
 const (
 	FinopsBillingBillingInvoiceScheduleTemplateInputExportTypeCsv FinopsBillingBillingInvoiceScheduleTemplateInputExportType = "csv"
@@ -193,6 +199,12 @@ const (
 	FinopsBillingBillingInvoiceTemplateResultCostMetricEffectiveCost         FinopsBillingBillingInvoiceTemplateResultCostMetric = "effectiveCost"
 	FinopsBillingBillingInvoiceTemplateResultCostMetricModifiedBilledCost    FinopsBillingBillingInvoiceTemplateResultCostMetric = "modifiedBilledCost"
 	FinopsBillingBillingInvoiceTemplateResultCostMetricModifiedEffectiveCost FinopsBillingBillingInvoiceTemplateResultCostMetric = "modifiedEffectiveCost"
+)
+
+// Defines values for FinopsBillingBillingInvoiceTemplateResultExportLayout.
+const (
+	FinopsBillingBillingInvoiceTemplateResultExportLayoutFlatten FinopsBillingBillingInvoiceTemplateResultExportLayout = "flatten"
+	FinopsBillingBillingInvoiceTemplateResultExportLayoutNested  FinopsBillingBillingInvoiceTemplateResultExportLayout = "nested"
 )
 
 // Defines values for FinopsBillingBillingInvoiceTemplateResultExportType.
@@ -258,6 +270,12 @@ const (
 	FinopsBillingEnterpriseRule FinopsBillingFlexeraFinopsBillingEnterpriseRuleKind = "finops:billing-enterprise-rule"
 )
 
+// Defines values for FinopsBillingFlexeraFinopsBillingInvoiceExportLayout.
+const (
+	FinopsBillingFlexeraFinopsBillingInvoiceExportLayoutFlatten FinopsBillingFlexeraFinopsBillingInvoiceExportLayout = "flatten"
+	FinopsBillingFlexeraFinopsBillingInvoiceExportLayoutNested  FinopsBillingFlexeraFinopsBillingInvoiceExportLayout = "nested"
+)
+
 // Defines values for FinopsBillingFlexeraFinopsBillingInvoiceExportType.
 const (
 	FinopsBillingFlexeraFinopsBillingInvoiceExportTypeCsv FinopsBillingFlexeraFinopsBillingInvoiceExportType = "csv"
@@ -293,6 +311,12 @@ const (
 	FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceDeliveryStatusSuccess FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceDeliveryStatus = "success"
 )
 
+// Defines values for FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportLayout.
+const (
+	FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportLayoutFlatten FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportLayout = "flatten"
+	FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportLayoutNested  FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportLayout = "nested"
+)
+
 // Defines values for FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportType.
 const (
 	FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportTypeCsv FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportType = "csv"
@@ -317,6 +341,12 @@ const (
 	FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetricEffectiveCost         FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetric = "effectiveCost"
 	FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetricModifiedBilledCost    FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetric = "modifiedBilledCost"
 	FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetricModifiedEffectiveCost FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetric = "modifiedEffectiveCost"
+)
+
+// Defines values for FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportLayout.
+const (
+	FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportLayoutFlatten FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportLayout = "flatten"
+	FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportLayoutNested  FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportLayout = "nested"
 )
 
 // Defines values for FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportType.
@@ -890,6 +920,15 @@ type FinopsBillingAuditRow struct {
 	SubAccountName *string `json:"subAccountName,omitempty"`
 }
 
+// FinopsBillingAutomatedEdpProfile Automated AWS EDP configuration for one bill source.
+type FinopsBillingAutomatedEdpProfile struct {
+	// BillSource The AWS bill source to which this profile applies.
+	BillSource string `json:"billSource"`
+
+	// Enabled Whether Automated EDP normalization is enabled for this bill source.
+	Enabled bool `json:"enabled"`
+}
+
 // FinopsBillingBillingInvoiceCollection defines model for FinopsBilling_BillingInvoiceCollection.
 type FinopsBillingBillingInvoiceCollection = []FinopsBillingFlexeraFinopsBillingInvoice
 
@@ -1126,6 +1165,9 @@ type FinopsBillingBillingInvoiceScheduleTemplateInput struct {
 	// DisplayLogoWithinPdf Whether the logo is rendered within PDF exports.
 	DisplayLogoWithinPdf bool `json:"displayLogoWithinPdf"`
 
+	// ExportLayout PDF layout format. Exact lowercase flatten or nested; omitted PDF exports default to flatten. Must be omitted for CSV exports.
+	ExportLayout *FinopsBillingBillingInvoiceScheduleTemplateInputExportLayout `json:"exportLayout,omitempty"`
+
 	// ExportType Invoice export type.
 	ExportType FinopsBillingBillingInvoiceScheduleTemplateInputExportType `json:"exportType"`
 
@@ -1147,6 +1189,9 @@ type FinopsBillingBillingInvoiceScheduleTemplateInput struct {
 
 // FinopsBillingBillingInvoiceScheduleTemplateInputCostMetric Configured cost metric.
 type FinopsBillingBillingInvoiceScheduleTemplateInputCostMetric string
+
+// FinopsBillingBillingInvoiceScheduleTemplateInputExportLayout PDF layout format. Exact lowercase flatten or nested; omitted PDF exports default to flatten. Must be omitted for CSV exports.
+type FinopsBillingBillingInvoiceScheduleTemplateInputExportLayout string
 
 // FinopsBillingBillingInvoiceScheduleTemplateInputExportType Invoice export type.
 type FinopsBillingBillingInvoiceScheduleTemplateInputExportType string
@@ -1202,6 +1247,9 @@ type FinopsBillingBillingInvoiceTemplateResult struct {
 	// DisplayLogoWithinPdf Whether the logo is rendered within PDF exports.
 	DisplayLogoWithinPdf bool `json:"displayLogoWithinPdf"`
 
+	// ExportLayout PDF layout format. Exact lowercase flatten or nested; omitted PDF exports default to flatten. Must be omitted for CSV exports.
+	ExportLayout *FinopsBillingBillingInvoiceTemplateResultExportLayout `json:"exportLayout,omitempty"`
+
 	// ExportType Invoice export type
 	ExportType FinopsBillingBillingInvoiceTemplateResultExportType `json:"exportType"`
 
@@ -1247,6 +1295,9 @@ type FinopsBillingBillingInvoiceTemplateResult struct {
 
 // FinopsBillingBillingInvoiceTemplateResultCostMetric Configured cost metric.
 type FinopsBillingBillingInvoiceTemplateResultCostMetric string
+
+// FinopsBillingBillingInvoiceTemplateResultExportLayout PDF layout format. Exact lowercase flatten or nested; omitted PDF exports default to flatten. Must be omitted for CSV exports.
+type FinopsBillingBillingInvoiceTemplateResultExportLayout string
 
 // FinopsBillingBillingInvoiceTemplateResultExportType Invoice export type
 type FinopsBillingBillingInvoiceTemplateResultExportType string
@@ -2167,6 +2218,9 @@ type FinopsBillingFlexeraFinopsBillingInvoice struct {
 	// DueDate Invoice due date
 	DueDate *openapi_types.Date `json:"dueDate,omitempty"`
 
+	// ExportLayout PDF layout format: flatten or nested.
+	ExportLayout *FinopsBillingFlexeraFinopsBillingInvoiceExportLayout `json:"exportLayout,omitempty"`
+
 	// ExportType Invoice export type
 	ExportType FinopsBillingFlexeraFinopsBillingInvoiceExportType `json:"exportType"`
 
@@ -2221,6 +2275,9 @@ type FinopsBillingFlexeraFinopsBillingInvoice struct {
 	// UpdatedAt ISO-8601 update timestamp
 	UpdatedAt time.Time `json:"updatedAt"`
 }
+
+// FinopsBillingFlexeraFinopsBillingInvoiceExportLayout PDF layout format: flatten or nested.
+type FinopsBillingFlexeraFinopsBillingInvoiceExportLayout string
 
 // FinopsBillingFlexeraFinopsBillingInvoiceExportType Invoice export type
 type FinopsBillingFlexeraFinopsBillingInvoiceExportType string
@@ -2332,6 +2389,9 @@ type FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoice struct {
 	// DueDate Invoice due date
 	DueDate *openapi_types.Date `json:"dueDate,omitempty"`
 
+	// ExportLayout PDF layout format: flatten or nested.
+	ExportLayout *FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportLayout `json:"exportLayout,omitempty"`
+
 	// ExportType Invoice export type
 	ExportType FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportType `json:"exportType"`
 
@@ -2387,6 +2447,9 @@ type FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoice struct {
 // FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceDeliveryStatus Email delivery outcome.
 type FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceDeliveryStatus string
 
+// FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportLayout PDF layout format: flatten or nested.
+type FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportLayout string
+
 // FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportType Invoice export type
 type FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceExportType string
 
@@ -2418,6 +2481,9 @@ type FinopsBillingFlexeraFinopsBillingInvoiceTemplate struct {
 
 	// DisplayLogoWithinPdf Whether the logo is rendered within PDF exports.
 	DisplayLogoWithinPdf bool `json:"displayLogoWithinPdf"`
+
+	// ExportLayout PDF layout format. Exact lowercase flatten or nested; omitted PDF exports default to flatten. Must be omitted for CSV exports.
+	ExportLayout *FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportLayout `json:"exportLayout,omitempty"`
 
 	// ExportType Invoice export type
 	ExportType FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportType `json:"exportType"`
@@ -2464,6 +2530,9 @@ type FinopsBillingFlexeraFinopsBillingInvoiceTemplate struct {
 
 // FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetric Configured cost metric.
 type FinopsBillingFlexeraFinopsBillingInvoiceTemplateCostMetric string
+
+// FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportLayout PDF layout format. Exact lowercase flatten or nested; omitted PDF exports default to flatten. Must be omitted for CSV exports.
+type FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportLayout string
 
 // FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportType Invoice export type
 type FinopsBillingFlexeraFinopsBillingInvoiceTemplateExportType string

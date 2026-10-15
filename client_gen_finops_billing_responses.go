@@ -72,6 +72,9 @@ type FinopsBillingShowPlanResponseBodyKind string
 
 // FinopsBillingShowSettingsResponseBody defines model for FinopsBilling_ShowSettingsResponseBody.
 type FinopsBillingShowSettingsResponseBody struct {
+	// AutomatedEdpProfiles Automated EDP settings by AWS bill source. An empty list disables Automated EDP for all bill sources.
+	AutomatedEdpProfiles []FinopsBillingAutomatedEdpProfile `json:"automatedEdpProfiles"`
+
 	// BaseCostsOn The base cost value used for adjustments. Note that using 'listCost' may reduce the utility of some adjustment rules. The 'observedCosts' value is deprecated; use 'billedCost' or 'modifiedCost' instead. The 'observedCosts' value is retained for legacy compatibility.
 	BaseCostsOn FinopsBillingShowSettingsResponseBodyBaseCostsOn `json:"baseCostsOn"`
 }

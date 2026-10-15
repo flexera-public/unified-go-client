@@ -13,6 +13,7 @@ const (
 	DivntAzureCostAndUsageModelBillingScopeBillingProfile DivntAzureCostAndUsageModelBillingScope = "Billing Profile"
 	DivntAzureCostAndUsageModelBillingScopeCustomerTenant DivntAzureCostAndUsageModelBillingScope = "Customer Tenant"
 	DivntAzureCostAndUsageModelBillingScopeInvoice        DivntAzureCostAndUsageModelBillingScope = "Invoice"
+	DivntAzureCostAndUsageModelBillingScopeSubscription   DivntAzureCostAndUsageModelBillingScope = "Subscription"
 )
 
 // Defines values for DivntOnboardingCreateRequestAccountType.
@@ -54,8 +55,9 @@ type DivntAwsCostAndUsageModel struct {
 //   - CSP Billing Account: no extra fields required
 //   - CSP Billing Profile: BillingProfileIds (required list)
 //   - CSP Customer Tenant: CustomerTenantId (required)
+//   - CSP Subscription: SubscriptionId, ActualExportUrl and AmortizedExportUrl (all required)
 //
-// Always optional:
+// Optional:
 //   - ActualExportUrl, AmortizedExportUrl, EffectiveFrom
 type DivntAzureCostAndUsageModel struct {
 	// ActualExportUrl Actual cost export URL.
@@ -70,8 +72,11 @@ type DivntAzureCostAndUsageModel struct {
 	// BillingProfileIds Billing Profile IDs - required for MCA or CSP + Billing Profile scope.
 	BillingProfileIds *[]string `json:"BillingProfileIds"`
 
-	// BillingScope Billing scope. Required for MCA ('Billing Account', 'Billing Profile', 'Invoice') and CSP ('Billing Account', 'Billing Profile', 'Customer Tenant') account types.
+	// BillingScope Billing scope. Required for MCA ('Billing Account', 'Billing Profile', 'Invoice') and CSP ('Billing Account', 'Billing Profile', 'Customer Tenant', 'Subscription') account types.
 	BillingScope *DivntAzureCostAndUsageModelBillingScope `json:"BillingScope"`
+
+	// CspSubscriptionId Subscription ID - required for CSP + Subscription scope.
+	CspSubscriptionId *string `json:"CspSubscriptionId"`
 
 	// CustomerTenantId Customer Tenant ID - required for CSP + Customer Tenant scope.
 	CustomerTenantId *string `json:"CustomerTenantId"`
@@ -86,7 +91,7 @@ type DivntAzureCostAndUsageModel struct {
 	InvoiceSectionIds *[]string `json:"InvoiceSectionIds"`
 }
 
-// DivntAzureCostAndUsageModelBillingScope Billing scope. Required for MCA ('Billing Account', 'Billing Profile', 'Invoice') and CSP ('Billing Account', 'Billing Profile', 'Customer Tenant') account types.
+// DivntAzureCostAndUsageModelBillingScope Billing scope. Required for MCA ('Billing Account', 'Billing Profile', 'Invoice') and CSP ('Billing Account', 'Billing Profile', 'Customer Tenant', 'Subscription') account types.
 type DivntAzureCostAndUsageModelBillingScope string
 
 // DivntOnboardingCreateRequest Schema for POST requests with strict validation for Creation.
