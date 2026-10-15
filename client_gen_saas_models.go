@@ -230,8 +230,8 @@ const (
 
 // Defines values for SaasImportSettingsLoadType.
 const (
-	SaasImportSettingsLoadTypeFull        SaasImportSettingsLoadType = "full"
-	SaasImportSettingsLoadTypeIncremental SaasImportSettingsLoadType = "incremental"
+	Full        SaasImportSettingsLoadType = "full"
+	Incremental SaasImportSettingsLoadType = "incremental"
 )
 
 // Defines values for SaasImportSettingsTaskName.
@@ -402,8 +402,8 @@ const (
 
 // Defines values for SaasUsageMessageQueryIndexParamsView.
 const (
-	Default  SaasUsageMessageQueryIndexParamsView = "default"
-	Extended SaasUsageMessageQueryIndexParamsView = "extended"
+	SaasUsageMessageQueryIndexParamsViewDefault  SaasUsageMessageQueryIndexParamsView = "default"
+	SaasUsageMessageQueryIndexParamsViewExtended SaasUsageMessageQueryIndexParamsView = "extended"
 )
 
 // SaasActivityCountByRangeCollection defines model for Saas_ActivityCountByRangeCollection.

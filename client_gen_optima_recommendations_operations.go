@@ -16,13 +16,15 @@ import (
 // Defines values for OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatus.
 const (
 	OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatusActive   OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatus = "active"
-	OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatusRealized OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatus = "realized"
 	OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatusRejected OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatus = "rejected"
 	OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatusSnoozed  OptimaRecommendationsRecommendationsUpdateStatusRequestBodyStatus = "snoozed"
 )
 
 // OptimaRecommendationsRecommendationsUpdateStatusRequestBody defines model for OptimaRecommendations_RecommendationsUpdateStatusRequestBody.
 type OptimaRecommendationsRecommendationsUpdateStatusRequestBody struct {
+	// GenerationId Generation ID of the hub-backed recommendation. When present, the status update is applied to the hub DB.
+	GenerationId *string `json:"generationId,omitempty"`
+
 	// Id Recommendation unique ID
 	Id string `json:"id"`
 
@@ -47,8 +49,376 @@ type OptimaRecommendationsRecommendationsIndexParams struct {
 	// View An optional parameter that controls the level of detail returned about policy violation data. Depending on it the data is returned in the `details` or `detailsExtended` field
 	View *OptimaRecommendationsRecommendationsIndexParamsView `form:"view,omitempty" json:"view,omitempty"`
 
-	// Statuses Recommendation statuses to get
+	// Statuses Recommendation statuses to get. Some values, such as realized, are API-level projected states rather than persisted DB values.
 	Statuses *[]OptimaRecommendationsRecommendationsIndexParamsStatuses `form:"statuses,omitempty" json:"statuses,omitempty"`
+}
+
+// OptimaRecommendationsRecommendationsExportParams defines parameters for OptimaRecommendationsRecommendationsExport.
+type OptimaRecommendationsRecommendationsExportParams struct {
+	// Filter Optional filter for returning recommendations matching specific criteria.
+	// ### Supported Filter Keys
+	// | Filter                | Type   | Example                                           | Description                                                                          |
+	// | --------------------- | ------ | ------------------------------------------------- | ------------------------------------------------------------------------------------ |
+	// | billingCenterID       | string | billingCenterID in ['bc1', 'bc2']                 | Returns recommendations under the billing centers bc1 or bc2, including descendants  |
+	// | billingCenterName     | string | billingCenterName co 'prod'                       | Returns recommendations listed under a billing center (the Cost Center column) whose name contains 'prod'; eq, ne, in and co only |
+	// | recommendation        | string | recommendation co 'Delete'                        | Returns recommendations with 'recommendation' containing 'Delete'                    |
+	// | type                  | string | type eq 'Usage Reduction'                         | Returns recommendations of the given type                                            |
+	// | vendor                | string | vendor in ['AWS', 'Azure']                        | Returns recommendations for either AWS or Azure                                      |
+	// | policySet             | string | policySet eq 'Unused Volumes'                     | Returns recommendations of the given policy set                                      |
+	// | accountID             | string | accountID eq '123456789012'                       | Returns recommendations for the given cloud account ID                               |
+	// | accountName           | string | accountName co 'prod'                             | Returns recommendations for accounts with a name containing 'prod'                   |
+	// | resourceGroup         | string | resourceGroup eq 'rg-main'                        | Returns recommendations for the given resource group                                 |
+	// | region                | string | region in ['us-east-1', 'eu-west-1']              | Returns recommendations in either region                                             |
+	// | service               | string | service eq 'EC2'                                  | Returns recommendations for the given service                                        |
+	// | databaseEngine        | string | databaseEngine eq 'postgres'                     | Returns recommendations for the given database engine                                |
+	// | resourceType          | string | resourceType eq 'm5.large'                        | Returns recommendations for the given resource type                                  |
+	// | resourceID            | string | resourceID eq 'i-0abc123'                         | Returns recommendations for the given resource ID                                    |
+	// | savings               | float  | savings gt 100                                    | Returns recommendations with savings greater than 100                                |
+	// | status                | string | status in ['active', 'snoozed']                   | Returns recommendations with the given statuses (active, snoozed, rejected, realized) |
+	// | incidentID            | string | incidentID eq '5b06ead5e0dacc007058c784'          | Returns recommendations of the given policy incident                                 |
+	// | createdAt             | time   | createdAt gt '2022-05-20T00:00:00Z'               | Returns recommendations created after 2022-05-20                                     |
+	// | updatedAt             | time   | updatedAt lt '2020-01-01T00:00:00Z'               | Returns recommendations updated before 2020-01-01                                    |
+	// | detailsExtended.<key> | string | detailsExtended.instanceFamily eq 'm5'            | Returns recommendations whose 'detailsExtended' entry <key> matches the value       |
+	// | ruleBasedDimensions.<key> | string | ruleBasedDimensions.rbd_bc eq 'bc1'           | Returns recommendations whose rule-based dimension <key> matches the value           |
+	// | source                | string | source eq 'AWS Trusted Advisor'                   | Returns recommendations from the given source                                        |
+	// | id                    | string | id in ['5f1b...', '5f1c...']                      | Returns the recommendations with the given IDs                                       |
+	// | quantityToPurchase    | float  | quantityToPurchase ge 2                           | Returns recommendations with a number to purchase of at least 2; none counts as 0, as the list shows it |
+	// | statusReason          | string | statusReason co 'not needed'                      | Returns recommendations whose status reason (description) contains 'not needed'      |
+	// | statusUpdatedAt       | time   | statusUpdatedAt gt '2026-01-01T00:00:00Z'         | Returns recommendations whose status changed after 2026-01-01                        |
+	// | snoozedTargetDate     | time   | snoozedTargetDate lt '2026-12-01T00:00:00Z'       | Returns recommendations snoozed until before 2026-12-01                              |
+	// | customTagDimensions.<key> | string | customTagDimensions.owner eq 'team-a'         | Returns recommendations whose tag dimension <key> matches the value                  |
+	// | tags                  | string | tags eq 'env=prod, team=a'                        | eq/ne/in compare the whole set of tags, joined with ', ' as groupBy tags shows it ('' for none); co finds a tag among them |
+	//
+	// ### Supported Operators
+	// - **in** - Checks if the field contains a specified value within a list.
+	// - **eq** - Checks if the field's value is equal to the specified value.
+	// - **ne** - Checks if the field's value is not equal to the specified value.
+	// - **co** - Checks if the field contains the specified substring.
+	// - **ex** - Checks whether the field has a value: resourceGroup ex true returns the recommendations that have one, resourceGroup ex false those that have none.
+	// - **and, or** - Logical operators used to combine multiple conditions. 'and' binds tighter than 'or' (a or b and c means a or (b and c)); use parentheses to group. Two conditions must always be joined by one of them.
+	// - **not** - Negates the operator that follows it, e.g. status not in ['rejected'].
+	// - **lt, gt, le, ge** - Relational operators used to compare the field's value against a specified value. They check for less than, greater than, less than or equal to, and greater than or equal to conditions, respectively.
+	//
+	// ### Notes
+	// - The filter is a query parameter. While it needs to be URL-encoded, examples here are provided pre-URL-encoding for clarity.
+	// - A recommendation with no status (for example a Rate Reduction) counts as 'active'.
+	// - Without a condition on status, recommendations of every status except 'realized' are returned. 'realized' recommendations are returned only when the status condition names them, e.g. status in ['active', 'realized']; excluding a status, e.g. status ne 'rejected', does not.
+	// - The status key supports only the eq, ne, in, co and not operators; co matches the statuses that contain the text, e.g. status co 'act' is status in ['active']. Anything else is rejected with a 400 error.
+	// - co applies to text fields only: savings, quantityToPurchase, createdAt, updatedAt, statusUpdatedAt and snoozedTargetDate are compared with eq, ne, gt, ge, lt and le.
+	// - Combine the status condition with conditions on other fields using 'and', e.g. savings gt 5 and (status eq 'realized' or status eq 'active'). An 'or' between a status condition naming 'realized' and a condition on another field also lets that condition match realized recommendations.
+	// - Results are always confined to the billing centers the user is authorized for, whatever billingCenterID clauses the filter contains.
+	// - A detailsExtended.<key> value is stored as a number or as a string: eq, ne and in with a value that reads as a number match both.
+	//
+	// ### Examples
+	// | Example                                                     | Description                                                          |
+	// | ----------------------------------------------------------- | -------------------------------------------------------------------- |
+	// | billingCenterID in ['bc1'] and status in ['active']         | Find active recommendations under billing center 'bc1'               |
+	// | vendor eq 'AWS' and savings gt 100                          | Find AWS recommendations with savings greater than 100               |
+	// | region eq 'us-east-1' or region eq 'eu-west-1'              | Find recommendations in either region                                |
+	// | accountName co 'prod' and status not eq 'rejected'          | Find recommendations for prod accounts that are not rejected         |
+	// | createdAt gt '2022-05-20T00:00:00Z' and policySet eq 'Idle' | Find recommendations of a policy set created after 2022-05-20        |
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// OrderBy Optional order by for returning recommendations in a specific order.
+	// ### Supported Order by Keys
+	// | Key                  | Description                                                                     |
+	// | -------------------- | ------------------------------------------------------------------------------- |
+	// | recommendation       | Returns recommendations ordered by 'recommendation' property                    |
+	// | type                 | Returns recommendations ordered by 'type' property                              |
+	// | vendor               | Returns recommendations ordered by 'vendor' property                            |
+	// | policySet            | Returns recommendations ordered by 'policySet' property                         |
+	// | accountID            | Returns recommendations ordered by 'accountID' property                         |
+	// | accountName          | Returns recommendations ordered by 'accountName' property                       |
+	// | resourceGroup        | Returns recommendations ordered by 'resourceGroup' property                     |
+	// | region               | Returns recommendations ordered by 'region' property                            |
+	// | service              | Returns recommendations ordered by 'service' property                           |
+	// | databaseEngine       | Returns recommendations ordered by 'databaseEngine' property                    |
+	// | resourceType         | Returns recommendations ordered by 'resourceType' property                      |
+	// | resourceID           | Returns recommendations ordered by 'resourceID' property                        |
+	// | savings              | Returns recommendations ordered by 'savings' property                           |
+	// | status               | Returns recommendations ordered by the status as filtered: one without a status as active, realized among the others |
+	// | incidentID           | Returns recommendations ordered by 'incidentID' property                        |
+	// | createdAt            | Returns recommendations ordered by 'createdAt' property                         |
+	// | updatedAt            | Returns recommendations ordered by 'updatedAt' property                         |
+	// | source               | Returns recommendations ordered by 'source' property                            |
+	// | id                   | Returns recommendations ordered by 'id' property                                |
+	// | quantityToPurchase   | Returns recommendations ordered by 'quantityToPurchase' property                |
+	// | statusReason         | Returns recommendations ordered by 'statusReason' property                      |
+	// | statusUpdatedAt      | Returns recommendations ordered by 'statusUpdatedAt' property                   |
+	// | snoozedTargetDate    | Returns recommendations ordered by 'snoozedTargetDate' property                 |
+	// | ruleBasedDimensions.<key> | Returns recommendations ordered by the value of the rule-based dimension <key> |
+	// | customTagDimensions.<key> | Returns recommendations ordered by the value of the tag dimension <key>    |
+	// | billingCenterName    | Returns recommendations ordered by the name of the billing center they are listed under (the Cost Center column) |
+	// | tags                 | Returns recommendations ordered by their tags joined with ', ' as the Tags column shows them ('' for none) |
+	// | detailsExtended.<key> | Returns recommendations ordered by the value of the 'detailsExtended' entry <key>. Requires view=extended, otherwise the request fails with a 400 error |
+	//
+	// ### Notes
+	// - The orderBy is a query parameter. While it needs to be URL-encoded, examples here are provided pre-URL-encoding for clarity.
+	// - Multiple expressions can be comma separated.
+	// - All orderBy fields support two types of order: "asc" (ascending) and "desc" (descending), "asc" will be used if no one is specified.
+	//
+	// ### Examples
+	// | Example                    | Description                                                         |
+	// | -------------------------- | ------------------------------------------------------------------- |
+	// | savings                    | Order recommendations by savings ascending                          |
+	// | savings desc               | Order recommendations by savings descending                         |
+	// | vendor, savings desc       | Order recommendations by vendor ascending, then by savings descending |
+	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
+
+	// Columns The columns of the file, in order, each as <field>:<header>: the field to write and the text of its header.
+	// Everything after the first ':' is the header.
+	// ### Supported Fields
+	// | Field                     | Value                                                                                         |
+	// | ------------------------- | --------------------------------------------------------------------------------------------- |
+	// | id, recommendation, type, policySet, source, savings, status, snoozedTargetDate, statusReason, statusUpdatedAt, service, resourceType, resourceID, resourceGroup, region, quantityToPurchase, accountName, accountID, vendor, databaseEngine, incidentID, createdAt, updatedAt, billingCenterID | The field of the recommendation, as in the paged list |
+	// | billingCenterName         | The name of the billing center of the recommendation                                          |
+	// | tags                      | The tags joined with ', '                                                                     |
+	// | detailsExtended.<key>     | The value of the 'detailsExtended' entry <key>                                                |
+	// | ruleBasedDimensions.<key> | The value of the rule-based dimension <key>                                                   |
+	// | customTagDimensions.<key> | The value of the tag dimension <key>                                                          |
+	// | recommendationExportDetails | For the Snowflake and Databricks policy sets, the 'detailsExtended' entries as 'label = value' joined with ', '; '-' for the others |
+	//
+	// ### Notes
+	// - Values are written as stored: numbers unformatted, dates in ISO 8601, an empty cell for no value.
+	Columns []string `form:"columns" json:"columns"`
+}
+
+// OptimaRecommendationsRecommendationsGroupTreeParams defines parameters for OptimaRecommendationsRecommendationsGroupTree.
+type OptimaRecommendationsRecommendationsGroupTreeParams struct {
+	// Filter Optional filter for returning recommendations matching specific criteria.
+	// ### Supported Filter Keys
+	// | Filter                | Type   | Example                                           | Description                                                                          |
+	// | --------------------- | ------ | ------------------------------------------------- | ------------------------------------------------------------------------------------ |
+	// | billingCenterID       | string | billingCenterID in ['bc1', 'bc2']                 | Returns recommendations under the billing centers bc1 or bc2, including descendants  |
+	// | billingCenterName     | string | billingCenterName co 'prod'                       | Returns recommendations listed under a billing center (the Cost Center column) whose name contains 'prod'; eq, ne, in and co only |
+	// | recommendation        | string | recommendation co 'Delete'                        | Returns recommendations with 'recommendation' containing 'Delete'                    |
+	// | type                  | string | type eq 'Usage Reduction'                         | Returns recommendations of the given type                                            |
+	// | vendor                | string | vendor in ['AWS', 'Azure']                        | Returns recommendations for either AWS or Azure                                      |
+	// | policySet             | string | policySet eq 'Unused Volumes'                     | Returns recommendations of the given policy set                                      |
+	// | accountID             | string | accountID eq '123456789012'                       | Returns recommendations for the given cloud account ID                               |
+	// | accountName           | string | accountName co 'prod'                             | Returns recommendations for accounts with a name containing 'prod'                   |
+	// | resourceGroup         | string | resourceGroup eq 'rg-main'                        | Returns recommendations for the given resource group                                 |
+	// | region                | string | region in ['us-east-1', 'eu-west-1']              | Returns recommendations in either region                                             |
+	// | service               | string | service eq 'EC2'                                  | Returns recommendations for the given service                                        |
+	// | databaseEngine        | string | databaseEngine eq 'postgres'                     | Returns recommendations for the given database engine                                |
+	// | resourceType          | string | resourceType eq 'm5.large'                        | Returns recommendations for the given resource type                                  |
+	// | resourceID            | string | resourceID eq 'i-0abc123'                         | Returns recommendations for the given resource ID                                    |
+	// | savings               | float  | savings gt 100                                    | Returns recommendations with savings greater than 100                                |
+	// | status                | string | status in ['active', 'snoozed']                   | Returns recommendations with the given statuses (active, snoozed, rejected, realized) |
+	// | incidentID            | string | incidentID eq '5b06ead5e0dacc007058c784'          | Returns recommendations of the given policy incident                                 |
+	// | createdAt             | time   | createdAt gt '2022-05-20T00:00:00Z'               | Returns recommendations created after 2022-05-20                                     |
+	// | updatedAt             | time   | updatedAt lt '2020-01-01T00:00:00Z'               | Returns recommendations updated before 2020-01-01                                    |
+	// | detailsExtended.<key> | string | detailsExtended.instanceFamily eq 'm5'            | Returns recommendations whose 'detailsExtended' entry <key> matches the value       |
+	// | ruleBasedDimensions.<key> | string | ruleBasedDimensions.rbd_bc eq 'bc1'           | Returns recommendations whose rule-based dimension <key> matches the value           |
+	// | source                | string | source eq 'AWS Trusted Advisor'                   | Returns recommendations from the given source                                        |
+	// | id                    | string | id in ['5f1b...', '5f1c...']                      | Returns the recommendations with the given IDs                                       |
+	// | quantityToPurchase    | float  | quantityToPurchase ge 2                           | Returns recommendations with a number to purchase of at least 2; none counts as 0, as the list shows it |
+	// | statusReason          | string | statusReason co 'not needed'                      | Returns recommendations whose status reason (description) contains 'not needed'      |
+	// | statusUpdatedAt       | time   | statusUpdatedAt gt '2026-01-01T00:00:00Z'         | Returns recommendations whose status changed after 2026-01-01                        |
+	// | snoozedTargetDate     | time   | snoozedTargetDate lt '2026-12-01T00:00:00Z'       | Returns recommendations snoozed until before 2026-12-01                              |
+	// | customTagDimensions.<key> | string | customTagDimensions.owner eq 'team-a'         | Returns recommendations whose tag dimension <key> matches the value                  |
+	// | tags                  | string | tags eq 'env=prod, team=a'                        | eq/ne/in compare the whole set of tags, joined with ', ' as groupBy tags shows it ('' for none); co finds a tag among them |
+	//
+	// ### Supported Operators
+	// - **in** - Checks if the field contains a specified value within a list.
+	// - **eq** - Checks if the field's value is equal to the specified value.
+	// - **ne** - Checks if the field's value is not equal to the specified value.
+	// - **co** - Checks if the field contains the specified substring.
+	// - **ex** - Checks whether the field has a value: resourceGroup ex true returns the recommendations that have one, resourceGroup ex false those that have none.
+	// - **and, or** - Logical operators used to combine multiple conditions. 'and' binds tighter than 'or' (a or b and c means a or (b and c)); use parentheses to group. Two conditions must always be joined by one of them.
+	// - **not** - Negates the operator that follows it, e.g. status not in ['rejected'].
+	// - **lt, gt, le, ge** - Relational operators used to compare the field's value against a specified value. They check for less than, greater than, less than or equal to, and greater than or equal to conditions, respectively.
+	//
+	// ### Notes
+	// - The filter is a query parameter. While it needs to be URL-encoded, examples here are provided pre-URL-encoding for clarity.
+	// - A recommendation with no status (for example a Rate Reduction) counts as 'active'.
+	// - Without a condition on status, recommendations of every status except 'realized' are returned. 'realized' recommendations are returned only when the status condition names them, e.g. status in ['active', 'realized']; excluding a status, e.g. status ne 'rejected', does not.
+	// - The status key supports only the eq, ne, in, co and not operators; co matches the statuses that contain the text, e.g. status co 'act' is status in ['active']. Anything else is rejected with a 400 error.
+	// - co applies to text fields only: savings, quantityToPurchase, createdAt, updatedAt, statusUpdatedAt and snoozedTargetDate are compared with eq, ne, gt, ge, lt and le.
+	// - Combine the status condition with conditions on other fields using 'and', e.g. savings gt 5 and (status eq 'realized' or status eq 'active'). An 'or' between a status condition naming 'realized' and a condition on another field also lets that condition match realized recommendations.
+	// - Results are always confined to the billing centers the user is authorized for, whatever billingCenterID clauses the filter contains.
+	// - A detailsExtended.<key> value is stored as a number or as a string: eq, ne and in with a value that reads as a number match both.
+	//
+	// ### Examples
+	// | Example                                                     | Description                                                          |
+	// | ----------------------------------------------------------- | -------------------------------------------------------------------- |
+	// | billingCenterID in ['bc1'] and status in ['active']         | Find active recommendations under billing center 'bc1'               |
+	// | vendor eq 'AWS' and savings gt 100                          | Find AWS recommendations with savings greater than 100               |
+	// | region eq 'us-east-1' or region eq 'eu-west-1'              | Find recommendations in either region                                |
+	// | accountName co 'prod' and status not eq 'rejected'          | Find recommendations for prod accounts that are not rejected         |
+	// | createdAt gt '2022-05-20T00:00:00Z' and policySet eq 'Idle' | Find recommendations of a policy set created after 2022-05-20        |
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// GroupBy Comma separated fields to group the recommendations by. Each field adds one level to the tree, in the given order.
+	// ### Supported Group by Fields
+	// | Field           | Description                                                                             |
+	// | --------------- | --------------------------------------------------------------------------------------- |
+	// | billingCenterID | Groups by the authorized billing center the recommendation belongs to                   |
+	// | billingCenterName | Groups by the name of that billing center (the Cost Center column)                    |
+	// | policySet       | Groups by the policy set                                                                |
+	// | vendor          | Groups by the cloud vendor                                                              |
+	// | accountID       | Groups by the cloud account ID                                                          |
+	// | accountName     | Groups by the cloud account name                                                        |
+	// | resourceGroup   | Groups by the resource group                                                            |
+	// | region          | Groups by the region                                                                    |
+	// | service         | Groups by the service                                                                   |
+	// | databaseEngine  | Groups by the database engine                                                           |
+	// | resourceType    | Groups by the resource type                                                             |
+	// | type            | Groups by the recommendation type                                                       |
+	// | status          | Groups by the status (active, snoozed, rejected, realized)                              |
+	// | recommendation  | Groups by the recommendation text                                                       |
+	// | source          | Groups by the source of the recommendation                                              |
+	// | resourceID      | Groups by the resource ID                                                               |
+	// | tags            | Groups by the whole set of tags, joined with ', ' ('' for none)                         |
+	// | detailsExtended.<key> | Groups by the value of the 'detailsExtended' entry <key>, as text                  |
+	// | ruleBasedDimensions.<key> | Groups by the value of the rule-based dimension <key>                          |
+	// | customTagDimensions.<key> | Groups by the value of the tag dimension <key>                                 |
+	// | statusReason    | Groups by the status reason (description)                                               |
+	// | quantityToPurchase | Groups by the number to purchase, none as 0                                          |
+	//
+	// ### Notes
+	// - The groupBy is a query parameter. While it needs to be URL-encoded, examples here are provided pre-URL-encoding for clarity.
+	// - A field can be given only once.
+	// - A group's recommendations are those of the paginated list filtered by the group's values, e.g. tags eq 'env=prod, team=a'.
+	// - The '' group holds the recommendations with no value: filter it with (<field> eq '' or <field> ex false), tags eq '' for tags. A recommendation with no number to purchase is in the quantityToPurchase group 0, as the list shows it.
+	// - The result is limited to 1000 groups (distinct combinations of the grouped values, that is the last level of the tree). A request that would return more fails with a 400 error: narrow the filter or group by fewer or less specific fields.
+	// - Groups on every level are ordered by the number of recommendations, largest first.
+	//
+	// ### Examples
+	// | Example             | Description                                                    |
+	// | ------------------- | -------------------------------------------------------------- |
+	// | vendor              | One level: a group per vendor                                  |
+	// | policySet,vendor    | Two levels: a group per policy set, with a group per vendor in it |
+	GroupBy string `form:"groupBy" json:"groupBy"`
+}
+
+// OptimaRecommendationsRecommendationsRecommendationsPagedParams defines parameters for OptimaRecommendationsRecommendationsRecommendationsPaged.
+type OptimaRecommendationsRecommendationsRecommendationsPagedParams struct {
+	// View An optional parameter that controls the level of detail returned about policy violation data. Depending on it the data is returned in the `details` or `detailsExtended` field
+	View *OptimaRecommendationsRecommendationsRecommendationsPagedParamsView `form:"view,omitempty" json:"view,omitempty"`
+
+	// Filter Optional filter for returning recommendations matching specific criteria.
+	// ### Supported Filter Keys
+	// | Filter                | Type   | Example                                           | Description                                                                          |
+	// | --------------------- | ------ | ------------------------------------------------- | ------------------------------------------------------------------------------------ |
+	// | billingCenterID       | string | billingCenterID in ['bc1', 'bc2']                 | Returns recommendations under the billing centers bc1 or bc2, including descendants  |
+	// | billingCenterName     | string | billingCenterName co 'prod'                       | Returns recommendations listed under a billing center (the Cost Center column) whose name contains 'prod'; eq, ne, in and co only |
+	// | recommendation        | string | recommendation co 'Delete'                        | Returns recommendations with 'recommendation' containing 'Delete'                    |
+	// | type                  | string | type eq 'Usage Reduction'                         | Returns recommendations of the given type                                            |
+	// | vendor                | string | vendor in ['AWS', 'Azure']                        | Returns recommendations for either AWS or Azure                                      |
+	// | policySet             | string | policySet eq 'Unused Volumes'                     | Returns recommendations of the given policy set                                      |
+	// | accountID             | string | accountID eq '123456789012'                       | Returns recommendations for the given cloud account ID                               |
+	// | accountName           | string | accountName co 'prod'                             | Returns recommendations for accounts with a name containing 'prod'                   |
+	// | resourceGroup         | string | resourceGroup eq 'rg-main'                        | Returns recommendations for the given resource group                                 |
+	// | region                | string | region in ['us-east-1', 'eu-west-1']              | Returns recommendations in either region                                             |
+	// | service               | string | service eq 'EC2'                                  | Returns recommendations for the given service                                        |
+	// | databaseEngine        | string | databaseEngine eq 'postgres'                     | Returns recommendations for the given database engine                                |
+	// | resourceType          | string | resourceType eq 'm5.large'                        | Returns recommendations for the given resource type                                  |
+	// | resourceID            | string | resourceID eq 'i-0abc123'                         | Returns recommendations for the given resource ID                                    |
+	// | savings               | float  | savings gt 100                                    | Returns recommendations with savings greater than 100                                |
+	// | status                | string | status in ['active', 'snoozed']                   | Returns recommendations with the given statuses (active, snoozed, rejected, realized) |
+	// | incidentID            | string | incidentID eq '5b06ead5e0dacc007058c784'          | Returns recommendations of the given policy incident                                 |
+	// | createdAt             | time   | createdAt gt '2022-05-20T00:00:00Z'               | Returns recommendations created after 2022-05-20                                     |
+	// | updatedAt             | time   | updatedAt lt '2020-01-01T00:00:00Z'               | Returns recommendations updated before 2020-01-01                                    |
+	// | detailsExtended.<key> | string | detailsExtended.instanceFamily eq 'm5'            | Returns recommendations whose 'detailsExtended' entry <key> matches the value       |
+	// | ruleBasedDimensions.<key> | string | ruleBasedDimensions.rbd_bc eq 'bc1'           | Returns recommendations whose rule-based dimension <key> matches the value           |
+	// | source                | string | source eq 'AWS Trusted Advisor'                   | Returns recommendations from the given source                                        |
+	// | id                    | string | id in ['5f1b...', '5f1c...']                      | Returns the recommendations with the given IDs                                       |
+	// | quantityToPurchase    | float  | quantityToPurchase ge 2                           | Returns recommendations with a number to purchase of at least 2; none counts as 0, as the list shows it |
+	// | statusReason          | string | statusReason co 'not needed'                      | Returns recommendations whose status reason (description) contains 'not needed'      |
+	// | statusUpdatedAt       | time   | statusUpdatedAt gt '2026-01-01T00:00:00Z'         | Returns recommendations whose status changed after 2026-01-01                        |
+	// | snoozedTargetDate     | time   | snoozedTargetDate lt '2026-12-01T00:00:00Z'       | Returns recommendations snoozed until before 2026-12-01                              |
+	// | customTagDimensions.<key> | string | customTagDimensions.owner eq 'team-a'         | Returns recommendations whose tag dimension <key> matches the value                  |
+	// | tags                  | string | tags eq 'env=prod, team=a'                        | eq/ne/in compare the whole set of tags, joined with ', ' as groupBy tags shows it ('' for none); co finds a tag among them |
+	//
+	// ### Supported Operators
+	// - **in** - Checks if the field contains a specified value within a list.
+	// - **eq** - Checks if the field's value is equal to the specified value.
+	// - **ne** - Checks if the field's value is not equal to the specified value.
+	// - **co** - Checks if the field contains the specified substring.
+	// - **ex** - Checks whether the field has a value: resourceGroup ex true returns the recommendations that have one, resourceGroup ex false those that have none.
+	// - **and, or** - Logical operators used to combine multiple conditions. 'and' binds tighter than 'or' (a or b and c means a or (b and c)); use parentheses to group. Two conditions must always be joined by one of them.
+	// - **not** - Negates the operator that follows it, e.g. status not in ['rejected'].
+	// - **lt, gt, le, ge** - Relational operators used to compare the field's value against a specified value. They check for less than, greater than, less than or equal to, and greater than or equal to conditions, respectively.
+	//
+	// ### Notes
+	// - The filter is a query parameter. While it needs to be URL-encoded, examples here are provided pre-URL-encoding for clarity.
+	// - A recommendation with no status (for example a Rate Reduction) counts as 'active'.
+	// - Without a condition on status, recommendations of every status except 'realized' are returned. 'realized' recommendations are returned only when the status condition names them, e.g. status in ['active', 'realized']; excluding a status, e.g. status ne 'rejected', does not.
+	// - The status key supports only the eq, ne, in, co and not operators; co matches the statuses that contain the text, e.g. status co 'act' is status in ['active']. Anything else is rejected with a 400 error.
+	// - co applies to text fields only: savings, quantityToPurchase, createdAt, updatedAt, statusUpdatedAt and snoozedTargetDate are compared with eq, ne, gt, ge, lt and le.
+	// - Combine the status condition with conditions on other fields using 'and', e.g. savings gt 5 and (status eq 'realized' or status eq 'active'). An 'or' between a status condition naming 'realized' and a condition on another field also lets that condition match realized recommendations.
+	// - Results are always confined to the billing centers the user is authorized for, whatever billingCenterID clauses the filter contains.
+	// - A detailsExtended.<key> value is stored as a number or as a string: eq, ne and in with a value that reads as a number match both.
+	//
+	// ### Examples
+	// | Example                                                     | Description                                                          |
+	// | ----------------------------------------------------------- | -------------------------------------------------------------------- |
+	// | billingCenterID in ['bc1'] and status in ['active']         | Find active recommendations under billing center 'bc1'               |
+	// | vendor eq 'AWS' and savings gt 100                          | Find AWS recommendations with savings greater than 100               |
+	// | region eq 'us-east-1' or region eq 'eu-west-1'              | Find recommendations in either region                                |
+	// | accountName co 'prod' and status not eq 'rejected'          | Find recommendations for prod accounts that are not rejected         |
+	// | createdAt gt '2022-05-20T00:00:00Z' and policySet eq 'Idle' | Find recommendations of a policy set created after 2022-05-20        |
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// OrderBy Optional order by for returning recommendations in a specific order.
+	// ### Supported Order by Keys
+	// | Key                  | Description                                                                     |
+	// | -------------------- | ------------------------------------------------------------------------------- |
+	// | recommendation       | Returns recommendations ordered by 'recommendation' property                    |
+	// | type                 | Returns recommendations ordered by 'type' property                              |
+	// | vendor               | Returns recommendations ordered by 'vendor' property                            |
+	// | policySet            | Returns recommendations ordered by 'policySet' property                         |
+	// | accountID            | Returns recommendations ordered by 'accountID' property                         |
+	// | accountName          | Returns recommendations ordered by 'accountName' property                       |
+	// | resourceGroup        | Returns recommendations ordered by 'resourceGroup' property                     |
+	// | region               | Returns recommendations ordered by 'region' property                            |
+	// | service              | Returns recommendations ordered by 'service' property                           |
+	// | databaseEngine       | Returns recommendations ordered by 'databaseEngine' property                    |
+	// | resourceType         | Returns recommendations ordered by 'resourceType' property                      |
+	// | resourceID           | Returns recommendations ordered by 'resourceID' property                        |
+	// | savings              | Returns recommendations ordered by 'savings' property                           |
+	// | status               | Returns recommendations ordered by the status as filtered: one without a status as active, realized among the others |
+	// | incidentID           | Returns recommendations ordered by 'incidentID' property                        |
+	// | createdAt            | Returns recommendations ordered by 'createdAt' property                         |
+	// | updatedAt            | Returns recommendations ordered by 'updatedAt' property                         |
+	// | source               | Returns recommendations ordered by 'source' property                            |
+	// | id                   | Returns recommendations ordered by 'id' property                                |
+	// | quantityToPurchase   | Returns recommendations ordered by 'quantityToPurchase' property                |
+	// | statusReason         | Returns recommendations ordered by 'statusReason' property                      |
+	// | statusUpdatedAt      | Returns recommendations ordered by 'statusUpdatedAt' property                   |
+	// | snoozedTargetDate    | Returns recommendations ordered by 'snoozedTargetDate' property                 |
+	// | ruleBasedDimensions.<key> | Returns recommendations ordered by the value of the rule-based dimension <key> |
+	// | customTagDimensions.<key> | Returns recommendations ordered by the value of the tag dimension <key>    |
+	// | billingCenterName    | Returns recommendations ordered by the name of the billing center they are listed under (the Cost Center column) |
+	// | tags                 | Returns recommendations ordered by their tags joined with ', ' as the Tags column shows them ('' for none) |
+	// | detailsExtended.<key> | Returns recommendations ordered by the value of the 'detailsExtended' entry <key>. Requires view=extended, otherwise the request fails with a 400 error |
+	//
+	// ### Notes
+	// - The orderBy is a query parameter. While it needs to be URL-encoded, examples here are provided pre-URL-encoding for clarity.
+	// - Multiple expressions can be comma separated.
+	// - All orderBy fields support two types of order: "asc" (ascending) and "desc" (descending), "asc" will be used if no one is specified.
+	//
+	// ### Examples
+	// | Example                    | Description                                                         |
+	// | -------------------------- | ------------------------------------------------------------------- |
+	// | savings                    | Order recommendations by savings ascending                          |
+	// | savings desc               | Order recommendations by savings descending                         |
+	// | vendor, savings desc       | Order recommendations by vendor ascending, then by savings descending |
+	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
+
+	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
+	// Partial responses will include a "nextPage" attribute in their response body, which contains the URL of the next page including the appropriate skipToken.
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
+
+	// Limit Custom pagination limit to be used.
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+}
+
+// OptimaRecommendationsRecommendationsSavingsSummaryParams defines parameters for OptimaRecommendationsRecommendationsSavingsSummary.
+type OptimaRecommendationsRecommendationsSavingsSummaryParams struct {
+	// BillingCenterIDs IDs of BillingCenters to get the savings summary for. It is not allowed for any of the BillingCenterIDs to be an ancestor of another specified BillingCenterID.
+	BillingCenterIDs *[]string `form:"billingCenterIDs,omitempty" json:"billingCenterIDs,omitempty"`
 }
 
 // OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody defines body for OptimaRecommendationsRecommendationsUpdateStatus for application/json ContentType.
@@ -56,6 +426,54 @@ type OptimaRecommendationsRecommendationsUpdateStatusJSONRequestBody = OptimaRec
 
 func (c *Client) OptimaRecommendationsRecommendationsIndex(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewOptimaRecommendationsRecommendationsIndexRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) OptimaRecommendationsRecommendationsExport(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsExportParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewOptimaRecommendationsRecommendationsExportRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) OptimaRecommendationsRecommendationsGroupTree(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsGroupTreeParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewOptimaRecommendationsRecommendationsGroupTreeRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) OptimaRecommendationsRecommendationsRecommendationsPaged(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsRecommendationsPagedParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewOptimaRecommendationsRecommendationsRecommendationsPagedRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) OptimaRecommendationsRecommendationsSavingsSummary(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsSavingsSummaryParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewOptimaRecommendationsRecommendationsSavingsSummaryRequest(c.Server, orgId, params)
 	if err != nil {
 		return nil, err
 	}
@@ -154,6 +572,334 @@ func NewOptimaRecommendationsRecommendationsIndexRequest(server string, orgId in
 		if params.Statuses != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "statuses", runtime.ParamLocationQuery, *params.Statuses); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewOptimaRecommendationsRecommendationsExportRequest generates requests for OptimaRecommendationsRecommendationsExport
+func NewOptimaRecommendationsRecommendationsExportRequest(server string, orgId int, params *OptimaRecommendationsRecommendationsExportParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/recommendations/orgs/%s/recommendations/export", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.OrderBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "orderBy", runtime.ParamLocationQuery, *params.OrderBy); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "columns", runtime.ParamLocationQuery, params.Columns); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
+				}
+			}
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewOptimaRecommendationsRecommendationsGroupTreeRequest generates requests for OptimaRecommendationsRecommendationsGroupTree
+func NewOptimaRecommendationsRecommendationsGroupTreeRequest(server string, orgId int, params *OptimaRecommendationsRecommendationsGroupTreeParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/recommendations/orgs/%s/recommendations/groups", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if queryFrag, err := runtime.StyleParamWithLocation("form", true, "groupBy", runtime.ParamLocationQuery, params.GroupBy); err != nil {
+			return nil, err
+		} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+			return nil, err
+		} else {
+			for k, v := range parsed {
+				for _, v2 := range v {
+					queryValues.Add(k, v2)
+				}
+			}
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewOptimaRecommendationsRecommendationsRecommendationsPagedRequest generates requests for OptimaRecommendationsRecommendationsRecommendationsPaged
+func NewOptimaRecommendationsRecommendationsRecommendationsPagedRequest(server string, orgId int, params *OptimaRecommendationsRecommendationsRecommendationsPagedParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/recommendations/orgs/%s/recommendations/paged", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.View != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "view", runtime.ParamLocationQuery, *params.View); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.OrderBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "orderBy", runtime.ParamLocationQuery, *params.OrderBy); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "skipToken", runtime.ParamLocationQuery, *params.SkipToken); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewOptimaRecommendationsRecommendationsSavingsSummaryRequest generates requests for OptimaRecommendationsRecommendationsSavingsSummary
+func NewOptimaRecommendationsRecommendationsSavingsSummaryRequest(server string, orgId int, params *OptimaRecommendationsRecommendationsSavingsSummaryParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/recommendations/orgs/%s/recommendations/savings-summary", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.BillingCenterIDs != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "billingCenterIDs", runtime.ParamLocationQuery, *params.BillingCenterIDs); err != nil {
 				return nil, err
 			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
 				return nil, err

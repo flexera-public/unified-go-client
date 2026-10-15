@@ -1729,6 +1729,18 @@ type ClientInterface interface {
 	// OptimaRecommendationsRecommendationsIndex request
 	OptimaRecommendationsRecommendationsIndex(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// OptimaRecommendationsRecommendationsExport request
+	OptimaRecommendationsRecommendationsExport(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsExportParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// OptimaRecommendationsRecommendationsGroupTree request
+	OptimaRecommendationsRecommendationsGroupTree(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsGroupTreeParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// OptimaRecommendationsRecommendationsRecommendationsPaged request
+	OptimaRecommendationsRecommendationsRecommendationsPaged(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsRecommendationsPagedParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// OptimaRecommendationsRecommendationsSavingsSummary request
+	OptimaRecommendationsRecommendationsSavingsSummary(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsSavingsSummaryParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// OptimaRecommendationsRecommendationsUpdateStatusWithBody request with any body
 	OptimaRecommendationsRecommendationsUpdateStatusWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -4002,6 +4014,18 @@ type ClientWithResponsesInterface interface {
 
 	// OptimaRecommendationsRecommendationsIndexWithResponse request
 	OptimaRecommendationsRecommendationsIndexWithResponse(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsIndexParams, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsIndexResponse, error)
+
+	// OptimaRecommendationsRecommendationsExportWithResponse request
+	OptimaRecommendationsRecommendationsExportWithResponse(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsExportParams, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsExportResponse, error)
+
+	// OptimaRecommendationsRecommendationsGroupTreeWithResponse request
+	OptimaRecommendationsRecommendationsGroupTreeWithResponse(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsGroupTreeParams, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsGroupTreeResponse, error)
+
+	// OptimaRecommendationsRecommendationsRecommendationsPagedWithResponse request
+	OptimaRecommendationsRecommendationsRecommendationsPagedWithResponse(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsRecommendationsPagedParams, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsRecommendationsPagedResponse, error)
+
+	// OptimaRecommendationsRecommendationsSavingsSummaryWithResponse request
+	OptimaRecommendationsRecommendationsSavingsSummaryWithResponse(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsSavingsSummaryParams, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsSavingsSummaryResponse, error)
 
 	// OptimaRecommendationsRecommendationsUpdateStatusWithBodyWithResponse request with any body
 	OptimaRecommendationsRecommendationsUpdateStatusWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsUpdateStatusResponse, error)

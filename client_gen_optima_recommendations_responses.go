@@ -12,15 +12,54 @@ import (
 	"time"
 )
 
+// Defines values for OptimaRecommendationsRateReductionCombinationSelectionResponseBodyCommitmentTerm.
+const (
+	N12 OptimaRecommendationsRateReductionCombinationSelectionResponseBodyCommitmentTerm = 12
+	N36 OptimaRecommendationsRateReductionCombinationSelectionResponseBodyCommitmentTerm = 36
+)
+
+// Defines values for OptimaRecommendationsRateReductionCombinationSelectionResponseBodyCommitmentType.
+const (
+	ReservedInstance OptimaRecommendationsRateReductionCombinationSelectionResponseBodyCommitmentType = "reserved_instance"
+	SavingsPlan      OptimaRecommendationsRateReductionCombinationSelectionResponseBodyCommitmentType = "savings_plan"
+)
+
+// Defines values for OptimaRecommendationsRateReductionCombinationSelectionResponseBodyPaymentType.
+const (
+	AllUpfront     OptimaRecommendationsRateReductionCombinationSelectionResponseBodyPaymentType = "all_upfront"
+	NoUpfront      OptimaRecommendationsRateReductionCombinationSelectionResponseBodyPaymentType = "no_upfront"
+	PartialUpfront OptimaRecommendationsRateReductionCombinationSelectionResponseBodyPaymentType = "partial_upfront"
+)
+
 // Defines values for OptimaRecommendationsRecommendationResultResponseKind.
 const (
-	OptimaRecommendation OptimaRecommendationsRecommendationResultResponseKind = "optima#recommendation"
+	OptimaRecommendationsRecommendationResultResponseKindOptimaRecommendation OptimaRecommendationsRecommendationResultResponseKind = "optima#recommendation"
 )
 
 // Defines values for OptimaRecommendationsRecommendationResultResponseType.
 const (
-	RateReduction  OptimaRecommendationsRecommendationResultResponseType = "Rate Reduction"
-	UsageReduction OptimaRecommendationsRecommendationResultResponseType = "Usage Reduction"
+	OptimaRecommendationsRecommendationResultResponseTypeRateReduction  OptimaRecommendationsRecommendationResultResponseType = "Rate Reduction"
+	OptimaRecommendationsRecommendationResultResponseTypeSecurity       OptimaRecommendationsRecommendationResultResponseType = "Security"
+	OptimaRecommendationsRecommendationResultResponseTypeUsageReduction OptimaRecommendationsRecommendationResultResponseType = "Usage Reduction"
+)
+
+// Defines values for OptimaRecommendationsRecommendationResultResponseBodyKind.
+const (
+	OptimaRecommendationsRecommendationResultResponseBodyKindOptimaRecommendation OptimaRecommendationsRecommendationResultResponseBodyKind = "optima#recommendation"
+)
+
+// Defines values for OptimaRecommendationsRecommendationResultResponseBodyType.
+const (
+	OptimaRecommendationsRecommendationResultResponseBodyTypeRateReduction  OptimaRecommendationsRecommendationResultResponseBodyType = "Rate Reduction"
+	OptimaRecommendationsRecommendationResultResponseBodyTypeSecurity       OptimaRecommendationsRecommendationResultResponseBodyType = "Security"
+	OptimaRecommendationsRecommendationResultResponseBodyTypeUsageReduction OptimaRecommendationsRecommendationResultResponseBodyType = "Usage Reduction"
+)
+
+// Defines values for OptimaRecommendationsUsageReductionSavingsStatusResponseBodyStatus.
+const (
+	OptimaRecommendationsUsageReductionSavingsStatusResponseBodyStatusActive   OptimaRecommendationsUsageReductionSavingsStatusResponseBodyStatus = "active"
+	OptimaRecommendationsUsageReductionSavingsStatusResponseBodyStatusRejected OptimaRecommendationsUsageReductionSavingsStatusResponseBodyStatus = "rejected"
+	OptimaRecommendationsUsageReductionSavingsStatusResponseBodyStatusSnoozed  OptimaRecommendationsUsageReductionSavingsStatusResponseBodyStatus = "snoozed"
 )
 
 // OptimaRecommendationsDataFieldResponse Extended details data field
@@ -30,6 +69,103 @@ type OptimaRecommendationsDataFieldResponse struct {
 
 	// Value Field Value
 	Value interface{} `json:"value"`
+}
+
+// OptimaRecommendationsDataFieldResponseBody Extended details data field
+type OptimaRecommendationsDataFieldResponseBody struct {
+	// Label Field Label
+	Label string `json:"label"`
+
+	// Value Field Value
+	Value interface{} `json:"value"`
+}
+
+// OptimaRecommendationsGroupTreeNodeResponseBody A group of recommendations sharing the same value of the groupBy field at this level of the tree.
+type OptimaRecommendationsGroupTreeNodeResponseBody struct {
+	// Children The groups of the next groupBy field within this group. Empty at the last level.
+	Children []OptimaRecommendationsGroupTreeNodeResponseBody `json:"children"`
+
+	// Count The number of recommendations in this group and its children.
+	Count int64 `json:"count"`
+
+	// TotalSavings The total savings of the recommendations in this group and its children.
+	TotalSavings float64 `json:"totalSavings"`
+
+	// Value The value of the groupBy field at this level. Empty for recommendations that have no value for it. For groupBy billingCenterID this is the billing center ID.
+	Value string `json:"value"`
+}
+
+// OptimaRecommendationsRateReductionCombinationLeafResponseBody defines model for OptimaRecommendations_RateReductionCombinationLeafResponseBody.
+type OptimaRecommendationsRateReductionCombinationLeafResponseBody struct {
+	// ByCategory Per-category breakdown of this combination (the recommendations' policySet), largest savings first, each split by vendor.
+	ByCategory []OptimaRecommendationsRateReductionSavingsCategoryResponseBody `json:"byCategory"`
+
+	// RecommendationCount Number of recommendations in this combination.
+	RecommendationCount int64 `json:"recommendationCount"`
+
+	// SavingsPerMonth Savings per month for this exact combination.
+	SavingsPerMonth float64 `json:"savingsPerMonth"`
+}
+
+// OptimaRecommendationsRateReductionCombinationSelectionResponseBody defines model for OptimaRecommendations_RateReductionCombinationSelectionResponseBody.
+type OptimaRecommendationsRateReductionCombinationSelectionResponseBody struct {
+	// CommitmentTerm Commitment term, in months.
+	CommitmentTerm OptimaRecommendationsRateReductionCombinationSelectionResponseBodyCommitmentTerm `json:"commitmentTerm"`
+
+	// CommitmentType Commitment type.
+	CommitmentType OptimaRecommendationsRateReductionCombinationSelectionResponseBodyCommitmentType `json:"commitmentType"`
+
+	// PaymentType Payment type.
+	PaymentType OptimaRecommendationsRateReductionCombinationSelectionResponseBodyPaymentType `json:"paymentType"`
+}
+
+// OptimaRecommendationsRateReductionCombinationSelectionResponseBodyCommitmentTerm Commitment term, in months.
+type OptimaRecommendationsRateReductionCombinationSelectionResponseBodyCommitmentTerm int64
+
+// OptimaRecommendationsRateReductionCombinationSelectionResponseBodyCommitmentType Commitment type.
+type OptimaRecommendationsRateReductionCombinationSelectionResponseBodyCommitmentType string
+
+// OptimaRecommendationsRateReductionCombinationSelectionResponseBodyPaymentType Payment type.
+type OptimaRecommendationsRateReductionCombinationSelectionResponseBodyPaymentType string
+
+// OptimaRecommendationsRateReductionSavingsCategoryResponseBody defines model for OptimaRecommendations_RateReductionSavingsCategoryResponseBody.
+type OptimaRecommendationsRateReductionSavingsCategoryResponseBody struct {
+	// ByVendor Per-vendor breakdown of this category's savings.
+	ByVendor []OptimaRecommendationsSavingsSummaryVendorSavingsResponseBody `json:"byVendor"`
+
+	// Category The category name (derived from policySet). Empty for recommendations without a policy set.
+	Category string `json:"category"`
+
+	// RecommendationCount Number of recommendations of this category within the combination.
+	RecommendationCount int64 `json:"recommendationCount"`
+
+	// SavingsPerMonth Savings per month for this category within the combination.
+	SavingsPerMonth float64 `json:"savingsPerMonth"`
+}
+
+// OptimaRecommendationsRateReductionSavingsResponseBody defines model for OptimaRecommendations_RateReductionSavingsResponseBody.
+type OptimaRecommendationsRateReductionSavingsResponseBody struct {
+	// ByCategory All Rate Reduction recommendations by category (policySet), whatever the combination, largest savings first, each split by vendor. A recommendation that matches several combinations is counted once.
+	ByCategory []OptimaRecommendationsRateReductionSavingsCategoryResponseBody `json:"byCategory"`
+
+	// Combinations commitmentType -> commitmentTerm (as a string) -> paymentType -> leaf. Every combination is present, including zero-valued ones.
+	Combinations map[string]map[string]map[string]OptimaRecommendationsRateReductionCombinationLeafResponseBody `json:"combinations"`
+
+	// CommitmentTerms The commitment term values (in months) present in the combinations tree, in display order.
+	CommitmentTerms []int64 `json:"commitmentTerms"`
+
+	// CommitmentTypes The commitment type values present in the combinations tree, in display order.
+	CommitmentTypes  []string                                                           `json:"commitmentTypes"`
+	DefaultSelection OptimaRecommendationsRateReductionCombinationSelectionResponseBody `json:"defaultSelection"`
+
+	// PaymentTypes The payment type values present in the combinations tree, in display order.
+	PaymentTypes []string `json:"paymentTypes"`
+
+	// RecommendationCount Total number of Rate Reduction recommendations, whatever the selected combination.
+	RecommendationCount int64 `json:"recommendationCount"`
+
+	// SavingsPerMonth Total savings per month of all Rate Reduction recommendations, whatever the selected combination. A recommendation that matches several combinations is counted once.
+	SavingsPerMonth float64 `json:"savingsPerMonth"`
 }
 
 // OptimaRecommendationsRecommendationResultResponse A cost-saving recommendation. (default view)
@@ -60,6 +196,9 @@ type OptimaRecommendationsRecommendationResultResponse struct {
 
 	// DetailsExtended Extended details about the recommendation.
 	DetailsExtended *map[string]OptimaRecommendationsDataFieldResponse `json:"detailsExtended,omitempty"`
+
+	// GenerationId Generation ID of the recommendation, present only for hub-backed recommendations.
+	GenerationId *string `json:"generationId,omitempty"`
 
 	// Id The ID of the recommendation
 	Id string `json:"id"`
@@ -103,6 +242,9 @@ type OptimaRecommendationsRecommendationResultResponse struct {
 	// SnoozedTargetDate Target date to move recommendation from snoozed to active again
 	SnoozedTargetDate *openapi_types.Date `json:"snoozedTargetDate,omitempty"`
 
+	// Source The system that produced the recommendation
+	Source *string `json:"source,omitempty"`
+
 	// Status Current status of the recommendation
 	Status string `json:"status"`
 
@@ -130,6 +272,327 @@ type OptimaRecommendationsRecommendationResultResponseKind string
 
 // OptimaRecommendationsRecommendationResultResponseType Categorizes the type of recommendation
 type OptimaRecommendationsRecommendationResultResponseType string
+
+// OptimaRecommendationsRecommendationResultResponseBody A cost-saving recommendation. (default view)
+type OptimaRecommendationsRecommendationResultResponseBody struct {
+	// AccountID The account ID
+	AccountID string `json:"accountID"`
+
+	// AccountName The account name
+	AccountName string `json:"accountName"`
+
+	// BillingCenterID The ID of the top-level billing center this recommendation is assigned to
+	BillingCenterID string `json:"billingCenterID"`
+
+	// BillingCenterName The name of the top-level billing center this recommendation is assigned to
+	BillingCenterName string `json:"billingCenterName"`
+
+	// CreatedAt Timestamp when the recommendation was created.
+	CreatedAt time.Time `json:"createdAt"`
+
+	// CustomTagDimensions The custom tag dimensions that could be populated by the raw tags of the recommendation.
+	CustomTagDimensions *map[string]string `json:"customTagDimensions,omitempty"`
+
+	// DatabaseEngine The database engine to purchase
+	DatabaseEngine string `json:"databaseEngine"`
+
+	// Details Additional details about the recommendation.
+	Details *map[string]interface{} `json:"details,omitempty"`
+
+	// DetailsExtended Extended details about the recommendation.
+	DetailsExtended *map[string]OptimaRecommendationsDataFieldResponseBody `json:"detailsExtended,omitempty"`
+
+	// GenerationId Generation ID of the recommendation, present only for hub-backed recommendations.
+	GenerationId *string `json:"generationId,omitempty"`
+
+	// Id The ID of the recommendation
+	Id string `json:"id"`
+
+	// IncidentID ID of the incident that recommendation belongs to
+	IncidentID string `json:"incidentID"`
+
+	// Kind The kind of object
+	Kind OptimaRecommendationsRecommendationResultResponseBodyKind `json:"kind"`
+
+	// PolicySet The policy set, as a way to group similar policies together
+	PolicySet string `json:"policySet"`
+
+	// QuantityToPurchase Quantity to purchase (e.g. number of reserved instances)
+	QuantityToPurchase float64 `json:"quantityToPurchase"`
+
+	// Recommendation This is the name or category of recommendation
+	Recommendation string `json:"recommendation"`
+
+	// Region The region in which to purchase
+	Region string `json:"region"`
+
+	// ResourceGroup Azure Resource Group
+	ResourceGroup *string `json:"resourceGroup,omitempty"`
+
+	// ResourceID The ID of a resource identified in the recommendation
+	ResourceID string `json:"resourceID"`
+
+	// ResourceType The resource type, which might be an instance type or volume type, etc.
+	ResourceType string `json:"resourceType"`
+
+	// RuleBasedDimensions The rule based dimensions that are populated in recommendation once rules execute.
+	RuleBasedDimensions *map[string]string `json:"ruleBasedDimensions,omitempty"`
+
+	// Savings Expected dollar savings
+	Savings float64 `json:"savings"`
+
+	// Service The relevant service in which to purchase
+	Service string `json:"service"`
+
+	// SnoozedTargetDate Target date to move recommendation from snoozed to active again
+	SnoozedTargetDate *openapi_types.Date `json:"snoozedTargetDate,omitempty"`
+
+	// Source The system that produced the recommendation
+	Source *string `json:"source,omitempty"`
+
+	// Status Current status of the recommendation
+	Status string `json:"status"`
+
+	// StatusReason Extra field to put extra reason once we change “status” value
+	StatusReason *string `json:"statusReason,omitempty"`
+
+	// StatusUpdatedAt Date when status was updated
+	StatusUpdatedAt *time.Time `json:"statusUpdatedAt,omitempty"`
+
+	// Tags The tags found on the resource
+	Tags []string `json:"tags"`
+
+	// Type Categorizes the type of recommendation
+	Type OptimaRecommendationsRecommendationResultResponseBodyType `json:"type"`
+
+	// UpdatedAt Timestamp when the recommendation was updated.
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// Vendor The name of the cloud vendor
+	Vendor string `json:"vendor"`
+}
+
+// OptimaRecommendationsRecommendationResultResponseBodyKind The kind of object
+type OptimaRecommendationsRecommendationResultResponseBodyKind string
+
+// OptimaRecommendationsRecommendationResultResponseBodyType Categorizes the type of recommendation
+type OptimaRecommendationsRecommendationResultResponseBodyType string
+
+// OptimaRecommendationsRecommendationsExportBadGatewayResponseBody export_bad_gateway_response_body result type (default view)
+type OptimaRecommendationsRecommendationsExportBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsExportBadRequestResponseBody export_bad_request_response_body result type (default view)
+type OptimaRecommendationsRecommendationsExportBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsExportConflictResponseBody export_conflict_response_body result type (default view)
+type OptimaRecommendationsRecommendationsExportConflictResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsExportForbiddenResponseBody export_forbidden_response_body result type (default view)
+type OptimaRecommendationsRecommendationsExportForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsExportNotFoundResponseBody export_not_found_response_body result type (default view)
+type OptimaRecommendationsRecommendationsExportNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsGroupTreeBadGatewayResponseBody groupTree_bad_gateway_response_body result type (default view)
+type OptimaRecommendationsRecommendationsGroupTreeBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsGroupTreeBadRequestResponseBody groupTree_bad_request_response_body result type (default view)
+type OptimaRecommendationsRecommendationsGroupTreeBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsGroupTreeConflictResponseBody groupTree_conflict_response_body result type (default view)
+type OptimaRecommendationsRecommendationsGroupTreeConflictResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsGroupTreeForbiddenResponseBody groupTree_forbidden_response_body result type (default view)
+type OptimaRecommendationsRecommendationsGroupTreeForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsGroupTreeNotFoundResponseBody groupTree_not_found_response_body result type (default view)
+type OptimaRecommendationsRecommendationsGroupTreeNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsGroupTreeResponseBody GroupTreeResponseBody result type (default view)
+type OptimaRecommendationsRecommendationsGroupTreeResponseBody struct {
+	// Values The top-level groups, largest first.
+	Values []OptimaRecommendationsGroupTreeNodeResponseBody `json:"values"`
+}
 
 // OptimaRecommendationsRecommendationsIndexBadGatewayResponseBody index_bad_gateway_response_body result type (default view)
 type OptimaRecommendationsRecommendationsIndexBadGatewayResponseBody struct {
@@ -239,6 +702,247 @@ type OptimaRecommendationsRecommendationsIndexNotFoundResponseBody struct {
 // OptimaRecommendationsRecommendationsRecommendationResultResponseCollection IndexResponseBody is the result type for an array of RecommendationResultResponse (default view)
 type OptimaRecommendationsRecommendationsRecommendationResultResponseCollection = []OptimaRecommendationsRecommendationResultResponse
 
+// OptimaRecommendationsRecommendationsRecommendationsPagedBadGatewayResponseBody recommendationsPaged_bad_gateway_response_body result type (default view)
+type OptimaRecommendationsRecommendationsRecommendationsPagedBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsRecommendationsPagedBadRequestResponseBody recommendationsPaged_bad_request_response_body result type (default view)
+type OptimaRecommendationsRecommendationsRecommendationsPagedBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsRecommendationsPagedConflictResponseBody recommendationsPaged_conflict_response_body result type (default view)
+type OptimaRecommendationsRecommendationsRecommendationsPagedConflictResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsRecommendationsPagedForbiddenResponseBody recommendationsPaged_forbidden_response_body result type (default view)
+type OptimaRecommendationsRecommendationsRecommendationsPagedForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsRecommendationsPagedNotFoundResponseBody recommendationsPaged_not_found_response_body result type (default view)
+type OptimaRecommendationsRecommendationsRecommendationsPagedNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsRecommendationsPagedResponseBody RecommendationsPagedResponseBody result type (default view)
+type OptimaRecommendationsRecommendationsRecommendationsPagedResponseBody struct {
+	// Count The number of recommendations in this page.
+	Count int64 `json:"count"`
+
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	NextPage *string `json:"nextPage,omitempty"`
+
+	// PrevPage URL to the previous page of data. The first page of data will not return a prevPage value.
+	PrevPage *string `json:"prevPage,omitempty"`
+
+	// Total The total number of recommendations matching the filter, across all pages.
+	Total int64 `json:"total"`
+
+	// Values The recommendations in this page.
+	Values []OptimaRecommendationsRecommendationResultResponseBody `json:"values"`
+}
+
+// OptimaRecommendationsRecommendationsSavingsSummaryBadGatewayResponseBody savingsSummary_bad_gateway_response_body result type (default view)
+type OptimaRecommendationsRecommendationsSavingsSummaryBadGatewayResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsSavingsSummaryBadRequestResponseBody savingsSummary_bad_request_response_body result type (default view)
+type OptimaRecommendationsRecommendationsSavingsSummaryBadRequestResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsSavingsSummaryConflictResponseBody savingsSummary_conflict_response_body result type (default view)
+type OptimaRecommendationsRecommendationsSavingsSummaryConflictResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsSavingsSummaryForbiddenResponseBody savingsSummary_forbidden_response_body result type (default view)
+type OptimaRecommendationsRecommendationsSavingsSummaryForbiddenResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsSavingsSummaryNotFoundResponseBody savingsSummary_not_found_response_body result type (default view)
+type OptimaRecommendationsRecommendationsSavingsSummaryNotFoundResponseBody struct {
+	// Fault Is the error a server-side fault?
+	Fault bool `json:"fault"`
+
+	// Id ID is a unique identifier for this particular occurrence of the problem.
+	Id string `json:"id"`
+
+	// Message Message is a human-readable explanation specific to this occurrence of the problem.
+	Message string `json:"message"`
+
+	// Name Name is the name of this class of errors.
+	Name string `json:"name"`
+
+	// Temporary Is the error temporary?
+	Temporary bool `json:"temporary"`
+
+	// Timeout Is the error a timeout?
+	Timeout bool `json:"timeout"`
+}
+
+// OptimaRecommendationsRecommendationsSavingsSummaryResponseBody SavingsSummaryResponseBody result type (default view)
+type OptimaRecommendationsRecommendationsSavingsSummaryResponseBody struct {
+	RateReductionSavings  OptimaRecommendationsRateReductionSavingsResponseBody `json:"rateReductionSavings"`
+	TotalPotentialSavings struct {
+		// RecommendationCount Total recommendation count across all types, regardless of status.
+		RecommendationCount int64 `json:"recommendationCount"`
+
+		// SavingsPerMonth Active-only Usage Reduction savings plus all Rate Reduction savings.
+		SavingsPerMonth float64 `json:"savingsPerMonth"`
+	} `json:"totalPotentialSavings"`
+	UsageReductionSavings OptimaRecommendationsUsageReductionSavingsResponseBody `json:"usageReductionSavings"`
+}
+
 // OptimaRecommendationsRecommendationsUpdateStatusBadGatewayResponseBody updateStatus_bad_gateway_response_body result type (default view)
 type OptimaRecommendationsRecommendationsUpdateStatusBadGatewayResponseBody struct {
 	// Fault Is the error a server-side fault?
@@ -344,6 +1048,60 @@ type OptimaRecommendationsRecommendationsUpdateStatusNotFoundResponseBody struct
 	Timeout bool `json:"timeout"`
 }
 
+// OptimaRecommendationsSavingsSummaryVendorSavingsResponseBody defines model for OptimaRecommendations_SavingsSummaryVendorSavingsResponseBody.
+type OptimaRecommendationsSavingsSummaryVendorSavingsResponseBody struct {
+	// SavingsPerMonth Savings per month attributed to this vendor.
+	SavingsPerMonth float64 `json:"savingsPerMonth"`
+
+	// Vendor The cloud vendor.
+	Vendor string `json:"vendor"`
+}
+
+// OptimaRecommendationsUsageReductionSavingsCategoryResponseBody defines model for OptimaRecommendations_UsageReductionSavingsCategoryResponseBody.
+type OptimaRecommendationsUsageReductionSavingsCategoryResponseBody struct {
+	// ByVendor Per-vendor breakdown of this category's savings.
+	ByVendor []OptimaRecommendationsSavingsSummaryVendorSavingsResponseBody `json:"byVendor"`
+
+	// Category The category name (derived from policySet).
+	Category string `json:"category"`
+
+	// RecommendationCount Number of recommendations in this category.
+	RecommendationCount int64 `json:"recommendationCount"`
+
+	// SavingsPerMonth Savings per month for this category.
+	SavingsPerMonth float64 `json:"savingsPerMonth"`
+}
+
+// OptimaRecommendationsUsageReductionSavingsResponseBody defines model for OptimaRecommendations_UsageReductionSavingsResponseBody.
+type OptimaRecommendationsUsageReductionSavingsResponseBody struct {
+	// ByCategory Per-category breakdown. Unfiltered by status (includes snoozed/rejected): the counts add up to recommendationCount, but the savings do not add up to savingsPerMonth above.
+	ByCategory []OptimaRecommendationsUsageReductionSavingsCategoryResponseBody `json:"byCategory"`
+
+	// ByStatus Savings and number of recommendations per status: always active, snoozed and rejected, in this order.
+	ByStatus []OptimaRecommendationsUsageReductionSavingsStatusResponseBody `json:"byStatus"`
+
+	// RecommendationCount Number of Usage Reduction recommendations of every status (active, snoozed and rejected), the sum of byStatus.
+	RecommendationCount int64 `json:"recommendationCount"`
+
+	// SavingsPerMonth Savings per month of the active recommendations only (status active or not set), the widget's headline figure.
+	SavingsPerMonth float64 `json:"savingsPerMonth"`
+}
+
+// OptimaRecommendationsUsageReductionSavingsStatusResponseBody defines model for OptimaRecommendations_UsageReductionSavingsStatusResponseBody.
+type OptimaRecommendationsUsageReductionSavingsStatusResponseBody struct {
+	// RecommendationCount Number of recommendations with this status.
+	RecommendationCount int64 `json:"recommendationCount"`
+
+	// SavingsPerMonth Savings per month of the recommendations with this status.
+	SavingsPerMonth float64 `json:"savingsPerMonth"`
+
+	// Status The recommendation status.
+	Status OptimaRecommendationsUsageReductionSavingsStatusResponseBodyStatus `json:"status"`
+}
+
+// OptimaRecommendationsUsageReductionSavingsStatusResponseBodyStatus The recommendation status.
+type OptimaRecommendationsUsageReductionSavingsStatusResponseBodyStatus string
+
 type OptimaRecommendationsRecommendationsIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -365,6 +1123,113 @@ func (r OptimaRecommendationsRecommendationsIndexResponse) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r OptimaRecommendationsRecommendationsIndexResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type OptimaRecommendationsRecommendationsExportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON400      *OptimaRecommendationsRecommendationsExportBadRequestResponseBody
+	JSON403      *OptimaRecommendationsRecommendationsExportForbiddenResponseBody
+	JSON404      *OptimaRecommendationsRecommendationsExportNotFoundResponseBody
+	JSON409      *OptimaRecommendationsRecommendationsExportConflictResponseBody
+	JSON502      *OptimaRecommendationsRecommendationsExportBadGatewayResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r OptimaRecommendationsRecommendationsExportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r OptimaRecommendationsRecommendationsExportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type OptimaRecommendationsRecommendationsGroupTreeResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *OptimaRecommendationsRecommendationsGroupTreeResponseBody
+	JSON400      *OptimaRecommendationsRecommendationsGroupTreeBadRequestResponseBody
+	JSON403      *OptimaRecommendationsRecommendationsGroupTreeForbiddenResponseBody
+	JSON404      *OptimaRecommendationsRecommendationsGroupTreeNotFoundResponseBody
+	JSON409      *OptimaRecommendationsRecommendationsGroupTreeConflictResponseBody
+	JSON502      *OptimaRecommendationsRecommendationsGroupTreeBadGatewayResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r OptimaRecommendationsRecommendationsGroupTreeResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r OptimaRecommendationsRecommendationsGroupTreeResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type OptimaRecommendationsRecommendationsRecommendationsPagedResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *OptimaRecommendationsRecommendationsRecommendationsPagedResponseBody
+	JSON400      *OptimaRecommendationsRecommendationsRecommendationsPagedBadRequestResponseBody
+	JSON403      *OptimaRecommendationsRecommendationsRecommendationsPagedForbiddenResponseBody
+	JSON404      *OptimaRecommendationsRecommendationsRecommendationsPagedNotFoundResponseBody
+	JSON409      *OptimaRecommendationsRecommendationsRecommendationsPagedConflictResponseBody
+	JSON502      *OptimaRecommendationsRecommendationsRecommendationsPagedBadGatewayResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r OptimaRecommendationsRecommendationsRecommendationsPagedResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r OptimaRecommendationsRecommendationsRecommendationsPagedResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type OptimaRecommendationsRecommendationsSavingsSummaryResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *OptimaRecommendationsRecommendationsSavingsSummaryResponseBody
+	JSON400      *OptimaRecommendationsRecommendationsSavingsSummaryBadRequestResponseBody
+	JSON403      *OptimaRecommendationsRecommendationsSavingsSummaryForbiddenResponseBody
+	JSON404      *OptimaRecommendationsRecommendationsSavingsSummaryNotFoundResponseBody
+	JSON409      *OptimaRecommendationsRecommendationsSavingsSummaryConflictResponseBody
+	JSON502      *OptimaRecommendationsRecommendationsSavingsSummaryBadGatewayResponseBody
+}
+
+// Status returns HTTPResponse.Status
+func (r OptimaRecommendationsRecommendationsSavingsSummaryResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r OptimaRecommendationsRecommendationsSavingsSummaryResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -404,6 +1269,42 @@ func (c *ClientWithResponses) OptimaRecommendationsRecommendationsIndexWithRespo
 		return nil, err
 	}
 	return ParseOptimaRecommendationsRecommendationsIndexResponse(rsp)
+}
+
+// OptimaRecommendationsRecommendationsExportWithResponse request returning *OptimaRecommendationsRecommendationsExportResponse
+func (c *ClientWithResponses) OptimaRecommendationsRecommendationsExportWithResponse(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsExportParams, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsExportResponse, error) {
+	rsp, err := c.OptimaRecommendationsRecommendationsExport(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseOptimaRecommendationsRecommendationsExportResponse(rsp)
+}
+
+// OptimaRecommendationsRecommendationsGroupTreeWithResponse request returning *OptimaRecommendationsRecommendationsGroupTreeResponse
+func (c *ClientWithResponses) OptimaRecommendationsRecommendationsGroupTreeWithResponse(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsGroupTreeParams, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsGroupTreeResponse, error) {
+	rsp, err := c.OptimaRecommendationsRecommendationsGroupTree(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseOptimaRecommendationsRecommendationsGroupTreeResponse(rsp)
+}
+
+// OptimaRecommendationsRecommendationsRecommendationsPagedWithResponse request returning *OptimaRecommendationsRecommendationsRecommendationsPagedResponse
+func (c *ClientWithResponses) OptimaRecommendationsRecommendationsRecommendationsPagedWithResponse(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsRecommendationsPagedParams, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsRecommendationsPagedResponse, error) {
+	rsp, err := c.OptimaRecommendationsRecommendationsRecommendationsPaged(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseOptimaRecommendationsRecommendationsRecommendationsPagedResponse(rsp)
+}
+
+// OptimaRecommendationsRecommendationsSavingsSummaryWithResponse request returning *OptimaRecommendationsRecommendationsSavingsSummaryResponse
+func (c *ClientWithResponses) OptimaRecommendationsRecommendationsSavingsSummaryWithResponse(ctx context.Context, orgId int, params *OptimaRecommendationsRecommendationsSavingsSummaryParams, reqEditors ...RequestEditorFn) (*OptimaRecommendationsRecommendationsSavingsSummaryResponse, error) {
+	rsp, err := c.OptimaRecommendationsRecommendationsSavingsSummary(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseOptimaRecommendationsRecommendationsSavingsSummaryResponse(rsp)
 }
 
 // OptimaRecommendationsRecommendationsUpdateStatusWithBodyWithResponse request with arbitrary body returning *OptimaRecommendationsRecommendationsUpdateStatusResponse
@@ -474,6 +1375,243 @@ func ParseOptimaRecommendationsRecommendationsIndexResponse(rsp *http.Response) 
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
 		var dest OptimaRecommendationsRecommendationsIndexBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseOptimaRecommendationsRecommendationsExportResponse parses an HTTP response from a OptimaRecommendationsRecommendationsExportWithResponse call
+func ParseOptimaRecommendationsRecommendationsExportResponse(rsp *http.Response) (*OptimaRecommendationsRecommendationsExportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &OptimaRecommendationsRecommendationsExportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest OptimaRecommendationsRecommendationsExportBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest OptimaRecommendationsRecommendationsExportForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest OptimaRecommendationsRecommendationsExportNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest OptimaRecommendationsRecommendationsExportConflictResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest OptimaRecommendationsRecommendationsExportBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseOptimaRecommendationsRecommendationsGroupTreeResponse parses an HTTP response from a OptimaRecommendationsRecommendationsGroupTreeWithResponse call
+func ParseOptimaRecommendationsRecommendationsGroupTreeResponse(rsp *http.Response) (*OptimaRecommendationsRecommendationsGroupTreeResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &OptimaRecommendationsRecommendationsGroupTreeResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest OptimaRecommendationsRecommendationsGroupTreeResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest OptimaRecommendationsRecommendationsGroupTreeBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest OptimaRecommendationsRecommendationsGroupTreeForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest OptimaRecommendationsRecommendationsGroupTreeNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest OptimaRecommendationsRecommendationsGroupTreeConflictResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest OptimaRecommendationsRecommendationsGroupTreeBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseOptimaRecommendationsRecommendationsRecommendationsPagedResponse parses an HTTP response from a OptimaRecommendationsRecommendationsRecommendationsPagedWithResponse call
+func ParseOptimaRecommendationsRecommendationsRecommendationsPagedResponse(rsp *http.Response) (*OptimaRecommendationsRecommendationsRecommendationsPagedResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &OptimaRecommendationsRecommendationsRecommendationsPagedResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest OptimaRecommendationsRecommendationsRecommendationsPagedResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest OptimaRecommendationsRecommendationsRecommendationsPagedBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest OptimaRecommendationsRecommendationsRecommendationsPagedForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest OptimaRecommendationsRecommendationsRecommendationsPagedNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest OptimaRecommendationsRecommendationsRecommendationsPagedConflictResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest OptimaRecommendationsRecommendationsRecommendationsPagedBadGatewayResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseOptimaRecommendationsRecommendationsSavingsSummaryResponse parses an HTTP response from a OptimaRecommendationsRecommendationsSavingsSummaryWithResponse call
+func ParseOptimaRecommendationsRecommendationsSavingsSummaryResponse(rsp *http.Response) (*OptimaRecommendationsRecommendationsSavingsSummaryResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &OptimaRecommendationsRecommendationsSavingsSummaryResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest OptimaRecommendationsRecommendationsSavingsSummaryResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest OptimaRecommendationsRecommendationsSavingsSummaryBadRequestResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest OptimaRecommendationsRecommendationsSavingsSummaryForbiddenResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest OptimaRecommendationsRecommendationsSavingsSummaryNotFoundResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest OptimaRecommendationsRecommendationsSavingsSummaryConflictResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest OptimaRecommendationsRecommendationsSavingsSummaryBadGatewayResponseBody
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
