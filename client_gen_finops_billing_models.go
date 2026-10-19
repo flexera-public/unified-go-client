@@ -942,6 +942,9 @@ type FinopsBillingBillingInvoiceCustomer struct {
 
 	// CustomerName Customer display name
 	CustomerName string `json:"customerName"`
+
+	// InvoiceNumber Optional invoice number (Invoice ID) for this customer's invoice. Immutable after creation. Duplicates are allowed. An empty string means absent.
+	InvoiceNumber *string `json:"invoiceNumber,omitempty"`
 }
 
 // FinopsBillingBillingInvoiceDeliveryFailure Email delivery failure details for an invoice.
@@ -1116,6 +1119,21 @@ type FinopsBillingBillingInvoiceScheduleResult struct {
 
 	// InvoiceIssueDateRule How each generated invoice's issue date is derived from the day its run fires.
 	InvoiceIssueDateRule FinopsBillingBillingInvoiceIssueDateRule `json:"invoiceIssueDateRule"`
+
+	// InvoiceNumberBase First sequence number of the schedule's numbering. Absent when numbering is disabled.
+	InvoiceNumberBase *string `json:"invoiceNumberBase,omitempty"`
+
+	// InvoiceNumberLastUsed Sequence number most recently allocated by the schedule. Absent until the first allocation. The counter is retained when the schedule is soft-deleted, and re-adding numbering continues from last used + 1.
+	InvoiceNumberLastUsed *string `json:"invoiceNumberLastUsed,omitempty"`
+
+	// InvoiceNumberNext Sequence number the next generated invoice will receive. Absent when numbering is disabled.
+	InvoiceNumberNext *string `json:"invoiceNumberNext,omitempty"`
+
+	// InvoiceNumberPrefix Prefix placed before the sequence number. Empty or absent when there is no prefix.
+	InvoiceNumberPrefix *string `json:"invoiceNumberPrefix,omitempty"`
+
+	// InvoiceNumberingEnabled Whether the schedule numbers the invoices it generates.
+	InvoiceNumberingEnabled *bool `json:"invoiceNumberingEnabled,omitempty"`
 
 	// InvoiceTemplateId Identifier of the invoice template shared by every customer on this schedule. Absent when the schedule was created without a template.
 	InvoiceTemplateId *string `json:"invoiceTemplateId,omitempty"`
@@ -2245,6 +2263,9 @@ type FinopsBillingFlexeraFinopsBillingInvoice struct {
 	// InvoiceAmount Invoice amount rendered as string
 	InvoiceAmount string `json:"invoiceAmount"`
 
+	// InvoiceNumber Invoice number (Invoice ID), scoped to the owning organization. Absent when the invoice has no number. The number is allocated only after bill-lock passes; a failed generation keeps its number and a retry reuses it.
+	InvoiceNumber *string `json:"invoiceNumber,omitempty"`
+
 	// InvoiceTemplateId Identifier of the saved template selected when this invoice was created. Empty when no saved template was used.
 	InvoiceTemplateId string `json:"invoiceTemplateId"`
 
@@ -2307,6 +2328,21 @@ type FinopsBillingFlexeraFinopsBillingInvoiceSchedule struct {
 
 	// InvoiceIssueDateRule How each generated invoice's issue date is derived from the day its run fires.
 	InvoiceIssueDateRule FinopsBillingBillingInvoiceIssueDateRule `json:"invoiceIssueDateRule"`
+
+	// InvoiceNumberBase First sequence number of the schedule's numbering. Absent when numbering is disabled.
+	InvoiceNumberBase *string `json:"invoiceNumberBase,omitempty"`
+
+	// InvoiceNumberLastUsed Sequence number most recently allocated by the schedule. Absent until the first allocation. The counter is retained when the schedule is soft-deleted, and re-adding numbering continues from last used + 1.
+	InvoiceNumberLastUsed *string `json:"invoiceNumberLastUsed,omitempty"`
+
+	// InvoiceNumberNext Sequence number the next generated invoice will receive. Absent when numbering is disabled.
+	InvoiceNumberNext *string `json:"invoiceNumberNext,omitempty"`
+
+	// InvoiceNumberPrefix Prefix placed before the sequence number. Empty or absent when there is no prefix.
+	InvoiceNumberPrefix *string `json:"invoiceNumberPrefix,omitempty"`
+
+	// InvoiceNumberingEnabled Whether the schedule numbers the invoices it generates.
+	InvoiceNumberingEnabled *bool `json:"invoiceNumberingEnabled,omitempty"`
 
 	// InvoiceTemplateId Identifier of the invoice template shared by every customer on this schedule. Absent when the schedule was created without a template.
 	InvoiceTemplateId *string `json:"invoiceTemplateId,omitempty"`
@@ -2415,6 +2451,9 @@ type FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoice struct {
 
 	// InvoiceAmount Invoice amount rendered as string
 	InvoiceAmount string `json:"invoiceAmount"`
+
+	// InvoiceNumber Invoice number (Invoice ID), scoped to the owning organization. Absent when the invoice has no number. The number is allocated only after bill-lock passes; a failed generation keeps its number and a retry reuses it.
+	InvoiceNumber *string `json:"invoiceNumber,omitempty"`
 
 	// IssueDate Invoice issue date
 	IssueDate *openapi_types.Date `json:"issueDate,omitempty"`

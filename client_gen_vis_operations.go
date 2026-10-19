@@ -69,10 +69,10 @@ type VisCreateRequestBodyQueryName string
 
 // VisEstimateDeleteRequestBody defines model for Vis_EstimateDeleteRequestBody.
 type VisEstimateDeleteRequestBody struct {
-	// DatasourceSelectors List of datasources to delete devices from
+	// DatasourceSelectors Optional datasource selectors. A datasource is included when it matches any selector. Omit this attribute to include all datasources associated with the specified devices.
 	DatasourceSelectors *[]VisDeviceDatasourceSelection `json:"datasourceSelectors,omitempty"`
 
-	// DeviceIds List of device IDs to delete
+	// DeviceIds Device IDs whose evidence should be included. Send no more than 500 unique IDs per request; this recommendation is not enforced by the API.
 	DeviceIds []string `json:"deviceIds"`
 }
 

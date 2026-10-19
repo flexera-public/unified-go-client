@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "source": "unified-openapi/openapi3.json",
-  "sourceSha256": "23593118ad97d5f9d771802c507ef18cf9b760d6eed42edd89e458e610388ac3",
+  "sourceSha256": "a39070ff49afebbcd5c502ac98795c8a539ef952b63d5522fea2fe0f31f69938",
   "generator": "github.com/oapi-codegen/oapi-codegen/v2 version v2.5.0",
   "package": "flexera",
   "files": [
@@ -2342,12 +2342,12 @@
     },
     {
       "path": "client_gen_finops_billing_models.go",
-      "sha256": "3a870be6f251fa82d21ac93fb6aa2574bad9a23e9b8629f334b21b91ef4138ff",
+      "sha256": "c2eca39a9530613299c2ec24be803a867a4b3e4c45372a5625e75847d59b94e0",
       "namespace": "FinopsBilling",
       "sourceSpecId": "flexera-finops-billing-v1",
       "concern": "models",
-      "lines": 3663,
-      "bytes": 186046,
+      "lines": 3702,
+      "bytes": 188831,
       "declarations": [
         "Actual",
         "BundledDiscount",
@@ -2719,12 +2719,12 @@
     },
     {
       "path": "client_gen_finops_billing_operations.go",
-      "sha256": "b872fd5c54715556e99d50d7958685740ec4aeed2494d8e837fb960144cf6003",
+      "sha256": "10b97c480d0a9b325150c68b4babf1e246198653c06c73fc361a546279a97c80",
       "namespace": "FinopsBilling",
       "sourceSpecId": "flexera-finops-billing-v1",
       "concern": "operations",
-      "lines": 5764,
-      "bytes": 205786,
+      "lines": 5825,
+      "bytes": 208221,
       "declarations": [
         "FinopsBillingBillingAuditIndexAuditResults",
         "FinopsBillingBillingAuditIndexAuditResultsJSONRequestBody",
@@ -2927,6 +2927,8 @@
         "FinopsBillingUpdateRequestBody3",
         "FinopsBillingUpdateRequestBody3Status",
         "FinopsBillingUpdateRequestBody3StatusActive",
+        "FinopsBillingUpdateRequestBodyStatus",
+        "FinopsBillingUpdateRequestBodyStatusInactive",
         "Hide",
         "NewFinopsBillingBillingAuditIndexAuditResultsRequest",
         "NewFinopsBillingBillingAuditIndexAuditResultsRequestWithBody",
@@ -3008,7 +3010,7 @@
         "Reassign",
         "Show"
       ],
-      "declarationCount": 281
+      "declarationCount": 283
     },
     {
       "path": "client_gen_finops_billing_responses.go",
@@ -4521,12 +4523,12 @@
     },
     {
       "path": "client_gen_iam_models.go",
-      "sha256": "5bef2317e73bd4d9046e121715f6548349ca9e59c5dbd68560e617bd8a42e468",
+      "sha256": "4a0df0d35361e509a2570a6cf7377c2aafd792bc301d79bc94a7e7455bc488d3",
       "namespace": "Iam",
       "sourceSpecId": "flexera-iam-v1",
       "concern": "models",
-      "lines": 3177,
-      "bytes": 116597,
+      "lines": 3180,
+      "bytes": 116737,
       "declarations": [
         "Allow",
         "Global",
@@ -4967,12 +4969,12 @@
     },
     {
       "path": "client_gen_iam_operations.go",
-      "sha256": "c417041cbd96ae1e79b91e1633cf8d3e3d47593f92e2d6898d86ef6609f3a5ec",
+      "sha256": "545fbea8e8e87d2034d5286847aad4e70697d85396a8c5ab98d2cf21d7af66a3",
       "namespace": "Iam",
       "sourceSpecId": "flexera-iam-v1",
       "concern": "operations",
-      "lines": 10216,
-      "bytes": 315213,
+      "lines": 10255,
+      "bytes": 316577,
       "declarations": [
         "APPEND",
         "HTTPPOST",
@@ -8014,12 +8016,12 @@
     },
     {
       "path": "client_gen_saas_models.go",
-      "sha256": "6e5e9c74a5763d6886fd03cb01a75594f1933faa0d9f38aeb462c728c16b8232",
+      "sha256": "84a007f493761f0607431c620c1eee626349230e7e92cec71e949213b50004e4",
       "namespace": "Saas",
       "sourceSpecId": "flexera-saas-v1",
       "concern": "models",
       "lines": 2323,
-      "bytes": 109637,
+      "bytes": 109689,
       "declarations": [
         "AppUser",
         "Applicationjson",
@@ -8032,12 +8034,10 @@
         "Expense",
         "Fifteen",
         "Fortyfive",
-        "Full",
         "GreaterThan",
         "HrRoster",
         "IdMatch",
         "In",
-        "Incremental",
         "Integer",
         "JSON",
         "LessThan",
@@ -8222,6 +8222,8 @@
         "SaasImportJobList",
         "SaasImportSettings",
         "SaasImportSettingsLoadType",
+        "SaasImportSettingsLoadTypeFull",
+        "SaasImportSettingsLoadTypeIncremental",
         "SaasImportSettingsTaskName",
         "SaasImportSettingsTaskNameApplicationConsumption",
         "SaasImportSettingsTaskNameApplicationDiscovery",
@@ -9292,12 +9294,12 @@
     },
     {
       "path": "client_gen_vis_models.go",
-      "sha256": "69eb26ffd0cd200a996ef3d87e88f7ceed1725d6473b61971aa87a40716cc59b",
+      "sha256": "30cc09f89467c7abc0339436727727fb0ccb54a7e73e0b52002b4a8afe1c83ba",
       "namespace": "Vis",
       "sourceSpecId": "flexera-vis-v2",
       "concern": "models",
-      "lines": 131,
-      "bytes": 4587,
+      "lines": 142,
+      "bytes": 5166,
       "declarations": [
         "Delta",
         "Id",
@@ -9306,26 +9308,28 @@
         "Type",
         "VisDeviceDatasourceSelection",
         "VisDeviceDatasourceSelectionField",
+        "VisDeviceDeletionSummary",
         "VisError",
         "VisExportDataCollection",
         "VisExportFileList",
         "VisFlexeraVisDeviceDeletionSummary",
+        "VisFlexeraVisDeviceDeletionSummaryKind",
         "VisFlexeraVisFiledata",
         "VisFlexeraVisFiledataType",
         "VisQueryCreateParamsOutputCompression",
         "VisQueryCreateParamsOutputCompressionGzip",
         "VisQueryData"
       ],
-      "declarationCount": 16
+      "declarationCount": 18
     },
     {
       "path": "client_gen_vis_operations.go",
-      "sha256": "0301dd28366298de4586416bc2178dc7f823ed6c2556f62d4e9bd52c2b9c5998",
+      "sha256": "b81d76b6e1a28ef3226b0fbd20e865968ea1c17bd734354dbec2bffd7ed1a27e",
       "namespace": "Vis",
       "sourceSpecId": "flexera-vis-v2",
       "concern": "operations",
       "lines": 674,
-      "bytes": 24016,
+      "bytes": 24256,
       "declarations": [
         "ArlAlignment",
         "BusinessServicesApplications",
@@ -9453,7 +9457,7 @@
     }
   ],
   "totalFiles": 59,
-  "totalLines": 123600,
-  "totalBytes": 4876455,
-  "totalDeclarations": 8741
+  "totalLines": 123753,
+  "totalBytes": 4884050,
+  "totalDeclarations": 8745
 }

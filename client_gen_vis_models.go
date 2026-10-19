@@ -13,6 +13,11 @@ const (
 	Type VisDeviceDatasourceSelectionField = "type"
 )
 
+// Defines values for VisFlexeraVisDeviceDeletionSummaryKind.
+const (
+	VisDeviceDeletionSummary VisFlexeraVisDeviceDeletionSummaryKind = "vis:device-deletion-summary"
+)
+
 // Defines values for VisFlexeraVisFiledataType.
 const (
 	Delta    VisFlexeraVisFiledataType = "delta"
@@ -24,16 +29,16 @@ const (
 	VisQueryCreateParamsOutputCompressionGzip VisQueryCreateParamsOutputCompression = "gzip"
 )
 
-// VisDeviceDatasourceSelection A selection of datasources to delete devices from. If included in the datasources filter, only 1 property should be set
+// VisDeviceDatasourceSelection Identifies a datasource by one property. When multiple selectors are provided, a datasource is included if it matches any selector.
 type VisDeviceDatasourceSelection struct {
-	// Field The field to use for the selection of datasources
+	// Field Datasource property to compare: id for the datasource ID, name for the datasource name, or type for the datasource type
 	Field VisDeviceDatasourceSelectionField `json:"field"`
 
-	// Value The value for the datasource selection
+	// Value Exact value that the selected datasource property must match
 	Value string `json:"value"`
 }
 
-// VisDeviceDatasourceSelectionField The field to use for the selection of datasources
+// VisDeviceDatasourceSelectionField Datasource property to compare: id for the datasource ID, name for the datasource name, or type for the datasource type
 type VisDeviceDatasourceSelectionField string
 
 // VisError invalid filter received
@@ -73,9 +78,9 @@ type VisExportFileList struct {
 	Values   *VisExportDataCollection `json:"values,omitempty"`
 }
 
-// VisFlexeraVisDeviceDeletionSummary A count of devices that would be deleted by the query.
+// VisFlexeraVisDeviceDeletionSummary Summarizes the device evidence selected by a deletion request for one datasource.
 type VisFlexeraVisDeviceDeletionSummary struct {
-	// Count The number of devices that would be deleted
+	// Count The number of devices whose evidence is selected
 	Count int `json:"count"`
 
 	// DatasourceId The ID of the datasource
@@ -86,7 +91,13 @@ type VisFlexeraVisDeviceDeletionSummary struct {
 
 	// DatasourceType The type of the datasource
 	DatasourceType string `json:"datasourceType"`
+
+	// Kind The resource's type
+	Kind VisFlexeraVisDeviceDeletionSummaryKind `json:"kind"`
 }
+
+// VisFlexeraVisDeviceDeletionSummaryKind The resource's type
+type VisFlexeraVisDeviceDeletionSummaryKind string
 
 // VisFlexeraVisFiledata ExportData represents the data file of the inventory export snapshot or delta and associated info of the file.
 type VisFlexeraVisFiledata struct {
