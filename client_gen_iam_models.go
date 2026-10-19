@@ -2913,10 +2913,13 @@ type IamUserGroupListKind string
 // IamUserList defines model for Iam_UserList.
 type IamUserList struct {
 	// Kind The resource's type
-	Kind *IamUserListKind `json:"kind,omitempty"`
+	Kind IamUserListKind `json:"kind"`
 
 	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
 	NextPage *string `json:"nextPage,omitempty"`
+
+	// PrevPage URL to the previous page of data. The first page of data will not return a prevPage value.
+	PrevPage *string `json:"prevPage,omitempty"`
 
 	// Values The list of a users.
 	Values []IamFlexeraIamUser `json:"values"`

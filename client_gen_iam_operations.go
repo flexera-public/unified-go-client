@@ -1012,6 +1012,13 @@ type IamUserIndexParams struct {
 
 	// AccessSource Filter users by access source type
 	AccessSource *IamUserIndexParamsAccessSource `form:"accessSource,omitempty" json:"accessSource,omitempty"`
+
+	// Limit The maximum number of users to return per page. If a partial page is returned, the response includes a nextPage link carrying the skipToken.
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
+	// Partial responses will include a "nextPage" attribute in their response body, which contains the URL of the next page including the appropriate skipToken.
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
 }
 
 // IamRefreshTokenRevokeAllParams defines parameters for IamRefreshTokenRevokeAll.
@@ -7639,6 +7646,38 @@ func NewIamUserIndexRequest(server string, orgId int, params *IamUserIndexParams
 		if params.AccessSource != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "accessSource", runtime.ParamLocationQuery, *params.AccessSource); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "skipToken", runtime.ParamLocationQuery, *params.SkipToken); err != nil {
 				return nil, err
 			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
 				return nil, err

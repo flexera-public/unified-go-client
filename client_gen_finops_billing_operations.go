@@ -83,6 +83,11 @@ const (
 	FinopsBillingReplaceSettingsRequestBodyBaseCostsOnObservedCosts FinopsBillingReplaceSettingsRequestBodyBaseCostsOn = "observedCosts"
 )
 
+// Defines values for FinopsBillingUpdateRequestBodyStatus.
+const (
+	FinopsBillingUpdateRequestBodyStatusInactive FinopsBillingUpdateRequestBodyStatus = "inactive"
+)
+
 // Defines values for FinopsBillingUpdateRequestBody2CostMetric.
 const (
 	FinopsBillingUpdateRequestBody2CostMetricBilledCost            FinopsBillingUpdateRequestBody2CostMetric = "billedCost"
@@ -313,6 +318,12 @@ type FinopsBillingCreateRequestBody struct {
 
 	// InvoiceIssueDateRule How each generated invoice's issue date is derived from the day its run fires.
 	InvoiceIssueDateRule FinopsBillingBillingInvoiceIssueDateRule `json:"invoiceIssueDateRule"`
+
+	// InvoiceNumberBase Optional first sequence number for the invoice numbers this schedule generates.
+	InvoiceNumberBase *string `json:"invoiceNumberBase,omitempty"`
+
+	// InvoiceNumberPrefix Optional prefix for the invoice numbers this schedule generates. Requires invoiceNumberBase.
+	InvoiceNumberPrefix *string `json:"invoiceNumberPrefix,omitempty"`
 
 	// InvoiceTemplateId Identifier of an existing invoice template to share across every customer on this schedule. Omit both this and template to create a schedule with no template.
 	InvoiceTemplateId *string `json:"invoiceTemplateId,omitempty"`
@@ -612,6 +623,12 @@ type FinopsBillingUpdateRequestBody struct {
 	// InvoiceIssueDateRule How each generated invoice's issue date is derived from the day its run fires.
 	InvoiceIssueDateRule *FinopsBillingBillingInvoiceIssueDateRule `json:"invoiceIssueDateRule,omitempty"`
 
+	// InvoiceNumberBase Optional updated first sequence number for the invoice numbers this schedule generates.
+	InvoiceNumberBase *string `json:"invoiceNumberBase,omitempty"`
+
+	// InvoiceNumberPrefix Optional updated prefix for the invoice numbers this schedule generates. Requires invoiceNumberBase.
+	InvoiceNumberPrefix *string `json:"invoiceNumberPrefix,omitempty"`
+
 	// InvoiceTemplateId Existing invoice template to point the schedule at. Send isCreateTemplate=false with this field omitted to detach the schedule's template.
 	InvoiceTemplateId *string `json:"invoiceTemplateId,omitempty"`
 
@@ -624,9 +641,15 @@ type FinopsBillingUpdateRequestBody struct {
 	// ScheduleName Updated name.
 	ScheduleName *string `json:"scheduleName,omitempty"`
 
+	// Status Updated lifecycle status. PATCH accepts only inactive; use the activate endpoint to reactivate a schedule.
+	Status *FinopsBillingUpdateRequestBodyStatus `json:"status,omitempty"`
+
 	// Template Invoice properties for a schedule: the template to create, or the schedule's own configuration when it has no template.
 	Template *FinopsBillingBillingInvoiceScheduleTemplateInput `json:"template,omitempty"`
 }
+
+// FinopsBillingUpdateRequestBodyStatus Updated lifecycle status. PATCH accepts only inactive; use the activate endpoint to reactivate a schedule.
+type FinopsBillingUpdateRequestBodyStatus string
 
 // FinopsBillingUpdateRequestBody2 defines model for FinopsBilling_UpdateRequestBody2.
 type FinopsBillingUpdateRequestBody2 struct {
@@ -1111,6 +1134,9 @@ type FinopsBillingInvoiceScheduleInvoicesIndexParams struct {
 	// Multiple expressions can be specified using comma separated values.
 	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
 
+	// InvoiceNumber Optional exact, case-sensitive invoice number filter.
+	InvoiceNumber *string `form:"invoiceNumber,omitempty" json:"invoiceNumber,omitempty"`
+
 	// BillMonth Optional bill month filter.
 	BillMonth *string `form:"billMonth,omitempty" json:"billMonth,omitempty"`
 
@@ -1165,6 +1191,9 @@ type FinopsBillingInvoicesIndexParams struct {
 	// OrderBy Optional orderBy query allows to specify an expression for determining what values are used to order the entities.
 	// Multiple expressions can be specified using comma separated values.
 	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
+
+	// InvoiceNumber Optional exact, case-sensitive invoice number filter.
+	InvoiceNumber *string `form:"invoiceNumber,omitempty" json:"invoiceNumber,omitempty"`
 
 	// BillMonth Optional bill month filter.
 	BillMonth *string `form:"billMonth,omitempty" json:"billMonth,omitempty"`
@@ -4743,6 +4772,22 @@ func NewFinopsBillingInvoiceScheduleInvoicesIndexRequest(server string, orgId in
 
 		}
 
+		if params.InvoiceNumber != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "invoiceNumber", runtime.ParamLocationQuery, *params.InvoiceNumber); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
 		if params.BillMonth != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "billMonth", runtime.ParamLocationQuery, *params.BillMonth); err != nil {
@@ -5221,6 +5266,22 @@ func NewFinopsBillingInvoicesIndexRequest(server string, orgId int, params *Fino
 		if params.OrderBy != nil {
 
 			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "orderBy", runtime.ParamLocationQuery, *params.OrderBy); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.InvoiceNumber != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "invoiceNumber", runtime.ParamLocationQuery, *params.InvoiceNumber); err != nil {
 				return nil, err
 			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
 				return nil, err
