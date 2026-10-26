@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "source": "unified-openapi/openapi3.json",
-  "sourceSha256": "a39070ff49afebbcd5c502ac98795c8a539ef952b63d5522fea2fe0f31f69938",
+  "sourceSha256": "77af155a67776b54489972865f54e48edb840bc81699bc5eff95105b2f1bfa2b",
   "generator": "github.com/oapi-codegen/oapi-codegen/v2 version v2.5.0",
   "package": "flexera",
   "files": [
@@ -2342,12 +2342,12 @@
     },
     {
       "path": "client_gen_finops_billing_models.go",
-      "sha256": "c2eca39a9530613299c2ec24be803a867a4b3e4c45372a5625e75847d59b94e0",
+      "sha256": "75db4ba8d5c0ff6b68d39a7f5f98325259241b21ed6fd6182f750e3d78288528",
       "namespace": "FinopsBilling",
       "sourceSpecId": "flexera-finops-billing-v1",
       "concern": "models",
-      "lines": 3702,
-      "bytes": 188831,
+      "lines": 3774,
+      "bytes": 194091,
       "declarations": [
         "Actual",
         "BundledDiscount",
@@ -2539,6 +2539,9 @@
         "FinopsBillingCreditAssignmentSummaryKindFinopsBillingCreditAssignmentSummary",
         "FinopsBillingCreditDescriptor",
         "FinopsBillingCreditMemoSettings",
+        "FinopsBillingCreditMemoSettingsCostAttribution",
+        "FinopsBillingCreditMemoSettingsCostAttributionSelf",
+        "FinopsBillingCreditMemoSettingsCostAttributionUpstream",
         "FinopsBillingCreditSourceAccount",
         "FinopsBillingCustomRateTier",
         "FinopsBillingCustomUsageRateSettings",
@@ -2555,6 +2558,9 @@
         "FinopsBillingFilterV1TypeOr",
         "FinopsBillingFilterV1TypeSubstring",
         "FinopsBillingFixedAmountSettings",
+        "FinopsBillingFixedAmountSettingsCostAttribution",
+        "FinopsBillingFixedAmountSettingsCostAttributionSelf",
+        "FinopsBillingFixedAmountSettingsCostAttributionUpstream",
         "FinopsBillingFlexeraFinopsBillingAdjustmentPlan",
         "FinopsBillingFlexeraFinopsBillingAdjustmentPlanKind",
         "FinopsBillingFlexeraFinopsBillingAdjustmentPlanKindFinopsBillingAdjustmentPlan",
@@ -2627,6 +2633,9 @@
         "FinopsBillingGenerateTaxSettingsBaseOnBilledCost",
         "FinopsBillingGenerateTaxSettingsBaseOnListCost",
         "FinopsBillingGenerateTaxSettingsBaseOnModifiedCost",
+        "FinopsBillingGenerateTaxSettingsCostAttribution",
+        "FinopsBillingGenerateTaxSettingsCostAttributionSelf",
+        "FinopsBillingGenerateTaxSettingsCostAttributionUpstream",
         "FinopsBillingHideCreditsSettings",
         "FinopsBillingHideCreditsSettingsCreditTypes",
         "FinopsBillingIndexAdjustmentRulesResult",
@@ -2693,6 +2702,9 @@
         "FinopsBillingUpchargeDiscountSettingsBaseOnListCost",
         "FinopsBillingUpchargeDiscountSettingsBaseOnModifiedCost",
         "FinopsBillingUpchargeDiscountSettingsBaseOnObservedCosts",
+        "FinopsBillingUpchargeDiscountSettingsCostAttribution",
+        "FinopsBillingUpchargeDiscountSettingsCostAttributionSelf",
+        "FinopsBillingUpchargeDiscountSettingsCostAttributionUpstream",
         "FinopsBillingUpchargeTier",
         "FinopsBillingValueListCondition",
         "FinopsBillingVendorCredit",
@@ -2715,16 +2727,16 @@
         "UnifiedOperations",
         "UsageBasedProportionalSplit"
       ],
-      "declarationCount": 365
+      "declarationCount": 377
     },
     {
       "path": "client_gen_finops_billing_operations.go",
-      "sha256": "10b97c480d0a9b325150c68b4babf1e246198653c06c73fc361a546279a97c80",
+      "sha256": "92b2c2b364ba91761fd6ec0fd8a9b84ea8b16160903f75912c3a0a5dde2f98d7",
       "namespace": "FinopsBilling",
       "sourceSpecId": "flexera-finops-billing-v1",
       "concern": "operations",
-      "lines": 5825,
-      "bytes": 208221,
+      "lines": 5894,
+      "bytes": 213609,
       "declarations": [
         "FinopsBillingBillingAuditIndexAuditResults",
         "FinopsBillingBillingAuditIndexAuditResultsJSONRequestBody",
@@ -9457,7 +9469,7 @@
     }
   ],
   "totalFiles": 59,
-  "totalLines": 123753,
-  "totalBytes": 4884050,
-  "totalDeclarations": 8745
+  "totalLines": 123894,
+  "totalBytes": 4894698,
+  "totalDeclarations": 8757
 }
