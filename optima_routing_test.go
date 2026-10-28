@@ -8,6 +8,23 @@ import (
 	"testing"
 )
 
+func TestIsOptimaHostedPathMatchesWholeSegment(t *testing.T) {
+	for _, tc := range []struct {
+		path string
+		want bool
+	}{
+		{"/analytics", true},
+		{"/analytics/orgs/1105", true},
+		{"/analytics-settings/orgs/1105", false},
+		{"/analytics2", false},
+		{"/recommendation/v1", false},
+	} {
+		if got := isOptimaHostedPath(tc.path); got != tc.want {
+			t.Errorf("isOptimaHostedPath(%q) = %t, want %t", tc.path, got, tc.want)
+		}
+	}
+}
+
 func TestOptimaRoutingDoer_ReroutesOptimaHostedPaths(t *testing.T) {
 	var gotHost, gotPath string
 	optimaSrv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

@@ -21,7 +21,7 @@ import (
 // since it is a distinct top-level prefix from "/recommendations".
 func isOptimaHostedPath(path string) bool {
 	for _, prefix := range optimaHostedPathPrefixes {
-		if strings.HasPrefix(path, prefix) {
+		if path == prefix || strings.HasPrefix(path, prefix+"/") {
 			return true
 		}
 	}

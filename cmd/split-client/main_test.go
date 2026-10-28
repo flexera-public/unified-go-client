@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"crypto/sha256"
 	"encoding/json"
 	"fmt"
@@ -367,6 +368,9 @@ func TestComputeOptimaHostedPrefixes_DerivesConsistentOverrides(t *testing.T) {
 				"servers": [{"url": "https://api.optima{zone}.flexeraeng.com"}]
 			},
 			"/iam/v1/orgs/{orgId}": {},
+			"/gateway/v1": {
+				"servers": [{"url": "https://api.flexera.{zone}"}]
+			},
 			"/recommendation/v1/orgs/{orgId}/misconfiguration/list": {}
 		}
 	}`)
@@ -414,6 +418,42 @@ func TestComputeOptimaHostedPrefixes_ErrorsOnConflictingHosts(t *testing.T) {
 	}`)
 	if _, err := computeOptimaHostedPrefixes(spec); err == nil {
 		t.Fatal("expected an error for a prefix whose paths disagree on override host")
+	}
+}
+
+func TestComputeOptimaHostedPrefixes_ErrorsOnExplicitDefaultHost(t *testing.T) {
+	for _, paths := range []string{
+		`"/example/one": {"servers": [{"url": "https://api.flexera.{zone}"}]},
+		 "/example/two": {"servers": [{"url": "https://api.optima{zone}.flexeraeng.com"}]}`,
+		`"/example/one": {"servers": [
+			{"url": "https://api.flexera.{zone}"},
+			{"url": "https://api.optima{zone}.flexeraeng.com"}
+		]}`,
+	} {
+		spec := []byte(`{"servers": [{"url": "https://api.flexera.{zone}"}], "paths": {` + paths + `}}`)
+		if _, err := computeOptimaHostedPrefixes(spec); err == nil {
+			t.Errorf("expected an error for mixed default and non-default hosts: %s", paths)
+		}
+	}
+}
+
+func TestCommittedExtensionsManifestIsCurrent(t *testing.T) {
+	dir := filepath.Join("..", "..")
+	manifest, err := computeExtensionsManifest(dir, "flexera")
+	if err != nil {
+		t.Fatal(err)
+	}
+	want, err := json.MarshalIndent(manifest, "", "  ")
+	if err != nil {
+		t.Fatal(err)
+	}
+	want = append(want, '\n')
+	got, err := os.ReadFile(filepath.Join(dir, extensionsName))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !bytes.Equal(got, want) {
+		t.Fatal("client_extensions_manifest.json is stale; run make generate-client")
 	}
 }
 

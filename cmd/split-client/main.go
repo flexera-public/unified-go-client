@@ -1039,16 +1039,14 @@ func computeOptimaHostedPrefixes(specData []byte) ([]string, error) {
 		}
 		info.overridden++
 		for _, server := range item.Servers {
-			if host := serverHost(server.URL); host != defaultHost {
-				info.hosts[host] = true
-			}
+			info.hosts[serverHost(server.URL)] = true
 		}
 	}
 
 	var result []string
 	var problems []string
 	for prefix, info := range prefixes {
-		if len(info.hosts) == 0 {
+		if len(info.hosts) == 0 || (len(info.hosts) == 1 && info.hosts[defaultHost]) {
 			continue // no non-default override under this prefix; nothing to do
 		}
 		switch {
