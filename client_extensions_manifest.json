@@ -687,12 +687,17 @@
     },
     {
       "path": "pagination_unified.go",
-      "sha256": "86891dbe3a338b019b439a97ff9d1753c633683f65e6f305172e013e8913605a",
+      "sha256": "c8d0761bbf2c77825dc69a5d1c27154cb1b55c3d2c3b38ed685db70c806b89b1",
       "declarations": [
         {
           "name": "PageFetcher",
           "kind": "type",
           "doc": "PageFetcher fetches one page of results. skipToken is nil on the first"
+        },
+        {
+          "name": "CollectPagesAs",
+          "kind": "func",
+          "doc": "CollectPagesAs is the typed counterpart of CollectPages. T should be the"
         },
         {
           "name": "PartialError",
@@ -720,7 +725,7 @@
           "doc": "SkipTokenFromURL extracts the skipToken query parameter from a nextPage URL."
         }
       ],
-      "declarationCount": 6
+      "declarationCount": 7
     },
     {
       "path": "policy_meta.go",
@@ -935,7 +940,7 @@
     },
     {
       "path": "render_table.go",
-      "sha256": "d6205a88f847ccc1ef6189377623491794614f3423d21c86a0b85f39c1f2f504",
+      "sha256": "05c18a8bf7e9d9a57d276932d6922fdde1e64fd068a146b0477f3f133d2f8b1d",
       "declarations": [
         {
           "name": "WriteTable",
@@ -1270,5 +1275,5 @@
     }
   ],
   "totalFiles": 29,
-  "totalDeclarations": 206
+  "totalDeclarations": 207
 }

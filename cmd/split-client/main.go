@@ -714,6 +714,31 @@ func writeOutputs(opts options, packageName, generator string, groups []outputGr
 	result.TotalBytes += len(servicesSource)
 	result.TotalDecls += len(servicesDecls)
 
+	tableSource, err := generateTableFile(opts, packageName)
+	if err != nil {
+		return fmt.Errorf("generate table dispatch: %w", err)
+	}
+	if tableSource != nil {
+		if err := os.WriteFile(filepath.Join(tempDir, tableFileName), tableSource, 0o644); err != nil {
+			return fmt.Errorf("write %s: %w", tableFileName, err)
+		}
+		sum := sha256.Sum256(tableSource)
+		lines := bytes.Count(tableSource, []byte("\n"))
+		result.Files = append(result.Files, manifestFile{
+			Path:             tableFileName,
+			SHA256:           hex.EncodeToString(sum[:]),
+			Namespace:        "meta",
+			Concern:          "table",
+			Lines:            lines,
+			Bytes:            len(tableSource),
+			Declarations:     []string{"newTableResponse"},
+			DeclarationCount: 1,
+		})
+		result.TotalLines += lines
+		result.TotalBytes += len(tableSource)
+		result.TotalDecls++
+	}
+
 	for _, group := range groups {
 		rendered := group.Decls[0].(*renderedDecl).content
 		if err := os.WriteFile(filepath.Join(tempDir, group.FileName), rendered, 0o644); err != nil {

@@ -8,6 +8,132 @@ import (
 	"testing"
 )
 
+func TestCollectPagesAs_PreservesNumbersAndMetadata(t *testing.T) {
+	type page struct {
+		Values   []any  `json:"values"`
+		Count    int64  `json:"count"`
+		Total    uint64 `json:"total"`
+		NextPage string `json:"nextPage,omitempty"`
+		PrevPage string `json:"prevPage,omitempty"`
+	}
+	calls := 0
+	start := "start"
+	got, err := CollectPagesAs(context.Background(), false, &start, func(_ context.Context, token *string) (*page, error) {
+		calls++
+		if calls == 1 {
+			if token == nil || *token != start {
+				t.Fatalf("initial token = %v", token)
+			}
+			return &page{
+				Values: []any{json.Number("9007199254740993")}, Count: 1, Total: 18446744073709551615,
+				NextPage: "https://example.test?skipToken=2", PrevPage: "previous",
+			}, nil
+		}
+		if calls != 2 || token == nil || *token != "2" {
+			t.Fatalf("unexpected fetch: calls=%d token=%v", calls, token)
+		}
+		return &page{Values: []any{json.Number("-9007199254740993")}, Count: 1, Total: 18446744073709551615}, nil
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if calls != 2 || got.Count != 2 || got.Total != 18446744073709551615 || got.NextPage != "" || got.PrevPage != "" {
+		t.Fatalf("incorrect merged metadata: calls=%d result=%+v", calls, got)
+	}
+	if len(got.Values) != 2 || got.Values[0] != json.Number("9007199254740993") || got.Values[1] != json.Number("-9007199254740993") {
+		t.Fatalf("numbers changed during typed conversion: %#v", got.Values)
+	}
+}
+
+func TestCollectPagesAs_Errors(t *testing.T) {
+	fetchErr := errors.New("fetch failed")
+	t.Run("first page", func(t *testing.T) {
+		got, err := CollectPagesAs(context.Background(), false, nil, func(context.Context, *string) (*IamUserList, error) {
+			return nil, fetchErr
+		})
+		if got != nil || err != fetchErr {
+			t.Fatalf("got (%v, %v), want (nil, original fetch error)", got, err)
+		}
+	})
+	t.Run("partial result", func(t *testing.T) {
+		calls := 0
+		next := "https://example.test?skipToken=2"
+		got, err := CollectPagesAs(context.Background(), false, nil, func(context.Context, *string) (*IamUserList, error) {
+			calls++
+			if calls > 1 {
+				return nil, fetchErr
+			}
+			return &IamUserList{NextPage: &next, Values: []IamFlexeraIamUser{{Id: 123}}}, nil
+		})
+		var partial *PartialError
+		if !errors.As(err, &partial) || !errors.Is(err, fetchErr) {
+			t.Fatalf("lost partial/fetch error: %v", err)
+		}
+		if got == nil || len(got.Values) != 1 || got.Values[0].Id != 123 || partial.LastNextPage != next {
+			t.Fatalf("incorrect partial response: got=%+v partial=%+v", got, partial)
+		}
+		if len(partial.Merged["values"].([]any)) != 1 {
+			t.Fatal("missing raw partial result")
+		}
+	})
+	for _, partialFailure := range []bool{false, true} {
+		t.Run(fmt.Sprintf("conversion overflow, partial=%t", partialFailure), func(t *testing.T) {
+			type page struct {
+				Count    int64  `json:"count"`
+				NextPage string `json:"nextPage,omitempty"`
+			}
+			calls := 0
+			got, err := CollectPagesAs(context.Background(), false, nil, func(context.Context, *string) (*page, error) {
+				calls++
+				switch calls {
+				case 1:
+					return &page{Count: 9223372036854775807, NextPage: "https://example.test?skipToken=2"}, nil
+				case 2:
+					p := &page{Count: 1}
+					if partialFailure {
+						p.NextPage = "https://example.test?skipToken=3"
+					}
+					return p, nil
+				default:
+					return nil, fetchErr
+				}
+			})
+			var conversionErr *json.UnmarshalTypeError
+			if got != nil || !errors.As(err, &conversionErr) {
+				t.Fatalf("expected nil result and conversion error, got (%+v, %v)", got, err)
+			}
+			var partial *PartialError
+			if errors.As(err, &partial) != partialFailure || errors.Is(err, fetchErr) != partialFailure {
+				t.Fatalf("pagination error not preserved: %v", err)
+			}
+			if partialFailure && partial.Merged["count"] != json.Number("9223372036854775808") {
+				t.Fatalf("raw partial count lost: %+v", partial.Merged)
+			}
+		})
+	}
+}
+
+func TestCollectPagesAs_Passthrough(t *testing.T) {
+	t.Run("no paginate", func(t *testing.T) {
+		first := &IamUserList{NextPage: stringPtr("https://example.test?skipToken=2")}
+		got, err := CollectPagesAs(context.Background(), true, nil, func(context.Context, *string) (*IamUserList, error) {
+			return first, nil
+		})
+		if err != nil || got != first {
+			t.Fatalf("response not returned unchanged: (%p, %v)", got, err)
+		}
+	})
+	t.Run("bare array", func(t *testing.T) {
+		first := &IamRoleCollection{{Id: 1}}
+		got, err := CollectPagesAs(context.Background(), false, nil, func(context.Context, *string) (*IamRoleCollection, error) {
+			return first, nil
+		})
+		if err != nil || got != first {
+			t.Fatalf("response not returned unchanged: (%p, %v)", got, err)
+		}
+	})
+}
+
 func TestToMap_PreservesTypedNumbers(t *testing.T) {
 	page := struct {
 		Values []int64 `json:"values"`

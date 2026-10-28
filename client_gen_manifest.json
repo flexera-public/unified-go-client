@@ -50,6 +50,18 @@
       "declarationCount": 21
     },
     {
+      "path": "client_gen_table.go",
+      "sha256": "ce96c3789b39d9aaa16164558ac31bba165e9002de82bdb7e020a49898152ec9",
+      "namespace": "meta",
+      "concern": "table",
+      "lines": 70,
+      "bytes": 2393,
+      "declarations": [
+        "newTableResponse"
+      ],
+      "declarationCount": 1
+    },
+    {
       "path": "client_gen_auth_models.go",
       "sha256": "2bbc3c322fe79669023a3af21c73ba816f97f7fa0a8094b755d9a5f938779796",
       "namespace": "Auth",
@@ -9468,8 +9480,8 @@
       "declarationCount": 39
     }
   ],
-  "totalFiles": 59,
-  "totalLines": 123894,
-  "totalBytes": 4894698,
-  "totalDeclarations": 8757
+  "totalFiles": 60,
+  "totalLines": 123964,
+  "totalBytes": 4897091,
+  "totalDeclarations": 8758
 }

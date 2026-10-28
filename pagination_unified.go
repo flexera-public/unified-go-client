@@ -19,6 +19,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"math/big"
 	"net/url"
@@ -32,6 +33,43 @@ import (
 // response envelope (typically the generated *200.JSON200 struct, or a
 // map[string]any for ad-hoc requests).
 type PageFetcher func(ctx context.Context, skipToken *string) (any, error)
+
+// CollectPagesAs is the typed counterpart of CollectPages. T should be the
+// generated response pointer type (for example, *IamUserList). It uses the same
+// values/nextPage pagination protocol, then restores T so callers such as
+// WriteTable need not infer the response type from JSON metadata.
+//
+// First-page failures return the zero value of T and the fetch error.
+// Subsequent-page failures return the typed partial result and the original
+// *PartialError, whose Merged field remains a map. Conversion failures return
+// the zero value of T and an error; any pagination error is preserved via
+// errors.Join. Numbers decoded into interface fields remain json.Number.
+//
+// With noPaginate, or for non-object responses such as bare arrays, the original
+// typed response is returned unchanged. SCIM Resources/index pagination is not
+// supported; this helper does not add pagination protocols to CollectPages.
+func CollectPagesAs[T any](ctx context.Context, noPaginate bool, initialSkipToken *string, fetch func(context.Context, *string) (T, error)) (T, error) {
+	result, collectErr := CollectPages(ctx, noPaginate, initialSkipToken, func(ctx context.Context, token *string) (any, error) {
+		return fetch(ctx, token)
+	})
+	var zero T
+	if result == nil {
+		return zero, collectErr
+	}
+	if typed, ok := result.(T); ok {
+		return typed, collectErr
+	}
+	b, err := json.Marshal(result)
+	if err == nil {
+		decoder := json.NewDecoder(bytes.NewReader(b))
+		decoder.UseNumber()
+		var typed T
+		if err = decoder.Decode(&typed); err == nil {
+			return typed, collectErr
+		}
+	}
+	return zero, errors.Join(collectErr, fmt.Errorf("pagination: cannot convert collected response to %T: %w", zero, err))
+}
 
 // PartialError reports a pagination failure mid-walk, carrying the
 // already-merged result envelope and the cursor that failed to fetch.

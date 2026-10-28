@@ -104,66 +104,22 @@ func WriteTable(w io.Writer, value any) error {
 	}
 }
 
-// writeMapTable handles paginated responses from pagination.Collect, which always returns
-// map[string]any. It dispatches to the appropriate typed table writer based on the "kind" field.
+// writeMapTable handles CollectPages envelopes with unambiguous kinds.
+// Shared or missing kinds require CollectPagesAs to retain the response type.
 func writeMapTable(w io.Writer, m map[string]any) error {
+	kind, _ := m["kind"].(string)
+	typed := newTableResponse(kind)
+	if typed == nil {
+		return fmt.Errorf("table output cannot infer a supported response type from kind %q; use CollectPagesAs with the known response type", kind)
+	}
 	b, err := json.Marshal(m)
 	if err != nil {
-		return fmt.Errorf("table output is only supported for list commands, not map[string]interface {}")
+		return fmt.Errorf("table output: encode %q response: %w", kind, err)
 	}
-	kind, _ := m["kind"].(string)
-	switch kind {
-	case "iam:api-event-collection":
-		var typed IamAPIEventCollection
-		if err := json.Unmarshal(b, &typed); err != nil {
-			return err
-		}
-		return writeAPIEventListTable(w, &typed)
-	case "iam:event-collection":
-		var typed IamEventCollection
-		if err := json.Unmarshal(b, &typed); err != nil {
-			return err
-		}
-		return writeEventListTable(w, &typed)
-	case "iam:customization-type-list":
-		var typed IamCustomizationTypeList
-		if err := json.Unmarshal(b, &typed); err != nil {
-			return err
-		}
-		return writeCustomizationTypeListTable(w, &typed)
-	case "iam:customization-list":
-		var typed IamCustomizationList
-		if err := json.Unmarshal(b, &typed); err != nil {
-			return err
-		}
-		return writeCustomizationListTable(w, &typed)
-	case "policy:published-template-list":
-		var typed PolicyPublishedTemplateList
-		if err := json.Unmarshal(b, &typed); err != nil {
-			return err
-		}
-		return writePolicyPublishedTemplateListTable(w, &typed)
-	case "policy:custom-catalog-template-list":
-		var typed PolicyCustomCatalogTemplateList
-		if err := json.Unmarshal(b, &typed); err != nil {
-			return err
-		}
-		return writePolicyCustomCatalogListTable(w, &typed)
-	case "policy:incident-aggregate-list":
-		var typed PolicyIncidentAggregateList
-		if err := json.Unmarshal(b, &typed); err != nil {
-			return err
-		}
-		return writePolicyIncidentAggregateListTable(w, &typed)
-	case "policy:policy-aggregate-list":
-		var typed PolicyPolicyAggregateList
-		if err := json.Unmarshal(b, &typed); err != nil {
-			return err
-		}
-		return writePolicyAggregateListTable(w, &typed)
-	default:
-		return fmt.Errorf("table output is only supported for list commands, not map[string]interface {}")
+	if err := json.Unmarshal(b, typed); err != nil {
+		return fmt.Errorf("table output: decode %q response: %w", kind, err)
 	}
+	return WriteTable(w, typed)
 }
 
 func writeBudgetBudgetListTable(w io.Writer, list *BudgetBudgetList) error {
