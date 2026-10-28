@@ -71,3 +71,4 @@ jobs:
             go.sum
             client_gen_*.go
             client_gen_manifest.json
+            client_extensions_manifest.json

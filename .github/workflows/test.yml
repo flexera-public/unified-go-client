@@ -20,6 +20,9 @@ jobs:
       - name: Generate client
         run: make generate
 
+      - name: Check extension manifest freshness
+        run: git diff --exit-code -- client_extensions_manifest.json
+
       - name: Vet
         run: make vet
 

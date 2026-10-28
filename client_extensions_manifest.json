@@ -4,7 +4,7 @@
   "files": [
     {
       "path": "auth.go",
-      "sha256": "68b76f496b9a776e980198d212b3b34f37f6f76b7c41eb69a638c6b59a444ea3",
+      "sha256": "3baef749bf76e30d27af515a91490dcf806a658dbb07354beef698a500e10f3a",
       "declarations": [
         {
           "name": "Zone",
@@ -159,7 +159,7 @@
     },
     {
       "path": "bill_analysis_costs_query.go",
-      "sha256": "0e32108dd24be9505ff5242ec8b0e9f4b15bc7dede92c64a7b700193791d6a2d",
+      "sha256": "c0bb282f7b543a618a4531e0a8808da51b818ae9a50b65d2b9bc338a8f4217ce",
       "declarations": [
         {
           "name": "BillAnalysisCostsQueryClient",
@@ -257,9 +257,14 @@
           "kind": "method",
           "receiver": "BillAnalysisCostsQuery",
           "doc": "QueryWithBody is the raw-body variant of Query. The JSON body uses the"
+        },
+        {
+          "name": "CostsSliceListMetric",
+          "kind": "const",
+          "doc": "CostsSliceListMetric is the only metric requested when listing slice values."
         }
       ],
-      "declarationCount": 20
+      "declarationCount": 21
     },
     {
       "path": "bill_upload.go",
@@ -571,7 +576,7 @@
     },
     {
       "path": "oauth2.go",
-      "sha256": "60c47a1e85d43a5fd0cd5b2ce2043ff47c957a1906923e1bcedc8489928f2900",
+      "sha256": "cd3acca171dba113995cdd5a4c9296e4fea0de5e06463441355159724faa6e39",
       "declarations": [
         {
           "name": "TokenResponse",
@@ -629,7 +634,7 @@
     },
     {
       "path": "optima_routing.go",
-      "sha256": "7e0f5d8b625c4e2a32c07642e6c7d6742a44e5ec4758df5658010a247a4977fe",
+      "sha256": "ef36f1c419bb40c179c0c4ba45c26373e7a02d325c71b06cdbbe84a14884cdd2",
       "declarations": [
         {
           "name": "Do",
@@ -1195,6 +1200,48 @@
       "declarationCount": 5
     },
     {
+      "path": "useragent.go",
+      "sha256": "3876738a7a8714451d95f37750539e1e579ee0c935aff3951606823cb15151ab",
+      "declarations": [
+        {
+          "name": "Version",
+          "kind": "var",
+          "doc": "Version may be set at link time to stamp the client version, e.g."
+        },
+        {
+          "name": "DefaultUserAgent",
+          "kind": "func",
+          "doc": "DefaultUserAgent returns the User-Agent sent by default, for example:"
+        },
+        {
+          "name": "NewUserAgentDoer",
+          "kind": "func",
+          "doc": "NewUserAgentDoer wraps next so requests without a User-Agent header get ua."
+        },
+        {
+          "name": "Do",
+          "kind": "method",
+          "receiver": "userAgentDoer"
+        },
+        {
+          "name": "WithDefaultUserAgent",
+          "kind": "func",
+          "doc": "WithDefaultUserAgent wraps the client's HTTP doer so requests without a"
+        },
+        {
+          "name": "WithUserAgent",
+          "kind": "func",
+          "doc": "WithUserAgent replaces the default User-Agent with ua. Place it after any"
+        },
+        {
+          "name": "WithUserAgentProduct",
+          "kind": "func",
+          "doc": "WithUserAgentProduct prefixes the default User-Agent with an application"
+        }
+      ],
+      "declarationCount": 7
+    },
+    {
       "path": "zones.go",
       "sha256": "e3c9bc86f6fbcbc573f80e278ffa72d0d57d2119cd04b2b036dbe8d586f4606f",
       "declarations": [
@@ -1222,6 +1269,6 @@
       "declarationCount": 4
     }
   ],
-  "totalFiles": 28,
-  "totalDeclarations": 198
+  "totalFiles": 29,
+  "totalDeclarations": 206
 }
