@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "source": "unified-openapi/openapi3.json",
-  "sourceSha256": "77af155a67776b54489972865f54e48edb840bc81699bc5eff95105b2f1bfa2b",
+  "sourceSha256": "43933916ed0bb9bb8e4fed91fb04931278ed4ecc48e678c17b91d253d4cd0347",
   "generator": "github.com/oapi-codegen/oapi-codegen/v2 version v2.5.0",
   "package": "flexera",
   "files": [
@@ -19,11 +19,11 @@
     },
     {
       "path": "client_gen_services.go",
-      "sha256": "edf9aaea8e9f3a4d83eaadda97a44eb794d6105d984cc0a91fcad87b36b12903",
+      "sha256": "18f39c3c3fe8d5504b26326d3b8b580516536bcdc3f7032e6480f6be48aef432",
       "namespace": "meta",
       "concern": "services",
       "lines": 659,
-      "bytes": 70221,
+      "bytes": 69773,
       "declarations": [
         "ServiceAuth",
         "ServiceBillAnalysis",
@@ -9482,6 +9482,6 @@
   ],
   "totalFiles": 60,
   "totalLines": 123964,
-  "totalBytes": 4897091,
+  "totalBytes": 4896643,
   "totalDeclarations": 8758
 }
