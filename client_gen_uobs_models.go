@@ -134,6 +134,75 @@ type UobsSaasConnectorRead struct {
 	UpdatedAt *string `json:"updatedAt"`
 }
 
+// UobsSnowflakeOnboardingCreateRequest defines model for Uobs_SnowflakeOnboardingCreateRequest.
+type UobsSnowflakeOnboardingCreateRequest struct {
+	// AccountId Snowflake account identifier.
+	AccountId string `json:"AccountId"`
+
+	// ConnectorName Connector name.
+	ConnectorName string `json:"ConnectorName"`
+
+	// IncludeCostAndUsage Include cost and usage flag ('true'/'false').
+	IncludeCostAndUsage string `json:"IncludeCostAndUsage"`
+
+	// IncludeDCO Include DCO flag ('true'/'false').
+	IncludeDCO string `json:"IncludeDCO"`
+
+	// ProgrammaticAccessToken Snowflake programmatic access token (PAT).
+	ProgrammaticAccessToken string `json:"ProgrammaticAccessToken"`
+
+	// Role Snowflake role used for collection.
+	Role string `json:"Role"`
+
+	// UserName Snowflake user name.
+	UserName string `json:"UserName"`
+
+	// WarehouseName Snowflake warehouse used for collection.
+	WarehouseName string `json:"WarehouseName"`
+}
+
+// UobsSnowflakeOnboardingUpdateRequest defines model for Uobs_SnowflakeOnboardingUpdateRequest.
+type UobsSnowflakeOnboardingUpdateRequest struct {
+	// ConnectorName Connector name.
+	ConnectorName *string `json:"ConnectorName"`
+
+	// IncludeCostAndUsage Include cost and usage flag.
+	IncludeCostAndUsage *string `json:"IncludeCostAndUsage"`
+
+	// IncludeDCO Include DCO flag.
+	IncludeDCO *string `json:"IncludeDCO"`
+
+	// ProgrammaticAccessToken Replacement programmatic access token (PAT).
+	ProgrammaticAccessToken *string `json:"ProgrammaticAccessToken"`
+
+	// Role Snowflake role.
+	Role *string `json:"Role"`
+
+	// UserName Snowflake user name.
+	UserName *string `json:"UserName"`
+
+	// WarehouseName Snowflake warehouse.
+	WarehouseName *string `json:"WarehouseName"`
+}
+
+// UobsSnowflakeValidateRequest defines model for Uobs_SnowflakeValidateRequest.
+type UobsSnowflakeValidateRequest struct {
+	// AccountId Snowflake account identifier.
+	AccountId string `json:"AccountId"`
+
+	// ProgrammaticAccessToken Snowflake programmatic access token (PAT).
+	ProgrammaticAccessToken string `json:"ProgrammaticAccessToken"`
+
+	// Role Snowflake role used for collection.
+	Role string `json:"Role"`
+
+	// UserName Snowflake user name.
+	UserName string `json:"UserName"`
+
+	// WarehouseName Snowflake warehouse used for collection.
+	WarehouseName string `json:"WarehouseName"`
+}
+
 // UobsValidationResult Verdict from the synchronous connection-test endpoint.
 //
 // Returned at HTTP 200 for every validation outcome (valid, rejected, vendor

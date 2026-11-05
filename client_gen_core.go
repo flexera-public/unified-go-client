@@ -806,6 +806,12 @@ type ClientInterface interface {
 
 	FinopsBillingSharedCostRulesReorder(ctx context.Context, orgId int, params *FinopsBillingSharedCostRulesReorderParams, body FinopsBillingSharedCostRulesReorderJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// FinopsBillingSharedCostRulesUploadTelemetryWithBody request with any body
+	FinopsBillingSharedCostRulesUploadTelemetryWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingSharedCostRulesShowTelemetryUpload request
+	FinopsBillingSharedCostRulesShowTelemetryUpload(ctx context.Context, orgId int, uploadId string, params *FinopsBillingSharedCostRulesShowTelemetryUploadParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// FinopsBillingSharedCostRulesDelete request
 	FinopsBillingSharedCostRulesDelete(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -816,6 +822,9 @@ type ClientInterface interface {
 	FinopsBillingSharedCostRulesUpdateWithBody(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	FinopsBillingSharedCostRulesUpdate(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, body FinopsBillingSharedCostRulesUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingSharedCostRulesDownloadTelemetry request
+	FinopsBillingSharedCostRulesDownloadTelemetry(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// FinopsCustomizationsCurrencyShow request
 	FinopsCustomizationsCurrencyShow(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -1090,6 +1099,9 @@ type ClientInterface interface {
 
 	// FinopsOnboardingBillConnectValidate request
 	FinopsOnboardingBillConnectValidate(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsOnboardingProcessingHistoryShow request
+	FinopsOnboardingProcessingHistoryShow(ctx context.Context, orgId int, billConnectId string, billMonth string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// FinopsOnboardingProcessingHistoryIndex request
 	FinopsOnboardingProcessingHistoryIndex(ctx context.Context, orgId int, params *FinopsOnboardingProcessingHistoryIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -2263,6 +2275,24 @@ type ClientInterface interface {
 
 	UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPut(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostWithBody request with any body
+	UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePost(ctx context.Context, orgId string, body UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutWithBody request with any body
+	UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutWithBody(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPut(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPost request
+	UobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPost(ctx context.Context, orgId string, connectorId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostWithBody request with any body
+	UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePost(ctx context.Context, orgId string, body UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGet request
 	UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGet(ctx context.Context, orgId string, params *UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -3092,6 +3122,12 @@ type ClientWithResponsesInterface interface {
 
 	FinopsBillingSharedCostRulesReorderWithResponse(ctx context.Context, orgId int, params *FinopsBillingSharedCostRulesReorderParams, body FinopsBillingSharedCostRulesReorderJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesReorderResponse, error)
 
+	// FinopsBillingSharedCostRulesUploadTelemetryWithBodyWithResponse request with any body
+	FinopsBillingSharedCostRulesUploadTelemetryWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesUploadTelemetryResponse, error)
+
+	// FinopsBillingSharedCostRulesShowTelemetryUploadWithResponse request
+	FinopsBillingSharedCostRulesShowTelemetryUploadWithResponse(ctx context.Context, orgId int, uploadId string, params *FinopsBillingSharedCostRulesShowTelemetryUploadParams, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesShowTelemetryUploadResponse, error)
+
 	// FinopsBillingSharedCostRulesDeleteWithResponse request
 	FinopsBillingSharedCostRulesDeleteWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesDeleteParams, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesDeleteResponse, error)
 
@@ -3102,6 +3138,9 @@ type ClientWithResponsesInterface interface {
 	FinopsBillingSharedCostRulesUpdateWithBodyWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesUpdateResponse, error)
 
 	FinopsBillingSharedCostRulesUpdateWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, body FinopsBillingSharedCostRulesUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesUpdateResponse, error)
+
+	// FinopsBillingSharedCostRulesDownloadTelemetryWithResponse request
+	FinopsBillingSharedCostRulesDownloadTelemetryWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesDownloadTelemetryResponse, error)
 
 	// FinopsCustomizationsCurrencyShowWithResponse request
 	FinopsCustomizationsCurrencyShowWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsCustomizationsCurrencyShowResponse, error)
@@ -3376,6 +3415,9 @@ type ClientWithResponsesInterface interface {
 
 	// FinopsOnboardingBillConnectValidateWithResponse request
 	FinopsOnboardingBillConnectValidateWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsOnboardingBillConnectValidateResponse, error)
+
+	// FinopsOnboardingProcessingHistoryShowWithResponse request
+	FinopsOnboardingProcessingHistoryShowWithResponse(ctx context.Context, orgId int, billConnectId string, billMonth string, reqEditors ...RequestEditorFn) (*FinopsOnboardingProcessingHistoryShowResponse, error)
 
 	// FinopsOnboardingProcessingHistoryIndexWithResponse request
 	FinopsOnboardingProcessingHistoryIndexWithResponse(ctx context.Context, orgId int, params *FinopsOnboardingProcessingHistoryIndexParams, reqEditors ...RequestEditorFn) (*FinopsOnboardingProcessingHistoryIndexResponse, error)
@@ -4548,6 +4590,24 @@ type ClientWithResponsesInterface interface {
 	UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutWithBodyWithResponse(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutResponse, error)
 
 	UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutWithResponse(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutResponse, error)
+
+	// UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostWithBodyWithResponse request with any body
+	UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostResponse, error)
+
+	UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostWithResponse(ctx context.Context, orgId string, body UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostResponse, error)
+
+	// UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutWithBodyWithResponse request with any body
+	UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutWithBodyWithResponse(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutResponse, error)
+
+	UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutWithResponse(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutResponse, error)
+
+	// UobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostWithResponse request
+	UobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostWithResponse(ctx context.Context, orgId string, connectorId string, reqEditors ...RequestEditorFn) (*UobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostResponse, error)
+
+	// UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostWithBodyWithResponse request with any body
+	UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostResponse, error)
+
+	UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostWithResponse(ctx context.Context, orgId string, body UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostResponse, error)
 
 	// UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetWithResponse request
 	UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetWithResponse(ctx context.Context, orgId string, params *UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetParams, reqEditors ...RequestEditorFn) (*UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetResponse, error)

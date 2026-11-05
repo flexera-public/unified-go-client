@@ -319,10 +319,10 @@ type FinopsBillingCreateRequestBody struct {
 	// InvoiceIssueDateRule How each generated invoice's issue date is derived from the day its run fires.
 	InvoiceIssueDateRule FinopsBillingBillingInvoiceIssueDateRule `json:"invoiceIssueDateRule"`
 
-	// InvoiceNumberBase Optional first sequence number for the invoice numbers this schedule generates.
+	// InvoiceNumberBase Optional first sequence number for the invoice numbers this schedule generates. Requires invoiceNumberPrefix (400 invoice_number_prefix_required otherwise). Once set it cannot be changed or cleared.
 	InvoiceNumberBase *string `json:"invoiceNumberBase,omitempty"`
 
-	// InvoiceNumberPrefix Optional prefix for the invoice numbers this schedule generates. Requires invoiceNumberBase.
+	// InvoiceNumberPrefix Optional prefix for the invoice numbers this schedule generates; the required part of an invoice number. Without invoiceNumberBase it is the whole invoice number of every invoice the schedule generates. Once set it cannot be changed or cleared.
 	InvoiceNumberPrefix *string `json:"invoiceNumberPrefix,omitempty"`
 
 	// InvoiceTemplateId Identifier of an existing invoice template to share across every customer on this schedule. Omit both this and template to create a schedule with no template.
@@ -466,8 +466,14 @@ type FinopsBillingCreateRequestBody4 struct {
 	// Name Display name for the shared cost rule. Must be unique within the organization. Must not contain "(", ")" or ">".
 	Name string `json:"name"`
 
-	// Source Dimensions that identify the costs to be reallocated. Multiple dimensions are combined using AND logic; only costs that satisfy every dimension are included. At least one dimension is required.
-	Source []FinopsBillingSourceDimensionPayload `json:"source"`
+	// Source Dimensions that identify the costs to be reallocated. Multiple dimensions are combined using AND logic; only costs that satisfy every dimension are included. Must not be empty when present. A rule has exactly one of source and sourceCondition.
+	Source *[]FinopsBillingSourceDimensionPayload `json:"source,omitempty"`
+
+	// SourceCondition A condition that selects the costs to be reallocated, with the same shape as a rule-based dimension condition, except that the leaf types are named 'equals' and 'contains'. A missing or empty dimension value reads as an empty string, so not of a match also selects costs without that dimension. To match several values, combine 'equals' conditions with 'or'; a tree has at most 100 conditions.
+	SourceCondition *FinopsBillingSharedCostSourceCondition `json:"sourceCondition,omitempty"`
+
+	// TelemetryUploadId A valid staged telemetry upload for a new rule, applied in the same save. Required for dynamicProportionateSplit and not allowed for any other type.
+	TelemetryUploadId *string `json:"telemetryUploadId,omitempty"`
 }
 
 // FinopsBillingCreateRuleRequestBody defines model for FinopsBilling_CreateRuleRequestBody.
@@ -623,10 +629,10 @@ type FinopsBillingUpdateRequestBody struct {
 	// InvoiceIssueDateRule How each generated invoice's issue date is derived from the day its run fires.
 	InvoiceIssueDateRule *FinopsBillingBillingInvoiceIssueDateRule `json:"invoiceIssueDateRule,omitempty"`
 
-	// InvoiceNumberBase Optional updated first sequence number for the invoice numbers this schedule generates.
+	// InvoiceNumberBase First sequence number for the invoice numbers this schedule generates. Can be set only on a schedule whose numbering is not set yet and that has not generated an invoice, together with invoiceNumberPrefix (400 invoice_number_prefix_required without it). Once numbering is set, sending the field again at all, even with the same value or "", is rejected with 400 invoice_numbering_locked.
 	InvoiceNumberBase *string `json:"invoiceNumberBase,omitempty"`
 
-	// InvoiceNumberPrefix Optional updated prefix for the invoice numbers this schedule generates. Requires invoiceNumberBase.
+	// InvoiceNumberPrefix Prefix for the invoice numbers this schedule generates. Can be set only on a schedule whose numbering is not set yet and that has not generated an invoice; without a base it is the whole invoice number of every invoice the schedule generates. Once set, sending the field again at all, even with the same value or "", is rejected with 400 invoice_numbering_locked.
 	InvoiceNumberPrefix *string `json:"invoiceNumberPrefix,omitempty"`
 
 	// InvoiceTemplateId Existing invoice template to point the schedule at. Send isCreateTemplate=false with this field omitted to detach the schedule's template.
@@ -641,14 +647,14 @@ type FinopsBillingUpdateRequestBody struct {
 	// ScheduleName Updated name.
 	ScheduleName *string `json:"scheduleName,omitempty"`
 
-	// Status Updated lifecycle status. PATCH accepts only inactive; use the activate endpoint to reactivate a schedule.
+	// Status Updated lifecycle status. PATCH accepts only inactive, which stops future runs without changing endMonthYear (the deactivate endpoint also sets it); use the activate endpoint to reactivate a schedule.
 	Status *FinopsBillingUpdateRequestBodyStatus `json:"status,omitempty"`
 
 	// Template Invoice properties for a schedule: the template to create, or the schedule's own configuration when it has no template.
 	Template *FinopsBillingBillingInvoiceScheduleTemplateInput `json:"template,omitempty"`
 }
 
-// FinopsBillingUpdateRequestBodyStatus Updated lifecycle status. PATCH accepts only inactive; use the activate endpoint to reactivate a schedule.
+// FinopsBillingUpdateRequestBodyStatus Updated lifecycle status. PATCH accepts only inactive, which stops future runs without changing endMonthYear (the deactivate endpoint also sets it); use the activate endpoint to reactivate a schedule.
 type FinopsBillingUpdateRequestBodyStatus string
 
 // FinopsBillingUpdateRequestBody2 defines model for FinopsBilling_UpdateRequestBody2.
@@ -710,15 +716,33 @@ type FinopsBillingUpdateRequestBody3 struct {
 	// Name Updated display name for the shared cost rule. Must not contain "(", ")" or ">".
 	Name *string `json:"name,omitempty"`
 
-	// Source Updated dimensions that identify the costs to be reallocated. Multiple dimensions are combined using AND logic; only costs that satisfy every dimension are included.
+	// Source Updated dimensions that identify the costs to be reallocated. Multiple dimensions are combined using AND logic; only costs that satisfy every dimension are included. Must not be empty when present. Setting it removes the rule's sourceCondition. Must not be sent with sourceCondition.
 	Source *[]FinopsBillingSourceDimensionPayload `json:"source,omitempty"`
+
+	// SourceCondition A condition that selects the costs to be reallocated, with the same shape as a rule-based dimension condition, except that the leaf types are named 'equals' and 'contains'. A missing or empty dimension value reads as an empty string, so not of a match also selects costs without that dimension. To match several values, combine 'equals' conditions with 'or'; a tree has at most 100 conditions.
+	SourceCondition *FinopsBillingSharedCostSourceCondition `json:"sourceCondition,omitempty"`
 
 	// Status Updated lifecycle status.
 	Status *FinopsBillingUpdateRequestBody3Status `json:"status,omitempty"`
+
+	// TelemetryUploadId A valid staged telemetry upload for this rule, applied in the same save. Required when the save changes the type to dynamicProportionateSplit or changes a dynamic rule's destination dimension; not allowed when the rule's type after the save is not dynamicProportionateSplit.
+	TelemetryUploadId *string `json:"telemetryUploadId,omitempty"`
 }
 
 // FinopsBillingUpdateRequestBody3Status Updated lifecycle status.
 type FinopsBillingUpdateRequestBody3Status string
+
+// FinopsBillingUploadTelemetryRequestBody defines model for FinopsBilling_UploadTelemetryRequestBody.
+type FinopsBillingUploadTelemetryRequestBody struct {
+	// DimensionId The destination dimension, rbd_* or tag_*. One the org doesn't have is reported as an unknown_dimension error in the 422 body.
+	DimensionId string `json:"dimensionId"`
+
+	// File The CSV file.
+	File openapi_types.File `json:"file"`
+
+	// RuleId The rule the file is for. Omit it for a new rule.
+	RuleId *string `json:"ruleId,omitempty"`
+}
 
 // FinopsBillingBillingIndexPlansParams defines parameters for FinopsBillingBillingIndexPlans.
 type FinopsBillingBillingIndexPlansParams struct {
@@ -1238,6 +1262,18 @@ type FinopsBillingSharedCostRulesReorderParams struct {
 	IfMatch *string `json:"If-Match,omitempty"`
 }
 
+// FinopsBillingSharedCostRulesShowTelemetryUploadParams defines parameters for FinopsBillingSharedCostRulesShowTelemetryUpload.
+type FinopsBillingSharedCostRulesShowTelemetryUploadParams struct {
+	// Offset Index of the first row to return, counted after the filter. A staged upload never changes during its 24 hours and holds at most one 50 MB file, so an offset always returns the same rows and clients can jump straight to any page.
+	Offset *int `form:"offset,omitempty" json:"offset,omitempty"`
+
+	// Limit Maximum number of rows to return.
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Filter all returns every row, issues the rows with any error or warning, changes the rows that are added, modified or deleted.
+	Filter *FinopsBillingSharedCostRulesShowTelemetryUploadParamsFilter `form:"filter,omitempty" json:"filter,omitempty"`
+}
+
 // FinopsBillingSharedCostRulesDeleteParams defines parameters for FinopsBillingSharedCostRulesDelete.
 type FinopsBillingSharedCostRulesDeleteParams struct {
 	// IfMatch Only modify the resource if this tag is still current. Provide the ETag from a prior GET request for this specific resource (GET /shared-cost-rules/{id}) to avoid losing someone else's update.
@@ -1315,6 +1351,9 @@ type FinopsBillingSharedCostRulesCreateJSONRequestBody = FinopsBillingCreateRequ
 
 // FinopsBillingSharedCostRulesReorderJSONRequestBody defines body for FinopsBillingSharedCostRulesReorder for application/json ContentType.
 type FinopsBillingSharedCostRulesReorderJSONRequestBody = FinopsBillingReorderRequestBody
+
+// FinopsBillingSharedCostRulesUploadTelemetryMultipartRequestBody defines body for FinopsBillingSharedCostRulesUploadTelemetry for multipart/form-data ContentType.
+type FinopsBillingSharedCostRulesUploadTelemetryMultipartRequestBody = FinopsBillingUploadTelemetryRequestBody
 
 // FinopsBillingSharedCostRulesUpdateJSONRequestBody defines body for FinopsBillingSharedCostRulesUpdate for application/json ContentType.
 type FinopsBillingSharedCostRulesUpdateJSONRequestBody = FinopsBillingUpdateRequestBody3
@@ -2195,6 +2234,30 @@ func (c *Client) FinopsBillingSharedCostRulesReorder(ctx context.Context, orgId 
 	return c.Client.Do(req)
 }
 
+func (c *Client) FinopsBillingSharedCostRulesUploadTelemetryWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingSharedCostRulesUploadTelemetryRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingSharedCostRulesShowTelemetryUpload(ctx context.Context, orgId int, uploadId string, params *FinopsBillingSharedCostRulesShowTelemetryUploadParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingSharedCostRulesShowTelemetryUploadRequest(c.Server, orgId, uploadId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) FinopsBillingSharedCostRulesDelete(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewFinopsBillingSharedCostRulesDeleteRequest(c.Server, orgId, id, params)
 	if err != nil {
@@ -2233,6 +2296,18 @@ func (c *Client) FinopsBillingSharedCostRulesUpdateWithBody(ctx context.Context,
 
 func (c *Client) FinopsBillingSharedCostRulesUpdate(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesUpdateParams, body FinopsBillingSharedCostRulesUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewFinopsBillingSharedCostRulesUpdateRequest(c.Server, orgId, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingSharedCostRulesDownloadTelemetry(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingSharedCostRulesDownloadTelemetryRequest(c.Server, orgId, id)
 	if err != nil {
 		return nil, err
 	}
@@ -5727,6 +5802,137 @@ func NewFinopsBillingSharedCostRulesReorderRequestWithBody(server string, orgId 
 	return req, nil
 }
 
+// NewFinopsBillingSharedCostRulesUploadTelemetryRequestWithBody generates requests for FinopsBillingSharedCostRulesUploadTelemetry with any type of body
+func NewFinopsBillingSharedCostRulesUploadTelemetryRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/shared-cost-rules/telemetry-uploads", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsBillingSharedCostRulesShowTelemetryUploadRequest generates requests for FinopsBillingSharedCostRulesShowTelemetryUpload
+func NewFinopsBillingSharedCostRulesShowTelemetryUploadRequest(server string, orgId int, uploadId string, params *FinopsBillingSharedCostRulesShowTelemetryUploadParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "uploadId", runtime.ParamLocationPath, uploadId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/shared-cost-rules/telemetry-uploads/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "offset", runtime.ParamLocationQuery, *params.Offset); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "limit", runtime.ParamLocationQuery, *params.Limit); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "filter", runtime.ParamLocationQuery, *params.Filter); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewFinopsBillingSharedCostRulesDeleteRequest generates requests for FinopsBillingSharedCostRulesDelete
 func NewFinopsBillingSharedCostRulesDeleteRequest(server string, orgId int, id string, params *FinopsBillingSharedCostRulesDeleteParams) (*http.Request, error) {
 	var err error
@@ -5888,6 +6094,47 @@ func NewFinopsBillingSharedCostRulesUpdateRequestWithBody(server string, orgId i
 			req.Header.Set("If-Match", headerParam0)
 		}
 
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingSharedCostRulesDownloadTelemetryRequest generates requests for FinopsBillingSharedCostRulesDownloadTelemetry
+func NewFinopsBillingSharedCostRulesDownloadTelemetryRequest(server string, orgId int, id string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "id", runtime.ParamLocationPath, id)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/shared-cost-rules/%s/telemetry", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
 	}
 
 	return req, nil

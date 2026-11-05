@@ -983,8 +983,20 @@ type FinopsCustomizationsRuleBasedDimensionValueExpression struct {
 
 // FinopsCustomizationsSavedFilterDisplayOptions Display preferences restored when a saved filter is applied to a cost-analysis view.
 type FinopsCustomizationsSavedFilterDisplayOptions struct {
+	// HideListCost Whether the List Cost metric is hidden.
+	HideListCost *bool `json:"hideListCost,omitempty"`
+
+	// HidePricingQuantity Whether the Pricing Quantity metric is hidden.
+	HidePricingQuantity *bool `json:"hidePricingQuantity,omitempty"`
+
 	// PeriodType Period used to group costs: `chargePeriod` groups costs by charge date and `billPeriod` groups costs by invoice billing date.
 	PeriodType FinopsCustomizationsSavedFilterDisplayOptionsPeriodType `json:"periodType"`
+
+	// ShowBilledCost Whether the Billed Cost metric is displayed.
+	ShowBilledCost *bool `json:"showBilledCost,omitempty"`
+
+	// ShowConsumedQuantity Whether the Consumed Quantity metric is displayed.
+	ShowConsumedQuantity *bool `json:"showConsumedQuantity,omitempty"`
 
 	// ShowCost Whether the Cost metric is displayed.
 	ShowCost bool `json:"showCost"`
@@ -992,11 +1004,23 @@ type FinopsCustomizationsSavedFilterDisplayOptions struct {
 	// ShowDimensionNames Whether dimension names are displayed in the table.
 	ShowDimensionNames bool `json:"showDimensionNames"`
 
+	// ShowEffectiveCost Whether the Effective Cost metric is displayed.
+	ShowEffectiveCost *bool `json:"showEffectiveCost,omitempty"`
+
 	// ShowListPrice Whether the List Price metric is displayed.
 	ShowListPrice bool `json:"showListPrice"`
 
+	// ShowMargins Whether margin metrics are displayed.
+	ShowMargins *bool `json:"showMargins,omitempty"`
+
+	// ShowModifiedCosts Whether modified cost metrics are displayed.
+	ShowModifiedCosts *bool `json:"showModifiedCosts,omitempty"`
+
 	// ShowPercentChange Whether percent change is displayed in the table.
 	ShowPercentChange bool `json:"showPercentChange"`
+
+	// ShowPercentages Whether percentage metrics are displayed.
+	ShowPercentages *bool `json:"showPercentages,omitempty"`
 
 	// ShowSavings Whether the Savings metric is displayed.
 	ShowSavings bool `json:"showSavings"`
@@ -1013,8 +1037,20 @@ type FinopsCustomizationsSavedFilterDisplayOptionsPeriodType string
 
 // FinopsCustomizationsSavedFilterDisplayOptionsPatch Display preference fields to update. Omitted fields remain unchanged.
 type FinopsCustomizationsSavedFilterDisplayOptionsPatch struct {
+	// HideListCost Whether the List Cost metric is hidden.
+	HideListCost *bool `json:"hideListCost,omitempty"`
+
+	// HidePricingQuantity Whether the Pricing Quantity metric is hidden.
+	HidePricingQuantity *bool `json:"hidePricingQuantity,omitempty"`
+
 	// PeriodType Period used to group costs: `chargePeriod` groups costs by charge date and `billPeriod` groups costs by invoice billing date.
 	PeriodType *FinopsCustomizationsSavedFilterDisplayOptionsPatchPeriodType `json:"periodType,omitempty"`
+
+	// ShowBilledCost Whether the Billed Cost metric is displayed.
+	ShowBilledCost *bool `json:"showBilledCost,omitempty"`
+
+	// ShowConsumedQuantity Whether the Consumed Quantity metric is displayed.
+	ShowConsumedQuantity *bool `json:"showConsumedQuantity,omitempty"`
 
 	// ShowCost Whether the Cost metric is displayed.
 	ShowCost *bool `json:"showCost,omitempty"`
@@ -1022,11 +1058,23 @@ type FinopsCustomizationsSavedFilterDisplayOptionsPatch struct {
 	// ShowDimensionNames Whether dimension names are displayed in the table.
 	ShowDimensionNames *bool `json:"showDimensionNames,omitempty"`
 
+	// ShowEffectiveCost Whether the Effective Cost metric is displayed.
+	ShowEffectiveCost *bool `json:"showEffectiveCost,omitempty"`
+
 	// ShowListPrice Whether the List Price metric is displayed.
 	ShowListPrice *bool `json:"showListPrice,omitempty"`
 
+	// ShowMargins Whether margin metrics are displayed.
+	ShowMargins *bool `json:"showMargins,omitempty"`
+
+	// ShowModifiedCosts Whether modified cost metrics are displayed.
+	ShowModifiedCosts *bool `json:"showModifiedCosts,omitempty"`
+
 	// ShowPercentChange Whether percent change is displayed in the table.
 	ShowPercentChange *bool `json:"showPercentChange,omitempty"`
+
+	// ShowPercentages Whether percentage metrics are displayed.
+	ShowPercentages *bool `json:"showPercentages,omitempty"`
 
 	// ShowSavings Whether the Savings metric is displayed.
 	ShowSavings *bool `json:"showSavings,omitempty"`

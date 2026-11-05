@@ -18,6 +18,7 @@ const (
 
 // Defines values for FinopsBillingAllocationPayloadType.
 const (
+	FinopsBillingAllocationPayloadTypeDynamicProportionateSplit   FinopsBillingAllocationPayloadType = "dynamicProportionateSplit"
 	FinopsBillingAllocationPayloadTypeEqualSplit                  FinopsBillingAllocationPayloadType = "equalSplit"
 	FinopsBillingAllocationPayloadTypeFixedPercentageSplit        FinopsBillingAllocationPayloadType = "fixedPercentageSplit"
 	FinopsBillingAllocationPayloadTypeUsageBasedProportionalSplit FinopsBillingAllocationPayloadType = "usageBasedProportionalSplit"
@@ -148,6 +149,13 @@ const (
 // Defines values for FinopsBillingBillingInvoiceScheduleListKind.
 const (
 	FinopsBillingBillingInvoiceScheduleListKindFinopsInvoiceScheduleList FinopsBillingBillingInvoiceScheduleListKind = "finops:invoice-schedule-list"
+)
+
+// Defines values for FinopsBillingBillingInvoiceScheduleResultInvoiceNumberingMode.
+const (
+	FinopsBillingBillingInvoiceScheduleResultInvoiceNumberingModeNone       FinopsBillingBillingInvoiceScheduleResultInvoiceNumberingMode = "none"
+	FinopsBillingBillingInvoiceScheduleResultInvoiceNumberingModePrefixOnly FinopsBillingBillingInvoiceScheduleResultInvoiceNumberingMode = "prefixOnly"
+	FinopsBillingBillingInvoiceScheduleResultInvoiceNumberingModeSequential FinopsBillingBillingInvoiceScheduleResultInvoiceNumberingMode = "sequential"
 )
 
 // Defines values for FinopsBillingBillingInvoiceScheduleResultKind.
@@ -306,6 +314,13 @@ const (
 	FinopsBillingFlexeraFinopsBillingInvoicePeriodTypeChargePeriod  FinopsBillingFlexeraFinopsBillingInvoicePeriodType = "chargePeriod"
 )
 
+// Defines values for FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceNumberingMode.
+const (
+	FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceNumberingModeNone       FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceNumberingMode = "none"
+	FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceNumberingModePrefixOnly FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceNumberingMode = "prefixOnly"
+	FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceNumberingModeSequential FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceNumberingMode = "sequential"
+)
+
 // Defines values for FinopsBillingFlexeraFinopsBillingInvoiceScheduleKind.
 const (
 	FinopsBillingFlexeraFinopsBillingInvoiceScheduleKindFinopsInvoiceSchedule FinopsBillingFlexeraFinopsBillingInvoiceScheduleKind = "finops:invoice-schedule"
@@ -407,6 +422,7 @@ const (
 const (
 	FinopsBillingHideCreditsSettingsCreditTypesBundledDiscount           FinopsBillingHideCreditsSettingsCreditTypes = "bundledDiscount"
 	FinopsBillingHideCreditsSettingsCreditTypesCloudfrontSecurityBundles FinopsBillingHideCreditsSettingsCreditTypes = "cloudfrontSecurityBundles"
+	FinopsBillingHideCreditsSettingsCreditTypesCredit                    FinopsBillingHideCreditsSettingsCreditTypes = "credit"
 	FinopsBillingHideCreditsSettingsCreditTypesDistributorDiscount       FinopsBillingHideCreditsSettingsCreditTypes = "distributorDiscount"
 	FinopsBillingHideCreditsSettingsCreditTypesEdpDiscount               FinopsBillingHideCreditsSettingsCreditTypes = "edpDiscount"
 	FinopsBillingHideCreditsSettingsCreditTypesPrivateRateDiscount       FinopsBillingHideCreditsSettingsCreditTypes = "privateRateDiscount"
@@ -471,6 +487,15 @@ const (
 	FinopsBillingSavingsPlanReallocationSettingsRevertSavingsPlanUnownedUsage FinopsBillingSavingsPlanReallocationSettingsRevertSavingsPlan = "unownedUsage"
 )
 
+// Defines values for FinopsBillingSharedCostSourceConditionType.
+const (
+	FinopsBillingSharedCostSourceConditionTypeAnd      FinopsBillingSharedCostSourceConditionType = "and"
+	FinopsBillingSharedCostSourceConditionTypeContains FinopsBillingSharedCostSourceConditionType = "contains"
+	FinopsBillingSharedCostSourceConditionTypeEquals   FinopsBillingSharedCostSourceConditionType = "equals"
+	FinopsBillingSharedCostSourceConditionTypeNot      FinopsBillingSharedCostSourceConditionType = "not"
+	FinopsBillingSharedCostSourceConditionTypeOr       FinopsBillingSharedCostSourceConditionType = "or"
+)
+
 // Defines values for FinopsBillingShowCustomerStatusResultKind.
 const (
 	FinopsBillingShowCustomerStatusResultKindFinopsBillingAdjustmentCustomerStatus FinopsBillingShowCustomerStatusResultKind = "finops:billing-adjustment-customer-status"
@@ -496,6 +521,37 @@ const (
 	FinopsBillingSupportChargeSettingsTierEnterpriseOnRamp  FinopsBillingSupportChargeSettingsTier = "enterpriseOnRamp"
 	FinopsBillingSupportChargeSettingsTierSuppressed        FinopsBillingSupportChargeSettingsTier = "suppressed"
 	FinopsBillingSupportChargeSettingsTierUnifiedOperations FinopsBillingSupportChargeSettingsTier = "unifiedOperations"
+)
+
+// Defines values for FinopsBillingTelemetryUploadKind.
+const (
+	FinopsBillingTelemetryUploadKindFinopsBillingSharedCostTelemetryUpload FinopsBillingTelemetryUploadKind = "finops:billing-shared-cost-telemetry-upload"
+)
+
+// Defines values for FinopsBillingTelemetryUploadStatus.
+const (
+	FinopsBillingTelemetryUploadStatusInvalid FinopsBillingTelemetryUploadStatus = "invalid"
+	FinopsBillingTelemetryUploadStatusValid   FinopsBillingTelemetryUploadStatus = "valid"
+)
+
+// Defines values for FinopsBillingTelemetryUploadPreviewKind.
+const (
+	FinopsBillingTelemetryUploadPreviewKindFinopsBillingSharedCostTelemetryUpload FinopsBillingTelemetryUploadPreviewKind = "finops:billing-shared-cost-telemetry-upload"
+)
+
+// Defines values for FinopsBillingTelemetryUploadPreviewStatus.
+const (
+	FinopsBillingTelemetryUploadPreviewStatusInvalid FinopsBillingTelemetryUploadPreviewStatus = "invalid"
+	FinopsBillingTelemetryUploadPreviewStatusValid   FinopsBillingTelemetryUploadPreviewStatus = "valid"
+)
+
+// Defines values for FinopsBillingTelemetryUploadRowChange.
+const (
+	FinopsBillingTelemetryUploadRowChangeAdded     FinopsBillingTelemetryUploadRowChange = "added"
+	FinopsBillingTelemetryUploadRowChangeDeleted   FinopsBillingTelemetryUploadRowChange = "deleted"
+	FinopsBillingTelemetryUploadRowChangeIgnored   FinopsBillingTelemetryUploadRowChange = "ignored"
+	FinopsBillingTelemetryUploadRowChangeModified  FinopsBillingTelemetryUploadRowChange = "modified"
+	FinopsBillingTelemetryUploadRowChangeUnchanged FinopsBillingTelemetryUploadRowChange = "unchanged"
 )
 
 // Defines values for FinopsBillingUpchargeDiscountSettingsBaseOn.
@@ -538,6 +594,13 @@ const (
 const (
 	FinopsBillingInvoicesIndexParamsExportTypeCsv FinopsBillingInvoicesIndexParamsExportType = "csv"
 	FinopsBillingInvoicesIndexParamsExportTypePdf FinopsBillingInvoicesIndexParamsExportType = "pdf"
+)
+
+// Defines values for FinopsBillingSharedCostRulesShowTelemetryUploadParamsFilter.
+const (
+	FinopsBillingSharedCostRulesShowTelemetryUploadParamsFilterAll     FinopsBillingSharedCostRulesShowTelemetryUploadParamsFilter = "all"
+	FinopsBillingSharedCostRulesShowTelemetryUploadParamsFilterChanges FinopsBillingSharedCostRulesShowTelemetryUploadParamsFilter = "changes"
+	FinopsBillingSharedCostRulesShowTelemetryUploadParamsFilterIssues  FinopsBillingSharedCostRulesShowTelemetryUploadParamsFilter = "issues"
 )
 
 // FinopsBillingAdjustmentCondition An adjustment condition, used by adjustment rules and adjustment plan rules.
@@ -666,7 +729,7 @@ type FinopsBillingAllocation struct {
 	// Destinations The destinations that receive the reallocated costs.
 	Destinations []FinopsBillingAllocationDestination `json:"destinations"`
 
-	// Type The allocation strategy, and the discriminator for which of a destination's fields carry meaning. equalSplit distributes the pooled cost equally across the destinations. fixedPercentageSplit uses the percentage supplied for each destination, and those percentages must sum to 100. usageBasedProportionalSplit derives each destination's share from that destination's own usage when the bill runs, so the shares are not known at the time a rule is read or written. Further strategies may be added, so consumers must tolerate a value they do not recognize.
+	// Type The allocation strategy, and the discriminator for which of a destination's fields carry meaning. equalSplit distributes the pooled cost equally across the destinations. fixedPercentageSplit uses the percentage supplied for each destination, and those percentages must sum to 100. usageBasedProportionalSplit derives each destination's share from that destination's own usage when the bill runs, so the shares are not known at the time a rule is read or written. dynamicProportionateSplit splits each bill month by that month's telemetry for the single destination dimension; the rule names only the dimension, and its values and shares come from the telemetry uploads applied to it. Further strategies may be added, so consumers must tolerate a value they do not recognize.
 	Type string `json:"type"`
 }
 
@@ -678,11 +741,11 @@ type FinopsBillingAllocationDestination struct {
 	// DimensionName Human-readable display name of the destination dimension.
 	DimensionName *string `json:"dimensionName,omitempty"`
 
-	// Percentage The effective percentage of costs allocated to this destination. For equalSplit this is computed by the server as 100/N (where N is the number of destinations) and for fixedPercentageSplit it is the client-supplied value; in both cases all percentages sum to 100. For usageBasedProportionalSplit this field is omitted because the effective share is derived from usage at bill run time and is not known when the rule is read.
+	// Percentage The effective percentage of costs allocated to this destination. For equalSplit this is computed by the server as 100/N (where N is the number of destinations) and for fixedPercentageSplit it is the client-supplied value; in both cases all percentages sum to 100. For usageBasedProportionalSplit and dynamicProportionateSplit this field is omitted because the effective share is derived at bill run time and is not known when the rule is read.
 	Percentage *float32 `json:"percentage,omitempty"`
 
-	// Value The specific dimension value that receives costs.
-	Value string `json:"value"`
+	// Value The specific dimension value that receives costs. Omitted for dynamicProportionateSplit, whose values come from telemetry.
+	Value *string `json:"value,omitempty"`
 }
 
 // FinopsBillingAllocationDestinationPayload A destination input used when creating or updating a shared cost rule.
@@ -690,11 +753,11 @@ type FinopsBillingAllocationDestinationPayload struct {
 	// DimensionId Unique identifier of the destination dimension.
 	DimensionId string `json:"dimensionId"`
 
-	// Percentage The percentage of costs allocated to this destination. Required for fixedPercentageSplit (all percentages must sum to 100). Ignored for equalSplit (the server computes equal shares automatically) and for usageBasedProportionalSplit (shares are derived from usage at bill run time).
+	// Percentage The percentage of costs allocated to this destination. Required for fixedPercentageSplit (all percentages must sum to 100). Ignored for equalSplit (the server computes equal shares automatically), for usageBasedProportionalSplit (shares are derived from usage at bill run time) and for dynamicProportionateSplit (shares come from telemetry).
 	Percentage *float32 `json:"percentage,omitempty"`
 
-	// Value The specific dimension value that receives costs.
-	Value string `json:"value"`
+	// Value The specific dimension value that receives costs. Required for every type except dynamicProportionateSplit, where it must be omitted: that type names only the dimension.
+	Value *string `json:"value,omitempty"`
 }
 
 // FinopsBillingAllocationPayload Defines the allocation strategy and destination inputs for create/update operations.
@@ -702,11 +765,11 @@ type FinopsBillingAllocationPayload struct {
 	// Destinations The destination inputs that receive the reallocated costs.
 	Destinations []FinopsBillingAllocationDestinationPayload `json:"destinations"`
 
-	// Type The allocation strategy, and the discriminator for which of a destination's fields are required. equalSplit distributes the pooled cost equally across the destinations. fixedPercentageSplit uses the percentage supplied for each destination, and those percentages must sum to 100. usageBasedProportionalSplit derives each destination's share from that destination's own usage when the bill runs, so the shares are not known at the time a rule is read or written.
+	// Type The allocation strategy, and the discriminator for which of a destination's fields are required. equalSplit distributes the pooled cost equally across the destinations. fixedPercentageSplit uses the percentage supplied for each destination, and those percentages must sum to 100. usageBasedProportionalSplit derives each destination's share from that destination's own usage when the bill runs, so the shares are not known at the time a rule is read or written. dynamicProportionateSplit splits each bill month by that month's telemetry for the single destination dimension; the rule names only the dimension, and its values and shares come from the telemetry uploads applied to it.
 	Type FinopsBillingAllocationPayloadType `json:"type"`
 }
 
-// FinopsBillingAllocationPayloadType The allocation strategy, and the discriminator for which of a destination's fields are required. equalSplit distributes the pooled cost equally across the destinations. fixedPercentageSplit uses the percentage supplied for each destination, and those percentages must sum to 100. usageBasedProportionalSplit derives each destination's share from that destination's own usage when the bill runs, so the shares are not known at the time a rule is read or written.
+// FinopsBillingAllocationPayloadType The allocation strategy, and the discriminator for which of a destination's fields are required. equalSplit distributes the pooled cost equally across the destinations. fixedPercentageSplit uses the percentage supplied for each destination, and those percentages must sum to 100. usageBasedProportionalSplit derives each destination's share from that destination's own usage when the bill runs, so the shares are not known at the time a rule is read or written. dynamicProportionateSplit splits each bill month by that month's telemetry for the single destination dimension; the rule names only the dimension, and its values and shares come from the telemetry uploads applied to it.
 type FinopsBillingAllocationPayloadType string
 
 // FinopsBillingAuditFilter A single node of the audit filter tree. The "type" field
@@ -967,8 +1030,11 @@ type FinopsBillingBillingInvoiceCustomer struct {
 	// CustomerName Customer display name
 	CustomerName string `json:"customerName"`
 
-	// InvoiceNumber Optional invoice number (Invoice ID) for this customer's invoice. Immutable after creation. Duplicates are allowed. An empty string means absent.
+	// InvoiceNumber Optional number for this customer's invoice, placed after invoiceNumberPrefix, which it requires (400 invoice_number_prefix_required otherwise). The combined value is immutable after creation, must not exceed 29 characters, and duplicates are allowed. An empty string means absent.
 	InvoiceNumber *string `json:"invoiceNumber,omitempty"`
+
+	// InvoiceNumberPrefix Optional prefix for this customer's invoice number (Invoice ID); the required part of an invoice number. Placed before invoiceNumber; on its own it is the whole invoice number. An empty string means no invoice number.
+	InvoiceNumberPrefix *string `json:"invoiceNumberPrefix,omitempty"`
 }
 
 // FinopsBillingBillingInvoiceDeliveryFailure Email delivery failure details for an invoice.
@@ -1144,20 +1210,23 @@ type FinopsBillingBillingInvoiceScheduleResult struct {
 	// InvoiceIssueDateRule How each generated invoice's issue date is derived from the day its run fires.
 	InvoiceIssueDateRule FinopsBillingBillingInvoiceIssueDateRule `json:"invoiceIssueDateRule"`
 
-	// InvoiceNumberBase First sequence number of the schedule's numbering. Absent when numbering is disabled.
+	// InvoiceNumberBase First sequence number of the schedule's numbering. Absent when the schedule does not sequence (no numbering, or prefix-only).
 	InvoiceNumberBase *string `json:"invoiceNumberBase,omitempty"`
 
-	// InvoiceNumberLastUsed Sequence number most recently allocated by the schedule. Absent until the first allocation. The counter is retained when the schedule is soft-deleted, and re-adding numbering continues from last used + 1.
+	// InvoiceNumberLastUsed Sequence number most recently allocated by the schedule. Absent until the first allocation, and absent while the schedule does not sequence (no numbering, or prefix-only). The counter is retained when the schedule is soft-deleted.
 	InvoiceNumberLastUsed *string `json:"invoiceNumberLastUsed,omitempty"`
 
-	// InvoiceNumberNext Sequence number the next generated invoice will receive. Absent when numbering is disabled.
+	// InvoiceNumberNext Full invoice number the next generated invoice will receive, including its prefix. Absent when the schedule does not sequence (no numbering, or prefix-only) and once the sequence is exhausted (after 999999999 has been allocated), when numbering stays enabled but no next value exists; do not read an omitted value as numbering being disabled, check invoiceNumberingMode instead.
 	InvoiceNumberNext *string `json:"invoiceNumberNext,omitempty"`
 
-	// InvoiceNumberPrefix Prefix placed before the sequence number. Empty or absent when there is no prefix.
+	// InvoiceNumberPrefix Prefix placed before the sequence number, or the whole invoice number when the schedule has no base. Absent when the schedule has no numbering.
 	InvoiceNumberPrefix *string `json:"invoiceNumberPrefix,omitempty"`
 
-	// InvoiceNumberingEnabled Whether the schedule numbers the invoices it generates.
+	// InvoiceNumberingEnabled Whether the schedule allocates a sequence number to the invoices it generates: true only in the sequential mode. Prefer invoiceNumberingMode.
 	InvoiceNumberingEnabled *bool `json:"invoiceNumberingEnabled,omitempty"`
+
+	// InvoiceNumberingMode How the schedule numbers the invoices it generates: none (no prefix, invoices are not numbered), prefixOnly (every invoice receives the prefix as its invoice number, no sequence), sequential (prefix followed by the next sequence number). The mode is fixed once the prefix or base is set, or once the schedule has generated its first invoice.
+	InvoiceNumberingMode *FinopsBillingBillingInvoiceScheduleResultInvoiceNumberingMode `json:"invoiceNumberingMode,omitempty"`
 
 	// InvoiceTemplateId Identifier of the invoice template shared by every customer on this schedule. Absent when the schedule was created without a template.
 	InvoiceTemplateId *string `json:"invoiceTemplateId,omitempty"`
@@ -1189,6 +1258,9 @@ type FinopsBillingBillingInvoiceScheduleResult struct {
 	// UpdatedBy User ID of the caller who last updated the schedule.
 	UpdatedBy int `json:"updatedBy"`
 }
+
+// FinopsBillingBillingInvoiceScheduleResultInvoiceNumberingMode How the schedule numbers the invoices it generates: none (no prefix, invoices are not numbered), prefixOnly (every invoice receives the prefix as its invoice number, no sequence), sequential (prefix followed by the next sequence number). The mode is fixed once the prefix or base is set, or once the schedule has generated its first invoice.
+type FinopsBillingBillingInvoiceScheduleResultInvoiceNumberingMode string
 
 // FinopsBillingBillingInvoiceScheduleResultKind The resource's type
 type FinopsBillingBillingInvoiceScheduleResultKind string
@@ -2311,8 +2383,8 @@ type FinopsBillingFlexeraFinopsBillingInvoice struct {
 	// InvoiceAmount Invoice amount rendered as string
 	InvoiceAmount string `json:"invoiceAmount"`
 
-	// InvoiceNumber Invoice number (Invoice ID), scoped to the owning organization. Absent when the invoice has no number. The number is allocated only after bill-lock passes; a failed generation keeps its number and a retry reuses it.
-	InvoiceNumber *string `json:"invoiceNumber,omitempty"`
+	// InvoiceNumber Invoice number (Invoice ID), scoped to the owning organization. Always present: an empty string means the invoice has no number. The number is allocated only after bill-lock passes; a failed generation keeps its number and a retry reuses it.
+	InvoiceNumber string `json:"invoiceNumber"`
 
 	// InvoiceTemplateId Identifier of the saved template selected when this invoice was created. Empty when no saved template was used.
 	InvoiceTemplateId string `json:"invoiceTemplateId"`
@@ -2377,20 +2449,23 @@ type FinopsBillingFlexeraFinopsBillingInvoiceSchedule struct {
 	// InvoiceIssueDateRule How each generated invoice's issue date is derived from the day its run fires.
 	InvoiceIssueDateRule FinopsBillingBillingInvoiceIssueDateRule `json:"invoiceIssueDateRule"`
 
-	// InvoiceNumberBase First sequence number of the schedule's numbering. Absent when numbering is disabled.
+	// InvoiceNumberBase First sequence number of the schedule's numbering. Absent when the schedule does not sequence (no numbering, or prefix-only).
 	InvoiceNumberBase *string `json:"invoiceNumberBase,omitempty"`
 
-	// InvoiceNumberLastUsed Sequence number most recently allocated by the schedule. Absent until the first allocation. The counter is retained when the schedule is soft-deleted, and re-adding numbering continues from last used + 1.
+	// InvoiceNumberLastUsed Sequence number most recently allocated by the schedule. Absent until the first allocation, and absent while the schedule does not sequence (no numbering, or prefix-only). The counter is retained when the schedule is soft-deleted.
 	InvoiceNumberLastUsed *string `json:"invoiceNumberLastUsed,omitempty"`
 
-	// InvoiceNumberNext Sequence number the next generated invoice will receive. Absent when numbering is disabled.
+	// InvoiceNumberNext Full invoice number the next generated invoice will receive, including its prefix. Absent when the schedule does not sequence (no numbering, or prefix-only) and once the sequence is exhausted (after 999999999 has been allocated), when numbering stays enabled but no next value exists; do not read an omitted value as numbering being disabled, check invoiceNumberingMode instead.
 	InvoiceNumberNext *string `json:"invoiceNumberNext,omitempty"`
 
-	// InvoiceNumberPrefix Prefix placed before the sequence number. Empty or absent when there is no prefix.
+	// InvoiceNumberPrefix Prefix placed before the sequence number, or the whole invoice number when the schedule has no base. Absent when the schedule has no numbering.
 	InvoiceNumberPrefix *string `json:"invoiceNumberPrefix,omitempty"`
 
-	// InvoiceNumberingEnabled Whether the schedule numbers the invoices it generates.
+	// InvoiceNumberingEnabled Whether the schedule allocates a sequence number to the invoices it generates: true only in the sequential mode. Prefer invoiceNumberingMode.
 	InvoiceNumberingEnabled *bool `json:"invoiceNumberingEnabled,omitempty"`
+
+	// InvoiceNumberingMode How the schedule numbers the invoices it generates: none (no prefix, invoices are not numbered), prefixOnly (every invoice receives the prefix as its invoice number, no sequence), sequential (prefix followed by the next sequence number). The mode is fixed once the prefix or base is set, or once the schedule has generated its first invoice.
+	InvoiceNumberingMode *FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceNumberingMode `json:"invoiceNumberingMode,omitempty"`
 
 	// InvoiceTemplateId Identifier of the invoice template shared by every customer on this schedule. Absent when the schedule was created without a template.
 	InvoiceTemplateId *string `json:"invoiceTemplateId,omitempty"`
@@ -2422,6 +2497,9 @@ type FinopsBillingFlexeraFinopsBillingInvoiceSchedule struct {
 	// UpdatedBy User ID of the caller who last updated the schedule.
 	UpdatedBy int `json:"updatedBy"`
 }
+
+// FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceNumberingMode How the schedule numbers the invoices it generates: none (no prefix, invoices are not numbered), prefixOnly (every invoice receives the prefix as its invoice number, no sequence), sequential (prefix followed by the next sequence number). The mode is fixed once the prefix or base is set, or once the schedule has generated its first invoice.
+type FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceNumberingMode string
 
 // FinopsBillingFlexeraFinopsBillingInvoiceScheduleKind The resource's type
 type FinopsBillingFlexeraFinopsBillingInvoiceScheduleKind string
@@ -2500,8 +2578,8 @@ type FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoice struct {
 	// InvoiceAmount Invoice amount rendered as string
 	InvoiceAmount string `json:"invoiceAmount"`
 
-	// InvoiceNumber Invoice number (Invoice ID), scoped to the owning organization. Absent when the invoice has no number. The number is allocated only after bill-lock passes; a failed generation keeps its number and a retry reuses it.
-	InvoiceNumber *string `json:"invoiceNumber,omitempty"`
+	// InvoiceNumber Invoice number (Invoice ID), scoped to the owning organization. Always present: an empty string means the invoice has no number. The number is allocated only after bill-lock passes; a failed generation keeps its number and a retry reuses it.
+	InvoiceNumber string `json:"invoiceNumber"`
 
 	// IssueDate Invoice issue date
 	IssueDate *openapi_types.Date `json:"issueDate,omitempty"`
@@ -3431,6 +3509,33 @@ type FinopsBillingShareCloudCostManagementFeeSettings struct {
 	SavingsPlan *FinopsBillingFeeShare `json:"savingsPlan,omitempty"`
 }
 
+// FinopsBillingSharedCostSourceCondition A condition that selects the costs to be reallocated, with the same shape as a rule-based dimension condition, except that the leaf types are named 'equals' and 'contains'. A missing or empty dimension value reads as an empty string, so not of a match also selects costs without that dimension. To match several values, combine 'equals' conditions with 'or'; a tree has at most 100 conditions.
+type FinopsBillingSharedCostSourceCondition struct {
+	// CaseInsensitive Whether the match ignores case. Defaults to false.
+	CaseInsensitive *bool `json:"caseInsensitive,omitempty"`
+
+	// Dimension The dimension ID to test, as in source dimensionId. Required for the 'equals' and 'contains' types.
+	Dimension *string `json:"dimension,omitempty"`
+
+	// Expression A condition that selects the costs to be reallocated, with the same shape as a rule-based dimension condition, except that the leaf types are named 'equals' and 'contains'. A missing or empty dimension value reads as an empty string, so not of a match also selects costs without that dimension. To match several values, combine 'equals' conditions with 'or'; a tree has at most 100 conditions.
+	Expression *FinopsBillingSharedCostSourceCondition `json:"expression,omitempty"`
+
+	// Expressions The conditions combined with AND or OR. Required for the 'and' and 'or' types, with at least one condition.
+	Expressions *[]FinopsBillingSharedCostSourceCondition `json:"expressions,omitempty"`
+
+	// Substring The text the dimension must contain. Required for the 'contains' type.
+	Substring *string `json:"substring,omitempty"`
+
+	// Type The condition type. The type decides which other fields are required.
+	Type FinopsBillingSharedCostSourceConditionType `json:"type"`
+
+	// Value The value the dimension must equal. Required for the 'equals' type.
+	Value *string `json:"value,omitempty"`
+}
+
+// FinopsBillingSharedCostSourceConditionType The condition type. The type decides which other fields are required.
+type FinopsBillingSharedCostSourceConditionType string
+
 // FinopsBillingShowCustomerStatusResult defines model for FinopsBilling_ShowCustomerStatusResult.
 type FinopsBillingShowCustomerStatusResult struct {
 	// Kind The resource's type
@@ -3475,8 +3580,11 @@ type FinopsBillingShowSharedCostRuleResult struct {
 	// Priority Execution priority of this rule relative to other rules in the organization. Lower numbers execute first.
 	Priority int `json:"priority"`
 
-	// Source Dimensions that identify the costs to be reallocated. Multiple dimensions are combined using AND logic; only costs that satisfy every dimension are included.
-	Source []FinopsBillingSourceDimension `json:"source"`
+	// Source Dimensions that identify the costs to be reallocated. Multiple dimensions are combined using AND logic; only costs that satisfy every dimension are included. A rule has exactly one of source and sourceCondition.
+	Source *[]FinopsBillingSourceDimension `json:"source,omitempty"`
+
+	// SourceCondition A condition that selects the costs to be reallocated, with the same shape as a rule-based dimension condition, except that the leaf types are named 'equals' and 'contains'. A missing or empty dimension value reads as an empty string, so not of a match also selects costs without that dimension. To match several values, combine 'equals' conditions with 'or'; a tree has at most 100 conditions.
+	SourceCondition *FinopsBillingSharedCostSourceCondition `json:"sourceCondition,omitempty"`
 
 	// Status Current lifecycle status of the rule.
 	Status string `json:"status"`
@@ -3590,6 +3698,231 @@ type FinopsBillingSupportChargeSettingsApplyBy string
 //
 // Values **developer**, **business**, and **enterpriseOnRamp** use rates from before December 2025. They remain for legacy compatibility.
 type FinopsBillingSupportChargeSettingsTier string
+
+// FinopsBillingTelemetryDateRange The first and last date of the file's valid rows, formatted YYYY-MM-DD.
+type FinopsBillingTelemetryDateRange struct {
+	// End The latest date.
+	End openapi_types.Date `json:"end"`
+
+	// Start The earliest date.
+	Start openapi_types.Date `json:"start"`
+}
+
+// FinopsBillingTelemetryIssue Every occurrence of one error or warning code in the whole file.
+type FinopsBillingTelemetryIssue struct {
+	// Code Machine-readable code. Consumers must tolerate codes they do not recognize.
+	Code string `json:"code"`
+
+	// Column The column header the issue applies to. Absent for file-level issues.
+	Column *string `json:"column,omitempty"`
+
+	// Count Number of occurrences.
+	Count int `json:"count"`
+
+	// Examples Up to 5 occurrences.
+	Examples []FinopsBillingTelemetryIssueExample `json:"examples"`
+
+	// Message Customer-facing message.
+	Message string `json:"message"`
+
+	// Rows Up to 100 row numbers, ascending. Empty for file-level issues.
+	Rows []int64 `json:"rows"`
+
+	// RowsTruncated True when there are more than 100 rows.
+	RowsTruncated bool `json:"rowsTruncated"`
+}
+
+// FinopsBillingTelemetryIssueExample One occurrence of an error or warning.
+type FinopsBillingTelemetryIssueExample struct {
+	// DidYouMean A close match for the value, when there is one.
+	DidYouMean *string `json:"didYouMean,omitempty"`
+
+	// RowNumber Physical line number in the file. -1 when the problem has no single line.
+	RowNumber int64 `json:"rowNumber"`
+
+	// Value The offending value, exactly as it appears in the file.
+	Value string `json:"value"`
+}
+
+// FinopsBillingTelemetryUpload defines model for FinopsBilling_TelemetryUpload.
+type FinopsBillingTelemetryUpload struct {
+	// Applied The rule save that applied the upload.
+	Applied *FinopsBillingTelemetryUploadApplied `json:"applied,omitempty"`
+
+	// BaseMonths For every month (YYYYMM) with a valid row, the upload that last changed it when the diff was computed, or null if the month had no data. Empty for a new rule. A save that applies the upload fails with telemetry_upload_stale if any of these months has moved since.
+	BaseMonths map[string]interface{} `json:"baseMonths"`
+
+	// Dimension The destination dimension the file was validated against.
+	Dimension FinopsBillingTelemetryUploadDimension `json:"dimension"`
+
+	// Errors Errors over the whole file, one entry per code, file-level first then by count descending.
+	Errors []FinopsBillingTelemetryIssue `json:"errors"`
+
+	// ExpiresAt When the staged upload expires, 24 hours after it was uploaded.
+	ExpiresAt time.Time `json:"expiresAt"`
+
+	// FileName Name of the uploaded file.
+	FileName string `json:"fileName"`
+
+	// Kind The resource's type
+	Kind FinopsBillingTelemetryUploadKind `json:"kind"`
+
+	// RuleId The rule the file is for. Absent for a new rule until a save creates it.
+	RuleId *string `json:"ruleId,omitempty"`
+
+	// Status valid when the file has no errors, otherwise invalid. Further statuses may be added, so consumers must tolerate a value they do not recognize.
+	Status FinopsBillingTelemetryUploadStatus `json:"status"`
+
+	// Summary Counts over the whole file, whatever the page or filter. rowsTotal = added + modified + deleted + unchanged + ignored + rowsWithErrors; a row with errors is counted only in rowsWithErrors. When the file has a file-level error only rowsTotal is present.
+	Summary FinopsBillingTelemetryUploadSummary `json:"summary"`
+
+	// UploadId Identifier of the staged telemetry upload.
+	UploadId string `json:"uploadId"`
+
+	// Warnings Warnings over the whole file, one entry per code, by count descending.
+	Warnings []FinopsBillingTelemetryIssue `json:"warnings"`
+}
+
+// FinopsBillingTelemetryUploadKind The resource's type
+type FinopsBillingTelemetryUploadKind string
+
+// FinopsBillingTelemetryUploadStatus valid when the file has no errors, otherwise invalid. Further statuses may be added, so consumers must tolerate a value they do not recognize.
+type FinopsBillingTelemetryUploadStatus string
+
+// FinopsBillingTelemetryUploadApplied The rule save that applied the upload.
+type FinopsBillingTelemetryUploadApplied struct {
+	// AppliedAt When the save applied the upload.
+	AppliedAt time.Time `json:"appliedAt"`
+
+	// AppliedBy Who saved the rule.
+	AppliedBy string `json:"appliedBy"`
+
+	// MonthsTouched Bill months (YYYY-MM) with at least one added, modified or deleted row, ascending. Reprocess these months to apply the change.
+	MonthsTouched []string `json:"monthsTouched"`
+}
+
+// FinopsBillingTelemetryUploadDimension The destination dimension the file was validated against.
+type FinopsBillingTelemetryUploadDimension struct {
+	// Id Unique identifier of the dimension.
+	Id string `json:"id"`
+
+	// Name Display name of the dimension; the file's second column header must match it.
+	Name string `json:"name"`
+}
+
+// FinopsBillingTelemetryUploadPage The page of rows returned. Rows are paged by offset because a staged upload never changes and holds at most one 50 MB file, so an offset always points at the same row and total is exact.
+type FinopsBillingTelemetryUploadPage struct {
+	// Limit Maximum number of rows returned.
+	Limit int `json:"limit"`
+
+	// Offset Index of the first row returned.
+	Offset int `json:"offset"`
+
+	// Total Number of rows that match the filter.
+	Total int `json:"total"`
+}
+
+// FinopsBillingTelemetryUploadPreview defines model for FinopsBilling_TelemetryUploadPreview.
+type FinopsBillingTelemetryUploadPreview struct {
+	// Applied The rule save that applied the upload.
+	Applied *FinopsBillingTelemetryUploadApplied `json:"applied,omitempty"`
+
+	// BaseMonths For every month (YYYYMM) with a valid row, the upload that last changed it when the diff was computed, or null if the month had no data. Empty for a new rule. A save that applies the upload fails with telemetry_upload_stale if any of these months has moved since.
+	BaseMonths map[string]interface{} `json:"baseMonths"`
+
+	// Dimension The destination dimension the file was validated against.
+	Dimension FinopsBillingTelemetryUploadDimension `json:"dimension"`
+
+	// ExpiresAt When the staged upload expires, 24 hours after it was uploaded.
+	ExpiresAt time.Time `json:"expiresAt"`
+
+	// FileName Name of the uploaded file.
+	FileName string `json:"fileName"`
+
+	// Kind The resource's type
+	Kind FinopsBillingTelemetryUploadPreviewKind `json:"kind"`
+
+	// Page The page of rows returned. Rows are paged by offset because a staged upload never changes and holds at most one 50 MB file, so an offset always points at the same row and total is exact.
+	Page FinopsBillingTelemetryUploadPage `json:"page"`
+
+	// Rows One page of rows, in file order. Empty when the file has a file-level error.
+	Rows []FinopsBillingTelemetryUploadRow `json:"rows"`
+
+	// RuleId The rule the file is for. Absent for a new rule until a save creates it.
+	RuleId *string `json:"ruleId,omitempty"`
+
+	// Status valid when the file has no errors, otherwise invalid. Further statuses may be added, so consumers must tolerate a value they do not recognize.
+	Status FinopsBillingTelemetryUploadPreviewStatus `json:"status"`
+
+	// Summary Counts over the whole file, whatever the page or filter. rowsTotal = added + modified + deleted + unchanged + ignored + rowsWithErrors; a row with errors is counted only in rowsWithErrors. When the file has a file-level error only rowsTotal is present.
+	Summary FinopsBillingTelemetryUploadSummary `json:"summary"`
+
+	// UploadId Identifier of the staged telemetry upload.
+	UploadId string `json:"uploadId"`
+
+	// Warnings Warnings over the whole file, one entry per code, by count descending.
+	Warnings []FinopsBillingTelemetryIssue `json:"warnings"`
+}
+
+// FinopsBillingTelemetryUploadPreviewKind The resource's type
+type FinopsBillingTelemetryUploadPreviewKind string
+
+// FinopsBillingTelemetryUploadPreviewStatus valid when the file has no errors, otherwise invalid. Further statuses may be added, so consumers must tolerate a value they do not recognize.
+type FinopsBillingTelemetryUploadPreviewStatus string
+
+// FinopsBillingTelemetryUploadRow One row of the file with the change it makes. date, dimensionValue and metric are echoed exactly as they appear in the file when the row has errors.
+type FinopsBillingTelemetryUploadRow struct {
+	// Change The change the row makes. Absent when the row has errors.
+	Change *FinopsBillingTelemetryUploadRowChange `json:"change,omitempty"`
+
+	// Date The row's date, formatted YYYY-MM-DD when the row is valid.
+	Date string `json:"date"`
+
+	// DimensionValue The row's dimension value.
+	DimensionValue string `json:"dimensionValue"`
+
+	// Issues The error and warning codes on the row.
+	Issues []string `json:"issues"`
+
+	// Metric The row's usage as a decimal string.
+	Metric string `json:"metric"`
+
+	// PreviousMetric The saved usage as a decimal string. Absent when there is no saved data.
+	PreviousMetric *string `json:"previousMetric,omitempty"`
+
+	// RowNumber Physical line number in the file.
+	RowNumber int64 `json:"rowNumber"`
+}
+
+// FinopsBillingTelemetryUploadRowChange The change the row makes. Absent when the row has errors.
+type FinopsBillingTelemetryUploadRowChange string
+
+// FinopsBillingTelemetryUploadSummary Counts over the whole file, whatever the page or filter. rowsTotal = added + modified + deleted + unchanged + ignored + rowsWithErrors; a row with errors is counted only in rowsWithErrors. When the file has a file-level error only rowsTotal is present.
+type FinopsBillingTelemetryUploadSummary struct {
+	// Added Rows that add a value with no saved data.
+	Added *int `json:"added,omitempty"`
+
+	// DateRange The first and last date of the file's valid rows, formatted YYYY-MM-DD.
+	DateRange *FinopsBillingTelemetryDateRange `json:"dateRange,omitempty"`
+
+	// Deleted Rows that remove a saved value.
+	Deleted *int `json:"deleted,omitempty"`
+
+	// Ignored Rows with a usage of 0 and no saved data.
+	Ignored *int `json:"ignored,omitempty"`
+
+	// Modified Rows that change a saved value.
+	Modified *int `json:"modified,omitempty"`
+
+	// RowsTotal Number of data rows in the file.
+	RowsTotal int `json:"rowsTotal"`
+
+	// RowsWithErrors Rows with at least one error.
+	RowsWithErrors *int `json:"rowsWithErrors,omitempty"`
+
+	// Unchanged Rows equal to the saved value.
+	Unchanged *int `json:"unchanged,omitempty"`
+}
 
 // FinopsBillingUpchargeDiscountSettings Configure the addition of a percentage-value charge as a new line item.
 type FinopsBillingUpchargeDiscountSettings struct {
@@ -3772,3 +4105,6 @@ type FinopsBillingInvoiceScheduleInvoicesIndexParamsExportType string
 
 // FinopsBillingInvoicesIndexParamsExportType defines parameters for FinopsBillingInvoicesIndex.
 type FinopsBillingInvoicesIndexParamsExportType string
+
+// FinopsBillingSharedCostRulesShowTelemetryUploadParamsFilter defines parameters for FinopsBillingSharedCostRulesShowTelemetryUpload.
+type FinopsBillingSharedCostRulesShowTelemetryUploadParamsFilter string

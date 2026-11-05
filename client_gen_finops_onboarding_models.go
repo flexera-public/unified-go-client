@@ -53,6 +53,12 @@ const (
 	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingGcpGenericBillConnectOnboardingOriginPlatform FinopsOnboardingApplicationVndFlexeraFinopsOnboardingGcpGenericBillConnectOnboardingOrigin = "platform"
 )
 
+// Defines values for FinopsOnboardingApplicationVndFlexeraFinopsOnboardingSnowflakeGenericBillConnectOnboardingOrigin.
+const (
+	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingSnowflakeGenericBillConnectOnboardingOriginFinops   FinopsOnboardingApplicationVndFlexeraFinopsOnboardingSnowflakeGenericBillConnectOnboardingOrigin = "finops"
+	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingSnowflakeGenericBillConnectOnboardingOriginPlatform FinopsOnboardingApplicationVndFlexeraFinopsOnboardingSnowflakeGenericBillConnectOnboardingOrigin = "platform"
+)
+
 // Defines values for FinopsOnboardingAzureCspBillConnectKind.
 const (
 	FinopsOnboardingAzureCspBillConnectKindFinopsBillConnectCbiOiAzureCsp FinopsOnboardingAzureCspBillConnectKind = "finops:bill-connect-cbi-oi-azure-csp"
@@ -153,6 +159,14 @@ const (
 	FinopsOnboardingDatabricksBillConnectKindFinopsBillConnectPaasDatabricks FinopsOnboardingDatabricksBillConnectKind = "finops:bill-connect-paas-databricks"
 )
 
+// Defines values for FinopsOnboardingEnterpriseProcessingDetailsTaskStatus.
+const (
+	FinopsOnboardingEnterpriseProcessingDetailsTaskStatusCompleted  FinopsOnboardingEnterpriseProcessingDetailsTaskStatus = "completed"
+	FinopsOnboardingEnterpriseProcessingDetailsTaskStatusFailed     FinopsOnboardingEnterpriseProcessingDetailsTaskStatus = "failed"
+	FinopsOnboardingEnterpriseProcessingDetailsTaskStatusInProgress FinopsOnboardingEnterpriseProcessingDetailsTaskStatus = "inProgress"
+	FinopsOnboardingEnterpriseProcessingDetailsTaskStatusPending    FinopsOnboardingEnterpriseProcessingDetailsTaskStatus = "pending"
+)
+
 // Defines values for FinopsOnboardingFlexeraFinopsOnboardingBillValidationKind.
 const (
 	FinopsOnboardingFlexeraFinopsOnboardingBillValidationKindFinopsAzureMcaCustomerValidation              FinopsOnboardingFlexeraFinopsOnboardingBillValidationKind = "finops:azure-mca-customer-validation"
@@ -167,6 +181,15 @@ const (
 	FinopsOnboardingFlexeraFinopsOnboardingBillValidationKindFinopsBillConnectInheritedValidation          FinopsOnboardingFlexeraFinopsOnboardingBillValidationKind = "finops:bill-connect-inherited-validation"
 	FinopsOnboardingFlexeraFinopsOnboardingBillValidationKindFinopsBillConnectPaasDatabricksValidation     FinopsOnboardingFlexeraFinopsOnboardingBillValidationKind = "finops:bill-connect-paas-databricks-validation"
 	FinopsOnboardingFlexeraFinopsOnboardingBillValidationKindFinopsBillConnectPaasSnowflakeValidation      FinopsOnboardingFlexeraFinopsOnboardingBillValidationKind = "finops:bill-connect-paas-snowflake-validation"
+)
+
+// Defines values for FinopsOnboardingFlexeraFinopsOnboardingEnterpriseBillMonthItemStatus.
+const (
+	FinopsOnboardingFlexeraFinopsOnboardingEnterpriseBillMonthItemStatusCompleted  FinopsOnboardingFlexeraFinopsOnboardingEnterpriseBillMonthItemStatus = "completed"
+	FinopsOnboardingFlexeraFinopsOnboardingEnterpriseBillMonthItemStatusError      FinopsOnboardingFlexeraFinopsOnboardingEnterpriseBillMonthItemStatus = "error"
+	FinopsOnboardingFlexeraFinopsOnboardingEnterpriseBillMonthItemStatusProcessed  FinopsOnboardingFlexeraFinopsOnboardingEnterpriseBillMonthItemStatus = "processed"
+	FinopsOnboardingFlexeraFinopsOnboardingEnterpriseBillMonthItemStatusProcessing FinopsOnboardingFlexeraFinopsOnboardingEnterpriseBillMonthItemStatus = "processing"
+	FinopsOnboardingFlexeraFinopsOnboardingEnterpriseBillMonthItemStatusWarning    FinopsOnboardingFlexeraFinopsOnboardingEnterpriseBillMonthItemStatus = "warning"
 )
 
 // Defines values for FinopsOnboardingFlexeraFinopsOnboardingGenericBillConnectItemKind.
@@ -484,6 +507,9 @@ type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingSnowflakeGenericBillCo
 	// AccountId Snowflake account identifier in the format of organization and account name
 	AccountId *string `json:"accountId,omitempty"`
 
+	// OnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+	OnboardingOrigin *FinopsOnboardingApplicationVndFlexeraFinopsOnboardingSnowflakeGenericBillConnectOnboardingOrigin `json:"onboardingOrigin,omitempty"`
+
 	// Role Snowflake role granted to the service user for querying required views (case-sensitive)
 	Role *string `json:"role,omitempty"`
 
@@ -493,6 +519,9 @@ type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingSnowflakeGenericBillCo
 	// Warehouse Snowflake warehouse name used for executing cost and usage queries (case-sensitive)
 	Warehouse *string `json:"warehouse,omitempty"`
 }
+
+// FinopsOnboardingApplicationVndFlexeraFinopsOnboardingSnowflakeGenericBillConnectOnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingSnowflakeGenericBillConnectOnboardingOrigin string
 
 // FinopsOnboardingAzureCspBillConnect defines model for FinopsOnboarding_AzureCspBillConnect.
 type FinopsOnboardingAzureCspBillConnect struct {
@@ -1099,6 +1128,45 @@ type FinopsOnboardingEnrollmentAccountDetails struct {
 	EnrollmentAccountId string `json:"enrollmentAccountId"`
 }
 
+// FinopsOnboardingEnterpriseProcessingDetailsError Customer-safe failure details for a processing stage
+type FinopsOnboardingEnterpriseProcessingDetailsError struct {
+	// Code Code identifying the failure
+	Code string `json:"code"`
+
+	// Description Human-readable description of the failure
+	Description string `json:"description"`
+}
+
+// FinopsOnboardingEnterpriseProcessingDetailsTask One applicable processing stage for the selected enterprise bill month execution
+type FinopsOnboardingEnterpriseProcessingDetailsTask struct {
+	// Errors Customer-safe failure details. Empty unless the stage has failed.
+	Errors []FinopsOnboardingEnterpriseProcessingDetailsError `json:"errors"`
+
+	// Status Stage status. Known values: pending (not yet reached), inProgress (next expected or ongoing work), completed (successful, possibly with warnings), failed (current failure with nonempty errors). A current failure prevents another stage from being in progress.
+	Status FinopsOnboardingEnterpriseProcessingDetailsTaskStatus `json:"status"`
+
+	// TaskName Known names: Running Validations, Loading Bill Month Data, Applying Currency, Applying Custom Dimensions, Applying Billing Rules, Finalizing Reports, Finishing Up. Inapplicable stages are omitted.
+	TaskName string `json:"taskName"`
+
+	// Warnings Non-fatal warning details. Always present, including when empty.
+	Warnings []FinopsOnboardingEnterpriseProcessingDetailsWarning `json:"warnings"`
+}
+
+// FinopsOnboardingEnterpriseProcessingDetailsTaskStatus Stage status. Known values: pending (not yet reached), inProgress (next expected or ongoing work), completed (successful, possibly with warnings), failed (current failure with nonempty errors). A current failure prevents another stage from being in progress.
+type FinopsOnboardingEnterpriseProcessingDetailsTaskStatus string
+
+// FinopsOnboardingEnterpriseProcessingDetailsWarning Non-fatal warning details for a processing stage
+type FinopsOnboardingEnterpriseProcessingDetailsWarning struct {
+	// Code Code identifying the warning
+	Code string `json:"code"`
+
+	// Description Human-readable description of the warning
+	Description string `json:"description"`
+
+	// Type Category of the warning
+	Type string `json:"type"`
+}
+
 // FinopsOnboardingEnterpriseReprocessItem Individual bill month item to reprocess
 type FinopsOnboardingEnterpriseReprocessItem struct {
 	// BillConnectId Unique identifier for the bill connect
@@ -1211,9 +1279,12 @@ type FinopsOnboardingFlexeraFinopsOnboardingEnterpriseBillMonthItem struct {
 	// LastProcessedAt Timestamp when bill was last reprocessed.
 	LastProcessedAt *time.Time `json:"lastProcessedAt,omitempty"`
 
-	// Status Processing status of this bill month. Known values: processing, processed.
-	Status string `json:"status"`
+	// Status Bill locking service processing outcome of this bill month: processing (work is in progress), warning (completed with non-fatal issues), error (processing failed), or completed (processing succeeded). The legacy value processed is retained in the enum for compatibility; current bill-month status responses use completed for success. The separate reprocess response state continues to use processed. This outcome is independent of reprocess action state.
+	Status FinopsOnboardingFlexeraFinopsOnboardingEnterpriseBillMonthItemStatus `json:"status"`
 }
+
+// FinopsOnboardingFlexeraFinopsOnboardingEnterpriseBillMonthItemStatus Bill locking service processing outcome of this bill month: processing (work is in progress), warning (completed with non-fatal issues), error (processing failed), or completed (processing succeeded). The legacy value processed is retained in the enum for compatibility; current bill-month status responses use completed for success. The separate reprocess response state continues to use processed. This outcome is independent of reprocess action state.
+type FinopsOnboardingFlexeraFinopsOnboardingEnterpriseBillMonthItemStatus string
 
 // FinopsOnboardingFlexeraFinopsOnboardingGenericBillConnectItem defines model for FinopsOnboarding_FlexeraFinopsOnboardingGenericBillConnectItem.
 type FinopsOnboardingFlexeraFinopsOnboardingGenericBillConnectItem struct {

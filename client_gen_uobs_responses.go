@@ -241,6 +241,120 @@ func (r UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdP
 	return 0
 }
 
+type UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON202      *UobsOkResponseAny
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON202      *UobsOkResponseAny
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON202      *UobsOkResponseAny
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *UobsOkResponseValidationResult
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -579,6 +693,66 @@ func (c *ClientWithResponses) UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnb
 		return nil, err
 	}
 	return ParseUobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutResponse(rsp)
+}
+
+// UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostWithBodyWithResponse request with arbitrary body returning *UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostResponse
+func (c *ClientWithResponses) UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostResponse(rsp)
+}
+
+func (c *ClientWithResponses) UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostWithResponse(ctx context.Context, orgId string, body UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePost(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostResponse(rsp)
+}
+
+// UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutWithBodyWithResponse request with arbitrary body returning *UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutResponse
+func (c *ClientWithResponses) UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutWithBodyWithResponse(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutWithBody(ctx, orgId, connectorId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutResponse(rsp)
+}
+
+func (c *ClientWithResponses) UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutWithResponse(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPut(ctx, orgId, connectorId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutResponse(rsp)
+}
+
+// UobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostWithResponse request returning *UobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostResponse
+func (c *ClientWithResponses) UobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostWithResponse(ctx context.Context, orgId string, connectorId string, reqEditors ...RequestEditorFn) (*UobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostResponse, error) {
+	rsp, err := c.UobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPost(ctx, orgId, connectorId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostResponse(rsp)
+}
+
+// UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostWithBodyWithResponse request with arbitrary body returning *UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostResponse
+func (c *ClientWithResponses) UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostResponse, error) {
+	rsp, err := c.UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostResponse(rsp)
+}
+
+func (c *ClientWithResponses) UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostWithResponse(ctx context.Context, orgId string, body UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostResponse, error) {
+	rsp, err := c.UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePost(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostResponse(rsp)
 }
 
 // UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetWithResponse request returning *UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetResponse
@@ -1156,6 +1330,292 @@ func ParseUobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorI
 			return nil, err
 		}
 		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostResponse parses an HTTP response from a UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostWithResponse call
+func ParseUobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostResponse(rsp *http.Response) (*UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutResponse parses an HTTP response from a UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutWithResponse call
+func ParseUobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutResponse(rsp *http.Response) (*UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostResponse parses an HTTP response from a UobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostWithResponse call
+func ParseUobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostResponse(rsp *http.Response) (*UobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostResponse parses an HTTP response from a UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostWithResponse call
+func ParseUobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostResponse(rsp *http.Response) (*UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UobsOkResponseValidationResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest UobsErrorResponse

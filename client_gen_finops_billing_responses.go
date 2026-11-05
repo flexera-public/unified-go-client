@@ -1189,6 +1189,51 @@ func (r FinopsBillingSharedCostRulesReorderResponse) StatusCode() int {
 	return 0
 }
 
+type FinopsBillingSharedCostRulesUploadTelemetryResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingTelemetryUpload
+	JSON422      *FinopsBillingTelemetryUpload
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingSharedCostRulesUploadTelemetryResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingSharedCostRulesUploadTelemetryResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingSharedCostRulesShowTelemetryUploadResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingTelemetryUploadPreview
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingSharedCostRulesShowTelemetryUploadResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingSharedCostRulesShowTelemetryUploadResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type FinopsBillingSharedCostRulesDeleteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -1248,6 +1293,27 @@ func (r FinopsBillingSharedCostRulesUpdateResponse) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r FinopsBillingSharedCostRulesUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+type FinopsBillingSharedCostRulesDownloadTelemetryResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingSharedCostRulesDownloadTelemetryResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingSharedCostRulesDownloadTelemetryResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -1889,6 +1955,24 @@ func (c *ClientWithResponses) FinopsBillingSharedCostRulesReorderWithResponse(ct
 	return ParseFinopsBillingSharedCostRulesReorderResponse(rsp)
 }
 
+// FinopsBillingSharedCostRulesUploadTelemetryWithBodyWithResponse request with arbitrary body returning *FinopsBillingSharedCostRulesUploadTelemetryResponse
+func (c *ClientWithResponses) FinopsBillingSharedCostRulesUploadTelemetryWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesUploadTelemetryResponse, error) {
+	rsp, err := c.FinopsBillingSharedCostRulesUploadTelemetryWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingSharedCostRulesUploadTelemetryResponse(rsp)
+}
+
+// FinopsBillingSharedCostRulesShowTelemetryUploadWithResponse request returning *FinopsBillingSharedCostRulesShowTelemetryUploadResponse
+func (c *ClientWithResponses) FinopsBillingSharedCostRulesShowTelemetryUploadWithResponse(ctx context.Context, orgId int, uploadId string, params *FinopsBillingSharedCostRulesShowTelemetryUploadParams, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesShowTelemetryUploadResponse, error) {
+	rsp, err := c.FinopsBillingSharedCostRulesShowTelemetryUpload(ctx, orgId, uploadId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingSharedCostRulesShowTelemetryUploadResponse(rsp)
+}
+
 // FinopsBillingSharedCostRulesDeleteWithResponse request returning *FinopsBillingSharedCostRulesDeleteResponse
 func (c *ClientWithResponses) FinopsBillingSharedCostRulesDeleteWithResponse(ctx context.Context, orgId int, id string, params *FinopsBillingSharedCostRulesDeleteParams, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesDeleteResponse, error) {
 	rsp, err := c.FinopsBillingSharedCostRulesDelete(ctx, orgId, id, params, reqEditors...)
@@ -1922,6 +2006,15 @@ func (c *ClientWithResponses) FinopsBillingSharedCostRulesUpdateWithResponse(ctx
 		return nil, err
 	}
 	return ParseFinopsBillingSharedCostRulesUpdateResponse(rsp)
+}
+
+// FinopsBillingSharedCostRulesDownloadTelemetryWithResponse request returning *FinopsBillingSharedCostRulesDownloadTelemetryResponse
+func (c *ClientWithResponses) FinopsBillingSharedCostRulesDownloadTelemetryWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesDownloadTelemetryResponse, error) {
+	rsp, err := c.FinopsBillingSharedCostRulesDownloadTelemetry(ctx, orgId, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingSharedCostRulesDownloadTelemetryResponse(rsp)
 }
 
 // ParseFinopsBillingBillingShowCustomerStatusResponse parses an HTTP response from a FinopsBillingBillingShowCustomerStatusWithResponse call
@@ -3100,6 +3193,65 @@ func ParseFinopsBillingSharedCostRulesReorderResponse(rsp *http.Response) (*Fino
 	return response, nil
 }
 
+// ParseFinopsBillingSharedCostRulesUploadTelemetryResponse parses an HTTP response from a FinopsBillingSharedCostRulesUploadTelemetryWithResponse call
+func ParseFinopsBillingSharedCostRulesUploadTelemetryResponse(rsp *http.Response) (*FinopsBillingSharedCostRulesUploadTelemetryResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingSharedCostRulesUploadTelemetryResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingTelemetryUpload
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest FinopsBillingTelemetryUpload
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingSharedCostRulesShowTelemetryUploadResponse parses an HTTP response from a FinopsBillingSharedCostRulesShowTelemetryUploadWithResponse call
+func ParseFinopsBillingSharedCostRulesShowTelemetryUploadResponse(rsp *http.Response) (*FinopsBillingSharedCostRulesShowTelemetryUploadResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingSharedCostRulesShowTelemetryUploadResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingTelemetryUploadPreview
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseFinopsBillingSharedCostRulesDeleteResponse parses an HTTP response from a FinopsBillingSharedCostRulesDeleteWithResponse call
 func ParseFinopsBillingSharedCostRulesDeleteResponse(rsp *http.Response) (*FinopsBillingSharedCostRulesDeleteResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -3163,6 +3315,22 @@ func ParseFinopsBillingSharedCostRulesUpdateResponse(rsp *http.Response) (*Finop
 		}
 		response.JSON200 = &dest
 
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingSharedCostRulesDownloadTelemetryResponse parses an HTTP response from a FinopsBillingSharedCostRulesDownloadTelemetryWithResponse call
+func ParseFinopsBillingSharedCostRulesDownloadTelemetryResponse(rsp *http.Response) (*FinopsBillingSharedCostRulesDownloadTelemetryResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingSharedCostRulesDownloadTelemetryResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
 	}
 
 	return response, nil

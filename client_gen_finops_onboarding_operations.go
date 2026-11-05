@@ -538,7 +538,7 @@ type FinopsOnboardingProcessingHistoryIndexParams struct {
 	// OrderBy Format: field [asc|desc][,field [asc|desc]...]. Direction is separated by one or more spaces.
 	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
 
-	// Filter Supports operators: eq, ne, gt, ge, lt, le, co, sw, ew, in, nin, and, or and parentheses for grouping.
+	// Filter Supports operators: eq, ne, gt, ge, lt, le, co, sw, ew, in, nin, and, or and nested parentheses for grouping. AND takes precedence over OR. Filterable fields are billConnectId, billMonth, status, lastProcessStartAt, lastProcessEndAt, and lastProcessedAt. Membership values use a quoted comma-separated list. Status outcomes are processing, warning, error, and completed.
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
 	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
@@ -1346,6 +1346,18 @@ func (c *Client) FinopsOnboardingBillConnectSnowflakeValidate(ctx context.Contex
 
 func (c *Client) FinopsOnboardingBillConnectValidate(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewFinopsOnboardingBillConnectValidateRequest(c.Server, orgId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsOnboardingProcessingHistoryShow(ctx context.Context, orgId int, billConnectId string, billMonth string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsOnboardingProcessingHistoryShowRequest(c.Server, orgId, billConnectId, billMonth)
 	if err != nil {
 		return nil, err
 	}
@@ -3348,6 +3360,54 @@ func NewFinopsOnboardingBillConnectValidateRequest(server string, orgId int) (*h
 	}
 
 	operationPath := fmt.Sprintf("/finops-onboarding/v1/orgs/%s/bill-connects/validations", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("GET", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsOnboardingProcessingHistoryShowRequest generates requests for FinopsOnboardingProcessingHistoryShow
+func NewFinopsOnboardingProcessingHistoryShowRequest(server string, orgId int, billConnectId string, billMonth string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "orgId", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "billConnectId", runtime.ParamLocationPath, billConnectId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "billMonth", runtime.ParamLocationPath, billMonth)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-onboarding/v1/orgs/%s/processing/bill-connects/%s/bill-months/%s", pathParam0, pathParam1, pathParam2)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
