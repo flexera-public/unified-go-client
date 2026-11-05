@@ -153,13 +153,22 @@ To update Go dependencies and regenerate the client together:
 make all
 ```
 
-The scheduled/manual `refresh-client` workflow first pins the latest upstream
-`main` snapshot, then proposes the snapshot, dependency, and generated-client
-changes in a pull request.
+The scheduled/manual `refresh-client` workflow pins the latest upstream `main`
+snapshot and regenerates/tests the client, then updates Go dependencies and
+regenerates/tests again, so failures are attributable to either the spec or a
+dependency. It compares the exported API against the previous commit with
+`apidiff`; incompatible changes are listed in the pull request body and the
+pull request is labeled `breaking-change`.
 
 Generation first runs `oapi-codegen` once to preserve its normal package-wide
 behavior, then `cmd/split-client` partitions the resulting Go syntax tree.
 Running generation twice with the same inputs must produce no changes.
+
+Enum constants are always prefixed with their type name
+(`compatibility.always-prefix-enum-values` in `config.yaml`), for example
+`FinopsCustomizationsRuleBasedDimensionConditionTypeAnd`. Without this,
+`oapi-codegen` only prefixes values whose short names collide elsewhere in the
+spec, so unrelated upstream changes could rename existing constants.
 
 ## Service inventory and migration
 
