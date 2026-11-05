@@ -5,3 +5,7 @@ generate:
   models: true
   client: true
   server-urls: true
+compatibility:
+  # Prefix every enum constant with its type name so generated identifiers do
+  # not change when unrelated spec changes add or remove name collisions.
+  always-prefix-enum-values: true
