@@ -20,8 +20,17 @@ jobs:
       - name: Generate client
         run: make generate
 
-      - name: Check extension manifest freshness
-        run: git diff --exit-code -- client_extensions_manifest.json
+      - name: Check generated client freshness
+        run: |
+          if ! git diff --exit-code --stat -- 'client_gen_*' client_extensions_manifest.json; then
+            echo "::error::Generated files differ from unified-openapi/openapi3.json; run 'make generate' and commit the result."
+            exit 1
+          fi
+          untracked=$(git ls-files --others --exclude-standard -- 'client_gen_*')
+          if [ -n "$untracked" ]; then
+            echo "::error::Untracked generated files: $untracked"
+            exit 1
+          fi
 
       - name: Vet
         run: make vet
