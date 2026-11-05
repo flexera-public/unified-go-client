@@ -1,8 +1,8 @@
 name: refresh-client
 
 # Periodically pin the latest unified-openapi main snapshot, update Go
-# dependencies, and regenerate client artifacts. The resulting changes are
-# proposed for review.
+# dependencies, and regenerate client artifacts. Incompatible exported API
+# changes are reported in the pull request, which is proposed for review.
 
 on:
   schedule:
@@ -20,6 +20,8 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    env:
+      APIDIFF_VERSION: v0.0.0-20261014143641-f0251eb4aa3e
     steps:
       - uses: actions/checkout@v7
 
@@ -28,14 +30,38 @@ jobs:
           go-version-file: go.mod
           cache: true
 
+      - name: Snapshot exported API before refresh
+        run: go run golang.org/x/exp/cmd/apidiff@${APIDIFF_VERSION} -m -w /tmp/api-before.export .
+
+      # Spec refresh and dependency updates run as separate stages so a failure
+      # is attributable to one or the other.
       - name: Pin latest unified-openapi main snapshot
         run: make update-unified-openapi
 
-      - name: Update dependencies and regenerate client
-        run: make all
+      - name: Regenerate client from new snapshot
+        run: make generate
 
-      - name: Run tests
+      - name: Run tests (spec refresh)
         run: make test
+
+      - name: Update Go dependencies
+        run: make update-deps
+
+      - name: Regenerate client with updated dependencies
+        run: make generate
+
+      - name: Run tests (dependency updates)
+        run: make test
+
+      - name: Detect incompatible API changes
+        id: apidiff
+        run: |
+          go run golang.org/x/exp/cmd/apidiff@${APIDIFF_VERSION} -m -incompatible /tmp/api-before.export . > /tmp/apidiff.txt
+          if [ -s /tmp/apidiff.txt ]; then
+            echo "breaking=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "breaking=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Build change summary
         id: summary
@@ -54,6 +80,18 @@ jobs:
               git diff --stat
               echo '```'
             fi
+            echo ""
+            if [ "${{ steps.apidiff.outputs.breaking }}" = "true" ]; then
+              echo "### :warning: Incompatible API changes ($(wc -l < /tmp/apidiff.txt) total)"
+              echo ""
+              echo "Downstream consumers (flexera-cli, terraform-provider-flexera) may need updates before bumping this client."
+              echo ""
+              echo '```'
+              head -n 300 /tmp/apidiff.txt
+              echo '```'
+            else
+              echo "_No incompatible exported API changes._"
+            fi
           } > /tmp/pr-body.md
 
       - name: Create or update pull request
@@ -64,6 +102,7 @@ jobs:
           delete-branch: false
           title: "chore: automated dependency and client refresh"
           body-path: /tmp/pr-body.md
+          labels: ${{ steps.apidiff.outputs.breaking == 'true' && 'breaking-change' || '' }}
           add-paths: |
             unified-openapi
             scripts/update-unified-openapi
