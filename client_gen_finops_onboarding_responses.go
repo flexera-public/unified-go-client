@@ -16,6 +16,11 @@ const (
 	FinopsOnboardingEnterpriseIndexResponseKindFinopsEnterpriseBillMonthIndex FinopsOnboardingEnterpriseIndexResponseKind = "finops:enterprise-bill-month-index"
 )
 
+// Defines values for FinopsOnboardingEnterpriseProcessingDetailsResponseKind.
+const (
+	FinopsOnboardingEnterpriseProcessingDetailsResponseKindFinopsEnterpriseBillMonthProcessingDetails FinopsOnboardingEnterpriseProcessingDetailsResponseKind = "finops:enterprise-bill-month-processing-details"
+)
+
 // Defines values for FinopsOnboardingEnterpriseReprocessResponseKind.
 const (
 	FinopsOnboardingEnterpriseReprocessResponseKindFinopsEnterpriseBillMonthReprocess FinopsOnboardingEnterpriseReprocessResponseKind = "finops:enterprise-bill-month-reprocess"
@@ -47,6 +52,18 @@ type FinopsOnboardingEnterpriseIndexResponse struct {
 
 // FinopsOnboardingEnterpriseIndexResponseKind The resource's type
 type FinopsOnboardingEnterpriseIndexResponseKind string
+
+// FinopsOnboardingEnterpriseProcessingDetailsResponse defines model for FinopsOnboarding_EnterpriseProcessingDetailsResponse.
+type FinopsOnboardingEnterpriseProcessingDetailsResponse struct {
+	// Kind The resource's type
+	Kind FinopsOnboardingEnterpriseProcessingDetailsResponseKind `json:"kind"`
+
+	// Tasks Applicable processing stages in execution order
+	Tasks []FinopsOnboardingEnterpriseProcessingDetailsTask `json:"tasks"`
+}
+
+// FinopsOnboardingEnterpriseProcessingDetailsResponseKind The resource's type
+type FinopsOnboardingEnterpriseProcessingDetailsResponseKind string
 
 // FinopsOnboardingEnterpriseReprocessResponse defines model for FinopsOnboarding_EnterpriseReprocessResponse.
 type FinopsOnboardingEnterpriseReprocessResponse struct {
@@ -1017,6 +1034,28 @@ func (r FinopsOnboardingBillConnectValidateResponse) StatusCode() int {
 	return 0
 }
 
+type FinopsOnboardingProcessingHistoryShowResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsOnboardingEnterpriseProcessingDetailsResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsOnboardingProcessingHistoryShowResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsOnboardingProcessingHistoryShowResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
 type FinopsOnboardingProcessingHistoryIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -1620,6 +1659,15 @@ func (c *ClientWithResponses) FinopsOnboardingBillConnectValidateWithResponse(ct
 		return nil, err
 	}
 	return ParseFinopsOnboardingBillConnectValidateResponse(rsp)
+}
+
+// FinopsOnboardingProcessingHistoryShowWithResponse request returning *FinopsOnboardingProcessingHistoryShowResponse
+func (c *ClientWithResponses) FinopsOnboardingProcessingHistoryShowWithResponse(ctx context.Context, orgId int, billConnectId string, billMonth string, reqEditors ...RequestEditorFn) (*FinopsOnboardingProcessingHistoryShowResponse, error) {
+	rsp, err := c.FinopsOnboardingProcessingHistoryShow(ctx, orgId, billConnectId, billMonth, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsOnboardingProcessingHistoryShowResponse(rsp)
 }
 
 // FinopsOnboardingProcessingHistoryIndexWithResponse request returning *FinopsOnboardingProcessingHistoryIndexResponse
@@ -2621,6 +2669,32 @@ func ParseFinopsOnboardingBillConnectValidateResponse(rsp *http.Response) (*Fino
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest FinopsOnboardingBillConnectCredentialValidationList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsOnboardingProcessingHistoryShowResponse parses an HTTP response from a FinopsOnboardingProcessingHistoryShowWithResponse call
+func ParseFinopsOnboardingProcessingHistoryShowResponse(rsp *http.Response) (*FinopsOnboardingProcessingHistoryShowResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsOnboardingProcessingHistoryShowResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsOnboardingEnterpriseProcessingDetailsResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

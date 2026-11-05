@@ -29,13 +29,13 @@ type UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetParams struct {
 	// |-----------------|-----------|-------------------------------------------|
 	// | connectorName   | eq, co    | Exact or contains match on connector name |
 	// | accountId       | eq, co    | Exact / contains match on account ID      |
-	// | provider        | in        | Allowed values based on caller access     |
+	// | provider        | in        | Allowed: aws, azure, gcp, snowflake       |
 	// | createdAt       | ge, le    | Timestamp range filtering                 |
 	// | masterAccountId | eq, co    | Match against master account ID           |
 	// | enrollmentStatus| in        | allowed: ONBOARDED, OFFBOARDED, FAILED, IN-PROGRESS|
 	// | onboardingType  | in        | Filter by type: 'Auto Discovery', 'Individual', 'Linked' |
 	// | billingAccountId| eq, co    | Exact / contains match on billing acct ID |
-	// | products        | in        | Allowed values: 'di', 'bpc', 'cco', 'oe', 'ai'  |
+	// | products        | in        | Allowed values: 'di', 'bpc', 'cco', 'oe', 'ai', 'dco'  |
 	//
 	// ### Formatting Rules
 	//
@@ -53,6 +53,7 @@ type UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetParams struct {
 	// - `masterAccountId co '9876'`
 	// - `enrollmentStatus in ['ONBOARDED','OFFBOARDED','FAILED']`
 	// - `provider in ['aws','azure']`
+	// - `provider in ['snowflake']`
 	// - `createdAt ge '2025-11-01T00:00:00.00Z' and createdAt le '2025-11-30T23:59:00.59Z'`
 	// - `enrollmentStatus in ['error'] and connectorName co 'finops'`
 	// - `onboardingType in ['Auto Discovery','Individual']`
@@ -61,6 +62,7 @@ type UobsListConnectorsUobsV1OrgsOrgIdCloudConnectorsGetParams struct {
 	// - `products in ['di','bpc']`
 	// - `products in ['oe']`
 	// - `products in ['ai']`
+	// - `products in ['dco']`
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 }
 
@@ -75,7 +77,7 @@ type UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetParams struct 
 
 // UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams defines parameters for UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDelete.
 type UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams struct {
-	// Provider Provider (aws/azure/gcp)
+	// Provider Provider (aws/azure/gcp/snowflake)
 	Provider string `form:"provider" json:"provider"`
 
 	// ConnectorId Connector ID
@@ -95,7 +97,7 @@ type UobsListConnectorsUobsV1OrgsOrgIdSaasConnectorsGetParams struct {
 	// | Field            | Operators | Description |
 	// |------------------|-----------|-------------|
 	// | connectorName    | eq, co    | Exact or contains match on connector name |
-	// | provider         | in        | n8n, anthropic, openAi, cursor, salesforceAgentforce, googleWorkspace |
+	// | provider         | in        | n8n, anthropic, openAi, cursor, salesforceAgentforce, googleWorkspace, microsoftCopilot, githubCopilot |
 	// | status           | in        | enrollment status: enabled, failed, deleted, in-progress |
 	// | executionStatus  | in        | last-run status: COMPLETED, FAILED, RUNNING, QUEUED |
 	//
@@ -123,6 +125,15 @@ type UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostJSONReques
 
 // UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutJSONRequestBody defines body for UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPut for application/json ContentType.
 type UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutJSONRequestBody = UobsGcpOnboardingUpdateRequest
+
+// UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostJSONRequestBody defines body for UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePost for application/json ContentType.
+type UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostJSONRequestBody = UobsSnowflakeOnboardingCreateRequest
+
+// UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutJSONRequestBody defines body for UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPut for application/json ContentType.
+type UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutJSONRequestBody = UobsSnowflakeOnboardingUpdateRequest
+
+// UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostJSONRequestBody defines body for UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePost for application/json ContentType.
+type UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostJSONRequestBody = UobsSnowflakeValidateRequest
 
 // UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostJSONRequestBody defines body for UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPost for application/json ContentType.
 type UobsCreateSaasOnboardingUobsV1OrgsOrgIdSaasOnboardingPostJSONRequestBody = UobsOnboardingCreateRequest
@@ -231,6 +242,90 @@ func (c *Client) UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpCon
 
 func (c *Client) UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPut(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdPutRequest(c.Server, orgId, connectorId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePost(ctx context.Context, orgId string, body UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutWithBody(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutRequestWithBody(c.Server, orgId, connectorId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPut(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutRequest(c.Server, orgId, connectorId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPost(ctx context.Context, orgId string, connectorId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostRequest(c.Server, orgId, connectorId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePost(ctx context.Context, orgId string, body UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -772,6 +867,195 @@ func NewUobsTriggerOnboardingPutGcpUobsV1OrgsOrgIdCloudOnboardingGcpConnectorIdP
 	}
 
 	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewUobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostRequest calls the generic UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePost builder with application/json body
+func NewUobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostRequest(server string, orgId string, body UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewUobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostRequestWithBody generates requests for UobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePost with any type of body
+func NewUobsTriggerOnboardingPostSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakePostRequestWithBody(server string, orgId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/onboarding/snowflake", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewUobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutRequest calls the generic UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPut builder with application/json body
+func NewUobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutRequest(server string, orgId string, connectorId string, body UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutRequestWithBody(server, orgId, connectorId, "application/json", bodyReader)
+}
+
+// NewUobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutRequestWithBody generates requests for UobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPut with any type of body
+func NewUobsTriggerOnboardingPutSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdPutRequestWithBody(server string, orgId string, connectorId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "connector_id", runtime.ParamLocationPath, connectorId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/onboarding/snowflake/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("PUT", queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewUobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostRequest generates requests for UobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPost
+func NewUobsTriggerCollectSnowflakeUobsV1OrgsOrgIdCloudOnboardingSnowflakeConnectorIdCollectPostRequest(server string, orgId string, connectorId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "connector_id", runtime.ParamLocationPath, connectorId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/onboarding/snowflake/%s/collect", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewUobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostRequest calls the generic UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePost builder with application/json body
+func NewUobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostRequest(server string, orgId string, body UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewUobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostRequestWithBody generates requests for UobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePost with any type of body
+func NewUobsValidateSnowflakeUobsV1OrgsOrgIdCloudSnowflakeValidatePostRequestWithBody(server string, orgId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "org_id", runtime.ParamLocationPath, orgId)
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/snowflake/validate", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest("POST", queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
