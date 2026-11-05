@@ -16,9 +16,9 @@ import (
 
 // Defines values for FinopsBillingCreateCreditAssignmentRequestBodyAction.
 const (
-	Hide     FinopsBillingCreateCreditAssignmentRequestBodyAction = "hide"
-	Reassign FinopsBillingCreateCreditAssignmentRequestBodyAction = "reassign"
-	Show     FinopsBillingCreateCreditAssignmentRequestBodyAction = "show"
+	FinopsBillingCreateCreditAssignmentRequestBodyActionHide     FinopsBillingCreateCreditAssignmentRequestBodyAction = "hide"
+	FinopsBillingCreateCreditAssignmentRequestBodyActionReassign FinopsBillingCreateCreditAssignmentRequestBodyAction = "reassign"
+	FinopsBillingCreateCreditAssignmentRequestBodyActionShow     FinopsBillingCreateCreditAssignmentRequestBodyAction = "show"
 )
 
 // Defines values for FinopsBillingCreateRequestBody2CostMetric.

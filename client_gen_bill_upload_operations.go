@@ -16,8 +16,8 @@ import (
 
 // Defines values for BillUploadBillUploadCreateOperationRequestBodyOperation.
 const (
-	Abort  BillUploadBillUploadCreateOperationRequestBodyOperation = "abort"
-	Commit BillUploadBillUploadCreateOperationRequestBodyOperation = "commit"
+	BillUploadBillUploadCreateOperationRequestBodyOperationAbort  BillUploadBillUploadCreateOperationRequestBodyOperation = "abort"
+	BillUploadBillUploadCreateOperationRequestBodyOperationCommit BillUploadBillUploadCreateOperationRequestBodyOperation = "commit"
 )
 
 // BillUploadBillUploadCreateOperationRequestBody defines model for BillUpload_BillUploadCreateOperationRequestBody.

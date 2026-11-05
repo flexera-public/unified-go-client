@@ -9,8 +9,8 @@ import (
 
 // Defines values for UobsGcpOnboardingUpdateRequestIncludeCostAndUsage.
 const (
-	False UobsGcpOnboardingUpdateRequestIncludeCostAndUsage = "false"
-	True  UobsGcpOnboardingUpdateRequestIncludeCostAndUsage = "true"
+	UobsGcpOnboardingUpdateRequestIncludeCostAndUsageFalse UobsGcpOnboardingUpdateRequestIncludeCostAndUsage = "false"
+	UobsGcpOnboardingUpdateRequestIncludeCostAndUsageTrue  UobsGcpOnboardingUpdateRequestIncludeCostAndUsage = "true"
 )
 
 // UobsGcpCostAndUsageCreateRequest defines model for Uobs_GcpCostAndUsageCreateRequest.

@@ -63,14 +63,14 @@ const (
 
 // Defines values for BillAnalysisIndexRequestBodySortOrder.
 const (
-	Asc  BillAnalysisIndexRequestBodySortOrder = "asc"
-	Desc BillAnalysisIndexRequestBodySortOrder = "desc"
+	BillAnalysisIndexRequestBodySortOrderAsc  BillAnalysisIndexRequestBodySortOrder = "asc"
+	BillAnalysisIndexRequestBodySortOrderDesc BillAnalysisIndexRequestBodySortOrder = "desc"
 )
 
 // Defines values for BillAnalysisReportRequestBodyDetectionMethod.
 const (
-	AiModel       BillAnalysisReportRequestBodyDetectionMethod = "ai_model"
-	BollingerBand BillAnalysisReportRequestBodyDetectionMethod = "bollinger_band"
+	BillAnalysisReportRequestBodyDetectionMethodAiModel       BillAnalysisReportRequestBodyDetectionMethod = "ai_model"
+	BillAnalysisReportRequestBodyDetectionMethodBollingerBand BillAnalysisReportRequestBodyDetectionMethod = "bollinger_band"
 )
 
 // Defines values for BillAnalysisReportRequestBodyGranularity.

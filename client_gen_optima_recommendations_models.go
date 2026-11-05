@@ -10,10 +10,10 @@ const (
 
 // Defines values for OptimaRecommendationsRecommendationsIndexParamsStatuses.
 const (
-	Active   OptimaRecommendationsRecommendationsIndexParamsStatuses = "active"
-	Realized OptimaRecommendationsRecommendationsIndexParamsStatuses = "realized"
-	Rejected OptimaRecommendationsRecommendationsIndexParamsStatuses = "rejected"
-	Snoozed  OptimaRecommendationsRecommendationsIndexParamsStatuses = "snoozed"
+	OptimaRecommendationsRecommendationsIndexParamsStatusesActive   OptimaRecommendationsRecommendationsIndexParamsStatuses = "active"
+	OptimaRecommendationsRecommendationsIndexParamsStatusesRealized OptimaRecommendationsRecommendationsIndexParamsStatuses = "realized"
+	OptimaRecommendationsRecommendationsIndexParamsStatusesRejected OptimaRecommendationsRecommendationsIndexParamsStatuses = "rejected"
+	OptimaRecommendationsRecommendationsIndexParamsStatusesSnoozed  OptimaRecommendationsRecommendationsIndexParamsStatuses = "snoozed"
 )
 
 // Defines values for OptimaRecommendationsRecommendationsRecommendationsPagedParamsView.

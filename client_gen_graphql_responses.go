@@ -5,7 +5,6 @@ package flexera
 import (
 	"context"
 	"encoding/json"
-	openapi_types "github.com/oapi-codegen/runtime/types"
 	"io"
 	"net/http"
 	"strings"
@@ -14,7 +13,7 @@ import (
 type GraphqlGraphqlQueryResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *openapi_types.File
+	JSON200      *interface{}
 }
 
 // Status returns HTTPResponse.Status
@@ -36,7 +35,7 @@ func (r GraphqlGraphqlQueryResponse) StatusCode() int {
 type GraphqlGraphqlTableSchemaResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *openapi_types.File
+	JSON200      *interface{}
 }
 
 // Status returns HTTPResponse.Status
@@ -96,7 +95,7 @@ func ParseGraphqlGraphqlQueryResponse(rsp *http.Response) (*GraphqlGraphqlQueryR
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest openapi_types.File
+		var dest interface{}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -122,7 +121,7 @@ func ParseGraphqlGraphqlTableSchemaResponse(rsp *http.Response) (*GraphqlGraphql
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest openapi_types.File
+		var dest interface{}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

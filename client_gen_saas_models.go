@@ -9,18 +9,18 @@ import (
 
 // Defines values for SaasComparisonOperator.
 const (
-	Equal       SaasComparisonOperator = "equal"
-	GreaterThan SaasComparisonOperator = "greater_than"
-	In          SaasComparisonOperator = "in"
-	LessThan    SaasComparisonOperator = "less_than"
-	NotEqual    SaasComparisonOperator = "not_equal"
-	NotIn       SaasComparisonOperator = "not_in"
+	SaasComparisonOperatorEqual       SaasComparisonOperator = "equal"
+	SaasComparisonOperatorGreaterThan SaasComparisonOperator = "greater_than"
+	SaasComparisonOperatorIn          SaasComparisonOperator = "in"
+	SaasComparisonOperatorLessThan    SaasComparisonOperator = "less_than"
+	SaasComparisonOperatorNotEqual    SaasComparisonOperator = "not_equal"
+	SaasComparisonOperatorNotIn       SaasComparisonOperator = "not_in"
 )
 
 // Defines values for SaasConditionType.
 const (
-	Comparison    SaasConditionType = "comparison"
-	SubExpression SaasConditionType = "subExpression"
+	SaasConditionTypeComparison    SaasConditionType = "comparison"
+	SaasConditionTypeSubExpression SaasConditionType = "subExpression"
 )
 
 // Defines values for SaasDenormalizedLicenseAgreementFeePaymentFrequency.
@@ -76,9 +76,9 @@ const (
 
 // Defines values for SaasDimensionsResourceType.
 const (
-	AppUser  SaasDimensionsResourceType = "appUser"
-	Apps     SaasDimensionsResourceType = "apps"
-	Licenses SaasDimensionsResourceType = "licenses"
+	SaasDimensionsResourceTypeAppUser  SaasDimensionsResourceType = "appUser"
+	SaasDimensionsResourceTypeApps     SaasDimensionsResourceType = "apps"
+	SaasDimensionsResourceTypeLicenses SaasDimensionsResourceType = "licenses"
 )
 
 // Defines values for SaasDiscoveredAppKind.
@@ -88,14 +88,14 @@ const (
 
 // Defines values for SaasDiscoveredAppVulnerability.
 const (
-	No      SaasDiscoveredAppVulnerability = "No"
-	Unknown SaasDiscoveredAppVulnerability = "Unknown"
-	Yes     SaasDiscoveredAppVulnerability = "Yes"
+	SaasDiscoveredAppVulnerabilityNo      SaasDiscoveredAppVulnerability = "No"
+	SaasDiscoveredAppVulnerabilityUnknown SaasDiscoveredAppVulnerability = "Unknown"
+	SaasDiscoveredAppVulnerabilityYes     SaasDiscoveredAppVulnerability = "Yes"
 )
 
 // Defines values for SaasDiscoveredAppUsageResultsKind.
 const (
-	SaasDiscoveredAppUsageCollection SaasDiscoveredAppUsageResultsKind = "saas:discovered-app-usage-collection"
+	SaasDiscoveredAppUsageResultsKindSaasDiscoveredAppUsageCollection SaasDiscoveredAppUsageResultsKind = "saas:discovered-app-usage-collection"
 )
 
 // Defines values for SaasFlexeraFsmFiledataContentEncoding.
@@ -106,7 +106,7 @@ const (
 
 // Defines values for SaasFlexeraFsmFiledataContentType.
 const (
-	JSON SaasFlexeraFsmFiledataContentType = "JSON"
+	SaasFlexeraFsmFiledataContentTypeJSON SaasFlexeraFsmFiledataContentType = "JSON"
 )
 
 // Defines values for SaasFlexeraFsmFiledataStatus.
@@ -161,42 +161,42 @@ const (
 
 // Defines values for SaasFlexeraFsmMangedapplicationloadedstateDataType.
 const (
-	Expense             SaasFlexeraFsmMangedapplicationloadedstateDataType = "Expense"
-	HrRoster            SaasFlexeraFsmMangedapplicationloadedstateDataType = "HrRoster"
-	LicenseReclamation  SaasFlexeraFsmMangedapplicationloadedstateDataType = "LicenseReclamation"
-	ProductAccess       SaasFlexeraFsmMangedapplicationloadedstateDataType = "ProductAccess"
-	ProductConsumption  SaasFlexeraFsmMangedapplicationloadedstateDataType = "ProductConsumption"
-	ProductLicense      SaasFlexeraFsmMangedapplicationloadedstateDataType = "ProductLicense"
-	ProductRoster       SaasFlexeraFsmMangedapplicationloadedstateDataType = "ProductRoster"
-	Setup               SaasFlexeraFsmMangedapplicationloadedstateDataType = "Setup"
-	SsoProductDiscovery SaasFlexeraFsmMangedapplicationloadedstateDataType = "SsoProductDiscovery"
-	SsoProductEvent     SaasFlexeraFsmMangedapplicationloadedstateDataType = "SsoProductEvent"
-	SsoProductUser      SaasFlexeraFsmMangedapplicationloadedstateDataType = "SsoProductUser"
+	SaasFlexeraFsmMangedapplicationloadedstateDataTypeExpense             SaasFlexeraFsmMangedapplicationloadedstateDataType = "Expense"
+	SaasFlexeraFsmMangedapplicationloadedstateDataTypeHrRoster            SaasFlexeraFsmMangedapplicationloadedstateDataType = "HrRoster"
+	SaasFlexeraFsmMangedapplicationloadedstateDataTypeLicenseReclamation  SaasFlexeraFsmMangedapplicationloadedstateDataType = "LicenseReclamation"
+	SaasFlexeraFsmMangedapplicationloadedstateDataTypeProductAccess       SaasFlexeraFsmMangedapplicationloadedstateDataType = "ProductAccess"
+	SaasFlexeraFsmMangedapplicationloadedstateDataTypeProductConsumption  SaasFlexeraFsmMangedapplicationloadedstateDataType = "ProductConsumption"
+	SaasFlexeraFsmMangedapplicationloadedstateDataTypeProductLicense      SaasFlexeraFsmMangedapplicationloadedstateDataType = "ProductLicense"
+	SaasFlexeraFsmMangedapplicationloadedstateDataTypeProductRoster       SaasFlexeraFsmMangedapplicationloadedstateDataType = "ProductRoster"
+	SaasFlexeraFsmMangedapplicationloadedstateDataTypeSetup               SaasFlexeraFsmMangedapplicationloadedstateDataType = "Setup"
+	SaasFlexeraFsmMangedapplicationloadedstateDataTypeSsoProductDiscovery SaasFlexeraFsmMangedapplicationloadedstateDataType = "SsoProductDiscovery"
+	SaasFlexeraFsmMangedapplicationloadedstateDataTypeSsoProductEvent     SaasFlexeraFsmMangedapplicationloadedstateDataType = "SsoProductEvent"
+	SaasFlexeraFsmMangedapplicationloadedstateDataTypeSsoProductUser      SaasFlexeraFsmMangedapplicationloadedstateDataType = "SsoProductUser"
 )
 
 // Defines values for SaasFlexeraFsmObjectdefinitionObjectType.
 const (
-	ManagedApplication     SaasFlexeraFsmObjectdefinitionObjectType = "ManagedApplication"
-	ManagedApplicationUser SaasFlexeraFsmObjectdefinitionObjectType = "ManagedApplicationUser"
+	SaasFlexeraFsmObjectdefinitionObjectTypeManagedApplication     SaasFlexeraFsmObjectdefinitionObjectType = "ManagedApplication"
+	SaasFlexeraFsmObjectdefinitionObjectTypeManagedApplicationUser SaasFlexeraFsmObjectdefinitionObjectType = "ManagedApplicationUser"
 )
 
 // Defines values for SaasFlexeraFsmObjectfieldmappingDataType.
 const (
-	Boolean SaasFlexeraFsmObjectfieldmappingDataType = "boolean"
-	Date    SaasFlexeraFsmObjectfieldmappingDataType = "date"
-	Integer SaasFlexeraFsmObjectfieldmappingDataType = "integer"
-	Text    SaasFlexeraFsmObjectfieldmappingDataType = "text"
+	SaasFlexeraFsmObjectfieldmappingDataTypeBoolean SaasFlexeraFsmObjectfieldmappingDataType = "boolean"
+	SaasFlexeraFsmObjectfieldmappingDataTypeDate    SaasFlexeraFsmObjectfieldmappingDataType = "date"
+	SaasFlexeraFsmObjectfieldmappingDataTypeInteger SaasFlexeraFsmObjectfieldmappingDataType = "integer"
+	SaasFlexeraFsmObjectfieldmappingDataTypeText    SaasFlexeraFsmObjectfieldmappingDataType = "text"
 )
 
 // Defines values for SaasFlexeraFsmObjectfilterBucketType.
 const (
-	Range SaasFlexeraFsmObjectfilterBucketType = "range"
-	Value SaasFlexeraFsmObjectfilterBucketType = "value"
+	SaasFlexeraFsmObjectfilterBucketTypeRange SaasFlexeraFsmObjectfilterBucketType = "range"
+	SaasFlexeraFsmObjectfilterBucketTypeValue SaasFlexeraFsmObjectfilterBucketType = "value"
 )
 
 // Defines values for SaasFlexeraFsmProductKind.
 const (
-	SaasProduct SaasFlexeraFsmProductKind = "saas:product"
+	SaasFlexeraFsmProductKindSaasProduct SaasFlexeraFsmProductKind = "saas:product"
 )
 
 // Defines values for SaasFlexeraFsmProvisionedType.
@@ -213,19 +213,19 @@ const (
 
 // Defines values for SaasFlexeraFsmRelatedappRelation.
 const (
-	Child  SaasFlexeraFsmRelatedappRelation = "child"
-	Parent SaasFlexeraFsmRelatedappRelation = "parent"
+	SaasFlexeraFsmRelatedappRelationChild  SaasFlexeraFsmRelatedappRelation = "child"
+	SaasFlexeraFsmRelatedappRelationParent SaasFlexeraFsmRelatedappRelation = "parent"
 )
 
 // Defines values for SaasFlexeraSaasMetricsActivitycountbyrangeRange.
 const (
-	Fifteen       SaasFlexeraSaasMetricsActivitycountbyrangeRange = "fifteen"
-	Fortyfive     SaasFlexeraSaasMetricsActivitycountbyrangeRange = "fortyfive"
-	Ninety        SaasFlexeraSaasMetricsActivitycountbyrangeRange = "ninety"
-	Onetwenty     SaasFlexeraSaasMetricsActivitycountbyrangeRange = "onetwenty"
-	Onetwentyplus SaasFlexeraSaasMetricsActivitycountbyrangeRange = "onetwentyplus"
-	Sixty         SaasFlexeraSaasMetricsActivitycountbyrangeRange = "sixty"
-	Thirty        SaasFlexeraSaasMetricsActivitycountbyrangeRange = "thirty"
+	SaasFlexeraSaasMetricsActivitycountbyrangeRangeFifteen       SaasFlexeraSaasMetricsActivitycountbyrangeRange = "fifteen"
+	SaasFlexeraSaasMetricsActivitycountbyrangeRangeFortyfive     SaasFlexeraSaasMetricsActivitycountbyrangeRange = "fortyfive"
+	SaasFlexeraSaasMetricsActivitycountbyrangeRangeNinety        SaasFlexeraSaasMetricsActivitycountbyrangeRange = "ninety"
+	SaasFlexeraSaasMetricsActivitycountbyrangeRangeOnetwenty     SaasFlexeraSaasMetricsActivitycountbyrangeRange = "onetwenty"
+	SaasFlexeraSaasMetricsActivitycountbyrangeRangeOnetwentyplus SaasFlexeraSaasMetricsActivitycountbyrangeRange = "onetwentyplus"
+	SaasFlexeraSaasMetricsActivitycountbyrangeRangeSixty         SaasFlexeraSaasMetricsActivitycountbyrangeRange = "sixty"
+	SaasFlexeraSaasMetricsActivitycountbyrangeRangeThirty        SaasFlexeraSaasMetricsActivitycountbyrangeRange = "thirty"
 )
 
 // Defines values for SaasImportSettingsLoadType.
@@ -253,8 +253,8 @@ const (
 
 // Defines values for SaasMatchedProductMatchType.
 const (
-	IdMatch   SaasMatchedProductMatchType = "idMatch"
-	NameMatch SaasMatchedProductMatchType = "nameMatch"
+	SaasMatchedProductMatchTypeIdMatch   SaasMatchedProductMatchType = "idMatch"
+	SaasMatchedProductMatchTypeNameMatch SaasMatchedProductMatchType = "nameMatch"
 )
 
 // Defines values for SaasPurchaseParameterFrequencyType.
@@ -331,7 +331,7 @@ const (
 
 // Defines values for SaasSaaSDataUploadParamsContentType.
 const (
-	Applicationjson SaasSaaSDataUploadParamsContentType = "application/json"
+	SaasSaaSDataUploadParamsContentTypeApplicationjson SaasSaaSDataUploadParamsContentType = "application/json"
 )
 
 // Defines values for SaasSaaSDataUploadParamsContentEncoding.
@@ -627,7 +627,7 @@ type SaasDenormalizedLicenseAgreements struct {
 // SaasDenormalizedLicenseTerm Represents a term encompassed within license agreement
 type SaasDenormalizedLicenseTerm struct {
 	// Additional Base64 encoding of json formatted vendor supplied license term information
-	Additional *openapi_types.File `json:"additional,omitempty"`
+	Additional *interface{} `json:"additional,omitempty"`
 
 	// AnnualCost Annual cost for the license term
 	AnnualCost *float64 `json:"annualCost,omitempty"`
@@ -1157,7 +1157,7 @@ type SaasFlexeraFsmLicensepaymentallocation struct {
 // SaasFlexeraFsmLicenseterm Represents a single record of license Term
 type SaasFlexeraFsmLicenseterm struct {
 	// Additional Base64 encoding of json formatted vendor supplied license term information.
-	Additional *openapi_types.File `json:"additional,omitempty"`
+	Additional *interface{} `json:"additional,omitempty"`
 
 	// CreatedAt Date and time record of creation of license term.
 	CreatedAt *string `json:"createdAt,omitempty"`
@@ -1220,7 +1220,7 @@ type SaasFlexeraFsmManagedapplication struct {
 	ActivityThreshold SaasFlexeraFsmManagedapplicationActivityThreshold `json:"activityThreshold"`
 
 	// Additional Base64 encoding of json formatted vendor supplied managed application information
-	Additional *openapi_types.File `json:"additional,omitempty"`
+	Additional *interface{} `json:"additional,omitempty"`
 
 	// AnnualCost Annual cost for the managed application. The currency (default is USD) can be set globally in Administration -> SaaS Settings -> General within app.flexera.com.
 	AnnualCost *float64 `json:"annualCost,omitempty"`
@@ -1361,7 +1361,7 @@ type SaasFlexeraFsmManagedapplicationuser struct {
 	ActivityCountByRanges *SaasActivityCountByRangeCollection `json:"activityCountByRanges,omitempty"`
 
 	// Additional Base64 encoding of json formatted vendor supplied managed application user information
-	Additional *openapi_types.File `json:"additional,omitempty"`
+	Additional *interface{} `json:"additional,omitempty"`
 
 	// AssociatedManagedApp Represents a single managed application resource
 	AssociatedManagedApp *SaasFlexeraFsmAssociatedmanagedapp `json:"associatedManagedApp,omitempty"`
@@ -2138,7 +2138,7 @@ type SaasTags struct {
 // SaasTermParameter Term parameters sent in create/update license term request.
 type SaasTermParameter struct {
 	// Additional JSON encoded map of additional license term information (if any).
-	Additional *openapi_types.File `json:"additional,omitempty"`
+	Additional *interface{} `json:"additional,omitempty"`
 
 	// EffectiveAt Start date associated with license agreement.
 	EffectiveAt *string `json:"effectiveAt,omitempty"`

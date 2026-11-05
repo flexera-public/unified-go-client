@@ -74,7 +74,7 @@ const (
 
 // Defines values for PolicyCompilationErrorsName.
 const (
-	UnprocessableEntity PolicyCompilationErrorsName = "unprocessable_entity"
+	PolicyCompilationErrorsNameUnprocessableEntity PolicyCompilationErrorsName = "unprocessable_entity"
 )
 
 // Defines values for PolicyConfigurationOptionType.
@@ -86,7 +86,7 @@ const (
 
 // Defines values for PolicyConflictErrorName.
 const (
-	Conflict PolicyConflictErrorName = "conflict"
+	PolicyConflictErrorNameConflict PolicyConflictErrorName = "conflict"
 )
 
 // Defines values for PolicyCustomCatalogTemplateListKind.
@@ -107,7 +107,7 @@ const (
 
 // Defines values for PolicyCustomizationTypesListKind.
 const (
-	PolicyCustomizationTypeList PolicyCustomizationTypesListKind = "policy:customization-type-list"
+	PolicyCustomizationTypesListKindPolicyCustomizationTypeList PolicyCustomizationTypesListKind = "policy:customization-type-list"
 )
 
 // Defines values for PolicyCustomizationTypesListNotModified.
@@ -123,7 +123,7 @@ const (
 
 // Defines values for PolicyCustomizationValuesListKind.
 const (
-	PolicyCustomizationValueList PolicyCustomizationValuesListKind = "policy:customization-value-list"
+	PolicyCustomizationValuesListKindPolicyCustomizationValueList PolicyCustomizationValuesListKind = "policy:customization-value-list"
 )
 
 // Defines values for PolicyCustomizationValuesListNotModified.
@@ -134,8 +134,8 @@ const (
 
 // Defines values for PolicyFlexeraDataType.
 const (
-	Datasource PolicyFlexeraDataType = "datasource"
-	Resource   PolicyFlexeraDataType = "resource"
+	PolicyFlexeraDataTypeDatasource PolicyFlexeraDataType = "datasource"
+	PolicyFlexeraDataTypeResource   PolicyFlexeraDataType = "resource"
 )
 
 // Defines values for PolicyFlexeraPolicyActionItemStatusStatus.
@@ -153,15 +153,15 @@ const (
 
 // Defines values for PolicyFlexeraPolicyActionItemStatusType.
 const (
-	CloudWorkflow   PolicyFlexeraPolicyActionItemStatusType = "cloud_workflow"
-	Email           PolicyFlexeraPolicyActionItemStatusType = "email"
-	RequestApproval PolicyFlexeraPolicyActionItemStatusType = "request_approval"
-	ResolveIncident PolicyFlexeraPolicyActionItemStatusType = "resolve_incident"
+	PolicyFlexeraPolicyActionItemStatusTypeCloudWorkflow   PolicyFlexeraPolicyActionItemStatusType = "cloud_workflow"
+	PolicyFlexeraPolicyActionItemStatusTypeEmail           PolicyFlexeraPolicyActionItemStatusType = "email"
+	PolicyFlexeraPolicyActionItemStatusTypeRequestApproval PolicyFlexeraPolicyActionItemStatusType = "request_approval"
+	PolicyFlexeraPolicyActionItemStatusTypeResolveIncident PolicyFlexeraPolicyActionItemStatusType = "resolve_incident"
 )
 
 // Defines values for PolicyFlexeraPolicyActionStatusKind.
 const (
-	PolicyActionStatus PolicyFlexeraPolicyActionStatusKind = "policy:action-status"
+	PolicyFlexeraPolicyActionStatusKindPolicyActionStatus PolicyFlexeraPolicyActionStatusKind = "policy:action-status"
 )
 
 // Defines values for PolicyFlexeraPolicyActionStatusStatus.
@@ -179,8 +179,8 @@ const (
 
 // Defines values for PolicyFlexeraPolicyActionStatusType.
 const (
-	Escalation PolicyFlexeraPolicyActionStatusType = "escalation"
-	Resolution PolicyFlexeraPolicyActionStatusType = "resolution"
+	PolicyFlexeraPolicyActionStatusTypeEscalation PolicyFlexeraPolicyActionStatusType = "escalation"
+	PolicyFlexeraPolicyActionStatusTypeResolution PolicyFlexeraPolicyActionStatusType = "resolution"
 )
 
 // Defines values for PolicyFlexeraPolicyAppliedPolicyKind.
@@ -250,7 +250,7 @@ const (
 
 // Defines values for PolicyFlexeraPolicyIncidentAggregateKind.
 const (
-	PolicyIncidentAggregate PolicyFlexeraPolicyIncidentAggregateKind = "policy:incident-aggregate"
+	PolicyFlexeraPolicyIncidentAggregateKindPolicyIncidentAggregate PolicyFlexeraPolicyIncidentAggregateKind = "policy:incident-aggregate"
 )
 
 // Defines values for PolicyFlexeraPolicyIncidentAggregateNotModified.
@@ -276,7 +276,7 @@ const (
 
 // Defines values for PolicyFlexeraPolicyIncidentAggregateUnmanagedItemKind.
 const (
-	PolicyUnmanagedIncident PolicyFlexeraPolicyIncidentAggregateUnmanagedItemKind = "policy:unmanaged-incident"
+	PolicyFlexeraPolicyIncidentAggregateUnmanagedItemKindPolicyUnmanagedIncident PolicyFlexeraPolicyIncidentAggregateUnmanagedItemKind = "policy:unmanaged-incident"
 )
 
 // Defines values for PolicyFlexeraPolicyIncidentAggregateUnmanagedItemSeverity.
@@ -322,7 +322,7 @@ const (
 
 // Defines values for PolicyFlexeraPolicyPolicyAggregateItemKind.
 const (
-	PolicyPolicyAggregateItem PolicyFlexeraPolicyPolicyAggregateItemKind = "policy:policy-aggregate-item"
+	PolicyFlexeraPolicyPolicyAggregateItemKindPolicyPolicyAggregateItem PolicyFlexeraPolicyPolicyAggregateItemKind = "policy:policy-aggregate-item"
 )
 
 // Defines values for PolicyFlexeraPolicyPolicyAggregateItemStatus.
@@ -338,7 +338,7 @@ const (
 
 // Defines values for PolicyFlexeraPolicyPolicyAggregateUnmanagedItemKind.
 const (
-	PolicyUnmanagedAppliedPolicy PolicyFlexeraPolicyPolicyAggregateUnmanagedItemKind = "policy:unmanaged-applied-policy"
+	PolicyFlexeraPolicyPolicyAggregateUnmanagedItemKindPolicyUnmanagedAppliedPolicy PolicyFlexeraPolicyPolicyAggregateUnmanagedItemKind = "policy:unmanaged-applied-policy"
 )
 
 // Defines values for PolicyFlexeraPolicyPolicyAggregateUnmanagedItemSeverity.
@@ -357,7 +357,7 @@ const (
 
 // Defines values for PolicyFlexeraPolicyPolicyManagerKind.
 const (
-	PolicyPolicyManager PolicyFlexeraPolicyPolicyManagerKind = "policy:policy-manager"
+	PolicyFlexeraPolicyPolicyManagerKindPolicyPolicyManager PolicyFlexeraPolicyPolicyManagerKind = "policy:policy-manager"
 )
 
 // Defines values for PolicyFlexeraPolicyPolicyManagerLogLevel.
@@ -439,18 +439,18 @@ const (
 
 // Defines values for PolicyFlexeraPolicyPublishedTemplateTenancy.
 const (
-	Multi  PolicyFlexeraPolicyPublishedTemplateTenancy = "multi"
-	Single PolicyFlexeraPolicyPublishedTemplateTenancy = "single"
+	PolicyFlexeraPolicyPublishedTemplateTenancyMulti  PolicyFlexeraPolicyPublishedTemplateTenancy = "multi"
+	PolicyFlexeraPolicyPublishedTemplateTenancySingle PolicyFlexeraPolicyPublishedTemplateTenancy = "single"
 )
 
 // Defines values for PolicyFlexeraPolicyPublishedTemplateLinkKind.
 const (
-	PolicyPublishedTemplate PolicyFlexeraPolicyPublishedTemplateLinkKind = "policy:published-template"
+	PolicyFlexeraPolicyPublishedTemplateLinkKindPolicyPublishedTemplate PolicyFlexeraPolicyPublishedTemplateLinkKind = "policy:published-template"
 )
 
 // Defines values for PolicyFlexeraPolicySummaryByOrgItemKind.
 const (
-	PolicyPolicyManagerSummaryItem PolicyFlexeraPolicySummaryByOrgItemKind = "policy:policy-manager-summary-item"
+	PolicyFlexeraPolicySummaryByOrgItemKindPolicyPolicyManagerSummaryItem PolicyFlexeraPolicySummaryByOrgItemKind = "policy:policy-manager-summary-item"
 )
 
 // Defines values for PolicyFlexeraPolicySummaryByOrgItemStatus.
@@ -474,7 +474,7 @@ const (
 
 // Defines values for PolicyIncidentAggregateUnmanagedKind.
 const (
-	PolicyUnmanagedIncidentList PolicyIncidentAggregateUnmanagedKind = "policy:unmanaged-incident-list"
+	PolicyIncidentAggregateUnmanagedKindPolicyUnmanagedIncidentList PolicyIncidentAggregateUnmanagedKind = "policy:unmanaged-incident-list"
 )
 
 // Defines values for PolicyIncidentAggregateUnmanagedNotModified.
@@ -503,7 +503,7 @@ const (
 
 // Defines values for PolicyPolicyAggregateUnmanagedKind.
 const (
-	PolicyUnmanagedAppliedPolicyList PolicyPolicyAggregateUnmanagedKind = "policy:unmanaged-applied-policy-list"
+	PolicyPolicyAggregateUnmanagedKindPolicyUnmanagedAppliedPolicyList PolicyPolicyAggregateUnmanagedKind = "policy:unmanaged-applied-policy-list"
 )
 
 // Defines values for PolicyPolicyManagerListKind.
@@ -541,7 +541,7 @@ const (
 
 // Defines values for PolicyRightscaleArchivedIncidentKind.
 const (
-	PolicyArchivedIncident PolicyRightscaleArchivedIncidentKind = "policy:archived-incident"
+	PolicyRightscaleArchivedIncidentKindPolicyArchivedIncident PolicyRightscaleArchivedIncidentKind = "policy:archived-incident"
 )
 
 // Defines values for PolicyRightscaleArchivedIncidentNotModified.
@@ -567,7 +567,7 @@ const (
 
 // Defines values for PolicyRightscaleIncidentAggregateItemKind.
 const (
-	PolicyIncidentAggregateItem PolicyRightscaleIncidentAggregateItemKind = "policy:incident-aggregate-item"
+	PolicyRightscaleIncidentAggregateItemKindPolicyIncidentAggregateItem PolicyRightscaleIncidentAggregateItemKind = "policy:incident-aggregate-item"
 )
 
 // Defines values for PolicyRightscaleIncidentAggregateItemState.
@@ -579,7 +579,7 @@ const (
 
 // Defines values for PolicySummaryListKind.
 const (
-	PolicyPolicyManagerSummary PolicySummaryListKind = "policy:policy-manager-summary"
+	PolicySummaryListKindPolicyPolicyManagerSummary PolicySummaryListKind = "policy:policy-manager-summary"
 )
 
 // Defines values for PolicyCustomCatalogIndexParamsCatalogSource.
@@ -1177,7 +1177,7 @@ type PolicyError struct {
 // PolicyFlexeraData Data contains retrieved datasource or resource data.
 type PolicyFlexeraData struct {
 	// Data data is the extracted data.
-	Data openapi_types.File `json:"data"`
+	Data interface{} `json:"data"`
 
 	// Name name is the unique name of the datasource.
 	Name string `json:"name"`
@@ -2405,7 +2405,7 @@ type PolicyParameter struct {
 	AllowedPattern *PolicyRegexp `json:"allowedPattern,omitempty"`
 
 	// AllowedValues List of values allowed for this parameter.
-	AllowedValues *[]openapi_types.File `json:"allowedValues,omitempty"`
+	AllowedValues *[]interface{} `json:"allowedValues,omitempty"`
 
 	// Category The category used to group parameters.
 	Category *string `json:"category,omitempty"`
@@ -2414,7 +2414,7 @@ type PolicyParameter struct {
 	ConstraintDescription *string `json:"constraintDescription,omitempty"`
 
 	// Default The default value for the parameter.
-	Default *openapi_types.File `json:"default,omitempty"`
+	Default *interface{} `json:"default,omitempty"`
 
 	// Description Description of the parameter.
 	Description *string `json:"description,omitempty"`

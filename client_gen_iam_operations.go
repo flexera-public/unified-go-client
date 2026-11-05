@@ -53,9 +53,9 @@ const (
 
 // Defines values for IamUpdateRequestBody3GroupSyncPolicy.
 const (
-	APPEND IamUpdateRequestBody3GroupSyncPolicy = "APPEND"
-	NONE   IamUpdateRequestBody3GroupSyncPolicy = "NONE"
-	SYNC   IamUpdateRequestBody3GroupSyncPolicy = "SYNC"
+	IamUpdateRequestBody3GroupSyncPolicyAPPEND IamUpdateRequestBody3GroupSyncPolicy = "APPEND"
+	IamUpdateRequestBody3GroupSyncPolicyNONE   IamUpdateRequestBody3GroupSyncPolicy = "NONE"
+	IamUpdateRequestBody3GroupSyncPolicySYNC   IamUpdateRequestBody3GroupSyncPolicy = "SYNC"
 )
 
 // Defines values for IamUpdateRequestBody3JitProvisioningEnabled.
@@ -66,8 +66,8 @@ const (
 
 // Defines values for IamUpdateRequestBody3RequestBinding.
 const (
-	HTTPPOST     IamUpdateRequestBody3RequestBinding = "HTTP-POST"
-	HTTPREDIRECT IamUpdateRequestBody3RequestBinding = "HTTP-REDIRECT"
+	IamUpdateRequestBody3RequestBindingHTTPPOST     IamUpdateRequestBody3RequestBinding = "HTTP-POST"
+	IamUpdateRequestBody3RequestBindingHTTPREDIRECT IamUpdateRequestBody3RequestBinding = "HTTP-REDIRECT"
 )
 
 // Defines values for IamUpdateRequestBody3RequestSignatureAlgorithm.

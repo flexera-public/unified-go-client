@@ -8,7 +8,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/oapi-codegen/runtime"
-	openapi_types "github.com/oapi-codegen/runtime/types"
 	"io"
 	"net/http"
 	"net/url"
@@ -71,9 +70,9 @@ const (
 
 // Defines values for SaasQueryRequestBodyDimensions.
 const (
-	Group          SaasQueryRequestBodyDimensions = "group"
-	ResourceStatus SaasQueryRequestBodyDimensions = "resourceStatus"
-	ResourceType   SaasQueryRequestBodyDimensions = "resourceType"
+	SaasQueryRequestBodyDimensionsGroup          SaasQueryRequestBodyDimensions = "group"
+	SaasQueryRequestBodyDimensionsResourceStatus SaasQueryRequestBodyDimensions = "resourceStatus"
+	SaasQueryRequestBodyDimensionsResourceType   SaasQueryRequestBodyDimensions = "resourceType"
 )
 
 // Defines values for SaasQueryRequestBodyGranularity.
@@ -85,8 +84,8 @@ const (
 
 // Defines values for SaasQueryRequestBodyMetrics.
 const (
-	CostTotalAmortized SaasQueryRequestBodyMetrics = "costTotalAmortized"
-	NumOfTotal         SaasQueryRequestBodyMetrics = "numOfTotal"
+	SaasQueryRequestBodyMetricsCostTotalAmortized SaasQueryRequestBodyMetrics = "costTotalAmortized"
+	SaasQueryRequestBodyMetricsNumOfTotal         SaasQueryRequestBodyMetrics = "numOfTotal"
 )
 
 // Defines values for SaasTermCreateRequestBodyTermType.
@@ -338,7 +337,7 @@ type SaasQueryRequestBodyMetrics string
 // SaasTermCreateRequestBody defines model for Saas_TermCreateRequestBody.
 type SaasTermCreateRequestBody struct {
 	// Additional JSON encoded map of additional license term information (if any).
-	Additional *openapi_types.File `json:"additional,omitempty"`
+	Additional *interface{} `json:"additional,omitempty"`
 
 	// EffectiveAt Start date associated with license agreement.
 	EffectiveAt *string `json:"effectiveAt,omitempty"`
@@ -392,7 +391,7 @@ type SaasTermCreateRequestBodyTermType string
 // SaasTermUpdateRequestBody defines model for Saas_TermUpdateRequestBody.
 type SaasTermUpdateRequestBody struct {
 	// Additional JSON encoded map of additional license term information (if any).
-	Additional *openapi_types.File `json:"additional,omitempty"`
+	Additional *interface{} `json:"additional,omitempty"`
 
 	// EffectiveAt Start date associated with license agreement.
 	EffectiveAt *string `json:"effectiveAt,omitempty"`

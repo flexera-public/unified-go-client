@@ -50,9 +50,9 @@ const (
 
 // Defines values for IamUpdateRequestBody3ResponseSignatureVerification.
 const (
-	Assertion           IamUpdateRequestBody3ResponseSignatureVerification = "assertion"
-	Response            IamUpdateRequestBody3ResponseSignatureVerification = "response"
-	ResponseOrAssertion IamUpdateRequestBody3ResponseSignatureVerification = "response or assertion"
+	IamUpdateRequestBody3ResponseSignatureVerificationAssertion           IamUpdateRequestBody3ResponseSignatureVerification = "assertion"
+	IamUpdateRequestBody3ResponseSignatureVerificationResponse            IamUpdateRequestBody3ResponseSignatureVerification = "response"
+	IamUpdateRequestBody3ResponseSignatureVerificationResponseOrAssertion IamUpdateRequestBody3ResponseSignatureVerification = "response or assertion"
 )
 
 // IamCreateRequestBody5ResponseSignatureAlgorithm Specifies the minimum signature algorithm when validating SAML

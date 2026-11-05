@@ -8,7 +8,7 @@ import (
 
 // Defines values for IamAPIEventCollectionKind.
 const (
-	IamApiEventCollection IamAPIEventCollectionKind = "iam:api-event-collection"
+	IamAPIEventCollectionKindIamApiEventCollection IamAPIEventCollectionKind = "iam:api-event-collection"
 )
 
 // Defines values for IamAccessPolicyKind.
@@ -67,27 +67,27 @@ const (
 
 // Defines values for IamFlexeraGroupMembershipKind.
 const (
-	IamGroupMembership IamFlexeraGroupMembershipKind = "iam:group-membership"
+	IamFlexeraGroupMembershipKindIamGroupMembership IamFlexeraGroupMembershipKind = "iam:group-membership"
 )
 
 // Defines values for IamFlexeraIamAPIEventMediaKind.
 const (
-	IamApiEvent IamFlexeraIamAPIEventMediaKind = "iam:api-event"
+	IamFlexeraIamAPIEventMediaKindIamApiEvent IamFlexeraIamAPIEventMediaKind = "iam:api-event"
 )
 
 // Defines values for IamFlexeraIamAccessRuleKind.
 const (
-	IamAccessRule IamFlexeraIamAccessRuleKind = "iam:access-rule"
+	IamFlexeraIamAccessRuleKindIamAccessRule IamFlexeraIamAccessRuleKind = "iam:access-rule"
 )
 
 // Defines values for IamFlexeraIamCapabilityKind.
 const (
-	IamCapability IamFlexeraIamCapabilityKind = "iam#capability"
+	IamFlexeraIamCapabilityKindIamCapability IamFlexeraIamCapabilityKind = "iam#capability"
 )
 
 // Defines values for IamFlexeraIamCustomizationKind.
 const (
-	IamCustomization IamFlexeraIamCustomizationKind = "iam#customization"
+	IamFlexeraIamCustomizationKindIamCustomization IamFlexeraIamCustomizationKind = "iam#customization"
 )
 
 // Defines values for IamFlexeraIamCustomizationSource.
@@ -98,12 +98,12 @@ const (
 
 // Defines values for IamFlexeraIamCustomizationTypeKind.
 const (
-	IamCustomizationType IamFlexeraIamCustomizationTypeKind = "iam#customization-type"
+	IamFlexeraIamCustomizationTypeKindIamCustomizationType IamFlexeraIamCustomizationTypeKind = "iam#customization-type"
 )
 
 // Defines values for IamFlexeraIamCustomizationUpdateResultKind.
 const (
-	IamCustomizationUpdateResult IamFlexeraIamCustomizationUpdateResultKind = "iam#customization-update-result"
+	IamFlexeraIamCustomizationUpdateResultKindIamCustomizationUpdateResult IamFlexeraIamCustomizationUpdateResultKind = "iam#customization-update-result"
 )
 
 // Defines values for IamFlexeraIamCustomizationUpdateResultStatus.
@@ -114,7 +114,7 @@ const (
 
 // Defines values for IamFlexeraIamEventMediaKind.
 const (
-	IamEvent IamFlexeraIamEventMediaKind = "iam#event"
+	IamFlexeraIamEventMediaKindIamEvent IamFlexeraIamEventMediaKind = "iam#event"
 )
 
 // Defines values for IamFlexeraIamEventOutcomeMediaResult.
@@ -135,7 +135,7 @@ const (
 
 // Defines values for IamFlexeraIamIPAccessControlRuleKind.
 const (
-	IamIpAccessControlRule IamFlexeraIamIPAccessControlRuleKind = "iam:ip-access-control-rule"
+	IamFlexeraIamIPAccessControlRuleKindIamIpAccessControlRule IamFlexeraIamIPAccessControlRuleKind = "iam:ip-access-control-rule"
 )
 
 // Defines values for IamFlexeraIamIdentityProviderGroupSyncPolicy.
@@ -153,7 +153,7 @@ const (
 
 // Defines values for IamFlexeraIamIdentityProviderKind.
 const (
-	IamSaml2Idp IamFlexeraIamIdentityProviderKind = "iam#saml2-idp"
+	IamFlexeraIamIdentityProviderKindIamSaml2Idp IamFlexeraIamIdentityProviderKind = "iam#saml2-idp"
 )
 
 // Defines values for IamFlexeraIamIdentityProviderRequestBinding.
@@ -176,7 +176,7 @@ const (
 
 // Defines values for IamFlexeraIamInvitationKind.
 const (
-	IamInvitation IamFlexeraIamInvitationKind = "iam#invitation"
+	IamFlexeraIamInvitationKindIamInvitation IamFlexeraIamInvitationKind = "iam#invitation"
 )
 
 // Defines values for IamFlexeraIamInvitationStatus.
@@ -200,7 +200,7 @@ const (
 
 // Defines values for IamFlexeraIamOrgInvitationKind.
 const (
-	IamOrgInvitation IamFlexeraIamOrgInvitationKind = "iam#org-invitation"
+	IamFlexeraIamOrgInvitationKindIamOrgInvitation IamFlexeraIamOrgInvitationKind = "iam#org-invitation"
 )
 
 // Defines values for IamFlexeraIamPrincipalKind.
@@ -211,17 +211,17 @@ const (
 
 // Defines values for IamFlexeraIamProjectKind.
 const (
-	IamProject IamFlexeraIamProjectKind = "iam:project"
+	IamFlexeraIamProjectKindIamProject IamFlexeraIamProjectKind = "iam:project"
 )
 
 // Defines values for IamFlexeraIamProjectInvitationKind.
 const (
-	IamProjectInvitation IamFlexeraIamProjectInvitationKind = "iam#project-invitation"
+	IamFlexeraIamProjectInvitationKindIamProjectInvitation IamFlexeraIamProjectInvitationKind = "iam#project-invitation"
 )
 
 // Defines values for IamFlexeraIamRefreshTokenKind.
 const (
-	IamRefreshToken IamFlexeraIamRefreshTokenKind = "iam#refresh-token"
+	IamFlexeraIamRefreshTokenKindIamRefreshToken IamFlexeraIamRefreshTokenKind = "iam#refresh-token"
 )
 
 // Defines values for IamFlexeraIamRoleKind.
@@ -236,7 +236,7 @@ const (
 
 // Defines values for IamFlexeraIamSaml2IdentityProviderSigningKeyKind.
 const (
-	IamSaml2IdpSigningKey IamFlexeraIamSaml2IdentityProviderSigningKeyKind = "iam#saml2-idp-signing-key"
+	IamFlexeraIamSaml2IdentityProviderSigningKeyKindIamSaml2IdpSigningKey IamFlexeraIamSaml2IdentityProviderSigningKeyKind = "iam#saml2-idp-signing-key"
 )
 
 // Defines values for IamFlexeraIamServiceAccountKind.
@@ -246,17 +246,17 @@ const (
 
 // Defines values for IamFlexeraIamServiceAccountClientKind.
 const (
-	IamServiceAccountClient IamFlexeraIamServiceAccountClientKind = "iam#service-account-client"
+	IamFlexeraIamServiceAccountClientKindIamServiceAccountClient IamFlexeraIamServiceAccountClientKind = "iam#service-account-client"
 )
 
 // Defines values for IamFlexeraIamServiceAccountClientSecretKind.
 const (
-	IamServiceAccountClientSecret IamFlexeraIamServiceAccountClientSecretKind = "iam:service-account-client-secret"
+	IamFlexeraIamServiceAccountClientSecretKindIamServiceAccountClientSecret IamFlexeraIamServiceAccountClientSecretKind = "iam:service-account-client-secret"
 )
 
 // Defines values for IamFlexeraIamSubdomainKind.
 const (
-	IamSubdomain IamFlexeraIamSubdomainKind = "iam#subdomain"
+	IamFlexeraIamSubdomainKindIamSubdomain IamFlexeraIamSubdomainKind = "iam#subdomain"
 )
 
 // Defines values for IamFlexeraIamSubdomainSource.
@@ -284,7 +284,7 @@ const (
 
 // Defines values for IamFlexeraIamUserProjectKind.
 const (
-	IamUserProject IamFlexeraIamUserProjectKind = "iam:user-project"
+	IamFlexeraIamUserProjectKindIamUserProject IamFlexeraIamUserProjectKind = "iam:user-project"
 )
 
 // Defines values for IamFlexeraMspCustomerKind.
@@ -316,12 +316,12 @@ const (
 
 // Defines values for IamGroupListKind.
 const (
-	IamOrgGroupList IamGroupListKind = "iam:org-group-list"
+	IamGroupListKindIamOrgGroupList IamGroupListKind = "iam:org-group-list"
 )
 
 // Defines values for IamIPAccessControlRuleEffect.
 const (
-	Allow IamIPAccessControlRuleEffect = "Allow"
+	IamIPAccessControlRuleEffectAllow IamIPAccessControlRuleEffect = "Allow"
 )
 
 // Defines values for IamIPAccessControlRuleIpType.
@@ -331,7 +331,7 @@ const (
 
 // Defines values for IamIPAccessControlRuleListKind.
 const (
-	IamIpAccessControlRuleList IamIPAccessControlRuleListKind = "iam:ip-access-control-rule-list"
+	IamIPAccessControlRuleListKindIamIpAccessControlRuleList IamIPAccessControlRuleListKind = "iam:ip-access-control-rule-list"
 )
 
 // Defines values for IamOrgLoginPolicyKind.
@@ -362,7 +362,7 @@ const (
 
 // Defines values for IamUserAccessPoliciesResultKind.
 const (
-	IamUserAccessPolicies IamUserAccessPoliciesResultKind = "iam:user-access-policies"
+	IamUserAccessPoliciesResultKindIamUserAccessPolicies IamUserAccessPoliciesResultKind = "iam:user-access-policies"
 )
 
 // Defines values for IamUserGroupListKind.
@@ -372,7 +372,7 @@ const (
 
 // Defines values for IamUserListKind.
 const (
-	IamOrgUserList IamUserListKind = "iam#org-user-list"
+	IamUserListKindIamOrgUserList IamUserListKind = "iam#org-user-list"
 )
 
 // Defines values for IamUserOrgListKind.
@@ -402,7 +402,7 @@ const (
 
 // Defines values for IamUserRoleKind.
 const (
-	IamRole IamUserRoleKind = "iam:role"
+	IamUserRoleKindIamRole IamUserRoleKind = "iam:role"
 )
 
 // Defines values for IamUserSettingBlobKind.
@@ -602,8 +602,8 @@ const (
 
 // Defines values for IamUserSettingBlobRetriveGetUrlParamsType.
 const (
-	Global IamUserSettingBlobRetriveGetUrlParamsType = "global"
-	Org    IamUserSettingBlobRetriveGetUrlParamsType = "org"
+	IamUserSettingBlobRetriveGetUrlParamsTypeGlobal IamUserSettingBlobRetriveGetUrlParamsType = "global"
+	IamUserSettingBlobRetriveGetUrlParamsTypeOrg    IamUserSettingBlobRetriveGetUrlParamsType = "org"
 )
 
 // Defines values for IamUserMembershipsShowPrivilegesReportParamsView.

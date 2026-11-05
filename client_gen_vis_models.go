@@ -8,20 +8,20 @@ import (
 
 // Defines values for VisDeviceDatasourceSelectionField.
 const (
-	Id   VisDeviceDatasourceSelectionField = "id"
-	Name VisDeviceDatasourceSelectionField = "name"
-	Type VisDeviceDatasourceSelectionField = "type"
+	VisDeviceDatasourceSelectionFieldId   VisDeviceDatasourceSelectionField = "id"
+	VisDeviceDatasourceSelectionFieldName VisDeviceDatasourceSelectionField = "name"
+	VisDeviceDatasourceSelectionFieldType VisDeviceDatasourceSelectionField = "type"
 )
 
 // Defines values for VisFlexeraVisDeviceDeletionSummaryKind.
 const (
-	VisDeviceDeletionSummary VisFlexeraVisDeviceDeletionSummaryKind = "vis:device-deletion-summary"
+	VisFlexeraVisDeviceDeletionSummaryKindVisDeviceDeletionSummary VisFlexeraVisDeviceDeletionSummaryKind = "vis:device-deletion-summary"
 )
 
 // Defines values for VisFlexeraVisFiledataType.
 const (
-	Delta    VisFlexeraVisFiledataType = "delta"
-	Snapshot VisFlexeraVisFiledataType = "snapshot"
+	VisFlexeraVisFiledataTypeDelta    VisFlexeraVisFiledataType = "delta"
+	VisFlexeraVisFiledataTypeSnapshot VisFlexeraVisFiledataType = "snapshot"
 )
 
 // Defines values for VisQueryCreateParamsOutputCompression.

@@ -13,12 +13,12 @@ import (
 
 // Defines values for FinopsOnboardingEnterpriseIndexResponseKind.
 const (
-	FinopsEnterpriseBillMonthIndex FinopsOnboardingEnterpriseIndexResponseKind = "finops:enterprise-bill-month-index"
+	FinopsOnboardingEnterpriseIndexResponseKindFinopsEnterpriseBillMonthIndex FinopsOnboardingEnterpriseIndexResponseKind = "finops:enterprise-bill-month-index"
 )
 
 // Defines values for FinopsOnboardingEnterpriseReprocessResponseKind.
 const (
-	FinopsEnterpriseBillMonthReprocess FinopsOnboardingEnterpriseReprocessResponseKind = "finops:enterprise-bill-month-reprocess"
+	FinopsOnboardingEnterpriseReprocessResponseKindFinopsEnterpriseBillMonthReprocess FinopsOnboardingEnterpriseReprocessResponseKind = "finops:enterprise-bill-month-reprocess"
 )
 
 // FinopsOnboardingEnterpriseIndexResponse defines model for FinopsOnboarding_EnterpriseIndexResponse.

@@ -14,27 +14,27 @@ func TestWriteTable_CollectedMapsMatchTypedResponses(t *testing.T) {
 		kind  string
 		typed any
 	}{
-		{string(FinopsBudgetList), &BudgetBudgetList{}},
-		{string(FinopsCloudVendorAccountList), &BudgetCloudVendorAccountsList{}},
-		{string(FinopsGenericBillList), &FinopsOnboardingGenericBillConnectItemList{}},
-		{string(FinopsRuleBasedDimensionList), &FinopsCustomizationsRuleBasedDimensionList{}},
-		{string(FinopsTagDimensionList), &FinopsCustomizationsTagDimensionList{}},
-		{string(IamOrgUserList), &IamUserList{}},
+		{string(BudgetBudgetListKindFinopsBudgetList), &BudgetBudgetList{}},
+		{string(BudgetCloudVendorAccountsListKindFinopsCloudVendorAccountList), &BudgetCloudVendorAccountsList{}},
+		{string(FinopsOnboardingGenericBillConnectItemListKindFinopsGenericBillList), &FinopsOnboardingGenericBillConnectItemList{}},
+		{string(FinopsCustomizationsRuleBasedDimensionListKindFinopsRuleBasedDimensionList), &FinopsCustomizationsRuleBasedDimensionList{}},
+		{string(FinopsCustomizationsTagDimensionListKindFinopsTagDimensionList), &FinopsCustomizationsTagDimensionList{}},
+		{string(IamUserListKindIamOrgUserList), &IamUserList{}},
 		{string(IamUserOrgListKindIamUserOrgList), &IamUserOrgList{}},
-		{string(IamOrgGroupList), &IamGroupList{}},
+		{string(IamGroupListKindIamOrgGroupList), &IamGroupList{}},
 		{string(IamAccessRuleListKindIamAccessRuleList), &IamAccessRuleList{}},
-		{string(IamApiEventCollection), &IamAPIEventCollection{}},
+		{string(IamAPIEventCollectionKindIamApiEventCollection), &IamAPIEventCollection{}},
 		{string(IamEventCollectionKindIamEventCollection), &IamEventCollection{}},
 		{"iam:event-collection", &IamEventCollection{}},
 		{string(IamCustomizationTypeListKindIamCustomizationTypeList), &IamCustomizationTypeList{}},
 		{"iam:customization-type-list", &IamCustomizationTypeList{}},
 		{string(IamCustomizationListKindIamCustomizationList), &IamCustomizationList{}},
 		{"iam:customization-list", &IamCustomizationList{}},
-		{string(IamIpAccessControlRuleList), &IamIPAccessControlRuleList{}},
+		{string(IamIPAccessControlRuleListKindIamIpAccessControlRuleList), &IamIPAccessControlRuleList{}},
 		{"policy:published-template-list", &PolicyPublishedTemplateList{}},
 		{"policy:custom-catalog-template-list", &PolicyCustomCatalogTemplateList{}},
-		{string(PolicyCustomizationTypeList), &PolicyCustomizationTypesList{}},
-		{string(PolicyCustomizationValueList), &PolicyCustomizationValuesList{}},
+		{string(PolicyCustomizationTypesListKindPolicyCustomizationTypeList), &PolicyCustomizationTypesList{}},
+		{string(PolicyCustomizationValuesListKindPolicyCustomizationValueList), &PolicyCustomizationValuesList{}},
 		{string(PolicyPolicyManagerListKindPolicyPolicyManagerList), &PolicyPolicyManagerList{}},
 		{string(PolicyIncidentAggregateListKindPolicyIncidentAggregateList), &PolicyIncidentAggregateList{}},
 		{string(PolicyPolicyAggregateListKindPolicyPolicyAggregateList), &PolicyPolicyAggregateList{}},
@@ -42,8 +42,8 @@ func TestWriteTable_CollectedMapsMatchTypedResponses(t *testing.T) {
 		{string(PolicyActionStatusListKindPolicyActionStatusList), &PolicyActionStatusList{}},
 		{string(PolicyArchivedIncidentListKindPolicyArchivedIncidentList), &PolicyArchivedIncidentList{}},
 		{string(PolicyPolicyTemplateListKindPolicyPolicyTemplateList), &PolicyPolicyTemplateList{}},
-		{string(PolicyUnmanagedIncidentList), &PolicyIncidentAggregateUnmanaged{}},
-		{string(PolicyUnmanagedAppliedPolicyList), &PolicyPolicyAggregateUnmanaged{}},
+		{string(PolicyIncidentAggregateUnmanagedKindPolicyUnmanagedIncidentList), &PolicyIncidentAggregateUnmanaged{}},
+		{string(PolicyPolicyAggregateUnmanagedKindPolicyUnmanagedAppliedPolicyList), &PolicyPolicyAggregateUnmanaged{}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.kind, func(t *testing.T) {
@@ -69,7 +69,7 @@ func TestWriteTable_CollectedUsersIncludesAllRows(t *testing.T) {
 	calls := 0
 	got, err := CollectPages(context.Background(), false, nil, func(context.Context, *string) (any, error) {
 		calls++
-		page := &IamUserList{Kind: IamOrgUserList, Values: []IamFlexeraIamUser{{Id: 9007199254740993, Email: "first@example.test"}}}
+		page := &IamUserList{Kind: IamUserListKindIamOrgUserList, Values: []IamFlexeraIamUser{{Id: 9007199254740993, Email: "first@example.test"}}}
 		if calls == 1 {
 			page.NextPage = stringPtr("https://example.test?skipToken=2")
 		} else if calls == 2 {
@@ -110,7 +110,7 @@ func TestWriteTable_MapErrors(t *testing.T) {
 		})
 	}
 	for _, values := range []any{make(chan int), "not an array"} {
-		if err := WriteTable(&bytes.Buffer{}, map[string]any{"kind": string(IamOrgUserList), "values": values}); err == nil {
+		if err := WriteTable(&bytes.Buffer{}, map[string]any{"kind": string(IamUserListKindIamOrgUserList), "values": values}); err == nil {
 			t.Fatalf("expected error for invalid values: %v", values)
 		}
 	}

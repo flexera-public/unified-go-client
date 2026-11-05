@@ -18,9 +18,9 @@ const (
 
 // Defines values for FinopsBillingAllocationPayloadType.
 const (
-	EqualSplit                  FinopsBillingAllocationPayloadType = "equalSplit"
-	FixedPercentageSplit        FinopsBillingAllocationPayloadType = "fixedPercentageSplit"
-	UsageBasedProportionalSplit FinopsBillingAllocationPayloadType = "usageBasedProportionalSplit"
+	FinopsBillingAllocationPayloadTypeEqualSplit                  FinopsBillingAllocationPayloadType = "equalSplit"
+	FinopsBillingAllocationPayloadTypeFixedPercentageSplit        FinopsBillingAllocationPayloadType = "fixedPercentageSplit"
+	FinopsBillingAllocationPayloadTypeUsageBasedProportionalSplit FinopsBillingAllocationPayloadType = "usageBasedProportionalSplit"
 )
 
 // Defines values for FinopsBillingAuditFilterDimension.
@@ -126,13 +126,13 @@ const (
 
 // Defines values for FinopsBillingBillingInvoiceIssueDateRuleType.
 const (
-	DayGenerated FinopsBillingBillingInvoiceIssueDateRuleType = "dayGenerated"
-	Exact        FinopsBillingBillingInvoiceIssueDateRuleType = "exact"
+	FinopsBillingBillingInvoiceIssueDateRuleTypeDayGenerated FinopsBillingBillingInvoiceIssueDateRuleType = "dayGenerated"
+	FinopsBillingBillingInvoiceIssueDateRuleTypeExact        FinopsBillingBillingInvoiceIssueDateRuleType = "exact"
 )
 
 // Defines values for FinopsBillingBillingInvoiceListKind.
 const (
-	FinopsInvoiceList FinopsBillingBillingInvoiceListKind = "finops:invoice-list"
+	FinopsBillingBillingInvoiceListKindFinopsInvoiceList FinopsBillingBillingInvoiceListKind = "finops:invoice-list"
 )
 
 // Defines values for FinopsBillingBillingInvoiceScheduleCadenceFrequency.
@@ -142,12 +142,12 @@ const (
 
 // Defines values for FinopsBillingBillingInvoiceScheduleInvoiceListKind.
 const (
-	FinopsInvoiceScheduleInvoiceList FinopsBillingBillingInvoiceScheduleInvoiceListKind = "finops:invoice-schedule-invoice-list"
+	FinopsBillingBillingInvoiceScheduleInvoiceListKindFinopsInvoiceScheduleInvoiceList FinopsBillingBillingInvoiceScheduleInvoiceListKind = "finops:invoice-schedule-invoice-list"
 )
 
 // Defines values for FinopsBillingBillingInvoiceScheduleListKind.
 const (
-	FinopsInvoiceScheduleList FinopsBillingBillingInvoiceScheduleListKind = "finops:invoice-schedule-list"
+	FinopsBillingBillingInvoiceScheduleListKindFinopsInvoiceScheduleList FinopsBillingBillingInvoiceScheduleListKind = "finops:invoice-schedule-list"
 )
 
 // Defines values for FinopsBillingBillingInvoiceScheduleResultKind.
@@ -190,7 +190,7 @@ const (
 
 // Defines values for FinopsBillingBillingInvoiceTemplateListKind.
 const (
-	FinopsInvoiceTemplateList FinopsBillingBillingInvoiceTemplateListKind = "finops:invoice-template-list"
+	FinopsBillingBillingInvoiceTemplateListKindFinopsInvoiceTemplateList FinopsBillingBillingInvoiceTemplateListKind = "finops:invoice-template-list"
 )
 
 // Defines values for FinopsBillingBillingInvoiceTemplateResultCostMetric.
@@ -243,8 +243,8 @@ const (
 
 // Defines values for FinopsBillingFeeShareDistributed.
 const (
-	Actual   FinopsBillingFeeShareDistributed = "actual"
-	Estimate FinopsBillingFeeShareDistributed = "estimate"
+	FinopsBillingFeeShareDistributedActual   FinopsBillingFeeShareDistributed = "actual"
+	FinopsBillingFeeShareDistributedEstimate FinopsBillingFeeShareDistributed = "estimate"
 )
 
 // Defines values for FinopsBillingFilterV1Type.
@@ -269,17 +269,17 @@ const (
 
 // Defines values for FinopsBillingFlexeraFinopsBillingAdjustmentPlanRuleKind.
 const (
-	FinopsBillingAdjustmentPlanRule FinopsBillingFlexeraFinopsBillingAdjustmentPlanRuleKind = "finops:billing-adjustment-plan-rule"
+	FinopsBillingFlexeraFinopsBillingAdjustmentPlanRuleKindFinopsBillingAdjustmentPlanRule FinopsBillingFlexeraFinopsBillingAdjustmentPlanRuleKind = "finops:billing-adjustment-plan-rule"
 )
 
 // Defines values for FinopsBillingFlexeraFinopsBillingAdjustmentRuleKind.
 const (
-	FinopsBillingAdjustmentRule FinopsBillingFlexeraFinopsBillingAdjustmentRuleKind = "finops:billing-adjustment-rule"
+	FinopsBillingFlexeraFinopsBillingAdjustmentRuleKindFinopsBillingAdjustmentRule FinopsBillingFlexeraFinopsBillingAdjustmentRuleKind = "finops:billing-adjustment-rule"
 )
 
 // Defines values for FinopsBillingFlexeraFinopsBillingEnterpriseRuleKind.
 const (
-	FinopsBillingEnterpriseRule FinopsBillingFlexeraFinopsBillingEnterpriseRuleKind = "finops:billing-enterprise-rule"
+	FinopsBillingFlexeraFinopsBillingEnterpriseRuleKindFinopsBillingEnterpriseRule FinopsBillingFlexeraFinopsBillingEnterpriseRuleKind = "finops:billing-enterprise-rule"
 )
 
 // Defines values for FinopsBillingFlexeraFinopsBillingInvoiceExportLayout.
@@ -296,7 +296,7 @@ const (
 
 // Defines values for FinopsBillingFlexeraFinopsBillingInvoiceKind.
 const (
-	FinopsInvoice FinopsBillingFlexeraFinopsBillingInvoiceKind = "finops:invoice"
+	FinopsBillingFlexeraFinopsBillingInvoiceKindFinopsInvoice FinopsBillingFlexeraFinopsBillingInvoiceKind = "finops:invoice"
 )
 
 // Defines values for FinopsBillingFlexeraFinopsBillingInvoicePeriodType.
@@ -337,7 +337,7 @@ const (
 
 // Defines values for FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceKind.
 const (
-	FinopsInvoiceScheduleInvoice FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceKind = "finops:invoice-schedule-invoice"
+	FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceKindFinopsInvoiceScheduleInvoice FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoiceKind = "finops:invoice-schedule-invoice"
 )
 
 // Defines values for FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoicePeriodType.
@@ -405,43 +405,43 @@ const (
 
 // Defines values for FinopsBillingHideCreditsSettingsCreditTypes.
 const (
-	BundledDiscount           FinopsBillingHideCreditsSettingsCreditTypes = "bundledDiscount"
-	CloudfrontSecurityBundles FinopsBillingHideCreditsSettingsCreditTypes = "cloudfrontSecurityBundles"
-	DistributorDiscount       FinopsBillingHideCreditsSettingsCreditTypes = "distributorDiscount"
-	EdpDiscount               FinopsBillingHideCreditsSettingsCreditTypes = "edpDiscount"
-	PrivateRateDiscount       FinopsBillingHideCreditsSettingsCreditTypes = "privateRateDiscount"
-	SppDiscount               FinopsBillingHideCreditsSettingsCreditTypes = "sppDiscount"
-	TaxRefunds                FinopsBillingHideCreditsSettingsCreditTypes = "taxRefunds"
+	FinopsBillingHideCreditsSettingsCreditTypesBundledDiscount           FinopsBillingHideCreditsSettingsCreditTypes = "bundledDiscount"
+	FinopsBillingHideCreditsSettingsCreditTypesCloudfrontSecurityBundles FinopsBillingHideCreditsSettingsCreditTypes = "cloudfrontSecurityBundles"
+	FinopsBillingHideCreditsSettingsCreditTypesDistributorDiscount       FinopsBillingHideCreditsSettingsCreditTypes = "distributorDiscount"
+	FinopsBillingHideCreditsSettingsCreditTypesEdpDiscount               FinopsBillingHideCreditsSettingsCreditTypes = "edpDiscount"
+	FinopsBillingHideCreditsSettingsCreditTypesPrivateRateDiscount       FinopsBillingHideCreditsSettingsCreditTypes = "privateRateDiscount"
+	FinopsBillingHideCreditsSettingsCreditTypesSppDiscount               FinopsBillingHideCreditsSettingsCreditTypes = "sppDiscount"
+	FinopsBillingHideCreditsSettingsCreditTypesTaxRefunds                FinopsBillingHideCreditsSettingsCreditTypes = "taxRefunds"
 )
 
 // Defines values for FinopsBillingIndexAdjustmentRulesResultKind.
 const (
-	FinopsBillingAdjustmentRuleList FinopsBillingIndexAdjustmentRulesResultKind = "finops:billing-adjustment-rule-list"
+	FinopsBillingIndexAdjustmentRulesResultKindFinopsBillingAdjustmentRuleList FinopsBillingIndexAdjustmentRulesResultKind = "finops:billing-adjustment-rule-list"
 )
 
 // Defines values for FinopsBillingIndexCreditAssignmentsResultKind.
 const (
-	FinopsBillingCreditAssignmentList FinopsBillingIndexCreditAssignmentsResultKind = "finops:billing-credit-assignment-list"
+	FinopsBillingIndexCreditAssignmentsResultKindFinopsBillingCreditAssignmentList FinopsBillingIndexCreditAssignmentsResultKind = "finops:billing-credit-assignment-list"
 )
 
 // Defines values for FinopsBillingIndexEnterpriseRulesResultKind.
 const (
-	FinopsBillingEnterpriseRuleList FinopsBillingIndexEnterpriseRulesResultKind = "finops:billing-enterprise-rule-list"
+	FinopsBillingIndexEnterpriseRulesResultKindFinopsBillingEnterpriseRuleList FinopsBillingIndexEnterpriseRulesResultKind = "finops:billing-enterprise-rule-list"
 )
 
 // Defines values for FinopsBillingIndexPlansResultKind.
 const (
-	FinopsBillingAdjustmentPlanList FinopsBillingIndexPlansResultKind = "finops:billing-adjustment-plan-list"
+	FinopsBillingIndexPlansResultKindFinopsBillingAdjustmentPlanList FinopsBillingIndexPlansResultKind = "finops:billing-adjustment-plan-list"
 )
 
 // Defines values for FinopsBillingIndexRulesResultKind.
 const (
-	FinopsBillingAdjustmentPlanRuleList FinopsBillingIndexRulesResultKind = "finops:billing-adjustment-plan-rule-list"
+	FinopsBillingIndexRulesResultKindFinopsBillingAdjustmentPlanRuleList FinopsBillingIndexRulesResultKind = "finops:billing-adjustment-plan-rule-list"
 )
 
 // Defines values for FinopsBillingIndexSharedCostRulesResultKind.
 const (
-	FinopsBillingSharedCostRuleList FinopsBillingIndexSharedCostRulesResultKind = "finops:billing-shared-cost-rule-list"
+	FinopsBillingIndexSharedCostRulesResultKindFinopsBillingSharedCostRuleList FinopsBillingIndexSharedCostRulesResultKind = "finops:billing-shared-cost-rule-list"
 )
 
 // Defines values for FinopsBillingMarkupMarkdownSettingsBaseOn.
@@ -473,7 +473,7 @@ const (
 
 // Defines values for FinopsBillingShowCustomerStatusResultKind.
 const (
-	FinopsBillingAdjustmentCustomerStatus FinopsBillingShowCustomerStatusResultKind = "finops:billing-adjustment-customer-status"
+	FinopsBillingShowCustomerStatusResultKindFinopsBillingAdjustmentCustomerStatus FinopsBillingShowCustomerStatusResultKind = "finops:billing-adjustment-customer-status"
 )
 
 // Defines values for FinopsBillingShowSharedCostRuleResultKind.
@@ -489,13 +489,13 @@ const (
 
 // Defines values for FinopsBillingSupportChargeSettingsTier.
 const (
-	Business          FinopsBillingSupportChargeSettingsTier = "business"
-	BusinessPlus      FinopsBillingSupportChargeSettingsTier = "businessPlus"
-	Developer         FinopsBillingSupportChargeSettingsTier = "developer"
-	Enterprise        FinopsBillingSupportChargeSettingsTier = "enterprise"
-	EnterpriseOnRamp  FinopsBillingSupportChargeSettingsTier = "enterpriseOnRamp"
-	Suppressed        FinopsBillingSupportChargeSettingsTier = "suppressed"
-	UnifiedOperations FinopsBillingSupportChargeSettingsTier = "unifiedOperations"
+	FinopsBillingSupportChargeSettingsTierBusiness          FinopsBillingSupportChargeSettingsTier = "business"
+	FinopsBillingSupportChargeSettingsTierBusinessPlus      FinopsBillingSupportChargeSettingsTier = "businessPlus"
+	FinopsBillingSupportChargeSettingsTierDeveloper         FinopsBillingSupportChargeSettingsTier = "developer"
+	FinopsBillingSupportChargeSettingsTierEnterprise        FinopsBillingSupportChargeSettingsTier = "enterprise"
+	FinopsBillingSupportChargeSettingsTierEnterpriseOnRamp  FinopsBillingSupportChargeSettingsTier = "enterpriseOnRamp"
+	FinopsBillingSupportChargeSettingsTierSuppressed        FinopsBillingSupportChargeSettingsTier = "suppressed"
+	FinopsBillingSupportChargeSettingsTierUnifiedOperations FinopsBillingSupportChargeSettingsTier = "unifiedOperations"
 )
 
 // Defines values for FinopsBillingUpchargeDiscountSettingsBaseOn.
@@ -514,12 +514,12 @@ const (
 
 // Defines values for FinopsBillingVendorCreditRowKind.
 const (
-	FinopsBillingVendorCredit FinopsBillingVendorCreditRowKind = "finops:billing-vendor-credit"
+	FinopsBillingVendorCreditRowKindFinopsBillingVendorCredit FinopsBillingVendorCreditRowKind = "finops:billing-vendor-credit"
 )
 
 // Defines values for FinopsBillingVendorCreditsResultKind.
 const (
-	FinopsBillingVendorCreditList FinopsBillingVendorCreditsResultKind = "finops:billing-vendor-credit-list"
+	FinopsBillingVendorCreditsResultKindFinopsBillingVendorCreditList FinopsBillingVendorCreditsResultKind = "finops:billing-vendor-credit-list"
 )
 
 // Defines values for FinopsBillingInvoiceSchedulesIndexParamsStatus.

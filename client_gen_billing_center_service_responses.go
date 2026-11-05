@@ -39,7 +39,7 @@ const (
 
 // Defines values for BillingCenterServiceBillingCentersShowAllocationTableResponseBodyKind.
 const (
-	OptimaAllocationTable BillingCenterServiceBillingCentersShowAllocationTableResponseBodyKind = "optima#allocation_table"
+	BillingCenterServiceBillingCentersShowAllocationTableResponseBodyKindOptimaAllocationTable BillingCenterServiceBillingCentersShowAllocationTableResponseBodyKind = "optima#allocation_table"
 )
 
 // Defines values for BillingCenterServiceBillingCentersShowResponseBodyKind.

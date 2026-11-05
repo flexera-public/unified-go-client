@@ -64,10 +64,10 @@ const (
 
 // Defines values for RiskMisconfigRulesFilterParamsFeatureType.
 const (
-	Compliance RiskMisconfigRulesFilterParamsFeatureType = "compliance"
-	Event      RiskMisconfigRulesFilterParamsFeatureType = "event"
-	Policy     RiskMisconfigRulesFilterParamsFeatureType = "policy"
-	Risk       RiskMisconfigRulesFilterParamsFeatureType = "risk"
+	RiskMisconfigRulesFilterParamsFeatureTypeCompliance RiskMisconfigRulesFilterParamsFeatureType = "compliance"
+	RiskMisconfigRulesFilterParamsFeatureTypeEvent      RiskMisconfigRulesFilterParamsFeatureType = "event"
+	RiskMisconfigRulesFilterParamsFeatureTypePolicy     RiskMisconfigRulesFilterParamsFeatureType = "policy"
+	RiskMisconfigRulesFilterParamsFeatureTypeRisk       RiskMisconfigRulesFilterParamsFeatureType = "risk"
 )
 
 // Defines values for RiskNotificationCreateRequestIntervalDays.
@@ -80,15 +80,15 @@ const (
 
 // Defines values for RiskNotificationCreateRequestNotificationType.
 const (
-	MISCONFIGALERT RiskNotificationCreateRequestNotificationType = "MISCONFIG_ALERT"
-	VULNALERT      RiskNotificationCreateRequestNotificationType = "VULN_ALERT"
+	RiskNotificationCreateRequestNotificationTypeMISCONFIGALERT RiskNotificationCreateRequestNotificationType = "MISCONFIG_ALERT"
+	RiskNotificationCreateRequestNotificationTypeVULNALERT      RiskNotificationCreateRequestNotificationType = "VULN_ALERT"
 )
 
 // Defines values for RiskOnboardingStatusValueStatus.
 const (
-	InProgress   RiskOnboardingStatusValueStatus = "inProgress"
-	NotOnboarded RiskOnboardingStatusValueStatus = "notOnboarded"
-	Onboarded    RiskOnboardingStatusValueStatus = "onboarded"
+	RiskOnboardingStatusValueStatusInProgress   RiskOnboardingStatusValueStatus = "inProgress"
+	RiskOnboardingStatusValueStatusNotOnboarded RiskOnboardingStatusValueStatus = "notOnboarded"
+	RiskOnboardingStatusValueStatusOnboarded    RiskOnboardingStatusValueStatus = "onboarded"
 )
 
 // Defines values for RiskOpenCVECountFiltersProviders.

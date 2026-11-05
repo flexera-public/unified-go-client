@@ -8,7 +8,7 @@ import (
 
 // Defines values for BudgetBudgetKind.
 const (
-	FinopsBudget BudgetBudgetKind = "finops:budget"
+	BudgetBudgetKindFinopsBudget BudgetBudgetKind = "finops:budget"
 )
 
 // Defines values for BudgetBudgetMetric.
@@ -33,7 +33,7 @@ const (
 
 // Defines values for BudgetBudgetLinkKind.
 const (
-	FinopsBudgetLink BudgetBudgetLinkKind = "finops:budget-link"
+	BudgetBudgetLinkKindFinopsBudgetLink BudgetBudgetLinkKind = "finops:budget-link"
 )
 
 // Defines values for BudgetBudgetLinkMetric.
@@ -50,27 +50,27 @@ const (
 
 // Defines values for BudgetBudgetListKind.
 const (
-	FinopsBudgetList BudgetBudgetListKind = "finops:budget-list"
+	BudgetBudgetListKindFinopsBudgetList BudgetBudgetListKind = "finops:budget-list"
 )
 
 // Defines values for BudgetBudgetReportRowKind.
 const (
-	FinopsBudgetReportRow BudgetBudgetReportRowKind = "finops:budget-report-row"
+	BudgetBudgetReportRowKindFinopsBudgetReportRow BudgetBudgetReportRowKind = "finops:budget-report-row"
 )
 
 // Defines values for BudgetBudgetReportRowListKind.
 const (
-	FinopsBudgetReportRowList BudgetBudgetReportRowListKind = "finops:budget-report-row-list"
+	BudgetBudgetReportRowListKindFinopsBudgetReportRowList BudgetBudgetReportRowListKind = "finops:budget-report-row-list"
 )
 
 // Defines values for BudgetCloudVendorAccountsListKind.
 const (
-	FinopsCloudVendorAccountList BudgetCloudVendorAccountsListKind = "finops:cloud-vendor-account-list"
+	BudgetCloudVendorAccountsListKindFinopsCloudVendorAccountList BudgetCloudVendorAccountsListKind = "finops:cloud-vendor-account-list"
 )
 
 // Defines values for BudgetFlexeraFinopsAnalyticsCloudVendorAccountKind.
 const (
-	FinopsCloudVendorAccountAws BudgetFlexeraFinopsAnalyticsCloudVendorAccountKind = "finops:cloud-vendor-account-aws"
+	BudgetFlexeraFinopsAnalyticsCloudVendorAccountKindFinopsCloudVendorAccountAws BudgetFlexeraFinopsAnalyticsCloudVendorAccountKind = "finops:cloud-vendor-account-aws"
 )
 
 // Defines values for BudgetFlexeraIamPrincipalKind.

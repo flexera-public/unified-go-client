@@ -41,9 +41,9 @@ const (
 
 // Defines values for BillAnalysisCommitmentReallocationSettingTypeType.
 const (
-	AwsReservedInstance BillAnalysisCommitmentReallocationSettingTypeType = "aws_reserved_instance"
-	AwsSavingsPlan      BillAnalysisCommitmentReallocationSettingTypeType = "aws_savings_plan"
-	AzureReservation    BillAnalysisCommitmentReallocationSettingTypeType = "azure_reservation"
+	BillAnalysisCommitmentReallocationSettingTypeTypeAwsReservedInstance BillAnalysisCommitmentReallocationSettingTypeType = "aws_reserved_instance"
+	BillAnalysisCommitmentReallocationSettingTypeTypeAwsSavingsPlan      BillAnalysisCommitmentReallocationSettingTypeType = "aws_savings_plan"
+	BillAnalysisCommitmentReallocationSettingTypeTypeAzureReservation    BillAnalysisCommitmentReallocationSettingTypeType = "azure_reservation"
 )
 
 // Defines values for BillAnalysisConditionType.
@@ -79,10 +79,10 @@ const (
 
 // Defines values for BillAnalysisReprocessResultItemResult.
 const (
-	ReprocessRequestFailed     BillAnalysisReprocessResultItemResult = "reprocess_request_failed"
-	ReprocessRequestSuccessful BillAnalysisReprocessResultItemResult = "reprocess_request_successful"
-	UnlockRequestFailed        BillAnalysisReprocessResultItemResult = "unlock_request_failed"
-	UnlockRequestSuccessful    BillAnalysisReprocessResultItemResult = "unlock_request_successful"
+	BillAnalysisReprocessResultItemResultReprocessRequestFailed     BillAnalysisReprocessResultItemResult = "reprocess_request_failed"
+	BillAnalysisReprocessResultItemResultReprocessRequestSuccessful BillAnalysisReprocessResultItemResult = "reprocess_request_successful"
+	BillAnalysisReprocessResultItemResultUnlockRequestFailed        BillAnalysisReprocessResultItemResult = "unlock_request_failed"
+	BillAnalysisReprocessResultItemResultUnlockRequestSuccessful    BillAnalysisReprocessResultItemResult = "unlock_request_successful"
 )
 
 // Defines values for BillAnalysisReprocessResultItemState.
@@ -102,7 +102,7 @@ const (
 
 // Defines values for BillAnalysisRightscaleOptimaCloudVendorAccountKind.
 const (
-	BaCloudVendorAccount BillAnalysisRightscaleOptimaCloudVendorAccountKind = "ba#cloud_vendor_account"
+	BillAnalysisRightscaleOptimaCloudVendorAccountKindBaCloudVendorAccount BillAnalysisRightscaleOptimaCloudVendorAccountKind = "ba#cloud_vendor_account"
 )
 
 // Defines values for BillAnalysisRuleBasedDimensionConditionType.
@@ -115,12 +115,12 @@ const (
 
 // Defines values for BillAnalysisSettingId.
 const (
-	CurrencyCode BillAnalysisSettingId = "currency_code"
+	BillAnalysisSettingIdCurrencyCode BillAnalysisSettingId = "currency_code"
 )
 
 // Defines values for BillAnalysisSettingKind.
 const (
-	OptimaSetting BillAnalysisSettingKind = "optima#setting"
+	BillAnalysisSettingKindOptimaSetting BillAnalysisSettingKind = "optima#setting"
 )
 
 // Defines values for BillAnalysisBillMonthsDownloadParamsFormat.
@@ -839,7 +839,7 @@ type BillAnalysisRightscaleBillAnalysisFrontServiceCustomdashboard struct {
 	Area string `json:"area"`
 
 	// Config A json blob used by the UI
-	Config openapi_types.File `json:"config"`
+	Config interface{} `json:"config"`
 
 	// CreatedAt Creation timestamp
 	CreatedAt time.Time `json:"created_at"`

@@ -13,8 +13,8 @@ const (
 
 // Defines values for FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectKind.
 const (
-	FinopsBillConnectAwsIamRole FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectKind = "finops:bill-connect-aws-iam-role"
-	FinopsBillConnectAwsIamUser FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectKind = "finops:bill-connect-aws-iam-user"
+	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectKindFinopsBillConnectAwsIamRole FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectKind = "finops:bill-connect-aws-iam-role"
+	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectKindFinopsBillConnectAwsIamUser FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectKind = "finops:bill-connect-aws-iam-user"
 )
 
 // Defines values for FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsGenericBillConnectOnboardingOrigin.
@@ -55,7 +55,7 @@ const (
 
 // Defines values for FinopsOnboardingAzureCspBillConnectKind.
 const (
-	FinopsBillConnectCbiOiAzureCsp FinopsOnboardingAzureCspBillConnectKind = "finops:bill-connect-cbi-oi-azure-csp"
+	FinopsOnboardingAzureCspBillConnectKindFinopsBillConnectCbiOiAzureCsp FinopsOnboardingAzureCspBillConnectKind = "finops:bill-connect-cbi-oi-azure-csp"
 )
 
 // Defines values for FinopsOnboardingAzureCspCredentialsOnboardingOrigin.
@@ -66,7 +66,7 @@ const (
 
 // Defines values for FinopsOnboardingAzureEAManagementBillConnectKind.
 const (
-	FinopsBillConnectCbiOiAzureEa FinopsOnboardingAzureEAManagementBillConnectKind = "finops:bill-connect-cbi-oi-azure-ea"
+	FinopsOnboardingAzureEAManagementBillConnectKindFinopsBillConnectCbiOiAzureEa FinopsOnboardingAzureEAManagementBillConnectKind = "finops:bill-connect-cbi-oi-azure-ea"
 )
 
 // Defines values for FinopsOnboardingAzureEAManagementCredentialsOnboardingOrigin.
@@ -83,7 +83,7 @@ const (
 
 // Defines values for FinopsOnboardingAzureMcaBillConnectKind.
 const (
-	FinopsBillConnectCbiOiAzureMca FinopsOnboardingAzureMcaBillConnectKind = "finops:bill-connect-cbi-oi-azure-mca"
+	FinopsOnboardingAzureMcaBillConnectKindFinopsBillConnectCbiOiAzureMca FinopsOnboardingAzureMcaBillConnectKind = "finops:bill-connect-cbi-oi-azure-mca"
 )
 
 // Defines values for FinopsOnboardingAzureMcaCredentialsOnboardingOrigin.
@@ -99,42 +99,42 @@ const (
 
 // Defines values for FinopsOnboardingBillConnectCredentialValidationAzureCspKind.
 const (
-	FinopsBillConnectCbiOiAzureCspValidation FinopsOnboardingBillConnectCredentialValidationAzureCspKind = "finops:bill-connect-cbi-oi-azure-csp-validation"
+	FinopsOnboardingBillConnectCredentialValidationAzureCspKindFinopsBillConnectCbiOiAzureCspValidation FinopsOnboardingBillConnectCredentialValidationAzureCspKind = "finops:bill-connect-cbi-oi-azure-csp-validation"
 )
 
 // Defines values for FinopsOnboardingBillConnectCredentialValidationAzureEAManagementKind.
 const (
-	FinopsBillConnectCbiOiAzureEaValidation FinopsOnboardingBillConnectCredentialValidationAzureEAManagementKind = "finops:bill-connect-cbi-oi-azure-ea-validation"
+	FinopsOnboardingBillConnectCredentialValidationAzureEAManagementKindFinopsBillConnectCbiOiAzureEaValidation FinopsOnboardingBillConnectCredentialValidationAzureEAManagementKind = "finops:bill-connect-cbi-oi-azure-ea-validation"
 )
 
 // Defines values for FinopsOnboardingBillConnectCredentialValidationAzureMcaKind.
 const (
-	FinopsBillConnectCbiOiAzureMcaValidation FinopsOnboardingBillConnectCredentialValidationAzureMcaKind = "finops:bill-connect-cbi-oi-azure-mca-validation"
+	FinopsOnboardingBillConnectCredentialValidationAzureMcaKindFinopsBillConnectCbiOiAzureMcaValidation FinopsOnboardingBillConnectCredentialValidationAzureMcaKind = "finops:bill-connect-cbi-oi-azure-mca-validation"
 )
 
 // Defines values for FinopsOnboardingBillConnectCredentialValidationCBIKind.
 const (
-	FinopsBillConnectCbiValidation FinopsOnboardingBillConnectCredentialValidationCBIKind = "finops:bill-connect-cbi-validation"
+	FinopsOnboardingBillConnectCredentialValidationCBIKindFinopsBillConnectCbiValidation FinopsOnboardingBillConnectCredentialValidationCBIKind = "finops:bill-connect-cbi-validation"
 )
 
 // Defines values for FinopsOnboardingBillConnectCredentialValidationDatabricksKind.
 const (
-	FinopsBillConnectPaasDatabricksValidation FinopsOnboardingBillConnectCredentialValidationDatabricksKind = "finops:bill-connect-paas-databricks-validation"
+	FinopsOnboardingBillConnectCredentialValidationDatabricksKindFinopsBillConnectPaasDatabricksValidation FinopsOnboardingBillConnectCredentialValidationDatabricksKind = "finops:bill-connect-paas-databricks-validation"
 )
 
 // Defines values for FinopsOnboardingBillConnectCredentialValidationGCPKind.
 const (
-	FinopsBillConnectGcpValidation FinopsOnboardingBillConnectCredentialValidationGCPKind = "finops:bill-connect-gcp-validation"
+	FinopsOnboardingBillConnectCredentialValidationGCPKindFinopsBillConnectGcpValidation FinopsOnboardingBillConnectCredentialValidationGCPKind = "finops:bill-connect-gcp-validation"
 )
 
 // Defines values for FinopsOnboardingBillConnectCredentialValidationListKind.
 const (
-	FinopsGenericBillValidationList FinopsOnboardingBillConnectCredentialValidationListKind = "finops:generic-bill-validation-list"
+	FinopsOnboardingBillConnectCredentialValidationListKindFinopsGenericBillValidationList FinopsOnboardingBillConnectCredentialValidationListKind = "finops:generic-bill-validation-list"
 )
 
 // Defines values for FinopsOnboardingBillConnectCredentialValidationSnowflakeKind.
 const (
-	FinopsBillConnectPaasSnowflakeValidation FinopsOnboardingBillConnectCredentialValidationSnowflakeKind = "finops:bill-connect-paas-snowflake-validation"
+	FinopsOnboardingBillConnectCredentialValidationSnowflakeKindFinopsBillConnectPaasSnowflakeValidation FinopsOnboardingBillConnectCredentialValidationSnowflakeKind = "finops:bill-connect-paas-snowflake-validation"
 )
 
 // Defines values for FinopsOnboardingCBIAzureCspGenericBillConnectOnboardingOrigin.
@@ -145,12 +145,12 @@ const (
 
 // Defines values for FinopsOnboardingCBIBillConnectKind.
 const (
-	FinopsBillConnectCbi FinopsOnboardingCBIBillConnectKind = "finops:bill-connect-cbi"
+	FinopsOnboardingCBIBillConnectKindFinopsBillConnectCbi FinopsOnboardingCBIBillConnectKind = "finops:bill-connect-cbi"
 )
 
 // Defines values for FinopsOnboardingDatabricksBillConnectKind.
 const (
-	FinopsBillConnectPaasDatabricks FinopsOnboardingDatabricksBillConnectKind = "finops:bill-connect-paas-databricks"
+	FinopsOnboardingDatabricksBillConnectKindFinopsBillConnectPaasDatabricks FinopsOnboardingDatabricksBillConnectKind = "finops:bill-connect-paas-databricks"
 )
 
 // Defines values for FinopsOnboardingFlexeraFinopsOnboardingBillValidationKind.
@@ -185,17 +185,17 @@ const (
 
 // Defines values for FinopsOnboardingGCPBillConnectKind.
 const (
-	FinopsBillConnectGcp FinopsOnboardingGCPBillConnectKind = "finops:bill-connect-gcp"
+	FinopsOnboardingGCPBillConnectKindFinopsBillConnectGcp FinopsOnboardingGCPBillConnectKind = "finops:bill-connect-gcp"
 )
 
 // Defines values for FinopsOnboardingGCPCredentialsType.
 const (
-	ServiceAccount FinopsOnboardingGCPCredentialsType = "service_account"
+	FinopsOnboardingGCPCredentialsTypeServiceAccount FinopsOnboardingGCPCredentialsType = "service_account"
 )
 
 // Defines values for FinopsOnboardingGenericBillConnectItemListKind.
 const (
-	FinopsGenericBillList FinopsOnboardingGenericBillConnectItemListKind = "finops:generic-bill-list"
+	FinopsOnboardingGenericBillConnectItemListKindFinopsGenericBillList FinopsOnboardingGenericBillConnectItemListKind = "finops:generic-bill-list"
 )
 
 // Defines values for FinopsOnboardingScopeDetailsWithScopeTypeScopeType.
@@ -206,7 +206,7 @@ const (
 
 // Defines values for FinopsOnboardingSnowflakeBillConnectKind.
 const (
-	FinopsBillConnectPaasSnowflake FinopsOnboardingSnowflakeBillConnectKind = "finops:bill-connect-paas-snowflake"
+	FinopsOnboardingSnowflakeBillConnectKindFinopsBillConnectPaasSnowflake FinopsOnboardingSnowflakeBillConnectKind = "finops:bill-connect-paas-snowflake"
 )
 
 // Defines values for FinopsOnboardingProcessingHistoryDownloadParamsFormat.

@@ -12,7 +12,7 @@ import (
 
 // Defines values for AuthTokenResponseBodyTokenType.
 const (
-	Bearer AuthTokenResponseBodyTokenType = "Bearer"
+	AuthTokenResponseBodyTokenTypeBearer AuthTokenResponseBodyTokenType = "Bearer"
 )
 
 // AuthTokenResponseBody defines model for Auth_TokenResponseBody.

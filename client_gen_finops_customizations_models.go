@@ -9,7 +9,7 @@ import (
 
 // Defines values for FinopsCustomizationsCurrencyKind.
 const (
-	FinopsCurrency FinopsCustomizationsCurrencyKind = "finops:currency"
+	FinopsCustomizationsCurrencyKindFinopsCurrency FinopsCustomizationsCurrencyKind = "finops:currency"
 )
 
 // Defines values for FinopsCustomizationsFilterV1Type.
@@ -46,7 +46,7 @@ const (
 
 // Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsRuleBasedDimensionKind.
 const (
-	FinopsRuleBasedDimension FinopsCustomizationsFlexeraFinopsCustomizationsRuleBasedDimensionKind = "finops:rule-based-dimension"
+	FinopsCustomizationsFlexeraFinopsCustomizationsRuleBasedDimensionKindFinopsRuleBasedDimension FinopsCustomizationsFlexeraFinopsCustomizationsRuleBasedDimensionKind = "finops:rule-based-dimension"
 )
 
 // Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryKind.
@@ -62,12 +62,12 @@ const (
 
 // Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsTagDimensionKind.
 const (
-	FinopsTagDimension FinopsCustomizationsFlexeraFinopsCustomizationsTagDimensionKind = "finops:tag-dimension"
+	FinopsCustomizationsFlexeraFinopsCustomizationsTagDimensionKindFinopsTagDimension FinopsCustomizationsFlexeraFinopsCustomizationsTagDimensionKind = "finops:tag-dimension"
 )
 
 // Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationKind.
 const (
-	FinopsTagObservation FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationKind = "finops:tag-observation"
+	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationKindFinopsTagObservation FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationKind = "finops:tag-observation"
 )
 
 // Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationProvider.
@@ -79,15 +79,15 @@ const (
 
 // Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType.
 const (
-	AwsCostAllocationTag FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "awsCostAllocationTag"
-	AwsResourceTag       FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "awsResourceTag"
-	AzureResourceTag     FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "azureResourceTag"
-	GcpResourceLabel     FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "gcpResourceLabel"
+	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAwsCostAllocationTag FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "awsCostAllocationTag"
+	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAwsResourceTag       FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "awsResourceTag"
+	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAzureResourceTag     FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "azureResourceTag"
+	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeGcpResourceLabel     FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "gcpResourceLabel"
 )
 
 // Defines values for FinopsCustomizationsIndexSavedFiltersResultKind.
 const (
-	FinopsSavedFilterList FinopsCustomizationsIndexSavedFiltersResultKind = "finops:saved-filter-list"
+	FinopsCustomizationsIndexSavedFiltersResultKindFinopsSavedFilterList FinopsCustomizationsIndexSavedFiltersResultKind = "finops:saved-filter-list"
 )
 
 // Defines values for FinopsCustomizationsPatchSavedFilterRequestVisibility.
@@ -98,7 +98,7 @@ const (
 
 // Defines values for FinopsCustomizationsReportSubscriptionListKind.
 const (
-	FinopsReportSubscriptionList FinopsCustomizationsReportSubscriptionListKind = "finops:report-subscription-list"
+	FinopsCustomizationsReportSubscriptionListKindFinopsReportSubscriptionList FinopsCustomizationsReportSubscriptionListKind = "finops:report-subscription-list"
 )
 
 // Defines values for FinopsCustomizationsReportSubscriptionRecipientType.
@@ -127,13 +127,13 @@ const (
 
 // Defines values for FinopsCustomizationsReportSubscriptionScheduleDayOfWeek.
 const (
-	Friday    FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "friday"
-	Monday    FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "monday"
-	Saturday  FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "saturday"
-	Sunday    FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "sunday"
-	Thursday  FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "thursday"
-	Tuesday   FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "tuesday"
-	Wednesday FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "wednesday"
+	FinopsCustomizationsReportSubscriptionScheduleDayOfWeekFriday    FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "friday"
+	FinopsCustomizationsReportSubscriptionScheduleDayOfWeekMonday    FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "monday"
+	FinopsCustomizationsReportSubscriptionScheduleDayOfWeekSaturday  FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "saturday"
+	FinopsCustomizationsReportSubscriptionScheduleDayOfWeekSunday    FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "sunday"
+	FinopsCustomizationsReportSubscriptionScheduleDayOfWeekThursday  FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "thursday"
+	FinopsCustomizationsReportSubscriptionScheduleDayOfWeekTuesday   FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "tuesday"
+	FinopsCustomizationsReportSubscriptionScheduleDayOfWeekWednesday FinopsCustomizationsReportSubscriptionScheduleDayOfWeek = "wednesday"
 )
 
 // Defines values for FinopsCustomizationsReportSubscriptionScheduleFrequency.
@@ -154,27 +154,27 @@ const (
 
 // Defines values for FinopsCustomizationsRuleBasedDimensionListKind.
 const (
-	FinopsRuleBasedDimensionList FinopsCustomizationsRuleBasedDimensionListKind = "finops:rule-based-dimension-list"
+	FinopsCustomizationsRuleBasedDimensionListKindFinopsRuleBasedDimensionList FinopsCustomizationsRuleBasedDimensionListKind = "finops:rule-based-dimension-list"
 )
 
 // Defines values for FinopsCustomizationsRuleBasedDimensionRuleKind.
 const (
-	FinopsRuleBasedDimensionRule FinopsCustomizationsRuleBasedDimensionRuleKind = "finops:rule-based-dimension-rule"
+	FinopsCustomizationsRuleBasedDimensionRuleKindFinopsRuleBasedDimensionRule FinopsCustomizationsRuleBasedDimensionRuleKind = "finops:rule-based-dimension-rule"
 )
 
 // Defines values for FinopsCustomizationsRuleBasedDimensionRuleListKind.
 const (
-	FinopsRuleBasedDimensionRuleList FinopsCustomizationsRuleBasedDimensionRuleListKind = "finops:rule-based-dimension-rule-list"
+	FinopsCustomizationsRuleBasedDimensionRuleListKindFinopsRuleBasedDimensionRuleList FinopsCustomizationsRuleBasedDimensionRuleListKind = "finops:rule-based-dimension-rule-list"
 )
 
 // Defines values for FinopsCustomizationsRuleBasedDimensionRuleListLinkKind.
 const (
-	FinopsRuleBasedDimensionRuleListLink FinopsCustomizationsRuleBasedDimensionRuleListLinkKind = "finops:rule-based-dimension-rule-list-link"
+	FinopsCustomizationsRuleBasedDimensionRuleListLinkKindFinopsRuleBasedDimensionRuleListLink FinopsCustomizationsRuleBasedDimensionRuleListLinkKind = "finops:rule-based-dimension-rule-list-link"
 )
 
 // Defines values for FinopsCustomizationsRuleBasedDimensionSummaryKind.
 const (
-	FinopsRuleBasedDimensionSummary FinopsCustomizationsRuleBasedDimensionSummaryKind = "finops:rule-based-dimension-summary"
+	FinopsCustomizationsRuleBasedDimensionSummaryKindFinopsRuleBasedDimensionSummary FinopsCustomizationsRuleBasedDimensionSummaryKind = "finops:rule-based-dimension-summary"
 )
 
 // Defines values for FinopsCustomizationsSavedFilterDisplayOptionsPeriodType.
@@ -185,8 +185,8 @@ const (
 
 // Defines values for FinopsCustomizationsSavedFilterDisplayOptionsPatchPeriodType.
 const (
-	BillPeriod   FinopsCustomizationsSavedFilterDisplayOptionsPatchPeriodType = "billPeriod"
-	ChargePeriod FinopsCustomizationsSavedFilterDisplayOptionsPatchPeriodType = "chargePeriod"
+	FinopsCustomizationsSavedFilterDisplayOptionsPatchPeriodTypeBillPeriod   FinopsCustomizationsSavedFilterDisplayOptionsPatchPeriodType = "billPeriod"
+	FinopsCustomizationsSavedFilterDisplayOptionsPatchPeriodTypeChargePeriod FinopsCustomizationsSavedFilterDisplayOptionsPatchPeriodType = "chargePeriod"
 )
 
 // Defines values for FinopsCustomizationsSavedFilterHTTPBodyKind.
@@ -202,12 +202,12 @@ const (
 
 // Defines values for FinopsCustomizationsTagDimensionListKind.
 const (
-	FinopsTagDimensionList FinopsCustomizationsTagDimensionListKind = "finops:tag-dimension-list"
+	FinopsCustomizationsTagDimensionListKindFinopsTagDimensionList FinopsCustomizationsTagDimensionListKind = "finops:tag-dimension-list"
 )
 
 // Defines values for FinopsCustomizationsTagObservationListKind.
 const (
-	FinopsTagObservationList FinopsCustomizationsTagObservationListKind = "finops:tag-observation-list"
+	FinopsCustomizationsTagObservationListKindFinopsTagObservationList FinopsCustomizationsTagObservationListKind = "finops:tag-observation-list"
 )
 
 // Defines values for FinopsCustomizationsSavedFiltersIndexParamsVisibility.

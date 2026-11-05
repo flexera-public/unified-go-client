@@ -21,13 +21,13 @@ const (
 
 // Defines values for FinopsOnboardingCreateMcaBillConnectRequestBodyCloudInstance.
 const (
-	AzureChinaCloud FinopsOnboardingCreateMcaBillConnectRequestBodyCloudInstance = "AzureChinaCloud"
-	AzureCloud      FinopsOnboardingCreateMcaBillConnectRequestBodyCloudInstance = "AzureCloud"
+	FinopsOnboardingCreateMcaBillConnectRequestBodyCloudInstanceAzureChinaCloud FinopsOnboardingCreateMcaBillConnectRequestBodyCloudInstance = "AzureChinaCloud"
+	FinopsOnboardingCreateMcaBillConnectRequestBodyCloudInstanceAzureCloud      FinopsOnboardingCreateMcaBillConnectRequestBodyCloudInstance = "AzureCloud"
 )
 
 // Defines values for FinopsOnboardingReprocessRequestBodyAction.
 const (
-	Reprocess FinopsOnboardingReprocessRequestBodyAction = "reprocess"
+	FinopsOnboardingReprocessRequestBodyActionReprocess FinopsOnboardingReprocessRequestBodyAction = "reprocess"
 )
 
 // FinopsOnboardingCBIParams defines model for FinopsOnboarding_CBIParams.

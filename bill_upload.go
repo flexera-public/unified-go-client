@@ -138,7 +138,7 @@ func (t *BillUploadPushTool) Invoke(ctx context.Context, in BillUploadPushInput)
 	}
 
 	commitResponse, err := t.client.BillUploadBillUploadCreateOperation(ctx, in.OrgID, billUploadID, BillUploadBillUploadCreateOperationJSONRequestBody{
-		Operation: Commit,
+		Operation: BillUploadBillUploadCreateOperationRequestBodyOperationCommit,
 	})
 	if err != nil {
 		return BillUploadPushOutput{}, fmt.Errorf("bill-upload push: commit: %w", err)
