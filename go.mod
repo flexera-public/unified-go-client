@@ -1,6 +1,6 @@
 module github.com/flexera-public/unified-go-client
 
-go 1.24.5
+go 1.27.3
 
 tool (
 	github.com/dense-analysis/openapi-spec-converter/cmd/openapi-spec-converter
