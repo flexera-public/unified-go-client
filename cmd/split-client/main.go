@@ -333,6 +333,11 @@ func classifyDeclaration(decl ast.Decl, namespaces []namespace) (namespace, stri
 	if isSharedDeclaration(name, receiver) {
 		return namespace{Name: "core", FileSlug: "core"}, "core", true
 	}
+	for _, declaredName := range declarationNames(decl) {
+		if isSharedDeclaration(declaredName, receiver) {
+			return namespace{Name: "core", FileSlug: "core"}, "core", true
+		}
+	}
 	return namespace{}, "", false
 }
 
@@ -392,7 +397,7 @@ func concernFor(name, receiver string) string {
 }
 
 func isSharedDeclaration(name, receiver string) bool {
-	if receiver == "Client" || receiver == "ClientWithResponses" {
+	if receiver == "Client" || receiver == "ClientWithResponses" || receiver == "ServerUrlFlexeraOneAPIZoneVariable" || strings.HasSuffix(name, "AuthContextKey") {
 		return true
 	}
 	switch name {
@@ -402,6 +407,7 @@ func isSharedDeclaration(name, receiver string) bool {
 		"ClientWithResponses",
 		"ClientWithResponsesInterface",
 		"FlexeraBearerAuthScopes",
+		"flexeraBearerAuthContextKey",
 		"HttpRequestDoer",
 		"NewClient",
 		"NewClientWithResponses",

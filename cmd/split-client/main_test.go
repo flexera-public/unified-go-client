@@ -64,6 +64,29 @@ func (w *widget) unexported() {}
 const Version = 1
 `
 
+func TestClassifySharedAuthAndServerDeclarations(t *testing.T) {
+	decls := parseTestDeclarations(t, `const (
+		FlexeraBearerAuthScopes flexeraBearerAuthContextKey = "FlexeraBearerAuth.Scopes"
+	)
+	type flexeraBearerAuthContextKey string
+	type ServerUrlFlexeraOneAPIZoneVariable string
+	func (e ServerUrlFlexeraOneAPIZoneVariable) Valid() bool { return true }`)
+	if len(decls) != 4 {
+		t.Fatalf("got %d declarations, want 4", len(decls))
+	}
+
+	for _, decl := range decls {
+		entry, concern, ok := classifyDeclaration(decl, nil)
+		if !ok {
+			t.Errorf("declaration %q was not classified", declarationName(decl))
+			continue
+		}
+		if entry.Name != "core" || concern != "core" {
+			t.Errorf("declaration %q classified as %s/%s, want core/core", declarationName(decl), entry.Name, concern)
+		}
+	}
+}
+
 func TestRunSplitsByNamespaceAndConcern(t *testing.T) {
 	dir := t.TempDir()
 	input := filepath.Join(dir, "client.gen.tmp.go")
