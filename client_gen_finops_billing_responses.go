@@ -1534,6 +1534,215 @@ func (r FinopsBillingInvoicesRetryResponse) ContentType() string {
 	return ""
 }
 
+type FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingAzureOrphanBillingAccountsPage
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FinopsBillingBillingOrphansIndexAzureUnallocatedChargesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingAzureUnallocatedChargesPage
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingOrphansIndexAzureUnallocatedChargesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingOrphansIndexAzureUnallocatedChargesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FinopsBillingBillingOrphansIndexAzureUnallocatedChargesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FinopsBillingBillingOrphansIndexAzureCostAssignmentsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingAzureCostAssignmentsPage
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingOrphansIndexAzureCostAssignmentsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingOrphansIndexAzureCostAssignmentsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FinopsBillingBillingOrphansIndexAzureCostAssignmentsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FinopsBillingBillingOrphansCreateAzureCostAssignmentsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON201      *FinopsBillingCreateAzureCostAssignmentsResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingOrphansCreateAzureCostAssignmentsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingOrphansCreateAzureCostAssignmentsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FinopsBillingBillingOrphansCreateAzureCostAssignmentsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FinopsBillingBillingOrphansDeleteAzureCostAssignmentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingOrphansDeleteAzureCostAssignmentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingOrphansDeleteAzureCostAssignmentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FinopsBillingBillingOrphansDeleteAzureCostAssignmentResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FinopsBillingBillingOrphansShowAzureCostAssignmentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingAzureCostAssignment
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingOrphansShowAzureCostAssignmentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingOrphansShowAzureCostAssignmentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FinopsBillingBillingOrphansShowAzureCostAssignmentResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FinopsBillingBillingOrphansReplaceAzureCostAssignmentResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingAzureCostAssignment
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingOrphansReplaceAzureCostAssignmentResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingOrphansReplaceAzureCostAssignmentResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FinopsBillingBillingOrphansReplaceAzureCostAssignmentResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type FinopsBillingSharedCostRulesIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -2392,6 +2601,85 @@ func (c *ClientWithResponses) FinopsBillingInvoicesRetryWithResponse(ctx context
 		return nil, err
 	}
 	return ParseFinopsBillingInvoicesRetryResponse(rsp)
+}
+
+// FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsWithResponse request returning *FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsResponse
+func (c *ClientWithResponses) FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsResponse, error) {
+	rsp, err := c.FinopsBillingBillingOrphansIndexAzureOrphanBillingAccounts(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsResponse(rsp)
+}
+
+// FinopsBillingBillingOrphansIndexAzureUnallocatedChargesWithResponse request returning *FinopsBillingBillingOrphansIndexAzureUnallocatedChargesResponse
+func (c *ClientWithResponses) FinopsBillingBillingOrphansIndexAzureUnallocatedChargesWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingOrphansIndexAzureUnallocatedChargesParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingOrphansIndexAzureUnallocatedChargesResponse, error) {
+	rsp, err := c.FinopsBillingBillingOrphansIndexAzureUnallocatedCharges(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingOrphansIndexAzureUnallocatedChargesResponse(rsp)
+}
+
+// FinopsBillingBillingOrphansIndexAzureCostAssignmentsWithResponse request returning *FinopsBillingBillingOrphansIndexAzureCostAssignmentsResponse
+func (c *ClientWithResponses) FinopsBillingBillingOrphansIndexAzureCostAssignmentsWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingOrphansIndexAzureCostAssignmentsParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingOrphansIndexAzureCostAssignmentsResponse, error) {
+	rsp, err := c.FinopsBillingBillingOrphansIndexAzureCostAssignments(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingOrphansIndexAzureCostAssignmentsResponse(rsp)
+}
+
+// FinopsBillingBillingOrphansCreateAzureCostAssignmentsWithBodyWithResponse request with arbitrary body returning *FinopsBillingBillingOrphansCreateAzureCostAssignmentsResponse
+func (c *ClientWithResponses) FinopsBillingBillingOrphansCreateAzureCostAssignmentsWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingOrphansCreateAzureCostAssignmentsResponse, error) {
+	rsp, err := c.FinopsBillingBillingOrphansCreateAzureCostAssignmentsWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingOrphansCreateAzureCostAssignmentsResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingBillingOrphansCreateAzureCostAssignmentsWithResponse(ctx context.Context, orgId int, body FinopsBillingBillingOrphansCreateAzureCostAssignmentsJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingOrphansCreateAzureCostAssignmentsResponse, error) {
+	rsp, err := c.FinopsBillingBillingOrphansCreateAzureCostAssignments(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingOrphansCreateAzureCostAssignmentsResponse(rsp)
+}
+
+// FinopsBillingBillingOrphansDeleteAzureCostAssignmentWithResponse request returning *FinopsBillingBillingOrphansDeleteAzureCostAssignmentResponse
+func (c *ClientWithResponses) FinopsBillingBillingOrphansDeleteAzureCostAssignmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingOrphansDeleteAzureCostAssignmentParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingOrphansDeleteAzureCostAssignmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingOrphansDeleteAzureCostAssignment(ctx, orgId, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingOrphansDeleteAzureCostAssignmentResponse(rsp)
+}
+
+// FinopsBillingBillingOrphansShowAzureCostAssignmentWithResponse request returning *FinopsBillingBillingOrphansShowAzureCostAssignmentResponse
+func (c *ClientWithResponses) FinopsBillingBillingOrphansShowAzureCostAssignmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*FinopsBillingBillingOrphansShowAzureCostAssignmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingOrphansShowAzureCostAssignment(ctx, orgId, id, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingOrphansShowAzureCostAssignmentResponse(rsp)
+}
+
+// FinopsBillingBillingOrphansReplaceAzureCostAssignmentWithBodyWithResponse request with arbitrary body returning *FinopsBillingBillingOrphansReplaceAzureCostAssignmentResponse
+func (c *ClientWithResponses) FinopsBillingBillingOrphansReplaceAzureCostAssignmentWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingOrphansReplaceAzureCostAssignmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingOrphansReplaceAzureCostAssignmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingOrphansReplaceAzureCostAssignmentWithBody(ctx, orgId, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingOrphansReplaceAzureCostAssignmentResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingBillingOrphansReplaceAzureCostAssignmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingOrphansReplaceAzureCostAssignmentParams, body FinopsBillingBillingOrphansReplaceAzureCostAssignmentJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingOrphansReplaceAzureCostAssignmentResponse, error) {
+	rsp, err := c.FinopsBillingBillingOrphansReplaceAzureCostAssignment(ctx, orgId, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingOrphansReplaceAzureCostAssignmentResponse(rsp)
 }
 
 // FinopsBillingSharedCostRulesIndexWithResponse request returning *FinopsBillingSharedCostRulesIndexResponse
@@ -3597,6 +3885,178 @@ func ParseFinopsBillingInvoicesRetryResponse(rsp *http.Response) (*FinopsBilling
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest FinopsBillingBillingInvoiceList
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsResponse parses an HTTP response from a FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsWithResponse call
+func ParseFinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsResponse(rsp *http.Response) (*FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingAzureOrphanBillingAccountsPage
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingOrphansIndexAzureUnallocatedChargesResponse parses an HTTP response from a FinopsBillingBillingOrphansIndexAzureUnallocatedChargesWithResponse call
+func ParseFinopsBillingBillingOrphansIndexAzureUnallocatedChargesResponse(rsp *http.Response) (*FinopsBillingBillingOrphansIndexAzureUnallocatedChargesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingOrphansIndexAzureUnallocatedChargesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingAzureUnallocatedChargesPage
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingOrphansIndexAzureCostAssignmentsResponse parses an HTTP response from a FinopsBillingBillingOrphansIndexAzureCostAssignmentsWithResponse call
+func ParseFinopsBillingBillingOrphansIndexAzureCostAssignmentsResponse(rsp *http.Response) (*FinopsBillingBillingOrphansIndexAzureCostAssignmentsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingOrphansIndexAzureCostAssignmentsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingAzureCostAssignmentsPage
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingOrphansCreateAzureCostAssignmentsResponse parses an HTTP response from a FinopsBillingBillingOrphansCreateAzureCostAssignmentsWithResponse call
+func ParseFinopsBillingBillingOrphansCreateAzureCostAssignmentsResponse(rsp *http.Response) (*FinopsBillingBillingOrphansCreateAzureCostAssignmentsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingOrphansCreateAzureCostAssignmentsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest FinopsBillingCreateAzureCostAssignmentsResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingOrphansDeleteAzureCostAssignmentResponse parses an HTTP response from a FinopsBillingBillingOrphansDeleteAzureCostAssignmentWithResponse call
+func ParseFinopsBillingBillingOrphansDeleteAzureCostAssignmentResponse(rsp *http.Response) (*FinopsBillingBillingOrphansDeleteAzureCostAssignmentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingOrphansDeleteAzureCostAssignmentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingOrphansShowAzureCostAssignmentResponse parses an HTTP response from a FinopsBillingBillingOrphansShowAzureCostAssignmentWithResponse call
+func ParseFinopsBillingBillingOrphansShowAzureCostAssignmentResponse(rsp *http.Response) (*FinopsBillingBillingOrphansShowAzureCostAssignmentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingOrphansShowAzureCostAssignmentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingAzureCostAssignment
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingBillingOrphansReplaceAzureCostAssignmentResponse parses an HTTP response from a FinopsBillingBillingOrphansReplaceAzureCostAssignmentWithResponse call
+func ParseFinopsBillingBillingOrphansReplaceAzureCostAssignmentResponse(rsp *http.Response) (*FinopsBillingBillingOrphansReplaceAzureCostAssignmentResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingOrphansReplaceAzureCostAssignmentResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingAzureCostAssignment
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

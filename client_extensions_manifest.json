@@ -805,12 +805,12 @@
     },
     {
       "path": "projects.go",
-      "sha256": "8fb50e45ede35904c6c957b98e123d473bd7c038aac92907947b7afa08c66c96",
+      "sha256": "e8e617c9a9187cc2f47c4c17680bbddc89fca2d18c8b2ded467afa1898e5f86f",
       "declarations": [
         {
           "name": "Project",
           "kind": "type",
-          "doc": "Project is the resolver-facing project view. It is a lightweight subset of"
+          "doc": "Project is the resolver-facing project view."
         },
         {
           "name": "ProjectResolverOption",
@@ -818,24 +818,9 @@
           "doc": "ProjectResolverOption configures a ProjectResolver."
         },
         {
-          "name": "WithProjectResolverTokenSource",
-          "kind": "func",
-          "doc": "WithProjectResolverTokenSource supplies the access token used by the GRS"
-        },
-        {
-          "name": "WithProjectResolverStaticToken",
-          "kind": "func",
-          "doc": "WithProjectResolverStaticToken supplies a static access token used by the"
-        },
-        {
           "name": "WithProjectsCacheTTL",
           "kind": "func",
           "doc": "WithProjectsCacheTTL sets the cache time-to-live. A zero or negative value"
-        },
-        {
-          "name": "WithProjectsAPIVersion",
-          "kind": "func",
-          "doc": "WithProjectsAPIVersion overrides the X-Api-Version header sent to the GRS"
         },
         {
           "name": "ErrNoProjects",
@@ -905,7 +890,7 @@
           "doc": "InvalidateAll clears the entire cache."
         }
       ],
-      "declarationCount": 18
+      "declarationCount": 15
     },
     {
       "path": "recommendations.go",
@@ -1248,7 +1233,7 @@
     },
     {
       "path": "zones.go",
-      "sha256": "e3c9bc86f6fbcbc573f80e278ffa72d0d57d2119cd04b2b036dbe8d586f4606f",
+      "sha256": "694f14ced2fecc8324b96c686d5f6a127b9cfa2a9b63f849a67295707e9454b4",
       "declarations": [
         {
           "name": "IsCanonicalZone",
@@ -1261,19 +1246,14 @@
           "doc": "ParseZone resolves a user-friendly zone string (accepting common aliases:"
         },
         {
-          "name": "GrsBaseURLForZone",
-          "kind": "func",
-          "doc": "GrsBaseURLForZone returns the dedicated GRS (Governance / Resource Service)"
-        },
-        {
           "name": "OptimaBaseURL",
           "kind": "func",
           "doc": "OptimaBaseURL returns the Optima (api.optima*.flexeraeng.com) base URL for"
         }
       ],
-      "declarationCount": 4
+      "declarationCount": 3
     }
   ],
   "totalFiles": 29,
-  "totalDeclarations": 207
+  "totalDeclarations": 203
 }

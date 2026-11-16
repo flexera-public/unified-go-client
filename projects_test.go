@@ -16,7 +16,12 @@ import (
 
 func newTestProjectResolver(t *testing.T, handler http.HandlerFunc, clientOpts ...ClientOption) (*ProjectResolver, *httptest.Server) {
 	t.Helper()
-	server := httptest.NewServer(handler)
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if w.Header().Get("Content-Type") == "" {
+			w.Header().Set("Content-Type", "application/json")
+		}
+		handler(w, r)
+	}))
 	t.Cleanup(server.Close)
 
 	allOpts := append([]ClientOption{
@@ -42,11 +47,8 @@ func testUserJWT(userID int) string {
 
 func TestListProjects_Success(t *testing.T) {
 	resolver, _ := newTestProjectResolver(t, func(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path != "/grs/users/42/projects" {
+		if r.URL.Path != "/iam/v1/orgs/42/projects" {
 			t.Fatalf("unexpected path: %s", r.URL.Path)
-		}
-		if got := r.Header.Get("X-Api-Version"); got != "2.0" {
-			t.Fatalf("expected default X-Api-Version 2.0, got %q", got)
 		}
 		w.Header().Set("Content-Type", "application/json")
 		_, _ = io.WriteString(w, `[{"id":1,"name":"alpha"},{"id":2,"name":"beta"}]`)
@@ -70,7 +72,7 @@ func TestListProjects_AppliesClientEditors(t *testing.T) {
 	}, WithBearerToken(token))
 
 	_, err := resolver.ListProjects(context.Background(), 1)
-	if err != nil && !errors.Is(err, nil) {
+	if err != nil {
 		t.Fatalf("ListProjects: %v", err)
 	}
 	if gotAuth != "Bearer "+token {
@@ -78,60 +80,22 @@ func TestListProjects_AppliesClientEditors(t *testing.T) {
 	}
 }
 
-func TestListProjects_PerCallEditorCanOverrideAPIVersion(t *testing.T) {
-	var gotVersion string
+func TestListProjects_AppliesPerCallRequestEditor(t *testing.T) {
+	var gotHeader string
 	resolver, _ := newTestProjectResolver(t, func(w http.ResponseWriter, r *http.Request) {
-		gotVersion = r.Header.Get("X-Api-Version")
+		gotHeader = r.Header.Get("X-Test-Header")
 		_, _ = io.WriteString(w, `[]`)
 	})
 
 	editor := func(_ context.Context, req *http.Request) error {
-		req.Header.Set("X-Api-Version", "3.0")
+		req.Header.Set("X-Test-Header", "test-value")
 		return nil
 	}
 	if _, err := resolver.ListProjects(context.Background(), 1, editor); err != nil {
 		t.Fatalf("ListProjects: %v", err)
 	}
-	if gotVersion != "3.0" {
-		t.Fatalf("expected per-call editor to set X-Api-Version, got %q", gotVersion)
-	}
-}
-
-func TestListProjects_UsesConfiguredTokenSource(t *testing.T) {
-	var gotAuth string
-	resolver, _ := newTestProjectResolver(t, func(w http.ResponseWriter, r *http.Request) {
-		gotAuth = r.Header.Get("Authorization")
-		_, _ = io.WriteString(w, `[]`)
-	})
-	resolver, err := NewProjectResolver(resolver.client, WithProjectResolverTokenSource(func(context.Context) (string, error) {
-		return testUserJWT(42), nil
-	}))
-	if err != nil {
-		t.Fatalf("NewProjectResolver: %v", err)
-	}
-
-	if _, err := resolver.ListProjects(context.Background(), 1); err != nil {
-		t.Fatalf("ListProjects: %v", err)
-	}
-	if gotAuth != "Bearer "+testUserJWT(42) {
-		t.Fatalf("expected bearer header from configured token source, got %q", gotAuth)
-	}
-}
-
-func TestListProjects_RejectsEmptyConfiguredToken(t *testing.T) {
-	resolver, _ := newTestProjectResolver(t, func(w http.ResponseWriter, _ *http.Request) {
-		_, _ = io.WriteString(w, `[]`)
-	})
-	resolver, err := NewProjectResolver(resolver.client, WithProjectResolverTokenSource(func(context.Context) (string, error) {
-		return "", nil
-	}))
-	if err != nil {
-		t.Fatalf("NewProjectResolver: %v", err)
-	}
-
-	_, err = resolver.ListProjects(context.Background(), 1)
-	if err == nil || !strings.Contains(err.Error(), "empty access token") {
-		t.Fatalf("expected empty token error, got %v", err)
+	if gotHeader != "test-value" {
+		t.Fatalf("expected per-call editor to set X-Test-Header, got %q", gotHeader)
 	}
 }
 
@@ -230,6 +194,7 @@ func TestProjectResolver_CacheTTLExpiry(t *testing.T) {
 	var calls int32
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
 		atomic.AddInt32(&calls, 1)
+		w.Header().Set("Content-Type", "application/json")
 		_, _ = io.WriteString(w, `[{"id":1}]`)
 	}))
 	defer server.Close()
@@ -293,7 +258,7 @@ func (d *captureDoer) Do(req *http.Request) (*http.Response, error) {
 	}, nil
 }
 
-func TestNewProjectResolver_UsesGRSHostForProjectLookup(t *testing.T) {
+func TestProjectResolver_UsesIAMOrgProjectsEndpoint(t *testing.T) {
 	apiBaseURL, err := APIBaseURLForZone(ZoneNAM)
 	if err != nil {
 		t.Fatalf("APIBaseURLForZone: %v", err)
@@ -312,53 +277,8 @@ func TestNewProjectResolver_UsesGRSHostForProjectLookup(t *testing.T) {
 		t.Fatalf("ListProjects: %v", err)
 	}
 
-	wantPrefix := GrsBaseURLForZone(ZoneNAM) + "/grs/users/121041/projects"
+	wantPrefix := apiBaseURL + "/iam/v1/orgs/42/projects"
 	if !strings.HasPrefix(doer.lastURL, wantPrefix) {
-		t.Fatalf("expected resolver call to use GRS host %q, got %q", wantPrefix, doer.lastURL)
-	}
-}
-
-type tokenAwareDoer struct {
-	token string
-}
-
-func (d *tokenAwareDoer) Do(req *http.Request) (*http.Response, error) {
-	return &http.Response{
-		StatusCode: http.StatusOK,
-		Body:       io.NopCloser(strings.NewReader(`[]`)),
-		Header:     http.Header{"Content-Type": []string{"application/json"}},
-		Request:    req,
-	}, nil
-}
-
-func (d *tokenAwareDoer) AccessToken() string {
-	return d.token
-}
-
-func (d *tokenAwareDoer) Refresh(ctx context.Context) error {
-	if strings.TrimSpace(d.token) == "" {
-		d.token = testUserJWT(99)
-	}
-	return nil
-}
-
-func TestAccessTokenFromClient_UnwrapsRetryingDoer(t *testing.T) {
-	raw := &tokenAwareDoer{token: testUserJWT(77)}
-	client := &Client{
-		Client: NewRetryingHTTPClient(raw, RetryConfig{
-			MaxRetries:    0,
-			BaseDelay:     time.Millisecond,
-			MaxDelay:      time.Millisecond,
-			MaxRetryAfter: time.Second,
-			RetryMethods:  map[string]bool{http.MethodGet: true},
-		}),
-	}
-
-	token, err := accessTokenFromClient(context.Background(), client, nil)
-	if err != nil {
-		t.Fatalf("accessTokenFromClient: %v", err)
-	}
-	if token != raw.token {
-		t.Fatalf("expected token %q, got %q", raw.token, token)
+		t.Fatalf("expected resolver call to use IAM endpoint %q, got %q", wantPrefix, doer.lastURL)
 	}
 }

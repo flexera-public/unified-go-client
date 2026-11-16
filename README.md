@@ -191,7 +191,6 @@ root `flexera` package (`client_gen_*.go`).
 | FinOps Customizations (`flexera-finops-customizations-v1`) | 10 | 25 | `FinopsCustomizations` |
 | FinOps Onboarding (`flexera-finops-onboarding-v1`) | 31 | 47 | `FinopsOnboarding` |
 | GraphQL (`flexera-graphql-v1`) | 2 | 2 | `Graphql` |
-| Global Resource Service (`flexera-grs`) | 2 | 2 | `Grs` |
 | IAM (`flexera-iam-v1`) | 80 | 129 | `Iam` |
 | Optima Recommendations (`rightscale-optima-recommendations`) | 2 | 2 | `OptimaRecommendations` |
 | Policy (`flexera-policy-v1`) | 33 | 51 | `Policy` |
@@ -235,10 +234,10 @@ hand-written because the upstream artifact does not describe that endpoint.
 **Upstream gaps:** `rightscale-governance` is configured in upstream
 `generator/specs.yaml` but is excluded from its merge (35 paths / 47
 operations in the separate Swagger source). Its standalone
-`rightscale/governance` client remains until upstream includes it. The GRS
-and Bill Analysis entries above are generated from the official merged
-artifact, but their *upstream sources* are manually curated subsets rather
-than published service specifications.
+`rightscale/governance` client remains until upstream includes it. The Bill
+Analysis entry above is generated from the official merged artifact, but its
+*upstream source* is a manually curated subset rather than a published service
+specification.
 
 ## Generated vs. hand-written files
 
