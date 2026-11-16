@@ -99,23 +99,6 @@ func TestOptimaBaseURL(t *testing.T) {
 	}
 }
 
-func TestGrsBaseURLForZone(t *testing.T) {
-	cases := map[Zone]string{
-		ZoneNAM:  "https://grs-front.iam-us-east-1.flexeraeng.com",
-		ZoneEU:   "https://grs-front.eu-central-1.iam-eu.flexeraeng.com",
-		ZoneAPAC: "https://grs-front.ap-southeast-2.iam-apac.flexeraeng.com",
-		ZoneTest: "https://grs-front.iam-us-east-1.flexeraengdev.com",
-	}
-	for z, want := range cases {
-		if got := GrsBaseURLForZone(z); got != want {
-			t.Fatalf("%s: got %s want %s", z, got, want)
-		}
-	}
-	if got := GrsBaseURLForZone(Zone("garbage")); got != "" {
-		t.Fatalf("unknown: got %s", got)
-	}
-}
-
 func TestParseZone_AliasesAreCanonical(t *testing.T) {
 	canon := map[Zone]struct{}{}
 	for _, z := range canonicalZones {

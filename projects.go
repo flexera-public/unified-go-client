@@ -2,19 +2,14 @@ package flexera
 
 import (
 	"context"
-	"encoding/json"
 	"errors"
 	"fmt"
-	"net/http"
-	"net/url"
 	"strings"
 	"sync"
 	"time"
 )
 
-// Project is the resolver-facing project view. It is a lightweight subset of
-// the generated GrsProject DTO (Id + Name) which is all callers historically
-// needed for tag/label resolution.
+// Project is the resolver-facing project view.
 type Project struct {
 	ID   int64  `json:"id"`
 	Name string `json:"name"`
@@ -23,42 +18,10 @@ type Project struct {
 // ProjectResolverOption configures a ProjectResolver.
 type ProjectResolverOption func(*ProjectResolver)
 
-// WithProjectResolverTokenSource supplies the access token used by the GRS
-// lookup. This is useful when authentication is provided by a custom HTTP
-// transport that does not expose its bearer token through request editors or
-// the built-in OAuth2Doer.
-func WithProjectResolverTokenSource(source func(context.Context) (string, error)) ProjectResolverOption {
-	return func(r *ProjectResolver) {
-		r.tokenSource = source
-	}
-}
-
-// WithProjectResolverStaticToken supplies a static access token used by the
-// GRS lookup.
-func WithProjectResolverStaticToken(accessToken string) ProjectResolverOption {
-	return WithProjectResolverTokenSource(func(context.Context) (string, error) {
-		token := strings.TrimSpace(accessToken)
-		if token == "" {
-			return "", errors.New("project resolver access token is required")
-		}
-		return token, nil
-	})
-}
-
 // WithProjectsCacheTTL sets the cache time-to-live. A zero or negative value
 // disables expiry (entries are cached for the lifetime of the resolver).
 func WithProjectsCacheTTL(ttl time.Duration) ProjectResolverOption {
 	return func(r *ProjectResolver) { r.cacheTTL = ttl }
-}
-
-// WithProjectsAPIVersion overrides the X-Api-Version header sent to the GRS
-// endpoint. Defaults to "2.0".
-func WithProjectsAPIVersion(version string) ProjectResolverOption {
-	return func(r *ProjectResolver) {
-		if v := strings.TrimSpace(version); v != "" {
-			r.apiVersion = v
-		}
-	}
 }
 
 // ErrNoProjects is returned when the caller's org has no projects.
@@ -72,19 +35,11 @@ var ErrAmbiguousProject = errors.New("organization has multiple projects; explic
 var ErrProjectNotFound = errors.New("project not found")
 
 // ProjectResolver resolves Flexera One project IDs for a given organization
-// by calling the legacy GRS user-projects endpoint:
-// GET /grs/users/{userId}/projects.
-//
-// The user ID is decoded from the caller's JWT access token (sub=u-{id} or
-// legacy user claim). Service-account tokens are not supported for this
-// lookup and return an explicit error.
-//
-// Lookups are cached per-org with an optional TTL.
+// through the IAM org-projects endpoint. Lookups are cached per-org with an
+// optional TTL.
 type ProjectResolver struct {
-	client      *ClientWithResponses
-	cacheTTL    time.Duration
-	apiVersion  string
-	tokenSource func(context.Context) (string, error)
+	client   *ClientWithResponses
+	cacheTTL time.Duration
 
 	mu    sync.RWMutex
 	cache map[int64]projectCacheEntry
@@ -102,37 +57,13 @@ func NewProjectResolver(client *ClientWithResponses, opts ...ProjectResolverOpti
 		return nil, errors.New("client is required")
 	}
 	r := &ProjectResolver{
-		client:     client,
-		apiVersion: "2.0",
-		cache:      map[int64]projectCacheEntry{},
+		client: client,
+		cache:  map[int64]projectCacheEntry{},
 	}
 	for _, opt := range opts {
 		opt(r)
 	}
 	return r, nil
-}
-
-func zoneFromAPIBaseURL(server string) (Zone, bool) {
-	serverURL, err := url.Parse(strings.TrimSpace(server))
-	if err != nil || serverURL.Host == "" {
-		return "", false
-	}
-
-	for _, zone := range canonicalZones {
-		apiBaseURL, err := APIBaseURLForZone(zone)
-		if err != nil {
-			continue
-		}
-		apiURL, err := url.Parse(apiBaseURL)
-		if err != nil {
-			continue
-		}
-		if strings.EqualFold(serverURL.Host, apiURL.Host) {
-			return zone, true
-		}
-	}
-
-	return "", false
 }
 
 // ListProjects returns the projects for the given organization. Results are
@@ -252,161 +183,23 @@ func (r *ProjectResolver) storeCache(orgID int64, projects []Project) {
 }
 
 func (r *ProjectResolver) fetch(ctx context.Context, orgID int64, editors []RequestEditorFn) ([]Project, error) {
-	baseClient, ok := r.client.ClientInterface.(*Client)
-	if !ok || baseClient == nil || baseClient.Client == nil {
-		return nil, errors.New("project resolver requires a concrete unified client with an HTTP doer")
-	}
-
-	grsBaseURL := strings.TrimRight(strings.TrimSpace(baseClient.Server), "/")
-	if zone, ok := zoneFromAPIBaseURL(baseClient.Server); ok {
-		if mapped := strings.TrimSpace(GrsBaseURLForZone(zone)); mapped != "" {
-			grsBaseURL = mapped
-		}
-	}
-
-	token, err := r.accessToken(ctx, baseClient, editors)
+	response, err := r.client.IamProjectIndexWithResponse(ctx, int(orgID), nil, editors...)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("call org projects endpoint: %w", err)
 	}
-	userID, err := UserIDFromToken(token)
-	if err != nil {
-		return nil, fmt.Errorf("derive user ID from access token: %w", err)
+	if response.StatusCode() < 200 || response.StatusCode() >= 300 {
+		return nil, fmt.Errorf("projects request failed: %w", ResponseError(response.StatusCode(), response.Body))
 	}
-
-	req, err := http.NewRequestWithContext(
-		ctx,
-		http.MethodGet,
-		fmt.Sprintf("%s/grs/users/%d/projects", strings.TrimRight(grsBaseURL, "/"), userID),
-		nil,
-	)
-	if err != nil {
-		return nil, fmt.Errorf("build user projects request: %w", err)
-	}
-	req.Header.Set("Authorization", "Bearer "+token)
-	req.Header.Set("X-Api-Version", r.apiVersion)
-
-	if err := applyRequestEditors(ctx, req, baseClient.RequestEditors, editors); err != nil {
-		return nil, fmt.Errorf("apply request editors: %w", err)
+	if response.JSON200 == nil {
+		return nil, errors.New("decode projects response: missing HTTP 200 response body")
 	}
 
-	httpResp, err := baseClient.Client.Do(req)
-	if err != nil {
-		return nil, fmt.Errorf("call user projects endpoint: %w", err)
-	}
-	defer func() { _ = httpResp.Body.Close() }()
-	if httpResp.StatusCode < 200 || httpResp.StatusCode >= 300 {
-		var errBody json.RawMessage
-		_ = json.NewDecoder(httpResp.Body).Decode(&errBody)
-		return nil, fmt.Errorf("projects request failed: %w", ResponseError(httpResp.StatusCode, errBody))
-	}
-
-	var raw []struct {
-		ID     int64  `json:"id"`
-		Name   string `json:"name"`
-		Legacy struct {
-			AccountID int64 `json:"account_id"`
-		} `json:"legacy"`
-		Links struct {
-			Org struct {
-				ID int64 `json:"id"`
-			} `json:"org"`
-		} `json:"links"`
-	}
-	if err := json.NewDecoder(httpResp.Body).Decode(&raw); err != nil {
-		return nil, fmt.Errorf("decode projects response: %w", err)
-	}
-
-	out := make([]Project, 0, len(raw))
-	for _, p := range raw {
-		if p.Links.Org.ID != 0 && p.Links.Org.ID != orgID {
+	out := make([]Project, 0, len(*response.JSON200))
+	for _, p := range *response.JSON200 {
+		if p.Id <= 0 {
 			continue
 		}
-		projectID := p.Legacy.AccountID
-		if projectID <= 0 {
-			projectID = p.ID
-		}
-		if projectID <= 0 {
-			continue
-		}
-		out = append(out, Project{ID: projectID, Name: p.Name})
+		out = append(out, Project{ID: int64(p.Id), Name: p.Name})
 	}
 	return out, nil
-}
-
-func (r *ProjectResolver) accessToken(ctx context.Context, client *Client, editors []RequestEditorFn) (string, error) {
-	if r.tokenSource != nil {
-		token, err := r.tokenSource(ctx)
-		if err != nil {
-			return "", fmt.Errorf("resolve project lookup access token: %w", err)
-		}
-		if token = strings.TrimSpace(token); token != "" {
-			return token, nil
-		}
-		return "", errors.New("project resolver token source returned an empty access token")
-	}
-	return accessTokenFromClient(ctx, client, editors)
-}
-
-func accessTokenFromClient(ctx context.Context, client *Client, additionalEditors []RequestEditorFn) (string, error) {
-	req, err := http.NewRequestWithContext(ctx, http.MethodGet, "https://example.invalid/", nil)
-	if err != nil {
-		return "", err
-	}
-	if err := applyRequestEditors(ctx, req, client.RequestEditors, additionalEditors); err != nil {
-		return "", err
-	}
-	if token := bearerToken(req.Header.Get("Authorization")); token != "" {
-		return token, nil
-	}
-
-	type accessTokenRefresher interface {
-		AccessToken() string
-		Refresh(context.Context) error
-	}
-	if doer, ok := unwrapTokenSourceDoer(client.Client).(accessTokenRefresher); ok {
-		if tok := strings.TrimSpace(doer.AccessToken()); tok != "" {
-			return tok, nil
-		}
-		if err := doer.Refresh(ctx); err != nil {
-			return "", fmt.Errorf("refresh access token: %w", err)
-		}
-		if tok := strings.TrimSpace(doer.AccessToken()); tok != "" {
-			return tok, nil
-		}
-	}
-
-	return "", errors.New("unable to determine access token for project lookup")
-}
-
-func unwrapTokenSourceDoer(doer HttpRequestDoer) HttpRequestDoer {
-	switch d := doer.(type) {
-	case *retryingDoer:
-		return unwrapTokenSourceDoer(d.next)
-	case *debugDoer:
-		return unwrapTokenSourceDoer(d.inner)
-	default:
-		return doer
-	}
-}
-
-func applyRequestEditors(ctx context.Context, req *http.Request, baseEditors []RequestEditorFn, additionalEditors []RequestEditorFn) error {
-	for _, editor := range baseEditors {
-		if err := editor(ctx, req); err != nil {
-			return err
-		}
-	}
-	for _, editor := range additionalEditors {
-		if err := editor(ctx, req); err != nil {
-			return err
-		}
-	}
-	return nil
-}
-
-func bearerToken(authz string) string {
-	const prefix = "Bearer "
-	if strings.HasPrefix(authz, prefix) {
-		return strings.TrimSpace(strings.TrimPrefix(authz, prefix))
-	}
-	return ""
 }

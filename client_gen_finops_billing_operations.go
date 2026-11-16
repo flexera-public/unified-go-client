@@ -121,6 +121,24 @@ const (
 	FinopsBillingUpdateRequestBody3StatusActive FinopsBillingUpdateRequestBody3Status = "active"
 )
 
+// FinopsBillingCreateAzureCostAssignmentsRequestBody defines model for FinopsBilling_CreateAzureCostAssignmentsRequestBody.
+type FinopsBillingCreateAzureCostAssignmentsRequestBody struct {
+	// BillMonth Discovery month or one-time assignment month in YYYYMM format. Omitted on recurring assignment resources.
+	BillMonth string `json:"billMonth"`
+
+	// BillSource Opaque source identifier returned by orphaned billing-account discovery.
+	BillSource string `json:"billSource"`
+
+	// BillingAccountId Azure billing account identifier.
+	BillingAccountId string `json:"billingAccountId"`
+
+	// Charges Distinct exact FOCUS description/frequency pairs with display metadata directly on each entry. All matching eligible rows are assigned regardless of display dimensions.
+	Charges []FinopsBillingAzureCostAssignmentSelection `json:"charges"`
+
+	// TargetSubAccountId Authorized destination subscription selected through Cost Explorer.
+	TargetSubAccountId string `json:"targetSubAccountId"`
+}
+
 // FinopsBillingCreateCreditAssignmentRequestBody defines model for FinopsBilling_CreateCreditAssignmentRequestBody.
 type FinopsBillingCreateCreditAssignmentRequestBody struct {
 	// Action Disposition of this credit assignment: one of reassign, show, or hide.
@@ -586,6 +604,12 @@ type FinopsBillingReorderRequestBody struct {
 	Rules []FinopsBillingOrderEntry `json:"rules"`
 }
 
+// FinopsBillingReplaceAzureCostAssignmentRequestBody defines model for FinopsBilling_ReplaceAzureCostAssignmentRequestBody.
+type FinopsBillingReplaceAzureCostAssignmentRequestBody struct {
+	// TargetSubAccountId Authorized destination subscription selected through Cost Explorer.
+	TargetSubAccountId string `json:"targetSubAccountId"`
+}
+
 // FinopsBillingReplaceEnterpriseRulesetRequestBody defines model for FinopsBilling_ReplaceEnterpriseRulesetRequestBody.
 type FinopsBillingReplaceEnterpriseRulesetRequestBody struct {
 	// Rules Lists the enterprise adjustment rules in the order they are applied.
@@ -726,7 +750,7 @@ type FinopsBillingUpdateRequestBody3 struct {
 	// Status Updated lifecycle status.
 	Status *FinopsBillingUpdateRequestBody3Status `json:"status,omitempty"`
 
-	// TelemetryUploadId A valid staged telemetry upload for this rule, applied in the same save. Required when the save changes the type to dynamicProportionateSplit or changes a dynamic rule's destination dimension; not allowed when the rule's type after the save is not dynamicProportionateSplit.
+	// TelemetryUploadId A valid staged telemetry upload for this rule, applied in the same save. Required when the save changes the type to dynamicProportionateSplit or changes a dynamic rule's destination dimension; not allowed when the rule's type after the save is not dynamicProportionateSplit. Saving again with an upload this rule already applied succeeds without applying it again.
 	TelemetryUploadId *string `json:"telemetryUploadId,omitempty"`
 }
 
@@ -1188,7 +1212,7 @@ type FinopsBillingInvoiceScheduleInvoicesIndexParams struct {
 	//
 	// Supported comparison operators are eq, ne, co, in, gt, ge, lt, and le, subject to the field type. String fields support eq, ne, in, and co; numeric and date fields support eq, ne, in, gt, ge, lt, and le. Boolean operators are and, or, and not. Parentheses group expressions. Expressions are limited to depth 10 and 100 predicates. Malformed syntax, unsupported fields or operators, and limit violations return invalid_filter with HTTP 400.
 	//
-	// Filterable fields: scheduleId, customerName, customerBillingPlan, costMetric, status, deliveryStatus, currency, periodType, exportType, invoiceAmount (string); customerId, attempts, filterCount, groupByCount (integer); billMonth (YYYY-MM); issueDate and dueDate (date); createdAt and updatedAt (date-time). Combined with discrete filters using AND.
+	// Filterable fields: invoiceNumber, scheduleId, customerName, customerBillingPlan, costMetric, status, deliveryStatus, currency, periodType, exportType, invoiceAmount (string); customerId, attempts, filterCount, groupByCount (integer); billMonth (YYYY-MM); issueDate and dueDate (date); createdAt and updatedAt (date-time). Combined with discrete filters using AND. invoiceNumber is the invoice's Invoice ID: eq, ne and in match it exactly and case-sensitively, co matches part of it case-insensitively, and invoiceNumber eq null selects invoices without one.
 	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 }
 
@@ -1250,11 +1274,89 @@ type FinopsBillingInvoicesIndexParams struct {
 	//
 	// Supported comparison operators are eq, ne, co, in, gt, ge, lt, and le, subject to the field type. String fields support eq, ne, in, and co; numeric and date fields support eq, ne, in, gt, ge, lt, and le. Boolean operators are and, or, and not. Parentheses group expressions. Expressions are limited to depth 10 and 100 predicates. Malformed syntax, unsupported fields or operators, and limit violations return invalid_filter with HTTP 400.
 	//
-	// Filterable fields: customerId, attempts, filterCount, and groupByCount (integer); customerName, customerBillingPlan, currency, invoiceAmount, status, costMetric, periodType, and exportType (string); billMonth (YYYY-MM); issueDate and dueDate (date); createdAt and updatedAt (date-time). Combined with the legacy filter and discrete filters using AND.
+	// Filterable fields: customerId, attempts, filterCount, and groupByCount (integer); invoiceNumber, customerName, customerBillingPlan, currency, invoiceAmount, status, costMetric, periodType, and exportType (string); billMonth (YYYY-MM); issueDate and dueDate (date); createdAt and updatedAt (date-time). Combined with the legacy filter and discrete filters using AND. invoiceNumber is the invoice's Invoice ID: eq, ne and in match it exactly and case-sensitively, co matches part of it case-insensitively, and invoiceNumber eq null selects invoices without one.
 	ExpressionFilter *string `form:"expressionFilter,omitempty" json:"expressionFilter,omitempty"`
 
 	// GroupByCount Optional group-by dimension count filter.
 	GroupByCount *int `form:"groupByCount,omitempty" json:"groupByCount,omitempty"`
+}
+
+// FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsParams defines parameters for FinopsBillingBillingOrphansIndexAzureOrphanBillingAccounts.
+type FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsParams struct {
+	// BillMonth Discovery month or one-time assignment month in YYYYMM format. Omitted on recurring assignment resources.
+	BillMonth string `form:"billMonth" json:"billMonth"`
+
+	// BillSource Opaque source identifier returned by orphaned billing-account discovery.
+	BillSource *string `form:"billSource,omitempty" json:"billSource,omitempty"`
+
+	// Filter Filter on billingAccountId or billingAccountName using eq, co, and logical and/or.
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// OrderBy Optional orderBy query allows to specify an expression for determining what values are used to order the entities.
+	// Multiple expressions can be specified using comma separated values.
+	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
+}
+
+// FinopsBillingBillingOrphansIndexAzureUnallocatedChargesParams defines parameters for FinopsBillingBillingOrphansIndexAzureUnallocatedCharges.
+type FinopsBillingBillingOrphansIndexAzureUnallocatedChargesParams struct {
+	// BillMonth Discovery month or one-time assignment month in YYYYMM format. Omitted on recurring assignment resources.
+	BillMonth string `form:"billMonth" json:"billMonth"`
+
+	// BillSource Opaque source identifier returned by orphaned billing-account discovery.
+	BillSource *string `form:"billSource,omitempty" json:"billSource,omitempty"`
+
+	// BillingAccountId Azure billing account identifier.
+	BillingAccountId string `form:"billingAccountId" json:"billingAccountId"`
+
+	// Filter Filter eligible unassigned charge rows using eq, co, in, and logical and/or.
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// OrderBy Optional orderBy query allows to specify an expression for determining what values are used to order the entities.
+	// Multiple expressions can be specified using comma separated values.
+	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
+
+	// Limit Return no more than limit values per page
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
+	// Partial responses will include a "nextPage" attribute in their response body, which contains the URL of the next page including the appropriate skipToken.
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
+}
+
+// FinopsBillingBillingOrphansIndexAzureCostAssignmentsParams defines parameters for FinopsBillingBillingOrphansIndexAzureCostAssignments.
+type FinopsBillingBillingOrphansIndexAzureCostAssignmentsParams struct {
+	// BillMonth Discovery month or one-time assignment month in YYYYMM format. Omitted on recurring assignment resources.
+	BillMonth string `form:"billMonth" json:"billMonth"`
+
+	// Filter Filter stored assignments using eq, co, in, and logical and/or.
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// OrderBy Optional orderBy query allows to specify an expression for determining what values are used to order the entities.
+	// Multiple expressions can be specified using comma separated values.
+	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
+
+	// Limit Return no more than limit values per page
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
+	// Partial responses will include a "nextPage" attribute in their response body, which contains the URL of the next page including the appropriate skipToken.
+	SkipToken *string `form:"skipToken,omitempty" json:"skipToken,omitempty"`
+}
+
+// FinopsBillingBillingOrphansDeleteAzureCostAssignmentParams defines parameters for FinopsBillingBillingOrphansDeleteAzureCostAssignment.
+type FinopsBillingBillingOrphansDeleteAzureCostAssignmentParams struct {
+	// IfMatch Only modify the resource if this tag is still current.
+	//
+	// Provide the ETag from a prior interaction with the service to avoid losing someone else's update.
+	IfMatch string `json:"If-Match"`
+}
+
+// FinopsBillingBillingOrphansReplaceAzureCostAssignmentParams defines parameters for FinopsBillingBillingOrphansReplaceAzureCostAssignment.
+type FinopsBillingBillingOrphansReplaceAzureCostAssignmentParams struct {
+	// IfMatch Only modify the resource if this tag is still current.
+	//
+	// Provide the ETag from a prior interaction with the service to avoid losing someone else's update.
+	IfMatch string `json:"If-Match"`
 }
 
 // FinopsBillingSharedCostRulesReorderParams defines parameters for FinopsBillingSharedCostRulesReorder.
@@ -1346,6 +1448,12 @@ type FinopsBillingInvoiceTemplatesUpdateJSONRequestBody = FinopsBillingUpdateReq
 
 // FinopsBillingInvoicesCreateJSONRequestBody defines body for FinopsBillingInvoicesCreate for application/json ContentType.
 type FinopsBillingInvoicesCreateJSONRequestBody = FinopsBillingCreateRequestBody3
+
+// FinopsBillingBillingOrphansCreateAzureCostAssignmentsJSONRequestBody defines body for FinopsBillingBillingOrphansCreateAzureCostAssignments for application/json ContentType.
+type FinopsBillingBillingOrphansCreateAzureCostAssignmentsJSONRequestBody = FinopsBillingCreateAzureCostAssignmentsRequestBody
+
+// FinopsBillingBillingOrphansReplaceAzureCostAssignmentJSONRequestBody defines body for FinopsBillingBillingOrphansReplaceAzureCostAssignment for application/json ContentType.
+type FinopsBillingBillingOrphansReplaceAzureCostAssignmentJSONRequestBody = FinopsBillingReplaceAzureCostAssignmentRequestBody
 
 // FinopsBillingSharedCostRulesCreateJSONRequestBody defines body for FinopsBillingSharedCostRulesCreate for application/json ContentType.
 type FinopsBillingSharedCostRulesCreateJSONRequestBody = FinopsBillingCreateRequestBody4
@@ -2165,6 +2273,114 @@ func (c *Client) FinopsBillingInvoicesShow(ctx context.Context, orgId int, id st
 
 func (c *Client) FinopsBillingInvoicesRetry(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewFinopsBillingInvoicesRetryRequest(c.Server, orgId, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingOrphansIndexAzureOrphanBillingAccounts(ctx context.Context, orgId int, params *FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingOrphansIndexAzureUnallocatedCharges(ctx context.Context, orgId int, params *FinopsBillingBillingOrphansIndexAzureUnallocatedChargesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingOrphansIndexAzureUnallocatedChargesRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingOrphansIndexAzureCostAssignments(ctx context.Context, orgId int, params *FinopsBillingBillingOrphansIndexAzureCostAssignmentsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingOrphansIndexAzureCostAssignmentsRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingOrphansCreateAzureCostAssignmentsWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingOrphansCreateAzureCostAssignmentsRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingOrphansCreateAzureCostAssignments(ctx context.Context, orgId int, body FinopsBillingBillingOrphansCreateAzureCostAssignmentsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingOrphansCreateAzureCostAssignmentsRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingOrphansDeleteAzureCostAssignment(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingOrphansDeleteAzureCostAssignmentParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingOrphansDeleteAzureCostAssignmentRequest(c.Server, orgId, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingOrphansShowAzureCostAssignment(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingOrphansShowAzureCostAssignmentRequest(c.Server, orgId, id)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingOrphansReplaceAzureCostAssignmentWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingOrphansReplaceAzureCostAssignmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingOrphansReplaceAzureCostAssignmentRequestWithBody(c.Server, orgId, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingBillingOrphansReplaceAzureCostAssignment(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingOrphansReplaceAzureCostAssignmentParams, body FinopsBillingBillingOrphansReplaceAzureCostAssignmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingBillingOrphansReplaceAzureCostAssignmentRequest(c.Server, orgId, id, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -5535,6 +5751,538 @@ func NewFinopsBillingInvoicesRetryRequest(server string, orgId int, id string) (
 	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
 	if err != nil {
 		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsRequest generates requests for FinopsBillingBillingOrphansIndexAzureOrphanBillingAccounts
+func NewFinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsRequest(server string, orgId int, params *FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/orphan/billing-accounts", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "billMonth", params.BillMonth, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.BillSource != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "billSource", *params.BillSource, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter", *params.Filter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.OrderBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "orderBy", *params.OrderBy, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingOrphansIndexAzureUnallocatedChargesRequest generates requests for FinopsBillingBillingOrphansIndexAzureUnallocatedCharges
+func NewFinopsBillingBillingOrphansIndexAzureUnallocatedChargesRequest(server string, orgId int, params *FinopsBillingBillingOrphansIndexAzureUnallocatedChargesParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/orphan/charges", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "billMonth", params.BillMonth, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.BillSource != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "billSource", *params.BillSource, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "billingAccountId", params.BillingAccountId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter", *params.Filter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.OrderBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "orderBy", *params.OrderBy, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "skipToken", *params.SkipToken, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingOrphansIndexAzureCostAssignmentsRequest generates requests for FinopsBillingBillingOrphansIndexAzureCostAssignments
+func NewFinopsBillingBillingOrphansIndexAzureCostAssignmentsRequest(server string, orgId int, params *FinopsBillingBillingOrphansIndexAzureCostAssignmentsParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/orphan/mappings", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "billMonth", params.BillMonth, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter", *params.Filter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.OrderBy != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "orderBy", *params.OrderBy, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.SkipToken != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "skipToken", *params.SkipToken, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingOrphansCreateAzureCostAssignmentsRequest calls the generic FinopsBillingBillingOrphansCreateAzureCostAssignments builder with application/json body
+func NewFinopsBillingBillingOrphansCreateAzureCostAssignmentsRequest(server string, orgId int, body FinopsBillingBillingOrphansCreateAzureCostAssignmentsJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingBillingOrphansCreateAzureCostAssignmentsRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewFinopsBillingBillingOrphansCreateAzureCostAssignmentsRequestWithBody generates requests for FinopsBillingBillingOrphansCreateAzureCostAssignments with any type of body
+func NewFinopsBillingBillingOrphansCreateAzureCostAssignmentsRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/orphan/mappings", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingOrphansDeleteAzureCostAssignmentRequest generates requests for FinopsBillingBillingOrphansDeleteAzureCostAssignment
+func NewFinopsBillingBillingOrphansDeleteAzureCostAssignmentRequest(server string, orgId int, id openapi_types.UUID, params *FinopsBillingBillingOrphansDeleteAzureCostAssignmentParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/orphan/mappings/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithOptions("simple", false, "If-Match", params.IfMatch, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationHeader, Type: "string", Format: ""})
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("If-Match", headerParam0)
+
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingOrphansShowAzureCostAssignmentRequest generates requests for FinopsBillingBillingOrphansShowAzureCostAssignment
+func NewFinopsBillingBillingOrphansShowAzureCostAssignmentRequest(server string, orgId int, id openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/orphan/mappings/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFinopsBillingBillingOrphansReplaceAzureCostAssignmentRequest calls the generic FinopsBillingBillingOrphansReplaceAzureCostAssignment builder with application/json body
+func NewFinopsBillingBillingOrphansReplaceAzureCostAssignmentRequest(server string, orgId int, id openapi_types.UUID, params *FinopsBillingBillingOrphansReplaceAzureCostAssignmentParams, body FinopsBillingBillingOrphansReplaceAzureCostAssignmentJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingBillingOrphansReplaceAzureCostAssignmentRequestWithBody(server, orgId, id, params, "application/json", bodyReader)
+}
+
+// NewFinopsBillingBillingOrphansReplaceAzureCostAssignmentRequestWithBody generates requests for FinopsBillingBillingOrphansReplaceAzureCostAssignment with any type of body
+func NewFinopsBillingBillingOrphansReplaceAzureCostAssignmentRequestWithBody(server string, orgId int, id openapi_types.UUID, params *FinopsBillingBillingOrphansReplaceAzureCostAssignmentParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/orphan/mappings/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		var headerParam0 string
+
+		headerParam0, err = runtime.StyleParamWithOptions("simple", false, "If-Match", params.IfMatch, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationHeader, Type: "string", Format: ""})
+		if err != nil {
+			return nil, err
+		}
+
+		req.Header.Set("If-Match", headerParam0)
+
 	}
 
 	return req, nil

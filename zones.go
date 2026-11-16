@@ -52,28 +52,6 @@ func ParseZone(raw string) (Zone, error) {
 	return zone, nil
 }
 
-// GrsBaseURLForZone returns the dedicated GRS (Governance / Resource Service)
-// host for the given zone, or "" if no mapping is known.
-//
-// GRS is a legacy service surfaced outside the unified Flexera API gateway on
-// a dedicated grs-front host. Project enumeration (GrsProjectIndexForOrg) has
-// no IAM equivalent, so consumers that need to list an org's projects build a
-// client pointed at this base URL and use ProjectResolver.
-func GrsBaseURLForZone(zone Zone) string {
-	switch zone {
-	case ZoneNAM:
-		return "https://grs-front.iam-us-east-1.flexeraeng.com"
-	case ZoneEU:
-		return "https://grs-front.eu-central-1.iam-eu.flexeraeng.com"
-	case ZoneAPAC:
-		return "https://grs-front.ap-southeast-2.iam-apac.flexeraeng.com"
-	case ZoneTest:
-		return "https://grs-front.iam-us-east-1.flexeraengdev.com"
-	default:
-		return ""
-	}
-}
-
 // OptimaBaseURL returns the Optima (api.optima*.flexeraeng.com) base URL for
 // the given zone, or "" if no mapping is known.
 //

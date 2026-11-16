@@ -811,6 +811,31 @@ type ClientInterface interface {
 	// FinopsBillingInvoicesRetry request
 	FinopsBillingInvoicesRetry(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// FinopsBillingBillingOrphansIndexAzureOrphanBillingAccounts request
+	FinopsBillingBillingOrphansIndexAzureOrphanBillingAccounts(ctx context.Context, orgId int, params *FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingOrphansIndexAzureUnallocatedCharges request
+	FinopsBillingBillingOrphansIndexAzureUnallocatedCharges(ctx context.Context, orgId int, params *FinopsBillingBillingOrphansIndexAzureUnallocatedChargesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingOrphansIndexAzureCostAssignments request
+	FinopsBillingBillingOrphansIndexAzureCostAssignments(ctx context.Context, orgId int, params *FinopsBillingBillingOrphansIndexAzureCostAssignmentsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingOrphansCreateAzureCostAssignmentsWithBody request with any body
+	FinopsBillingBillingOrphansCreateAzureCostAssignmentsWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingBillingOrphansCreateAzureCostAssignments(ctx context.Context, orgId int, body FinopsBillingBillingOrphansCreateAzureCostAssignmentsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingOrphansDeleteAzureCostAssignment request
+	FinopsBillingBillingOrphansDeleteAzureCostAssignment(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingOrphansDeleteAzureCostAssignmentParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingOrphansShowAzureCostAssignment request
+	FinopsBillingBillingOrphansShowAzureCostAssignment(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingBillingOrphansReplaceAzureCostAssignmentWithBody request with any body
+	FinopsBillingBillingOrphansReplaceAzureCostAssignmentWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingOrphansReplaceAzureCostAssignmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingBillingOrphansReplaceAzureCostAssignment(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingOrphansReplaceAzureCostAssignmentParams, body FinopsBillingBillingOrphansReplaceAzureCostAssignmentJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// FinopsBillingSharedCostRulesIndex request
 	FinopsBillingSharedCostRulesIndex(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -1139,12 +1164,6 @@ type ClientInterface interface {
 	GraphqlGraphqlTableSchemaWithBody(ctx context.Context, orgId int64, params *GraphqlGraphqlTableSchemaParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	GraphqlGraphqlTableSchema(ctx context.Context, orgId int64, params *GraphqlGraphqlTableSchemaParams, body GraphqlGraphqlTableSchemaJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GrsUserOrgIndex request
-	GrsUserOrgIndex(ctx context.Context, userId int64, params *GrsUserOrgIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GrsProjectIndexForOrg request
-	GrsProjectIndexForOrg(ctx context.Context, userId int64, params *GrsProjectIndexForOrgParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// IamUserInvitationIndex request
 	IamUserInvitationIndex(ctx context.Context, params *IamUserInvitationIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -3127,6 +3146,31 @@ type ClientWithResponsesInterface interface {
 	// FinopsBillingInvoicesRetryWithResponse request
 	FinopsBillingInvoicesRetryWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesRetryResponse, error)
 
+	// FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsWithResponse request
+	FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingOrphansIndexAzureOrphanBillingAccountsResponse, error)
+
+	// FinopsBillingBillingOrphansIndexAzureUnallocatedChargesWithResponse request
+	FinopsBillingBillingOrphansIndexAzureUnallocatedChargesWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingOrphansIndexAzureUnallocatedChargesParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingOrphansIndexAzureUnallocatedChargesResponse, error)
+
+	// FinopsBillingBillingOrphansIndexAzureCostAssignmentsWithResponse request
+	FinopsBillingBillingOrphansIndexAzureCostAssignmentsWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingOrphansIndexAzureCostAssignmentsParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingOrphansIndexAzureCostAssignmentsResponse, error)
+
+	// FinopsBillingBillingOrphansCreateAzureCostAssignmentsWithBodyWithResponse request with any body
+	FinopsBillingBillingOrphansCreateAzureCostAssignmentsWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingOrphansCreateAzureCostAssignmentsResponse, error)
+
+	FinopsBillingBillingOrphansCreateAzureCostAssignmentsWithResponse(ctx context.Context, orgId int, body FinopsBillingBillingOrphansCreateAzureCostAssignmentsJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingOrphansCreateAzureCostAssignmentsResponse, error)
+
+	// FinopsBillingBillingOrphansDeleteAzureCostAssignmentWithResponse request
+	FinopsBillingBillingOrphansDeleteAzureCostAssignmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingOrphansDeleteAzureCostAssignmentParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingOrphansDeleteAzureCostAssignmentResponse, error)
+
+	// FinopsBillingBillingOrphansShowAzureCostAssignmentWithResponse request
+	FinopsBillingBillingOrphansShowAzureCostAssignmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, reqEditors ...RequestEditorFn) (*FinopsBillingBillingOrphansShowAzureCostAssignmentResponse, error)
+
+	// FinopsBillingBillingOrphansReplaceAzureCostAssignmentWithBodyWithResponse request with any body
+	FinopsBillingBillingOrphansReplaceAzureCostAssignmentWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingOrphansReplaceAzureCostAssignmentParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingBillingOrphansReplaceAzureCostAssignmentResponse, error)
+
+	FinopsBillingBillingOrphansReplaceAzureCostAssignmentWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsBillingBillingOrphansReplaceAzureCostAssignmentParams, body FinopsBillingBillingOrphansReplaceAzureCostAssignmentJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingOrphansReplaceAzureCostAssignmentResponse, error)
+
 	// FinopsBillingSharedCostRulesIndexWithResponse request
 	FinopsBillingSharedCostRulesIndexWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsBillingSharedCostRulesIndexResponse, error)
 
@@ -3455,12 +3499,6 @@ type ClientWithResponsesInterface interface {
 	GraphqlGraphqlTableSchemaWithBodyWithResponse(ctx context.Context, orgId int64, params *GraphqlGraphqlTableSchemaParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GraphqlGraphqlTableSchemaResponse, error)
 
 	GraphqlGraphqlTableSchemaWithResponse(ctx context.Context, orgId int64, params *GraphqlGraphqlTableSchemaParams, body GraphqlGraphqlTableSchemaJSONRequestBody, reqEditors ...RequestEditorFn) (*GraphqlGraphqlTableSchemaResponse, error)
-
-	// GrsUserOrgIndexWithResponse request
-	GrsUserOrgIndexWithResponse(ctx context.Context, userId int64, params *GrsUserOrgIndexParams, reqEditors ...RequestEditorFn) (*GrsUserOrgIndexResponse, error)
-
-	// GrsProjectIndexForOrgWithResponse request
-	GrsProjectIndexForOrgWithResponse(ctx context.Context, userId int64, params *GrsProjectIndexForOrgParams, reqEditors ...RequestEditorFn) (*GrsProjectIndexForOrgResponse, error)
 
 	// IamUserInvitationIndexWithResponse request
 	IamUserInvitationIndexWithResponse(ctx context.Context, params *IamUserInvitationIndexParams, reqEditors ...RequestEditorFn) (*IamUserInvitationIndexResponse, error)

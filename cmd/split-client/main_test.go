@@ -550,7 +550,7 @@ func TestComputeServiceMetadata(t *testing.T) {
 func TestComputeServiceMetadataRejectsPartialAnnotation(t *testing.T) {
 	for name, spec := range map[string]string{
 		"missing":      `{"x-flexera-services":{"iam":{}},"paths":{"/a":{"get":{"operationId":"A"}}}}`,
-		"unregistered": `{"x-flexera-services":{"iam":{}},"paths":{"/a":{"get":{"operationId":"A","x-flexera-service":"grs"}}}}`,
+		"unregistered": `{"x-flexera-services":{"iam":{}},"paths":{"/a":{"get":{"operationId":"A","x-flexera-service":"unknown"}}}}`,
 	} {
 		if _, err := computeServiceMetadata([]byte(spec)); err == nil {
 			t.Errorf("%s: expected error", name)

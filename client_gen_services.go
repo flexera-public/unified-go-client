@@ -27,8 +27,6 @@ const (
 	ServiceFinopsOnboarding Service = "finops_onboarding"
 	// ServiceGraphql is the GraphQL service.
 	ServiceGraphql Service = "graphql"
-	// ServiceGrs is the Global Resource Service service.
-	ServiceGrs Service = "grs"
 	// ServiceIam is the Identity and Access Management service.
 	ServiceIam Service = "iam"
 	// ServiceOptimaRecommendations is the Optima Recommendations service.
@@ -54,11 +52,10 @@ var serviceRegistry = []ServiceInfo{
 	{ID: ServiceBudget, Title: "Budget", Name: "Flexera Budget API", Vendor: "flexera", Version: "v1", SpecID: "flexera-budget-v1", OperationIDPrefix: "Budget", SourceURL: "https://developer.flexera.com/openapi/services/finops-analytics/v1/openapi.json", Tags: []string{"Budget", "Cloud Vendor Account"}},
 	{ID: ServiceCred, Title: "Credential", Name: "Flexera Credential API", Vendor: "flexera", Version: "v2", SpecID: "flexera-cred-v2", OperationIDPrefix: "Cred", SourceURL: "https://developer.flexera.com/openapi/services/cred/v2/openapi.json", Tags: []string{"API Key Credential", "AWS Credential", "AWS STS Credential", "Basic Credential", "Credential", "Digest Credential", "NTLM Credential", "OAuth2 Credential", "Oracle Credential"}},
 	{ID: ServiceDivnt, Title: "Data Inventory", Name: "Flexera Data Inventory API", Vendor: "flexera", Version: "v1", SpecID: "flexera-data-inventory-v1", OperationIDPrefix: "Divnt", SourceURL: "https://developer.flexera.com/openapi/services/divnt/v1/openapi.json", Tags: []string{"Onboarding"}},
-	{ID: ServiceFinopsBilling, Title: "FinOps Billing", Name: "Flexera FinOps Billing API", Vendor: "flexera", Version: "v1", SpecID: "flexera-finops-billing-v1", OperationIDPrefix: "FinopsBilling", SourceURL: "https://developer.flexeratest.com/openapi/services/finops-billing/v1/openapi.json", Tags: []string{"Billing", "Billing Audit", "Billing Credits", "Invoice Schedule Invoices", "Invoice Schedules", "Invoice Templates", "Invoices", "Settings", "Shared Cost Rules"}},
+	{ID: ServiceFinopsBilling, Title: "FinOps Billing", Name: "Flexera FinOps Billing API", Vendor: "flexera", Version: "v1", SpecID: "flexera-finops-billing-v1", OperationIDPrefix: "FinopsBilling", SourceURL: "https://developer.flexeratest.com/openapi/services/finops-billing/v1/openapi.json", Tags: []string{"Billing", "Billing Audit", "Billing Credits", "Billing Orphans", "Invoice Schedule Invoices", "Invoice Schedules", "Invoice Templates", "Invoices", "Settings", "Shared Cost Rules"}},
 	{ID: ServiceFinopsCustomizations, Title: "FinOps Customizations", Name: "Flexera FinOps Customizations API", Vendor: "flexera", Version: "v1", SpecID: "flexera-finops-customizations-v1", OperationIDPrefix: "FinopsCustomizations", SourceURL: "https://developer.flexera.com/openapi/services/finops-customizations/v1/openapi.json", Tags: []string{"Currency", "Report Subscriptions", "Rule-Based Dimension", "Saved Filters", "Tag Dimension", "Tag Observation"}},
 	{ID: ServiceFinopsOnboarding, Title: "FinOps Onboarding", Name: "Flexera FinOps Onboarding API", Vendor: "flexera", Version: "v1", SpecID: "flexera-finops-onboarding-v1", OperationIDPrefix: "FinopsOnboarding", SourceURL: "https://developer.flexera.com/openapi/services/finops-onboarding/v1/openapi.json", Tags: []string{"Bill Connect", "Bill Connect - AWS", "Bill Connect - Azure CSP", "Bill Connect - Azure EA Management", "Bill Connect - Azure MCA", "Bill Connect - Common Bill Ingestion", "Bill Connect - Databricks", "Bill Connect - GCP", "Bill Connect - Snowflake", "Processing History"}},
 	{ID: ServiceGraphql, Title: "GraphQL", Name: "Flexera GraphQL API", Vendor: "flexera", Version: "v1", SpecID: "flexera-graphql-v1", OperationIDPrefix: "Graphql", SourceURL: "https://developer.flexera.com/openapi/services/graphql/v1/openapi.json", Tags: []string{"graphql"}},
-	{ID: ServiceGrs, Title: "Global Resource Service", Name: "Flexera Global Resource Service API", Vendor: "flexera", Version: "v2", SpecID: "flexera-grs", OperationIDPrefix: "Grs", SourceURL: "", Tags: []string{"Project", "User"}},
 	{ID: ServiceIam, Title: "Identity and Access Management", Name: "Flexera Identity and Access Management API", Vendor: "flexera", Version: "v1", SpecID: "flexera-iam-v1", OperationIDPrefix: "Iam", SourceURL: "https://developer.flexera.com/openapi/services/iam/v1/openapi.json", Tags: []string{"API Event", "Access Policy", "Access Rule", "Capability", "Contracts", "Customization", "Customization Type", "Event", "Group", "Group Membership", "IP Access Control", "MSP Customer", "MSP Customer Domain", "MSP Customer Tag", "MSP Customer V2", "Org Login Policy", "Organization", "Organization Invitation", "Project", "Refresh Token", "Role", "SAML2 Domain", "SAML2 Identity Provider", "SAML2 Identity Provider Signing Key", "SAML2 Single Identity Provider", "SCIM Config", "SCIM Group", "SCIM User", "Service Account", "Service Account Client", "User", "User Invitation", "User Memberships", "User Profile", "User Setting Blob"}},
 	{ID: ServiceOptimaRecommendations, Title: "Optima Recommendations", Name: "RightScale Optima Recommendations API", Vendor: "rightscale", Version: "", SpecID: "rightscale-optima-recommendations", OperationIDPrefix: "OptimaRecommendations", SourceURL: "https://reference.rightscale.com/optima-recommendations/swagger.json", Tags: []string{"Recommendations"}},
 	{ID: ServicePolicy, Title: "Policy", Name: "Flexera Policy API", Vendor: "flexera", Version: "v1", SpecID: "flexera-policy-v1", OperationIDPrefix: "Policy", SourceURL: "https://developer.flexera.com/openapi/services/policy/v1/openapi.json", Tags: []string{"Action Status", "Applied Policy", "Archived Incident", "CustomCatalog", "Customization Type", "Customization Value", "Incident Aggregate", "Policy Aggregate", "Policy Manager", "Policy Template", "Published Template", "Unmanaged Applied Policies", "Unmanaged Incidents"}},
@@ -205,6 +202,13 @@ var operationServices = map[string]Service{
 	"FinopsBilling_Billing_Credits_indexVendorCredits":                                             ServiceFinopsBilling,
 	"FinopsBilling_Billing_Credits_replaceCreditAssignment":                                        ServiceFinopsBilling,
 	"FinopsBilling_Billing_Credits_showCreditAssignment":                                           ServiceFinopsBilling,
+	"FinopsBilling_Billing_Orphans_createAzureCostAssignments":                                     ServiceFinopsBilling,
+	"FinopsBilling_Billing_Orphans_deleteAzureCostAssignment":                                      ServiceFinopsBilling,
+	"FinopsBilling_Billing_Orphans_indexAzureCostAssignments":                                      ServiceFinopsBilling,
+	"FinopsBilling_Billing_Orphans_indexAzureOrphanBillingAccounts":                                ServiceFinopsBilling,
+	"FinopsBilling_Billing_Orphans_indexAzureUnallocatedCharges":                                   ServiceFinopsBilling,
+	"FinopsBilling_Billing_Orphans_replaceAzureCostAssignment":                                     ServiceFinopsBilling,
+	"FinopsBilling_Billing_Orphans_showAzureCostAssignment":                                        ServiceFinopsBilling,
 	"FinopsBilling_Billing_createEnterpriseRule":                                                   ServiceFinopsBilling,
 	"FinopsBilling_Billing_createPlan":                                                             ServiceFinopsBilling,
 	"FinopsBilling_Billing_createPostAdjustment":                                                   ServiceFinopsBilling,
@@ -333,8 +337,6 @@ var operationServices = map[string]Service{
 	"FinopsOnboarding_Processing_History_show":                                                     ServiceFinopsOnboarding,
 	"Graphql_graphql_query":                                                                        ServiceGraphql,
 	"Graphql_graphql_tableSchema":                                                                  ServiceGraphql,
-	"Grs_Project_indexForOrg":                                                                      ServiceGrs,
-	"Grs_User_orgIndex":                                                                            ServiceGrs,
 	"Iam_API_Event_index":                                                                          ServiceIam,
 	"Iam_Access_Policy_create":                                                                     ServiceIam,
 	"Iam_Access_Policy_delete":                                                                     ServiceIam,
@@ -525,7 +527,7 @@ var operationServices = map[string]Service{
 	"Risk_enumerate_filter_values_risk_v1_orgs_orgId_vulnerability_enumerate_post":                 ServiceRisk,
 	"Risk_enumerate_filter_values_vulnerability_enumerate_orgId_post":                              ServiceRisk,
 	"Risk_export_compliance_data_risk_v1_orgs_orgId_compliance_export_post":                        ServiceRisk,
-	"Risk_export_failed_assets_risk_v1_orgs_orgId_misconfiguration_failed_asset_export_post":                        ServiceRisk,
+	"Risk_export_failed_assets_risk_v1_orgs_orgId_misconfiguration_failed_asset_export_post":       ServiceRisk,
 	"Risk_export_findings_distribution_risk_v1_orgs_orgId_vulnerability_findings_distribution_export_post":          ServiceRisk,
 	"Risk_export_individual_cves_risk_v1_orgs_orgId_vulnerability_failed_assets_export_post":                        ServiceRisk,
 	"Risk_export_list_findings_distribution_risk_v1_orgs_orgId_vulnerability_list_export_post":                      ServiceRisk,

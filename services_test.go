@@ -6,7 +6,6 @@ func TestServiceOf(t *testing.T) {
 	cases := map[string]Service{
 		"BillAnalysis_costs_aggregated": ServiceBillAnalysis,
 		"Iam_Project_Index":             ServiceIam,
-		"Grs_Project_indexForOrg":       ServiceGrs,
 		"Auth_Token_token":              ServiceAuth,
 	}
 	for operationID, want := range cases {

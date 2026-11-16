@@ -361,6 +361,84 @@ func (e FinopsBillingAuditResultPeriodType) Valid() bool {
 	}
 }
 
+// Defines values for FinopsBillingAzureCostAssignmentKind.
+const (
+	FinopsBillingAzureCostAssignmentKindFinopsBillingAzureCostAssignment FinopsBillingAzureCostAssignmentKind = "finops:billing-azure-cost-assignment"
+)
+
+// Valid indicates whether the value is a known member of the FinopsBillingAzureCostAssignmentKind enum.
+func (e FinopsBillingAzureCostAssignmentKind) Valid() bool {
+	switch e {
+	case FinopsBillingAzureCostAssignmentKindFinopsBillingAzureCostAssignment:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FinopsBillingAzureCostAssignmentSelectionChargeFrequency.
+const (
+	FinopsBillingAzureCostAssignmentSelectionChargeFrequencyOneTime   FinopsBillingAzureCostAssignmentSelectionChargeFrequency = "oneTime"
+	FinopsBillingAzureCostAssignmentSelectionChargeFrequencyRecurring FinopsBillingAzureCostAssignmentSelectionChargeFrequency = "recurring"
+)
+
+// Valid indicates whether the value is a known member of the FinopsBillingAzureCostAssignmentSelectionChargeFrequency enum.
+func (e FinopsBillingAzureCostAssignmentSelectionChargeFrequency) Valid() bool {
+	switch e {
+	case FinopsBillingAzureCostAssignmentSelectionChargeFrequencyOneTime:
+		return true
+	case FinopsBillingAzureCostAssignmentSelectionChargeFrequencyRecurring:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FinopsBillingAzureCostAssignmentsPageKind.
+const (
+	FinopsBillingAzureCostAssignmentsPageKindFinopsBillingAzureCostAssignmentGroupList FinopsBillingAzureCostAssignmentsPageKind = "finops:billing-azure-cost-assignment-group-list"
+)
+
+// Valid indicates whether the value is a known member of the FinopsBillingAzureCostAssignmentsPageKind enum.
+func (e FinopsBillingAzureCostAssignmentsPageKind) Valid() bool {
+	switch e {
+	case FinopsBillingAzureCostAssignmentsPageKindFinopsBillingAzureCostAssignmentGroupList:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FinopsBillingAzureOrphanBillingAccountsPageKind.
+const (
+	FinopsBillingAzureOrphanBillingAccountsPageKindFinopsBillingAzureOrphanBillingAccountList FinopsBillingAzureOrphanBillingAccountsPageKind = "finops:billing-azure-orphan-billing-account-list"
+)
+
+// Valid indicates whether the value is a known member of the FinopsBillingAzureOrphanBillingAccountsPageKind enum.
+func (e FinopsBillingAzureOrphanBillingAccountsPageKind) Valid() bool {
+	switch e {
+	case FinopsBillingAzureOrphanBillingAccountsPageKindFinopsBillingAzureOrphanBillingAccountList:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FinopsBillingAzureUnallocatedChargesPageKind.
+const (
+	FinopsBillingAzureUnallocatedChargesPageKindFinopsBillingAzureUnallocatedChargeList FinopsBillingAzureUnallocatedChargesPageKind = "finops:billing-azure-unallocated-charge-list"
+)
+
+// Valid indicates whether the value is a known member of the FinopsBillingAzureUnallocatedChargesPageKind enum.
+func (e FinopsBillingAzureUnallocatedChargesPageKind) Valid() bool {
+	switch e {
+	case FinopsBillingAzureUnallocatedChargesPageKindFinopsBillingAzureUnallocatedChargeList:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for FinopsBillingBillingInvoiceIssueDateRuleType.
 const (
 	FinopsBillingBillingInvoiceIssueDateRuleTypeDayGenerated FinopsBillingBillingInvoiceIssueDateRuleType = "dayGenerated"
@@ -679,6 +757,21 @@ func (e FinopsBillingBillingInvoiceTemplateResultPeriodType) Valid() bool {
 	case FinopsBillingBillingInvoiceTemplateResultPeriodTypeBillingPeriod:
 		return true
 	case FinopsBillingBillingInvoiceTemplateResultPeriodTypeChargePeriod:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FinopsBillingCreateAzureCostAssignmentsResultKind.
+const (
+	FinopsBillingCreateAzureCostAssignmentsResultKindFinopsBillingAzureCostAssignmentsCreated FinopsBillingCreateAzureCostAssignmentsResultKind = "finops:billing-azure-cost-assignments-created"
+)
+
+// Valid indicates whether the value is a known member of the FinopsBillingCreateAzureCostAssignmentsResultKind enum.
+func (e FinopsBillingCreateAzureCostAssignmentsResultKind) Valid() bool {
+	switch e {
+	case FinopsBillingCreateAzureCostAssignmentsResultKindFinopsBillingAzureCostAssignmentsCreated:
 		return true
 	default:
 		return false
@@ -2148,8 +2241,8 @@ type FinopsBillingAllocationDestination struct {
 	// Percentage The effective percentage of costs allocated to this destination. For equalSplit this is computed by the server as 100/N (where N is the number of destinations) and for fixedPercentageSplit it is the client-supplied value; in both cases all percentages sum to 100. For usageBasedProportionalSplit and dynamicProportionateSplit this field is omitted because the effective share is derived at bill run time and is not known when the rule is read.
 	Percentage *float32 `json:"percentage,omitempty"`
 
-	// Value The specific dimension value that receives costs. Omitted for dynamicProportionateSplit, whose values come from telemetry.
-	Value *string `json:"value,omitempty"`
+	// Value The specific dimension value that receives costs. Empty for dynamicProportionateSplit, whose destination names only the dimension and takes its values from telemetry.
+	Value string `json:"value"`
 }
 
 // FinopsBillingAllocationDestinationPayload A destination input used when creating or updating a shared cost rule.
@@ -2160,7 +2253,7 @@ type FinopsBillingAllocationDestinationPayload struct {
 	// Percentage The percentage of costs allocated to this destination. Required for fixedPercentageSplit (all percentages must sum to 100). Ignored for equalSplit (the server computes equal shares automatically), for usageBasedProportionalSplit (shares are derived from usage at bill run time) and for dynamicProportionateSplit (shares come from telemetry).
 	Percentage *float32 `json:"percentage,omitempty"`
 
-	// Value The specific dimension value that receives costs. Required for every type except dynamicProportionateSplit, where it must be omitted: that type names only the dimension.
+	// Value The specific dimension value that receives costs. Required for every type except dynamicProportionateSplit, where it is ignored: that type takes exactly one destination naming only the dimension, and its values come from telemetry.
 	Value *string `json:"value,omitempty"`
 }
 
@@ -2419,6 +2512,212 @@ type FinopsBillingAutomatedEdpProfile struct {
 	// Enabled Whether Automated EDP normalization is enabled for this bill source.
 	Enabled bool `json:"enabled"`
 }
+
+// FinopsBillingAzureCostAssignment defines model for FinopsBilling_AzureCostAssignment.
+type FinopsBillingAzureCostAssignment struct {
+	// BillMonth Discovery month or one-time assignment month in YYYYMM format. Omitted on recurring assignment resources.
+	BillMonth *string `json:"billMonth,omitempty"`
+
+	// BillSource Opaque source identifier returned by orphaned billing-account discovery.
+	BillSource string `json:"billSource"`
+
+	// BilledCost Discovery-time billed cost for this display group, not an amount applied by the pipeline.
+	BilledCost string `json:"billedCost"`
+
+	// BillingAccountId Azure billing account identifier.
+	BillingAccountId string `json:"billingAccountId"`
+
+	// BillingCurrency Currency of billedCost.
+	BillingCurrency  string  `json:"billingCurrency"`
+	BillingProfileId *string `json:"billingProfileId,omitempty"`
+
+	// ChargeDescription Exact FOCUS ChargeDescription from the discovery view, not cco_line_item_type or ProductName; no trimming, case folding, or substring matching.
+	ChargeDescription string `json:"chargeDescription"`
+
+	// ChargeFrequency Charge frequency: recurring or oneTime. Recurring omits billMonth; oneTime includes it.
+	ChargeFrequency string `json:"chargeFrequency"`
+
+	// CommitmentDiscountType FOCUS CommitmentDiscountType from discovery when available.
+	CommitmentDiscountType *string `json:"commitmentDiscountType,omitempty"`
+
+	// CreatedAt timestamp when the Azure cost assignment was created
+	CreatedAt time.Time `json:"createdAt"`
+
+	// CreatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	CreatedBy FinopsBillingFlexeraIamPrincipal `json:"createdBy"`
+
+	// CustomerId MSP customer organization identifier when available.
+	CustomerId *int `json:"customerId,omitempty"`
+
+	// Id Identifier of the saved assignment, not a provider charge identifier.
+	Id openapi_types.UUID `json:"id"`
+
+	// Kind The resource's type
+	Kind           FinopsBillingAzureCostAssignmentKind `json:"kind"`
+	ProductOrderId *string                              `json:"productOrderId,omitempty"`
+
+	// RequiresReprocessing Whether saved configuration still requires normalization reprocessing for the relevant bill scope.
+	RequiresReprocessing bool `json:"requiresReprocessing"`
+
+	// TargetSubAccountId Authorized destination subscription selected through Cost Explorer.
+	TargetSubAccountId string `json:"targetSubAccountId"`
+
+	// UpdatedAt timestamp when the Azure cost assignment was updated
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// UpdatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	UpdatedBy FinopsBillingFlexeraIamPrincipal `json:"updatedBy"`
+}
+
+// FinopsBillingAzureCostAssignmentKind The resource's type
+type FinopsBillingAzureCostAssignmentKind string
+
+// FinopsBillingAzureCostAssignmentSelection defines model for FinopsBilling_AzureCostAssignmentSelection.
+type FinopsBillingAzureCostAssignmentSelection struct {
+	// BilledCost Discovery-time billed cost for this display group, not an amount applied by the pipeline.
+	BilledCost string `json:"billedCost"`
+
+	// BillingCurrency Currency of billedCost.
+	BillingCurrency  string  `json:"billingCurrency"`
+	BillingProfileId *string `json:"billingProfileId,omitempty"`
+
+	// ChargeDescription Exact FOCUS ChargeDescription from the discovery view, not cco_line_item_type or ProductName; no trimming, case folding, or substring matching.
+	ChargeDescription string `json:"chargeDescription"`
+
+	// ChargeFrequency Frequency of this selected charge.
+	ChargeFrequency FinopsBillingAzureCostAssignmentSelectionChargeFrequency `json:"chargeFrequency"`
+
+	// CommitmentDiscountType FOCUS CommitmentDiscountType from discovery when available.
+	CommitmentDiscountType *string `json:"commitmentDiscountType,omitempty"`
+
+	// CustomerId MSP customer organization identifier when available.
+	CustomerId     *int    `json:"customerId,omitempty"`
+	ProductOrderId *string `json:"productOrderId,omitempty"`
+}
+
+// FinopsBillingAzureCostAssignmentSelectionChargeFrequency Frequency of this selected charge.
+type FinopsBillingAzureCostAssignmentSelectionChargeFrequency string
+
+// FinopsBillingAzureCostAssignmentSummary defines model for FinopsBilling_AzureCostAssignmentSummary.
+type FinopsBillingAzureCostAssignmentSummary struct {
+	// BillMonth Discovery month or one-time assignment month in YYYYMM format. Omitted on recurring assignment resources.
+	BillMonth *string `json:"billMonth,omitempty"`
+
+	// BillSource Opaque source identifier returned by orphaned billing-account discovery.
+	BillSource string `json:"billSource"`
+
+	// BilledCost Discovery-time billed cost for this display group, not an amount applied by the pipeline.
+	BilledCost string `json:"billedCost"`
+
+	// BillingAccountId Azure billing account identifier.
+	BillingAccountId string `json:"billingAccountId"`
+
+	// BillingCurrency Currency of billedCost.
+	BillingCurrency  string  `json:"billingCurrency"`
+	BillingProfileId *string `json:"billingProfileId,omitempty"`
+
+	// ChargeDescription Exact FOCUS ChargeDescription from the discovery view, not cco_line_item_type or ProductName; no trimming, case folding, or substring matching.
+	ChargeDescription string `json:"chargeDescription"`
+
+	// ChargeFrequency Charge frequency: recurring or oneTime. Recurring omits billMonth; oneTime includes it.
+	ChargeFrequency string `json:"chargeFrequency"`
+
+	// CommitmentDiscountType FOCUS CommitmentDiscountType from discovery when available.
+	CommitmentDiscountType *string `json:"commitmentDiscountType,omitempty"`
+
+	// CustomerId MSP customer organization identifier when available.
+	CustomerId *int `json:"customerId,omitempty"`
+
+	// Id Identifier of the saved assignment, not a provider charge identifier.
+	Id             openapi_types.UUID `json:"id"`
+	ProductOrderId *string            `json:"productOrderId,omitempty"`
+
+	// RequiresReprocessing Whether saved configuration still requires normalization reprocessing for the relevant bill scope.
+	RequiresReprocessing bool `json:"requiresReprocessing"`
+
+	// TargetSubAccountId Authorized destination subscription selected through Cost Explorer.
+	TargetSubAccountId string `json:"targetSubAccountId"`
+}
+
+// FinopsBillingAzureCostAssignmentsPage defines model for FinopsBilling_AzureCostAssignmentsPage.
+type FinopsBillingAzureCostAssignmentsPage struct {
+	// Kind The resource's type
+	Kind FinopsBillingAzureCostAssignmentsPageKind `json:"kind"`
+
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	NextPage *string `json:"nextPage,omitempty"`
+
+	// TotalCount Matching individual assignments before pagination.
+	TotalCount int                                       `json:"totalCount"`
+	Values     []FinopsBillingAzureCostAssignmentSummary `json:"values"`
+}
+
+// FinopsBillingAzureCostAssignmentsPageKind The resource's type
+type FinopsBillingAzureCostAssignmentsPageKind string
+
+// FinopsBillingAzureOrphanBillingAccount defines model for FinopsBilling_AzureOrphanBillingAccount.
+type FinopsBillingAzureOrphanBillingAccount struct {
+	// BillSource Opaque source identifier returned by orphaned billing-account discovery.
+	BillSource string `json:"billSource"`
+
+	// BillingAccountId Azure billing account identifier.
+	BillingAccountId string `json:"billingAccountId"`
+
+	// BillingAccountName Display name when available.
+	BillingAccountName *string `json:"billingAccountName,omitempty"`
+}
+
+// FinopsBillingAzureOrphanBillingAccountsPage defines model for FinopsBilling_AzureOrphanBillingAccountsPage.
+type FinopsBillingAzureOrphanBillingAccountsPage struct {
+	// Kind The resource's type
+	Kind   FinopsBillingAzureOrphanBillingAccountsPageKind `json:"kind"`
+	Values []FinopsBillingAzureOrphanBillingAccount        `json:"values"`
+}
+
+// FinopsBillingAzureOrphanBillingAccountsPageKind The resource's type
+type FinopsBillingAzureOrphanBillingAccountsPageKind string
+
+// FinopsBillingAzureUnallocatedCharge defines model for FinopsBilling_AzureUnallocatedCharge.
+type FinopsBillingAzureUnallocatedCharge struct {
+	// BilledCost Billed cost for this display group, not a writable assignment amount.
+	BilledCost string `json:"billedCost"`
+
+	// BillingCurrency Currency of billedCost.
+	BillingCurrency  string  `json:"billingCurrency"`
+	BillingProfileId *string `json:"billingProfileId,omitempty"`
+
+	// ChargeDescription Exact FOCUS ChargeDescription from the discovery view, not cco_line_item_type or ProductName; no trimming, case folding, or substring matching.
+	ChargeDescription string `json:"chargeDescription"`
+
+	// ChargeFrequency Charge frequency when known: recurring or oneTime. Omitted when the source frequency is null; discovery does not infer an assignment frequency.
+	ChargeFrequency *string `json:"chargeFrequency,omitempty"`
+
+	// CommitmentDiscountType FOCUS CommitmentDiscountType from discovery when available.
+	CommitmentDiscountType *string `json:"commitmentDiscountType,omitempty"`
+
+	// CustomerId MSP customer organization identifier when available.
+	CustomerId *int `json:"customerId,omitempty"`
+
+	// LineItemCount Number of underlying bill rows in this display group.
+	LineItemCount  int     `json:"lineItemCount"`
+	ProductOrderId *string `json:"productOrderId,omitempty"`
+}
+
+// FinopsBillingAzureUnallocatedChargesPage defines model for FinopsBilling_AzureUnallocatedChargesPage.
+type FinopsBillingAzureUnallocatedChargesPage struct {
+	// Kind The resource's type
+	Kind FinopsBillingAzureUnallocatedChargesPageKind `json:"kind"`
+
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	NextPage *string `json:"nextPage,omitempty"`
+
+	// TotalCount Matching unassigned display rows after stored-assignment exclusion, before pagination.
+	TotalCount int                                   `json:"totalCount"`
+	Values     []FinopsBillingAzureUnallocatedCharge `json:"values"`
+}
+
+// FinopsBillingAzureUnallocatedChargesPageKind The resource's type
+type FinopsBillingAzureUnallocatedChargesPageKind string
 
 // FinopsBillingBillingInvoiceCollection defines model for FinopsBilling_BillingInvoiceCollection.
 type FinopsBillingBillingInvoiceCollection = []FinopsBillingFlexeraFinopsBillingInvoice
@@ -2928,6 +3227,21 @@ type FinopsBillingCreateAdjustmentPlanRule struct {
 	// VolumeDiscounts Configure a removeAzureLicenseCosts rule.
 	VolumeDiscounts *FinopsBillingRemoveAzureLicenseCostsSettings `json:"volumeDiscounts,omitempty"`
 }
+
+// FinopsBillingCreateAzureCostAssignmentsResult defines model for FinopsBilling_CreateAzureCostAssignmentsResult.
+type FinopsBillingCreateAzureCostAssignmentsResult struct {
+	CreatedCount int `json:"createdCount"`
+
+	// Kind The resource's type
+	Kind                 FinopsBillingCreateAzureCostAssignmentsResultKind `json:"kind"`
+	RequiresReprocessing bool                                              `json:"requiresReprocessing"`
+
+	// Values Individual assignments created atomically.
+	Values []FinopsBillingAzureCostAssignmentSummary `json:"values"`
+}
+
+// FinopsBillingCreateAzureCostAssignmentsResultKind The resource's type
+type FinopsBillingCreateAzureCostAssignmentsResultKind string
 
 // FinopsBillingCreateCreditAssignmentResult defines model for FinopsBilling_CreateCreditAssignmentResult.
 type FinopsBillingCreateCreditAssignmentResult struct {
@@ -4984,8 +5298,8 @@ type FinopsBillingShowSharedCostRuleResult struct {
 	// Priority Execution priority of this rule relative to other rules in the organization. Lower numbers execute first.
 	Priority int `json:"priority"`
 
-	// Source Dimensions that identify the costs to be reallocated. Multiple dimensions are combined using AND logic; only costs that satisfy every dimension are included. A rule has exactly one of source and sourceCondition.
-	Source *[]FinopsBillingSourceDimension `json:"source,omitempty"`
+	// Source Dimensions that identify the costs to be reallocated. Multiple dimensions are combined using AND logic; only costs that satisfy every dimension are included. Empty when the rule uses sourceCondition, which then identifies the costs instead.
+	Source []FinopsBillingSourceDimension `json:"source"`
 
 	// SourceCondition A condition that selects the costs to be reallocated, with the same shape as a rule-based dimension condition, except that the leaf types are named 'equals' and 'contains'. A missing or empty dimension value reads as an empty string, so not of a match also selects costs without that dimension. To match several values, combine 'equals' conditions with 'or'; a tree has at most 100 conditions.
 	SourceCondition *FinopsBillingSharedCostSourceCondition `json:"sourceCondition,omitempty"`
@@ -5153,7 +5467,7 @@ type FinopsBillingTelemetryUpload struct {
 	// Applied The rule save that applied the upload.
 	Applied *FinopsBillingTelemetryUploadApplied `json:"applied,omitempty"`
 
-	// BaseMonths For every month (YYYYMM) with a valid row, the upload that last changed it when the diff was computed, or null if the month had no data. Empty for a new rule. A save that applies the upload fails with telemetry_upload_stale if any of these months has moved since.
+	// BaseMonths For every month (YYYYMM) with a valid row, the upload that last changed it when the diff was computed, or null if the month had no data. For a reset (the destination dimension differs from the rule's), every month the rule has stored. Empty for a new rule. A save that applies the upload fails with telemetry_upload_stale if any of these months has moved since.
 	BaseMonths map[string]interface{} `json:"baseMonths"`
 
 	// Dimension The destination dimension the file was validated against.
@@ -5174,7 +5488,7 @@ type FinopsBillingTelemetryUpload struct {
 	// RuleId The rule the file is for. Absent for a new rule until a save creates it.
 	RuleId *string `json:"ruleId,omitempty"`
 
-	// Status valid when the file has no errors, otherwise invalid. Further statuses may be added, so consumers must tolerate a value they do not recognize.
+	// Status valid when the file has no errors, otherwise invalid.
 	Status FinopsBillingTelemetryUploadStatus `json:"status"`
 
 	// Summary Counts over the whole file, whatever the page or filter. rowsTotal = added + modified + deleted + unchanged + ignored + rowsWithErrors; a row with errors is counted only in rowsWithErrors. When the file has a file-level error only rowsTotal is present.
@@ -5190,7 +5504,7 @@ type FinopsBillingTelemetryUpload struct {
 // FinopsBillingTelemetryUploadKind The resource's type
 type FinopsBillingTelemetryUploadKind string
 
-// FinopsBillingTelemetryUploadStatus valid when the file has no errors, otherwise invalid. Further statuses may be added, so consumers must tolerate a value they do not recognize.
+// FinopsBillingTelemetryUploadStatus valid when the file has no errors, otherwise invalid.
 type FinopsBillingTelemetryUploadStatus string
 
 // FinopsBillingTelemetryUploadApplied The rule save that applied the upload.
@@ -5201,7 +5515,7 @@ type FinopsBillingTelemetryUploadApplied struct {
 	// AppliedBy Who saved the rule.
 	AppliedBy string `json:"appliedBy"`
 
-	// MonthsTouched Bill months (YYYY-MM) with at least one added, modified or deleted row, ascending. Reprocess these months to apply the change.
+	// MonthsTouched Bill months (YYYY-MM) with at least one added, modified or deleted row, ascending. For a reset (the destination dimension changed), also every month the rule had stored before. Reprocess these months to apply the change.
 	MonthsTouched []string `json:"monthsTouched"`
 }
 
@@ -5231,7 +5545,7 @@ type FinopsBillingTelemetryUploadPreview struct {
 	// Applied The rule save that applied the upload.
 	Applied *FinopsBillingTelemetryUploadApplied `json:"applied,omitempty"`
 
-	// BaseMonths For every month (YYYYMM) with a valid row, the upload that last changed it when the diff was computed, or null if the month had no data. Empty for a new rule. A save that applies the upload fails with telemetry_upload_stale if any of these months has moved since.
+	// BaseMonths For every month (YYYYMM) with a valid row, the upload that last changed it when the diff was computed, or null if the month had no data. For a reset (the destination dimension differs from the rule's), every month the rule has stored. Empty for a new rule. A save that applies the upload fails with telemetry_upload_stale if any of these months has moved since.
 	BaseMonths map[string]interface{} `json:"baseMonths"`
 
 	// Dimension The destination dimension the file was validated against.
@@ -5255,7 +5569,7 @@ type FinopsBillingTelemetryUploadPreview struct {
 	// RuleId The rule the file is for. Absent for a new rule until a save creates it.
 	RuleId *string `json:"ruleId,omitempty"`
 
-	// Status valid when the file has no errors, otherwise invalid. Further statuses may be added, so consumers must tolerate a value they do not recognize.
+	// Status valid when the file has no errors, otherwise invalid.
 	Status FinopsBillingTelemetryUploadPreviewStatus `json:"status"`
 
 	// Summary Counts over the whole file, whatever the page or filter. rowsTotal = added + modified + deleted + unchanged + ignored + rowsWithErrors; a row with errors is counted only in rowsWithErrors. When the file has a file-level error only rowsTotal is present.
@@ -5271,7 +5585,7 @@ type FinopsBillingTelemetryUploadPreview struct {
 // FinopsBillingTelemetryUploadPreviewKind The resource's type
 type FinopsBillingTelemetryUploadPreviewKind string
 
-// FinopsBillingTelemetryUploadPreviewStatus valid when the file has no errors, otherwise invalid. Further statuses may be added, so consumers must tolerate a value they do not recognize.
+// FinopsBillingTelemetryUploadPreviewStatus valid when the file has no errors, otherwise invalid.
 type FinopsBillingTelemetryUploadPreviewStatus string
 
 // FinopsBillingTelemetryUploadRow One row of the file with the change it makes. date, dimensionValue and metric are echoed exactly as they appear in the file when the row has errors.
