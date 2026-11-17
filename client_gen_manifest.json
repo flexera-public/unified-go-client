@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "source": "unified-openapi/openapi3.json",
-  "sourceSha256": "0a17b09ead1634257d8acc49b2fa29fc3b3b96fbe8d6e57585e5b54ed7d710df",
+  "sourceSha256": "1496e2f7fd3abbdde6dcc0f4043cb07be39cf54f45ae79a5e71625dec91b00f8",
   "generator": "github.com/oapi-codegen/oapi-codegen/v2 version v2.7.1",
   "package": "flexera",
   "files": [
@@ -2647,12 +2647,12 @@
     },
     {
       "path": "client_gen_finops_billing_models.go",
-      "sha256": "2d44dd65390bd3aa180013457ffe2a42c496da9fec40476f93abe5c63c610a0a",
+      "sha256": "889cf56bd24e418411bcb81b2bada07e12b0b661dfc5e123cfa5f5831e86ba37",
       "namespace": "FinopsBilling",
       "sourceSpecId": "flexera-finops-billing-v1",
       "concern": "models",
-      "lines": 5828,
-      "bytes": 278120,
+      "lines": 5853,
+      "bytes": 280200,
       "declarations": [
         "FinopsBillingAdjustmentCondition",
         "FinopsBillingAdjustmentConditionType",
@@ -2765,7 +2765,7 @@
         "FinopsBillingAzureCostAssignmentSummary",
         "FinopsBillingAzureCostAssignmentsPage",
         "FinopsBillingAzureCostAssignmentsPageKind",
-        "FinopsBillingAzureCostAssignmentsPageKindFinopsBillingAzureCostAssignmentGroupList",
+        "FinopsBillingAzureCostAssignmentsPageKindFinopsBillingAzureCostAssignmentList",
         "FinopsBillingAzureOrphanBillingAccount",
         "FinopsBillingAzureOrphanBillingAccountsPage",
         "FinopsBillingAzureOrphanBillingAccountsPageKind",
@@ -3214,12 +3214,12 @@
     },
     {
       "path": "client_gen_finops_billing_operations.go",
-      "sha256": "cab0e8932f5335ad103f9efd38f5d8b882b1c71e1eda5170e3d9b00bd8bdfc41",
+      "sha256": "e5b3a3ba61b51dd8c34a86557adbe7a3c9587f8a29b0dccf04e26990e222d5ba",
       "namespace": "FinopsBilling",
       "sourceSpecId": "flexera-finops-billing-v1",
       "concern": "operations",
       "lines": 6767,
-      "bytes": 268815,
+      "bytes": 268863,
       "declarations": [
         "FinopsBillingBillingAuditIndexAuditResults",
         "FinopsBillingBillingAuditIndexAuditResultsJSONRequestBody",
@@ -4495,12 +4495,12 @@
     },
     {
       "path": "client_gen_finops_onboarding_models.go",
-      "sha256": "280871eb3795dfc305c8c9a820fb677ee14d3e678772cefdb0136cf6169b9173",
+      "sha256": "a7824aa7ec4fe63cfb66293890e7553ac084829576cf91a8fde9511c35834e81",
       "namespace": "FinopsOnboarding",
       "sourceSpecId": "flexera-finops-onboarding-v1",
       "concern": "models",
-      "lines": 1960,
-      "bytes": 111335,
+      "lines": 1969,
+      "bytes": 112223,
       "declarations": [
         "FinopsOnboardingAWSBillConnect",
         "FinopsOnboardingAWSBillConnectKind",
@@ -4722,12 +4722,12 @@
     },
     {
       "path": "client_gen_finops_onboarding_operations.go",
-      "sha256": "20b1187f3aa9c26eace5ec823042347bbe8de8d201ef3c8011a8fecf47b618f7",
+      "sha256": "1745d7997603e7e2a3f509d673d04e8220d911feac9fdf1de523b281741c9aab",
       "namespace": "FinopsOnboarding",
       "sourceSpecId": "flexera-finops-onboarding-v1",
       "concern": "operations",
-      "lines": 3640,
-      "bytes": 140871,
+      "lines": 3658,
+      "bytes": 142647,
       "declarations": [
         "FinopsOnboardingBillConnectAWSCreateIAMRole",
         "FinopsOnboardingBillConnectAWSCreateIAMRoleJSONRequestBody",
@@ -10956,7 +10956,7 @@
     }
   ],
   "totalFiles": 58,
-  "totalLines": 140642,
-  "totalBytes": 5646808,
+  "totalLines": 140694,
+  "totalBytes": 5651600,
   "totalDeclarations": 10257
 }
