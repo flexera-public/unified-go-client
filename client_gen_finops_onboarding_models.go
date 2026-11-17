@@ -798,6 +798,15 @@ type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingAwsIamRoleBillConnect 
 	// StsExternalId Unique identifier used when assuming a role in the customers account. This defaults to the customers org_id
 	StsExternalId *string `json:"stsExternalId,omitempty"`
 
+	// StsInventoryExternalId Unique identifier used when assuming the inventory role. Only allowed when stsInventoryRoleArn is provided. This defaults to the customer's orgId.
+	StsInventoryExternalId *string `json:"stsInventoryExternalId,omitempty"`
+
+	// StsInventoryRoleArn Optional Amazon Resource Name (ARN) of the IAM role used for AWS inventory APIs (Organizations, Reserved Instances, Savings Plans). The role account must match billAccountId, and this should only be provided when stsRoleArn is in a different account than billAccountId.
+	StsInventoryRoleArn *string `json:"stsInventoryRoleArn,omitempty"`
+
+	// StsInventoryRoleSessionName Identifier for the assumed inventory sts role session. Only allowed when stsInventoryRoleArn is provided. This will default to flexera-finops if not supplied.
+	StsInventoryRoleSessionName *string `json:"stsInventoryRoleSessionName,omitempty"`
+
 	// StsRoleArn Amazon Resource Name (ARN) of the assumed sts role
 	StsRoleArn *string `json:"stsRoleArn,omitempty"`
 

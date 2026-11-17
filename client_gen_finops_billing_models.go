@@ -396,13 +396,13 @@ func (e FinopsBillingAzureCostAssignmentSelectionChargeFrequency) Valid() bool {
 
 // Defines values for FinopsBillingAzureCostAssignmentsPageKind.
 const (
-	FinopsBillingAzureCostAssignmentsPageKindFinopsBillingAzureCostAssignmentGroupList FinopsBillingAzureCostAssignmentsPageKind = "finops:billing-azure-cost-assignment-group-list"
+	FinopsBillingAzureCostAssignmentsPageKindFinopsBillingAzureCostAssignmentList FinopsBillingAzureCostAssignmentsPageKind = "finops:billing-azure-cost-assignment-list"
 )
 
 // Valid indicates whether the value is a known member of the FinopsBillingAzureCostAssignmentsPageKind enum.
 func (e FinopsBillingAzureCostAssignmentsPageKind) Valid() bool {
 	switch e {
-	case FinopsBillingAzureCostAssignmentsPageKindFinopsBillingAzureCostAssignmentGroupList:
+	case FinopsBillingAzureCostAssignmentsPageKindFinopsBillingAzureCostAssignmentList:
 		return true
 	default:
 		return false
@@ -2528,14 +2528,16 @@ type FinopsBillingAzureCostAssignment struct {
 	BillingAccountId string `json:"billingAccountId"`
 
 	// BillingCurrency Currency of billedCost.
-	BillingCurrency  string  `json:"billingCurrency"`
+	BillingCurrency string `json:"billingCurrency"`
+
+	// BillingProfileId Azure billing profile identifier from discovery when available; display metadata, not an assignment matching criterion.
 	BillingProfileId *string `json:"billingProfileId,omitempty"`
 
 	// ChargeDescription Exact FOCUS ChargeDescription from the discovery view, not cco_line_item_type or ProductName; no trimming, case folding, or substring matching.
 	ChargeDescription string `json:"chargeDescription"`
 
-	// ChargeFrequency Charge frequency: recurring or oneTime. Recurring omits billMonth; oneTime includes it.
-	ChargeFrequency string `json:"chargeFrequency"`
+	// ChargeFrequency Optional charge frequency. Current values are recurring and oneTime; clients must tolerate additional response values. Recurring omits billMonth; oneTime or omitted frequency includes it. Omitted frequency is not a pipeline matching key.
+	ChargeFrequency *string `json:"chargeFrequency,omitempty"`
 
 	// CommitmentDiscountType FOCUS CommitmentDiscountType from discovery when available.
 	CommitmentDiscountType *string `json:"commitmentDiscountType,omitempty"`
@@ -2553,13 +2555,15 @@ type FinopsBillingAzureCostAssignment struct {
 	Id openapi_types.UUID `json:"id"`
 
 	// Kind The resource's type
-	Kind           FinopsBillingAzureCostAssignmentKind `json:"kind"`
-	ProductOrderId *string                              `json:"productOrderId,omitempty"`
+	Kind FinopsBillingAzureCostAssignmentKind `json:"kind"`
+
+	// ProductOrderId Azure product order identifier from discovery when available; display metadata, not an assignment matching criterion.
+	ProductOrderId *string `json:"productOrderId,omitempty"`
 
 	// RequiresReprocessing Whether saved configuration still requires normalization reprocessing for the relevant bill scope.
 	RequiresReprocessing bool `json:"requiresReprocessing"`
 
-	// TargetSubAccountId Authorized destination subscription selected through Cost Explorer.
+	// TargetSubAccountId Destination subscription selected by the caller; billing-account parentage is not verified.
 	TargetSubAccountId string `json:"targetSubAccountId"`
 
 	// UpdatedAt timestamp when the Azure cost assignment was updated
@@ -2578,24 +2582,28 @@ type FinopsBillingAzureCostAssignmentSelection struct {
 	BilledCost string `json:"billedCost"`
 
 	// BillingCurrency Currency of billedCost.
-	BillingCurrency  string  `json:"billingCurrency"`
+	BillingCurrency string `json:"billingCurrency"`
+
+	// BillingProfileId Azure billing profile identifier from discovery when available; display metadata, not an assignment matching criterion.
 	BillingProfileId *string `json:"billingProfileId,omitempty"`
 
 	// ChargeDescription Exact FOCUS ChargeDescription from the discovery view, not cco_line_item_type or ProductName; no trimming, case folding, or substring matching.
 	ChargeDescription string `json:"chargeDescription"`
 
-	// ChargeFrequency Frequency of this selected charge.
-	ChargeFrequency FinopsBillingAzureCostAssignmentSelectionChargeFrequency `json:"chargeFrequency"`
+	// ChargeFrequency Optional frequency of this selected charge. Omitted or null remains omitted and the mapping is scoped to the requested month.
+	ChargeFrequency *FinopsBillingAzureCostAssignmentSelectionChargeFrequency `json:"chargeFrequency,omitempty"`
 
 	// CommitmentDiscountType FOCUS CommitmentDiscountType from discovery when available.
 	CommitmentDiscountType *string `json:"commitmentDiscountType,omitempty"`
 
 	// CustomerId MSP customer organization identifier when available.
-	CustomerId     *int    `json:"customerId,omitempty"`
+	CustomerId *int `json:"customerId,omitempty"`
+
+	// ProductOrderId Azure product order identifier from discovery when available; display metadata, not an assignment matching criterion.
 	ProductOrderId *string `json:"productOrderId,omitempty"`
 }
 
-// FinopsBillingAzureCostAssignmentSelectionChargeFrequency Frequency of this selected charge.
+// FinopsBillingAzureCostAssignmentSelectionChargeFrequency Optional frequency of this selected charge. Omitted or null remains omitted and the mapping is scoped to the requested month.
 type FinopsBillingAzureCostAssignmentSelectionChargeFrequency string
 
 // FinopsBillingAzureCostAssignmentSummary defines model for FinopsBilling_AzureCostAssignmentSummary.
@@ -2613,14 +2621,16 @@ type FinopsBillingAzureCostAssignmentSummary struct {
 	BillingAccountId string `json:"billingAccountId"`
 
 	// BillingCurrency Currency of billedCost.
-	BillingCurrency  string  `json:"billingCurrency"`
+	BillingCurrency string `json:"billingCurrency"`
+
+	// BillingProfileId Azure billing profile identifier from discovery when available; display metadata, not an assignment matching criterion.
 	BillingProfileId *string `json:"billingProfileId,omitempty"`
 
 	// ChargeDescription Exact FOCUS ChargeDescription from the discovery view, not cco_line_item_type or ProductName; no trimming, case folding, or substring matching.
 	ChargeDescription string `json:"chargeDescription"`
 
-	// ChargeFrequency Charge frequency: recurring or oneTime. Recurring omits billMonth; oneTime includes it.
-	ChargeFrequency string `json:"chargeFrequency"`
+	// ChargeFrequency Optional charge frequency. Current values are recurring and oneTime; clients must tolerate additional response values. Recurring omits billMonth; oneTime or omitted frequency includes it. Omitted frequency is not a pipeline matching key.
+	ChargeFrequency *string `json:"chargeFrequency,omitempty"`
 
 	// CommitmentDiscountType FOCUS CommitmentDiscountType from discovery when available.
 	CommitmentDiscountType *string `json:"commitmentDiscountType,omitempty"`
@@ -2629,13 +2639,15 @@ type FinopsBillingAzureCostAssignmentSummary struct {
 	CustomerId *int `json:"customerId,omitempty"`
 
 	// Id Identifier of the saved assignment, not a provider charge identifier.
-	Id             openapi_types.UUID `json:"id"`
-	ProductOrderId *string            `json:"productOrderId,omitempty"`
+	Id openapi_types.UUID `json:"id"`
+
+	// ProductOrderId Azure product order identifier from discovery when available; display metadata, not an assignment matching criterion.
+	ProductOrderId *string `json:"productOrderId,omitempty"`
 
 	// RequiresReprocessing Whether saved configuration still requires normalization reprocessing for the relevant bill scope.
 	RequiresReprocessing bool `json:"requiresReprocessing"`
 
-	// TargetSubAccountId Authorized destination subscription selected through Cost Explorer.
+	// TargetSubAccountId Destination subscription selected by the caller; billing-account parentage is not verified.
 	TargetSubAccountId string `json:"targetSubAccountId"`
 }
 
@@ -2644,12 +2656,14 @@ type FinopsBillingAzureCostAssignmentsPage struct {
 	// Kind The resource's type
 	Kind FinopsBillingAzureCostAssignmentsPageKind `json:"kind"`
 
-	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	// NextPage URL to the next page, retaining the bill month and other query parameters. Omitted on the last page.
 	NextPage *string `json:"nextPage,omitempty"`
 
 	// TotalCount Matching individual assignments before pagination.
-	TotalCount int                                       `json:"totalCount"`
-	Values     []FinopsBillingAzureCostAssignmentSummary `json:"values"`
+	TotalCount int `json:"totalCount"`
+
+	// Values Page of individual recurring and requested-month one-time or unspecified-frequency assignments, without grouping by destination.
+	Values []FinopsBillingAzureCostAssignmentSummary `json:"values"`
 }
 
 // FinopsBillingAzureCostAssignmentsPageKind The resource's type
@@ -2670,8 +2684,10 @@ type FinopsBillingAzureOrphanBillingAccount struct {
 // FinopsBillingAzureOrphanBillingAccountsPage defines model for FinopsBilling_AzureOrphanBillingAccountsPage.
 type FinopsBillingAzureOrphanBillingAccountsPage struct {
 	// Kind The resource's type
-	Kind   FinopsBillingAzureOrphanBillingAccountsPageKind `json:"kind"`
-	Values []FinopsBillingAzureOrphanBillingAccount        `json:"values"`
+	Kind FinopsBillingAzureOrphanBillingAccountsPageKind `json:"kind"`
+
+	// Values Complete list of bill source and billing account pairs with eligible orphaned charges in the requested month.
+	Values []FinopsBillingAzureOrphanBillingAccount `json:"values"`
 }
 
 // FinopsBillingAzureOrphanBillingAccountsPageKind The resource's type
@@ -2683,13 +2699,15 @@ type FinopsBillingAzureUnallocatedCharge struct {
 	BilledCost string `json:"billedCost"`
 
 	// BillingCurrency Currency of billedCost.
-	BillingCurrency  string  `json:"billingCurrency"`
+	BillingCurrency string `json:"billingCurrency"`
+
+	// BillingProfileId Azure billing profile identifier when available; display metadata, not an assignment matching criterion.
 	BillingProfileId *string `json:"billingProfileId,omitempty"`
 
 	// ChargeDescription Exact FOCUS ChargeDescription from the discovery view, not cco_line_item_type or ProductName; no trimming, case folding, or substring matching.
 	ChargeDescription string `json:"chargeDescription"`
 
-	// ChargeFrequency Charge frequency when known: recurring or oneTime. Omitted when the source frequency is null; discovery does not infer an assignment frequency.
+	// ChargeFrequency Charge frequency when known. Current values are recurring and oneTime; clients must tolerate additional response values. Omitted when the source frequency is null; discovery does not infer an assignment frequency.
 	ChargeFrequency *string `json:"chargeFrequency,omitempty"`
 
 	// CommitmentDiscountType FOCUS CommitmentDiscountType from discovery when available.
@@ -2699,7 +2717,9 @@ type FinopsBillingAzureUnallocatedCharge struct {
 	CustomerId *int `json:"customerId,omitempty"`
 
 	// LineItemCount Number of underlying bill rows in this display group.
-	LineItemCount  int     `json:"lineItemCount"`
+	LineItemCount int `json:"lineItemCount"`
+
+	// ProductOrderId Azure product order identifier when available; display metadata, not an assignment matching criterion.
 	ProductOrderId *string `json:"productOrderId,omitempty"`
 }
 
@@ -2708,12 +2728,14 @@ type FinopsBillingAzureUnallocatedChargesPage struct {
 	// Kind The resource's type
 	Kind FinopsBillingAzureUnallocatedChargesPageKind `json:"kind"`
 
-	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
+	// NextPage URL to the next page, retaining the bill month, billing account, and other query parameters. Omitted on the last page.
 	NextPage *string `json:"nextPage,omitempty"`
 
 	// TotalCount Matching unassigned display rows after stored-assignment exclusion, before pagination.
-	TotalCount int                                   `json:"totalCount"`
-	Values     []FinopsBillingAzureUnallocatedCharge `json:"values"`
+	TotalCount int `json:"totalCount"`
+
+	// Values Page of eligible unassigned charge display groups after stored-assignment exclusion and filtering.
+	Values []FinopsBillingAzureUnallocatedCharge `json:"values"`
 }
 
 // FinopsBillingAzureUnallocatedChargesPageKind The resource's type
@@ -3230,11 +3252,14 @@ type FinopsBillingCreateAdjustmentPlanRule struct {
 
 // FinopsBillingCreateAzureCostAssignmentsResult defines model for FinopsBilling_CreateAzureCostAssignmentsResult.
 type FinopsBillingCreateAzureCostAssignmentsResult struct {
+	// CreatedCount Number of individual assignment mappings saved by this request.
 	CreatedCount int `json:"createdCount"`
 
 	// Kind The resource's type
-	Kind                 FinopsBillingCreateAzureCostAssignmentsResultKind `json:"kind"`
-	RequiresReprocessing bool                                              `json:"requiresReprocessing"`
+	Kind FinopsBillingCreateAzureCostAssignmentsResultKind `json:"kind"`
+
+	// RequiresReprocessing Whether normalization reprocessing is required to apply the newly saved mappings to billing data.
+	RequiresReprocessing bool `json:"requiresReprocessing"`
 
 	// Values Individual assignments created atomically.
 	Values []FinopsBillingAzureCostAssignmentSummary `json:"values"`

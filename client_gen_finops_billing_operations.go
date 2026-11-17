@@ -135,7 +135,7 @@ type FinopsBillingCreateAzureCostAssignmentsRequestBody struct {
 	// Charges Distinct exact FOCUS description/frequency pairs with display metadata directly on each entry. All matching eligible rows are assigned regardless of display dimensions.
 	Charges []FinopsBillingAzureCostAssignmentSelection `json:"charges"`
 
-	// TargetSubAccountId Authorized destination subscription selected through Cost Explorer.
+	// TargetSubAccountId Destination subscription selected by the caller; billing-account parentage is not verified.
 	TargetSubAccountId string `json:"targetSubAccountId"`
 }
 
@@ -606,7 +606,7 @@ type FinopsBillingReorderRequestBody struct {
 
 // FinopsBillingReplaceAzureCostAssignmentRequestBody defines model for FinopsBilling_ReplaceAzureCostAssignmentRequestBody.
 type FinopsBillingReplaceAzureCostAssignmentRequestBody struct {
-	// TargetSubAccountId Authorized destination subscription selected through Cost Explorer.
+	// TargetSubAccountId Destination subscription selected by the caller; billing-account parentage is not verified.
 	TargetSubAccountId string `json:"targetSubAccountId"`
 }
 
