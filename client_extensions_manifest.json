@@ -484,6 +484,83 @@
       "declarationCount": 6
     },
     {
+      "path": "fnms_download.go",
+      "sha256": "691e4e9c11e2d389de8b9cef0b09725d9da805eb8537b70453ee6a5882352f0f",
+      "declarations": [
+        {
+          "name": "FnmsDownloadOptions",
+          "kind": "type",
+          "doc": "FnmsDownloadOptions configures streaming downloads. HTTPClient must be an"
+        },
+        {
+          "name": "FnmsDownloadFile",
+          "kind": "method",
+          "receiver": "ClientWithResponses",
+          "doc": "FnmsDownloadFile resolves File_show's 303 Location and streams the file to dst."
+        },
+        {
+          "name": "FnmsDownloadReportExport",
+          "kind": "method",
+          "receiver": "ClientWithResponses",
+          "doc": "FnmsDownloadReportExport streams an export status Path to dst. Same-origin"
+        },
+        {
+          "name": "Do",
+          "kind": "method",
+          "receiver": "fnmsOAuthDownloadDoer"
+        }
+      ],
+      "declarationCount": 4
+    },
+    {
+      "path": "fnms_reports.go",
+      "sha256": "ea738403ed5c55248f1e8fe19735c56fcecc4a5437b60d13c59ec9cb3670eead",
+      "declarations": [
+        {
+          "name": "FnmsPollOptions",
+          "kind": "type",
+          "doc": "FnmsPollOptions bounds report polling. Zero values use a 2-second interval and"
+        },
+        {
+          "name": "FnmsStartReportExecution",
+          "kind": "method",
+          "receiver": "ClientWithResponses",
+          "doc": "FnmsStartReportExecution starts an async execution and returns its job ID."
+        },
+        {
+          "name": "FnmsWaitReportExecution",
+          "kind": "method",
+          "receiver": "ClientWithResponses",
+          "doc": "FnmsWaitReportExecution polls immediately and then until completion or failure."
+        },
+        {
+          "name": "FnmsExecuteReport",
+          "kind": "method",
+          "receiver": "ClientWithResponses",
+          "doc": "FnmsExecuteReport starts (or reuses) a job and waits for it. It does not retrieve"
+        },
+        {
+          "name": "FnmsStartReportExport",
+          "kind": "method",
+          "receiver": "ClientWithResponses",
+          "doc": "FnmsStartReportExport requests an export and returns its export ID. Params"
+        },
+        {
+          "name": "FnmsWaitReportExport",
+          "kind": "method",
+          "receiver": "ClientWithResponses",
+          "doc": "FnmsWaitReportExport waits for a terminal export status. Completed requires a"
+        },
+        {
+          "name": "FnmsExportReport",
+          "kind": "method",
+          "receiver": "ClientWithResponses",
+          "doc": "FnmsExportReport requests an export and waits for its terminal status. Download"
+        }
+      ],
+      "declarationCount": 7
+    },
+    {
       "path": "graphql.go",
       "sha256": "b9de3eb331ac2adbb95439a84ca36938d1fb7b075df030d1472bd6cc4f547999",
       "declarations": [
@@ -1254,6 +1331,6 @@
       "declarationCount": 3
     }
   ],
-  "totalFiles": 29,
-  "totalDeclarations": 203
+  "totalFiles": 31,
+  "totalDeclarations": 214
 }

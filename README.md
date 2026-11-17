@@ -43,6 +43,59 @@ if err != nil {
 _ = client
 ```
 
+## FNMS report workflows and streaming downloads
+
+Hand-written `ClientWithResponses` helpers complement the generated FNMS methods:
+
+- `FnmsStartReportExecution(ctx, orgID, reportID, params, editors...)` returns a job ID (including the documented 409 existing-job response).
+- `FnmsWaitReportExecution(ctx, orgID, reportID, jobID, pollOptions, editors...)` waits for completion; `FnmsExecuteReport(ctx, orgID, reportID, params, pollOptions, editors...)` combines both steps. Results remain paged: retrieve them with the generated `FnmsReportExecuteAsyncRetrieveWithResponse`.
+- `FnmsStartReportExport(ctx, orgID, reportID, params, editors...)` returns an export ID; `FnmsWaitReportExport(ctx, orgID, exportID, pollOptions, editors...)` polls it. `FnmsExportReport(ctx, orgID, reportID, params, pollOptions, editors...)` combines both steps and returns `*FnmsExportStatus`.
+- `FnmsDownloadFile(ctx, orgID, filename, writer, downloadOptions, editors...)` resolves the File_show 303 Location and streams the file.
+- `FnmsDownloadReportExport(ctx, path, writer, downloadOptions, editors...)` streams a completed export's Path. Both downloads return `(int64, error)`, including partial bytes written on failure; neither buffers the file or closes your writer.
+
+```go
+filters := map[string]interface{}{"DeviceName": "server-01"} // report-specific keys
+poll := &flexera.FnmsPollOptions{Interval: time.Second, Timeout: 3 * time.Minute}
+execution, err := client.FnmsExecuteReport(ctx, orgID, reportID,
+    &flexera.FnmsReportExecuteAsyncParams{FilterParams: &filters}, poll)
+if err != nil { return err }
+page, err := client.FnmsReportExecuteAsyncRetrieveWithResponse(ctx, orgID,
+    reportID, execution.JobId, nil) // first page; use Page for subsequent pages
+if err != nil { return err }
+_ = page
+
+format := flexera.FnmsReportExportReportParamsAccept("text/csv")
+export, err := client.FnmsExportReport(ctx, orgID, reportID,
+    &flexera.FnmsReportExportReportParams{FilterParams: &filters, Accept: &format}, poll)
+if err != nil { return err }
+if export.Status == flexera.FnmsExportStatusStatusNoDataFound { return nil }
+_, err = client.FnmsDownloadReportExport(ctx, *export.Path, outputWriter, nil)
+return err
+```
+
+FilterParams remains an object, serialized by the generated methods as deep-object
+query parameters (`filterParams[DeviceName]=server-01`), not a JSON string or request
+body. Supply only keys supported by the chosen report. Export Accept selects the
+report format inside the ZIP; the helpers do not unzip or reinterpret results.
+Exports are available for one hour according to the API specification.
+
+Polling defaults to a 2-second interval and a 5-minute timeout, honors context
+cancellation, and returns the last status alongside errors. HTTP/decoding errors,
+`Errored`, and unknown statuses fail immediately; `No data found` is a successful
+terminal export without a file. Combined start/wait helpers bound the entire
+workflow. Negative polling durations or redirect limits are rejected.
+
+Downloads require the generated `*Client` underneath `ClientWithResponses` and
+an API `*http.Client` (possibly wrapped by the SDK OAuth, retry, or user-agent
+doers). Unknown API doers are rejected rather than risking automatic credential
+forwarding. The initial same-origin export Path may use API authentication;
+File_show's Location and **every redirect destination** use a separate,
+unauthenticated client, with no API editors or cookies. Customize its TLS/proxy/
+timeout via `FnmsDownloadOptions.HTTPClient`, whose transport must not inject
+credentials. The default redirect limit is 10; non-2xx downloads, malformed
+Locations, URL credentials, HTTPS-to-HTTP redirects, writer errors, and redirect
+loops fail. Use a context deadline to bound downloads. Do not log signed Paths.
+
 ## Authentication helpers
 
 The client includes helpers for common authentication patterns:
