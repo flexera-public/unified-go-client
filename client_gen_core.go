@@ -1157,6 +1157,51 @@ type ClientInterface interface {
 	// FinopsOnboardingProcessingHistoryDownload request
 	FinopsOnboardingProcessingHistoryDownload(ctx context.Context, orgId int, params *FinopsOnboardingProcessingHistoryDownloadParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// FnmsAssetIndex request
+	FnmsAssetIndex(ctx context.Context, orgId int64, params *FnmsAssetIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsFileShow request
+	FnmsFileShow(ctx context.Context, orgId int64, filename string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsInventoryIndex request
+	FnmsInventoryIndex(ctx context.Context, orgId int64, params *FnmsInventoryIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsLicenseAttributes request
+	FnmsLicenseAttributes(ctx context.Context, orgId int64, params *FnmsLicenseAttributesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsLicenseEntitlements request
+	FnmsLicenseEntitlements(ctx context.Context, orgId int64, params *FnmsLicenseEntitlementsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsLicenseAllocation request
+	FnmsLicenseAllocation(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseAllocationParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsLicenseDeallocation request
+	FnmsLicenseDeallocation(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseDeallocationParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsReportIndex request
+	FnmsReportIndex(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsReportReportExportStatus request
+	FnmsReportReportExportStatus(ctx context.Context, orgId int64, exportId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsReportExecuteAsync request
+	FnmsReportExecuteAsync(ctx context.Context, orgId int64, id string, params *FnmsReportExecuteAsyncParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsReportExecuteAsyncRetrieve request
+	FnmsReportExecuteAsyncRetrieve(ctx context.Context, orgId int64, id string, jobId string, params *FnmsReportExecuteAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsReportExecuteAsyncStatus request
+	FnmsReportExecuteAsyncStatus(ctx context.Context, orgId int64, id string, jobId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsReportExportReport request
+	FnmsReportExportReport(ctx context.Context, orgId int64, id string, params *FnmsReportExportReportParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsSystemHealthGet request
+	FnmsSystemHealthGet(ctx context.Context, orgId int64, params *FnmsSystemHealthGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsInstalledSoftwareV2CreateV2 request
+	FnmsInstalledSoftwareV2CreateV2(ctx context.Context, orgId int64, params *FnmsInstalledSoftwareV2CreateV2Params, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GraphqlGraphqlQuery request
 	GraphqlGraphqlQuery(ctx context.Context, orgId int64, params *GraphqlGraphqlQueryParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -3491,6 +3536,51 @@ type ClientWithResponsesInterface interface {
 
 	// FinopsOnboardingProcessingHistoryDownloadWithResponse request
 	FinopsOnboardingProcessingHistoryDownloadWithResponse(ctx context.Context, orgId int, params *FinopsOnboardingProcessingHistoryDownloadParams, reqEditors ...RequestEditorFn) (*FinopsOnboardingProcessingHistoryDownloadResponse, error)
+
+	// FnmsAssetIndexWithResponse request
+	FnmsAssetIndexWithResponse(ctx context.Context, orgId int64, params *FnmsAssetIndexParams, reqEditors ...RequestEditorFn) (*FnmsAssetIndexResponse, error)
+
+	// FnmsFileShowWithResponse request
+	FnmsFileShowWithResponse(ctx context.Context, orgId int64, filename string, reqEditors ...RequestEditorFn) (*FnmsFileShowResponse, error)
+
+	// FnmsInventoryIndexWithResponse request
+	FnmsInventoryIndexWithResponse(ctx context.Context, orgId int64, params *FnmsInventoryIndexParams, reqEditors ...RequestEditorFn) (*FnmsInventoryIndexResponse, error)
+
+	// FnmsLicenseAttributesWithResponse request
+	FnmsLicenseAttributesWithResponse(ctx context.Context, orgId int64, params *FnmsLicenseAttributesParams, reqEditors ...RequestEditorFn) (*FnmsLicenseAttributesResponse, error)
+
+	// FnmsLicenseEntitlementsWithResponse request
+	FnmsLicenseEntitlementsWithResponse(ctx context.Context, orgId int64, params *FnmsLicenseEntitlementsParams, reqEditors ...RequestEditorFn) (*FnmsLicenseEntitlementsResponse, error)
+
+	// FnmsLicenseAllocationWithResponse request
+	FnmsLicenseAllocationWithResponse(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseAllocationParams, reqEditors ...RequestEditorFn) (*FnmsLicenseAllocationResponse, error)
+
+	// FnmsLicenseDeallocationWithResponse request
+	FnmsLicenseDeallocationWithResponse(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseDeallocationParams, reqEditors ...RequestEditorFn) (*FnmsLicenseDeallocationResponse, error)
+
+	// FnmsReportIndexWithResponse request
+	FnmsReportIndexWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*FnmsReportIndexResponse, error)
+
+	// FnmsReportReportExportStatusWithResponse request
+	FnmsReportReportExportStatusWithResponse(ctx context.Context, orgId int64, exportId string, reqEditors ...RequestEditorFn) (*FnmsReportReportExportStatusResponse, error)
+
+	// FnmsReportExecuteAsyncWithResponse request
+	FnmsReportExecuteAsyncWithResponse(ctx context.Context, orgId int64, id string, params *FnmsReportExecuteAsyncParams, reqEditors ...RequestEditorFn) (*FnmsReportExecuteAsyncResponse, error)
+
+	// FnmsReportExecuteAsyncRetrieveWithResponse request
+	FnmsReportExecuteAsyncRetrieveWithResponse(ctx context.Context, orgId int64, id string, jobId string, params *FnmsReportExecuteAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*FnmsReportExecuteAsyncRetrieveResponse, error)
+
+	// FnmsReportExecuteAsyncStatusWithResponse request
+	FnmsReportExecuteAsyncStatusWithResponse(ctx context.Context, orgId int64, id string, jobId string, reqEditors ...RequestEditorFn) (*FnmsReportExecuteAsyncStatusResponse, error)
+
+	// FnmsReportExportReportWithResponse request
+	FnmsReportExportReportWithResponse(ctx context.Context, orgId int64, id string, params *FnmsReportExportReportParams, reqEditors ...RequestEditorFn) (*FnmsReportExportReportResponse, error)
+
+	// FnmsSystemHealthGetWithResponse request
+	FnmsSystemHealthGetWithResponse(ctx context.Context, orgId int64, params *FnmsSystemHealthGetParams, reqEditors ...RequestEditorFn) (*FnmsSystemHealthGetResponse, error)
+
+	// FnmsInstalledSoftwareV2CreateV2WithResponse request
+	FnmsInstalledSoftwareV2CreateV2WithResponse(ctx context.Context, orgId int64, params *FnmsInstalledSoftwareV2CreateV2Params, reqEditors ...RequestEditorFn) (*FnmsInstalledSoftwareV2CreateV2Response, error)
 
 	// GraphqlGraphqlQueryWithResponse request
 	GraphqlGraphqlQueryWithResponse(ctx context.Context, orgId int64, params *GraphqlGraphqlQueryParams, reqEditors ...RequestEditorFn) (*GraphqlGraphqlQueryResponse, error)
