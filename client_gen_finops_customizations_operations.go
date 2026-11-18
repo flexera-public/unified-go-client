@@ -27,6 +27,12 @@ const (
 	FinopsCustomizationsCreateRequestBodyVisibilityShared  FinopsCustomizationsCreateRequestBodyVisibility = "shared"
 )
 
+// Defines values for FinopsCustomizationsCreateRequestBody2PageSource.
+const (
+	FinopsCustomizationsCreateRequestBody2PageSourceAnalyzeSpend FinopsCustomizationsCreateRequestBody2PageSource = "analyzeSpend"
+	FinopsCustomizationsCreateRequestBody2PageSourceInventory    FinopsCustomizationsCreateRequestBody2PageSource = "inventory"
+)
+
 // Defines values for FinopsCustomizationsCreateRequestBody2Visibility.
 const (
 	FinopsCustomizationsCreateRequestBody2VisibilityPrivate FinopsCustomizationsCreateRequestBody2Visibility = "private"
@@ -95,9 +101,15 @@ type FinopsCustomizationsCreateRequestBody2 struct {
 	// Name Human-readable name for the filter
 	Name string `json:"name"`
 
+	// PageSource Optional UI surface that created the saved filter: analyzeSpend or inventory. Omitted or null values remain unset for both private and shared filters and are returned as null. No server-side default is applied; clients may interpret null as analyzeSpend. Empty strings are not supported.
+	PageSource *FinopsCustomizationsCreateRequestBody2PageSource `json:"pageSource,omitempty"`
+
 	// Visibility Filter visibility scope
 	Visibility FinopsCustomizationsCreateRequestBody2Visibility `json:"visibility"`
 }
+
+// FinopsCustomizationsCreateRequestBody2PageSource Optional UI surface that created the saved filter: analyzeSpend or inventory. Omitted or null values remain unset for both private and shared filters and are returned as null. No server-side default is applied; clients may interpret null as analyzeSpend. Empty strings are not supported.
+type FinopsCustomizationsCreateRequestBody2PageSource string
 
 // FinopsCustomizationsCreateRequestBody2Visibility Filter visibility scope
 type FinopsCustomizationsCreateRequestBody2Visibility string
@@ -211,9 +223,44 @@ type FinopsCustomizationsSavedFiltersIndexParams struct {
 	// Limit Page size (default 10, max 200)
 	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
 
-	// OrderBy Optional orderBy query allows to specify an expression for determining what values are used to order the entities.
-	// Multiple expressions can be specified using comma separated values.
+	// OrderBy Optional comma-separated list of field [asc|desc] sort clauses. The default is name asc.
+	//
+	// Supported fields: pageSource, name, visibility, createdAt, updatedAt, and modified (alias for updatedAt).
+	// Field names and directions are case-insensitive. Direction defaults to asc.
+	// Multiple clauses are honored in order as tie-breakers. Single-clause requests retain the existing name asc secondary sort; id asc is the final tie-breaker.
+	// Matching favorites always appear first in the order supplied in favoriteIds, regardless of this sort; the requested sort applies to non-favorites.
+	// Unsupported fields, invalid directions, and malformed expressions return HTTP 400 with invalid_order_by.
+	// This query parameter retains the existing public name orderBy and must be URL-encoded.
 	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
+
+	// Filter Optional OData-style filter expression on saved filter metadata.
+	//
+	// | Field | Allowed Operators | Example |
+	// | --- | --- | --- |
+	// | pageSource | eq ne co nc sw ew in ni lt le gt ge ex | pageSource eq 'analyzeSpend' |
+	// | visibility | eq ne co nc sw ew in ni lt le gt ge ex | visibility eq 'shared' |
+	// | name | eq ne co nc sw ew in ni lt le gt ge ex | name co 'Monthly' |
+	// | description | eq ne co nc sw ew in ni lt le gt ge ex | description eq null |
+	// | id | eq ne co nc sw ew in ni lt le gt ge ex | id in ['550e8400-e29b-41d4-a716-446655440000'] |
+	// | ownerUserId | eq ne in ni lt le gt ge ex | ownerUserId eq 123 |
+	// | createdAt | eq ne in ni lt le gt ge | createdAt ge '2026-01-01T00:00:00Z' |
+	// | updatedAt | eq ne in ni lt le gt ge | updatedAt lt '2026-12-01T00:00:00Z' |
+	//
+	// ### Filter Notes
+	// - Combine expressions with and, or, not, and parentheses.
+	// - Attribute names and operator names are case-insensitive; string values are case-sensitive.
+	// - String literals must be single-quoted. Escape an apostrophe by doubling it.
+	// - co/nc mean contains/not contains; sw/ew mean starts with/ends with; in/ni take lists; ex takes a boolean to test whether a field exists in storage.
+	// - Use unquoted null to match unset or null values (including legacy records): pageSource eq null. An empty string is distinct from null.
+	// - Supported pageSource values on create are analyzeSpend and inventory. Visibility values are private and shared.
+	// - Owner IDs are unquoted integers. Filtering by ownerUserId does not grant access to another user's private filters.
+	// - Date values are quoted RFC3339 timestamps. Timezone offsets are normalized to UTC; fractional-second range boundaries are supported against the stored whole-second UTC timestamps.
+	// - Filters only narrow the caller's existing organization and visibility scope; soft-deleted records are excluded.
+	// - Filtering applies to favorites too. Only matching favorites are included, first in the order supplied in favoriteIds, followed by matching non-favorites in the requested sort order.
+	// - Invalid expressions, incompatible values, and unsupported fields or operators return HTTP 400 with invalid_filter.
+	// - This query parameter is named filter and must be URL-encoded. The filter attribute in a saved filter's JSON body is separate: it contains the saved FOCUS filter configuration.
+	// - Pagination uses limit and skipToken (not $top or $skip). Filter, sort, visibility, and favorite criteria are preserved in the opaque pagination token.
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
 	// Visibility Optional visibility filter for results.
 	Visibility *FinopsCustomizationsSavedFiltersIndexParamsVisibility `form:"visibility,omitempty" json:"visibility,omitempty"`
@@ -1639,6 +1686,18 @@ func NewFinopsCustomizationsSavedFiltersIndexRequest(server string, orgId int, p
 		if params.OrderBy != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "orderBy", *params.OrderBy, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter", *params.Filter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {

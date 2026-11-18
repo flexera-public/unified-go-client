@@ -805,6 +805,11 @@ type ClientInterface interface {
 
 	FinopsBillingInvoicesCreate(ctx context.Context, orgId int, body FinopsBillingInvoicesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// FinopsBillingInvoicesCurrencyContextWithBody request with any body
+	FinopsBillingInvoicesCurrencyContextWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingInvoicesCurrencyContext(ctx context.Context, orgId int, body FinopsBillingInvoicesCurrencyContextJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// FinopsBillingInvoicesShow request
 	FinopsBillingInvoicesShow(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -3184,6 +3189,11 @@ type ClientWithResponsesInterface interface {
 	FinopsBillingInvoicesCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesCreateResponse, error)
 
 	FinopsBillingInvoicesCreateWithResponse(ctx context.Context, orgId int, body FinopsBillingInvoicesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesCreateResponse, error)
+
+	// FinopsBillingInvoicesCurrencyContextWithBodyWithResponse request with any body
+	FinopsBillingInvoicesCurrencyContextWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesCurrencyContextResponse, error)
+
+	FinopsBillingInvoicesCurrencyContextWithResponse(ctx context.Context, orgId int, body FinopsBillingInvoicesCurrencyContextJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesCurrencyContextResponse, error)
 
 	// FinopsBillingInvoicesShowWithResponse request
 	FinopsBillingInvoicesShowWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesShowResponse, error)

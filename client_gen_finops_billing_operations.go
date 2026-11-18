@@ -76,6 +76,21 @@ const (
 	FinopsBillingCreateRequestBody3PeriodTypeChargePeriod  FinopsBillingCreateRequestBody3PeriodType = "chargePeriod"
 )
 
+// Defines values for FinopsBillingCurrencyContextRequestBodyCostMetric.
+const (
+	FinopsBillingCurrencyContextRequestBodyCostMetricBilledCost            FinopsBillingCurrencyContextRequestBodyCostMetric = "billedCost"
+	FinopsBillingCurrencyContextRequestBodyCostMetricEffectiveCost         FinopsBillingCurrencyContextRequestBodyCostMetric = "effectiveCost"
+	FinopsBillingCurrencyContextRequestBodyCostMetricModifiedBilledCost    FinopsBillingCurrencyContextRequestBodyCostMetric = "modifiedBilledCost"
+	FinopsBillingCurrencyContextRequestBodyCostMetricModifiedEffectiveCost FinopsBillingCurrencyContextRequestBodyCostMetric = "modifiedEffectiveCost"
+)
+
+// Defines values for FinopsBillingCurrencyContextRequestBodyPeriodType.
+const (
+	FinopsBillingCurrencyContextRequestBodyPeriodTypeBillPeriod    FinopsBillingCurrencyContextRequestBodyPeriodType = "billPeriod"
+	FinopsBillingCurrencyContextRequestBodyPeriodTypeBillingPeriod FinopsBillingCurrencyContextRequestBodyPeriodType = "billingPeriod"
+	FinopsBillingCurrencyContextRequestBodyPeriodTypeChargePeriod  FinopsBillingCurrencyContextRequestBodyPeriodType = "chargePeriod"
+)
+
 // Defines values for FinopsBillingReplaceSettingsRequestBodyBaseCostsOn.
 const (
 	FinopsBillingReplaceSettingsRequestBodyBaseCostsOnBilledCost    FinopsBillingReplaceSettingsRequestBodyBaseCostsOn = "billedCost"
@@ -132,7 +147,7 @@ type FinopsBillingCreateAzureCostAssignmentsRequestBody struct {
 	// BillingAccountId Azure billing account identifier.
 	BillingAccountId string `json:"billingAccountId"`
 
-	// Charges Distinct exact FOCUS description/frequency pairs with display metadata directly on each entry. All matching eligible rows are assigned regardless of display dimensions.
+	// Charges Distinct exact FOCUS description/frequency/productOrderId selections with display metadata directly on each entry. A non-null productOrderId matches the same source order; null or omitted matches any order. Other display dimensions do not narrow the selection.
 	Charges []FinopsBillingAzureCostAssignmentSelection `json:"charges"`
 
 	// TargetSubAccountId Destination subscription selected by the caller; billing-account parentage is not verified.
@@ -350,7 +365,7 @@ type FinopsBillingCreateRequestBody struct {
 	// IsCreateTemplate Whether to create a new invoice template from the template properties in this request, rather than link an existing one.
 	IsCreateTemplate *bool `json:"isCreateTemplate,omitempty"`
 
-	// Schedule When a scheduled invoice fires. Deliberately not RFC-5545 RRULE, mirroring the finops/customizations Invoice Schedules resource this exposes.
+	// Schedule When a scheduled invoice fires. Deliberately not RFC-5545 RRULE.
 	Schedule FinopsBillingBillingInvoiceScheduleCadence `json:"schedule"`
 
 	// ScheduleName Human-readable name for the schedule.
@@ -598,6 +613,33 @@ type FinopsBillingCreateRuleRequestBody struct {
 	VolumeDiscounts *FinopsBillingRemoveAzureLicenseCostsSettings `json:"volumeDiscounts,omitempty"`
 }
 
+// FinopsBillingCurrencyContextRequestBody defines model for FinopsBilling_CurrencyContextRequestBody.
+type FinopsBillingCurrencyContextRequestBody struct {
+	// CostMetric Invoice cost metric.
+	CostMetric FinopsBillingCurrencyContextRequestBodyCostMetric `json:"costMetric"`
+
+	// Customers Customers whose currency context is requested.
+	Customers []FinopsBillingBillingInvoiceCurrencyContextCustomer `json:"customers"`
+
+	// EndDate Invoice range end date.
+	EndDate openapi_types.Date `json:"endDate"`
+
+	// Filter A single filter node: a leaf test (equal, substring) or a boolean combinator (and, or, not).
+	Filter *FinopsBillingFilterV1 `json:"filter,omitempty"`
+
+	// PeriodType Invoice period type.
+	PeriodType FinopsBillingCurrencyContextRequestBodyPeriodType `json:"periodType"`
+
+	// StartDate Invoice range start date.
+	StartDate openapi_types.Date `json:"startDate"`
+}
+
+// FinopsBillingCurrencyContextRequestBodyCostMetric Invoice cost metric.
+type FinopsBillingCurrencyContextRequestBodyCostMetric string
+
+// FinopsBillingCurrencyContextRequestBodyPeriodType Invoice period type.
+type FinopsBillingCurrencyContextRequestBodyPeriodType string
+
 // FinopsBillingReorderRequestBody defines model for FinopsBilling_ReorderRequestBody.
 type FinopsBillingReorderRequestBody struct {
 	// Rules List of rules whose priority is changing, with their new priorities.
@@ -666,7 +708,7 @@ type FinopsBillingUpdateRequestBody struct {
 	// IsCreateTemplate Whether to create a new invoice template from the template properties in this request, rather than link an existing one.
 	IsCreateTemplate *bool `json:"isCreateTemplate,omitempty"`
 
-	// Schedule When a scheduled invoice fires. Deliberately not RFC-5545 RRULE, mirroring the finops/customizations Invoice Schedules resource this exposes.
+	// Schedule When a scheduled invoice fires. Deliberately not RFC-5545 RRULE.
 	Schedule *FinopsBillingBillingInvoiceScheduleCadence `json:"schedule,omitempty"`
 
 	// ScheduleName Updated name.
@@ -1448,6 +1490,9 @@ type FinopsBillingInvoiceTemplatesUpdateJSONRequestBody = FinopsBillingUpdateReq
 
 // FinopsBillingInvoicesCreateJSONRequestBody defines body for FinopsBillingInvoicesCreate for application/json ContentType.
 type FinopsBillingInvoicesCreateJSONRequestBody = FinopsBillingCreateRequestBody3
+
+// FinopsBillingInvoicesCurrencyContextJSONRequestBody defines body for FinopsBillingInvoicesCurrencyContext for application/json ContentType.
+type FinopsBillingInvoicesCurrencyContextJSONRequestBody = FinopsBillingCurrencyContextRequestBody
 
 // FinopsBillingBillingOrphansCreateAzureCostAssignmentsJSONRequestBody defines body for FinopsBillingBillingOrphansCreateAzureCostAssignments for application/json ContentType.
 type FinopsBillingBillingOrphansCreateAzureCostAssignmentsJSONRequestBody = FinopsBillingCreateAzureCostAssignmentsRequestBody
@@ -2249,6 +2294,30 @@ func (c *Client) FinopsBillingInvoicesCreateWithBody(ctx context.Context, orgId 
 
 func (c *Client) FinopsBillingInvoicesCreate(ctx context.Context, orgId int, body FinopsBillingInvoicesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewFinopsBillingInvoicesCreateRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoicesCurrencyContextWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoicesCurrencyContextRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsBillingInvoicesCurrencyContext(ctx context.Context, orgId int, body FinopsBillingInvoicesCurrencyContextJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsBillingInvoicesCurrencyContextRequest(c.Server, orgId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -5655,6 +5724,53 @@ func NewFinopsBillingInvoicesCreateRequestWithBody(server string, orgId int, con
 	}
 
 	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/invoices", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFinopsBillingInvoicesCurrencyContextRequest calls the generic FinopsBillingInvoicesCurrencyContext builder with application/json body
+func NewFinopsBillingInvoicesCurrencyContextRequest(server string, orgId int, body FinopsBillingInvoicesCurrencyContextJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsBillingInvoicesCurrencyContextRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewFinopsBillingInvoicesCurrencyContextRequestWithBody generates requests for FinopsBillingInvoicesCurrencyContext with any type of body
+func NewFinopsBillingInvoicesCurrencyContextRequestWithBody(server string, orgId int, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-billing/v1/orgs/%s/invoices/currency-context", pathParam0)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
