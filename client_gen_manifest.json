@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "source": "unified-openapi/openapi3.json",
-  "sourceSha256": "1f7d2d6719e31c0e39edbd0bad43aaa1f9e2e6f01318ca0660ff67734dfb419c",
+  "sourceSha256": "db567e020c3c07b46353362ddeee2aacb433abfc7cb34f77aa8d5d2e28c24bb6",
   "generator": "github.com/oapi-codegen/oapi-codegen/v2 version v2.7.1",
   "package": "flexera",
   "files": [
@@ -19,11 +19,11 @@
     },
     {
       "path": "client_gen_services.go",
-      "sha256": "af560879c9f87d76897180b98938cddb3965d05a742b4b15bfe4d4119fa962e4",
+      "sha256": "c40f1706637f7acc6ef4b2716f0f88fd2a8ff84c4a50d20275ae8d8fa12328ed",
       "namespace": "meta",
       "concern": "services",
-      "lines": 687,
-      "bytes": 69189,
+      "lines": 688,
+      "bytes": 69308,
       "declarations": [
         "ServiceAuth",
         "ServiceBillAnalysis",
@@ -1641,11 +1641,11 @@
     },
     {
       "path": "client_gen_core.go",
-      "sha256": "165799bba96bb31e301ab6f0d0ccfe9f17c2ef45ed0e1f05c9534e7b044ee4b9",
+      "sha256": "bce82509530e46b15d3a8600d1edbf229ca3f4ab1de6be42836e0f88ac48c6ea",
       "namespace": "core",
       "concern": "core",
-      "lines": 4858,
-      "bytes": 429448,
+      "lines": 4868,
+      "bytes": 430396,
       "declarations": [
         "Client",
         "ClientInterface",
@@ -2648,12 +2648,12 @@
     },
     {
       "path": "client_gen_finops_billing_models.go",
-      "sha256": "889cf56bd24e418411bcb81b2bada07e12b0b661dfc5e123cfa5f5831e86ba37",
+      "sha256": "15f55b87197657ae40690dedb6aa88c7b0b7b75e1054f7ab04608109a29c8578",
       "namespace": "FinopsBilling",
       "sourceSpecId": "flexera-finops-billing-v1",
       "concern": "models",
-      "lines": 5853,
-      "bytes": 280200,
+      "lines": 6039,
+      "bytes": 291978,
       "declarations": [
         "FinopsBillingAdjustmentCondition",
         "FinopsBillingAdjustmentConditionType",
@@ -2776,6 +2776,18 @@
         "FinopsBillingAzureUnallocatedChargesPageKind",
         "FinopsBillingAzureUnallocatedChargesPageKindFinopsBillingAzureUnallocatedChargeList",
         "FinopsBillingBillingInvoiceCollection",
+        "FinopsBillingBillingInvoiceConversionAcknowledgement",
+        "FinopsBillingBillingInvoiceConversionRate",
+        "FinopsBillingBillingInvoiceCurrencyContext",
+        "FinopsBillingBillingInvoiceCurrencyContextCustomer",
+        "FinopsBillingBillingInvoiceCurrencyContextCustomerResult",
+        "FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatus",
+        "FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatusFailed",
+        "FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatusNoCostData",
+        "FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatusResolved",
+        "FinopsBillingBillingInvoiceCurrencyContextError",
+        "FinopsBillingBillingInvoiceCurrencyConversion",
+        "FinopsBillingBillingInvoiceCurrencyTarget",
         "FinopsBillingBillingInvoiceCustomer",
         "FinopsBillingBillingInvoiceDeliveryFailure",
         "FinopsBillingBillingInvoiceExportArtifact",
@@ -3209,18 +3221,21 @@
         "Valid",
         "Valid",
         "Valid",
+        "Valid",
+        "Valid",
+        "Valid",
         "Valid"
       ],
-      "declarationCount": 555
+      "declarationCount": 570
     },
     {
       "path": "client_gen_finops_billing_operations.go",
-      "sha256": "e5b3a3ba61b51dd8c34a86557adbe7a3c9587f8a29b0dccf04e26990e222d5ba",
+      "sha256": "322f353013e08907fa359be76854b95bd3f3066385b30dd2a035dfc19a557fae",
       "namespace": "FinopsBilling",
       "sourceSpecId": "flexera-finops-billing-v1",
       "concern": "operations",
-      "lines": 6767,
-      "bytes": 268863,
+      "lines": 6883,
+      "bytes": 273854,
       "declarations": [
         "FinopsBillingBillingAuditIndexAuditResults",
         "FinopsBillingBillingAuditIndexAuditResultsJSONRequestBody",
@@ -3360,6 +3375,16 @@
         "FinopsBillingCreateRequestBody3PeriodTypeChargePeriod",
         "FinopsBillingCreateRequestBody4",
         "FinopsBillingCreateRuleRequestBody",
+        "FinopsBillingCurrencyContextRequestBody",
+        "FinopsBillingCurrencyContextRequestBodyCostMetric",
+        "FinopsBillingCurrencyContextRequestBodyCostMetricBilledCost",
+        "FinopsBillingCurrencyContextRequestBodyCostMetricEffectiveCost",
+        "FinopsBillingCurrencyContextRequestBodyCostMetricModifiedBilledCost",
+        "FinopsBillingCurrencyContextRequestBodyCostMetricModifiedEffectiveCost",
+        "FinopsBillingCurrencyContextRequestBodyPeriodType",
+        "FinopsBillingCurrencyContextRequestBodyPeriodTypeBillPeriod",
+        "FinopsBillingCurrencyContextRequestBodyPeriodTypeBillingPeriod",
+        "FinopsBillingCurrencyContextRequestBodyPeriodTypeChargePeriod",
         "FinopsBillingInvoiceScheduleInvoicesIndex",
         "FinopsBillingInvoiceScheduleInvoicesIndexParams",
         "FinopsBillingInvoiceScheduleInvoicesShow",
@@ -3390,6 +3415,9 @@
         "FinopsBillingInvoicesCreate",
         "FinopsBillingInvoicesCreateJSONRequestBody",
         "FinopsBillingInvoicesCreateWithBody",
+        "FinopsBillingInvoicesCurrencyContext",
+        "FinopsBillingInvoicesCurrencyContextJSONRequestBody",
+        "FinopsBillingInvoicesCurrencyContextWithBody",
         "FinopsBillingInvoicesIndex",
         "FinopsBillingInvoicesIndexParams",
         "FinopsBillingInvoicesRetry",
@@ -3523,6 +3551,8 @@
         "NewFinopsBillingInvoiceTemplatesUpdateRequestWithBody",
         "NewFinopsBillingInvoicesCreateRequest",
         "NewFinopsBillingInvoicesCreateRequestWithBody",
+        "NewFinopsBillingInvoicesCurrencyContextRequest",
+        "NewFinopsBillingInvoicesCurrencyContextRequestWithBody",
         "NewFinopsBillingInvoicesIndexRequest",
         "NewFinopsBillingInvoicesRetryRequest",
         "NewFinopsBillingInvoicesShowRequest",
@@ -3542,17 +3572,18 @@
         "NewFinopsBillingSharedCostRulesUpdateRequestWithBody",
         "NewFinopsBillingSharedCostRulesUploadTelemetryRequestWithBody"
       ],
-      "declarationCount": 319
+      "declarationCount": 334
     },
     {
       "path": "client_gen_finops_billing_responses.go",
-      "sha256": "734214988486aebeeb964f63a7ccdb8252c1dd9fcc5e6a4496fd88aebc93b27e",
+      "sha256": "99bb99b9e6fb31fbc0cbdd8e9546a59e66eb83f5846ffb308a30876ed495e9bb",
       "namespace": "FinopsBilling",
       "sourceSpecId": "flexera-finops-billing-v1",
       "concern": "responses",
-      "lines": 4279,
-      "bytes": 156957,
+      "lines": 4352,
+      "bytes": 159642,
       "declarations": [
+        "ContentType",
         "ContentType",
         "ContentType",
         "ContentType",
@@ -3739,6 +3770,9 @@
         "FinopsBillingInvoicesCreateResponse",
         "FinopsBillingInvoicesCreateWithBodyWithResponse",
         "FinopsBillingInvoicesCreateWithResponse",
+        "FinopsBillingInvoicesCurrencyContextResponse",
+        "FinopsBillingInvoicesCurrencyContextWithBodyWithResponse",
+        "FinopsBillingInvoicesCurrencyContextWithResponse",
         "FinopsBillingInvoicesIndexResponse",
         "FinopsBillingInvoicesIndexWithResponse",
         "FinopsBillingInvoicesRetryResponse",
@@ -3830,6 +3864,7 @@
         "ParseFinopsBillingInvoiceTemplatesShowResponse",
         "ParseFinopsBillingInvoiceTemplatesUpdateResponse",
         "ParseFinopsBillingInvoicesCreateResponse",
+        "ParseFinopsBillingInvoicesCurrencyContextResponse",
         "ParseFinopsBillingInvoicesIndexResponse",
         "ParseFinopsBillingInvoicesRetryResponse",
         "ParseFinopsBillingInvoicesShowResponse",
@@ -3908,6 +3943,8 @@
         "Status",
         "Status",
         "Status",
+        "Status",
+        "StatusCode",
         "StatusCode",
         "StatusCode",
         "StatusCode",
@@ -3975,16 +4012,16 @@
         "Valid",
         "Valid"
       ],
-      "declarationCount": 421
+      "declarationCount": 428
     },
     {
       "path": "client_gen_finops_customizations_models.go",
-      "sha256": "1105c6a68d8114833cde16dad85e1615876e1dcc6cd55f6699f7b4ef79f7e5db",
+      "sha256": "1f874fdb612aa22ec3e0b7f406c9ef53882381d3185176f18f21a7b0e6548a01",
       "namespace": "FinopsCustomizations",
       "sourceSpecId": "flexera-finops-customizations-v1",
       "concern": "models",
-      "lines": 1678,
-      "bytes": 76023,
+      "lines": 1738,
+      "bytes": 79809,
       "declarations": [
         "FinopsCustomizationsCurrency",
         "FinopsCustomizationsCurrencyConversion",
@@ -4018,6 +4055,9 @@
         "FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummary",
         "FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryKind",
         "FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryKindFinopsSavedFilter",
+        "FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSource",
+        "FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSourceAnalyzeSpend",
+        "FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSourceInventory",
         "FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryVisibility",
         "FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryVisibilityPrivate",
         "FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryVisibilityShared",
@@ -4111,6 +4151,9 @@
         "FinopsCustomizationsSavedFilterHTTPBody",
         "FinopsCustomizationsSavedFilterHTTPBodyKind",
         "FinopsCustomizationsSavedFilterHTTPBodyKindFinopsSavedFilter",
+        "FinopsCustomizationsSavedFilterHTTPBodyPageSource",
+        "FinopsCustomizationsSavedFilterHTTPBodyPageSourceAnalyzeSpend",
+        "FinopsCustomizationsSavedFilterHTTPBodyPageSourceInventory",
         "FinopsCustomizationsSavedFilterHTTPBodyVisibility",
         "FinopsCustomizationsSavedFilterHTTPBodyVisibilityPrivate",
         "FinopsCustomizationsSavedFilterHTTPBodyVisibilityShared",
@@ -4166,21 +4209,27 @@
         "Valid",
         "Valid",
         "Valid",
+        "Valid",
+        "Valid",
+        "Valid",
         "Valid"
       ],
-      "declarationCount": 181
+      "declarationCount": 190
     },
     {
       "path": "client_gen_finops_customizations_operations.go",
-      "sha256": "c5db8ebab61b6bec00a49b5eed6d386126c472e7750164dd397d2de42529b2f0",
+      "sha256": "1ca8a90cab2be1dac90d22be845e9645bfd6813e3980ba725b45393de1779888",
       "namespace": "FinopsCustomizations",
       "sourceSpecId": "flexera-finops-customizations-v1",
       "concern": "operations",
-      "lines": 2271,
-      "bytes": 85915,
+      "lines": 2330,
+      "bytes": 90685,
       "declarations": [
         "FinopsCustomizationsCreateRequestBody",
         "FinopsCustomizationsCreateRequestBody2",
+        "FinopsCustomizationsCreateRequestBody2PageSource",
+        "FinopsCustomizationsCreateRequestBody2PageSourceAnalyzeSpend",
+        "FinopsCustomizationsCreateRequestBody2PageSourceInventory",
         "FinopsCustomizationsCreateRequestBody2Visibility",
         "FinopsCustomizationsCreateRequestBody2VisibilityPrivate",
         "FinopsCustomizationsCreateRequestBody2VisibilityShared",
@@ -4300,7 +4349,7 @@
         "NewFinopsCustomizationsTagDimensionUpdateRequestWithBody",
         "NewFinopsCustomizationsTagObservationIndexRequest"
       ],
-      "declarationCount": 120
+      "declarationCount": 123
     },
     {
       "path": "client_gen_finops_customizations_responses.go",
@@ -11263,12 +11312,12 @@
     },
     {
       "path": "client_gen_vis_models.go",
-      "sha256": "0761371b9414c6d70afc9302c2390cadda25ebac1e368fba5a3bb224c9a29da2",
+      "sha256": "0e815c5437095d40f2eb420b1d85d70daf4325f1545278b5e7da1776f40877e9",
       "namespace": "Vis",
       "sourceSpecId": "flexera-vis-v2",
       "concern": "models",
-      "lines": 278,
-      "bytes": 9751,
+      "lines": 280,
+      "bytes": 9821,
       "declarations": [
         "Valid",
         "Valid",
@@ -11298,12 +11347,12 @@
     },
     {
       "path": "client_gen_vis_operations.go",
-      "sha256": "da5a40d40a46f9b171f272d3e0c9997da26564774529934d2673f26ae92591bb",
+      "sha256": "445ee50008c3bb70d748314a2b37195622b873b7a643d8cf562400dc67a2ac07",
       "namespace": "Vis",
       "sourceSpecId": "flexera-vis-v2",
       "concern": "operations",
-      "lines": 678,
-      "bytes": 27642,
+      "lines": 679,
+      "bytes": 27766,
       "declarations": [
         "NewVisDeviceDeleteRequest",
         "NewVisDeviceDeleteRequestWithBody",
@@ -11321,6 +11370,7 @@
         "VisCreateRequestBodyQueryNameBusinessServicesApplications",
         "VisCreateRequestBodyQueryNameBusinessServicesAssets",
         "VisCreateRequestBodyQueryNameBusinessServicesDependentApplications",
+        "VisCreateRequestBodyQueryNameCellularNetworkInfo",
         "VisCreateRequestBodyQueryNameCpeCatalog",
         "VisCreateRequestBodyQueryNameDeviceMashup",
         "VisCreateRequestBodyQueryNameHardwareBusinessServices",
@@ -11376,7 +11426,7 @@
         "VisQueryDownloadParams",
         "VisQueryShow"
       ],
-      "declarationCount": 70
+      "declarationCount": 71
     },
     {
       "path": "client_gen_vis_responses.go",
@@ -11438,7 +11488,7 @@
     }
   ],
   "totalFiles": 61,
-  "totalLines": 145618,
-  "totalBytes": 5824984,
-  "totalDeclarations": 10703
+  "totalLines": 146126,
+  "totalBytes": 5854255,
+  "totalDeclarations": 10753
 }

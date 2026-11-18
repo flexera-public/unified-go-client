@@ -1474,6 +1474,36 @@ func (r FinopsBillingInvoicesCreateResponse) ContentType() string {
 	return ""
 }
 
+type FinopsBillingInvoicesCurrencyContextResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingBillingInvoiceCurrencyContext
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingInvoicesCurrencyContextResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingInvoicesCurrencyContextResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FinopsBillingInvoicesCurrencyContextResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type FinopsBillingInvoicesShowResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -2583,6 +2613,23 @@ func (c *ClientWithResponses) FinopsBillingInvoicesCreateWithResponse(ctx contex
 		return nil, err
 	}
 	return ParseFinopsBillingInvoicesCreateResponse(rsp)
+}
+
+// FinopsBillingInvoicesCurrencyContextWithBodyWithResponse request with arbitrary body returning *FinopsBillingInvoicesCurrencyContextResponse
+func (c *ClientWithResponses) FinopsBillingInvoicesCurrencyContextWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesCurrencyContextResponse, error) {
+	rsp, err := c.FinopsBillingInvoicesCurrencyContextWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoicesCurrencyContextResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingInvoicesCurrencyContextWithResponse(ctx context.Context, orgId int, body FinopsBillingInvoicesCurrencyContextJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesCurrencyContextResponse, error) {
+	rsp, err := c.FinopsBillingInvoicesCurrencyContext(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoicesCurrencyContextResponse(rsp)
 }
 
 // FinopsBillingInvoicesShowWithResponse request returning *FinopsBillingInvoicesShowResponse
@@ -3837,6 +3884,32 @@ func ParseFinopsBillingInvoicesCreateResponse(rsp *http.Response) (*FinopsBillin
 			return nil, err
 		}
 		response.JSON201 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingInvoicesCurrencyContextResponse parses an HTTP response from a FinopsBillingInvoicesCurrencyContextWithResponse call
+func ParseFinopsBillingInvoicesCurrencyContextResponse(rsp *http.Response) (*FinopsBillingInvoicesCurrencyContextResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingInvoicesCurrencyContextResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingBillingInvoiceCurrencyContext
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
 
 	}
 

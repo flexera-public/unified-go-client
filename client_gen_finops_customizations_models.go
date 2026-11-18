@@ -31,6 +31,18 @@ func (e FinopsCustomizationsCreateRequestBodyVisibility) Valid() bool {
 	}
 }
 
+// Valid indicates whether the value is a known member of the FinopsCustomizationsCreateRequestBody2PageSource enum.
+func (e FinopsCustomizationsCreateRequestBody2PageSource) Valid() bool {
+	switch e {
+	case FinopsCustomizationsCreateRequestBody2PageSourceAnalyzeSpend:
+		return true
+	case FinopsCustomizationsCreateRequestBody2PageSourceInventory:
+		return true
+	default:
+		return false
+	}
+}
+
 // Valid indicates whether the value is a known member of the FinopsCustomizationsCreateRequestBody2Visibility enum.
 func (e FinopsCustomizationsCreateRequestBody2Visibility) Valid() bool {
 	switch e {
@@ -178,6 +190,24 @@ const (
 func (e FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryKind) Valid() bool {
 	switch e {
 	case FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryKindFinopsSavedFilter:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSource.
+const (
+	FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSourceAnalyzeSpend FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSource = "analyzeSpend"
+	FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSourceInventory    FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSource = "inventory"
+)
+
+// Valid indicates whether the value is a known member of the FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSource enum.
+func (e FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSource) Valid() bool {
+	switch e {
+	case FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSourceAnalyzeSpend:
+		return true
+	case FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSourceInventory:
 		return true
 	default:
 		return false
@@ -604,6 +634,24 @@ func (e FinopsCustomizationsSavedFilterHTTPBodyKind) Valid() bool {
 	}
 }
 
+// Defines values for FinopsCustomizationsSavedFilterHTTPBodyPageSource.
+const (
+	FinopsCustomizationsSavedFilterHTTPBodyPageSourceAnalyzeSpend FinopsCustomizationsSavedFilterHTTPBodyPageSource = "analyzeSpend"
+	FinopsCustomizationsSavedFilterHTTPBodyPageSourceInventory    FinopsCustomizationsSavedFilterHTTPBodyPageSource = "inventory"
+)
+
+// Valid indicates whether the value is a known member of the FinopsCustomizationsSavedFilterHTTPBodyPageSource enum.
+func (e FinopsCustomizationsSavedFilterHTTPBodyPageSource) Valid() bool {
+	switch e {
+	case FinopsCustomizationsSavedFilterHTTPBodyPageSourceAnalyzeSpend:
+		return true
+	case FinopsCustomizationsSavedFilterHTTPBodyPageSourceInventory:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for FinopsCustomizationsSavedFilterHTTPBodyVisibility.
 const (
 	FinopsCustomizationsSavedFilterHTTPBodyVisibilityPrivate FinopsCustomizationsSavedFilterHTTPBodyVisibility = "private"
@@ -921,6 +969,9 @@ type FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummary struct {
 	// OwnerUserId User ID of the filter owner
 	OwnerUserId int `json:"ownerUserId"`
 
+	// PageSource Optional UI surface that created the saved filter: analyzeSpend or inventory. Omitted or null values remain unset for both private and shared filters and are returned as null. No server-side default is applied; clients may interpret null as analyzeSpend. Empty strings are not supported.
+	PageSource *FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSource `json:"pageSource,omitempty"`
+
 	// UpdatedAt ISO-8601 last-update timestamp
 	UpdatedAt time.Time `json:"updatedAt"`
 
@@ -930,6 +981,9 @@ type FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummary struct {
 
 // FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryKind The resource's type
 type FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryKind string
+
+// FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSource Optional UI surface that created the saved filter: analyzeSpend or inventory. Omitted or null values remain unset for both private and shared filters and are returned as null. No server-side default is applied; clients may interpret null as analyzeSpend. Empty strings are not supported.
+type FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSource string
 
 // FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryVisibility Filter visibility
 type FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryVisibility string
@@ -1611,6 +1665,9 @@ type FinopsCustomizationsSavedFilterHTTPBody struct {
 	// OwnerUserId User ID of the filter owner
 	OwnerUserId int `json:"ownerUserId"`
 
+	// PageSource Optional UI surface that created the saved filter: analyzeSpend or inventory. Omitted or null values remain unset for both private and shared filters and are returned as null. No server-side default is applied; clients may interpret null as analyzeSpend. Empty strings are not supported.
+	PageSource *FinopsCustomizationsSavedFilterHTTPBodyPageSource `json:"pageSource,omitempty"`
+
 	// UpdatedAt ISO-8601 last-update timestamp
 	UpdatedAt time.Time `json:"updatedAt"`
 
@@ -1620,6 +1677,9 @@ type FinopsCustomizationsSavedFilterHTTPBody struct {
 
 // FinopsCustomizationsSavedFilterHTTPBodyKind The resource's type
 type FinopsCustomizationsSavedFilterHTTPBodyKind string
+
+// FinopsCustomizationsSavedFilterHTTPBodyPageSource Optional UI surface that created the saved filter: analyzeSpend or inventory. Omitted or null values remain unset for both private and shared filters and are returned as null. No server-side default is applied; clients may interpret null as analyzeSpend. Empty strings are not supported.
+type FinopsCustomizationsSavedFilterHTTPBodyPageSource string
 
 // FinopsCustomizationsSavedFilterHTTPBodyVisibility Visibility scope: `private` = only visible to the owner; `shared` = visible to other users in the org.
 type FinopsCustomizationsSavedFilterHTTPBodyVisibility string

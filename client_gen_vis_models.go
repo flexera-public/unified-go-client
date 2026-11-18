@@ -17,6 +17,8 @@ func (e VisCreateRequestBodyQueryName) Valid() bool {
 		return true
 	case VisCreateRequestBodyQueryNameBusinessServicesDependentApplications:
 		return true
+	case VisCreateRequestBodyQueryNameCellularNetworkInfo:
+		return true
 	case VisCreateRequestBodyQueryNameCpeCatalog:
 		return true
 	case VisCreateRequestBodyQueryNameDeviceMashup:

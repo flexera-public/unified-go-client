@@ -248,6 +248,7 @@ var operationServices = map[string]Service{
 	"FinopsBilling_Invoice_Templates_show":                                                         ServiceFinopsBilling,
 	"FinopsBilling_Invoice_Templates_update":                                                       ServiceFinopsBilling,
 	"FinopsBilling_Invoices_create":                                                                ServiceFinopsBilling,
+	"FinopsBilling_Invoices_currencyContext":                                                       ServiceFinopsBilling,
 	"FinopsBilling_Invoices_index":                                                                 ServiceFinopsBilling,
 	"FinopsBilling_Invoices_retry":                                                                 ServiceFinopsBilling,
 	"FinopsBilling_Invoices_show":                                                                  ServiceFinopsBilling,
