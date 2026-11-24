@@ -27,6 +27,12 @@ const (
 	FinopsCustomizationsCreateRequestBodyVisibilityShared  FinopsCustomizationsCreateRequestBodyVisibility = "shared"
 )
 
+// Defines values for FinopsCustomizationsCreateRequestBody2PageSource.
+const (
+	FinopsCustomizationsCreateRequestBody2PageSourceAnalyzeSpend FinopsCustomizationsCreateRequestBody2PageSource = "analyzeSpend"
+	FinopsCustomizationsCreateRequestBody2PageSourceInventory    FinopsCustomizationsCreateRequestBody2PageSource = "inventory"
+)
+
 // Defines values for FinopsCustomizationsCreateRequestBody2Visibility.
 const (
 	FinopsCustomizationsCreateRequestBody2VisibilityPrivate FinopsCustomizationsCreateRequestBody2Visibility = "private"
@@ -39,10 +45,18 @@ const (
 	FinopsCustomizationsUpdateRequestBody2VisibilityShared  FinopsCustomizationsUpdateRequestBody2Visibility = "shared"
 )
 
-// Defines values for FinopsCustomizationsUpdateRequestBody3Visibility.
+// Defines values for FinopsCustomizationsUpdateRequestBody3Action.
 const (
-	FinopsCustomizationsUpdateRequestBody3VisibilityPrivate FinopsCustomizationsUpdateRequestBody3Visibility = "private"
-	FinopsCustomizationsUpdateRequestBody3VisibilityShared  FinopsCustomizationsUpdateRequestBody3Visibility = "shared"
+	FinopsCustomizationsUpdateRequestBody3ActionMute   FinopsCustomizationsUpdateRequestBody3Action = "mute"
+	FinopsCustomizationsUpdateRequestBody3ActionPause  FinopsCustomizationsUpdateRequestBody3Action = "pause"
+	FinopsCustomizationsUpdateRequestBody3ActionResume FinopsCustomizationsUpdateRequestBody3Action = "resume"
+	FinopsCustomizationsUpdateRequestBody3ActionUnmute FinopsCustomizationsUpdateRequestBody3Action = "unmute"
+)
+
+// Defines values for FinopsCustomizationsUpdateRequestBody4Visibility.
+const (
+	FinopsCustomizationsUpdateRequestBody4VisibilityPrivate FinopsCustomizationsUpdateRequestBody4Visibility = "private"
+	FinopsCustomizationsUpdateRequestBody4VisibilityShared  FinopsCustomizationsUpdateRequestBody4Visibility = "shared"
 )
 
 // FinopsCustomizationsCreateRequestBody defines model for FinopsCustomizations_CreateRequestBody.
@@ -95,9 +109,15 @@ type FinopsCustomizationsCreateRequestBody2 struct {
 	// Name Human-readable name for the filter
 	Name string `json:"name"`
 
+	// PageSource Optional UI surface that created the saved filter: analyzeSpend or inventory. Omitted or null values remain unset for both private and shared filters and are returned as null. No server-side default is applied; clients may interpret null as analyzeSpend. Empty strings are not supported.
+	PageSource *FinopsCustomizationsCreateRequestBody2PageSource `json:"pageSource,omitempty"`
+
 	// Visibility Filter visibility scope
 	Visibility FinopsCustomizationsCreateRequestBody2Visibility `json:"visibility"`
 }
+
+// FinopsCustomizationsCreateRequestBody2PageSource Optional UI surface that created the saved filter: analyzeSpend or inventory. Omitted or null values remain unset for both private and shared filters and are returned as null. No server-side default is applied; clients may interpret null as analyzeSpend. Empty strings are not supported.
+type FinopsCustomizationsCreateRequestBody2PageSource string
 
 // FinopsCustomizationsCreateRequestBody2Visibility Filter visibility scope
 type FinopsCustomizationsCreateRequestBody2Visibility string
@@ -107,7 +127,7 @@ type FinopsCustomizationsCreateRequestBody3 struct {
 	// Name Name of the tag dimension to be displayed in the UI.
 	Name string `json:"name"`
 
-	// Tags Specifies the resource tag keys used to derive values for this dimension. If a resource has multiple matching tags, the value from the earliest listed tag is used.
+	// Tags Specifies tag keys used to derive values for this dimension. Entries with an explicit priority are checked first in ascending numeric order; entries with the same priority are checked in the order listed. Entries without a priority are checked after all explicitly prioritized entries, in alphabetical order by key; exact ties retain their listed order. This ordering also applies when all priorities are omitted.
 	Tags []FinopsCustomizationsTagDimensionTag `json:"tags"`
 }
 
@@ -152,6 +172,15 @@ type FinopsCustomizationsUpdateRequestBody2Visibility string
 
 // FinopsCustomizationsUpdateRequestBody3 defines model for FinopsCustomizations_UpdateRequestBody3.
 type FinopsCustomizationsUpdateRequestBody3 struct {
+	// Action Action to apply to the report subscription.
+	Action FinopsCustomizationsUpdateRequestBody3Action `json:"action"`
+}
+
+// FinopsCustomizationsUpdateRequestBody3Action Action to apply to the report subscription.
+type FinopsCustomizationsUpdateRequestBody3Action string
+
+// FinopsCustomizationsUpdateRequestBody4 defines model for FinopsCustomizations_UpdateRequestBody4.
+type FinopsCustomizationsUpdateRequestBody4 struct {
 	// BillingCenterIds Optional list of Billing Center IDs to store with the filter (max 100). Full-replace semantics apply to the caller's own Billing Centers; IDs the caller is not entitled to see are dropped from the request and preserved from the stored filter. The filter stores at most 100 Billing Centers in total, including preserved ones the caller cannot see: if preserved IDs cause the resulting list to exceed 100, the request is rejected with 422; a request containing more than 100 submitted IDs is invalid and rejected with 400.
 	BillingCenterIds *[]string `json:"billingCenterIds,omitempty"`
 
@@ -171,11 +200,11 @@ type FinopsCustomizationsUpdateRequestBody3 struct {
 	Name string `json:"name"`
 
 	// Visibility Filter visibility scope
-	Visibility FinopsCustomizationsUpdateRequestBody3Visibility `json:"visibility"`
+	Visibility FinopsCustomizationsUpdateRequestBody4Visibility `json:"visibility"`
 }
 
-// FinopsCustomizationsUpdateRequestBody3Visibility Filter visibility scope
-type FinopsCustomizationsUpdateRequestBody3Visibility string
+// FinopsCustomizationsUpdateRequestBody4Visibility Filter visibility scope
+type FinopsCustomizationsUpdateRequestBody4Visibility string
 
 // FinopsCustomizationsReportSubscriptionsIndexParams defines parameters for FinopsCustomizationsReportSubscriptionsIndex.
 type FinopsCustomizationsReportSubscriptionsIndexParams struct {
@@ -202,6 +231,12 @@ type FinopsCustomizationsReportSubscriptionsUpdateParams struct {
 	IfMatch *string `json:"If-Match,omitempty"`
 }
 
+// FinopsCustomizationsReportSubscriptionsStatusUpdateParams defines parameters for FinopsCustomizationsReportSubscriptionsStatusUpdate.
+type FinopsCustomizationsReportSubscriptionsStatusUpdateParams struct {
+	// IfMatch Report subscription ETag. Required for pause and resume; optional for mute and unmute.
+	IfMatch *string `json:"If-Match,omitempty"`
+}
+
 // FinopsCustomizationsSavedFiltersIndexParams defines parameters for FinopsCustomizationsSavedFiltersIndex.
 type FinopsCustomizationsSavedFiltersIndexParams struct {
 	// SkipToken An opaque token to be provided when requesting a subsequent page after receiving a partial response.
@@ -211,9 +246,44 @@ type FinopsCustomizationsSavedFiltersIndexParams struct {
 	// Limit Page size (default 10, max 200)
 	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
 
-	// OrderBy Optional orderBy query allows to specify an expression for determining what values are used to order the entities.
-	// Multiple expressions can be specified using comma separated values.
+	// OrderBy Optional comma-separated list of field [asc|desc] sort clauses. The default is name asc.
+	//
+	// Supported fields: pageSource, name, visibility, createdAt, updatedAt, and modified (alias for updatedAt).
+	// Field names and directions are case-insensitive. Direction defaults to asc.
+	// Multiple clauses are honored in order as tie-breakers. Single-clause requests retain the existing name asc secondary sort; id asc is the final tie-breaker.
+	// Matching favorites always appear first in the order supplied in favoriteIds, regardless of this sort; the requested sort applies to non-favorites.
+	// Unsupported fields, invalid directions, and malformed expressions return HTTP 400 with invalid_order_by.
+	// This query parameter retains the existing public name orderBy and must be URL-encoded.
 	OrderBy *string `form:"orderBy,omitempty" json:"orderBy,omitempty"`
+
+	// Filter Optional OData-style filter expression on saved filter metadata.
+	//
+	// | Field | Allowed Operators | Example |
+	// | --- | --- | --- |
+	// | pageSource | eq ne co nc sw ew in ni lt le gt ge ex | pageSource eq 'analyzeSpend' |
+	// | visibility | eq ne co nc sw ew in ni lt le gt ge ex | visibility eq 'shared' |
+	// | name | eq ne co nc sw ew in ni lt le gt ge ex | name co 'Monthly' |
+	// | description | eq ne co nc sw ew in ni lt le gt ge ex | description eq null |
+	// | id | eq ne co nc sw ew in ni lt le gt ge ex | id in ['550e8400-e29b-41d4-a716-446655440000'] |
+	// | ownerUserId | eq ne in ni lt le gt ge ex | ownerUserId eq 123 |
+	// | createdAt | eq ne in ni lt le gt ge | createdAt ge '2026-01-01T00:00:00Z' |
+	// | updatedAt | eq ne in ni lt le gt ge | updatedAt lt '2026-12-01T00:00:00Z' |
+	//
+	// ### Filter Notes
+	// - Combine expressions with and, or, not, and parentheses.
+	// - Attribute names and operator names are case-insensitive; string values are case-sensitive.
+	// - String literals must be single-quoted. Escape an apostrophe by doubling it.
+	// - co/nc mean contains/not contains; sw/ew mean starts with/ends with; in/ni take lists; ex takes a boolean to test whether a field exists in storage.
+	// - Use unquoted null to match unset or null values (including legacy records): pageSource eq null. An empty string is distinct from null.
+	// - Supported pageSource values on create are analyzeSpend and inventory. Visibility values are private and shared.
+	// - Owner IDs are unquoted integers. Filtering by ownerUserId does not grant access to another user's private filters.
+	// - Date values are quoted RFC3339 timestamps. Timezone offsets are normalized to UTC; fractional-second range boundaries are supported against the stored whole-second UTC timestamps.
+	// - Filters only narrow the caller's existing organization and visibility scope; soft-deleted records are excluded.
+	// - Filtering applies to favorites too. Only matching favorites are included, first in the order supplied in favoriteIds, followed by matching non-favorites in the requested sort order.
+	// - Invalid expressions, incompatible values, and unsupported fields or operators return HTTP 400 with invalid_filter.
+	// - This query parameter is named filter and must be URL-encoded. The filter attribute in a saved filter's JSON body is separate: it contains the saved FOCUS filter configuration.
+	// - Pagination uses limit and skipToken (not $top or $skip). Filter, sort, visibility, and favorite criteria are preserved in the opaque pagination token.
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
 
 	// Visibility Optional visibility filter for results.
 	Visibility *FinopsCustomizationsSavedFiltersIndexParamsVisibility `form:"visibility,omitempty" json:"visibility,omitempty"`
@@ -261,7 +331,7 @@ type FinopsCustomizationsTagObservationIndexParams struct {
 	// - The 'eq', 'ne', and 'in' operators use exact, case-sensitive matching.
 	// - String literals must be single-quoted. Escape an apostrophe by doubling it.
 	// - Supported provider values are 'aws', 'azure', and 'gcp'.
-	// - Supported sourceType values are 'awsResourceTag', 'awsCostAllocationTag', 'azureResourceTag', and 'gcpResourceLabel'.
+	// - Supported sourceType values are 'awsResourceTag', 'awsCostAllocationTag', 'awsAccountTag', 'awsOuTag', 'awsRootTag', 'azureResourceTag', 'azureSubscriptionTag', 'azureResourceGroupTag', and 'gcpResourceLabel'.
 	// - To search all tag-key representations, combine 'co' expressions for qualifiedKey, key, and normalizedKey using 'or'.
 	// - Unsupported fields, unsupported operators, and invalid expressions return HTTP 400.
 	// - Filter is a query parameter and must be URL-encoded.
@@ -284,6 +354,9 @@ type FinopsCustomizationsReportSubscriptionsCreateJSONRequestBody = FinopsCustom
 // FinopsCustomizationsReportSubscriptionsUpdateJSONRequestBody defines body for FinopsCustomizationsReportSubscriptionsUpdate for application/json ContentType.
 type FinopsCustomizationsReportSubscriptionsUpdateJSONRequestBody = FinopsCustomizationsUpdateRequestBody2
 
+// FinopsCustomizationsReportSubscriptionsStatusUpdateJSONRequestBody defines body for FinopsCustomizationsReportSubscriptionsStatusUpdate for application/json ContentType.
+type FinopsCustomizationsReportSubscriptionsStatusUpdateJSONRequestBody = FinopsCustomizationsUpdateRequestBody3
+
 // FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionUpdateJSONRequestBody defines body for FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionUpdate for application/json ContentType.
 type FinopsCustomizationsRuleBasedDimensionRuleBasedDimensionUpdateJSONRequestBody = FinopsCustomizationsRuleBasedDimensionCreateRequestBody
 
@@ -300,7 +373,7 @@ type FinopsCustomizationsSavedFiltersCreateJSONRequestBody = FinopsCustomization
 type FinopsCustomizationsSavedFiltersPatchJSONRequestBody = FinopsCustomizationsPatchSavedFilterRequest
 
 // FinopsCustomizationsSavedFiltersUpdateJSONRequestBody defines body for FinopsCustomizationsSavedFiltersUpdate for application/json ContentType.
-type FinopsCustomizationsSavedFiltersUpdateJSONRequestBody = FinopsCustomizationsUpdateRequestBody3
+type FinopsCustomizationsSavedFiltersUpdateJSONRequestBody = FinopsCustomizationsUpdateRequestBody4
 
 // FinopsCustomizationsTagDimensionCreateJSONRequestBody defines body for FinopsCustomizationsTagDimensionCreate for application/json ContentType.
 type FinopsCustomizationsTagDimensionCreateJSONRequestBody = FinopsCustomizationsCreateRequestBody3
@@ -418,6 +491,30 @@ func (c *Client) FinopsCustomizationsReportSubscriptionsUpdateWithBody(ctx conte
 
 func (c *Client) FinopsCustomizationsReportSubscriptionsUpdate(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsUpdateParams, body FinopsCustomizationsReportSubscriptionsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewFinopsCustomizationsReportSubscriptionsUpdateRequest(c.Server, orgId, id, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsReportSubscriptionsStatusUpdateWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsStatusUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsReportSubscriptionsStatusUpdateRequestWithBody(c.Server, orgId, id, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FinopsCustomizationsReportSubscriptionsStatusUpdate(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsStatusUpdateParams, body FinopsCustomizationsReportSubscriptionsStatusUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFinopsCustomizationsReportSubscriptionsStatusUpdateRequest(c.Server, orgId, id, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1155,6 +1252,75 @@ func NewFinopsCustomizationsReportSubscriptionsUpdateRequestWithBody(server stri
 	return req, nil
 }
 
+// NewFinopsCustomizationsReportSubscriptionsStatusUpdateRequest calls the generic FinopsCustomizationsReportSubscriptionsStatusUpdate builder with application/json body
+func NewFinopsCustomizationsReportSubscriptionsStatusUpdateRequest(server string, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsStatusUpdateParams, body FinopsCustomizationsReportSubscriptionsStatusUpdateJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFinopsCustomizationsReportSubscriptionsStatusUpdateRequestWithBody(server, orgId, id, params, "application/json", bodyReader)
+}
+
+// NewFinopsCustomizationsReportSubscriptionsStatusUpdateRequestWithBody generates requests for FinopsCustomizationsReportSubscriptionsStatusUpdate with any type of body
+func NewFinopsCustomizationsReportSubscriptionsStatusUpdateRequestWithBody(server string, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsStatusUpdateParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/finops-customizations/v1/orgs/%s/report-subscriptions/%s/status", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPatch, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	if params != nil {
+
+		if params.IfMatch != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithOptions("simple", false, "If-Match", *params.IfMatch, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationHeader, Type: "string", Format: ""})
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("If-Match", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
 // NewFinopsCustomizationsRuleBasedDimensionIndexRequest generates requests for FinopsCustomizationsRuleBasedDimensionIndex
 func NewFinopsCustomizationsRuleBasedDimensionIndexRequest(server string, orgId int) (*http.Request, error) {
 	var err error
@@ -1639,6 +1805,18 @@ func NewFinopsCustomizationsSavedFiltersIndexRequest(server string, orgId int, p
 		if params.OrderBy != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "orderBy", *params.OrderBy, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter", *params.Filter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {

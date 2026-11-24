@@ -223,6 +223,36 @@ func (r FinopsCustomizationsReportSubscriptionsUpdateResponse) ContentType() str
 	return ""
 }
 
+type FinopsCustomizationsReportSubscriptionsStatusUpdateResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsCustomizationsReportSubscriptionResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsCustomizationsReportSubscriptionsStatusUpdateResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsCustomizationsReportSubscriptionsStatusUpdateResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FinopsCustomizationsReportSubscriptionsStatusUpdateResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type FinopsCustomizationsRuleBasedDimensionIndexResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -933,6 +963,23 @@ func (c *ClientWithResponses) FinopsCustomizationsReportSubscriptionsUpdateWithR
 	return ParseFinopsCustomizationsReportSubscriptionsUpdateResponse(rsp)
 }
 
+// FinopsCustomizationsReportSubscriptionsStatusUpdateWithBodyWithResponse request with arbitrary body returning *FinopsCustomizationsReportSubscriptionsStatusUpdateResponse
+func (c *ClientWithResponses) FinopsCustomizationsReportSubscriptionsStatusUpdateWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsStatusUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsStatusUpdateResponse, error) {
+	rsp, err := c.FinopsCustomizationsReportSubscriptionsStatusUpdateWithBody(ctx, orgId, id, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsReportSubscriptionsStatusUpdateResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsCustomizationsReportSubscriptionsStatusUpdateWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsStatusUpdateParams, body FinopsCustomizationsReportSubscriptionsStatusUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsStatusUpdateResponse, error) {
+	rsp, err := c.FinopsCustomizationsReportSubscriptionsStatusUpdate(ctx, orgId, id, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsCustomizationsReportSubscriptionsStatusUpdateResponse(rsp)
+}
+
 // FinopsCustomizationsRuleBasedDimensionIndexWithResponse request returning *FinopsCustomizationsRuleBasedDimensionIndexResponse
 func (c *ClientWithResponses) FinopsCustomizationsRuleBasedDimensionIndexWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsCustomizationsRuleBasedDimensionIndexResponse, error) {
 	rsp, err := c.FinopsCustomizationsRuleBasedDimensionIndex(ctx, orgId, reqEditors...)
@@ -1341,6 +1388,32 @@ func ParseFinopsCustomizationsReportSubscriptionsUpdateResponse(rsp *http.Respon
 	}
 
 	response := &FinopsCustomizationsReportSubscriptionsUpdateResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsCustomizationsReportSubscriptionResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsCustomizationsReportSubscriptionsStatusUpdateResponse parses an HTTP response from a FinopsCustomizationsReportSubscriptionsStatusUpdateWithResponse call
+func ParseFinopsCustomizationsReportSubscriptionsStatusUpdateResponse(rsp *http.Response) (*FinopsCustomizationsReportSubscriptionsStatusUpdateResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsCustomizationsReportSubscriptionsStatusUpdateResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}

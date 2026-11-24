@@ -7,6 +7,24 @@ import (
 	"fmt"
 )
 
+// Defines values for UobsDatabricksOnboardingUpdateRequestIncludeCostAndUsage.
+const (
+	UobsDatabricksOnboardingUpdateRequestIncludeCostAndUsageFalse UobsDatabricksOnboardingUpdateRequestIncludeCostAndUsage = "false"
+	UobsDatabricksOnboardingUpdateRequestIncludeCostAndUsageTrue  UobsDatabricksOnboardingUpdateRequestIncludeCostAndUsage = "true"
+)
+
+// Valid indicates whether the value is a known member of the UobsDatabricksOnboardingUpdateRequestIncludeCostAndUsage enum.
+func (e UobsDatabricksOnboardingUpdateRequestIncludeCostAndUsage) Valid() bool {
+	switch e {
+	case UobsDatabricksOnboardingUpdateRequestIncludeCostAndUsageFalse:
+		return true
+	case UobsDatabricksOnboardingUpdateRequestIncludeCostAndUsageTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UobsGcpOnboardingUpdateRequestIncludeCostAndUsage.
 const (
 	UobsGcpOnboardingUpdateRequestIncludeCostAndUsageFalse UobsGcpOnboardingUpdateRequestIncludeCostAndUsage = "false"
@@ -23,6 +41,72 @@ func (e UobsGcpOnboardingUpdateRequestIncludeCostAndUsage) Valid() bool {
 	default:
 		return false
 	}
+}
+
+// UobsDatabricksOnboardingCreateRequest defines model for Uobs_DatabricksOnboardingCreateRequest.
+type UobsDatabricksOnboardingCreateRequest struct {
+	// AccountId Databricks account ID (UUID).
+	AccountId string `json:"AccountId"`
+
+	// ClientId Service principal client (application) ID.
+	ClientId string `json:"ClientId"`
+
+	// ClientSecret Service principal OAuth secret generated in Databricks.
+	ClientSecret string `json:"ClientSecret"`
+
+	// ConnectorName Connector name.
+	ConnectorName string `json:"ConnectorName"`
+
+	// IncludeCostAndUsage Must be 'true': Cost and Usage is the only Databricks product.
+	IncludeCostAndUsage string `json:"IncludeCostAndUsage"`
+
+	// SqlWarehouseId ID of the SQL warehouse Flexera runs its queries on.
+	SqlWarehouseId string `json:"SqlWarehouseId"`
+
+	// WorkspaceUrl URL of a Databricks workspace in the account, e.g. https://adb-123.4.azuredatabricks.net.
+	WorkspaceUrl string `json:"WorkspaceUrl"`
+}
+
+// UobsDatabricksOnboardingUpdateRequest defines model for Uobs_DatabricksOnboardingUpdateRequest.
+type UobsDatabricksOnboardingUpdateRequest struct {
+	// ClientId New service principal client ID. Supply with ClientSecret.
+	ClientId *string `json:"ClientId,omitempty"`
+
+	// ClientSecret New service principal secret. Supply with ClientId.
+	ClientSecret *string `json:"ClientSecret,omitempty"`
+
+	// ConnectorName Connector name.
+	ConnectorName *string `json:"ConnectorName,omitempty"`
+
+	// IncludeCostAndUsage Enable or disable Cost and Usage for this connector.
+	IncludeCostAndUsage *UobsDatabricksOnboardingUpdateRequestIncludeCostAndUsage `json:"IncludeCostAndUsage,omitempty"`
+
+	// SqlWarehouseId SQL warehouse ID.
+	SqlWarehouseId *string `json:"SqlWarehouseId,omitempty"`
+
+	// WorkspaceUrl Workspace URL.
+	WorkspaceUrl *string `json:"WorkspaceUrl,omitempty"`
+}
+
+// UobsDatabricksOnboardingUpdateRequestIncludeCostAndUsage Enable or disable Cost and Usage for this connector.
+type UobsDatabricksOnboardingUpdateRequestIncludeCostAndUsage string
+
+// UobsDatabricksValidateRequest defines model for Uobs_DatabricksValidateRequest.
+type UobsDatabricksValidateRequest struct {
+	// AccountId Databricks account ID (UUID).
+	AccountId string `json:"AccountId"`
+
+	// ClientId Service principal client (application) ID.
+	ClientId string `json:"ClientId"`
+
+	// ClientSecret Service principal OAuth secret generated in Databricks.
+	ClientSecret string `json:"ClientSecret"`
+
+	// SqlWarehouseId ID of the SQL warehouse Flexera runs its queries on.
+	SqlWarehouseId string `json:"SqlWarehouseId"`
+
+	// WorkspaceUrl URL of a Databricks workspace in the account, e.g. https://adb-123.4.azuredatabricks.net.
+	WorkspaceUrl string `json:"WorkspaceUrl"`
 }
 
 // UobsGcpCostAndUsageCreateRequest defines model for Uobs_GcpCostAndUsageCreateRequest.
@@ -221,7 +305,7 @@ type UobsSnowflakeValidateRequest struct {
 // unreachable, vendor timeout) — the HTTP status reflects the call to us, the
 // verdict lives here.
 type UobsValidationResult struct {
-	// Code On failure, the vendor's real HTTP status (e.g. 401/403), or 502 (could not reach the vendor) / 504 (vendor timed out). Absent on success.
+	// Code On failure, the vendor's real HTTP status (e.g. 401/403), or 502 (could not reach the vendor) / 504 (vendor timed out). Absent on success, and when the credentials work but a vendor account setting blocks the connector.
 	Code *int `json:"code,omitempty"`
 
 	// Detail On failure, the specific vendor/handler detail (secret-free). Absent on success.

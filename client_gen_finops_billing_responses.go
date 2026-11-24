@@ -876,6 +876,36 @@ func (r FinopsBillingBillingAuditIndexAuditResultsResponse) ContentType() string
 	return ""
 }
 
+type FinopsBillingBillingAuditShowCustomerImpactByRuleResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingShowCustomerRuleImpactResult
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingBillingAuditShowCustomerImpactByRuleResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingBillingAuditShowCustomerImpactByRuleResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FinopsBillingBillingAuditShowCustomerImpactByRuleResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type FinopsBillingBillingCreditsIndexCreditAssignmentsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -1468,6 +1498,36 @@ func (r FinopsBillingInvoicesCreateResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r FinopsBillingInvoicesCreateResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FinopsBillingInvoicesCurrencyContextResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FinopsBillingBillingInvoiceCurrencyContext
+}
+
+// Status returns HTTPResponse.Status
+func (r FinopsBillingInvoicesCurrencyContextResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FinopsBillingInvoicesCurrencyContextResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FinopsBillingInvoicesCurrencyContextResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -2349,6 +2409,15 @@ func (c *ClientWithResponses) FinopsBillingBillingAuditIndexAuditResultsWithResp
 	return ParseFinopsBillingBillingAuditIndexAuditResultsResponse(rsp)
 }
 
+// FinopsBillingBillingAuditShowCustomerImpactByRuleWithResponse request returning *FinopsBillingBillingAuditShowCustomerImpactByRuleResponse
+func (c *ClientWithResponses) FinopsBillingBillingAuditShowCustomerImpactByRuleWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingAuditShowCustomerImpactByRuleParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingAuditShowCustomerImpactByRuleResponse, error) {
+	rsp, err := c.FinopsBillingBillingAuditShowCustomerImpactByRule(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingBillingAuditShowCustomerImpactByRuleResponse(rsp)
+}
+
 // FinopsBillingBillingCreditsIndexCreditAssignmentsWithResponse request returning *FinopsBillingBillingCreditsIndexCreditAssignmentsResponse
 func (c *ClientWithResponses) FinopsBillingBillingCreditsIndexCreditAssignmentsWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingCreditsIndexCreditAssignmentsParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsIndexCreditAssignmentsResponse, error) {
 	rsp, err := c.FinopsBillingBillingCreditsIndexCreditAssignments(ctx, orgId, params, reqEditors...)
@@ -2583,6 +2652,23 @@ func (c *ClientWithResponses) FinopsBillingInvoicesCreateWithResponse(ctx contex
 		return nil, err
 	}
 	return ParseFinopsBillingInvoicesCreateResponse(rsp)
+}
+
+// FinopsBillingInvoicesCurrencyContextWithBodyWithResponse request with arbitrary body returning *FinopsBillingInvoicesCurrencyContextResponse
+func (c *ClientWithResponses) FinopsBillingInvoicesCurrencyContextWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesCurrencyContextResponse, error) {
+	rsp, err := c.FinopsBillingInvoicesCurrencyContextWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoicesCurrencyContextResponse(rsp)
+}
+
+func (c *ClientWithResponses) FinopsBillingInvoicesCurrencyContextWithResponse(ctx context.Context, orgId int, body FinopsBillingInvoicesCurrencyContextJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesCurrencyContextResponse, error) {
+	rsp, err := c.FinopsBillingInvoicesCurrencyContext(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFinopsBillingInvoicesCurrencyContextResponse(rsp)
 }
 
 // FinopsBillingInvoicesShowWithResponse request returning *FinopsBillingInvoicesShowResponse
@@ -3343,6 +3429,32 @@ func ParseFinopsBillingBillingAuditIndexAuditResultsResponse(rsp *http.Response)
 	return response, nil
 }
 
+// ParseFinopsBillingBillingAuditShowCustomerImpactByRuleResponse parses an HTTP response from a FinopsBillingBillingAuditShowCustomerImpactByRuleWithResponse call
+func ParseFinopsBillingBillingAuditShowCustomerImpactByRuleResponse(rsp *http.Response) (*FinopsBillingBillingAuditShowCustomerImpactByRuleResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingBillingAuditShowCustomerImpactByRuleResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingShowCustomerRuleImpactResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseFinopsBillingBillingCreditsIndexCreditAssignmentsResponse parses an HTTP response from a FinopsBillingBillingCreditsIndexCreditAssignmentsWithResponse call
 func ParseFinopsBillingBillingCreditsIndexCreditAssignmentsResponse(rsp *http.Response) (*FinopsBillingBillingCreditsIndexCreditAssignmentsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -3837,6 +3949,32 @@ func ParseFinopsBillingInvoicesCreateResponse(rsp *http.Response) (*FinopsBillin
 			return nil, err
 		}
 		response.JSON201 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFinopsBillingInvoicesCurrencyContextResponse parses an HTTP response from a FinopsBillingInvoicesCurrencyContextWithResponse call
+func ParseFinopsBillingInvoicesCurrencyContextResponse(rsp *http.Response) (*FinopsBillingInvoicesCurrencyContextResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FinopsBillingInvoicesCurrencyContextResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FinopsBillingBillingInvoiceCurrencyContext
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
 
 	}
 

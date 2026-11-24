@@ -731,6 +731,9 @@ type ClientInterface interface {
 
 	FinopsBillingBillingAuditIndexAuditResults(ctx context.Context, orgId int, body FinopsBillingBillingAuditIndexAuditResultsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// FinopsBillingBillingAuditShowCustomerImpactByRule request
+	FinopsBillingBillingAuditShowCustomerImpactByRule(ctx context.Context, orgId int, params *FinopsBillingBillingAuditShowCustomerImpactByRuleParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// FinopsBillingBillingCreditsIndexCreditAssignments request
 	FinopsBillingBillingCreditsIndexCreditAssignments(ctx context.Context, orgId int, params *FinopsBillingBillingCreditsIndexCreditAssignmentsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -804,6 +807,11 @@ type ClientInterface interface {
 	FinopsBillingInvoicesCreateWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	FinopsBillingInvoicesCreate(ctx context.Context, orgId int, body FinopsBillingInvoicesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsBillingInvoicesCurrencyContextWithBody request with any body
+	FinopsBillingInvoicesCurrencyContextWithBody(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsBillingInvoicesCurrencyContext(ctx context.Context, orgId int, body FinopsBillingInvoicesCurrencyContextJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// FinopsBillingInvoicesShow request
 	FinopsBillingInvoicesShow(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -895,6 +903,11 @@ type ClientInterface interface {
 	FinopsCustomizationsReportSubscriptionsUpdateWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	FinopsCustomizationsReportSubscriptionsUpdate(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsUpdateParams, body FinopsCustomizationsReportSubscriptionsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FinopsCustomizationsReportSubscriptionsStatusUpdateWithBody request with any body
+	FinopsCustomizationsReportSubscriptionsStatusUpdateWithBody(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsStatusUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	FinopsCustomizationsReportSubscriptionsStatusUpdate(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsStatusUpdateParams, body FinopsCustomizationsReportSubscriptionsStatusUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// FinopsCustomizationsRuleBasedDimensionIndex request
 	FinopsCustomizationsRuleBasedDimensionIndex(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -1163,6 +1176,15 @@ type ClientInterface interface {
 	// FnmsFileShow request
 	FnmsFileShow(ctx context.Context, orgId int64, filename string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// FnmsApplicationExecuteAsync request
+	FnmsApplicationExecuteAsync(ctx context.Context, orgId int64, params *FnmsApplicationExecuteAsyncParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsApplicationExecuteAsyncRetrieve request
+	FnmsApplicationExecuteAsyncRetrieve(ctx context.Context, orgId int64, jobId string, params *FnmsApplicationExecuteAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsApplicationExecuteAsyncStatus request
+	FnmsApplicationExecuteAsyncStatus(ctx context.Context, orgId int64, jobId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// FnmsInventoryIndex request
 	FnmsInventoryIndex(ctx context.Context, orgId int64, params *FnmsInventoryIndexParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -1172,11 +1194,47 @@ type ClientInterface interface {
 	// FnmsLicenseEntitlements request
 	FnmsLicenseEntitlements(ctx context.Context, orgId int64, params *FnmsLicenseEntitlementsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// FnmsLicensedApplicationExecuteAsync request
+	FnmsLicensedApplicationExecuteAsync(ctx context.Context, orgId int64, params *FnmsLicensedApplicationExecuteAsyncParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsLicensedApplicationExecuteAsyncRetrieve request
+	FnmsLicensedApplicationExecuteAsyncRetrieve(ctx context.Context, orgId int64, jobId string, params *FnmsLicensedApplicationExecuteAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsLicensedApplicationExecuteAsyncStatus request
+	FnmsLicensedApplicationExecuteAsyncStatus(ctx context.Context, orgId int64, jobId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsLicenseLicensesAsync request
+	FnmsLicenseLicensesAsync(ctx context.Context, orgId int64, params *FnmsLicenseLicensesAsyncParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsLicenseLicensesAsyncRetrieve request
+	FnmsLicenseLicensesAsyncRetrieve(ctx context.Context, orgId int64, jobId string, params *FnmsLicenseLicensesAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsLicenseLicensesAsyncStatus request
+	FnmsLicenseLicensesAsyncStatus(ctx context.Context, orgId int64, jobId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// FnmsLicenseAllocation request
 	FnmsLicenseAllocation(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseAllocationParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// FnmsLicenseConsumptionAsync request
+	FnmsLicenseConsumptionAsync(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseConsumptionAsyncParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsLicenseConsumptionAsyncRetrieve request
+	FnmsLicenseConsumptionAsyncRetrieve(ctx context.Context, orgId int64, licenseId string, jobId string, params *FnmsLicenseConsumptionAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsLicenseConsumptionAsyncStatus request
+	FnmsLicenseConsumptionAsyncStatus(ctx context.Context, orgId int64, licenseId string, jobId string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// FnmsLicenseDeallocation request
 	FnmsLicenseDeallocation(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseDeallocationParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsLicenseDevicesAsync request
+	FnmsLicenseDevicesAsync(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseDevicesAsyncParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsLicenseDevicesAsyncRetrieve request
+	FnmsLicenseDevicesAsyncRetrieve(ctx context.Context, orgId int64, licenseId string, jobId string, params *FnmsLicenseDevicesAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsLicenseDevicesAsyncStatus request
+	FnmsLicenseDevicesAsyncStatus(ctx context.Context, orgId int64, licenseId string, jobId string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// FnmsReportIndex request
 	FnmsReportIndex(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -1198,6 +1256,15 @@ type ClientInterface interface {
 
 	// FnmsSystemHealthGet request
 	FnmsSystemHealthGet(ctx context.Context, orgId int64, params *FnmsSystemHealthGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsSystemTasksExecuteAsync request
+	FnmsSystemTasksExecuteAsync(ctx context.Context, orgId int64, params *FnmsSystemTasksExecuteAsyncParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsSystemTasksExecuteAsyncRetrieve request
+	FnmsSystemTasksExecuteAsyncRetrieve(ctx context.Context, orgId int64, jobId string, params *FnmsSystemTasksExecuteAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FnmsSystemTasksExecuteAsyncStatus request
+	FnmsSystemTasksExecuteAsyncStatus(ctx context.Context, orgId int64, jobId string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// FnmsInstalledSoftwareV2CreateV2 request
 	FnmsInstalledSoftwareV2CreateV2(ctx context.Context, orgId int64, params *FnmsInstalledSoftwareV2CreateV2Params, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -2344,8 +2411,23 @@ type ClientInterface interface {
 	// UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGet request
 	UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGet(ctx context.Context, orgId string, identifier string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostWithBody request with any body
+	UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePost(ctx context.Context, orgId string, body UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDelete request
 	UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDelete(ctx context.Context, orgId string, params *UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostWithBody request with any body
+	UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPost(ctx context.Context, orgId string, body UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutWithBody request with any body
+	UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutWithBody(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPut(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostWithBody request with any body
 	UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -3111,6 +3193,9 @@ type ClientWithResponsesInterface interface {
 
 	FinopsBillingBillingAuditIndexAuditResultsWithResponse(ctx context.Context, orgId int, body FinopsBillingBillingAuditIndexAuditResultsJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingBillingAuditIndexAuditResultsResponse, error)
 
+	// FinopsBillingBillingAuditShowCustomerImpactByRuleWithResponse request
+	FinopsBillingBillingAuditShowCustomerImpactByRuleWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingAuditShowCustomerImpactByRuleParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingAuditShowCustomerImpactByRuleResponse, error)
+
 	// FinopsBillingBillingCreditsIndexCreditAssignmentsWithResponse request
 	FinopsBillingBillingCreditsIndexCreditAssignmentsWithResponse(ctx context.Context, orgId int, params *FinopsBillingBillingCreditsIndexCreditAssignmentsParams, reqEditors ...RequestEditorFn) (*FinopsBillingBillingCreditsIndexCreditAssignmentsResponse, error)
 
@@ -3184,6 +3269,11 @@ type ClientWithResponsesInterface interface {
 	FinopsBillingInvoicesCreateWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesCreateResponse, error)
 
 	FinopsBillingInvoicesCreateWithResponse(ctx context.Context, orgId int, body FinopsBillingInvoicesCreateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesCreateResponse, error)
+
+	// FinopsBillingInvoicesCurrencyContextWithBodyWithResponse request with any body
+	FinopsBillingInvoicesCurrencyContextWithBodyWithResponse(ctx context.Context, orgId int, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesCurrencyContextResponse, error)
+
+	FinopsBillingInvoicesCurrencyContextWithResponse(ctx context.Context, orgId int, body FinopsBillingInvoicesCurrencyContextJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesCurrencyContextResponse, error)
 
 	// FinopsBillingInvoicesShowWithResponse request
 	FinopsBillingInvoicesShowWithResponse(ctx context.Context, orgId int, id string, reqEditors ...RequestEditorFn) (*FinopsBillingInvoicesShowResponse, error)
@@ -3275,6 +3365,11 @@ type ClientWithResponsesInterface interface {
 	FinopsCustomizationsReportSubscriptionsUpdateWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsUpdateResponse, error)
 
 	FinopsCustomizationsReportSubscriptionsUpdateWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsUpdateParams, body FinopsCustomizationsReportSubscriptionsUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsUpdateResponse, error)
+
+	// FinopsCustomizationsReportSubscriptionsStatusUpdateWithBodyWithResponse request with any body
+	FinopsCustomizationsReportSubscriptionsStatusUpdateWithBodyWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsStatusUpdateParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsStatusUpdateResponse, error)
+
+	FinopsCustomizationsReportSubscriptionsStatusUpdateWithResponse(ctx context.Context, orgId int, id openapi_types.UUID, params *FinopsCustomizationsReportSubscriptionsStatusUpdateParams, body FinopsCustomizationsReportSubscriptionsStatusUpdateJSONRequestBody, reqEditors ...RequestEditorFn) (*FinopsCustomizationsReportSubscriptionsStatusUpdateResponse, error)
 
 	// FinopsCustomizationsRuleBasedDimensionIndexWithResponse request
 	FinopsCustomizationsRuleBasedDimensionIndexWithResponse(ctx context.Context, orgId int, reqEditors ...RequestEditorFn) (*FinopsCustomizationsRuleBasedDimensionIndexResponse, error)
@@ -3543,6 +3638,15 @@ type ClientWithResponsesInterface interface {
 	// FnmsFileShowWithResponse request
 	FnmsFileShowWithResponse(ctx context.Context, orgId int64, filename string, reqEditors ...RequestEditorFn) (*FnmsFileShowResponse, error)
 
+	// FnmsApplicationExecuteAsyncWithResponse request
+	FnmsApplicationExecuteAsyncWithResponse(ctx context.Context, orgId int64, params *FnmsApplicationExecuteAsyncParams, reqEditors ...RequestEditorFn) (*FnmsApplicationExecuteAsyncResponse, error)
+
+	// FnmsApplicationExecuteAsyncRetrieveWithResponse request
+	FnmsApplicationExecuteAsyncRetrieveWithResponse(ctx context.Context, orgId int64, jobId string, params *FnmsApplicationExecuteAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*FnmsApplicationExecuteAsyncRetrieveResponse, error)
+
+	// FnmsApplicationExecuteAsyncStatusWithResponse request
+	FnmsApplicationExecuteAsyncStatusWithResponse(ctx context.Context, orgId int64, jobId string, reqEditors ...RequestEditorFn) (*FnmsApplicationExecuteAsyncStatusResponse, error)
+
 	// FnmsInventoryIndexWithResponse request
 	FnmsInventoryIndexWithResponse(ctx context.Context, orgId int64, params *FnmsInventoryIndexParams, reqEditors ...RequestEditorFn) (*FnmsInventoryIndexResponse, error)
 
@@ -3552,11 +3656,47 @@ type ClientWithResponsesInterface interface {
 	// FnmsLicenseEntitlementsWithResponse request
 	FnmsLicenseEntitlementsWithResponse(ctx context.Context, orgId int64, params *FnmsLicenseEntitlementsParams, reqEditors ...RequestEditorFn) (*FnmsLicenseEntitlementsResponse, error)
 
+	// FnmsLicensedApplicationExecuteAsyncWithResponse request
+	FnmsLicensedApplicationExecuteAsyncWithResponse(ctx context.Context, orgId int64, params *FnmsLicensedApplicationExecuteAsyncParams, reqEditors ...RequestEditorFn) (*FnmsLicensedApplicationExecuteAsyncResponse, error)
+
+	// FnmsLicensedApplicationExecuteAsyncRetrieveWithResponse request
+	FnmsLicensedApplicationExecuteAsyncRetrieveWithResponse(ctx context.Context, orgId int64, jobId string, params *FnmsLicensedApplicationExecuteAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*FnmsLicensedApplicationExecuteAsyncRetrieveResponse, error)
+
+	// FnmsLicensedApplicationExecuteAsyncStatusWithResponse request
+	FnmsLicensedApplicationExecuteAsyncStatusWithResponse(ctx context.Context, orgId int64, jobId string, reqEditors ...RequestEditorFn) (*FnmsLicensedApplicationExecuteAsyncStatusResponse, error)
+
+	// FnmsLicenseLicensesAsyncWithResponse request
+	FnmsLicenseLicensesAsyncWithResponse(ctx context.Context, orgId int64, params *FnmsLicenseLicensesAsyncParams, reqEditors ...RequestEditorFn) (*FnmsLicenseLicensesAsyncResponse, error)
+
+	// FnmsLicenseLicensesAsyncRetrieveWithResponse request
+	FnmsLicenseLicensesAsyncRetrieveWithResponse(ctx context.Context, orgId int64, jobId string, params *FnmsLicenseLicensesAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*FnmsLicenseLicensesAsyncRetrieveResponse, error)
+
+	// FnmsLicenseLicensesAsyncStatusWithResponse request
+	FnmsLicenseLicensesAsyncStatusWithResponse(ctx context.Context, orgId int64, jobId string, reqEditors ...RequestEditorFn) (*FnmsLicenseLicensesAsyncStatusResponse, error)
+
 	// FnmsLicenseAllocationWithResponse request
 	FnmsLicenseAllocationWithResponse(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseAllocationParams, reqEditors ...RequestEditorFn) (*FnmsLicenseAllocationResponse, error)
 
+	// FnmsLicenseConsumptionAsyncWithResponse request
+	FnmsLicenseConsumptionAsyncWithResponse(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseConsumptionAsyncParams, reqEditors ...RequestEditorFn) (*FnmsLicenseConsumptionAsyncResponse, error)
+
+	// FnmsLicenseConsumptionAsyncRetrieveWithResponse request
+	FnmsLicenseConsumptionAsyncRetrieveWithResponse(ctx context.Context, orgId int64, licenseId string, jobId string, params *FnmsLicenseConsumptionAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*FnmsLicenseConsumptionAsyncRetrieveResponse, error)
+
+	// FnmsLicenseConsumptionAsyncStatusWithResponse request
+	FnmsLicenseConsumptionAsyncStatusWithResponse(ctx context.Context, orgId int64, licenseId string, jobId string, reqEditors ...RequestEditorFn) (*FnmsLicenseConsumptionAsyncStatusResponse, error)
+
 	// FnmsLicenseDeallocationWithResponse request
 	FnmsLicenseDeallocationWithResponse(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseDeallocationParams, reqEditors ...RequestEditorFn) (*FnmsLicenseDeallocationResponse, error)
+
+	// FnmsLicenseDevicesAsyncWithResponse request
+	FnmsLicenseDevicesAsyncWithResponse(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseDevicesAsyncParams, reqEditors ...RequestEditorFn) (*FnmsLicenseDevicesAsyncResponse, error)
+
+	// FnmsLicenseDevicesAsyncRetrieveWithResponse request
+	FnmsLicenseDevicesAsyncRetrieveWithResponse(ctx context.Context, orgId int64, licenseId string, jobId string, params *FnmsLicenseDevicesAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*FnmsLicenseDevicesAsyncRetrieveResponse, error)
+
+	// FnmsLicenseDevicesAsyncStatusWithResponse request
+	FnmsLicenseDevicesAsyncStatusWithResponse(ctx context.Context, orgId int64, licenseId string, jobId string, reqEditors ...RequestEditorFn) (*FnmsLicenseDevicesAsyncStatusResponse, error)
 
 	// FnmsReportIndexWithResponse request
 	FnmsReportIndexWithResponse(ctx context.Context, orgId int64, reqEditors ...RequestEditorFn) (*FnmsReportIndexResponse, error)
@@ -3578,6 +3718,15 @@ type ClientWithResponsesInterface interface {
 
 	// FnmsSystemHealthGetWithResponse request
 	FnmsSystemHealthGetWithResponse(ctx context.Context, orgId int64, params *FnmsSystemHealthGetParams, reqEditors ...RequestEditorFn) (*FnmsSystemHealthGetResponse, error)
+
+	// FnmsSystemTasksExecuteAsyncWithResponse request
+	FnmsSystemTasksExecuteAsyncWithResponse(ctx context.Context, orgId int64, params *FnmsSystemTasksExecuteAsyncParams, reqEditors ...RequestEditorFn) (*FnmsSystemTasksExecuteAsyncResponse, error)
+
+	// FnmsSystemTasksExecuteAsyncRetrieveWithResponse request
+	FnmsSystemTasksExecuteAsyncRetrieveWithResponse(ctx context.Context, orgId int64, jobId string, params *FnmsSystemTasksExecuteAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*FnmsSystemTasksExecuteAsyncRetrieveResponse, error)
+
+	// FnmsSystemTasksExecuteAsyncStatusWithResponse request
+	FnmsSystemTasksExecuteAsyncStatusWithResponse(ctx context.Context, orgId int64, jobId string, reqEditors ...RequestEditorFn) (*FnmsSystemTasksExecuteAsyncStatusResponse, error)
 
 	// FnmsInstalledSoftwareV2CreateV2WithResponse request
 	FnmsInstalledSoftwareV2CreateV2WithResponse(ctx context.Context, orgId int64, params *FnmsInstalledSoftwareV2CreateV2Params, reqEditors ...RequestEditorFn) (*FnmsInstalledSoftwareV2CreateV2Response, error)
@@ -4724,8 +4873,23 @@ type ClientWithResponsesInterface interface {
 	// UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetWithResponse request
 	UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetWithResponse(ctx context.Context, orgId string, identifier string, reqEditors ...RequestEditorFn) (*UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetResponse, error)
 
+	// UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostWithBodyWithResponse request with any body
+	UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostResponse, error)
+
+	UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostWithResponse(ctx context.Context, orgId string, body UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostResponse, error)
+
 	// UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteWithResponse request
 	UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteWithResponse(ctx context.Context, orgId string, params *UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse, error)
+
+	// UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostWithBodyWithResponse request with any body
+	UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostResponse, error)
+
+	UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostWithResponse(ctx context.Context, orgId string, body UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostResponse, error)
+
+	// UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutWithBodyWithResponse request with any body
+	UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutWithBodyWithResponse(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutResponse, error)
+
+	UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutWithResponse(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutResponse, error)
 
 	// UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostWithBodyWithResponse request with any body
 	UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostResponse, error)

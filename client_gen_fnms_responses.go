@@ -11,6 +11,108 @@ import (
 	"time"
 )
 
+// Defines values for FnmsApplicationAsyncJobConflictResponseKind.
+const (
+	FnmsApplicationAsyncJobConflictResponseKindFnmsApplicationsAsyncJobConflict FnmsApplicationAsyncJobConflictResponseKind = "fnms:applications-async-job-conflict"
+)
+
+// Valid indicates whether the value is a known member of the FnmsApplicationAsyncJobConflictResponseKind enum.
+func (e FnmsApplicationAsyncJobConflictResponseKind) Valid() bool {
+	switch e {
+	case FnmsApplicationAsyncJobConflictResponseKindFnmsApplicationsAsyncJobConflict:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsApplicationAsyncJobConflictResponseStatus.
+const (
+	FnmsApplicationAsyncJobConflictResponseStatusCreated    FnmsApplicationAsyncJobConflictResponseStatus = "Created"
+	FnmsApplicationAsyncJobConflictResponseStatusInProgress FnmsApplicationAsyncJobConflictResponseStatus = "In progress"
+)
+
+// Valid indicates whether the value is a known member of the FnmsApplicationAsyncJobConflictResponseStatus enum.
+func (e FnmsApplicationAsyncJobConflictResponseStatus) Valid() bool {
+	switch e {
+	case FnmsApplicationAsyncJobConflictResponseStatusCreated:
+		return true
+	case FnmsApplicationAsyncJobConflictResponseStatusInProgress:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsApplicationAsyncJobInitiateResponseKind.
+const (
+	FnmsApplicationAsyncJobInitiateResponseKindFnmsApplicationsAsyncJobInitiation FnmsApplicationAsyncJobInitiateResponseKind = "fnms:applications-async-job-initiation"
+)
+
+// Valid indicates whether the value is a known member of the FnmsApplicationAsyncJobInitiateResponseKind enum.
+func (e FnmsApplicationAsyncJobInitiateResponseKind) Valid() bool {
+	switch e {
+	case FnmsApplicationAsyncJobInitiateResponseKindFnmsApplicationsAsyncJobInitiation:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsApplicationAsyncJobInitiateResponseStatus.
+const (
+	FnmsApplicationAsyncJobInitiateResponseStatusCreated FnmsApplicationAsyncJobInitiateResponseStatus = "Created"
+)
+
+// Valid indicates whether the value is a known member of the FnmsApplicationAsyncJobInitiateResponseStatus enum.
+func (e FnmsApplicationAsyncJobInitiateResponseStatus) Valid() bool {
+	switch e {
+	case FnmsApplicationAsyncJobInitiateResponseStatusCreated:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsApplicationAsyncJobStatusResponseKind.
+const (
+	FnmsApplicationAsyncJobStatusResponseKindFnmsApplicationsAsyncJobStatus FnmsApplicationAsyncJobStatusResponseKind = "fnms:applications-async-job-status"
+)
+
+// Valid indicates whether the value is a known member of the FnmsApplicationAsyncJobStatusResponseKind enum.
+func (e FnmsApplicationAsyncJobStatusResponseKind) Valid() bool {
+	switch e {
+	case FnmsApplicationAsyncJobStatusResponseKindFnmsApplicationsAsyncJobStatus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsApplicationAsyncJobStatusResponseStatus.
+const (
+	FnmsApplicationAsyncJobStatusResponseStatusCompleted  FnmsApplicationAsyncJobStatusResponseStatus = "Completed"
+	FnmsApplicationAsyncJobStatusResponseStatusCreated    FnmsApplicationAsyncJobStatusResponseStatus = "Created"
+	FnmsApplicationAsyncJobStatusResponseStatusErrored    FnmsApplicationAsyncJobStatusResponseStatus = "Errored"
+	FnmsApplicationAsyncJobStatusResponseStatusInProgress FnmsApplicationAsyncJobStatusResponseStatus = "In progress"
+)
+
+// Valid indicates whether the value is a known member of the FnmsApplicationAsyncJobStatusResponseStatus enum.
+func (e FnmsApplicationAsyncJobStatusResponseStatus) Valid() bool {
+	switch e {
+	case FnmsApplicationAsyncJobStatusResponseStatusCompleted:
+		return true
+	case FnmsApplicationAsyncJobStatusResponseStatusCreated:
+		return true
+	case FnmsApplicationAsyncJobStatusResponseStatusErrored:
+		return true
+	case FnmsApplicationAsyncJobStatusResponseStatusInProgress:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for FnmsAsyncJobConflictResponseKind.
 const (
 	FnmsAsyncJobConflictResponseKindFnmsAsyncJobConflict FnmsAsyncJobConflictResponseKind = "fnms:async-job-conflict"
@@ -170,11 +272,620 @@ func (e FnmsExportReportResponseKind) Valid() bool {
 	}
 }
 
+// Defines values for FnmsLicenseAsyncJobConflictResponseKind.
+const (
+	FnmsLicenseAsyncJobConflictResponseKindFnmsLicenseAsyncJobConflict FnmsLicenseAsyncJobConflictResponseKind = "fnms:license-async-job-conflict"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicenseAsyncJobConflictResponseKind enum.
+func (e FnmsLicenseAsyncJobConflictResponseKind) Valid() bool {
+	switch e {
+	case FnmsLicenseAsyncJobConflictResponseKindFnmsLicenseAsyncJobConflict:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicenseAsyncJobConflictResponseStatus.
+const (
+	FnmsLicenseAsyncJobConflictResponseStatusCreated    FnmsLicenseAsyncJobConflictResponseStatus = "Created"
+	FnmsLicenseAsyncJobConflictResponseStatusInProgress FnmsLicenseAsyncJobConflictResponseStatus = "In progress"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicenseAsyncJobConflictResponseStatus enum.
+func (e FnmsLicenseAsyncJobConflictResponseStatus) Valid() bool {
+	switch e {
+	case FnmsLicenseAsyncJobConflictResponseStatusCreated:
+		return true
+	case FnmsLicenseAsyncJobConflictResponseStatusInProgress:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicenseAsyncJobInitiateResponseKind.
+const (
+	FnmsLicenseAsyncJobInitiateResponseKindFnmsLicenseAsyncJobInitiation FnmsLicenseAsyncJobInitiateResponseKind = "fnms:license-async-job-initiation"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicenseAsyncJobInitiateResponseKind enum.
+func (e FnmsLicenseAsyncJobInitiateResponseKind) Valid() bool {
+	switch e {
+	case FnmsLicenseAsyncJobInitiateResponseKindFnmsLicenseAsyncJobInitiation:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicenseAsyncJobInitiateResponseStatus.
+const (
+	FnmsLicenseAsyncJobInitiateResponseStatusCreated FnmsLicenseAsyncJobInitiateResponseStatus = "Created"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicenseAsyncJobInitiateResponseStatus enum.
+func (e FnmsLicenseAsyncJobInitiateResponseStatus) Valid() bool {
+	switch e {
+	case FnmsLicenseAsyncJobInitiateResponseStatusCreated:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicenseAsyncJobStatusResponseKind.
+const (
+	FnmsLicenseAsyncJobStatusResponseKindFnmsLicenseAsyncJobStatus FnmsLicenseAsyncJobStatusResponseKind = "fnms:license-async-job-status"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicenseAsyncJobStatusResponseKind enum.
+func (e FnmsLicenseAsyncJobStatusResponseKind) Valid() bool {
+	switch e {
+	case FnmsLicenseAsyncJobStatusResponseKindFnmsLicenseAsyncJobStatus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicenseAsyncJobStatusResponseStatus.
+const (
+	FnmsLicenseAsyncJobStatusResponseStatusCompleted  FnmsLicenseAsyncJobStatusResponseStatus = "Completed"
+	FnmsLicenseAsyncJobStatusResponseStatusCreated    FnmsLicenseAsyncJobStatusResponseStatus = "Created"
+	FnmsLicenseAsyncJobStatusResponseStatusErrored    FnmsLicenseAsyncJobStatusResponseStatus = "Errored"
+	FnmsLicenseAsyncJobStatusResponseStatusInProgress FnmsLicenseAsyncJobStatusResponseStatus = "In progress"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicenseAsyncJobStatusResponseStatus enum.
+func (e FnmsLicenseAsyncJobStatusResponseStatus) Valid() bool {
+	switch e {
+	case FnmsLicenseAsyncJobStatusResponseStatusCompleted:
+		return true
+	case FnmsLicenseAsyncJobStatusResponseStatusCreated:
+		return true
+	case FnmsLicenseAsyncJobStatusResponseStatusErrored:
+		return true
+	case FnmsLicenseAsyncJobStatusResponseStatusInProgress:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicenseConsumptionAsyncJobConflictResponseKind.
+const (
+	FnmsLicenseConsumptionAsyncJobConflictResponseKindFnmsLicenseConsumptionAsyncJobConflict FnmsLicenseConsumptionAsyncJobConflictResponseKind = "fnms:license-consumption-async-job-conflict"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicenseConsumptionAsyncJobConflictResponseKind enum.
+func (e FnmsLicenseConsumptionAsyncJobConflictResponseKind) Valid() bool {
+	switch e {
+	case FnmsLicenseConsumptionAsyncJobConflictResponseKindFnmsLicenseConsumptionAsyncJobConflict:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicenseConsumptionAsyncJobConflictResponseStatus.
+const (
+	FnmsLicenseConsumptionAsyncJobConflictResponseStatusCreated    FnmsLicenseConsumptionAsyncJobConflictResponseStatus = "Created"
+	FnmsLicenseConsumptionAsyncJobConflictResponseStatusInProgress FnmsLicenseConsumptionAsyncJobConflictResponseStatus = "In progress"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicenseConsumptionAsyncJobConflictResponseStatus enum.
+func (e FnmsLicenseConsumptionAsyncJobConflictResponseStatus) Valid() bool {
+	switch e {
+	case FnmsLicenseConsumptionAsyncJobConflictResponseStatusCreated:
+		return true
+	case FnmsLicenseConsumptionAsyncJobConflictResponseStatusInProgress:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicenseConsumptionAsyncJobInitiateResponseKind.
+const (
+	FnmsLicenseConsumptionAsyncJobInitiateResponseKindFnmsLicenseConsumptionAsyncJobInitiation FnmsLicenseConsumptionAsyncJobInitiateResponseKind = "fnms:license-consumption-async-job-initiation"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicenseConsumptionAsyncJobInitiateResponseKind enum.
+func (e FnmsLicenseConsumptionAsyncJobInitiateResponseKind) Valid() bool {
+	switch e {
+	case FnmsLicenseConsumptionAsyncJobInitiateResponseKindFnmsLicenseConsumptionAsyncJobInitiation:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicenseConsumptionAsyncJobInitiateResponseStatus.
+const (
+	FnmsLicenseConsumptionAsyncJobInitiateResponseStatusCreated FnmsLicenseConsumptionAsyncJobInitiateResponseStatus = "Created"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicenseConsumptionAsyncJobInitiateResponseStatus enum.
+func (e FnmsLicenseConsumptionAsyncJobInitiateResponseStatus) Valid() bool {
+	switch e {
+	case FnmsLicenseConsumptionAsyncJobInitiateResponseStatusCreated:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicenseConsumptionAsyncJobStatusResponseKind.
+const (
+	FnmsLicenseConsumptionAsyncJobStatusResponseKindFnmsLicenseConsumptionAsyncJobStatus FnmsLicenseConsumptionAsyncJobStatusResponseKind = "fnms:license-consumption-async-job-status"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicenseConsumptionAsyncJobStatusResponseKind enum.
+func (e FnmsLicenseConsumptionAsyncJobStatusResponseKind) Valid() bool {
+	switch e {
+	case FnmsLicenseConsumptionAsyncJobStatusResponseKindFnmsLicenseConsumptionAsyncJobStatus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicenseConsumptionAsyncJobStatusResponseStatus.
+const (
+	FnmsLicenseConsumptionAsyncJobStatusResponseStatusCompleted  FnmsLicenseConsumptionAsyncJobStatusResponseStatus = "Completed"
+	FnmsLicenseConsumptionAsyncJobStatusResponseStatusCreated    FnmsLicenseConsumptionAsyncJobStatusResponseStatus = "Created"
+	FnmsLicenseConsumptionAsyncJobStatusResponseStatusErrored    FnmsLicenseConsumptionAsyncJobStatusResponseStatus = "Errored"
+	FnmsLicenseConsumptionAsyncJobStatusResponseStatusInProgress FnmsLicenseConsumptionAsyncJobStatusResponseStatus = "In progress"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicenseConsumptionAsyncJobStatusResponseStatus enum.
+func (e FnmsLicenseConsumptionAsyncJobStatusResponseStatus) Valid() bool {
+	switch e {
+	case FnmsLicenseConsumptionAsyncJobStatusResponseStatusCompleted:
+		return true
+	case FnmsLicenseConsumptionAsyncJobStatusResponseStatusCreated:
+		return true
+	case FnmsLicenseConsumptionAsyncJobStatusResponseStatusErrored:
+		return true
+	case FnmsLicenseConsumptionAsyncJobStatusResponseStatusInProgress:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicensedApplicationAsyncJobConflictResponseKind.
+const (
+	FnmsLicensedApplicationAsyncJobConflictResponseKindFnmsLicensedApplicationAsyncJobConflict FnmsLicensedApplicationAsyncJobConflictResponseKind = "fnms:licensed-application-async-job-conflict"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicensedApplicationAsyncJobConflictResponseKind enum.
+func (e FnmsLicensedApplicationAsyncJobConflictResponseKind) Valid() bool {
+	switch e {
+	case FnmsLicensedApplicationAsyncJobConflictResponseKindFnmsLicensedApplicationAsyncJobConflict:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicensedApplicationAsyncJobConflictResponseStatus.
+const (
+	FnmsLicensedApplicationAsyncJobConflictResponseStatusCreated    FnmsLicensedApplicationAsyncJobConflictResponseStatus = "Created"
+	FnmsLicensedApplicationAsyncJobConflictResponseStatusInProgress FnmsLicensedApplicationAsyncJobConflictResponseStatus = "In progress"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicensedApplicationAsyncJobConflictResponseStatus enum.
+func (e FnmsLicensedApplicationAsyncJobConflictResponseStatus) Valid() bool {
+	switch e {
+	case FnmsLicensedApplicationAsyncJobConflictResponseStatusCreated:
+		return true
+	case FnmsLicensedApplicationAsyncJobConflictResponseStatusInProgress:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicensedApplicationAsyncJobInitiateResponseKind.
+const (
+	FnmsLicensedApplicationAsyncJobInitiateResponseKindFnmsLicensedApplicationAsyncJobInitiation FnmsLicensedApplicationAsyncJobInitiateResponseKind = "fnms:licensed-application-async-job-initiation"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicensedApplicationAsyncJobInitiateResponseKind enum.
+func (e FnmsLicensedApplicationAsyncJobInitiateResponseKind) Valid() bool {
+	switch e {
+	case FnmsLicensedApplicationAsyncJobInitiateResponseKindFnmsLicensedApplicationAsyncJobInitiation:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicensedApplicationAsyncJobInitiateResponseStatus.
+const (
+	FnmsLicensedApplicationAsyncJobInitiateResponseStatusCreated FnmsLicensedApplicationAsyncJobInitiateResponseStatus = "Created"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicensedApplicationAsyncJobInitiateResponseStatus enum.
+func (e FnmsLicensedApplicationAsyncJobInitiateResponseStatus) Valid() bool {
+	switch e {
+	case FnmsLicensedApplicationAsyncJobInitiateResponseStatusCreated:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicensedApplicationAsyncJobStatusResponseKind.
+const (
+	FnmsLicensedApplicationAsyncJobStatusResponseKindFnmsLicensedApplicationAsyncJobStatus FnmsLicensedApplicationAsyncJobStatusResponseKind = "fnms:licensed-application-async-job-status"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicensedApplicationAsyncJobStatusResponseKind enum.
+func (e FnmsLicensedApplicationAsyncJobStatusResponseKind) Valid() bool {
+	switch e {
+	case FnmsLicensedApplicationAsyncJobStatusResponseKindFnmsLicensedApplicationAsyncJobStatus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicensedApplicationAsyncJobStatusResponseStatus.
+const (
+	FnmsLicensedApplicationAsyncJobStatusResponseStatusCompleted  FnmsLicensedApplicationAsyncJobStatusResponseStatus = "Completed"
+	FnmsLicensedApplicationAsyncJobStatusResponseStatusCreated    FnmsLicensedApplicationAsyncJobStatusResponseStatus = "Created"
+	FnmsLicensedApplicationAsyncJobStatusResponseStatusErrored    FnmsLicensedApplicationAsyncJobStatusResponseStatus = "Errored"
+	FnmsLicensedApplicationAsyncJobStatusResponseStatusInProgress FnmsLicensedApplicationAsyncJobStatusResponseStatus = "In progress"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicensedApplicationAsyncJobStatusResponseStatus enum.
+func (e FnmsLicensedApplicationAsyncJobStatusResponseStatus) Valid() bool {
+	switch e {
+	case FnmsLicensedApplicationAsyncJobStatusResponseStatusCompleted:
+		return true
+	case FnmsLicensedApplicationAsyncJobStatusResponseStatusCreated:
+		return true
+	case FnmsLicensedApplicationAsyncJobStatusResponseStatusErrored:
+		return true
+	case FnmsLicensedApplicationAsyncJobStatusResponseStatusInProgress:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicensedDeviceAsyncJobConflictResponseKind.
+const (
+	FnmsLicensedDeviceAsyncJobConflictResponseKindFnmsLicensedDeviceAsyncJobConflict FnmsLicensedDeviceAsyncJobConflictResponseKind = "fnms:licensed-device-async-job-conflict"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicensedDeviceAsyncJobConflictResponseKind enum.
+func (e FnmsLicensedDeviceAsyncJobConflictResponseKind) Valid() bool {
+	switch e {
+	case FnmsLicensedDeviceAsyncJobConflictResponseKindFnmsLicensedDeviceAsyncJobConflict:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicensedDeviceAsyncJobConflictResponseStatus.
+const (
+	FnmsLicensedDeviceAsyncJobConflictResponseStatusCreated    FnmsLicensedDeviceAsyncJobConflictResponseStatus = "Created"
+	FnmsLicensedDeviceAsyncJobConflictResponseStatusInProgress FnmsLicensedDeviceAsyncJobConflictResponseStatus = "In progress"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicensedDeviceAsyncJobConflictResponseStatus enum.
+func (e FnmsLicensedDeviceAsyncJobConflictResponseStatus) Valid() bool {
+	switch e {
+	case FnmsLicensedDeviceAsyncJobConflictResponseStatusCreated:
+		return true
+	case FnmsLicensedDeviceAsyncJobConflictResponseStatusInProgress:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicensedDeviceAsyncJobInitiateResponseKind.
+const (
+	FnmsLicensedDeviceAsyncJobInitiateResponseKindFnmsLicensedDeviceAsyncJobInitiation FnmsLicensedDeviceAsyncJobInitiateResponseKind = "fnms:licensed-device-async-job-initiation"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicensedDeviceAsyncJobInitiateResponseKind enum.
+func (e FnmsLicensedDeviceAsyncJobInitiateResponseKind) Valid() bool {
+	switch e {
+	case FnmsLicensedDeviceAsyncJobInitiateResponseKindFnmsLicensedDeviceAsyncJobInitiation:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicensedDeviceAsyncJobInitiateResponseStatus.
+const (
+	FnmsLicensedDeviceAsyncJobInitiateResponseStatusCreated FnmsLicensedDeviceAsyncJobInitiateResponseStatus = "Created"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicensedDeviceAsyncJobInitiateResponseStatus enum.
+func (e FnmsLicensedDeviceAsyncJobInitiateResponseStatus) Valid() bool {
+	switch e {
+	case FnmsLicensedDeviceAsyncJobInitiateResponseStatusCreated:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicensedDeviceAsyncJobStatusResponseKind.
+const (
+	FnmsLicensedDeviceAsyncJobStatusResponseKindFnmsLicensedDeviceAsyncJobStatus FnmsLicensedDeviceAsyncJobStatusResponseKind = "fnms:licensed-device-async-job-status"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicensedDeviceAsyncJobStatusResponseKind enum.
+func (e FnmsLicensedDeviceAsyncJobStatusResponseKind) Valid() bool {
+	switch e {
+	case FnmsLicensedDeviceAsyncJobStatusResponseKindFnmsLicensedDeviceAsyncJobStatus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicensedDeviceAsyncJobStatusResponseStatus.
+const (
+	FnmsLicensedDeviceAsyncJobStatusResponseStatusCompleted  FnmsLicensedDeviceAsyncJobStatusResponseStatus = "Completed"
+	FnmsLicensedDeviceAsyncJobStatusResponseStatusCreated    FnmsLicensedDeviceAsyncJobStatusResponseStatus = "Created"
+	FnmsLicensedDeviceAsyncJobStatusResponseStatusErrored    FnmsLicensedDeviceAsyncJobStatusResponseStatus = "Errored"
+	FnmsLicensedDeviceAsyncJobStatusResponseStatusInProgress FnmsLicensedDeviceAsyncJobStatusResponseStatus = "In progress"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicensedDeviceAsyncJobStatusResponseStatus enum.
+func (e FnmsLicensedDeviceAsyncJobStatusResponseStatus) Valid() bool {
+	switch e {
+	case FnmsLicensedDeviceAsyncJobStatusResponseStatusCompleted:
+		return true
+	case FnmsLicensedDeviceAsyncJobStatusResponseStatusCreated:
+		return true
+	case FnmsLicensedDeviceAsyncJobStatusResponseStatusErrored:
+		return true
+	case FnmsLicensedDeviceAsyncJobStatusResponseStatusInProgress:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsSystemTasksAsyncJobConflictResponseKind.
+const (
+	FnmsSystemTasksAsyncJobConflictResponseKindFnmsSystemTasksAsyncJobConflict FnmsSystemTasksAsyncJobConflictResponseKind = "fnms:system-tasks-async-job-conflict"
+)
+
+// Valid indicates whether the value is a known member of the FnmsSystemTasksAsyncJobConflictResponseKind enum.
+func (e FnmsSystemTasksAsyncJobConflictResponseKind) Valid() bool {
+	switch e {
+	case FnmsSystemTasksAsyncJobConflictResponseKindFnmsSystemTasksAsyncJobConflict:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsSystemTasksAsyncJobConflictResponseStatus.
+const (
+	FnmsSystemTasksAsyncJobConflictResponseStatusCreated    FnmsSystemTasksAsyncJobConflictResponseStatus = "Created"
+	FnmsSystemTasksAsyncJobConflictResponseStatusInProgress FnmsSystemTasksAsyncJobConflictResponseStatus = "In progress"
+)
+
+// Valid indicates whether the value is a known member of the FnmsSystemTasksAsyncJobConflictResponseStatus enum.
+func (e FnmsSystemTasksAsyncJobConflictResponseStatus) Valid() bool {
+	switch e {
+	case FnmsSystemTasksAsyncJobConflictResponseStatusCreated:
+		return true
+	case FnmsSystemTasksAsyncJobConflictResponseStatusInProgress:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsSystemTasksAsyncJobInitiateResponseKind.
+const (
+	FnmsSystemTasksAsyncJobInitiateResponseKindFnmsSystemTasksAsyncJobInitiation FnmsSystemTasksAsyncJobInitiateResponseKind = "fnms:system-tasks-async-job-initiation"
+)
+
+// Valid indicates whether the value is a known member of the FnmsSystemTasksAsyncJobInitiateResponseKind enum.
+func (e FnmsSystemTasksAsyncJobInitiateResponseKind) Valid() bool {
+	switch e {
+	case FnmsSystemTasksAsyncJobInitiateResponseKindFnmsSystemTasksAsyncJobInitiation:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsSystemTasksAsyncJobInitiateResponseStatus.
+const (
+	FnmsSystemTasksAsyncJobInitiateResponseStatusCreated FnmsSystemTasksAsyncJobInitiateResponseStatus = "Created"
+)
+
+// Valid indicates whether the value is a known member of the FnmsSystemTasksAsyncJobInitiateResponseStatus enum.
+func (e FnmsSystemTasksAsyncJobInitiateResponseStatus) Valid() bool {
+	switch e {
+	case FnmsSystemTasksAsyncJobInitiateResponseStatusCreated:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsSystemTasksAsyncJobStatusResponseKind.
+const (
+	FnmsSystemTasksAsyncJobStatusResponseKindFnmsSystemTasksAsyncJobStatus FnmsSystemTasksAsyncJobStatusResponseKind = "fnms:system-tasks-async-job-status"
+)
+
+// Valid indicates whether the value is a known member of the FnmsSystemTasksAsyncJobStatusResponseKind enum.
+func (e FnmsSystemTasksAsyncJobStatusResponseKind) Valid() bool {
+	switch e {
+	case FnmsSystemTasksAsyncJobStatusResponseKindFnmsSystemTasksAsyncJobStatus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsSystemTasksAsyncJobStatusResponseStatus.
+const (
+	FnmsSystemTasksAsyncJobStatusResponseStatusCompleted  FnmsSystemTasksAsyncJobStatusResponseStatus = "Completed"
+	FnmsSystemTasksAsyncJobStatusResponseStatusCreated    FnmsSystemTasksAsyncJobStatusResponseStatus = "Created"
+	FnmsSystemTasksAsyncJobStatusResponseStatusErrored    FnmsSystemTasksAsyncJobStatusResponseStatus = "Errored"
+	FnmsSystemTasksAsyncJobStatusResponseStatusInProgress FnmsSystemTasksAsyncJobStatusResponseStatus = "In progress"
+)
+
+// Valid indicates whether the value is a known member of the FnmsSystemTasksAsyncJobStatusResponseStatus enum.
+func (e FnmsSystemTasksAsyncJobStatusResponseStatus) Valid() bool {
+	switch e {
+	case FnmsSystemTasksAsyncJobStatusResponseStatusCompleted:
+		return true
+	case FnmsSystemTasksAsyncJobStatusResponseStatusCreated:
+		return true
+	case FnmsSystemTasksAsyncJobStatusResponseStatusErrored:
+		return true
+	case FnmsSystemTasksAsyncJobStatusResponseStatusInProgress:
+		return true
+	default:
+		return false
+	}
+}
+
 // FnmsAllocationResponseBody defines model for Fnms_AllocationResponseBody.
 type FnmsAllocationResponseBody struct {
 	// AllocationStatuses data to return
 	AllocationStatuses *[]FnmsAllocationStatus `json:"allocationStatuses,omitempty"`
 }
+
+// FnmsApplicationAsyncJobConflictResponse A matching application execution is already running
+type FnmsApplicationAsyncJobConflictResponse struct {
+	// CreatedAt When the existing job was created (UTC).
+	CreatedAt time.Time `json:"createdAt"`
+
+	// JobId Existing job ID.
+	JobId string `json:"jobId"`
+
+	// Kind The resource's type
+	Kind FnmsApplicationAsyncJobConflictResponseKind `json:"kind"`
+
+	// Message Human-readable explanation.
+	Message string `json:"message"`
+
+	// Status Current status of the existing job.
+	Status FnmsApplicationAsyncJobConflictResponseStatus `json:"status"`
+
+	// StatusUrl URL to poll for the status of the existing job.
+	StatusUrl string `json:"statusUrl"`
+}
+
+// FnmsApplicationAsyncJobConflictResponseKind The resource's type
+type FnmsApplicationAsyncJobConflictResponseKind string
+
+// FnmsApplicationAsyncJobConflictResponseStatus Current status of the existing job.
+type FnmsApplicationAsyncJobConflictResponseStatus string
+
+// FnmsApplicationAsyncJobInitiateResponse Response when an async application extraction is successfully initiated.
+type FnmsApplicationAsyncJobInitiateResponse struct {
+	// CreatedAt Timestamp when the job was created (UTC).
+	CreatedAt time.Time `json:"createdAt"`
+
+	// JobId Unique job ID for tracking the extraction.
+	JobId string `json:"jobId"`
+
+	// Kind The resource's type
+	Kind FnmsApplicationAsyncJobInitiateResponseKind `json:"kind"`
+
+	// Limit The number of rows per page used for result partitioning.
+	Limit int64 `json:"limit"`
+
+	// Status Initial status of the job.
+	Status FnmsApplicationAsyncJobInitiateResponseStatus `json:"status"`
+
+	// StatusUrl URL to poll for the status of this job.
+	StatusUrl string `json:"statusUrl"`
+}
+
+// FnmsApplicationAsyncJobInitiateResponseKind The resource's type
+type FnmsApplicationAsyncJobInitiateResponseKind string
+
+// FnmsApplicationAsyncJobInitiateResponseStatus Initial status of the job.
+type FnmsApplicationAsyncJobInitiateResponseStatus string
+
+// FnmsApplicationAsyncJobStatusResponse Status of an async application extraction job.
+type FnmsApplicationAsyncJobStatusResponse struct {
+	// CompletedAt When the job completed (UTC). Present only when finished.
+	CompletedAt *time.Time `json:"completedAt,omitempty"`
+
+	// CreatedAt When the job was created (UTC).
+	CreatedAt time.Time `json:"createdAt"`
+
+	// ErrorMessage Error details if the job failed.
+	ErrorMessage *string `json:"errorMessage,omitempty"`
+
+	// JobId Job ID.
+	JobId string `json:"jobId"`
+
+	// Kind The resource's type
+	Kind FnmsApplicationAsyncJobStatusResponseKind `json:"kind"`
+
+	// Limit Number of rows per page used for partitioning.
+	Limit int64 `json:"limit"`
+
+	// PagesProcessed Number of pages processed so far. Updated as the job progresses.
+	PagesProcessed *int64 `json:"pagesProcessed,omitempty"`
+
+	// RetrieveUrl URL to retrieve results. Available when completed.
+	RetrieveUrl *string `json:"retrieveUrl,omitempty"`
+
+	// Status Current status of the extraction job. Possible values: Created, In progress, Completed, or Errored.
+	Status FnmsApplicationAsyncJobStatusResponseStatus `json:"status"`
+
+	// Total Total number of rows across all pages. Available when completed.
+	Total *int64 `json:"total,omitempty"`
+
+	// TotalPages Total number of result pages. Available when completed.
+	TotalPages *int64 `json:"totalPages,omitempty"`
+
+	// UpdatedAt When the job was last updated (UTC).
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// FnmsApplicationAsyncJobStatusResponseKind The resource's type
+type FnmsApplicationAsyncJobStatusResponseKind string
+
+// FnmsApplicationAsyncJobStatusResponseStatus Current status of the extraction job. Possible values: Created, In progress, Completed, or Errored.
+type FnmsApplicationAsyncJobStatusResponseStatus string
 
 // FnmsAsyncJobConflictResponse A matching execution is already running
 type FnmsAsyncJobConflictResponse struct {
@@ -413,11 +1124,524 @@ type FnmsIndexResponseBody2 struct {
 	Values FnmsAssetCollection `json:"values"`
 }
 
+// FnmsLicenseAsyncJobConflictResponse A matching license execution is already running
+type FnmsLicenseAsyncJobConflictResponse struct {
+	// CreatedAt When the existing job was created (UTC).
+	CreatedAt time.Time `json:"createdAt"`
+
+	// JobId Existing job ID.
+	JobId string `json:"jobId"`
+
+	// Kind The resource's type
+	Kind FnmsLicenseAsyncJobConflictResponseKind `json:"kind"`
+
+	// Message Human-readable explanation.
+	Message string `json:"message"`
+
+	// Status Current status of the existing job.
+	Status FnmsLicenseAsyncJobConflictResponseStatus `json:"status"`
+
+	// StatusUrl URL to poll for the status of the existing job.
+	StatusUrl string `json:"statusUrl"`
+}
+
+// FnmsLicenseAsyncJobConflictResponseKind The resource's type
+type FnmsLicenseAsyncJobConflictResponseKind string
+
+// FnmsLicenseAsyncJobConflictResponseStatus Current status of the existing job.
+type FnmsLicenseAsyncJobConflictResponseStatus string
+
+// FnmsLicenseAsyncJobInitiateResponse Response when an async license execution is successfully initiated.
+type FnmsLicenseAsyncJobInitiateResponse struct {
+	// CreatedAt Timestamp when the job was created (UTC).
+	CreatedAt time.Time `json:"createdAt"`
+
+	// JobId Unique job ID for tracking the execution.
+	JobId string `json:"jobId"`
+
+	// Kind The resource's type
+	Kind FnmsLicenseAsyncJobInitiateResponseKind `json:"kind"`
+
+	// Limit Number of rows per page used for result partitioning. Absent when pagination is disabled.
+	Limit *int64 `json:"limit,omitempty"`
+
+	// Status Initial status of the job.
+	Status FnmsLicenseAsyncJobInitiateResponseStatus `json:"status"`
+
+	// StatusUrl URL to poll for the status of this job.
+	StatusUrl string `json:"statusUrl"`
+}
+
+// FnmsLicenseAsyncJobInitiateResponseKind The resource's type
+type FnmsLicenseAsyncJobInitiateResponseKind string
+
+// FnmsLicenseAsyncJobInitiateResponseStatus Initial status of the job.
+type FnmsLicenseAsyncJobInitiateResponseStatus string
+
+// FnmsLicenseAsyncJobStatusResponse Status of an async license execution job.
+type FnmsLicenseAsyncJobStatusResponse struct {
+	// CompletedAt When the job completed (UTC). Present only when finished.
+	CompletedAt *time.Time `json:"completedAt,omitempty"`
+
+	// CreatedAt When the job was created (UTC).
+	CreatedAt time.Time `json:"createdAt"`
+
+	// ErrorMessage Error details if the job failed.
+	ErrorMessage *string `json:"errorMessage,omitempty"`
+
+	// JobId Job ID.
+	JobId string `json:"jobId"`
+
+	// Kind The resource's type
+	Kind FnmsLicenseAsyncJobStatusResponseKind `json:"kind"`
+
+	// Limit Number of rows per page used for partitioning. Absent when pagination is disabled.
+	Limit *int64 `json:"limit,omitempty"`
+
+	// PagesProcessed Number of pages processed so far. Absent when pagination is disabled.
+	PagesProcessed *int64 `json:"pagesProcessed,omitempty"`
+
+	// RetrieveUrl URL to retrieve results. Available when completed.
+	RetrieveUrl *string `json:"retrieveUrl,omitempty"`
+
+	// Status Current job status.
+	Status FnmsLicenseAsyncJobStatusResponseStatus `json:"status"`
+
+	// Total Total number of licenses across all pages. Available when completed.
+	Total *int64 `json:"total,omitempty"`
+
+	// TotalPages Total number of result pages. Available when completed and pagination is enabled.
+	TotalPages *int64 `json:"totalPages,omitempty"`
+
+	// UpdatedAt When the job was last updated (UTC).
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// FnmsLicenseAsyncJobStatusResponseKind The resource's type
+type FnmsLicenseAsyncJobStatusResponseKind string
+
+// FnmsLicenseAsyncJobStatusResponseStatus Current job status.
+type FnmsLicenseAsyncJobStatusResponseStatus string
+
+// FnmsLicenseConsumptionAsyncJobConflictResponse A matching extraction is already running
+type FnmsLicenseConsumptionAsyncJobConflictResponse struct {
+	// CreatedAt When the existing job was created (UTC).
+	CreatedAt time.Time `json:"createdAt"`
+
+	// JobId Existing job ID.
+	JobId string `json:"jobId"`
+
+	// Kind The resource's type
+	Kind FnmsLicenseConsumptionAsyncJobConflictResponseKind `json:"kind"`
+
+	// LicenseId The license requested for extraction.
+	LicenseId string `json:"licenseId"`
+
+	// Message Human-readable explanation.
+	Message string `json:"message"`
+
+	// Status Current status of the existing job.
+	Status FnmsLicenseConsumptionAsyncJobConflictResponseStatus `json:"status"`
+
+	// StatusUrl URL to poll for the status of the existing job.
+	StatusUrl string `json:"statusUrl"`
+}
+
+// FnmsLicenseConsumptionAsyncJobConflictResponseKind The resource's type
+type FnmsLicenseConsumptionAsyncJobConflictResponseKind string
+
+// FnmsLicenseConsumptionAsyncJobConflictResponseStatus Current status of the existing job.
+type FnmsLicenseConsumptionAsyncJobConflictResponseStatus string
+
+// FnmsLicenseConsumptionAsyncJobInitiateResponse Response when an async license consumption extraction is successfully initiated.
+type FnmsLicenseConsumptionAsyncJobInitiateResponse struct {
+	// CreatedAt Timestamp when the job was created (UTC).
+	CreatedAt time.Time `json:"createdAt"`
+
+	// JobId Unique job ID for tracking the extraction.
+	JobId string `json:"jobId"`
+
+	// Kind The resource's type
+	Kind FnmsLicenseConsumptionAsyncJobInitiateResponseKind `json:"kind"`
+
+	// LicenseId The license requested for extraction.
+	LicenseId string `json:"licenseId"`
+
+	// Limit Number of rows per result page.
+	Limit int64 `json:"limit"`
+
+	// Status Initial status of the job.
+	Status FnmsLicenseConsumptionAsyncJobInitiateResponseStatus `json:"status"`
+
+	// StatusUrl URL to poll for the status of this job.
+	StatusUrl string `json:"statusUrl"`
+}
+
+// FnmsLicenseConsumptionAsyncJobInitiateResponseKind The resource's type
+type FnmsLicenseConsumptionAsyncJobInitiateResponseKind string
+
+// FnmsLicenseConsumptionAsyncJobInitiateResponseStatus Initial status of the job.
+type FnmsLicenseConsumptionAsyncJobInitiateResponseStatus string
+
+// FnmsLicenseConsumptionAsyncJobStatusResponse Status of an async license consumption extraction job.
+type FnmsLicenseConsumptionAsyncJobStatusResponse struct {
+	// CompletedAt When the job finished (UTC). Present only when finished.
+	CompletedAt *time.Time `json:"completedAt,omitempty"`
+
+	// CreatedAt When the job was created (UTC).
+	CreatedAt time.Time `json:"createdAt"`
+
+	// ErrorMessage Error details if the job failed.
+	ErrorMessage *string `json:"errorMessage,omitempty"`
+
+	// JobId Job ID.
+	JobId string `json:"jobId"`
+
+	// Kind The resource's type
+	Kind FnmsLicenseConsumptionAsyncJobStatusResponseKind `json:"kind"`
+
+	// LicenseId The license being extracted.
+	LicenseId string `json:"licenseId"`
+
+	// Limit Number of rows per page used for partitioning.
+	Limit int64 `json:"limit"`
+
+	// PagesProcessed Number of pages processed so far.
+	PagesProcessed *int64 `json:"pagesProcessed,omitempty"`
+
+	// RetrieveUrl URL to retrieve results. Available when completed.
+	RetrieveUrl *string `json:"retrieveUrl,omitempty"`
+
+	// Status Current job status.
+	Status FnmsLicenseConsumptionAsyncJobStatusResponseStatus `json:"status"`
+
+	// Total Total number of rows across all pages. Available when completed.
+	Total *int64 `json:"total,omitempty"`
+
+	// TotalPages Total number of result pages. Available when completed.
+	TotalPages *int64 `json:"totalPages,omitempty"`
+
+	// UpdatedAt When the job was last updated (UTC).
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// FnmsLicenseConsumptionAsyncJobStatusResponseKind The resource's type
+type FnmsLicenseConsumptionAsyncJobStatusResponseKind string
+
+// FnmsLicenseConsumptionAsyncJobStatusResponseStatus Current job status.
+type FnmsLicenseConsumptionAsyncJobStatusResponseStatus string
+
+// FnmsLicensedApplicationAsyncJobConflictResponse A matching extraction is already running
+type FnmsLicensedApplicationAsyncJobConflictResponse struct {
+	// CreatedAt When the existing job was created (UTC).
+	CreatedAt time.Time `json:"createdAt"`
+
+	// JobId Existing job ID.
+	JobId string `json:"jobId"`
+
+	// Kind The resource's type
+	Kind FnmsLicensedApplicationAsyncJobConflictResponseKind `json:"kind"`
+
+	// Message Human-readable explanation.
+	Message string `json:"message"`
+
+	// Status Current status of the existing job.
+	Status FnmsLicensedApplicationAsyncJobConflictResponseStatus `json:"status"`
+
+	// StatusUrl URL to poll for the status of the existing job.
+	StatusUrl string `json:"statusUrl"`
+}
+
+// FnmsLicensedApplicationAsyncJobConflictResponseKind The resource's type
+type FnmsLicensedApplicationAsyncJobConflictResponseKind string
+
+// FnmsLicensedApplicationAsyncJobConflictResponseStatus Current status of the existing job.
+type FnmsLicensedApplicationAsyncJobConflictResponseStatus string
+
+// FnmsLicensedApplicationAsyncJobInitiateResponse Response when an async licensed applications extraction is successfully initiated.
+type FnmsLicensedApplicationAsyncJobInitiateResponse struct {
+	// CreatedAt Timestamp when the job was created (UTC).
+	CreatedAt time.Time `json:"createdAt"`
+
+	// JobId Unique job ID for tracking the extraction.
+	JobId string `json:"jobId"`
+
+	// Kind The resource's type
+	Kind FnmsLicensedApplicationAsyncJobInitiateResponseKind `json:"kind"`
+
+	// Limit The number of rows per page used for result partitioning.
+	Limit int64 `json:"limit"`
+
+	// Status Initial status of the job.
+	Status FnmsLicensedApplicationAsyncJobInitiateResponseStatus `json:"status"`
+
+	// StatusUrl URL to poll for the status of this job.
+	StatusUrl string `json:"statusUrl"`
+}
+
+// FnmsLicensedApplicationAsyncJobInitiateResponseKind The resource's type
+type FnmsLicensedApplicationAsyncJobInitiateResponseKind string
+
+// FnmsLicensedApplicationAsyncJobInitiateResponseStatus Initial status of the job.
+type FnmsLicensedApplicationAsyncJobInitiateResponseStatus string
+
+// FnmsLicensedApplicationAsyncJobStatusResponse Status of an async licensed applications extraction job.
+type FnmsLicensedApplicationAsyncJobStatusResponse struct {
+	// CompletedAt When the job completed (UTC). Present only when finished.
+	CompletedAt *time.Time `json:"completedAt,omitempty"`
+
+	// CreatedAt When the job was created (UTC).
+	CreatedAt time.Time `json:"createdAt"`
+
+	// ErrorMessage Error details if the job failed.
+	ErrorMessage *string `json:"errorMessage,omitempty"`
+
+	// JobId Job ID.
+	JobId string `json:"jobId"`
+
+	// Kind The resource's type
+	Kind FnmsLicensedApplicationAsyncJobStatusResponseKind `json:"kind"`
+
+	// Limit Number of rows per page used for partitioning.
+	Limit int64 `json:"limit"`
+
+	// PagesProcessed Number of pages processed so far. Updated as the job progresses.
+	PagesProcessed *int64 `json:"pagesProcessed,omitempty"`
+
+	// RetrieveUrl URL to retrieve results. Available when completed.
+	RetrieveUrl *string `json:"retrieveUrl,omitempty"`
+
+	// Status Current status of the extraction job. Possible values: Created, In progress, Completed, or Errored.
+	Status FnmsLicensedApplicationAsyncJobStatusResponseStatus `json:"status"`
+
+	// Total Total number of rows across all pages. Available when completed.
+	Total *int64 `json:"total,omitempty"`
+
+	// TotalPages Total number of result pages. Available when completed.
+	TotalPages *int64 `json:"totalPages,omitempty"`
+
+	// UpdatedAt When the job was last updated (UTC).
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// FnmsLicensedApplicationAsyncJobStatusResponseKind The resource's type
+type FnmsLicensedApplicationAsyncJobStatusResponseKind string
+
+// FnmsLicensedApplicationAsyncJobStatusResponseStatus Current status of the extraction job. Possible values: Created, In progress, Completed, or Errored.
+type FnmsLicensedApplicationAsyncJobStatusResponseStatus string
+
+// FnmsLicensedDeviceAsyncJobConflictResponse A matching extraction is already running
+type FnmsLicensedDeviceAsyncJobConflictResponse struct {
+	// CreatedAt When the existing job was created (UTC).
+	CreatedAt time.Time `json:"createdAt"`
+
+	// JobId Existing job ID.
+	JobId string `json:"jobId"`
+
+	// Kind The resource's type
+	Kind FnmsLicensedDeviceAsyncJobConflictResponseKind `json:"kind"`
+
+	// LicenseId The license whose associated devices are being extracted.
+	LicenseId string `json:"licenseId"`
+
+	// Message Human-readable explanation.
+	Message string `json:"message"`
+
+	// Status Current status of the existing job.
+	Status FnmsLicensedDeviceAsyncJobConflictResponseStatus `json:"status"`
+
+	// StatusUrl URL to poll for the status of the existing job.
+	StatusUrl string `json:"statusUrl"`
+}
+
+// FnmsLicensedDeviceAsyncJobConflictResponseKind The resource's type
+type FnmsLicensedDeviceAsyncJobConflictResponseKind string
+
+// FnmsLicensedDeviceAsyncJobConflictResponseStatus Current status of the existing job.
+type FnmsLicensedDeviceAsyncJobConflictResponseStatus string
+
+// FnmsLicensedDeviceAsyncJobInitiateResponse Response when an async licensed devices extraction is successfully initiated.
+type FnmsLicensedDeviceAsyncJobInitiateResponse struct {
+	// CreatedAt Timestamp when the job was created (UTC).
+	CreatedAt time.Time `json:"createdAt"`
+
+	// JobId Unique job ID for tracking the extraction.
+	JobId string `json:"jobId"`
+
+	// Kind The resource's type
+	Kind FnmsLicensedDeviceAsyncJobInitiateResponseKind `json:"kind"`
+
+	// LicenseId The license whose associated devices are being extracted.
+	LicenseId string `json:"licenseId"`
+
+	// Limit The number of rows per page used for result partitioning.
+	Limit int64 `json:"limit"`
+
+	// Status Initial status of the job.
+	Status FnmsLicensedDeviceAsyncJobInitiateResponseStatus `json:"status"`
+
+	// StatusUrl URL to poll for the status of this job.
+	StatusUrl string `json:"statusUrl"`
+}
+
+// FnmsLicensedDeviceAsyncJobInitiateResponseKind The resource's type
+type FnmsLicensedDeviceAsyncJobInitiateResponseKind string
+
+// FnmsLicensedDeviceAsyncJobInitiateResponseStatus Initial status of the job.
+type FnmsLicensedDeviceAsyncJobInitiateResponseStatus string
+
+// FnmsLicensedDeviceAsyncJobStatusResponse Status of an async licensed devices extraction job.
+type FnmsLicensedDeviceAsyncJobStatusResponse struct {
+	// CompletedAt When the job completed (UTC). Present only when finished.
+	CompletedAt *time.Time `json:"completedAt,omitempty"`
+
+	// CreatedAt When the job was created (UTC).
+	CreatedAt time.Time `json:"createdAt"`
+
+	// ErrorMessage Error details if the job failed.
+	ErrorMessage *string `json:"errorMessage,omitempty"`
+
+	// JobId Job ID.
+	JobId string `json:"jobId"`
+
+	// Kind The resource's type
+	Kind FnmsLicensedDeviceAsyncJobStatusResponseKind `json:"kind"`
+
+	// LicenseId The license whose associated devices are being extracted.
+	LicenseId string `json:"licenseId"`
+
+	// Limit Number of rows per page used for partitioning.
+	Limit int64 `json:"limit"`
+
+	// PagesProcessed Number of pages processed so far.
+	PagesProcessed *int64 `json:"pagesProcessed,omitempty"`
+
+	// RetrieveUrl URL to retrieve results. Available when completed.
+	RetrieveUrl *string `json:"retrieveUrl,omitempty"`
+
+	// Status Current job status.
+	Status FnmsLicensedDeviceAsyncJobStatusResponseStatus `json:"status"`
+
+	// Total Total number of devices across all pages. Available when completed.
+	Total *int64 `json:"total,omitempty"`
+
+	// TotalPages Total number of result pages. Available when completed.
+	TotalPages *int64 `json:"totalPages,omitempty"`
+
+	// UpdatedAt When the job was last updated (UTC).
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// FnmsLicensedDeviceAsyncJobStatusResponseKind The resource's type
+type FnmsLicensedDeviceAsyncJobStatusResponseKind string
+
+// FnmsLicensedDeviceAsyncJobStatusResponseStatus Current job status.
+type FnmsLicensedDeviceAsyncJobStatusResponseStatus string
+
 // FnmsReportExportStatusResponseBody defines model for Fnms_ReportExportStatusResponseBody.
 type FnmsReportExportStatusResponseBody struct {
 	// Data Response for the export request status.
 	Data *FnmsExportStatus `json:"data,omitempty"`
 }
+
+// FnmsSystemTasksAsyncJobConflictResponse A matching execution is already running
+type FnmsSystemTasksAsyncJobConflictResponse struct {
+	// CreatedAt When the existing job was created (UTC).
+	CreatedAt time.Time `json:"createdAt"`
+
+	// JobId Existing job ID.
+	JobId string `json:"jobId"`
+
+	// Kind The resource's type
+	Kind FnmsSystemTasksAsyncJobConflictResponseKind `json:"kind"`
+
+	// Message Human-readable explanation.
+	Message string `json:"message"`
+
+	// Status Current status of the existing job.
+	Status FnmsSystemTasksAsyncJobConflictResponseStatus `json:"status"`
+
+	// StatusUrl URL to poll for the status of the existing job.
+	StatusUrl string `json:"statusUrl"`
+}
+
+// FnmsSystemTasksAsyncJobConflictResponseKind The resource's type
+type FnmsSystemTasksAsyncJobConflictResponseKind string
+
+// FnmsSystemTasksAsyncJobConflictResponseStatus Current status of the existing job.
+type FnmsSystemTasksAsyncJobConflictResponseStatus string
+
+// FnmsSystemTasksAsyncJobInitiateResponse Response when an async system tasks execution is successfully initiated.
+type FnmsSystemTasksAsyncJobInitiateResponse struct {
+	// CreatedAt Timestamp when the job was created (UTC).
+	CreatedAt time.Time `json:"createdAt"`
+
+	// JobId The unique identifier for the async system tasks job.
+	JobId string `json:"jobId"`
+
+	// Kind The resource's type
+	Kind FnmsSystemTasksAsyncJobInitiateResponseKind `json:"kind"`
+
+	// Limit The number of rows per page used for result partitioning.
+	Limit int64 `json:"limit"`
+
+	// Status Initial status of the job.
+	Status FnmsSystemTasksAsyncJobInitiateResponseStatus `json:"status"`
+
+	// StatusUrl URL to poll for the status of this job.
+	StatusUrl string `json:"statusUrl"`
+}
+
+// FnmsSystemTasksAsyncJobInitiateResponseKind The resource's type
+type FnmsSystemTasksAsyncJobInitiateResponseKind string
+
+// FnmsSystemTasksAsyncJobInitiateResponseStatus Initial status of the job.
+type FnmsSystemTasksAsyncJobInitiateResponseStatus string
+
+// FnmsSystemTasksAsyncJobStatusResponse Status of an async system tasks execution job.
+type FnmsSystemTasksAsyncJobStatusResponse struct {
+	// CompletedAt When the job completed (UTC). Present only when finished.
+	CompletedAt *time.Time `json:"completedAt,omitempty"`
+
+	// CreatedAt When the job was created (UTC).
+	CreatedAt time.Time `json:"createdAt"`
+
+	// ErrorMessage Error details if the job failed.
+	ErrorMessage *string `json:"errorMessage,omitempty"`
+
+	// JobId Job ID.
+	JobId string `json:"jobId"`
+
+	// Kind The resource's type
+	Kind FnmsSystemTasksAsyncJobStatusResponseKind `json:"kind"`
+
+	// Limit Number of rows per page used for partitioning.
+	Limit int64 `json:"limit"`
+
+	// PagesProcessed Number of pages processed so far. Updated as the job progresses.
+	PagesProcessed *int64 `json:"pagesProcessed,omitempty"`
+
+	// RetrieveUrl URL to retrieve results. Available when completed.
+	RetrieveUrl *string `json:"retrieveUrl,omitempty"`
+
+	// Status Current status of the job. Possible values: Created, In progress, Completed, or Errored.
+	Status FnmsSystemTasksAsyncJobStatusResponseStatus `json:"status"`
+
+	// Total Total number of rows across all pages. Available when completed.
+	Total *int64 `json:"total,omitempty"`
+
+	// TotalPages Total number of result pages. Available when completed.
+	TotalPages *int64 `json:"totalPages,omitempty"`
+
+	// UpdatedAt When the job was last updated (UTC).
+	UpdatedAt time.Time `json:"updatedAt"`
+}
+
+// FnmsSystemTasksAsyncJobStatusResponseKind The resource's type
+type FnmsSystemTasksAsyncJobStatusResponseKind string
+
+// FnmsSystemTasksAsyncJobStatusResponseStatus Current status of the job. Possible values: Created, In progress, Completed, or Errored.
+type FnmsSystemTasksAsyncJobStatusResponseStatus string
 
 type FnmsAssetIndexResponse struct {
 	Body         []byte
@@ -472,6 +1696,97 @@ func (r FnmsFileShowResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r FnmsFileShowResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FnmsApplicationExecuteAsyncResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON202      *FnmsApplicationAsyncJobInitiateResponse
+	JSON409      *FnmsApplicationAsyncJobConflictResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r FnmsApplicationExecuteAsyncResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FnmsApplicationExecuteAsyncResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FnmsApplicationExecuteAsyncResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FnmsApplicationExecuteAsyncRetrieveResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r FnmsApplicationExecuteAsyncRetrieveResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FnmsApplicationExecuteAsyncRetrieveResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FnmsApplicationExecuteAsyncRetrieveResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FnmsApplicationExecuteAsyncStatusResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FnmsApplicationAsyncJobStatusResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r FnmsApplicationExecuteAsyncStatusResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FnmsApplicationExecuteAsyncStatusResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FnmsApplicationExecuteAsyncStatusResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -568,6 +1883,188 @@ func (r FnmsLicenseEntitlementsResponse) ContentType() string {
 	return ""
 }
 
+type FnmsLicensedApplicationExecuteAsyncResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON202      *FnmsLicensedApplicationAsyncJobInitiateResponse
+	JSON409      *FnmsLicensedApplicationAsyncJobConflictResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r FnmsLicensedApplicationExecuteAsyncResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FnmsLicensedApplicationExecuteAsyncResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FnmsLicensedApplicationExecuteAsyncResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FnmsLicensedApplicationExecuteAsyncRetrieveResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r FnmsLicensedApplicationExecuteAsyncRetrieveResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FnmsLicensedApplicationExecuteAsyncRetrieveResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FnmsLicensedApplicationExecuteAsyncRetrieveResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FnmsLicensedApplicationExecuteAsyncStatusResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FnmsLicensedApplicationAsyncJobStatusResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r FnmsLicensedApplicationExecuteAsyncStatusResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FnmsLicensedApplicationExecuteAsyncStatusResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FnmsLicensedApplicationExecuteAsyncStatusResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FnmsLicenseLicensesAsyncResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON202      *FnmsLicenseAsyncJobInitiateResponse
+	JSON409      *FnmsLicenseAsyncJobConflictResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r FnmsLicenseLicensesAsyncResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FnmsLicenseLicensesAsyncResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FnmsLicenseLicensesAsyncResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FnmsLicenseLicensesAsyncRetrieveResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r FnmsLicenseLicensesAsyncRetrieveResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FnmsLicenseLicensesAsyncRetrieveResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FnmsLicenseLicensesAsyncRetrieveResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FnmsLicenseLicensesAsyncStatusResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FnmsLicenseAsyncJobStatusResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r FnmsLicenseLicensesAsyncStatusResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FnmsLicenseLicensesAsyncStatusResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FnmsLicenseLicensesAsyncStatusResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type FnmsLicenseAllocationResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -598,6 +2095,97 @@ func (r FnmsLicenseAllocationResponse) ContentType() string {
 	return ""
 }
 
+type FnmsLicenseConsumptionAsyncResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON202      *FnmsLicenseConsumptionAsyncJobInitiateResponse
+	JSON409      *FnmsLicenseConsumptionAsyncJobConflictResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r FnmsLicenseConsumptionAsyncResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FnmsLicenseConsumptionAsyncResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FnmsLicenseConsumptionAsyncResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FnmsLicenseConsumptionAsyncRetrieveResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r FnmsLicenseConsumptionAsyncRetrieveResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FnmsLicenseConsumptionAsyncRetrieveResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FnmsLicenseConsumptionAsyncRetrieveResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FnmsLicenseConsumptionAsyncStatusResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FnmsLicenseConsumptionAsyncJobStatusResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r FnmsLicenseConsumptionAsyncStatusResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FnmsLicenseConsumptionAsyncStatusResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FnmsLicenseConsumptionAsyncStatusResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type FnmsLicenseDeallocationResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -622,6 +2210,97 @@ func (r FnmsLicenseDeallocationResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r FnmsLicenseDeallocationResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FnmsLicenseDevicesAsyncResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON202      *FnmsLicensedDeviceAsyncJobInitiateResponse
+	JSON409      *FnmsLicensedDeviceAsyncJobConflictResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r FnmsLicenseDevicesAsyncResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FnmsLicenseDevicesAsyncResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FnmsLicenseDevicesAsyncResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FnmsLicenseDevicesAsyncRetrieveResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r FnmsLicenseDevicesAsyncRetrieveResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FnmsLicenseDevicesAsyncRetrieveResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FnmsLicenseDevicesAsyncRetrieveResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FnmsLicenseDevicesAsyncStatusResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FnmsLicensedDeviceAsyncJobStatusResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r FnmsLicenseDevicesAsyncStatusResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FnmsLicenseDevicesAsyncStatusResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FnmsLicenseDevicesAsyncStatusResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -839,6 +2518,97 @@ func (r FnmsSystemHealthGetResponse) ContentType() string {
 	return ""
 }
 
+type FnmsSystemTasksExecuteAsyncResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON202      *FnmsSystemTasksAsyncJobInitiateResponse
+	JSON409      *FnmsSystemTasksAsyncJobConflictResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r FnmsSystemTasksExecuteAsyncResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FnmsSystemTasksExecuteAsyncResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FnmsSystemTasksExecuteAsyncResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FnmsSystemTasksExecuteAsyncRetrieveResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *interface{}
+}
+
+// Status returns HTTPResponse.Status
+func (r FnmsSystemTasksExecuteAsyncRetrieveResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FnmsSystemTasksExecuteAsyncRetrieveResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FnmsSystemTasksExecuteAsyncRetrieveResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FnmsSystemTasksExecuteAsyncStatusResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *FnmsSystemTasksAsyncJobStatusResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r FnmsSystemTasksExecuteAsyncStatusResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FnmsSystemTasksExecuteAsyncStatusResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FnmsSystemTasksExecuteAsyncStatusResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type FnmsInstalledSoftwareV2CreateV2Response struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -887,6 +2657,33 @@ func (c *ClientWithResponses) FnmsFileShowWithResponse(ctx context.Context, orgI
 	return ParseFnmsFileShowResponse(rsp)
 }
 
+// FnmsApplicationExecuteAsyncWithResponse request returning *FnmsApplicationExecuteAsyncResponse
+func (c *ClientWithResponses) FnmsApplicationExecuteAsyncWithResponse(ctx context.Context, orgId int64, params *FnmsApplicationExecuteAsyncParams, reqEditors ...RequestEditorFn) (*FnmsApplicationExecuteAsyncResponse, error) {
+	rsp, err := c.FnmsApplicationExecuteAsync(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFnmsApplicationExecuteAsyncResponse(rsp)
+}
+
+// FnmsApplicationExecuteAsyncRetrieveWithResponse request returning *FnmsApplicationExecuteAsyncRetrieveResponse
+func (c *ClientWithResponses) FnmsApplicationExecuteAsyncRetrieveWithResponse(ctx context.Context, orgId int64, jobId string, params *FnmsApplicationExecuteAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*FnmsApplicationExecuteAsyncRetrieveResponse, error) {
+	rsp, err := c.FnmsApplicationExecuteAsyncRetrieve(ctx, orgId, jobId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFnmsApplicationExecuteAsyncRetrieveResponse(rsp)
+}
+
+// FnmsApplicationExecuteAsyncStatusWithResponse request returning *FnmsApplicationExecuteAsyncStatusResponse
+func (c *ClientWithResponses) FnmsApplicationExecuteAsyncStatusWithResponse(ctx context.Context, orgId int64, jobId string, reqEditors ...RequestEditorFn) (*FnmsApplicationExecuteAsyncStatusResponse, error) {
+	rsp, err := c.FnmsApplicationExecuteAsyncStatus(ctx, orgId, jobId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFnmsApplicationExecuteAsyncStatusResponse(rsp)
+}
+
 // FnmsInventoryIndexWithResponse request returning *FnmsInventoryIndexResponse
 func (c *ClientWithResponses) FnmsInventoryIndexWithResponse(ctx context.Context, orgId int64, params *FnmsInventoryIndexParams, reqEditors ...RequestEditorFn) (*FnmsInventoryIndexResponse, error) {
 	rsp, err := c.FnmsInventoryIndex(ctx, orgId, params, reqEditors...)
@@ -914,6 +2711,60 @@ func (c *ClientWithResponses) FnmsLicenseEntitlementsWithResponse(ctx context.Co
 	return ParseFnmsLicenseEntitlementsResponse(rsp)
 }
 
+// FnmsLicensedApplicationExecuteAsyncWithResponse request returning *FnmsLicensedApplicationExecuteAsyncResponse
+func (c *ClientWithResponses) FnmsLicensedApplicationExecuteAsyncWithResponse(ctx context.Context, orgId int64, params *FnmsLicensedApplicationExecuteAsyncParams, reqEditors ...RequestEditorFn) (*FnmsLicensedApplicationExecuteAsyncResponse, error) {
+	rsp, err := c.FnmsLicensedApplicationExecuteAsync(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFnmsLicensedApplicationExecuteAsyncResponse(rsp)
+}
+
+// FnmsLicensedApplicationExecuteAsyncRetrieveWithResponse request returning *FnmsLicensedApplicationExecuteAsyncRetrieveResponse
+func (c *ClientWithResponses) FnmsLicensedApplicationExecuteAsyncRetrieveWithResponse(ctx context.Context, orgId int64, jobId string, params *FnmsLicensedApplicationExecuteAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*FnmsLicensedApplicationExecuteAsyncRetrieveResponse, error) {
+	rsp, err := c.FnmsLicensedApplicationExecuteAsyncRetrieve(ctx, orgId, jobId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFnmsLicensedApplicationExecuteAsyncRetrieveResponse(rsp)
+}
+
+// FnmsLicensedApplicationExecuteAsyncStatusWithResponse request returning *FnmsLicensedApplicationExecuteAsyncStatusResponse
+func (c *ClientWithResponses) FnmsLicensedApplicationExecuteAsyncStatusWithResponse(ctx context.Context, orgId int64, jobId string, reqEditors ...RequestEditorFn) (*FnmsLicensedApplicationExecuteAsyncStatusResponse, error) {
+	rsp, err := c.FnmsLicensedApplicationExecuteAsyncStatus(ctx, orgId, jobId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFnmsLicensedApplicationExecuteAsyncStatusResponse(rsp)
+}
+
+// FnmsLicenseLicensesAsyncWithResponse request returning *FnmsLicenseLicensesAsyncResponse
+func (c *ClientWithResponses) FnmsLicenseLicensesAsyncWithResponse(ctx context.Context, orgId int64, params *FnmsLicenseLicensesAsyncParams, reqEditors ...RequestEditorFn) (*FnmsLicenseLicensesAsyncResponse, error) {
+	rsp, err := c.FnmsLicenseLicensesAsync(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFnmsLicenseLicensesAsyncResponse(rsp)
+}
+
+// FnmsLicenseLicensesAsyncRetrieveWithResponse request returning *FnmsLicenseLicensesAsyncRetrieveResponse
+func (c *ClientWithResponses) FnmsLicenseLicensesAsyncRetrieveWithResponse(ctx context.Context, orgId int64, jobId string, params *FnmsLicenseLicensesAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*FnmsLicenseLicensesAsyncRetrieveResponse, error) {
+	rsp, err := c.FnmsLicenseLicensesAsyncRetrieve(ctx, orgId, jobId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFnmsLicenseLicensesAsyncRetrieveResponse(rsp)
+}
+
+// FnmsLicenseLicensesAsyncStatusWithResponse request returning *FnmsLicenseLicensesAsyncStatusResponse
+func (c *ClientWithResponses) FnmsLicenseLicensesAsyncStatusWithResponse(ctx context.Context, orgId int64, jobId string, reqEditors ...RequestEditorFn) (*FnmsLicenseLicensesAsyncStatusResponse, error) {
+	rsp, err := c.FnmsLicenseLicensesAsyncStatus(ctx, orgId, jobId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFnmsLicenseLicensesAsyncStatusResponse(rsp)
+}
+
 // FnmsLicenseAllocationWithResponse request returning *FnmsLicenseAllocationResponse
 func (c *ClientWithResponses) FnmsLicenseAllocationWithResponse(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseAllocationParams, reqEditors ...RequestEditorFn) (*FnmsLicenseAllocationResponse, error) {
 	rsp, err := c.FnmsLicenseAllocation(ctx, orgId, licenseId, params, reqEditors...)
@@ -923,6 +2774,33 @@ func (c *ClientWithResponses) FnmsLicenseAllocationWithResponse(ctx context.Cont
 	return ParseFnmsLicenseAllocationResponse(rsp)
 }
 
+// FnmsLicenseConsumptionAsyncWithResponse request returning *FnmsLicenseConsumptionAsyncResponse
+func (c *ClientWithResponses) FnmsLicenseConsumptionAsyncWithResponse(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseConsumptionAsyncParams, reqEditors ...RequestEditorFn) (*FnmsLicenseConsumptionAsyncResponse, error) {
+	rsp, err := c.FnmsLicenseConsumptionAsync(ctx, orgId, licenseId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFnmsLicenseConsumptionAsyncResponse(rsp)
+}
+
+// FnmsLicenseConsumptionAsyncRetrieveWithResponse request returning *FnmsLicenseConsumptionAsyncRetrieveResponse
+func (c *ClientWithResponses) FnmsLicenseConsumptionAsyncRetrieveWithResponse(ctx context.Context, orgId int64, licenseId string, jobId string, params *FnmsLicenseConsumptionAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*FnmsLicenseConsumptionAsyncRetrieveResponse, error) {
+	rsp, err := c.FnmsLicenseConsumptionAsyncRetrieve(ctx, orgId, licenseId, jobId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFnmsLicenseConsumptionAsyncRetrieveResponse(rsp)
+}
+
+// FnmsLicenseConsumptionAsyncStatusWithResponse request returning *FnmsLicenseConsumptionAsyncStatusResponse
+func (c *ClientWithResponses) FnmsLicenseConsumptionAsyncStatusWithResponse(ctx context.Context, orgId int64, licenseId string, jobId string, reqEditors ...RequestEditorFn) (*FnmsLicenseConsumptionAsyncStatusResponse, error) {
+	rsp, err := c.FnmsLicenseConsumptionAsyncStatus(ctx, orgId, licenseId, jobId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFnmsLicenseConsumptionAsyncStatusResponse(rsp)
+}
+
 // FnmsLicenseDeallocationWithResponse request returning *FnmsLicenseDeallocationResponse
 func (c *ClientWithResponses) FnmsLicenseDeallocationWithResponse(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseDeallocationParams, reqEditors ...RequestEditorFn) (*FnmsLicenseDeallocationResponse, error) {
 	rsp, err := c.FnmsLicenseDeallocation(ctx, orgId, licenseId, params, reqEditors...)
@@ -930,6 +2808,33 @@ func (c *ClientWithResponses) FnmsLicenseDeallocationWithResponse(ctx context.Co
 		return nil, err
 	}
 	return ParseFnmsLicenseDeallocationResponse(rsp)
+}
+
+// FnmsLicenseDevicesAsyncWithResponse request returning *FnmsLicenseDevicesAsyncResponse
+func (c *ClientWithResponses) FnmsLicenseDevicesAsyncWithResponse(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseDevicesAsyncParams, reqEditors ...RequestEditorFn) (*FnmsLicenseDevicesAsyncResponse, error) {
+	rsp, err := c.FnmsLicenseDevicesAsync(ctx, orgId, licenseId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFnmsLicenseDevicesAsyncResponse(rsp)
+}
+
+// FnmsLicenseDevicesAsyncRetrieveWithResponse request returning *FnmsLicenseDevicesAsyncRetrieveResponse
+func (c *ClientWithResponses) FnmsLicenseDevicesAsyncRetrieveWithResponse(ctx context.Context, orgId int64, licenseId string, jobId string, params *FnmsLicenseDevicesAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*FnmsLicenseDevicesAsyncRetrieveResponse, error) {
+	rsp, err := c.FnmsLicenseDevicesAsyncRetrieve(ctx, orgId, licenseId, jobId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFnmsLicenseDevicesAsyncRetrieveResponse(rsp)
+}
+
+// FnmsLicenseDevicesAsyncStatusWithResponse request returning *FnmsLicenseDevicesAsyncStatusResponse
+func (c *ClientWithResponses) FnmsLicenseDevicesAsyncStatusWithResponse(ctx context.Context, orgId int64, licenseId string, jobId string, reqEditors ...RequestEditorFn) (*FnmsLicenseDevicesAsyncStatusResponse, error) {
+	rsp, err := c.FnmsLicenseDevicesAsyncStatus(ctx, orgId, licenseId, jobId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFnmsLicenseDevicesAsyncStatusResponse(rsp)
 }
 
 // FnmsReportIndexWithResponse request returning *FnmsReportIndexResponse
@@ -995,6 +2900,33 @@ func (c *ClientWithResponses) FnmsSystemHealthGetWithResponse(ctx context.Contex
 	return ParseFnmsSystemHealthGetResponse(rsp)
 }
 
+// FnmsSystemTasksExecuteAsyncWithResponse request returning *FnmsSystemTasksExecuteAsyncResponse
+func (c *ClientWithResponses) FnmsSystemTasksExecuteAsyncWithResponse(ctx context.Context, orgId int64, params *FnmsSystemTasksExecuteAsyncParams, reqEditors ...RequestEditorFn) (*FnmsSystemTasksExecuteAsyncResponse, error) {
+	rsp, err := c.FnmsSystemTasksExecuteAsync(ctx, orgId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFnmsSystemTasksExecuteAsyncResponse(rsp)
+}
+
+// FnmsSystemTasksExecuteAsyncRetrieveWithResponse request returning *FnmsSystemTasksExecuteAsyncRetrieveResponse
+func (c *ClientWithResponses) FnmsSystemTasksExecuteAsyncRetrieveWithResponse(ctx context.Context, orgId int64, jobId string, params *FnmsSystemTasksExecuteAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*FnmsSystemTasksExecuteAsyncRetrieveResponse, error) {
+	rsp, err := c.FnmsSystemTasksExecuteAsyncRetrieve(ctx, orgId, jobId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFnmsSystemTasksExecuteAsyncRetrieveResponse(rsp)
+}
+
+// FnmsSystemTasksExecuteAsyncStatusWithResponse request returning *FnmsSystemTasksExecuteAsyncStatusResponse
+func (c *ClientWithResponses) FnmsSystemTasksExecuteAsyncStatusWithResponse(ctx context.Context, orgId int64, jobId string, reqEditors ...RequestEditorFn) (*FnmsSystemTasksExecuteAsyncStatusResponse, error) {
+	rsp, err := c.FnmsSystemTasksExecuteAsyncStatus(ctx, orgId, jobId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFnmsSystemTasksExecuteAsyncStatusResponse(rsp)
+}
+
 // FnmsInstalledSoftwareV2CreateV2WithResponse request returning *FnmsInstalledSoftwareV2CreateV2Response
 func (c *ClientWithResponses) FnmsInstalledSoftwareV2CreateV2WithResponse(ctx context.Context, orgId int64, params *FnmsInstalledSoftwareV2CreateV2Params, reqEditors ...RequestEditorFn) (*FnmsInstalledSoftwareV2CreateV2Response, error) {
 	rsp, err := c.FnmsInstalledSoftwareV2CreateV2(ctx, orgId, params, reqEditors...)
@@ -1041,6 +2973,91 @@ func ParseFnmsFileShowResponse(rsp *http.Response) (*FnmsFileShowResponse, error
 	response := &FnmsFileShowResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
+	}
+
+	return response, nil
+}
+
+// ParseFnmsApplicationExecuteAsyncResponse parses an HTTP response from a FnmsApplicationExecuteAsyncWithResponse call
+func ParseFnmsApplicationExecuteAsyncResponse(rsp *http.Response) (*FnmsApplicationExecuteAsyncResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FnmsApplicationExecuteAsyncResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest FnmsApplicationAsyncJobInitiateResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest FnmsApplicationAsyncJobConflictResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFnmsApplicationExecuteAsyncRetrieveResponse parses an HTTP response from a FnmsApplicationExecuteAsyncRetrieveWithResponse call
+func ParseFnmsApplicationExecuteAsyncRetrieveResponse(rsp *http.Response) (*FnmsApplicationExecuteAsyncRetrieveResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FnmsApplicationExecuteAsyncRetrieveResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFnmsApplicationExecuteAsyncStatusResponse parses an HTTP response from a FnmsApplicationExecuteAsyncStatusWithResponse call
+func ParseFnmsApplicationExecuteAsyncStatusResponse(rsp *http.Response) (*FnmsApplicationExecuteAsyncStatusResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FnmsApplicationExecuteAsyncStatusResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FnmsApplicationAsyncJobStatusResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
 	}
 
 	return response, nil
@@ -1124,6 +3141,176 @@ func ParseFnmsLicenseEntitlementsResponse(rsp *http.Response) (*FnmsLicenseEntit
 	return response, nil
 }
 
+// ParseFnmsLicensedApplicationExecuteAsyncResponse parses an HTTP response from a FnmsLicensedApplicationExecuteAsyncWithResponse call
+func ParseFnmsLicensedApplicationExecuteAsyncResponse(rsp *http.Response) (*FnmsLicensedApplicationExecuteAsyncResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FnmsLicensedApplicationExecuteAsyncResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest FnmsLicensedApplicationAsyncJobInitiateResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest FnmsLicensedApplicationAsyncJobConflictResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFnmsLicensedApplicationExecuteAsyncRetrieveResponse parses an HTTP response from a FnmsLicensedApplicationExecuteAsyncRetrieveWithResponse call
+func ParseFnmsLicensedApplicationExecuteAsyncRetrieveResponse(rsp *http.Response) (*FnmsLicensedApplicationExecuteAsyncRetrieveResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FnmsLicensedApplicationExecuteAsyncRetrieveResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFnmsLicensedApplicationExecuteAsyncStatusResponse parses an HTTP response from a FnmsLicensedApplicationExecuteAsyncStatusWithResponse call
+func ParseFnmsLicensedApplicationExecuteAsyncStatusResponse(rsp *http.Response) (*FnmsLicensedApplicationExecuteAsyncStatusResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FnmsLicensedApplicationExecuteAsyncStatusResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FnmsLicensedApplicationAsyncJobStatusResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFnmsLicenseLicensesAsyncResponse parses an HTTP response from a FnmsLicenseLicensesAsyncWithResponse call
+func ParseFnmsLicenseLicensesAsyncResponse(rsp *http.Response) (*FnmsLicenseLicensesAsyncResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FnmsLicenseLicensesAsyncResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest FnmsLicenseAsyncJobInitiateResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest FnmsLicenseAsyncJobConflictResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFnmsLicenseLicensesAsyncRetrieveResponse parses an HTTP response from a FnmsLicenseLicensesAsyncRetrieveWithResponse call
+func ParseFnmsLicenseLicensesAsyncRetrieveResponse(rsp *http.Response) (*FnmsLicenseLicensesAsyncRetrieveResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FnmsLicenseLicensesAsyncRetrieveResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFnmsLicenseLicensesAsyncStatusResponse parses an HTTP response from a FnmsLicenseLicensesAsyncStatusWithResponse call
+func ParseFnmsLicenseLicensesAsyncStatusResponse(rsp *http.Response) (*FnmsLicenseLicensesAsyncStatusResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FnmsLicenseLicensesAsyncStatusResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FnmsLicenseAsyncJobStatusResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseFnmsLicenseAllocationResponse parses an HTTP response from a FnmsLicenseAllocationWithResponse call
 func ParseFnmsLicenseAllocationResponse(rsp *http.Response) (*FnmsLicenseAllocationResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -1150,6 +3337,91 @@ func ParseFnmsLicenseAllocationResponse(rsp *http.Response) (*FnmsLicenseAllocat
 	return response, nil
 }
 
+// ParseFnmsLicenseConsumptionAsyncResponse parses an HTTP response from a FnmsLicenseConsumptionAsyncWithResponse call
+func ParseFnmsLicenseConsumptionAsyncResponse(rsp *http.Response) (*FnmsLicenseConsumptionAsyncResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FnmsLicenseConsumptionAsyncResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest FnmsLicenseConsumptionAsyncJobInitiateResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest FnmsLicenseConsumptionAsyncJobConflictResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFnmsLicenseConsumptionAsyncRetrieveResponse parses an HTTP response from a FnmsLicenseConsumptionAsyncRetrieveWithResponse call
+func ParseFnmsLicenseConsumptionAsyncRetrieveResponse(rsp *http.Response) (*FnmsLicenseConsumptionAsyncRetrieveResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FnmsLicenseConsumptionAsyncRetrieveResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFnmsLicenseConsumptionAsyncStatusResponse parses an HTTP response from a FnmsLicenseConsumptionAsyncStatusWithResponse call
+func ParseFnmsLicenseConsumptionAsyncStatusResponse(rsp *http.Response) (*FnmsLicenseConsumptionAsyncStatusResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FnmsLicenseConsumptionAsyncStatusResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FnmsLicenseConsumptionAsyncJobStatusResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseFnmsLicenseDeallocationResponse parses an HTTP response from a FnmsLicenseDeallocationWithResponse call
 func ParseFnmsLicenseDeallocationResponse(rsp *http.Response) (*FnmsLicenseDeallocationResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -1166,6 +3438,91 @@ func ParseFnmsLicenseDeallocationResponse(rsp *http.Response) (*FnmsLicenseDeall
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest FnmsDeallocationResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFnmsLicenseDevicesAsyncResponse parses an HTTP response from a FnmsLicenseDevicesAsyncWithResponse call
+func ParseFnmsLicenseDevicesAsyncResponse(rsp *http.Response) (*FnmsLicenseDevicesAsyncResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FnmsLicenseDevicesAsyncResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest FnmsLicensedDeviceAsyncJobInitiateResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest FnmsLicensedDeviceAsyncJobConflictResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFnmsLicenseDevicesAsyncRetrieveResponse parses an HTTP response from a FnmsLicenseDevicesAsyncRetrieveWithResponse call
+func ParseFnmsLicenseDevicesAsyncRetrieveResponse(rsp *http.Response) (*FnmsLicenseDevicesAsyncRetrieveResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FnmsLicenseDevicesAsyncRetrieveResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFnmsLicenseDevicesAsyncStatusResponse parses an HTTP response from a FnmsLicenseDevicesAsyncStatusWithResponse call
+func ParseFnmsLicenseDevicesAsyncStatusResponse(rsp *http.Response) (*FnmsLicenseDevicesAsyncStatusResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FnmsLicenseDevicesAsyncStatusResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FnmsLicensedDeviceAsyncJobStatusResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -1355,6 +3712,91 @@ func ParseFnmsSystemHealthGetResponse(rsp *http.Response) (*FnmsSystemHealthGetR
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest FnmsGetResponseBody
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFnmsSystemTasksExecuteAsyncResponse parses an HTTP response from a FnmsSystemTasksExecuteAsyncWithResponse call
+func ParseFnmsSystemTasksExecuteAsyncResponse(rsp *http.Response) (*FnmsSystemTasksExecuteAsyncResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FnmsSystemTasksExecuteAsyncResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest FnmsSystemTasksAsyncJobInitiateResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest FnmsSystemTasksAsyncJobConflictResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFnmsSystemTasksExecuteAsyncRetrieveResponse parses an HTTP response from a FnmsSystemTasksExecuteAsyncRetrieveWithResponse call
+func ParseFnmsSystemTasksExecuteAsyncRetrieveResponse(rsp *http.Response) (*FnmsSystemTasksExecuteAsyncRetrieveResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FnmsSystemTasksExecuteAsyncRetrieveResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFnmsSystemTasksExecuteAsyncStatusResponse parses an HTTP response from a FnmsSystemTasksExecuteAsyncStatusWithResponse call
+func ParseFnmsSystemTasksExecuteAsyncStatusResponse(rsp *http.Response) (*FnmsSystemTasksExecuteAsyncStatusResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FnmsSystemTasksExecuteAsyncStatusResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FnmsSystemTasksAsyncJobStatusResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

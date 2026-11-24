@@ -20,6 +20,7 @@ const (
 	VisCreateRequestBodyQueryNameBusinessServicesApplications          VisCreateRequestBodyQueryName = "business_services_applications"
 	VisCreateRequestBodyQueryNameBusinessServicesAssets                VisCreateRequestBodyQueryName = "business_services_assets"
 	VisCreateRequestBodyQueryNameBusinessServicesDependentApplications VisCreateRequestBodyQueryName = "business_services_dependent_applications"
+	VisCreateRequestBodyQueryNameCellularNetworkInfo                   VisCreateRequestBodyQueryName = "cellular_network_info"
 	VisCreateRequestBodyQueryNameCpeCatalog                            VisCreateRequestBodyQueryName = "cpe_catalog"
 	VisCreateRequestBodyQueryNameDeviceMashup                          VisCreateRequestBodyQueryName = "device_mashup"
 	VisCreateRequestBodyQueryNameHardwareBusinessServices              VisCreateRequestBodyQueryName = "hardware_business_services"

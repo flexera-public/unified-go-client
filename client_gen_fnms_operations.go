@@ -29,6 +29,24 @@ type FnmsAssetIndexParams struct {
 	Location *string `form:"location,omitempty" json:"location,omitempty"`
 }
 
+// FnmsApplicationExecuteAsyncParams defines parameters for FnmsApplicationExecuteAsync.
+type FnmsApplicationExecuteAsyncParams struct {
+	// Limit Number of rows per result page. Defaults to 10000 if not specified. Must be between 5000 and 10000.
+	Limit *int64 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// ForceNewExecution Skip deduplication check and force a new execution.
+	ForceNewExecution *bool `form:"forceNewExecution,omitempty" json:"forceNewExecution,omitempty"`
+}
+
+// FnmsApplicationExecuteAsyncRetrieveParams defines parameters for FnmsApplicationExecuteAsyncRetrieve.
+type FnmsApplicationExecuteAsyncRetrieveParams struct {
+	// Page Page number to retrieve (1-based). Omit or set to 1 for the first page or when pagination is disabled.
+	Page *int64 `form:"page,omitempty" json:"page,omitempty"`
+
+	// Accept Requested format for the response body.
+	Accept *FnmsApplicationExecuteAsyncRetrieveParamsAccept `json:"Accept,omitempty"`
+}
+
 // FnmsInventoryIndexParams defines parameters for FnmsInventoryIndex.
 type FnmsInventoryIndexParams struct {
 	// Offset Specify the first record to return in a request response. Note that the offset is zero-based (the first record is assigned index 0 instead of 1)
@@ -71,16 +89,106 @@ type FnmsLicenseEntitlementsParams struct {
 	Limit *int64 `form:"limit,omitempty" json:"limit,omitempty"`
 }
 
+// FnmsLicensedApplicationExecuteAsyncParams defines parameters for FnmsLicensedApplicationExecuteAsync.
+type FnmsLicensedApplicationExecuteAsyncParams struct {
+	// Status Filter licensed applications by status
+	Status *FnmsLicensedApplicationExecuteAsyncParamsStatus `form:"status,omitempty" json:"status,omitempty"`
+
+	// Limit Number of rows per result page. Defaults to 10000 if not specified. Must be between 5000 and 10000.
+	Limit *int64 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// ForceNewExecution Skip deduplication check and force a new execution.
+	ForceNewExecution *bool `form:"forceNewExecution,omitempty" json:"forceNewExecution,omitempty"`
+}
+
+// FnmsLicensedApplicationExecuteAsyncRetrieveParams defines parameters for FnmsLicensedApplicationExecuteAsyncRetrieve.
+type FnmsLicensedApplicationExecuteAsyncRetrieveParams struct {
+	// Page Page number to retrieve (1-based). Omit or set to 1 for the first page.
+	Page *int64 `form:"page,omitempty" json:"page,omitempty"`
+
+	// Accept Requested format for the response body.
+	Accept *FnmsLicensedApplicationExecuteAsyncRetrieveParamsAccept `json:"Accept,omitempty"`
+}
+
+// FnmsLicenseLicensesAsyncParams defines parameters for FnmsLicenseLicensesAsync.
+type FnmsLicenseLicensesAsyncParams struct {
+	// Filter Optional filter for filtering list of licenses returned.
+	// The following filters are supported:
+	// | Filter | Description | Allowed Operator | Behavior | Example |
+	// | --- | ---| --- | --- | --- |
+	// | typeCategory | Filters on the type categories of licenses (user, device, processor) | eq | Equal - The attribute and operator values must be identical for a match. | typeCategory eq 'processor' |
+	// * The filter parameter value must be URL encoded.
+	//         e.g: ?filter=(typeCategory%20eq%20'processor')
+	Filter *string `form:"filter,omitempty" json:"filter,omitempty"`
+
+	// Limit Optional number of rows per result page. Omit to disable pagination and retrieve all matching licenses in a single streamed response. When specified, must be between 5000 and 10000.
+	Limit *int64 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// ForceNewExecution Skip deduplication check and force a new execution.
+	ForceNewExecution *bool `form:"forceNewExecution,omitempty" json:"forceNewExecution,omitempty"`
+}
+
+// FnmsLicenseLicensesAsyncRetrieveParams defines parameters for FnmsLicenseLicensesAsyncRetrieve.
+type FnmsLicenseLicensesAsyncRetrieveParams struct {
+	// Page Page number to retrieve (1-based). Omit or set to 1 for the first page or when pagination is disabled.
+	Page *int64 `form:"page,omitempty" json:"page,omitempty"`
+
+	// View Optional view used to render list of licenses
+	View *FnmsLicenseLicensesAsyncRetrieveParamsView `form:"view,omitempty" json:"view,omitempty"`
+
+	// Accept Requested format for the response body.
+	Accept *FnmsLicenseLicensesAsyncRetrieveParamsAccept `json:"Accept,omitempty"`
+}
+
 // FnmsLicenseAllocationParams defines parameters for FnmsLicenseAllocation.
 type FnmsLicenseAllocationParams struct {
 	// ContentType The content type of the uploaded file.
 	ContentType string `json:"Content-Type"`
 }
 
+// FnmsLicenseConsumptionAsyncParams defines parameters for FnmsLicenseConsumptionAsync.
+type FnmsLicenseConsumptionAsyncParams struct {
+	// Limit Number of rows per result page. Fixed at job creation time.
+	Limit *int64 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// ForceNewExecution Skip deduplication check and force a new extraction.
+	ForceNewExecution *bool `form:"forceNewExecution,omitempty" json:"forceNewExecution,omitempty"`
+}
+
+// FnmsLicenseConsumptionAsyncRetrieveParams defines parameters for FnmsLicenseConsumptionAsyncRetrieve.
+type FnmsLicenseConsumptionAsyncRetrieveParams struct {
+	// Page Page number to retrieve (1-based).
+	Page *int64 `form:"page,omitempty" json:"page,omitempty"`
+
+	// View Response view for this page. Defaults to index.
+	View *FnmsLicenseConsumptionAsyncRetrieveParamsView `form:"view,omitempty" json:"view,omitempty"`
+
+	// Accept Requested format for the response body.
+	Accept *FnmsLicenseConsumptionAsyncRetrieveParamsAccept `json:"Accept,omitempty"`
+}
+
 // FnmsLicenseDeallocationParams defines parameters for FnmsLicenseDeallocation.
 type FnmsLicenseDeallocationParams struct {
 	// ContentType The content type of the uploaded file.
 	ContentType string `json:"Content-Type"`
+}
+
+// FnmsLicenseDevicesAsyncParams defines parameters for FnmsLicenseDevicesAsync.
+type FnmsLicenseDevicesAsyncParams struct {
+	// Limit Number of rows per result page. Defaults to 10000 if not specified. Must be between 5000 and 10000.
+	Limit *int64 `form:"limit,omitempty" json:"limit,omitempty"`
+}
+
+// FnmsLicenseDevicesAsyncRetrieveParams defines parameters for FnmsLicenseDevicesAsyncRetrieve.
+type FnmsLicenseDevicesAsyncRetrieveParams struct {
+	// Page Page number to retrieve (1-based). Omit or set to 1 for the first page.
+	Page *int64 `form:"page,omitempty" json:"page,omitempty"`
+
+	// View Optional view used to render list devices associated with the license
+	View *FnmsLicenseDevicesAsyncRetrieveParamsView `form:"view,omitempty" json:"view,omitempty"`
+
+	// Accept Requested format for the response body.
+	Accept *FnmsLicenseDevicesAsyncRetrieveParamsAccept `json:"Accept,omitempty"`
 }
 
 // FnmsReportExecuteAsyncParams defines parameters for FnmsReportExecuteAsync.
@@ -152,6 +260,36 @@ type FnmsSystemHealthGetParams struct {
 	FnmeaAgentReportLogRotationStatus *string `form:"fnmeaAgentReportLogRotationStatus,omitempty" json:"fnmeaAgentReportLogRotationStatus,omitempty"`
 }
 
+// FnmsSystemTasksExecuteAsyncParams defines parameters for FnmsSystemTasksExecuteAsync.
+type FnmsSystemTasksExecuteAsyncParams struct {
+	// Days Filter system tasks run in the last 'days' days
+	Days *int64 `form:"days,omitempty" json:"days,omitempty"`
+
+	// AllRuns Filter system tasks to include/exclude all runs
+	AllRuns *string `form:"allRuns,omitempty" json:"allRuns,omitempty"`
+
+	// TaskType Filter system tasks by task type
+	TaskType *[]FnmsSystemTasksExecuteAsyncParamsTaskType `form:"taskType,omitempty" json:"taskType,omitempty"`
+
+	// TaskStatus Filter system tasks by task status
+	TaskStatus *[]FnmsSystemTasksExecuteAsyncParamsTaskStatus `form:"taskStatus,omitempty" json:"taskStatus,omitempty"`
+
+	// Limit Number of rows per result page. Defaults to 10000 if not specified. Must be between 5000 and 10000.
+	Limit *int64 `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// ForceNewExecution Skip deduplication check and force a new execution.
+	ForceNewExecution *bool `form:"forceNewExecution,omitempty" json:"forceNewExecution,omitempty"`
+}
+
+// FnmsSystemTasksExecuteAsyncRetrieveParams defines parameters for FnmsSystemTasksExecuteAsyncRetrieve.
+type FnmsSystemTasksExecuteAsyncRetrieveParams struct {
+	// Page Page number to retrieve (1-based). Omit or set to 1 for the first page.
+	Page *int64 `form:"page,omitempty" json:"page,omitempty"`
+
+	// Accept Requested format for the response body.
+	Accept *FnmsSystemTasksExecuteAsyncRetrieveParamsAccept `json:"Accept,omitempty"`
+}
+
 // FnmsInstalledSoftwareV2CreateV2Params defines parameters for FnmsInstalledSoftwareV2CreateV2.
 type FnmsInstalledSoftwareV2CreateV2Params struct {
 	// Os Limit the request response to devices with the specified operating system installed
@@ -184,6 +322,42 @@ func (c *Client) FnmsAssetIndex(ctx context.Context, orgId int64, params *FnmsAs
 
 func (c *Client) FnmsFileShow(ctx context.Context, orgId int64, filename string, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewFnmsFileShowRequest(c.Server, orgId, filename)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FnmsApplicationExecuteAsync(ctx context.Context, orgId int64, params *FnmsApplicationExecuteAsyncParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFnmsApplicationExecuteAsyncRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FnmsApplicationExecuteAsyncRetrieve(ctx context.Context, orgId int64, jobId string, params *FnmsApplicationExecuteAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFnmsApplicationExecuteAsyncRetrieveRequest(c.Server, orgId, jobId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FnmsApplicationExecuteAsyncStatus(ctx context.Context, orgId int64, jobId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFnmsApplicationExecuteAsyncStatusRequest(c.Server, orgId, jobId)
 	if err != nil {
 		return nil, err
 	}
@@ -230,6 +404,78 @@ func (c *Client) FnmsLicenseEntitlements(ctx context.Context, orgId int64, param
 	return c.Client.Do(req)
 }
 
+func (c *Client) FnmsLicensedApplicationExecuteAsync(ctx context.Context, orgId int64, params *FnmsLicensedApplicationExecuteAsyncParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFnmsLicensedApplicationExecuteAsyncRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FnmsLicensedApplicationExecuteAsyncRetrieve(ctx context.Context, orgId int64, jobId string, params *FnmsLicensedApplicationExecuteAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFnmsLicensedApplicationExecuteAsyncRetrieveRequest(c.Server, orgId, jobId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FnmsLicensedApplicationExecuteAsyncStatus(ctx context.Context, orgId int64, jobId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFnmsLicensedApplicationExecuteAsyncStatusRequest(c.Server, orgId, jobId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FnmsLicenseLicensesAsync(ctx context.Context, orgId int64, params *FnmsLicenseLicensesAsyncParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFnmsLicenseLicensesAsyncRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FnmsLicenseLicensesAsyncRetrieve(ctx context.Context, orgId int64, jobId string, params *FnmsLicenseLicensesAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFnmsLicenseLicensesAsyncRetrieveRequest(c.Server, orgId, jobId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FnmsLicenseLicensesAsyncStatus(ctx context.Context, orgId int64, jobId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFnmsLicenseLicensesAsyncStatusRequest(c.Server, orgId, jobId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) FnmsLicenseAllocation(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseAllocationParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewFnmsLicenseAllocationRequest(c.Server, orgId, licenseId, params)
 	if err != nil {
@@ -242,8 +488,80 @@ func (c *Client) FnmsLicenseAllocation(ctx context.Context, orgId int64, license
 	return c.Client.Do(req)
 }
 
+func (c *Client) FnmsLicenseConsumptionAsync(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseConsumptionAsyncParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFnmsLicenseConsumptionAsyncRequest(c.Server, orgId, licenseId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FnmsLicenseConsumptionAsyncRetrieve(ctx context.Context, orgId int64, licenseId string, jobId string, params *FnmsLicenseConsumptionAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFnmsLicenseConsumptionAsyncRetrieveRequest(c.Server, orgId, licenseId, jobId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FnmsLicenseConsumptionAsyncStatus(ctx context.Context, orgId int64, licenseId string, jobId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFnmsLicenseConsumptionAsyncStatusRequest(c.Server, orgId, licenseId, jobId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) FnmsLicenseDeallocation(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseDeallocationParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewFnmsLicenseDeallocationRequest(c.Server, orgId, licenseId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FnmsLicenseDevicesAsync(ctx context.Context, orgId int64, licenseId string, params *FnmsLicenseDevicesAsyncParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFnmsLicenseDevicesAsyncRequest(c.Server, orgId, licenseId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FnmsLicenseDevicesAsyncRetrieve(ctx context.Context, orgId int64, licenseId string, jobId string, params *FnmsLicenseDevicesAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFnmsLicenseDevicesAsyncRetrieveRequest(c.Server, orgId, licenseId, jobId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FnmsLicenseDevicesAsyncStatus(ctx context.Context, orgId int64, licenseId string, jobId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFnmsLicenseDevicesAsyncStatusRequest(c.Server, orgId, licenseId, jobId)
 	if err != nil {
 		return nil, err
 	}
@@ -328,6 +646,42 @@ func (c *Client) FnmsReportExportReport(ctx context.Context, orgId int64, id str
 
 func (c *Client) FnmsSystemHealthGet(ctx context.Context, orgId int64, params *FnmsSystemHealthGetParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewFnmsSystemHealthGetRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FnmsSystemTasksExecuteAsync(ctx context.Context, orgId int64, params *FnmsSystemTasksExecuteAsyncParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFnmsSystemTasksExecuteAsyncRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FnmsSystemTasksExecuteAsyncRetrieve(ctx context.Context, orgId int64, jobId string, params *FnmsSystemTasksExecuteAsyncRetrieveParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFnmsSystemTasksExecuteAsyncRetrieveRequest(c.Server, orgId, jobId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) FnmsSystemTasksExecuteAsyncStatus(ctx context.Context, orgId int64, jobId string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFnmsSystemTasksExecuteAsyncStatusRequest(c.Server, orgId, jobId)
 	if err != nil {
 		return nil, err
 	}
@@ -483,6 +837,203 @@ func NewFnmsFileShowRequest(server string, orgId int64, filename string) (*http.
 	}
 
 	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/files/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFnmsApplicationExecuteAsyncRequest generates requests for FnmsApplicationExecuteAsync
+func NewFnmsApplicationExecuteAsyncRequest(server string, orgId int64, params *FnmsApplicationExecuteAsyncParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: "int64"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/installed-applications-async", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: "int64"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.ForceNewExecution != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "forceNewExecution", *params.ForceNewExecution, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFnmsApplicationExecuteAsyncRetrieveRequest generates requests for FnmsApplicationExecuteAsyncRetrieve
+func NewFnmsApplicationExecuteAsyncRetrieveRequest(server string, orgId int64, jobId string, params *FnmsApplicationExecuteAsyncRetrieveParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: "int64"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "jobId", jobId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/installed-applications-async/%s/retrieve", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page", *params.Page, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: "int64"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		if params.Accept != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithOptions("simple", false, "Accept", *params.Accept, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationHeader, Type: "string", Format: ""})
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Accept", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFnmsApplicationExecuteAsyncStatusRequest generates requests for FnmsApplicationExecuteAsyncStatus
+func NewFnmsApplicationExecuteAsyncStatusRequest(server string, orgId int64, jobId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: "int64"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "jobId", jobId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/installed-applications-async/%s/status", pathParam0, pathParam1)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -779,6 +1330,436 @@ func NewFnmsLicenseEntitlementsRequest(server string, orgId int64, params *FnmsL
 	return req, nil
 }
 
+// NewFnmsLicensedApplicationExecuteAsyncRequest generates requests for FnmsLicensedApplicationExecuteAsync
+func NewFnmsLicensedApplicationExecuteAsyncRequest(server string, orgId int64, params *FnmsLicensedApplicationExecuteAsyncParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: "int64"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/licensed-applications-async", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Status != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "status", *params.Status, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: "int64"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.ForceNewExecution != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "forceNewExecution", *params.ForceNewExecution, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFnmsLicensedApplicationExecuteAsyncRetrieveRequest generates requests for FnmsLicensedApplicationExecuteAsyncRetrieve
+func NewFnmsLicensedApplicationExecuteAsyncRetrieveRequest(server string, orgId int64, jobId string, params *FnmsLicensedApplicationExecuteAsyncRetrieveParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: "int64"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "jobId", jobId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/licensed-applications-async/%s/retrieve", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page", *params.Page, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: "int64"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		if params.Accept != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithOptions("simple", false, "Accept", *params.Accept, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationHeader, Type: "string", Format: ""})
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Accept", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFnmsLicensedApplicationExecuteAsyncStatusRequest generates requests for FnmsLicensedApplicationExecuteAsyncStatus
+func NewFnmsLicensedApplicationExecuteAsyncStatusRequest(server string, orgId int64, jobId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: "int64"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "jobId", jobId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/licensed-applications-async/%s/status", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFnmsLicenseLicensesAsyncRequest generates requests for FnmsLicenseLicensesAsync
+func NewFnmsLicenseLicensesAsyncRequest(server string, orgId int64, params *FnmsLicenseLicensesAsyncParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: "int64"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/licenses-async", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Filter != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "filter", *params.Filter, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: "int64"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.ForceNewExecution != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "forceNewExecution", *params.ForceNewExecution, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFnmsLicenseLicensesAsyncRetrieveRequest generates requests for FnmsLicenseLicensesAsyncRetrieve
+func NewFnmsLicenseLicensesAsyncRetrieveRequest(server string, orgId int64, jobId string, params *FnmsLicenseLicensesAsyncRetrieveParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: "int64"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "jobId", jobId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/licenses-async/%s/retrieve", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page", *params.Page, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: "int64"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.View != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "view", *params.View, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		if params.Accept != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithOptions("simple", false, "Accept", *params.Accept, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationHeader, Type: "string", Format: ""})
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Accept", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFnmsLicenseLicensesAsyncStatusRequest generates requests for FnmsLicenseLicensesAsyncStatus
+func NewFnmsLicenseLicensesAsyncStatusRequest(server string, orgId int64, jobId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: "int64"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "jobId", jobId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/licenses-async/%s/status", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewFnmsLicenseAllocationRequest generates requests for FnmsLicenseAllocation
 func NewFnmsLicenseAllocationRequest(server string, orgId int64, licenseId string, params *FnmsLicenseAllocationParams) (*http.Request, error) {
 	var err error
@@ -833,6 +1814,236 @@ func NewFnmsLicenseAllocationRequest(server string, orgId int64, licenseId strin
 	return req, nil
 }
 
+// NewFnmsLicenseConsumptionAsyncRequest generates requests for FnmsLicenseConsumptionAsync
+func NewFnmsLicenseConsumptionAsyncRequest(server string, orgId int64, licenseId string, params *FnmsLicenseConsumptionAsyncParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: "int64"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "licenseId", licenseId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/licenses/%s/consumption-async", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: "int64"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.ForceNewExecution != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "forceNewExecution", *params.ForceNewExecution, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFnmsLicenseConsumptionAsyncRetrieveRequest generates requests for FnmsLicenseConsumptionAsyncRetrieve
+func NewFnmsLicenseConsumptionAsyncRetrieveRequest(server string, orgId int64, licenseId string, jobId string, params *FnmsLicenseConsumptionAsyncRetrieveParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: "int64"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "licenseId", licenseId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "jobId", jobId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/licenses/%s/consumption-async/%s/retrieve", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page", *params.Page, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: "int64"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.View != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "view", *params.View, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		if params.Accept != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithOptions("simple", false, "Accept", *params.Accept, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationHeader, Type: "string", Format: ""})
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Accept", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFnmsLicenseConsumptionAsyncStatusRequest generates requests for FnmsLicenseConsumptionAsyncStatus
+func NewFnmsLicenseConsumptionAsyncStatusRequest(server string, orgId int64, licenseId string, jobId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: "int64"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "licenseId", licenseId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "jobId", jobId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/licenses/%s/consumption-async/%s/status", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewFnmsLicenseDeallocationRequest generates requests for FnmsLicenseDeallocation
 func NewFnmsLicenseDeallocationRequest(server string, orgId int64, licenseId string, params *FnmsLicenseDeallocationParams) (*http.Request, error) {
 	var err error
@@ -882,6 +2093,224 @@ func NewFnmsLicenseDeallocationRequest(server string, orgId int64, licenseId str
 
 		req.Header.Set("Content-Type", headerParam0)
 
+	}
+
+	return req, nil
+}
+
+// NewFnmsLicenseDevicesAsyncRequest generates requests for FnmsLicenseDevicesAsync
+func NewFnmsLicenseDevicesAsyncRequest(server string, orgId int64, licenseId string, params *FnmsLicenseDevicesAsyncParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: "int64"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "licenseId", licenseId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/licenses/%s/devices-async", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: "int64"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFnmsLicenseDevicesAsyncRetrieveRequest generates requests for FnmsLicenseDevicesAsyncRetrieve
+func NewFnmsLicenseDevicesAsyncRetrieveRequest(server string, orgId int64, licenseId string, jobId string, params *FnmsLicenseDevicesAsyncRetrieveParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: "int64"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "licenseId", licenseId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "jobId", jobId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/licenses/%s/devices-async/%s/retrieve", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page", *params.Page, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: "int64"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.View != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "view", *params.View, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		if params.Accept != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithOptions("simple", false, "Accept", *params.Accept, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationHeader, Type: "string", Format: ""})
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Accept", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFnmsLicenseDevicesAsyncStatusRequest generates requests for FnmsLicenseDevicesAsyncStatus
+func NewFnmsLicenseDevicesAsyncStatusRequest(server string, orgId int64, licenseId string, jobId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: "int64"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "licenseId", licenseId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "jobId", jobId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/licenses/%s/devices-async/%s/status", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
 	}
 
 	return req, nil
@@ -1458,6 +2887,251 @@ func NewFnmsSystemHealthGetRequest(server string, orgId int64, params *FnmsSyste
 			rawQueryFragments = append(rawQueryFragments, encoded)
 		}
 		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFnmsSystemTasksExecuteAsyncRequest generates requests for FnmsSystemTasksExecuteAsync
+func NewFnmsSystemTasksExecuteAsyncRequest(server string, orgId int64, params *FnmsSystemTasksExecuteAsyncParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: "int64"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/system-tasks-async", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Days != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "days", *params.Days, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: "int64"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.AllRuns != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "allRuns", *params.AllRuns, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TaskType != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "taskType", *params.TaskType, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "array", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.TaskStatus != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "taskStatus", *params.TaskStatus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "array", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: "int64"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.ForceNewExecution != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "forceNewExecution", *params.ForceNewExecution, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "boolean", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewFnmsSystemTasksExecuteAsyncRetrieveRequest generates requests for FnmsSystemTasksExecuteAsyncRetrieve
+func NewFnmsSystemTasksExecuteAsyncRetrieveRequest(server string, orgId int64, jobId string, params *FnmsSystemTasksExecuteAsyncRetrieveParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: "int64"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "jobId", jobId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/system-tasks-async/%s/retrieve", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Page != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "page", *params.Page, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: "int64"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+
+		if params.Accept != nil {
+			var headerParam0 string
+
+			headerParam0, err = runtime.StyleParamWithOptions("simple", false, "Accept", *params.Accept, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationHeader, Type: "string", Format: ""})
+			if err != nil {
+				return nil, err
+			}
+
+			req.Header.Set("Accept", headerParam0)
+		}
+
+	}
+
+	return req, nil
+}
+
+// NewFnmsSystemTasksExecuteAsyncStatusRequest generates requests for FnmsSystemTasksExecuteAsyncStatus
+func NewFnmsSystemTasksExecuteAsyncStatusRequest(server string, orgId int64, jobId string) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "orgId", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: "int64"})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "jobId", jobId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/fnms/v1/orgs/%s/system-tasks-async/%s/status", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
 	}
 
 	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)

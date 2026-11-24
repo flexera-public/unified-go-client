@@ -801,6 +801,24 @@ func (e FnmsAssetIndexParamsAssetType) Valid() bool {
 	}
 }
 
+// Defines values for FnmsApplicationExecuteAsyncRetrieveParamsAccept.
+const (
+	FnmsApplicationExecuteAsyncRetrieveParamsAcceptApplicationjson FnmsApplicationExecuteAsyncRetrieveParamsAccept = "application/json"
+	FnmsApplicationExecuteAsyncRetrieveParamsAcceptTextcsv         FnmsApplicationExecuteAsyncRetrieveParamsAccept = "text/csv"
+)
+
+// Valid indicates whether the value is a known member of the FnmsApplicationExecuteAsyncRetrieveParamsAccept enum.
+func (e FnmsApplicationExecuteAsyncRetrieveParamsAccept) Valid() bool {
+	switch e {
+	case FnmsApplicationExecuteAsyncRetrieveParamsAcceptApplicationjson:
+		return true
+	case FnmsApplicationExecuteAsyncRetrieveParamsAcceptTextcsv:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for FnmsInventoryIndexParamsStatus.
 const (
 	FnmsInventoryIndexParamsStatusActive            FnmsInventoryIndexParamsStatus = "Active"
@@ -885,6 +903,162 @@ func (e FnmsInventoryIndexParamsComplianceStatus) Valid() bool {
 	}
 }
 
+// Defines values for FnmsLicensedApplicationExecuteAsyncParamsStatus.
+const (
+	FnmsLicensedApplicationExecuteAsyncParamsStatusAuthorized   FnmsLicensedApplicationExecuteAsyncParamsStatus = "Authorized"
+	FnmsLicensedApplicationExecuteAsyncParamsStatusDeferred     FnmsLicensedApplicationExecuteAsyncParamsStatus = "Deferred"
+	FnmsLicensedApplicationExecuteAsyncParamsStatusIgnored      FnmsLicensedApplicationExecuteAsyncParamsStatus = "Ignored"
+	FnmsLicensedApplicationExecuteAsyncParamsStatusInactive     FnmsLicensedApplicationExecuteAsyncParamsStatus = "Inactive"
+	FnmsLicensedApplicationExecuteAsyncParamsStatusUnauthorized FnmsLicensedApplicationExecuteAsyncParamsStatus = "Unauthorized"
+	FnmsLicensedApplicationExecuteAsyncParamsStatusUnmanaged    FnmsLicensedApplicationExecuteAsyncParamsStatus = "Unmanaged"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicensedApplicationExecuteAsyncParamsStatus enum.
+func (e FnmsLicensedApplicationExecuteAsyncParamsStatus) Valid() bool {
+	switch e {
+	case FnmsLicensedApplicationExecuteAsyncParamsStatusAuthorized:
+		return true
+	case FnmsLicensedApplicationExecuteAsyncParamsStatusDeferred:
+		return true
+	case FnmsLicensedApplicationExecuteAsyncParamsStatusIgnored:
+		return true
+	case FnmsLicensedApplicationExecuteAsyncParamsStatusInactive:
+		return true
+	case FnmsLicensedApplicationExecuteAsyncParamsStatusUnauthorized:
+		return true
+	case FnmsLicensedApplicationExecuteAsyncParamsStatusUnmanaged:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicensedApplicationExecuteAsyncRetrieveParamsAccept.
+const (
+	FnmsLicensedApplicationExecuteAsyncRetrieveParamsAcceptApplicationjson FnmsLicensedApplicationExecuteAsyncRetrieveParamsAccept = "application/json"
+	FnmsLicensedApplicationExecuteAsyncRetrieveParamsAcceptTextcsv         FnmsLicensedApplicationExecuteAsyncRetrieveParamsAccept = "text/csv"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicensedApplicationExecuteAsyncRetrieveParamsAccept enum.
+func (e FnmsLicensedApplicationExecuteAsyncRetrieveParamsAccept) Valid() bool {
+	switch e {
+	case FnmsLicensedApplicationExecuteAsyncRetrieveParamsAcceptApplicationjson:
+		return true
+	case FnmsLicensedApplicationExecuteAsyncRetrieveParamsAcceptTextcsv:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicenseLicensesAsyncRetrieveParamsView.
+const (
+	FnmsLicenseLicensesAsyncRetrieveParamsViewExtended FnmsLicenseLicensesAsyncRetrieveParamsView = "extended"
+	FnmsLicenseLicensesAsyncRetrieveParamsViewIndex    FnmsLicenseLicensesAsyncRetrieveParamsView = "index"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicenseLicensesAsyncRetrieveParamsView enum.
+func (e FnmsLicenseLicensesAsyncRetrieveParamsView) Valid() bool {
+	switch e {
+	case FnmsLicenseLicensesAsyncRetrieveParamsViewExtended:
+		return true
+	case FnmsLicenseLicensesAsyncRetrieveParamsViewIndex:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicenseLicensesAsyncRetrieveParamsAccept.
+const (
+	FnmsLicenseLicensesAsyncRetrieveParamsAcceptApplicationjson FnmsLicenseLicensesAsyncRetrieveParamsAccept = "application/json"
+	FnmsLicenseLicensesAsyncRetrieveParamsAcceptTextcsv         FnmsLicenseLicensesAsyncRetrieveParamsAccept = "text/csv"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicenseLicensesAsyncRetrieveParamsAccept enum.
+func (e FnmsLicenseLicensesAsyncRetrieveParamsAccept) Valid() bool {
+	switch e {
+	case FnmsLicenseLicensesAsyncRetrieveParamsAcceptApplicationjson:
+		return true
+	case FnmsLicenseLicensesAsyncRetrieveParamsAcceptTextcsv:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicenseConsumptionAsyncRetrieveParamsView.
+const (
+	FnmsLicenseConsumptionAsyncRetrieveParamsViewExtended FnmsLicenseConsumptionAsyncRetrieveParamsView = "extended"
+	FnmsLicenseConsumptionAsyncRetrieveParamsViewIndex    FnmsLicenseConsumptionAsyncRetrieveParamsView = "index"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicenseConsumptionAsyncRetrieveParamsView enum.
+func (e FnmsLicenseConsumptionAsyncRetrieveParamsView) Valid() bool {
+	switch e {
+	case FnmsLicenseConsumptionAsyncRetrieveParamsViewExtended:
+		return true
+	case FnmsLicenseConsumptionAsyncRetrieveParamsViewIndex:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicenseConsumptionAsyncRetrieveParamsAccept.
+const (
+	FnmsLicenseConsumptionAsyncRetrieveParamsAcceptApplicationjson FnmsLicenseConsumptionAsyncRetrieveParamsAccept = "application/json"
+	FnmsLicenseConsumptionAsyncRetrieveParamsAcceptTextcsv         FnmsLicenseConsumptionAsyncRetrieveParamsAccept = "text/csv"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicenseConsumptionAsyncRetrieveParamsAccept enum.
+func (e FnmsLicenseConsumptionAsyncRetrieveParamsAccept) Valid() bool {
+	switch e {
+	case FnmsLicenseConsumptionAsyncRetrieveParamsAcceptApplicationjson:
+		return true
+	case FnmsLicenseConsumptionAsyncRetrieveParamsAcceptTextcsv:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicenseDevicesAsyncRetrieveParamsView.
+const (
+	FnmsLicenseDevicesAsyncRetrieveParamsViewExtended FnmsLicenseDevicesAsyncRetrieveParamsView = "extended"
+	FnmsLicenseDevicesAsyncRetrieveParamsViewIndex    FnmsLicenseDevicesAsyncRetrieveParamsView = "index"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicenseDevicesAsyncRetrieveParamsView enum.
+func (e FnmsLicenseDevicesAsyncRetrieveParamsView) Valid() bool {
+	switch e {
+	case FnmsLicenseDevicesAsyncRetrieveParamsViewExtended:
+		return true
+	case FnmsLicenseDevicesAsyncRetrieveParamsViewIndex:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsLicenseDevicesAsyncRetrieveParamsAccept.
+const (
+	FnmsLicenseDevicesAsyncRetrieveParamsAcceptApplicationjson FnmsLicenseDevicesAsyncRetrieveParamsAccept = "application/json"
+	FnmsLicenseDevicesAsyncRetrieveParamsAcceptTextcsv         FnmsLicenseDevicesAsyncRetrieveParamsAccept = "text/csv"
+)
+
+// Valid indicates whether the value is a known member of the FnmsLicenseDevicesAsyncRetrieveParamsAccept enum.
+func (e FnmsLicenseDevicesAsyncRetrieveParamsAccept) Valid() bool {
+	switch e {
+	case FnmsLicenseDevicesAsyncRetrieveParamsAcceptApplicationjson:
+		return true
+	case FnmsLicenseDevicesAsyncRetrieveParamsAcceptTextcsv:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for FnmsReportExecuteAsyncRetrieveParamsAccept.
 const (
 	FnmsReportExecuteAsyncRetrieveParamsAcceptApplicationjson FnmsReportExecuteAsyncRetrieveParamsAccept = "application/json"
@@ -915,6 +1089,123 @@ func (e FnmsReportExportReportParamsAccept) Valid() bool {
 	case FnmsReportExportReportParamsAcceptApplicationjson:
 		return true
 	case FnmsReportExportReportParamsAcceptTextcsv:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsSystemTasksExecuteAsyncParamsTaskType.
+const (
+	FnmsSystemTasksExecuteAsyncParamsTaskTypeActiveDirectory           FnmsSystemTasksExecuteAsyncParamsTaskType = "activeDirectory"
+	FnmsSystemTasksExecuteAsyncParamsTaskTypeBusinessImport            FnmsSystemTasksExecuteAsyncParamsTaskType = "businessImport"
+	FnmsSystemTasksExecuteAsyncParamsTaskTypeDataWarehouseExport       FnmsSystemTasksExecuteAsyncParamsTaskType = "dataWarehouseExport"
+	FnmsSystemTasksExecuteAsyncParamsTaskTypeDiscoveryAndInventoryRule FnmsSystemTasksExecuteAsyncParamsTaskType = "discoveryAndInventoryRule"
+	FnmsSystemTasksExecuteAsyncParamsTaskTypeEnterpriseGroupOneOff     FnmsSystemTasksExecuteAsyncParamsTaskType = "enterpriseGroupOneOff"
+	FnmsSystemTasksExecuteAsyncParamsTaskTypeInventoryImport           FnmsSystemTasksExecuteAsyncParamsTaskType = "inventoryImport"
+	FnmsSystemTasksExecuteAsyncParamsTaskTypeOracleGlasArchive         FnmsSystemTasksExecuteAsyncParamsTaskType = "oracleGlasArchive"
+	FnmsSystemTasksExecuteAsyncParamsTaskTypePurchaseOrderOneOff       FnmsSystemTasksExecuteAsyncParamsTaskType = "purchaseOrderOneOff"
+	FnmsSystemTasksExecuteAsyncParamsTaskTypePvuImport                 FnmsSystemTasksExecuteAsyncParamsTaskType = "pvuImport"
+	FnmsSystemTasksExecuteAsyncParamsTaskTypeReconciliation            FnmsSystemTasksExecuteAsyncParamsTaskType = "reconciliation"
+	FnmsSystemTasksExecuteAsyncParamsTaskTypeSapImport                 FnmsSystemTasksExecuteAsyncParamsTaskType = "sapImport"
+	FnmsSystemTasksExecuteAsyncParamsTaskTypeSapLicensePosition        FnmsSystemTasksExecuteAsyncParamsTaskType = "sapLicensePosition"
+	FnmsSystemTasksExecuteAsyncParamsTaskTypeSoftwareSku               FnmsSystemTasksExecuteAsyncParamsTaskType = "softwareSku"
+	FnmsSystemTasksExecuteAsyncParamsTaskTypeUserAssignmentOneOff      FnmsSystemTasksExecuteAsyncParamsTaskType = "userAssignmentOneOff"
+)
+
+// Valid indicates whether the value is a known member of the FnmsSystemTasksExecuteAsyncParamsTaskType enum.
+func (e FnmsSystemTasksExecuteAsyncParamsTaskType) Valid() bool {
+	switch e {
+	case FnmsSystemTasksExecuteAsyncParamsTaskTypeActiveDirectory:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskTypeBusinessImport:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskTypeDataWarehouseExport:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskTypeDiscoveryAndInventoryRule:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskTypeEnterpriseGroupOneOff:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskTypeInventoryImport:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskTypeOracleGlasArchive:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskTypePurchaseOrderOneOff:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskTypePvuImport:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskTypeReconciliation:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskTypeSapImport:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskTypeSapLicensePosition:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskTypeSoftwareSku:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskTypeUserAssignmentOneOff:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsSystemTasksExecuteAsyncParamsTaskStatus.
+const (
+	FnmsSystemTasksExecuteAsyncParamsTaskStatusCompleted            FnmsSystemTasksExecuteAsyncParamsTaskStatus = "completed"
+	FnmsSystemTasksExecuteAsyncParamsTaskStatusCompletedWithErrors  FnmsSystemTasksExecuteAsyncParamsTaskStatus = "completedWithErrors"
+	FnmsSystemTasksExecuteAsyncParamsTaskStatusFailed               FnmsSystemTasksExecuteAsyncParamsTaskStatus = "failed"
+	FnmsSystemTasksExecuteAsyncParamsTaskStatusInProgress           FnmsSystemTasksExecuteAsyncParamsTaskStatus = "inProgress"
+	FnmsSystemTasksExecuteAsyncParamsTaskStatusInProgressWithErrors FnmsSystemTasksExecuteAsyncParamsTaskStatus = "inProgressWithErrors"
+	FnmsSystemTasksExecuteAsyncParamsTaskStatusPending              FnmsSystemTasksExecuteAsyncParamsTaskStatus = "pending"
+	FnmsSystemTasksExecuteAsyncParamsTaskStatusScheduled            FnmsSystemTasksExecuteAsyncParamsTaskStatus = "scheduled"
+	FnmsSystemTasksExecuteAsyncParamsTaskStatusSkipped              FnmsSystemTasksExecuteAsyncParamsTaskStatus = "skipped"
+	FnmsSystemTasksExecuteAsyncParamsTaskStatusStarted              FnmsSystemTasksExecuteAsyncParamsTaskStatus = "started"
+	FnmsSystemTasksExecuteAsyncParamsTaskStatusTimedOut             FnmsSystemTasksExecuteAsyncParamsTaskStatus = "timedOut"
+	FnmsSystemTasksExecuteAsyncParamsTaskStatusUnknown              FnmsSystemTasksExecuteAsyncParamsTaskStatus = "unknown"
+)
+
+// Valid indicates whether the value is a known member of the FnmsSystemTasksExecuteAsyncParamsTaskStatus enum.
+func (e FnmsSystemTasksExecuteAsyncParamsTaskStatus) Valid() bool {
+	switch e {
+	case FnmsSystemTasksExecuteAsyncParamsTaskStatusCompleted:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskStatusCompletedWithErrors:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskStatusFailed:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskStatusInProgress:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskStatusInProgressWithErrors:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskStatusPending:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskStatusScheduled:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskStatusSkipped:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskStatusStarted:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskStatusTimedOut:
+		return true
+	case FnmsSystemTasksExecuteAsyncParamsTaskStatusUnknown:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FnmsSystemTasksExecuteAsyncRetrieveParamsAccept.
+const (
+	FnmsSystemTasksExecuteAsyncRetrieveParamsAcceptApplicationjson FnmsSystemTasksExecuteAsyncRetrieveParamsAccept = "application/json"
+	FnmsSystemTasksExecuteAsyncRetrieveParamsAcceptTextcsv         FnmsSystemTasksExecuteAsyncRetrieveParamsAccept = "text/csv"
+)
+
+// Valid indicates whether the value is a known member of the FnmsSystemTasksExecuteAsyncRetrieveParamsAccept enum.
+func (e FnmsSystemTasksExecuteAsyncRetrieveParamsAccept) Valid() bool {
+	switch e {
+	case FnmsSystemTasksExecuteAsyncRetrieveParamsAcceptApplicationjson:
+		return true
+	case FnmsSystemTasksExecuteAsyncRetrieveParamsAcceptTextcsv:
 		return true
 	default:
 		return false
@@ -1824,6 +2115,9 @@ type FnmsAssetIndexParamsStatus string
 // FnmsAssetIndexParamsAssetType defines parameters for FnmsAssetIndex.
 type FnmsAssetIndexParamsAssetType string
 
+// FnmsApplicationExecuteAsyncRetrieveParamsAccept defines parameters for FnmsApplicationExecuteAsyncRetrieve.
+type FnmsApplicationExecuteAsyncRetrieveParamsAccept string
+
 // FnmsInventoryIndexParamsStatus defines parameters for FnmsInventoryIndex.
 type FnmsInventoryIndexParamsStatus string
 
@@ -1833,11 +2127,44 @@ type FnmsInventoryIndexParamsDeviceType string
 // FnmsInventoryIndexParamsComplianceStatus defines parameters for FnmsInventoryIndex.
 type FnmsInventoryIndexParamsComplianceStatus string
 
+// FnmsLicensedApplicationExecuteAsyncParamsStatus defines parameters for FnmsLicensedApplicationExecuteAsync.
+type FnmsLicensedApplicationExecuteAsyncParamsStatus string
+
+// FnmsLicensedApplicationExecuteAsyncRetrieveParamsAccept defines parameters for FnmsLicensedApplicationExecuteAsyncRetrieve.
+type FnmsLicensedApplicationExecuteAsyncRetrieveParamsAccept string
+
+// FnmsLicenseLicensesAsyncRetrieveParamsView defines parameters for FnmsLicenseLicensesAsyncRetrieve.
+type FnmsLicenseLicensesAsyncRetrieveParamsView string
+
+// FnmsLicenseLicensesAsyncRetrieveParamsAccept defines parameters for FnmsLicenseLicensesAsyncRetrieve.
+type FnmsLicenseLicensesAsyncRetrieveParamsAccept string
+
+// FnmsLicenseConsumptionAsyncRetrieveParamsView defines parameters for FnmsLicenseConsumptionAsyncRetrieve.
+type FnmsLicenseConsumptionAsyncRetrieveParamsView string
+
+// FnmsLicenseConsumptionAsyncRetrieveParamsAccept defines parameters for FnmsLicenseConsumptionAsyncRetrieve.
+type FnmsLicenseConsumptionAsyncRetrieveParamsAccept string
+
+// FnmsLicenseDevicesAsyncRetrieveParamsView defines parameters for FnmsLicenseDevicesAsyncRetrieve.
+type FnmsLicenseDevicesAsyncRetrieveParamsView string
+
+// FnmsLicenseDevicesAsyncRetrieveParamsAccept defines parameters for FnmsLicenseDevicesAsyncRetrieve.
+type FnmsLicenseDevicesAsyncRetrieveParamsAccept string
+
 // FnmsReportExecuteAsyncRetrieveParamsAccept defines parameters for FnmsReportExecuteAsyncRetrieve.
 type FnmsReportExecuteAsyncRetrieveParamsAccept string
 
 // FnmsReportExportReportParamsAccept defines parameters for FnmsReportExportReport.
 type FnmsReportExportReportParamsAccept string
+
+// FnmsSystemTasksExecuteAsyncParamsTaskType defines parameters for FnmsSystemTasksExecuteAsync.
+type FnmsSystemTasksExecuteAsyncParamsTaskType string
+
+// FnmsSystemTasksExecuteAsyncParamsTaskStatus defines parameters for FnmsSystemTasksExecuteAsync.
+type FnmsSystemTasksExecuteAsyncParamsTaskStatus string
+
+// FnmsSystemTasksExecuteAsyncRetrieveParamsAccept defines parameters for FnmsSystemTasksExecuteAsyncRetrieve.
+type FnmsSystemTasksExecuteAsyncRetrieveParamsAccept string
 
 // FnmsInstalledSoftwareV2CreateV2ParamsAccept defines parameters for FnmsInstalledSoftwareV2CreateV2.
 type FnmsInstalledSoftwareV2CreateV2ParamsAccept string
