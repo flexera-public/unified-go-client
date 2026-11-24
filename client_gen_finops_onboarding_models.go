@@ -129,6 +129,24 @@ func (e FinopsOnboardingApplicationVndFlexeraFinopsOnboardingCbiAzureMcaGenericB
 	}
 }
 
+// Defines values for FinopsOnboardingApplicationVndFlexeraFinopsOnboardingDatabricksGenericBillConnectOnboardingOrigin.
+const (
+	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingDatabricksGenericBillConnectOnboardingOriginFinops   FinopsOnboardingApplicationVndFlexeraFinopsOnboardingDatabricksGenericBillConnectOnboardingOrigin = "finops"
+	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingDatabricksGenericBillConnectOnboardingOriginPlatform FinopsOnboardingApplicationVndFlexeraFinopsOnboardingDatabricksGenericBillConnectOnboardingOrigin = "platform"
+)
+
+// Valid indicates whether the value is a known member of the FinopsOnboardingApplicationVndFlexeraFinopsOnboardingDatabricksGenericBillConnectOnboardingOrigin enum.
+func (e FinopsOnboardingApplicationVndFlexeraFinopsOnboardingDatabricksGenericBillConnectOnboardingOrigin) Valid() bool {
+	switch e {
+	case FinopsOnboardingApplicationVndFlexeraFinopsOnboardingDatabricksGenericBillConnectOnboardingOriginFinops:
+		return true
+	case FinopsOnboardingApplicationVndFlexeraFinopsOnboardingDatabricksGenericBillConnectOnboardingOriginPlatform:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for FinopsOnboardingApplicationVndFlexeraFinopsOnboardingGcpGenericBillConnectOnboardingOrigin.
 const (
 	FinopsOnboardingApplicationVndFlexeraFinopsOnboardingGcpGenericBillConnectOnboardingOriginFinops   FinopsOnboardingApplicationVndFlexeraFinopsOnboardingGcpGenericBillConnectOnboardingOrigin = "finops"
@@ -979,12 +997,18 @@ type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingDatabricksGenericBillC
 	// ClientId The Databricks service principal Application ID
 	ClientId *string `json:"clientId,omitempty"`
 
+	// OnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+	OnboardingOrigin *FinopsOnboardingApplicationVndFlexeraFinopsOnboardingDatabricksGenericBillConnectOnboardingOrigin `json:"onboardingOrigin,omitempty"`
+
 	// SqlWarehouseId Databricks SQL warehouse ID for cost and usage queries
 	SqlWarehouseId *string `json:"sqlWarehouseId,omitempty"`
 
 	// WorkspaceUrl Databricks workspace URL
 	WorkspaceUrl *string `json:"workspaceUrl,omitempty"`
 }
+
+// FinopsOnboardingApplicationVndFlexeraFinopsOnboardingDatabricksGenericBillConnectOnboardingOrigin Origin of the bill connect. Possible values: "finops" (onboarded through FinOps), "platform" (onboarded through unified Platform onboarding). Defaults to "finops" when omitted.
+type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingDatabricksGenericBillConnectOnboardingOrigin string
 
 // FinopsOnboardingApplicationVndFlexeraFinopsOnboardingGcpGenericBillConnect GCPGenericBillConnect contains the fields unique to GCP in a bill connect
 type FinopsOnboardingApplicationVndFlexeraFinopsOnboardingGcpGenericBillConnect struct {

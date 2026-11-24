@@ -186,6 +186,43 @@ func (r UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetResponse) Con
 	return ""
 }
 
+type UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *UobsOkResponseValidationResult
+	JSON400      *UobsErrorResponse
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+	JSON502      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -217,6 +254,75 @@ func (r UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse)
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON202      *UobsOkResponseAny
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON404      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON202      *UobsOkResponseAny
+	JSON401      *UobsErrorResponse
+	JSON403      *UobsErrorResponse
+	JSON429      *UobsErrorResponse
+	JSON500      *UobsErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -812,6 +918,23 @@ func (c *ClientWithResponses) UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIden
 	return ParseUobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetResponse(rsp)
 }
 
+// UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostWithBodyWithResponse request with arbitrary body returning *UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostResponse
+func (c *ClientWithResponses) UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostResponse, error) {
+	rsp, err := c.UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostResponse(rsp)
+}
+
+func (c *ClientWithResponses) UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostWithResponse(ctx context.Context, orgId string, body UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostResponse, error) {
+	rsp, err := c.UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePost(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostResponse(rsp)
+}
+
 // UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteWithResponse request returning *UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse
 func (c *ClientWithResponses) UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteWithResponse(ctx context.Context, orgId string, params *UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse, error) {
 	rsp, err := c.UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDelete(ctx, orgId, params, reqEditors...)
@@ -819,6 +942,40 @@ func (c *ClientWithResponses) UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnb
 		return nil, err
 	}
 	return ParseUobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse(rsp)
+}
+
+// UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostWithBodyWithResponse request with arbitrary body returning *UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostResponse
+func (c *ClientWithResponses) UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostWithBodyWithResponse(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostWithBody(ctx, orgId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostResponse(rsp)
+}
+
+func (c *ClientWithResponses) UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostWithResponse(ctx context.Context, orgId string, body UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPost(ctx, orgId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostResponse(rsp)
+}
+
+// UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutWithBodyWithResponse request with arbitrary body returning *UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutResponse
+func (c *ClientWithResponses) UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutWithBodyWithResponse(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutWithBody(ctx, orgId, connectorId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutResponse(rsp)
+}
+
+func (c *ClientWithResponses) UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutWithResponse(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutResponse, error) {
+	rsp, err := c.UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPut(ctx, orgId, connectorId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseUobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutResponse(rsp)
 }
 
 // UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostWithBodyWithResponse request with arbitrary body returning *UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostResponse
@@ -1320,6 +1477,81 @@ func ParseUobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetResponse(rs
 	return response, nil
 }
 
+// ParseUobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostResponse parses an HTTP response from a UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostWithResponse call
+func ParseUobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostResponse(rsp *http.Response) (*UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest UobsOkResponseValidationResult
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 502:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseUobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse parses an HTTP response from a UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteWithResponse call
 func ParseUobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse(rsp *http.Response) (*UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -1389,6 +1621,121 @@ func ParseUobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteRespons
 			return nil, err
 		}
 		response.JSON502 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostResponse parses an HTTP response from a UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostWithResponse call
+func ParseUobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostResponse(rsp *http.Response) (*UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseUobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutResponse parses an HTTP response from a UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutWithResponse call
+func ParseUobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutResponse(rsp *http.Response) (*UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest UobsOkResponseAny
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest UobsErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
 
 	}
 

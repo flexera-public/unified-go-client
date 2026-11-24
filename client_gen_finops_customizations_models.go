@@ -31,6 +31,18 @@ func (e FinopsCustomizationsCreateRequestBodyVisibility) Valid() bool {
 	}
 }
 
+// Valid indicates whether the value is a known member of the FinopsCustomizationsCreateRequestBody2PageSource enum.
+func (e FinopsCustomizationsCreateRequestBody2PageSource) Valid() bool {
+	switch e {
+	case FinopsCustomizationsCreateRequestBody2PageSourceAnalyzeSpend:
+		return true
+	case FinopsCustomizationsCreateRequestBody2PageSourceInventory:
+		return true
+	default:
+		return false
+	}
+}
+
 // Valid indicates whether the value is a known member of the FinopsCustomizationsCreateRequestBody2Visibility enum.
 func (e FinopsCustomizationsCreateRequestBody2Visibility) Valid() bool {
 	switch e {
@@ -121,6 +133,27 @@ func (e FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionDashboa
 	}
 }
 
+// Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionEffectiveStatus.
+const (
+	FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionEffectiveStatusActive FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionEffectiveStatus = "active"
+	FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionEffectiveStatusMuted  FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionEffectiveStatus = "muted"
+	FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionEffectiveStatusPaused FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionEffectiveStatus = "paused"
+)
+
+// Valid indicates whether the value is a known member of the FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionEffectiveStatus enum.
+func (e FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionEffectiveStatus) Valid() bool {
+	switch e {
+	case FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionEffectiveStatusActive:
+		return true
+	case FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionEffectiveStatusMuted:
+		return true
+	case FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionEffectiveStatusPaused:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionKind.
 const (
 	FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionKindFinopsReportSubscription FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionKind = "finops:report-subscription"
@@ -130,6 +163,24 @@ const (
 func (e FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionKind) Valid() bool {
 	switch e {
 	case FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionKindFinopsReportSubscription:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionUserNotificationStatus.
+const (
+	FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionUserNotificationStatusMuted   FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionUserNotificationStatus = "muted"
+	FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionUserNotificationStatusUnmuted FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionUserNotificationStatus = "unmuted"
+)
+
+// Valid indicates whether the value is a known member of the FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionUserNotificationStatus enum.
+func (e FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionUserNotificationStatus) Valid() bool {
+	switch e {
+	case FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionUserNotificationStatusMuted:
+		return true
+	case FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionUserNotificationStatusUnmuted:
 		return true
 	default:
 		return false
@@ -178,6 +229,24 @@ const (
 func (e FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryKind) Valid() bool {
 	switch e {
 	case FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryKindFinopsSavedFilter:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSource.
+const (
+	FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSourceAnalyzeSpend FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSource = "analyzeSpend"
+	FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSourceInventory    FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSource = "inventory"
+)
+
+// Valid indicates whether the value is a known member of the FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSource enum.
+func (e FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSource) Valid() bool {
+	switch e {
+	case FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSourceAnalyzeSpend:
+		return true
+	case FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSourceInventory:
 		return true
 	default:
 		return false
@@ -255,20 +324,35 @@ func (e FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationProvider) V
 
 // Defines values for FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType.
 const (
-	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAwsCostAllocationTag FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "awsCostAllocationTag"
-	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAwsResourceTag       FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "awsResourceTag"
-	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAzureResourceTag     FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "azureResourceTag"
-	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeGcpResourceLabel     FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "gcpResourceLabel"
+	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAwsAccountTag         FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "awsAccountTag"
+	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAwsCostAllocationTag  FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "awsCostAllocationTag"
+	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAwsOuTag              FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "awsOuTag"
+	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAwsResourceTag        FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "awsResourceTag"
+	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAwsRootTag            FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "awsRootTag"
+	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAzureResourceGroupTag FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "azureResourceGroupTag"
+	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAzureResourceTag      FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "azureResourceTag"
+	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAzureSubscriptionTag  FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "azureSubscriptionTag"
+	FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeGcpResourceLabel      FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType = "gcpResourceLabel"
 )
 
 // Valid indicates whether the value is a known member of the FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType enum.
 func (e FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType) Valid() bool {
 	switch e {
+	case FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAwsAccountTag:
+		return true
 	case FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAwsCostAllocationTag:
+		return true
+	case FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAwsOuTag:
 		return true
 	case FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAwsResourceTag:
 		return true
+	case FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAwsRootTag:
+		return true
+	case FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAzureResourceGroupTag:
+		return true
 	case FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAzureResourceTag:
+		return true
+	case FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeAzureSubscriptionTag:
 		return true
 	case FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceTypeGcpResourceLabel:
 		return true
@@ -364,6 +448,27 @@ func (e FinopsCustomizationsReportSubscriptionResultDashboardScope) Valid() bool
 	}
 }
 
+// Defines values for FinopsCustomizationsReportSubscriptionResultEffectiveStatus.
+const (
+	FinopsCustomizationsReportSubscriptionResultEffectiveStatusActive FinopsCustomizationsReportSubscriptionResultEffectiveStatus = "active"
+	FinopsCustomizationsReportSubscriptionResultEffectiveStatusMuted  FinopsCustomizationsReportSubscriptionResultEffectiveStatus = "muted"
+	FinopsCustomizationsReportSubscriptionResultEffectiveStatusPaused FinopsCustomizationsReportSubscriptionResultEffectiveStatus = "paused"
+)
+
+// Valid indicates whether the value is a known member of the FinopsCustomizationsReportSubscriptionResultEffectiveStatus enum.
+func (e FinopsCustomizationsReportSubscriptionResultEffectiveStatus) Valid() bool {
+	switch e {
+	case FinopsCustomizationsReportSubscriptionResultEffectiveStatusActive:
+		return true
+	case FinopsCustomizationsReportSubscriptionResultEffectiveStatusMuted:
+		return true
+	case FinopsCustomizationsReportSubscriptionResultEffectiveStatusPaused:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for FinopsCustomizationsReportSubscriptionResultKind.
 const (
 	FinopsCustomizationsReportSubscriptionResultKindFinopsReportSubscription FinopsCustomizationsReportSubscriptionResultKind = "finops:report-subscription"
@@ -373,6 +478,24 @@ const (
 func (e FinopsCustomizationsReportSubscriptionResultKind) Valid() bool {
 	switch e {
 	case FinopsCustomizationsReportSubscriptionResultKindFinopsReportSubscription:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FinopsCustomizationsReportSubscriptionResultUserNotificationStatus.
+const (
+	FinopsCustomizationsReportSubscriptionResultUserNotificationStatusMuted   FinopsCustomizationsReportSubscriptionResultUserNotificationStatus = "muted"
+	FinopsCustomizationsReportSubscriptionResultUserNotificationStatusUnmuted FinopsCustomizationsReportSubscriptionResultUserNotificationStatus = "unmuted"
+)
+
+// Valid indicates whether the value is a known member of the FinopsCustomizationsReportSubscriptionResultUserNotificationStatus enum.
+func (e FinopsCustomizationsReportSubscriptionResultUserNotificationStatus) Valid() bool {
+	switch e {
+	case FinopsCustomizationsReportSubscriptionResultUserNotificationStatusMuted:
+		return true
+	case FinopsCustomizationsReportSubscriptionResultUserNotificationStatusUnmuted:
 		return true
 	default:
 		return false
@@ -604,6 +727,24 @@ func (e FinopsCustomizationsSavedFilterHTTPBodyKind) Valid() bool {
 	}
 }
 
+// Defines values for FinopsCustomizationsSavedFilterHTTPBodyPageSource.
+const (
+	FinopsCustomizationsSavedFilterHTTPBodyPageSourceAnalyzeSpend FinopsCustomizationsSavedFilterHTTPBodyPageSource = "analyzeSpend"
+	FinopsCustomizationsSavedFilterHTTPBodyPageSourceInventory    FinopsCustomizationsSavedFilterHTTPBodyPageSource = "inventory"
+)
+
+// Valid indicates whether the value is a known member of the FinopsCustomizationsSavedFilterHTTPBodyPageSource enum.
+func (e FinopsCustomizationsSavedFilterHTTPBodyPageSource) Valid() bool {
+	switch e {
+	case FinopsCustomizationsSavedFilterHTTPBodyPageSourceAnalyzeSpend:
+		return true
+	case FinopsCustomizationsSavedFilterHTTPBodyPageSourceInventory:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for FinopsCustomizationsSavedFilterHTTPBodyVisibility.
 const (
 	FinopsCustomizationsSavedFilterHTTPBodyVisibilityPrivate FinopsCustomizationsSavedFilterHTTPBodyVisibility = "private"
@@ -637,6 +778,45 @@ func (e FinopsCustomizationsTagDimensionListKind) Valid() bool {
 	}
 }
 
+// Defines values for FinopsCustomizationsTagDimensionTagSourceType.
+const (
+	FinopsCustomizationsTagDimensionTagSourceTypeAwsAccountTag         FinopsCustomizationsTagDimensionTagSourceType = "awsAccountTag"
+	FinopsCustomizationsTagDimensionTagSourceTypeAwsCostAllocationTag  FinopsCustomizationsTagDimensionTagSourceType = "awsCostAllocationTag"
+	FinopsCustomizationsTagDimensionTagSourceTypeAwsOuTag              FinopsCustomizationsTagDimensionTagSourceType = "awsOuTag"
+	FinopsCustomizationsTagDimensionTagSourceTypeAwsResourceTag        FinopsCustomizationsTagDimensionTagSourceType = "awsResourceTag"
+	FinopsCustomizationsTagDimensionTagSourceTypeAwsRootTag            FinopsCustomizationsTagDimensionTagSourceType = "awsRootTag"
+	FinopsCustomizationsTagDimensionTagSourceTypeAzureResourceGroupTag FinopsCustomizationsTagDimensionTagSourceType = "azureResourceGroupTag"
+	FinopsCustomizationsTagDimensionTagSourceTypeAzureResourceTag      FinopsCustomizationsTagDimensionTagSourceType = "azureResourceTag"
+	FinopsCustomizationsTagDimensionTagSourceTypeAzureSubscriptionTag  FinopsCustomizationsTagDimensionTagSourceType = "azureSubscriptionTag"
+	FinopsCustomizationsTagDimensionTagSourceTypeGcpResourceLabel      FinopsCustomizationsTagDimensionTagSourceType = "gcpResourceLabel"
+)
+
+// Valid indicates whether the value is a known member of the FinopsCustomizationsTagDimensionTagSourceType enum.
+func (e FinopsCustomizationsTagDimensionTagSourceType) Valid() bool {
+	switch e {
+	case FinopsCustomizationsTagDimensionTagSourceTypeAwsAccountTag:
+		return true
+	case FinopsCustomizationsTagDimensionTagSourceTypeAwsCostAllocationTag:
+		return true
+	case FinopsCustomizationsTagDimensionTagSourceTypeAwsOuTag:
+		return true
+	case FinopsCustomizationsTagDimensionTagSourceTypeAwsResourceTag:
+		return true
+	case FinopsCustomizationsTagDimensionTagSourceTypeAwsRootTag:
+		return true
+	case FinopsCustomizationsTagDimensionTagSourceTypeAzureResourceGroupTag:
+		return true
+	case FinopsCustomizationsTagDimensionTagSourceTypeAzureResourceTag:
+		return true
+	case FinopsCustomizationsTagDimensionTagSourceTypeAzureSubscriptionTag:
+		return true
+	case FinopsCustomizationsTagDimensionTagSourceTypeGcpResourceLabel:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for FinopsCustomizationsTagObservationListKind.
 const (
 	FinopsCustomizationsTagObservationListKindFinopsTagObservationList FinopsCustomizationsTagObservationListKind = "finops:tag-observation-list"
@@ -664,12 +844,28 @@ func (e FinopsCustomizationsUpdateRequestBody2Visibility) Valid() bool {
 	}
 }
 
-// Valid indicates whether the value is a known member of the FinopsCustomizationsUpdateRequestBody3Visibility enum.
-func (e FinopsCustomizationsUpdateRequestBody3Visibility) Valid() bool {
+// Valid indicates whether the value is a known member of the FinopsCustomizationsUpdateRequestBody3Action enum.
+func (e FinopsCustomizationsUpdateRequestBody3Action) Valid() bool {
 	switch e {
-	case FinopsCustomizationsUpdateRequestBody3VisibilityPrivate:
+	case FinopsCustomizationsUpdateRequestBody3ActionMute:
 		return true
-	case FinopsCustomizationsUpdateRequestBody3VisibilityShared:
+	case FinopsCustomizationsUpdateRequestBody3ActionPause:
+		return true
+	case FinopsCustomizationsUpdateRequestBody3ActionResume:
+		return true
+	case FinopsCustomizationsUpdateRequestBody3ActionUnmute:
+		return true
+	default:
+		return false
+	}
+}
+
+// Valid indicates whether the value is a known member of the FinopsCustomizationsUpdateRequestBody4Visibility enum.
+func (e FinopsCustomizationsUpdateRequestBody4Visibility) Valid() bool {
+	switch e {
+	case FinopsCustomizationsUpdateRequestBody4VisibilityPrivate:
+		return true
+	case FinopsCustomizationsUpdateRequestBody4VisibilityShared:
 		return true
 	default:
 		return false
@@ -780,11 +976,17 @@ type FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscription struct {
 	// CreatedAt ISO-8601 creation timestamp
 	CreatedAt time.Time `json:"createdAt"`
 
+	// CreatedByEmail Email address of the user who created the report subscription.
+	CreatedByEmail string `json:"createdByEmail"`
+
 	// DashboardId Identifier of the dashboard to render and send.
 	DashboardId string `json:"dashboardId"`
 
 	// DashboardScope Which dashboard store resolves the target dashboard.
 	DashboardScope FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionDashboardScope `json:"dashboardScope"`
+
+	// EffectiveStatus Read-only status calculated for the authenticated user, not persisted: paused when enabled is false; otherwise muted when the user's preference is muted, or active when it is unmuted. This does not indicate whether the user is a recipient.
+	EffectiveStatus *FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionEffectiveStatus `json:"effectiveStatus,omitempty"`
 
 	// Enabled Whether the schedule is active.
 	Enabled bool `json:"enabled"`
@@ -822,17 +1024,26 @@ type FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscription struct {
 	// UpdatedAt ISO-8601 last-update timestamp
 	UpdatedAt time.Time `json:"updatedAt"`
 
-	// Visibility Visibility scope: `private` = only visible to the owner; `shared` = visible to other users in the org.
+	// UserNotificationStatus The authenticated user's persisted preference, independent of the global enabled flag. Returns unmuted when no preference has been stored.
+	UserNotificationStatus *FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionUserNotificationStatus `json:"userNotificationStatus,omitempty"`
+
+	// Visibility Visibility scope: `private` = visible only to the subscription owner and organization administrators (`org_owner`); `shared` = visible to other users in the organization.
 	Visibility FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionVisibility `json:"visibility"`
 }
 
 // FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionDashboardScope Which dashboard store resolves the target dashboard.
 type FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionDashboardScope string
 
+// FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionEffectiveStatus Read-only status calculated for the authenticated user, not persisted: paused when enabled is false; otherwise muted when the user's preference is muted, or active when it is unmuted. This does not indicate whether the user is a recipient.
+type FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionEffectiveStatus string
+
 // FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionKind The resource's type
 type FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionKind string
 
-// FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionVisibility Visibility scope: `private` = only visible to the owner; `shared` = visible to other users in the org.
+// FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionUserNotificationStatus The authenticated user's persisted preference, independent of the global enabled flag. Returns unmuted when no preference has been stored.
+type FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionUserNotificationStatus string
+
+// FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionVisibility Visibility scope: `private` = visible only to the subscription owner and organization administrators (`org_owner`); `shared` = visible to other users in the organization.
 type FinopsCustomizationsFlexeraFinopsCustomizationsReportSubscriptionVisibility string
 
 // FinopsCustomizationsFlexeraFinopsCustomizationsRuleBasedDimension A rule-based dimension that will be populated by the given rules.
@@ -921,6 +1132,9 @@ type FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummary struct {
 	// OwnerUserId User ID of the filter owner
 	OwnerUserId int `json:"ownerUserId"`
 
+	// PageSource Optional UI surface that created the saved filter: analyzeSpend or inventory. Omitted or null values remain unset for both private and shared filters and are returned as null. No server-side default is applied; clients may interpret null as analyzeSpend. Empty strings are not supported.
+	PageSource *FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSource `json:"pageSource,omitempty"`
+
 	// UpdatedAt ISO-8601 last-update timestamp
 	UpdatedAt time.Time `json:"updatedAt"`
 
@@ -930,6 +1144,9 @@ type FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummary struct {
 
 // FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryKind The resource's type
 type FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryKind string
+
+// FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSource Optional UI surface that created the saved filter: analyzeSpend or inventory. Omitted or null values remain unset for both private and shared filters and are returned as null. No server-side default is applied; clients may interpret null as analyzeSpend. Empty strings are not supported.
+type FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryPageSource string
 
 // FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryVisibility Filter visibility
 type FinopsCustomizationsFlexeraFinopsCustomizationsSavedFilterSummaryVisibility string
@@ -948,7 +1165,7 @@ type FinopsCustomizationsFlexeraFinopsCustomizationsTagDimension struct {
 	// Name Name of the tag dimension to be displayed in the UI.
 	Name string `json:"name"`
 
-	// Tags Specifies the resource tag keys used to derive values for this dimension. If a resource has multiple matching tags, the value from the earliest listed tag is used.
+	// Tags Specifies tag keys used to derive values for this dimension. Entries with an explicit priority are checked first in ascending numeric order; entries with the same priority are checked in the order listed. Entries without a priority are checked after all explicitly prioritized entries, in alphabetical order by key; exact ties retain their listed order. This ordering also applies when all priorities are omitted.
 	Tags []FinopsCustomizationsTagDimensionTag `json:"tags"`
 
 	// UpdatedAt the time when this tag dimension configuration was last updated
@@ -958,9 +1175,9 @@ type FinopsCustomizationsFlexeraFinopsCustomizationsTagDimension struct {
 // FinopsCustomizationsFlexeraFinopsCustomizationsTagDimensionKind The resource's type
 type FinopsCustomizationsFlexeraFinopsCustomizationsTagDimensionKind string
 
-// FinopsCustomizationsFlexeraFinopsCustomizationsTagObservation A resource tag key observed in an organization's cloud cost and usage data.
+// FinopsCustomizationsFlexeraFinopsCustomizationsTagObservation A cloud tag key observed for an organization.
 type FinopsCustomizationsFlexeraFinopsCustomizationsTagObservation struct {
-	// DistinctResourceCount Number of distinct billing resources on which the tag key was observed.
+	// DistinctResourceCount Number of distinct billing resources associated with this tag key.
 	DistinctResourceCount int `json:"distinctResourceCount"`
 
 	// DistinctValueCount Number of distinct values observed for the tag key.
@@ -990,7 +1207,7 @@ type FinopsCustomizationsFlexeraFinopsCustomizationsTagObservation struct {
 	// QualifiedKey Tag key as reported by the provider, including its namespace when present.
 	QualifiedKey string `json:"qualifiedKey"`
 
-	// SourceType Provider-specific source of the observed tag.
+	// SourceType Provider-specific category identifying the source of the tag key.
 	SourceType FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType `json:"sourceType"`
 }
 
@@ -1000,7 +1217,7 @@ type FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationKind string
 // FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationProvider Cloud provider that reported the tag key.
 type FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationProvider string
 
-// FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType Provider-specific source of the observed tag.
+// FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType Provider-specific category identifying the source of the tag key.
 type FinopsCustomizationsFlexeraFinopsCustomizationsTagObservationSourceType string
 
 // FinopsCustomizationsIndexSavedFiltersResult defines model for FinopsCustomizations_IndexSavedFiltersResult.
@@ -1098,11 +1315,17 @@ type FinopsCustomizationsReportSubscriptionResult struct {
 	// CreatedAt ISO-8601 creation timestamp
 	CreatedAt time.Time `json:"createdAt"`
 
+	// CreatedByEmail Email address of the user who created the report subscription.
+	CreatedByEmail string `json:"createdByEmail"`
+
 	// DashboardId Identifier of the dashboard to render and send.
 	DashboardId string `json:"dashboardId"`
 
 	// DashboardScope Which dashboard store resolves the target dashboard.
 	DashboardScope FinopsCustomizationsReportSubscriptionResultDashboardScope `json:"dashboardScope"`
+
+	// EffectiveStatus Read-only status calculated for the authenticated user, not persisted: paused when enabled is false; otherwise muted when the user's preference is muted, or active when it is unmuted. This does not indicate whether the user is a recipient.
+	EffectiveStatus *FinopsCustomizationsReportSubscriptionResultEffectiveStatus `json:"effectiveStatus,omitempty"`
 
 	// Enabled Whether the schedule is active.
 	Enabled bool `json:"enabled"`
@@ -1140,17 +1363,26 @@ type FinopsCustomizationsReportSubscriptionResult struct {
 	// UpdatedAt ISO-8601 last-update timestamp
 	UpdatedAt time.Time `json:"updatedAt"`
 
-	// Visibility Visibility scope: `private` = only visible to the owner; `shared` = visible to other users in the org.
+	// UserNotificationStatus The authenticated user's persisted preference, independent of the global enabled flag. Returns unmuted when no preference has been stored.
+	UserNotificationStatus *FinopsCustomizationsReportSubscriptionResultUserNotificationStatus `json:"userNotificationStatus,omitempty"`
+
+	// Visibility Visibility scope: `private` = visible only to the subscription owner and organization administrators (`org_owner`); `shared` = visible to other users in the organization.
 	Visibility FinopsCustomizationsReportSubscriptionResultVisibility `json:"visibility"`
 }
 
 // FinopsCustomizationsReportSubscriptionResultDashboardScope Which dashboard store resolves the target dashboard.
 type FinopsCustomizationsReportSubscriptionResultDashboardScope string
 
+// FinopsCustomizationsReportSubscriptionResultEffectiveStatus Read-only status calculated for the authenticated user, not persisted: paused when enabled is false; otherwise muted when the user's preference is muted, or active when it is unmuted. This does not indicate whether the user is a recipient.
+type FinopsCustomizationsReportSubscriptionResultEffectiveStatus string
+
 // FinopsCustomizationsReportSubscriptionResultKind The resource's type
 type FinopsCustomizationsReportSubscriptionResultKind string
 
-// FinopsCustomizationsReportSubscriptionResultVisibility Visibility scope: `private` = only visible to the owner; `shared` = visible to other users in the org.
+// FinopsCustomizationsReportSubscriptionResultUserNotificationStatus The authenticated user's persisted preference, independent of the global enabled flag. Returns unmuted when no preference has been stored.
+type FinopsCustomizationsReportSubscriptionResultUserNotificationStatus string
+
+// FinopsCustomizationsReportSubscriptionResultVisibility Visibility scope: `private` = visible only to the subscription owner and organization administrators (`org_owner`); `shared` = visible to other users in the organization.
 type FinopsCustomizationsReportSubscriptionResultVisibility string
 
 // FinopsCustomizationsReportSubscriptionSchedule When a scheduled report fires.
@@ -1611,6 +1843,9 @@ type FinopsCustomizationsSavedFilterHTTPBody struct {
 	// OwnerUserId User ID of the filter owner
 	OwnerUserId int `json:"ownerUserId"`
 
+	// PageSource Optional UI surface that created the saved filter: analyzeSpend or inventory. Omitted or null values remain unset for both private and shared filters and are returned as null. No server-side default is applied; clients may interpret null as analyzeSpend. Empty strings are not supported.
+	PageSource *FinopsCustomizationsSavedFilterHTTPBodyPageSource `json:"pageSource,omitempty"`
+
 	// UpdatedAt ISO-8601 last-update timestamp
 	UpdatedAt time.Time `json:"updatedAt"`
 
@@ -1620,6 +1855,9 @@ type FinopsCustomizationsSavedFilterHTTPBody struct {
 
 // FinopsCustomizationsSavedFilterHTTPBodyKind The resource's type
 type FinopsCustomizationsSavedFilterHTTPBodyKind string
+
+// FinopsCustomizationsSavedFilterHTTPBodyPageSource Optional UI surface that created the saved filter: analyzeSpend or inventory. Omitted or null values remain unset for both private and shared filters and are returned as null. No server-side default is applied; clients may interpret null as analyzeSpend. Empty strings are not supported.
+type FinopsCustomizationsSavedFilterHTTPBodyPageSource string
 
 // FinopsCustomizationsSavedFilterHTTPBodyVisibility Visibility scope: `private` = only visible to the owner; `shared` = visible to other users in the org.
 type FinopsCustomizationsSavedFilterHTTPBodyVisibility string
@@ -1640,11 +1878,20 @@ type FinopsCustomizationsTagDimensionList struct {
 // FinopsCustomizationsTagDimensionListKind The resource's type
 type FinopsCustomizationsTagDimensionListKind string
 
-// FinopsCustomizationsTagDimensionTag Contains the resource tag key
+// FinopsCustomizationsTagDimensionTag Contains a tag key and its optional source and priority.
 type FinopsCustomizationsTagDimensionTag struct {
 	// Key Key (the part of the tag before the "=" character).
 	Key string `json:"key"`
+
+	// Priority Optional positive priority. Explicit priorities are evaluated first in ascending order; ties follow list order. Entries without a priority follow, alphabetically by key; exact ties retain list order.
+	Priority *int `json:"priority,omitempty"`
+
+	// SourceType Source of the tag key; when omitted, the bill line's resource tags are used.
+	SourceType *FinopsCustomizationsTagDimensionTagSourceType `json:"sourceType,omitempty"`
 }
+
+// FinopsCustomizationsTagDimensionTagSourceType Source of the tag key; when omitted, the bill line's resource tags are used.
+type FinopsCustomizationsTagDimensionTagSourceType string
 
 // FinopsCustomizationsTagObservationCollection defines model for FinopsCustomizations_TagObservationCollection.
 type FinopsCustomizationsTagObservationCollection = []FinopsCustomizationsFlexeraFinopsCustomizationsTagObservation

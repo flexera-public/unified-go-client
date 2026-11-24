@@ -78,7 +78,7 @@ type UobsGetConnectorStatusUobsV1OrgsOrgIdCloudConnectorsStatusGetParams struct 
 
 // UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams defines parameters for UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDelete.
 type UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams struct {
-	// Provider Provider (aws/azure/gcp/snowflake)
+	// Provider Provider (aws/azure/gcp/snowflake/databricks)
 	Provider string `form:"provider" json:"provider"`
 
 	// ConnectorId Connector ID
@@ -120,6 +120,15 @@ type UobsGetConnectorStatusUobsV1OrgsOrgIdSaasConnectorsStatusGetParams struct {
 	// ConnectorId Connector ID (required)
 	ConnectorId string `form:"connector_id" json:"connector_id"`
 }
+
+// UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostJSONRequestBody defines body for UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePost for application/json ContentType.
+type UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostJSONRequestBody = UobsDatabricksValidateRequest
+
+// UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostJSONRequestBody defines body for UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPost for application/json ContentType.
+type UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostJSONRequestBody = UobsDatabricksOnboardingCreateRequest
+
+// UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutJSONRequestBody defines body for UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPut for application/json ContentType.
+type UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutJSONRequestBody = UobsDatabricksOnboardingUpdateRequest
 
 // UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostJSONRequestBody defines body for UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPost for application/json ContentType.
 type UobsTriggerOnboardingPostGcpUobsV1OrgsOrgIdCloudOnboardingGcpPostJSONRequestBody = UobsGcpOnboardingCreateRequest
@@ -193,8 +202,80 @@ func (c *Client) UobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGet(ctx
 	return c.Client.Do(req)
 }
 
+func (c *Client) UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePost(ctx context.Context, orgId string, body UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDelete(ctx context.Context, orgId string, params *UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewUobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteRequest(c.Server, orgId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostWithBody(ctx context.Context, orgId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostRequestWithBody(c.Server, orgId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPost(ctx context.Context, orgId string, body UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostRequest(c.Server, orgId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutWithBody(ctx context.Context, orgId string, connectorId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutRequestWithBody(c.Server, orgId, connectorId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPut(ctx context.Context, orgId string, connectorId string, body UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewUobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutRequest(c.Server, orgId, connectorId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -710,6 +791,53 @@ func NewUobsGetConnectorUobsV1OrgsOrgIdCloudConnectorsIdentifierGetRequest(serve
 	return req, nil
 }
 
+// NewUobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostRequest calls the generic UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePost builder with application/json body
+func NewUobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostRequest(server string, orgId string, body UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewUobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostRequestWithBody generates requests for UobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePost with any type of body
+func NewUobsValidateDatabricksUobsV1OrgsOrgIdCloudDatabricksValidatePostRequestWithBody(server string, orgId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "org_id", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/databricks/validate", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewUobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteRequest generates requests for UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDelete
 func NewUobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteRequest(server string, orgId string, params *UobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteParams) (*http.Request, error) {
 	var err error
@@ -771,6 +899,107 @@ func NewUobsTriggerOnboardingDeleteUobsV1OrgsOrgIdCloudOnboardingDeleteRequest(s
 	if err != nil {
 		return nil, err
 	}
+
+	return req, nil
+}
+
+// NewUobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostRequest calls the generic UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPost builder with application/json body
+func NewUobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostRequest(server string, orgId string, body UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostRequestWithBody(server, orgId, "application/json", bodyReader)
+}
+
+// NewUobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostRequestWithBody generates requests for UobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPost with any type of body
+func NewUobsTriggerOnboardingPostDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksPostRequestWithBody(server string, orgId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "org_id", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/onboarding/databricks", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewUobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutRequest calls the generic UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPut builder with application/json body
+func NewUobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutRequest(server string, orgId string, connectorId string, body UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewUobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutRequestWithBody(server, orgId, connectorId, "application/json", bodyReader)
+}
+
+// NewUobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutRequestWithBody generates requests for UobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPut with any type of body
+func NewUobsTriggerOnboardingPutDatabricksUobsV1OrgsOrgIdCloudOnboardingDatabricksConnectorIdPutRequestWithBody(server string, orgId string, connectorId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "org_id", orgId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "connector_id", connectorId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/uobs/v1/orgs/%s/cloud/onboarding/databricks/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }

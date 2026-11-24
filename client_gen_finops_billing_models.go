@@ -376,6 +376,21 @@ func (e FinopsBillingAzureCostAssignmentKind) Valid() bool {
 	}
 }
 
+// Defines values for FinopsBillingAzureCostAssignmentListItemKind.
+const (
+	FinopsBillingAzureCostAssignmentListItemKindFinopsBillingAzureCostAssignment FinopsBillingAzureCostAssignmentListItemKind = "finops:billing-azure-cost-assignment"
+)
+
+// Valid indicates whether the value is a known member of the FinopsBillingAzureCostAssignmentListItemKind enum.
+func (e FinopsBillingAzureCostAssignmentListItemKind) Valid() bool {
+	switch e {
+	case FinopsBillingAzureCostAssignmentListItemKindFinopsBillingAzureCostAssignment:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for FinopsBillingAzureCostAssignmentSelectionChargeFrequency.
 const (
 	FinopsBillingAzureCostAssignmentSelectionChargeFrequencyOneTime   FinopsBillingAzureCostAssignmentSelectionChargeFrequency = "oneTime"
@@ -433,6 +448,42 @@ const (
 func (e FinopsBillingAzureUnallocatedChargesPageKind) Valid() bool {
 	switch e {
 	case FinopsBillingAzureUnallocatedChargesPageKindFinopsBillingAzureUnallocatedChargeList:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FinopsBillingBillingInvoiceCurrencyContextKind.
+const (
+	FinopsBillingBillingInvoiceCurrencyContextKindFinopsInvoiceCurrencyContext FinopsBillingBillingInvoiceCurrencyContextKind = "finops:invoice-currency-context"
+)
+
+// Valid indicates whether the value is a known member of the FinopsBillingBillingInvoiceCurrencyContextKind enum.
+func (e FinopsBillingBillingInvoiceCurrencyContextKind) Valid() bool {
+	switch e {
+	case FinopsBillingBillingInvoiceCurrencyContextKindFinopsInvoiceCurrencyContext:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatus.
+const (
+	FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatusFailed     FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatus = "failed"
+	FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatusNoCostData FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatus = "noCostData"
+	FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatusResolved   FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatus = "resolved"
+)
+
+// Valid indicates whether the value is a known member of the FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatus enum.
+func (e FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatus) Valid() bool {
+	switch e {
+	case FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatusFailed:
+		return true
+	case FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatusNoCostData:
+		return true
+	case FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatusResolved:
 		return true
 	default:
 		return false
@@ -942,6 +993,36 @@ func (e FinopsBillingCreditMemoSettingsCostAttribution) Valid() bool {
 	case FinopsBillingCreditMemoSettingsCostAttributionSelf:
 		return true
 	case FinopsBillingCreditMemoSettingsCostAttributionUpstream:
+		return true
+	default:
+		return false
+	}
+}
+
+// Valid indicates whether the value is a known member of the FinopsBillingCurrencyContextRequestBodyCostMetric enum.
+func (e FinopsBillingCurrencyContextRequestBodyCostMetric) Valid() bool {
+	switch e {
+	case FinopsBillingCurrencyContextRequestBodyCostMetricBilledCost:
+		return true
+	case FinopsBillingCurrencyContextRequestBodyCostMetricEffectiveCost:
+		return true
+	case FinopsBillingCurrencyContextRequestBodyCostMetricModifiedBilledCost:
+		return true
+	case FinopsBillingCurrencyContextRequestBodyCostMetricModifiedEffectiveCost:
+		return true
+	default:
+		return false
+	}
+}
+
+// Valid indicates whether the value is a known member of the FinopsBillingCurrencyContextRequestBodyPeriodType enum.
+func (e FinopsBillingCurrencyContextRequestBodyPeriodType) Valid() bool {
+	switch e {
+	case FinopsBillingCurrencyContextRequestBodyPeriodTypeBillPeriod:
+		return true
+	case FinopsBillingCurrencyContextRequestBodyPeriodTypeBillingPeriod:
+		return true
+	case FinopsBillingCurrencyContextRequestBodyPeriodTypeChargePeriod:
 		return true
 	default:
 		return false
@@ -1699,6 +1780,21 @@ func (e FinopsBillingSharedCostSourceConditionType) Valid() bool {
 	case FinopsBillingSharedCostSourceConditionTypeNot:
 		return true
 	case FinopsBillingSharedCostSourceConditionTypeOr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FinopsBillingShowCustomerRuleImpactResultKind.
+const (
+	FinopsBillingShowCustomerRuleImpactResultKindFinopsBillingAuditCustomerRuleImpactMap FinopsBillingShowCustomerRuleImpactResultKind = "finops:billing-audit-customer-rule-impact-map"
+)
+
+// Valid indicates whether the value is a known member of the FinopsBillingShowCustomerRuleImpactResultKind enum.
+func (e FinopsBillingShowCustomerRuleImpactResultKind) Valid() bool {
+	switch e {
+	case FinopsBillingShowCustomerRuleImpactResultKindFinopsBillingAuditCustomerRuleImpactMap:
 		return true
 	default:
 		return false
@@ -2557,7 +2653,7 @@ type FinopsBillingAzureCostAssignment struct {
 	// Kind The resource's type
 	Kind FinopsBillingAzureCostAssignmentKind `json:"kind"`
 
-	// ProductOrderId Azure product order identifier from discovery when available; display metadata, not an assignment matching criterion.
+	// ProductOrderId Azure product order identifier from discovery, also returned for display. A non-null mapping value matches only the same source order; null or omitted matches any source order.
 	ProductOrderId *string `json:"productOrderId,omitempty"`
 
 	// RequiresReprocessing Whether saved configuration still requires normalization reprocessing for the relevant bill scope.
@@ -2575,6 +2671,69 @@ type FinopsBillingAzureCostAssignment struct {
 
 // FinopsBillingAzureCostAssignmentKind The resource's type
 type FinopsBillingAzureCostAssignmentKind string
+
+// FinopsBillingAzureCostAssignmentListItem defines model for FinopsBilling_AzureCostAssignmentListItem.
+type FinopsBillingAzureCostAssignmentListItem struct {
+	// BillMonth Discovery month or one-time assignment month in YYYYMM format. Omitted on recurring assignment resources.
+	BillMonth *string `json:"billMonth,omitempty"`
+
+	// BillSource Opaque source identifier returned by orphaned billing-account discovery.
+	BillSource string `json:"billSource"`
+
+	// BilledCost Discovery-time billed cost for this display group, not an amount applied by the pipeline.
+	BilledCost string `json:"billedCost"`
+
+	// BillingAccountId Azure billing account identifier.
+	BillingAccountId string `json:"billingAccountId"`
+
+	// BillingCurrency Currency of billedCost.
+	BillingCurrency string `json:"billingCurrency"`
+
+	// BillingProfileId Azure billing profile identifier from discovery when available; display metadata, not an assignment matching criterion.
+	BillingProfileId *string `json:"billingProfileId,omitempty"`
+
+	// ChargeDescription Exact FOCUS ChargeDescription from the discovery view, not cco_line_item_type or ProductName; no trimming, case folding, or substring matching.
+	ChargeDescription string `json:"chargeDescription"`
+
+	// ChargeFrequency Optional charge frequency. Current values are recurring and oneTime; clients must tolerate additional response values. Recurring omits billMonth; oneTime or omitted frequency includes it. Omitted frequency is not a pipeline matching key.
+	ChargeFrequency *string `json:"chargeFrequency,omitempty"`
+
+	// CommitmentDiscountType FOCUS CommitmentDiscountType from discovery when available.
+	CommitmentDiscountType *string `json:"commitmentDiscountType,omitempty"`
+
+	// CreatedAt timestamp when the Azure cost assignment was created
+	CreatedAt time.Time `json:"createdAt"`
+
+	// CreatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	CreatedBy FinopsBillingFlexeraIamPrincipal `json:"createdBy"`
+
+	// CustomerId MSP customer organization identifier when available.
+	CustomerId *int `json:"customerId,omitempty"`
+
+	// Id Identifier of the saved assignment, not a provider charge identifier.
+	Id openapi_types.UUID `json:"id"`
+
+	// Kind The resource's type
+	Kind FinopsBillingAzureCostAssignmentListItemKind `json:"kind"`
+
+	// ProductOrderId Azure product order identifier from discovery, also returned for display. A non-null mapping value matches only the same source order; null or omitted matches any source order.
+	ProductOrderId *string `json:"productOrderId,omitempty"`
+
+	// RequiresReprocessing Whether saved configuration still requires normalization reprocessing for the relevant bill scope.
+	RequiresReprocessing bool `json:"requiresReprocessing"`
+
+	// TargetSubAccountId Destination subscription selected by the caller; billing-account parentage is not verified.
+	TargetSubAccountId string `json:"targetSubAccountId"`
+
+	// UpdatedAt timestamp when the Azure cost assignment was updated
+	UpdatedAt time.Time `json:"updatedAt"`
+
+	// UpdatedBy A principal is an entity which may perform actions in Flexera One. Users and service accounts are examples of principals.
+	UpdatedBy FinopsBillingFlexeraIamPrincipal `json:"updatedBy"`
+}
+
+// FinopsBillingAzureCostAssignmentListItemKind The resource's type
+type FinopsBillingAzureCostAssignmentListItemKind string
 
 // FinopsBillingAzureCostAssignmentSelection defines model for FinopsBilling_AzureCostAssignmentSelection.
 type FinopsBillingAzureCostAssignmentSelection struct {
@@ -2599,7 +2758,7 @@ type FinopsBillingAzureCostAssignmentSelection struct {
 	// CustomerId MSP customer organization identifier when available.
 	CustomerId *int `json:"customerId,omitempty"`
 
-	// ProductOrderId Azure product order identifier from discovery when available; display metadata, not an assignment matching criterion.
+	// ProductOrderId Azure product order identifier from discovery, also returned for display. A non-null mapping value matches only the same source order; null or omitted matches any source order.
 	ProductOrderId *string `json:"productOrderId,omitempty"`
 }
 
@@ -2641,7 +2800,7 @@ type FinopsBillingAzureCostAssignmentSummary struct {
 	// Id Identifier of the saved assignment, not a provider charge identifier.
 	Id openapi_types.UUID `json:"id"`
 
-	// ProductOrderId Azure product order identifier from discovery when available; display metadata, not an assignment matching criterion.
+	// ProductOrderId Azure product order identifier from discovery, also returned for display. A non-null mapping value matches only the same source order; null or omitted matches any source order.
 	ProductOrderId *string `json:"productOrderId,omitempty"`
 
 	// RequiresReprocessing Whether saved configuration still requires normalization reprocessing for the relevant bill scope.
@@ -2656,14 +2815,14 @@ type FinopsBillingAzureCostAssignmentsPage struct {
 	// Kind The resource's type
 	Kind FinopsBillingAzureCostAssignmentsPageKind `json:"kind"`
 
-	// NextPage URL to the next page, retaining the bill month and other query parameters. Omitted on the last page.
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
 	NextPage *string `json:"nextPage,omitempty"`
 
 	// TotalCount Matching individual assignments before pagination.
 	TotalCount int `json:"totalCount"`
 
-	// Values Page of individual recurring and requested-month one-time or unspecified-frequency assignments, without grouping by destination.
-	Values []FinopsBillingAzureCostAssignmentSummary `json:"values"`
+	// Values Page of individual assignments, without grouping by destination.
+	Values []FinopsBillingAzureCostAssignmentListItem `json:"values"`
 }
 
 // FinopsBillingAzureCostAssignmentsPageKind The resource's type
@@ -2719,7 +2878,7 @@ type FinopsBillingAzureUnallocatedCharge struct {
 	// LineItemCount Number of underlying bill rows in this display group.
 	LineItemCount int `json:"lineItemCount"`
 
-	// ProductOrderId Azure product order identifier when available; display metadata, not an assignment matching criterion.
+	// ProductOrderId Azure product order identifier when available. A mapping with this non-null value matches only the same source order; a null or omitted mapping value matches any source order.
 	ProductOrderId *string `json:"productOrderId,omitempty"`
 }
 
@@ -2728,7 +2887,7 @@ type FinopsBillingAzureUnallocatedChargesPage struct {
 	// Kind The resource's type
 	Kind FinopsBillingAzureUnallocatedChargesPageKind `json:"kind"`
 
-	// NextPage URL to the next page, retaining the bill month, billing account, and other query parameters. Omitted on the last page.
+	// NextPage URL to the next page of data. If nextPage is not present, the returned page of data is the last.
 	NextPage *string `json:"nextPage,omitempty"`
 
 	// TotalCount Matching unassigned display rows after stored-assignment exclusion, before pagination.
@@ -2744,8 +2903,116 @@ type FinopsBillingAzureUnallocatedChargesPageKind string
 // FinopsBillingBillingInvoiceCollection defines model for FinopsBilling_BillingInvoiceCollection.
 type FinopsBillingBillingInvoiceCollection = []FinopsBillingFlexeraFinopsBillingInvoice
 
-// FinopsBillingBillingInvoiceCustomer Customer recipient for invoice export creation.
+// FinopsBillingBillingInvoiceConversionAcknowledgement Explicit acknowledgement of one source and target currency pair. Presence represents consent for this exact pair. It is required when source and target differ and must match a submitted conversion rate. Changing either currency requires a new acknowledgement. An acknowledgement saved with a schedule remains valid for recurring runs until its currency pair changes.
+type FinopsBillingBillingInvoiceConversionAcknowledgement struct {
+	// SourceCurrency Acknowledged ISO 4217 source/default currency.
+	SourceCurrency string `json:"sourceCurrency"`
+
+	// TargetCurrency Acknowledged ISO 4217 target currency.
+	TargetCurrency string `json:"targetCurrency"`
+}
+
+// FinopsBillingBillingInvoiceConversionRate Manual exchange rate for one source and target currency pair. Submit one entry for every detected source currency that differs from the final invoice currency. No entry is needed when source and target are the same.
+type FinopsBillingBillingInvoiceConversionRate struct {
+	// Rate Manual exchange rate represented as a decimal string.
+	Rate string `json:"rate"`
+
+	// SourceCurrency ISO 4217 currency of the source cost.
+	SourceCurrency string `json:"sourceCurrency"`
+
+	// TargetCurrency ISO 4217 final invoice currency.
+	TargetCurrency string `json:"targetCurrency"`
+}
+
+// FinopsBillingBillingInvoiceCurrencyContext defines model for FinopsBilling_BillingInvoiceCurrencyContext.
+type FinopsBillingBillingInvoiceCurrencyContext struct {
+	// Customers One result for each requested customer, in the requested order.
+	Customers []FinopsBillingBillingInvoiceCurrencyContextCustomerResult `json:"customers"`
+
+	// Kind The resource's type
+	Kind FinopsBillingBillingInvoiceCurrencyContextKind `json:"kind"`
+}
+
+// FinopsBillingBillingInvoiceCurrencyContextKind The resource's type
+type FinopsBillingBillingInvoiceCurrencyContextKind string
+
+// FinopsBillingBillingInvoiceCurrencyContextCustomer A customer whose configured and detected currencies are requested before invoice creation or schedule configuration.
+type FinopsBillingBillingInvoiceCurrencyContextCustomer struct {
+	// CustomerId Customer identifier.
+	CustomerId int `json:"customerId"`
+}
+
+// FinopsBillingBillingInvoiceCurrencyContextCustomerResult Configured base currency candidates and detected source currencies for one customer. Consumers apply the default order L2 base currency, then L1 base currency, then a detected currency. No detected currency is selected when more than one is returned.
+type FinopsBillingBillingInvoiceCurrencyContextCustomerResult struct {
+	// CustomerId Customer identifier.
+	CustomerId int `json:"customerId"`
+
+	// DetectedCurrencies Distinct source currencies detected from invoice cost data for the requested scope. Empty when no cost data is available.
+	DetectedCurrencies []string `json:"detectedCurrencies"`
+
+	// Error Customer-specific currency lookup failure.
+	Error *FinopsBillingBillingInvoiceCurrencyContextError `json:"error,omitempty"`
+
+	// L1BaseCurrency Parent (L1) configured base currency, when available.
+	L1BaseCurrency *string `json:"l1BaseCurrency,omitempty"`
+
+	// L2BaseCurrency Customer (L2) configured base currency, when available.
+	L2BaseCurrency *string `json:"l2BaseCurrency,omitempty"`
+
+	// Status Outcome of this customer's lookup.
+	Status FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatus `json:"status"`
+}
+
+// FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatus Outcome of this customer's lookup.
+type FinopsBillingBillingInvoiceCurrencyContextCustomerResultStatus string
+
+// FinopsBillingBillingInvoiceCurrencyContextError Customer-specific currency lookup failure.
+type FinopsBillingBillingInvoiceCurrencyContextError struct {
+	// Code Stable failure code.
+	Code string `json:"code"`
+
+	// Message Customer-safe failure message.
+	Message string `json:"message"`
+}
+
+// FinopsBillingBillingInvoiceCurrencyConversion Conversion provenance for one source amount included in a single-currency invoice. Multiple entries may be returned when the invoice contains several source currencies or rate periods.
+type FinopsBillingBillingInvoiceCurrencyConversion struct {
+	// ConvertedAmount Converted amount rendered as a decimal string.
+	ConvertedAmount string `json:"convertedAmount"`
+
+	// Rate Exchange rate applied, represented as a decimal string.
+	Rate string `json:"rate"`
+
+	// RateDate Date associated with an automatically sourced exchange rate. Omitted for a manually supplied rate.
+	RateDate *openapi_types.Date `json:"rateDate,omitempty"`
+
+	// SourceAmount Source amount rendered as a decimal string.
+	SourceAmount string `json:"sourceAmount"`
+
+	// SourceCurrency ISO 4217 currency of the source amount.
+	SourceCurrency string `json:"sourceCurrency"`
+
+	// TargetCurrency ISO 4217 currency of the converted amount.
+	TargetCurrency string `json:"targetCurrency"`
+}
+
+// FinopsBillingBillingInvoiceCurrencyTarget Final currency requested for one customer's invoice. Every generated invoice has one final currency. Omit the complete currency intent on legacy requests to retain legacy parent-currency behavior.
+type FinopsBillingBillingInvoiceCurrencyTarget struct {
+	// Currency Requested ISO 4217 final invoice currency.
+	Currency string `json:"currency"`
+}
+
+// FinopsBillingBillingInvoiceCustomer Customer recipient for invoice export creation. Omit currencyTarget, conversionRates and conversionAcknowledgements together for legacy parent-currency behavior. With explicit currency intent, provide one manual rate and one acknowledgement for every detected source currency that differs from the final currency. No rate or acknowledgement is needed for a source already in the final currency. Each customer's currency intent is accepted independently: invalid intent fails that customer's invoice without preventing valid customers in the same request from proceeding.
 type FinopsBillingBillingInvoiceCustomer struct {
+	// ConversionAcknowledgements Source/target-bound conversion consent. Provide one entry for every submitted source-to-target rate.
+	ConversionAcknowledgements *[]FinopsBillingBillingInvoiceConversionAcknowledgement `json:"conversionAcknowledgements,omitempty"`
+
+	// ConversionRates Manual source-to-target rates. Each source currency may appear once and every entry must target currencyTarget.currency.
+	ConversionRates *[]FinopsBillingBillingInvoiceConversionRate `json:"conversionRates,omitempty"`
+
+	// CurrencyTarget Final currency requested for one customer's invoice. Every generated invoice has one final currency. Omit the complete currency intent on legacy requests to retain legacy parent-currency behavior.
+	CurrencyTarget *FinopsBillingBillingInvoiceCurrencyTarget `json:"currencyTarget,omitempty"`
+
 	// CustomerBillingPlan Billing plan for the customer
 	CustomerBillingPlan *string `json:"customerBillingPlan,omitempty"`
 
@@ -2814,7 +3081,7 @@ type FinopsBillingBillingInvoiceList struct {
 // FinopsBillingBillingInvoiceListKind The resource's type
 type FinopsBillingBillingInvoiceListKind string
 
-// FinopsBillingBillingInvoiceScheduleCadence When a scheduled invoice fires. Deliberately not RFC-5545 RRULE, mirroring the finops/customizations Invoice Schedules resource this exposes.
+// FinopsBillingBillingInvoiceScheduleCadence When a scheduled invoice fires. Deliberately not RFC-5545 RRULE.
 type FinopsBillingBillingInvoiceScheduleCadence struct {
 	// DayOfMonth Day of month 1-31; days beyond a month's length clamp to its last day. Each run invoices the preceding billing month.
 	DayOfMonth int `json:"dayOfMonth"`
@@ -2841,8 +3108,17 @@ type FinopsBillingBillingInvoiceScheduleCadenceFrequency string
 // FinopsBillingBillingInvoiceScheduleCollection defines model for FinopsBilling_BillingInvoiceScheduleCollection.
 type FinopsBillingBillingInvoiceScheduleCollection = []FinopsBillingFlexeraFinopsBillingInvoiceSchedule
 
-// FinopsBillingBillingInvoiceScheduleCustomer A customer receiving invoices from a schedule, and the addresses its invoices are delivered to.
+// FinopsBillingBillingInvoiceScheduleCustomer A customer receiving invoices from a schedule, and the addresses its invoices are delivered to. New schedules require one final currency and a manual rate and acknowledgement for every detected source currency that differs from it. Stored rates remain in use until the schedule is changed. For an existing legacy customer, an unrelated update that omits all currency fields preserves dynamic parent-currency behavior.
 type FinopsBillingBillingInvoiceScheduleCustomer struct {
+	// ConversionAcknowledgements Source/target-bound conversion consent stored with the schedule. Provide one entry for every submitted rate; unchanged consent covers recurring runs.
+	ConversionAcknowledgements *[]FinopsBillingBillingInvoiceConversionAcknowledgement `json:"conversionAcknowledgements,omitempty"`
+
+	// ConversionRates Manual source-to-target rates stored with the schedule. Each source currency may appear once and every entry must target currencyTarget.currency.
+	ConversionRates *[]FinopsBillingBillingInvoiceConversionRate `json:"conversionRates,omitempty"`
+
+	// CurrencyTarget Final currency requested for one customer's invoice. Every generated invoice has one final currency. Omit the complete currency intent on legacy requests to retain legacy parent-currency behavior.
+	CurrencyTarget *FinopsBillingBillingInvoiceCurrencyTarget `json:"currencyTarget,omitempty"`
+
 	// CustomerBillingPlan Billing plan for the customer. Informational only — not used by scheduling or execution.
 	CustomerBillingPlan *string `json:"customerBillingPlan,omitempty"`
 
@@ -2965,7 +3241,7 @@ type FinopsBillingBillingInvoiceScheduleResult struct {
 	// OrgId The unique identifier for the organization
 	OrgId int `json:"orgId"`
 
-	// Schedule When a scheduled invoice fires. Deliberately not RFC-5545 RRULE, mirroring the finops/customizations Invoice Schedules resource this exposes.
+	// Schedule When a scheduled invoice fires. Deliberately not RFC-5545 RRULE.
 	Schedule FinopsBillingBillingInvoiceScheduleCadence `json:"schedule"`
 
 	// ScheduleName Human-readable name for the schedule.
@@ -3591,6 +3867,15 @@ type FinopsBillingCustomUsageRateSettings struct {
 	Tiers *[]FinopsBillingCustomRateTier `json:"tiers,omitempty"`
 }
 
+// FinopsBillingCustomerLastAffected defines model for FinopsBilling_CustomerLastAffected.
+type FinopsBillingCustomerLastAffected struct {
+	// BillMonth The most recent bill month (YYYYMM) for which they were affected.
+	BillMonth string `json:"billMonth"`
+
+	// CustomerId The child organization Id of the customer.
+	CustomerId int `json:"customerId"`
+}
+
 // FinopsBillingError invalid filter received
 type FinopsBillingError struct {
 	// Fault Is the error a server-side fault?
@@ -4061,7 +4346,7 @@ type FinopsBillingFlexeraFinopsBillingEnterpriseRule struct {
 // FinopsBillingFlexeraFinopsBillingEnterpriseRuleKind The resource's type
 type FinopsBillingFlexeraFinopsBillingEnterpriseRuleKind string
 
-// FinopsBillingFlexeraFinopsBillingInvoice An invoice export lifecycle record.
+// FinopsBillingFlexeraFinopsBillingInvoice An invoice export lifecycle record. For a one-time request, currencyTarget, conversionRates and conversionAcknowledgements represent the intent accepted and stored before background generation.
 type FinopsBillingFlexeraFinopsBillingInvoice struct {
 	// Artifact Download artifact details for an invoice export.
 	Artifact *FinopsBillingBillingInvoiceExportArtifact `json:"artifact,omitempty"`
@@ -4072,6 +4357,12 @@ type FinopsBillingFlexeraFinopsBillingInvoice struct {
 	// BillMonth Billing month (YYYY-MM format)
 	BillMonth *string `json:"billMonth,omitempty"`
 
+	// ConversionAcknowledgements Accepted source/target-bound conversion consent stored before generation.
+	ConversionAcknowledgements *[]FinopsBillingBillingInvoiceConversionAcknowledgement `json:"conversionAcknowledgements,omitempty"`
+
+	// ConversionRates Accepted manual source-to-target rates stored before generation.
+	ConversionRates *[]FinopsBillingBillingInvoiceConversionRate `json:"conversionRates,omitempty"`
+
 	// CostMetric Cost metric
 	CostMetric *string `json:"costMetric,omitempty"`
 
@@ -4080,6 +4371,12 @@ type FinopsBillingFlexeraFinopsBillingInvoice struct {
 
 	// Currency ISO 4217 currency code (three uppercase letters) that the invoice amount is denominated in.
 	Currency *string `json:"currency,omitempty"`
+
+	// CurrencyConversions Conversion provenance. Empty when no conversion was applied.
+	CurrencyConversions *[]FinopsBillingBillingInvoiceCurrencyConversion `json:"currencyConversions,omitempty"`
+
+	// CurrencyTarget Final currency requested for one customer's invoice. Every generated invoice has one final currency. Omit the complete currency intent on legacy requests to retain legacy parent-currency behavior.
+	CurrencyTarget *FinopsBillingBillingInvoiceCurrencyTarget `json:"currencyTarget,omitempty"`
 
 	// CustomerBillingPlan Customer billing plan
 	CustomerBillingPlan *string `json:"customerBillingPlan,omitempty"`
@@ -4123,7 +4420,7 @@ type FinopsBillingFlexeraFinopsBillingInvoice struct {
 	// Id Invoice export identifier
 	Id string `json:"id"`
 
-	// InvoiceAmount Invoice amount rendered as string
+	// InvoiceAmount Invoice amount rendered as a decimal string in the final invoice currency.
 	InvoiceAmount string `json:"invoiceAmount"`
 
 	// InvoiceNumber Invoice number (Invoice ID), scoped to the owning organization. Always present: an empty string means the invoice has no number. The number is allocated only after bill-lock passes; a failed generation keeps its number and a retry reuses it.
@@ -4222,7 +4519,7 @@ type FinopsBillingFlexeraFinopsBillingInvoiceSchedule struct {
 	// OrgId The unique identifier for the organization
 	OrgId int `json:"orgId"`
 
-	// Schedule When a scheduled invoice fires. Deliberately not RFC-5545 RRULE, mirroring the finops/customizations Invoice Schedules resource this exposes.
+	// Schedule When a scheduled invoice fires. Deliberately not RFC-5545 RRULE.
 	Schedule FinopsBillingBillingInvoiceScheduleCadence `json:"schedule"`
 
 	// ScheduleName Human-readable name for the schedule.
@@ -4261,6 +4558,12 @@ type FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoice struct {
 	// BillMonth Billing month (YYYY-MM format)
 	BillMonth *string `json:"billMonth,omitempty"`
 
+	// ConversionAcknowledgements Accepted source/target-bound conversion consent stored before generation.
+	ConversionAcknowledgements *[]FinopsBillingBillingInvoiceConversionAcknowledgement `json:"conversionAcknowledgements,omitempty"`
+
+	// ConversionRates Accepted manual source-to-target rates stored before generation.
+	ConversionRates *[]FinopsBillingBillingInvoiceConversionRate `json:"conversionRates,omitempty"`
+
 	// CostMetric Cost metric
 	CostMetric *string `json:"costMetric,omitempty"`
 
@@ -4269,6 +4572,12 @@ type FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoice struct {
 
 	// Currency ISO 4217 currency code (three uppercase letters) that the invoice amount is denominated in.
 	Currency *string `json:"currency,omitempty"`
+
+	// CurrencyConversions Conversion provenance. Empty when no conversion was applied.
+	CurrencyConversions *[]FinopsBillingBillingInvoiceCurrencyConversion `json:"currencyConversions,omitempty"`
+
+	// CurrencyTarget Final currency requested for one customer's invoice. Every generated invoice has one final currency. Omit the complete currency intent on legacy requests to retain legacy parent-currency behavior.
+	CurrencyTarget *FinopsBillingBillingInvoiceCurrencyTarget `json:"currencyTarget,omitempty"`
 
 	// CustomerBillingPlan Customer billing plan
 	CustomerBillingPlan *string `json:"customerBillingPlan,omitempty"`
@@ -4318,7 +4627,7 @@ type FinopsBillingFlexeraFinopsBillingInvoiceScheduleInvoice struct {
 	// Id Invoice export identifier
 	Id string `json:"id"`
 
-	// InvoiceAmount Invoice amount rendered as string
+	// InvoiceAmount Invoice amount rendered as a decimal string in the final invoice currency.
 	InvoiceAmount string `json:"invoiceAmount"`
 
 	// InvoiceNumber Invoice number (Invoice ID), scoped to the owning organization. Always present: an empty string means the invoice has no number. The number is allocated only after bill-lock passes; a failed generation keeps its number and a retry reuses it.
@@ -5278,6 +5587,18 @@ type FinopsBillingSharedCostSourceCondition struct {
 
 // FinopsBillingSharedCostSourceConditionType The condition type. The type decides which other fields are required.
 type FinopsBillingSharedCostSourceConditionType string
+
+// FinopsBillingShowCustomerRuleImpactResult defines model for FinopsBilling_ShowCustomerRuleImpactResult.
+type FinopsBillingShowCustomerRuleImpactResult struct {
+	// Kind The resource's type
+	Kind FinopsBillingShowCustomerRuleImpactResultKind `json:"kind"`
+
+	// Rules Rules maps RuleIds to customerIds to the latest billMonth that rule applied.
+	Rules map[string][]FinopsBillingCustomerLastAffected `json:"rules"`
+}
+
+// FinopsBillingShowCustomerRuleImpactResultKind The resource's type
+type FinopsBillingShowCustomerRuleImpactResultKind string
 
 // FinopsBillingShowCustomerStatusResult defines model for FinopsBilling_ShowCustomerStatusResult.
 type FinopsBillingShowCustomerStatusResult struct {
